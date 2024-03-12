@@ -2,6 +2,8 @@ package it.brunasti.java.diagrammer;
 
 import org.apache.bcel.classfile.Field;
 import org.apache.bcel.classfile.JavaClass;
+import org.apache.bcel.classfile.Method;
+import org.apache.bcel.generic.Type;
 import org.apache.bcel.util.ClassLoaderRepository;
 
 import java.io.File;
@@ -9,7 +11,6 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
@@ -18,22 +19,14 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class ClassDiagrammer {
 
-//    private Set<String> extractClassesListFromDirectory(String _path, String _package) {
-//        return null;
-//    }
 
     private Set<String> iterateSubDirectories(String _path, String _package) {
-//        System.out.println("iterateSubDirectories ================ ");
         Set<String> files = new HashSet<>();
         return iterateSubDirectories(_path,_package,files);
     }
     private Set<String> iterateSubDirectories(String _path, String _package, Set<String> files) {
         String newPath = _path+"/"+_package.replace(".","/");
-//        System.out.println("iterateSubDirectories ---------- "+_path+" "+_package);
-//        System.out.println(newPath);
         try {
-//            Utils.dump("Add new files from ["+newPath+"]", Utils.listFilesUsingFilesList(newPath));
-
             Utils.listFilesUsingFilesList(newPath).forEach(file -> {
                 String className = file.replace(".class","");
                 files.add(_package+"."+className);
@@ -56,10 +49,6 @@ public class ClassDiagrammer {
 
     private void setClassLoader(String path) {
         try {
-//            System.out.println("setClassLoader ---------- ");
-//            System.out.println(path);
-//            System.out.println("---------- ");
-
             File file = new File(path);
 
             // Convert File to a URL
@@ -78,33 +67,31 @@ public class ClassDiagrammer {
 
     private static HashSet toBeExcludedPackages = null;
     private static HashSet toBeExcludedClasses = null;
+
     private void initToBeExcluded() {
+        // TODO Load from config file
         toBeExcludedPackages = new HashSet();
         toBeExcludedClasses = new HashSet();
 
         toBeExcludedPackages.add("java.lang.");
         toBeExcludedPackages.add("java.util.");
 
-//        toBeExcludedClasses.add("int");
-//        toBeExcludedClasses.add("boolean");
-//        toBeExcludedClasses.add("double");
-//        toBeExcluded.add("java.lang.Float");
-//        toBeExcluded.add("java.lang.Long");
-//        toBeExcluded.add("java.lang.Double");
-//        toBeExcluded.add("java.lang.Integer");
-//        toBeExcluded.add("java.lang.String");
-
         toBeExcludedClasses.add("org.slf4j.Logger");
         toBeExcludedClasses.add("org.joda.time.DateTime");
     }
 
 
-    private boolean isFieldTypeToBeConnected(JavaClass objectClazz, Field field) {
+    private boolean isTypeToBeConnected(JavaClass objectClazz, Field field) {
+        String type = field.getType().toString();
+        return isTypeToBeConnected(objectClazz, type);
+    }
+
+    private boolean isTypeToBeConnected(JavaClass objectClazz, String type) {
         if (toBeExcludedPackages == null) {
             initToBeExcluded();
         }
 
-        String type =  field.getType().toString();
+//        String type =  field.getType().toString();
 
         if (type.equals(objectClazz.getClassName())) {
             return false;
@@ -114,9 +101,10 @@ public class ClassDiagrammer {
         if (type.toLowerCase().equals(type)) {
             return false;
         }
-//        if (type.startsWith("java.lang.")) {
-//            return false;
-//        }
+
+        if (toBeExcludedClasses.contains(type)) {
+            return false;
+        }
 
         AtomicReference<Boolean> excludedPackage = new AtomicReference<>(false);
         toBeExcludedPackages.forEach(_package -> {
@@ -129,20 +117,27 @@ public class ClassDiagrammer {
             return false;
         }
 
-        if (toBeExcludedClasses.contains(type)) {
-            return false;
-        }
         return true;
+    }
+
+    HashSet<String> usesWritten = new HashSet<>();
+
+    private void writeUses(JavaClass objectClazz, String type) {
+//        System.out.println("'     writeUses "+type);
+        if (isTypeToBeConnected(objectClazz, type)) {
+            String use = "" + objectClazz.getClassName() + " ..> " + type;
+            if (!usesWritten.contains(use)) {
+                System.out.println(use);
+                usesWritten.add(use);
+            }
+        }
+
     }
 
     private void generateDiagram(String path) {
         ArrayList<String> files = new ArrayList<String>();
 
         try {
-            System.out.println("generateDiagram ---------- ");
-            System.out.println(path);
-            System.out.println("---------- ");
-
             setClassLoader(path);
 
             Set<String> dirs = Utils.listDirectories(path);
@@ -157,14 +152,15 @@ public class ClassDiagrammer {
             e.printStackTrace();
         }
 
+        Date now = new Date();
         System.out.println( "@startuml" );
         System.out.println( "'https://plantuml.com/class-diagram" );
         System.out.println();
         System.out.println();
         System.out.println("' GENERATE CLASS DIAGRAM ===========");
-        Date now = new Date();
-        System.out.println("' "+ now.toString());
-        System.out.println("' "+ this.getClass().getName());
+        System.out.println("' Generator    : "+ this.getClass().getName());
+        System.out.println("' Path         : "+path);
+        System.out.println("' Generated at : "+ now.toString());
         System.out.println();
         try {
             ClassLoaderRepository rep = new ClassLoaderRepository(classLoader);
@@ -208,43 +204,34 @@ public class ClassDiagrammer {
             });
             System.out.println();
 
-//            System.out.println("ATTRIBUTES =======");
-//            classes.forEach( objectClazz -> {
-//                System.out.println("class " + objectClazz.getClassName());
-//                try {
-//                    Attribute[] attributes = objectClazz.getAttributes();
-//                    for (int i = 0; i < attributes.length; i++) {
-//                        Attribute attribute = attributes[i];
-//                        System.out.println("  --  attribute name :" + attribute.getName() +"  "+attribute.getClass().getName());
-//                    }
-//
-//                } catch (Exception ex) {
-//                    System.err.println(ex.getMessage());
-//                }
-//            });
-//            System.out.println();
 
+            System.out.println("' IMPLEMENT INTERFACE =======");
+            classes.forEach( objectClazz -> {
+                try {
+                    JavaClass[] interfaces = objectClazz.getInterfaces();
+                    for (int i=0; i<interfaces.length; i++) {
+                        System.out.println("" + objectClazz.getClassName() + " ..|> " + interfaces[i].getClassName());
+                    }
+                } catch (Exception ex) {
+                    System.err.println(ex.getMessage());
+                }
+            });
+            System.out.println();
 
 
             System.out.println("' FIELDS =======");
             classes.forEach( objectClazz -> {
                 if (objectClazz.isEnum()) {
-
+                    // TODO Handle enumeration "fields"
                 } else {
-//                System.out.println("class " + objectClazz.getClassName());
                     try {
                         Field[] fields = objectClazz.getFields();
                         for (int i = 0; i < fields.length; i++) {
                             Field field = fields[i];
-                            if (isFieldTypeToBeConnected(objectClazz, field)) {
-//                                System.out.println();
-//                                System.out.println("  --  attribute name :" + field.getName() + "  " + field.getSignature());
-//                                System.out.println("      " + field.getType() + "  " + field.getModifiers());
+                            if (isTypeToBeConnected(objectClazz, field)) {
                                 System.out.println("" + objectClazz.getClassName() + " --> " + field.getType());
                             }
-
                         }
-
                     } catch (Exception ex) {
                         System.err.println(ex.getMessage());
                     }
@@ -252,27 +239,32 @@ public class ClassDiagrammer {
             });
             System.out.println();
 
-//            classes.forEach( objectClazz -> {
-//                try {
-//                    System.out.println("class " + objectClazz.getClassName());
-//
-//                    JavaClass[] interfaces = objectClazz.getInterfaces();
-//
-//                    System.out.println("  class name :" + objectClazz.getClassName());
-//                    System.out.println("  -- super class name :" + objectClazz.getSuperClass().getClassName());
-//
-//                    if (interfaces.length > 0) {
-//                        for (int i = 0; i < interfaces.length; i++) {
-//                            JavaClass _interface = interfaces[i];
-//                            System.out.println("  --  class name :" + _interface.getClassName());
-//
-//                        }
-//                    }
-////                    Utils.dump(file+" Interfaces", objectClazz.getInterfaces());
-//                } catch (ClassNotFoundException e) {
-//                    System.err.println(e.getMessage());
-//                }
-//            });
+            System.out.println("' USES =======");
+            classes.forEach( objectClazz -> {
+                if (!objectClazz.isEnum()) {
+                    try {
+                        Method[] methods = objectClazz.getMethods();
+                        for (int i = 0; i < methods.length; i++) {
+                            Method method = methods[i];
+
+                            String type = method.getReturnType().toString();
+                            writeUses(objectClazz, type);
+
+                            Type[] arguments = method.getArgumentTypes();
+                            for( int j=0; j<arguments.length; j++) {
+                                type = arguments[j].getSignature().substring(1).replace("/",".").replace(";","");
+                                writeUses(objectClazz, type);
+                            }
+                        }
+                    } catch (Exception ex) {
+                        System.err.println(ex.getMessage());
+                    }
+                }
+            });
+            System.out.println();
+
+            System.out.println();
+            System.out.println();
             System.out.println( "@enduml" );
 
         } catch (Exception e) {
