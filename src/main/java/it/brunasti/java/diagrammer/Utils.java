@@ -28,22 +28,6 @@ public class Utils {
         }
     }
 
-//    public static void dump(String t, ArrayList arr) {
-//        System.out.println("--------" + t + "-------------");
-//        if (arr != null) {
-//            if (arr.size() == 0) {
-//                System.out.println("-- EMPTY --");
-//            }
-//            else {
-//                for (int i = 0; i < arr.size(); i++) {
-//                    System.out.println("#" + i + "='" + arr.get(i) + "'");
-//                }
-//            }
-//        } else {
-//            System.out.println("-- NULL --");
-//        }
-//    }
-
     public static void dump(String t, ArrayList arr) {
         dump(t,arr.toArray());
     }
@@ -53,7 +37,6 @@ public class Utils {
     }
 
     public static Set<String> listFilesUsingFilesList(String dir) throws IOException {
-//        System.out.println("listFilesUsingFilesList "+dir);
         try (Stream<Path> stream = Files.list(Paths.get(dir))) {
             return stream
                     .filter(file -> !Files.isDirectory(file))
@@ -72,6 +55,4 @@ public class Utils {
                     .collect(Collectors.toSet());
         }
     }
-
-
 }
