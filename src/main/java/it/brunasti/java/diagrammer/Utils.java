@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -27,7 +28,32 @@ public class Utils {
         }
     }
 
+//    public static void dump(String t, ArrayList arr) {
+//        System.out.println("--------" + t + "-------------");
+//        if (arr != null) {
+//            if (arr.size() == 0) {
+//                System.out.println("-- EMPTY --");
+//            }
+//            else {
+//                for (int i = 0; i < arr.size(); i++) {
+//                    System.out.println("#" + i + "='" + arr.get(i) + "'");
+//                }
+//            }
+//        } else {
+//            System.out.println("-- NULL --");
+//        }
+//    }
+
+    public static void dump(String t, ArrayList arr) {
+        dump(t,arr.toArray());
+    }
+
+    public static void dump(String t, Set arr) {
+        dump(t,arr.toArray());
+    }
+
     public static Set<String> listFilesUsingFilesList(String dir) throws IOException {
+//        System.out.println("listFilesUsingFilesList "+dir);
         try (Stream<Path> stream = Files.list(Paths.get(dir))) {
             return stream
                     .filter(file -> !Files.isDirectory(file))
@@ -40,7 +66,7 @@ public class Utils {
     public static Set<String> listDirectories(String dir) throws IOException {
         try (Stream<Path> stream = Files.list(Paths.get(dir))) {
             return stream
-                    .filter(file -> !Files.isDirectory(file))
+                    .filter(file -> Files.isDirectory(file))
                     .map(Path::getFileName)
                     .map(Path::toString)
                     .collect(Collectors.toSet());
