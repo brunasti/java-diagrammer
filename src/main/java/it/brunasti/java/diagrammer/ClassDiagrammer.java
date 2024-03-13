@@ -134,6 +134,7 @@ public class ClassDiagrammer {
 
   }
 
+  // TODO : too complex or too long, decompose in sub functions
   private void generateDiagram(final String path) {
     // TODO : Replace System.out with flexible stream,
     //  so that the file name can be given as input parameter to main
@@ -141,10 +142,7 @@ public class ClassDiagrammer {
 
     try {
       setClassLoader(path);
-
       Set<String> dirs = Utils.listDirectories(path);
-      System.out.println(dirs);
-
       dirs.forEach(dir -> {
         files.addAll(iterateSubDirectories(path, dir));
       });
@@ -155,7 +153,6 @@ public class ClassDiagrammer {
     Date now = new Date();
     System.out.println("@startuml");
     System.out.println("'https://plantuml.com/class-diagram");
-    System.out.println();
     System.out.println();
     System.out.println("' GENERATE CLASS DIAGRAM ===========");
     System.out.println("' Generator    : " + this.getClass().getName());
