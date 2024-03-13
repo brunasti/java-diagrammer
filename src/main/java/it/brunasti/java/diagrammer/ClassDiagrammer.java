@@ -2,7 +2,6 @@ package it.brunasti.java.diagrammer;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.ArrayList;
@@ -68,13 +67,13 @@ public class ClassDiagrammer {
   }
 
 
-  private static HashSet toBeExcludedPackages = null;
-  private static HashSet toBeExcludedClasses = null;
+  private static HashSet<String> toBeExcludedPackages = null;
+  private static HashSet<String> toBeExcludedClasses = null;
 
   private void initToBeExcluded() {
     // TODO Load from config file
-    toBeExcludedPackages = new HashSet();
-    toBeExcludedClasses = new HashSet();
+    toBeExcludedPackages = new HashSet<>();
+    toBeExcludedClasses = new HashSet<>();
 
     toBeExcludedPackages.add("java.lang.");
     toBeExcludedPackages.add("java.util.");
@@ -110,7 +109,7 @@ public class ClassDiagrammer {
 
     AtomicReference<Boolean> excludedPackage = new AtomicReference<>(false);
     toBeExcludedPackages.forEach(localPackage -> {
-      if (type.startsWith(localPackage.toString())) {
+      if (type.startsWith(localPackage)) {
         excludedPackage.set(true);
       }
     });
@@ -122,11 +121,11 @@ public class ClassDiagrammer {
     return true;
   }
 
-  private HashSet<String> usesWritten = new HashSet<>();
+  private final HashSet<String> usesWritten = new HashSet<>();
 
   private void writeUses(final JavaClass objectClazz, final String type) {
     if (isTypeToBeConnected(objectClazz, type)) {
-      String use = "" + objectClazz.getClassName() + " ..> " + type;
+      String use = objectClazz.getClassName() + " ..> " + type;
       if (!usesWritten.contains(use)) {
         System.out.println(use);
         usesWritten.add(use);
@@ -136,7 +135,7 @@ public class ClassDiagrammer {
   }
 
   private void generateDiagram(final String path) {
-    ArrayList<String> files = new ArrayList<String>();
+    ArrayList<String> files = new ArrayList<>();
 
     try {
       setClassLoader(path);
@@ -159,7 +158,7 @@ public class ClassDiagrammer {
     System.out.println("' GENERATE CLASS DIAGRAM ===========");
     System.out.println("' Generator    : " + this.getClass().getName());
     System.out.println("' Path         : " + path);
-    System.out.println("' Generated at : " + now.toString());
+    System.out.println("' Generated at : " + now);
     System.out.println();
     try {
       ClassLoaderRepository rep = new ClassLoaderRepository(classLoader);
@@ -196,7 +195,7 @@ public class ClassDiagrammer {
         try {
           if (!"java.lang.Object".equals(
                   objectClazz.getSuperClass().getClassName())) {
-            System.out.println("" + objectClazz.getClassName() + " --|> "
+            System.out.println(objectClazz.getClassName() + " --|> "
                     + objectClazz.getSuperClass().getClassName());
           }
         } catch (Exception ex) {
@@ -210,7 +209,7 @@ public class ClassDiagrammer {
         try {
           JavaClass[] interfaces = objectClazz.getInterfaces();
           for (int i = 0; i < interfaces.length; i++) {
-            System.out.println("" + objectClazz.getClassName() + " ..|> "
+            System.out.println(objectClazz.getClassName() + " ..|> "
                     + interfaces[i].getClassName());
           }
         } catch (Exception ex) {
@@ -218,7 +217,6 @@ public class ClassDiagrammer {
         }
       });
       System.out.println();
-
 
       System.out.println("' FIELDS =======");
       classes.forEach(objectClazz -> {
@@ -229,7 +227,7 @@ public class ClassDiagrammer {
             for (int i = 0; i < fields.length; i++) {
               Field field = fields[i];
               if (isTypeToBeConnected(objectClazz, field)) {
-                System.out.println("" + objectClazz.getClassName()
+                System.out.println(objectClazz.getClassName()
                         + " --> " + field.getType());
               }
             }
