@@ -135,6 +135,8 @@ public class ClassDiagrammer {
   }
 
   private void generateDiagram(final String path) {
+    // TODO : Replace System.out with flexible stream,
+    //  so that the file name can be given as input parameter to main
     ArrayList<String> files = new ArrayList<>();
 
     try {
@@ -274,6 +276,7 @@ public class ClassDiagrammer {
 
   public static void main(final String[] args) {
 
+    // TODO : Read the path from args
     String path =
             "/Users/paolobrunasti/Work/"
                     + "BAH/bah-cng-common-lib/build/classes/java/main";

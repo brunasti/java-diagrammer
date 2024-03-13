@@ -9,8 +9,10 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Utils {
+public final class Utils {
 
+  private Utils() {
+  }
 
   public static void dump(final String t, final Object[] arr) {
     System.out.println("--------" + t + "-------------");
