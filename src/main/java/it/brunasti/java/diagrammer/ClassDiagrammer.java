@@ -246,15 +246,11 @@ public class ClassDiagrammer {
           try {
             Method[] methods = objectClazz.getMethods();
             for (Method method : methods) {
-//            for (int i = 0; i < methods.length; i++) {
-//              Method method = methods[i];
-
               String type = method.getReturnType().toString();
               writeUses(objectClazz, type);
 
               Type[] arguments = method.getArgumentTypes();
-              for (Type argument : arguments)
-              {
+              for (Type argument : arguments) {
                 type = argument.getSignature()
                         .substring(1)
                         .replace("/", ".")
