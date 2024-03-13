@@ -1,0 +1,32 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+' GENERATE CLASS DIAGRAM ===========
+' Generator    : it.brunasti.java.diagrammer.ClassDiagrammer
+' Path         : /Users/paolobrunasti/Work/Mine/java-diagrammer/java-diagrammer/target/classes
+' Generated at : Wed Mar 13 16:53:50 CET 2024
+
+
+
+' CLASSES =======
+class it.brunasti.java.diagrammer.ClassDiagrammer
+class it.brunasti.java.diagrammer.Utils
+
+' INHERITANCES =======
+
+' IMPLEMENT INTERFACE =======
+
+' FIELDS =======
+
+' USES =======
+it.brunasti.java.diagrammer.ClassDiagrammer ..> org.apache.bcel.classfile.JavaClass
+it.brunasti.java.diagrammer.ClassDiagrammer ..> org.apache.bcel.classfile.Field
+it.brunasti.java.diagrammer.ClassDiagrammer ..> Ljava.lang.String
+it.brunasti.java.diagrammer.ClassDiagrammer ..> org.apache.bcel.util.ClassLoaderRepository
+it.brunasti.java.diagrammer.Utils ..> Ljava.lang.Object
+it.brunasti.java.diagrammer.Utils ..> java.nio.file.Path
+
+
+
+@enduml

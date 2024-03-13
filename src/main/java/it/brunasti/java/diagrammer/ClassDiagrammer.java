@@ -277,9 +277,7 @@ public class ClassDiagrammer {
   public static void main(final String[] args) {
 
     // TODO : Read the path from args
-    String path =
-            "/Users/paolobrunasti/Work/"
-                    + "BAH/bah-cng-common-lib/build/classes/java/main";
+    String path = "/Users/paolobrunasti/Work/Mine/java-diagrammer/java-diagrammer/target/classes";
 
     ClassDiagrammer classDiagrammer = new ClassDiagrammer();
     classDiagrammer.generateDiagram(path);
