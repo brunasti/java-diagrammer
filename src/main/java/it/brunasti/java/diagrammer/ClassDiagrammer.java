@@ -291,7 +291,8 @@ public class ClassDiagrammer {
 //    String path = "/Users/paolobrunasti/Work/BAH/bah-solr-api-springboot/build/classes/java/main";
     String path = "/Users/paolobrunasti/Work/Mine/java_tools/target/classes";
 
-    String outputFile = "./temp/output.puml";
+    String outputFile = null;
+//    String outputFile = "./temp/output.puml";
 
     FileOutputStream file = null;
 
@@ -305,6 +306,8 @@ public class ClassDiagrammer {
       } catch (Exception ex) {
         ex.printStackTrace();
       }
+    } else {
+      output = System.out;
     }
 
     ClassDiagrammer classDiagrammer = new ClassDiagrammer();
