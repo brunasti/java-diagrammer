@@ -1,6 +1,7 @@
 package it.brunasti.java.diagrammer;
 
 import java.io.IOException;
+import java.io.PrintStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -15,17 +16,20 @@ public final class Utils {
   }
 
   public static void dump(final String t, final Object[] arr) {
-    System.out.println("--------" + t + "-------------");
+    dump(t,arr,System.out);
+  }
+  public static void dump(final String t, final Object[] arr, PrintStream output) {
+    output.println("--------" + t + "-------------");
     if (arr != null) {
       if (arr.length == 0) {
-        System.out.println("-- EMPTY --");
+        output.println("-- EMPTY --");
       } else {
         for (int i = 0; i < arr.length; i++) {
-          System.out.println("#" + i + "='" + arr[i] + "'");
+          output.println("#" + i + "='" + arr[i] + "'");
         }
       }
     } else {
-      System.out.println("-- NULL --");
+      output.println("-- NULL --");
     }
   }
 

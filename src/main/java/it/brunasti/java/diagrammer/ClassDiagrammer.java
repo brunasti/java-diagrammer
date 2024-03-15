@@ -21,6 +21,7 @@ import org.apache.bcel.classfile.JavaClass;
 import org.apache.bcel.classfile.Method;
 import org.apache.bcel.generic.Type;
 import org.apache.bcel.util.ClassLoaderRepository;
+import org.apache.commons.cli.*;
 
 /**
  *
@@ -28,7 +29,12 @@ import org.apache.bcel.util.ClassLoaderRepository;
  */
 public class ClassDiagrammer {
 
-  private static PrintStream output = null;
+  private PrintStream output = null;
+
+  public ClassDiagrammer(PrintStream output) {
+    this.output = output;
+
+  }
 
   private Set<String> iterateSubDirectories(final String path,
                                             final String localPackage) {
@@ -145,7 +151,7 @@ public class ClassDiagrammer {
   }
 
   // TODO : too complex or too long, decompose in sub functions
-  private void generateDiagram(final String path) {
+  public void generateDiagram(final String path) {
     // TODO : Replace System.out with flexible stream,
     //  so that the file name can be given as input parameter to main
     ArrayList<String> files = new ArrayList<>();
@@ -281,45 +287,45 @@ public class ClassDiagrammer {
     }
   }
 
-  // TODO : Add CLI as in it/brunasti/engine/inferential/Main.java
-  public static void main(final String[] args) {
-
-    // TODO : Read the path from args
+//  // TODO : Add CLI as in it/brunasti/engine/inferential/Main.java
+//  public static void main(final String[] args) {
+//
+//    // TODO : Read the path from args
 //    String path = "/Users/paolobrunasti/Work/Mine/java-diagrammer"
 //            + "/java-diagrammer/target/classes";
-
-//    String path = "/Users/paolobrunasti/Work/BAH/bah-solr-api-springboot/build/classes/java/main";
-    String path = "/Users/paolobrunasti/Work/Mine/java_tools/target/classes";
-
-    String outputFile = null;
+//
+////    String path = "/Users/paolobrunasti/Work/BAH/bah-solr-api-springboot/build/classes/java/main";
+////    String path = "/Users/paolobrunasti/Work/Mine/java_tools/target/classes";
+//
+////    String outputFile = null;
 //    String outputFile = "./temp/output.puml";
-
-    FileOutputStream file = null;
-
-    if (null != outputFile) {
-      try {
-        // Creates a FileOutputStream
-        file = new FileOutputStream(outputFile);
-
-        // Creates a PrintWriter
-        output = new PrintStream(file, true);
-      } catch (Exception ex) {
-        ex.printStackTrace();
-      }
-    } else {
-      output = System.out;
-    }
-
-    ClassDiagrammer classDiagrammer = new ClassDiagrammer();
-    classDiagrammer.generateDiagram(path);
-
-    if (null != file) {
-      try {
-        file.close();
-      } catch (Exception ex) {
-        ex.printStackTrace();
-      }
-    }
-  }
+//
+//    FileOutputStream file = null;
+//
+//    if (null != outputFile) {
+//      try {
+//        // Creates a FileOutputStream
+//        file = new FileOutputStream(outputFile);
+//
+//        // Creates a PrintWriter
+//        output = new PrintStream(file, true);
+//      } catch (Exception ex) {
+//        ex.printStackTrace();
+//      }
+//    } else {
+//      output = System.out;
+//    }
+//
+//    ClassDiagrammer classDiagrammer = new ClassDiagrammer();
+//    classDiagrammer.generateDiagram(path);
+//
+//    if (null != file) {
+//      try {
+//        file.close();
+//      } catch (Exception ex) {
+//        ex.printStackTrace();
+//      }
+//    }
+//  }
 
 }
