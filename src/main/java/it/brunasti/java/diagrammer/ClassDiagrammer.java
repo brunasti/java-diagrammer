@@ -21,7 +21,6 @@ import org.apache.bcel.classfile.JavaClass;
 import org.apache.bcel.classfile.Method;
 import org.apache.bcel.generic.Type;
 import org.apache.bcel.util.ClassLoaderRepository;
-import org.apache.commons.cli.*;
 
 /**
  *
@@ -29,11 +28,10 @@ import org.apache.commons.cli.*;
  */
 public class ClassDiagrammer {
 
-  private PrintStream output = null;
+  private PrintStream output;
 
   public ClassDiagrammer(PrintStream output) {
     this.output = output;
-
   }
 
   private Set<String> iterateSubDirectories(final String path,
@@ -286,46 +284,4 @@ public class ClassDiagrammer {
       e.printStackTrace();
     }
   }
-
-//  // TODO : Add CLI as in it/brunasti/engine/inferential/Main.java
-//  public static void main(final String[] args) {
-//
-//    // TODO : Read the path from args
-//    String path = "/Users/paolobrunasti/Work/Mine/java-diagrammer"
-//            + "/java-diagrammer/target/classes";
-//
-////    String path = "/Users/paolobrunasti/Work/BAH/bah-solr-api-springboot/build/classes/java/main";
-////    String path = "/Users/paolobrunasti/Work/Mine/java_tools/target/classes";
-//
-////    String outputFile = null;
-//    String outputFile = "./temp/output.puml";
-//
-//    FileOutputStream file = null;
-//
-//    if (null != outputFile) {
-//      try {
-//        // Creates a FileOutputStream
-//        file = new FileOutputStream(outputFile);
-//
-//        // Creates a PrintWriter
-//        output = new PrintStream(file, true);
-//      } catch (Exception ex) {
-//        ex.printStackTrace();
-//      }
-//    } else {
-//      output = System.out;
-//    }
-//
-//    ClassDiagrammer classDiagrammer = new ClassDiagrammer();
-//    classDiagrammer.generateDiagram(path);
-//
-//    if (null != file) {
-//      try {
-//        file.close();
-//      } catch (Exception ex) {
-//        ex.printStackTrace();
-//      }
-//    }
-//  }
-
 }
