@@ -4,9 +4,16 @@ import org.apache.commons.cli.*;
 
 import java.io.FileOutputStream;
 import java.io.PrintStream;
+import java.io.PrintWriter;
 
 // This Main uses https://commons.apache.org/proper/commons-cli/usage.html
 public class Main {
+
+    static ClassDiagrammer classDiagrammer;
+
+    static CommandLine cmd;
+    static HelpFormatter helper;
+    static Options options;
 
     static String classesPackagePath = "";
     static String outputFile = "";
@@ -22,7 +29,7 @@ public class Main {
         dump = false;
         trace = false;
 
-        Options options = new Options();
+        options = new Options();
         Option optionHelp = new Option("h", "help", false, "Help");
         Option optionDebug = new Option("d", "debug", false, "Execute in debug mode");
         Option optionOutputFile = new Option("o", "output", true, "Output File");
@@ -33,10 +40,9 @@ public class Main {
         options.addOption(optionOutputFile);
         options.addOption(optionClassesPackagePath);
 
-        HelpFormatter helper = new HelpFormatter();
+        helper = new HelpFormatter();
 
         try {
-            CommandLine cmd;
             CommandLineParser parser = new BasicParser();
 
             cmd = parser.parse(options, args);
@@ -53,9 +59,12 @@ public class Main {
                 return false;
             }
 
-            //            if (cmd.getArgs().length > 0) {
-            //                query = cmd.getArgs()[0];
-            //            }
+            if (cmd.getArgs().length > 0) {
+                classesPackagePath = cmd.getArgs()[0];
+                if (cmd.getArgs().length > 1) {
+                    outputFile = cmd.getArgs()[1];
+                }
+            }
 
             if (cmd.hasOption(optionClassesPackagePath.getOpt())) {
                 classesPackagePath = cmd.getOptionValue(optionClassesPackagePath.getOpt());
@@ -78,17 +87,30 @@ public class Main {
         return true;
     }
 
+    private static void printHelp() {
+        PrintWriter outError = new PrintWriter(System.err);
+        helper.printHelp(outError, helper.defaultWidth, "cmdLineSyntax", "header", options, helper.defaultLeftPad, helper.defaultDescPad, "footer");
+        outError.close();
+    }
 
-    // TODO : decompose into simpler basic functions
     public static void main(String[] args) {
         boolean correctCLI = processCommandLine(args);
         if (debug) { System.err.println("CommandLine parsed [" + correctCLI + "]"); }
 
-        if (!correctCLI) return;
+        if (!correctCLI) {
+            printHelp();
+            return;
+        }
 
         if (debug) {
             System.err.println("Path [" + classesPackagePath + "]");
             System.err.println("OutputFile [" + outputFile + "]");
+        }
+
+        if ((null == classesPackagePath) || (classesPackagePath.isBlank())) {
+            System.err.println("Path not defined [" + classesPackagePath + "]");
+            printHelp();
+            return;
         }
 
         FileOutputStream file = null;
@@ -109,7 +131,7 @@ public class Main {
             output = System.out;
         }
 
-        ClassDiagrammer classDiagrammer = new ClassDiagrammer(output);
+        classDiagrammer = new ClassDiagrammer(output);
         classDiagrammer.generateDiagram(classesPackagePath);
 
         if (null != file) {
