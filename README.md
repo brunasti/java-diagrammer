@@ -1,6 +1,8 @@
 # java-diagrammer
 Generate a PlantUML Class diagram from a compiled Java class collection
 
+By Paolo Brunasti
+
 ---
 
 Usage via CLI
