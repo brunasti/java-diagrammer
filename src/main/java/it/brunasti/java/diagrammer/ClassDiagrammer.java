@@ -128,11 +128,7 @@ public class ClassDiagrammer {
       }
     });
 
-    if (excludedPackage.get()) {
-      return false;
-    }
-
-    return true;
+    return !excludedPackage.get();
   }
 
   private final HashSet<String> usesWritten = new HashSet<>();
@@ -267,7 +263,6 @@ public class ClassDiagrammer {
     output.println();
   }
 
-    // TODO : too complex or too long, decompose in sub functions
   public void generateDiagram(final String path) {
     ArrayList<String> files = new ArrayList<>();
 
@@ -280,18 +275,6 @@ public class ClassDiagrammer {
     } catch (IOException e) {
       e.printStackTrace();
     }
-
-//    Date now = new Date();
-//    output.println("@startuml");
-//    output.println("'https://plantuml.com/class-diagram");
-//    output.println();
-//    output.println("' GENERATE CLASS DIAGRAM ===========");
-//    output.println("' Generator    : " + this.getClass().getName());
-//    output.println("' Path         : " + path);
-//    output.println("' Generated at : " + now);
-//    output.println();
-
-    generateHeader(path);
 
     try {
       ClassLoaderRepository rep = new ClassLoaderRepository(classLoader);
@@ -307,109 +290,12 @@ public class ClassDiagrammer {
         }
       });
 
-//      output.println();
-//      output.println();
-//      output.println("' CLASSES =======");
-//      classes.forEach(objectClazz -> {
-//        if (objectClazz.isEnum()) {
-//          output.println("enum " + objectClazz.getClassName());
-//        } else if (objectClazz.isInterface()) {
-//          output.println("interface " + objectClazz.getClassName());
-//        } else if (objectClazz.isAbstract()) {
-//          output.println("abstract " + objectClazz.getClassName());
-//        } else {
-//          output.println("class " + objectClazz.getClassName());
-//        }
-//      });
-//      output.println();
-
+      generateHeader(path);
       generateClasses(classes);
-
-//      output.println("' INHERITANCES =======");
-//      classes.forEach(objectClazz -> {
-//        try {
-//          if (!"java.lang.Object".equals(
-//                  objectClazz.getSuperClass().getClassName())) {
-//            output.println(objectClazz.getClassName() + " --|> "
-//                    + objectClazz.getSuperClass().getClassName());
-//          }
-//        } catch (Exception ex) {
-//          System.err.println(ex.getMessage());
-//        }
-//      });
-//      output.println();
-
       generateInheritances(classes);
-
-//      output.println("' IMPLEMENT INTERFACE =======");
-//      classes.forEach(objectClazz -> {
-//        try {
-//          JavaClass[] interfaces = objectClazz.getInterfaces();
-//          for (int i = 0; i < interfaces.length; i++) {
-//            output.println(objectClazz.getClassName() + " ..|> "
-//                    + interfaces[i].getClassName());
-//          }
-//        } catch (Exception ex) {
-//          System.err.println(ex.getMessage());
-//        }
-//      });
-//      output.println();
-
       generateImplements(classes);
-
-//      output.println("' FIELDS =======");
-//      classes.forEach(objectClazz -> {
-//        // TODO Handle enumeration "fields"
-//        if (!objectClazz.isEnum()) {
-//          try {
-//            Field[] fields = objectClazz.getFields();
-//            for (int i = 0; i < fields.length; i++) {
-//              Field field = fields[i];
-//              if (isTypeToBeConnected(objectClazz, field)) {
-//                output.println(objectClazz.getClassName()
-//                        + " --> " + field.getType());
-//              }
-//            }
-//          } catch (Exception ex) {
-//            System.err.println(ex.getMessage());
-//          }
-//        }
-//      });
-//      output.println();
-
       generateFields(classes);
-
-//      output.println("' USES =======");
-//      classes.forEach(objectClazz -> {
-//        if (!objectClazz.isEnum()) {
-//          try {
-//            Method[] methods = objectClazz.getMethods();
-//            for (Method method : methods) {
-//              String type = method.getReturnType().toString();
-//              writeUses(objectClazz, type);
-//
-//              Type[] arguments = method.getArgumentTypes();
-//              for (Type argument : arguments) {
-//                type = argument.getSignature()
-//                        .substring(1)
-//                        .replace("/", ".")
-//                        .replace(";", "");
-//                writeUses(objectClazz, type);
-//              }
-//            }
-//          } catch (Exception ex) {
-//            System.err.println(ex.getMessage());
-//          }
-//        }
-//      });
-//      output.println();
-
       generateUses(classes);
-
-//      output.println();
-//      output.println();
-//      output.println("@enduml");
-
       generateFooter();
 
     } catch (Exception e) {
