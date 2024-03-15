@@ -97,8 +97,6 @@ public class Main {
     public static void main(String[] args) {
         boolean correctCLI = processCommandLine(args);
 
-        printHelp();
-
         if (debug) {
             System.err.println("CommandLine parsed [" + correctCLI + "]");
         }
