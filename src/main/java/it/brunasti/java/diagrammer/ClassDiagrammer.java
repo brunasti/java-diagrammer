@@ -1,7 +1,14 @@
+/*
+ * Copyright (c) 2024. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+ * Morbi non lorem porttitor neque feugiat blandit. Ut vitae ipsum eget quam lacinia accumsan.
+ * Etiam sed turpis ac ipsum condimentum fringilla. Maecenas magna.
+ * Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus.
+ * Vestibulum commodo. Ut rhoncus gravida arcu.
+ */
+
 package it.brunasti.java.diagrammer;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.ArrayList;
@@ -17,8 +24,11 @@ import org.apache.bcel.util.ClassLoaderRepository;
 
 /**
  *
+ *
  */
 public class ClassDiagrammer {
+
+  private static PrintStream output = null;
 
   private Set<String> iterateSubDirectories(final String path,
                                             final String localPackage) {
@@ -127,7 +137,7 @@ public class ClassDiagrammer {
     if (isTypeToBeConnected(objectClazz, type)) {
       String use = objectClazz.getClassName() + " ..> " + type;
       if (!usesWritten.contains(use)) {
-        System.out.println(use);
+        output.println(use);
         usesWritten.add(use);
       }
     }
@@ -151,14 +161,14 @@ public class ClassDiagrammer {
     }
 
     Date now = new Date();
-    System.out.println("@startuml");
-    System.out.println("'https://plantuml.com/class-diagram");
-    System.out.println();
-    System.out.println("' GENERATE CLASS DIAGRAM ===========");
-    System.out.println("' Generator    : " + this.getClass().getName());
-    System.out.println("' Path         : " + path);
-    System.out.println("' Generated at : " + now);
-    System.out.println();
+    output.println("@startuml");
+    output.println("'https://plantuml.com/class-diagram");
+    output.println();
+    output.println("' GENERATE CLASS DIAGRAM ===========");
+    output.println("' Generator    : " + this.getClass().getName());
+    output.println("' Path         : " + path);
+    output.println("' Generated at : " + now);
+    output.println();
     try {
       ClassLoaderRepository rep = new ClassLoaderRepository(classLoader);
 
@@ -173,51 +183,51 @@ public class ClassDiagrammer {
         }
       });
 
-      System.out.println();
-      System.out.println();
-      System.out.println("' CLASSES =======");
+      output.println();
+      output.println();
+      output.println("' CLASSES =======");
       classes.forEach(objectClazz -> {
         if (objectClazz.isEnum()) {
-          System.out.println("enum " + objectClazz.getClassName());
+          output.println("enum " + objectClazz.getClassName());
         } else if (objectClazz.isInterface()) {
-          System.out.println("interface " + objectClazz.getClassName());
+          output.println("interface " + objectClazz.getClassName());
         } else if (objectClazz.isAbstract()) {
-          System.out.println("abstract " + objectClazz.getClassName());
+          output.println("abstract " + objectClazz.getClassName());
         } else {
-          System.out.println("class " + objectClazz.getClassName());
+          output.println("class " + objectClazz.getClassName());
         }
       });
-      System.out.println();
+      output.println();
 
-      System.out.println("' INHERITANCES =======");
+      output.println("' INHERITANCES =======");
       classes.forEach(objectClazz -> {
         try {
           if (!"java.lang.Object".equals(
                   objectClazz.getSuperClass().getClassName())) {
-            System.out.println(objectClazz.getClassName() + " --|> "
+            output.println(objectClazz.getClassName() + " --|> "
                     + objectClazz.getSuperClass().getClassName());
           }
         } catch (Exception ex) {
           System.err.println(ex.getMessage());
         }
       });
-      System.out.println();
+      output.println();
 
-      System.out.println("' IMPLEMENT INTERFACE =======");
+      output.println("' IMPLEMENT INTERFACE =======");
       classes.forEach(objectClazz -> {
         try {
           JavaClass[] interfaces = objectClazz.getInterfaces();
           for (int i = 0; i < interfaces.length; i++) {
-            System.out.println(objectClazz.getClassName() + " ..|> "
+            output.println(objectClazz.getClassName() + " ..|> "
                     + interfaces[i].getClassName());
           }
         } catch (Exception ex) {
           System.err.println(ex.getMessage());
         }
       });
-      System.out.println();
+      output.println();
 
-      System.out.println("' FIELDS =======");
+      output.println("' FIELDS =======");
       classes.forEach(objectClazz -> {
         // TODO Handle enumeration "fields"
         if (!objectClazz.isEnum()) {
@@ -226,7 +236,7 @@ public class ClassDiagrammer {
             for (int i = 0; i < fields.length; i++) {
               Field field = fields[i];
               if (isTypeToBeConnected(objectClazz, field)) {
-                System.out.println(objectClazz.getClassName()
+                output.println(objectClazz.getClassName()
                         + " --> " + field.getType());
               }
             }
@@ -235,9 +245,9 @@ public class ClassDiagrammer {
           }
         }
       });
-      System.out.println();
+      output.println();
 
-      System.out.println("' USES =======");
+      output.println("' USES =======");
       classes.forEach(objectClazz -> {
         if (!objectClazz.isEnum()) {
           try {
@@ -260,24 +270,53 @@ public class ClassDiagrammer {
           }
         }
       });
-      System.out.println();
+      output.println();
 
-      System.out.println();
-      System.out.println();
-      System.out.println("@enduml");
+      output.println();
+      output.println();
+      output.println("@enduml");
 
     } catch (Exception e) {
       e.printStackTrace();
     }
   }
 
+  // TODO : Add CLI as in it/brunasti/engine/inferential/Main.java
   public static void main(final String[] args) {
 
     // TODO : Read the path from args
-    String path = "/Users/paolobrunasti/Work/Mine/java-diagrammer/java-diagrammer/target/classes";
+//    String path = "/Users/paolobrunasti/Work/Mine/java-diagrammer"
+//            + "/java-diagrammer/target/classes";
+
+//    String path = "/Users/paolobrunasti/Work/BAH/bah-solr-api-springboot/build/classes/java/main";
+    String path = "/Users/paolobrunasti/Work/Mine/java_tools/target/classes";
+
+    String outputFile = "./temp/output.puml";
+
+    FileOutputStream file = null;
+
+    if (null != outputFile) {
+      try {
+        // Creates a FileOutputStream
+        file = new FileOutputStream(outputFile);
+
+        // Creates a PrintWriter
+        output = new PrintStream(file, true);
+      } catch (Exception ex) {
+        ex.printStackTrace();
+      }
+    }
 
     ClassDiagrammer classDiagrammer = new ClassDiagrammer();
     classDiagrammer.generateDiagram(path);
+
+    if (null != file) {
+      try {
+        file.close();
+      } catch (Exception ex) {
+        ex.printStackTrace();
+      }
+    }
   }
 
 }
