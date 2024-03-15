@@ -55,7 +55,7 @@ public class Main {
                 Utils.dump("CMD", cmd.getArgs(), System.err);
             }
             if (cmd.hasOption("h")) {
-                helper.printHelp("java Main <query> <options>", options);
+                printHelp();
                 return false;
             }
 
@@ -81,21 +81,27 @@ public class Main {
 
         } catch (ParseException e) {
             System.err.println(e.getMessage());
-            helper.printHelp("Usage:", options);
+            printHelp();
             return false;
         }
         return true;
     }
 
     private static void printHelp() {
+        String className = Main.class.getCanonicalName();
         PrintWriter outError = new PrintWriter(System.err);
-        helper.printHelp(outError, helper.defaultWidth, "cmdLineSyntax", "header", options, helper.defaultLeftPad, helper.defaultDescPad, "footer");
+        helper.printHelp(outError, helper.defaultWidth, "java " + className + " <query> <options>", "", options, helper.defaultLeftPad, helper.defaultDescPad, "");
         outError.close();
     }
 
     public static void main(String[] args) {
         boolean correctCLI = processCommandLine(args);
-        if (debug) { System.err.println("CommandLine parsed [" + correctCLI + "]"); }
+
+        printHelp();
+
+        if (debug) {
+            System.err.println("CommandLine parsed [" + correctCLI + "]");
+        }
 
         if (!correctCLI) {
             printHelp();
