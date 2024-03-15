@@ -35,4 +35,7 @@ More complete command line execution, with all libraries needed:
 > -o ./temp/output.puml
 
 
+---
+Example of result of the java-diagrammer applied to itself:
 
+![java-diagrammer class diagram](temp/output.png)
