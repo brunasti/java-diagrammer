@@ -1,0 +1,39 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+' GENERATE CLASS DIAGRAM ===========
+' Generator    : it.brunasti.java.diagrammer.ClassDiagrammer
+' Path         : /Users/paolobrunasti/Work/Mine/java-diagrammer/java-diagrammer/target/classes
+' Generated at : Fri Mar 15 18:08:55 CET 2024
+
+
+
+' CLASSES =======
+class it.brunasti.java.diagrammer.ClassDiagrammer
+class it.brunasti.java.diagrammer.Utils
+class it.brunasti.java.diagrammer.Main
+
+' INHERITANCES =======
+
+' IMPLEMENT INTERFACE =======
+
+' FIELDS =======
+it.brunasti.java.diagrammer.ClassDiagrammer --> java.io.PrintStream
+it.brunasti.java.diagrammer.Main --> it.brunasti.java.diagrammer.ClassDiagrammer
+it.brunasti.java.diagrammer.Main --> org.apache.commons.cli.CommandLine
+it.brunasti.java.diagrammer.Main --> org.apache.commons.cli.HelpFormatter
+it.brunasti.java.diagrammer.Main --> org.apache.commons.cli.Options
+
+' USES =======
+it.brunasti.java.diagrammer.ClassDiagrammer ..> java.io.PrintStream
+it.brunasti.java.diagrammer.ClassDiagrammer ..> org.apache.bcel.classfile.JavaClass
+it.brunasti.java.diagrammer.ClassDiagrammer ..> org.apache.bcel.classfile.Field
+it.brunasti.java.diagrammer.ClassDiagrammer ..> org.apache.bcel.util.ClassLoaderRepository
+it.brunasti.java.diagrammer.Utils ..> Ljava.lang.Object
+it.brunasti.java.diagrammer.Utils ..> java.io.PrintStream
+it.brunasti.java.diagrammer.Utils ..> java.nio.file.Path
+it.brunasti.java.diagrammer.Main ..> Ljava.lang.String
+
+
+
+@enduml
