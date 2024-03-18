@@ -43,7 +43,6 @@ public class Main {
         options.addOption(optionClassesPackagePath);
 
         try {
-            // TODO : Handle BasicParser deprecation
             CommandLineParser parser = new DefaultParser();
 
             commandLine = parser.parse(options, args);
