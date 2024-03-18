@@ -77,31 +77,6 @@ public final class Utils {
   }
 
   // JSON functions ----------------------------------
-  public static void testJsonRead() {
-    JSONParser parser = new JSONParser();
-    try {
-      Object obj = parser.parse(new FileReader("./temp/config.json"));
-
-      System.err.println(obj);
-
-      // A JSON object. Key value pairs are unordered. JSONObject supports java.util.Map interface.
-      JSONObject jsonObject = (JSONObject) obj;
-      // A JSON array. JSONObject supports java.util.List interface.
-      JSONObject exclude = (JSONObject) jsonObject.get("exclude");
-      JSONArray classes = (JSONArray) exclude.get("classes");
-      // An iterator over a collection. Iterator takes the place of Enumeration in the Java Collections Framework.
-      // Iterators differ from enumerations in two ways:
-      // 1. Iterators allow the caller to remove elements from the underlying collection during the iteration with well-defined semantics.
-      // 2. Method names have been improved.
-      Iterator iterator = classes.iterator();
-      while (iterator.hasNext()) {
-        System.out.println(iterator.next());
-      }
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-  }
-
   public static JSONObject loadConfigurationFile(String configurationFileName) {
     JSONParser parser = new JSONParser();
     try {

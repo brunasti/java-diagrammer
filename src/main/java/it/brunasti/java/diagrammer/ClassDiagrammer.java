@@ -115,21 +115,28 @@ public class ClassDiagrammer {
     } else {
       JSONObject jsonObject = Utils.loadConfigurationFile(configurationFileName);
       if (null == jsonObject) {
+        Main.debug("initToBeExcluded : no data in config file " + configurationFileName);
         return false;
       }
       JSONObject exclude = (JSONObject) jsonObject.get("exclude");
+
       JSONArray classes = (JSONArray) exclude.get("classes");
       Iterator iterator = classes.iterator();
       while (iterator.hasNext()) {
-        String excludeClass = iterator.next().toString();
-        System.err.println(excludeClass);
+        JSONObject object = (JSONObject) iterator.next();
+        Main.debug("  - excludeClass JSONObject [" + object + "]");
+        String excludeClass = object.get("class").toString();
+        Main.debug("  - excludeClass [" + excludeClass + "]");
         toBeExcludedClasses.add(excludeClass);
       }
+
       JSONArray packages = (JSONArray) exclude.get("packages");
       iterator = packages.iterator();
       while (iterator.hasNext()) {
-        String excludePackage = iterator.next().toString();
-        System.err.println(excludePackage);
+        JSONObject object = (JSONObject) iterator.next();
+        Main.debug("  - excludePackage JSONObject [" + object + "]");
+        String excludePackage = object.get("package").toString();
+        Main.debug("  - excludePackage [" + excludePackage + "]");
         toBeExcludedPackages.add(excludePackage);
       }
     }
@@ -144,31 +151,34 @@ public class ClassDiagrammer {
 
   private boolean isTypeToBeConnected(final JavaClass objectClazz,
                                       final String type) {
-//    if (toBeExcludedPackages == null) {
-//      initToBeExcluded(configurationFileName);
-//    }
-//
+    Main.debug("isTypeToBeConnected " + objectClazz.getClassName() + " to " + type);
 
     // Avoid self referencing loops
     if (type.equals(objectClazz.getClassName())) {
+      Main.debug("  - self ref");
       return false;
     }
 
     // If the type is all lowercase, then is a primitive type
     if (type.toLowerCase().equals(type)) {
+      Main.debug("  - primitive");
       return false;
     }
 
     if (toBeExcludedClasses.contains(type)) {
+      Main.debug("  - exclude class");
       return false;
     }
 
     AtomicReference<Boolean> excludedPackage = new AtomicReference<>(false);
     toBeExcludedPackages.forEach(localPackage -> {
+      Main.debug("      - package : " + localPackage);
       if (type.startsWith(localPackage)) {
+        Main.debug("    -> exclude package " + type);
         excludedPackage.set(true);
       }
     });
+    Main.debug("  - exclude package : " + excludedPackage.get());
 
     return !excludedPackage.get();
   }
