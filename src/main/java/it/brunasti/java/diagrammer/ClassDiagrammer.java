@@ -27,6 +27,7 @@ import org.apache.bcel.util.ClassLoaderRepository;
  *
  */
 public class ClassDiagrammer {
+  // TODO: Manage arrays (LString...)
 
   // Reference to a PrintStream to bre used for the diagram
   // By default is the Standard.out, but it can be redirected

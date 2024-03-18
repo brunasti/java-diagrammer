@@ -44,7 +44,7 @@ public class Main {
 
         try {
             // TODO : Handle BasicParser deprecation
-            CommandLineParser parser = new BasicParser();
+            CommandLineParser parser = new DefaultParser();
 
             commandLine = parser.parse(options, args);
 
@@ -104,14 +104,7 @@ public class Main {
         String className = Main.class.getCanonicalName();
         PrintWriter outError = new PrintWriter(System.err);
 
-        // TODO : Handle deprecations
-        helper.printHelp(outError, helper.defaultWidth,
-                "java " + className + " <query> <options>",
-                "",
-                options,
-                helper.defaultLeftPad,
-                helper.defaultDescPad,
-                "");
+        helper.printUsage(outError, 100, "java " + className, options);
         outError.close();
     }
 
@@ -126,6 +119,8 @@ public class Main {
             printHelp();
             return;
         }
+
+        printHelp();
 
         if (debug) {
             System.err.println("Path              [" + classesPackagePath + "]");

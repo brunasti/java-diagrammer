@@ -5,7 +5,7 @@
 ' Generator     : it.brunasti.java.diagrammer.ClassDiagrammer
 ' Path          : [/Users/paolobrunasti/Work/Mine/java-diagrammer/java-diagrammer/target/classes]
 ' Configuration : []
-' Generated at  : Mon Mar 18 11:11:56 CET 2024
+' Generated at  : Mon Mar 18 11:41:58 CET 2024
 
 
 
@@ -21,8 +21,6 @@ class it.brunasti.java.diagrammer.Main
 ' FIELDS =======
 it.brunasti.java.diagrammer.ClassDiagrammer --> java.io.PrintStream
 it.brunasti.java.diagrammer.Main --> it.brunasti.java.diagrammer.ClassDiagrammer
-it.brunasti.java.diagrammer.Main --> org.apache.commons.cli.CommandLine
-it.brunasti.java.diagrammer.Main --> org.apache.commons.cli.HelpFormatter
 it.brunasti.java.diagrammer.Main --> org.apache.commons.cli.Options
 
 ' USES =======
@@ -34,6 +32,7 @@ it.brunasti.java.diagrammer.Utils ..> Ljava.lang.Object
 it.brunasti.java.diagrammer.Utils ..> java.io.PrintStream
 it.brunasti.java.diagrammer.Utils ..> java.nio.file.Path
 it.brunasti.java.diagrammer.Main ..> Ljava.lang.String
+it.brunasti.java.diagrammer.Main ..> org.apache.commons.cli.Options
 
 
 @enduml
