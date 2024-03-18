@@ -5,6 +5,8 @@ By Paolo Brunasti
 
 ---
 
+## Usage
+
 Usage via CLI
 
 > java it.brunasti.java.diagrammer.Main -?
@@ -43,6 +45,41 @@ More complete command line execution, with all libraries needed:
 
 
 ---
+
+## Example of Result
+
 Example of result of the java-diagrammer applied to itself:
 
 ![java-diagrammer class diagram](temp/output.png)
+
+
+--- 
+
+## Configuration
+
+If you don't want to include some whole java Packages or specific Classes, 
+add them in the JSON configuration file which you will indicate in the command line.
+Here below an example and the base structure:
+
+[Configuration file example](temp/config.json)
+
+```
+{
+  "exclude": {
+    "classes": [
+      {
+        "class": "org.joda.time.DateTime"
+      }
+    ],
+    "packages": [
+      {
+        "package": "java.lang."
+      },
+      {
+        "package": "java.util."
+      }
+    ]
+  }
+}
+```
+
