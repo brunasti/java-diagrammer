@@ -1,0 +1,35 @@
+{
+  "exclude": {
+    "classes": [
+      {
+        "class": "org.slf4j.Logger"
+      },
+      {
+        "class": "java.lang.String"
+      },
+      {
+        "class": "org.joda.time.DateTime"
+      },
+      {
+        "class": "org.apache.commons.cli.Options"
+      },
+      {
+        "class": "org.json.simple.JSONObject"
+      }
+    ],
+    "packages": [
+      {
+        "package": "java.lang."
+      },
+      {
+        "package": "java.util."
+      },
+      {
+        "package": "org.apache.commons.cli.*"
+      },
+      {
+        "package": "org.json."
+      }
+    ]
+  }
+}

@@ -11,16 +11,15 @@ package it.brunasti.java.diagrammer;
 import java.io.*;
 import java.net.URL;
 import java.net.URLClassLoader;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import org.apache.bcel.classfile.Field;
 import org.apache.bcel.classfile.JavaClass;
 import org.apache.bcel.classfile.Method;
 import org.apache.bcel.generic.Type;
 import org.apache.bcel.util.ClassLoaderRepository;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 /**
  *
@@ -35,14 +34,16 @@ public class ClassDiagrammer {
   private final PrintStream output;
 
   // Lists of the packages and classes to be excluded in the diagram
-  private static HashSet<String> toBeExcludedPackages = null;
-  private static HashSet<String> toBeExcludedClasses = null;
+  private HashSet<String> toBeExcludedPackages = null;
+  private HashSet<String> toBeExcludedClasses = null;
+
+  private String configurationFileName = "";
 
   // List of already written Uses, to avoid multiple connections
   private HashSet<String> usesWritten = new HashSet<>();
 
-
   private ClassLoader classLoader = null;
+
 
   public ClassDiagrammer() {
     this.output = System.out;
@@ -102,16 +103,37 @@ public class ClassDiagrammer {
 
 
 
-  private void initToBeExcluded() {
-    // TODO Load from config file
+  private boolean initToBeExcluded(String configurationFileName) {
     toBeExcludedPackages = new HashSet<>();
     toBeExcludedClasses = new HashSet<>();
+    if ((null == configurationFileName) || (configurationFileName.isBlank())) {
+      toBeExcludedPackages.add("java.lang.");
+      toBeExcludedPackages.add("java.util.");
 
-    toBeExcludedPackages.add("java.lang.");
-    toBeExcludedPackages.add("java.util.");
-
-    toBeExcludedClasses.add("org.slf4j.Logger");
-    toBeExcludedClasses.add("org.joda.time.DateTime");
+      toBeExcludedClasses.add("org.slf4j.Logger");
+      toBeExcludedClasses.add("org.joda.time.DateTime");
+    } else {
+      JSONObject jsonObject = Utils.loadConfigurationFile(configurationFileName);
+      if (null == jsonObject) {
+        return false;
+      }
+      JSONObject exclude = (JSONObject) jsonObject.get("exclude");
+      JSONArray classes = (JSONArray) exclude.get("classes");
+      Iterator iterator = classes.iterator();
+      while (iterator.hasNext()) {
+        String excludeClass = iterator.next().toString();
+        System.err.println(excludeClass);
+        toBeExcludedClasses.add(excludeClass);
+      }
+      JSONArray packages = (JSONArray) exclude.get("packages");
+      iterator = packages.iterator();
+      while (iterator.hasNext()) {
+        String excludePackage = iterator.next().toString();
+        System.err.println(excludePackage);
+        toBeExcludedPackages.add(excludePackage);
+      }
+    }
+    return true;
   }
 
   private boolean isTypeToBeConnected(final JavaClass objectClazz,
@@ -122,10 +144,12 @@ public class ClassDiagrammer {
 
   private boolean isTypeToBeConnected(final JavaClass objectClazz,
                                       final String type) {
-    if (toBeExcludedPackages == null) {
-      initToBeExcluded();
-    }
+//    if (toBeExcludedPackages == null) {
+//      initToBeExcluded(configurationFileName);
+//    }
+//
 
+    // Avoid self referencing loops
     if (type.equals(objectClazz.getClassName())) {
       return false;
     }
@@ -283,12 +307,20 @@ public class ClassDiagrammer {
     // Reset all variables to avoid conflicts in case of multiple run
     toBeExcludedPackages = null;
     toBeExcludedClasses = null;
+    configurationFileName = "";
     usesWritten = new HashSet<>();
     classLoader = null;
   }
 
   public void generateDiagram(final String path, final String configurationFile) {
     cleanLocalVars();
+
+    configurationFileName = configurationFile;
+    boolean initiated = initToBeExcluded(configurationFileName);
+    if (!initiated) {
+      System.err.println("Exclusion config not loaded");
+      return;
+    }
 
     ArrayList<String> files = new ArrayList<>();
 

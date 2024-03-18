@@ -21,6 +21,12 @@ public class Main {
 
     private static Options options;
 
+    public static void debug(String message) {
+        if (debug) {
+            System.err.println(message);
+        }
+    }
+
     public static boolean processCommandLine(String[] args) {
         CommandLine commandLine;
 
@@ -68,21 +74,15 @@ public class Main {
 
             if (commandLine.hasOption(optionClassesPackagePath.getOpt())) {
                 classesPackagePath = commandLine.getOptionValue(optionClassesPackagePath.getOpt());
-                if (debug) {
-                    System.err.println(optionClassesPackagePath.getDescription() + " set to [" + classesPackagePath + "]");
-                }
+                debug(optionClassesPackagePath.getDescription() + " set to [" + classesPackagePath + "]");
             }
             if (commandLine.hasOption(optionOutputFile.getOpt())) {
                 outputFile = commandLine.getOptionValue(optionOutputFile.getOpt());
-                if (debug) {
-                    System.err.println(optionOutputFile.getDescription() + " set to [" + outputFile + "]");
-                }
+                debug(optionOutputFile.getDescription() + " set to [" + outputFile + "]");
             }
             if (commandLine.hasOption(optionConfigFile.getOpt())) {
                 configurationFile = commandLine.getOptionValue(optionConfigFile.getOpt());
-                if (debug) {
-                    System.err.println(optionConfigFile.getDescription() + " set to [" + configurationFile + "]");
-                }
+                debug(optionConfigFile.getDescription() + " set to [" + configurationFile + "]");
             }
 
         } catch (ParseException e) {
@@ -110,22 +110,16 @@ public class Main {
     public static void main(String[] args) {
         boolean correctCLI = processCommandLine(args);
 
-        if (debug) {
-            System.err.println("CommandLine parsed [" + correctCLI + "]");
-        }
+        debug("CommandLine parsed [" + correctCLI + "]");
 
         if (!correctCLI) {
             printHelp();
             return;
         }
 
-        printHelp();
-
-        if (debug) {
-            System.err.println("Path              [" + classesPackagePath + "]");
-            System.err.println("OutputFile        [" + outputFile + "]");
-            System.err.println("ConfigurationFile [" + configurationFile + "]");
-        }
+        debug(    "Path              [" + classesPackagePath + "]\n"
+                + "OutputFile        [" + outputFile + "]\n"
+                + "ConfigurationFile [" + configurationFile + "]");
 
         if ((null == classesPackagePath) || (classesPackagePath.isBlank())) {
             System.err.println("Path not defined  [" + classesPackagePath + "]");
