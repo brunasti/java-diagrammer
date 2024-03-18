@@ -28,12 +28,48 @@ import org.apache.bcel.util.ClassLoaderRepository;
  */
 public class ClassDiagrammer {
 
+  // Reference to a PrintStream to bre used for the diagram
+  // By default is the Standard.out, but it can be redirected
+  // to a file.
   private final PrintStream output;
+
+  // Lists of the packages and classes to be excluded in the diagram
+  private static HashSet<String> toBeExcludedPackages = null;
+  private static HashSet<String> toBeExcludedClasses = null;
+
+  // List of already written Uses, to avoid multiple connections
+  private HashSet<String> usesWritten = new HashSet<>();
+
+
+  private ClassLoader classLoader = null;
+
+  public ClassDiagrammer() {
+    this.output = System.out;
+  }
 
   public ClassDiagrammer(PrintStream output) {
     this.output = output;
   }
 
+  private void setClassLoader(final String path) {
+    try {
+      File file = new File(path);
+
+      // Convert File to a URL
+      URL url = file.toURI().toURL();
+      URL[] urls = new URL[]{url};
+
+      // Create a new class loader with the directory
+      classLoader = new URLClassLoader(urls);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+
+
+  // ----------------------------------------------------
+  // Functions to iterate through packages subdirectories
   private Set<String> iterateSubDirectories(final String path,
                                             final String localPackage) {
     Set<String> files = new HashSet<>();
@@ -63,26 +99,7 @@ public class ClassDiagrammer {
     }
   }
 
-  private ClassLoader classLoader = null;
 
-  private void setClassLoader(final String path) {
-    try {
-      File file = new File(path);
-
-      // Convert File to a URL
-      URL url = file.toURI().toURL();
-      URL[] urls = new URL[]{url};
-
-      // Create a new class loader with the directory
-      classLoader = new URLClassLoader(urls);
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-  }
-
-
-  private static HashSet<String> toBeExcludedPackages = null;
-  private static HashSet<String> toBeExcludedClasses = null;
 
   private void initToBeExcluded() {
     // TODO Load from config file
@@ -131,7 +148,8 @@ public class ClassDiagrammer {
     return !excludedPackage.get();
   }
 
-  private final HashSet<String> usesWritten = new HashSet<>();
+  // ---------------------------------
+  // Functions to generate the diagram
 
   private void writeUses(final JavaClass objectClazz, final String type) {
     if (isTypeToBeConnected(objectClazz, type)) {
@@ -141,10 +159,7 @@ public class ClassDiagrammer {
         usesWritten.add(use);
       }
     }
-
   }
-
-
 
   private void generateUses(final ArrayList<JavaClass> classes) {
     output.println("' USES =======");
@@ -247,23 +262,33 @@ public class ClassDiagrammer {
 
   private void generateFooter() {
     output.println();
-    output.println();
     output.println("@enduml");
   }
 
-  private void generateHeader(final String path) {
+  private void generateHeader(final String path, final String configurationFile) {
     Date now = new Date();
     output.println("@startuml");
     output.println("'https://plantuml.com/class-diagram");
     output.println();
     output.println("' GENERATE CLASS DIAGRAM ===========");
-    output.println("' Generator    : " + this.getClass().getName());
-    output.println("' Path         : " + path);
-    output.println("' Generated at : " + now);
+    output.println("' Generator     : " + this.getClass().getName());
+    output.println("' Path          : [" + path + "]");
+    output.println("' Configuration : [" + configurationFile + "]");
+    output.println("' Generated at  : " + now);
     output.println();
   }
 
-  public void generateDiagram(final String path) {
+  private void cleanLocalVars() {
+    // Reset all variables to avoid conflicts in case of multiple run
+    toBeExcludedPackages = null;
+    toBeExcludedClasses = null;
+    usesWritten = new HashSet<>();
+    classLoader = null;
+  }
+
+  public void generateDiagram(final String path, final String configurationFile) {
+    cleanLocalVars();
+
     ArrayList<String> files = new ArrayList<>();
 
     try {
@@ -290,7 +315,7 @@ public class ClassDiagrammer {
         }
       });
 
-      generateHeader(path);
+      generateHeader(path, configurationFile);
       generateClasses(classes);
       generateInheritances(classes);
       generateImplements(classes);

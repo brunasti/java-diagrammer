@@ -17,6 +17,7 @@ public class Main {
 
     static String classesPackagePath = "";
     static String outputFile = "";
+    static String configurationFile = "";
 
     static boolean debug = false;
     static boolean dump = false;
@@ -33,16 +34,19 @@ public class Main {
         Option optionHelp = new Option("h", "help", false, "Help");
         Option optionDebug = new Option("d", "debug", false, "Execute in debug mode");
         Option optionOutputFile = new Option("o", "output", true, "Output File");
+        Option optionConfigFile = new Option("c", "config", true, "Configuration File");
         Option optionClassesPackagePath = new Option("p", "path", true, "Classes Package path");
 
         options.addOption(optionHelp);
         options.addOption(optionDebug);
         options.addOption(optionOutputFile);
+        options.addOption(optionConfigFile);
         options.addOption(optionClassesPackagePath);
 
         helper = new HelpFormatter();
 
         try {
+            // TODO : Handle BasicParser deprecation
             CommandLineParser parser = new BasicParser();
 
             cmd = parser.parse(options, args);
@@ -78,6 +82,12 @@ public class Main {
                     System.err.println(optionOutputFile.getDescription() + " set to [" + outputFile + "]");
                 }
             }
+            if (cmd.hasOption(optionConfigFile.getOpt())) {
+                configurationFile = cmd.getOptionValue(optionConfigFile.getOpt());
+                if (debug) {
+                    System.err.println(optionConfigFile.getDescription() + " set to [" + configurationFile + "]");
+                }
+            }
 
         } catch (ParseException e) {
             System.err.println(e.getMessage());
@@ -90,6 +100,8 @@ public class Main {
     private static void printHelp() {
         String className = Main.class.getCanonicalName();
         PrintWriter outError = new PrintWriter(System.err);
+
+        // TODO : Handle BasicParser deprecation
         helper.printHelp(outError, helper.defaultWidth, "java " + className + " <query> <options>", "", options, helper.defaultLeftPad, helper.defaultDescPad, "");
         outError.close();
     }
@@ -136,7 +148,7 @@ public class Main {
         }
 
         classDiagrammer = new ClassDiagrammer(output);
-        classDiagrammer.generateDiagram(classesPackagePath);
+        classDiagrammer.generateDiagram(classesPackagePath, configurationFile);
 
         if (null != file) {
             try {
