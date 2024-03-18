@@ -11,20 +11,19 @@ public class Main {
 
     static ClassDiagrammer classDiagrammer;
 
-    static CommandLine cmd;
-    static HelpFormatter helper;
-    static Options options;
+    static boolean debug = false;
+    static boolean dump = false;
+    static boolean trace = false;
 
     static String classesPackagePath = "";
     static String outputFile = "";
     static String configurationFile = "";
 
-    static boolean debug = false;
-    static boolean dump = false;
-    static boolean trace = false;
-
+    private static Options options;
 
     public static boolean processCommandLine(String[] args) {
+        CommandLine commandLine;
+
         // Reset all the flags, to avoid multiple sequence runs interfering
         debug = false;
         dump = false;
@@ -43,47 +42,45 @@ public class Main {
         options.addOption(optionConfigFile);
         options.addOption(optionClassesPackagePath);
 
-        helper = new HelpFormatter();
-
         try {
             // TODO : Handle BasicParser deprecation
             CommandLineParser parser = new BasicParser();
 
-            cmd = parser.parse(options, args);
+            commandLine = parser.parse(options, args);
 
-            if (cmd.hasOption("d")) {
+            if (commandLine.hasOption("d")) {
                 debug = true;
             }
             if (debug) {
                 Utils.dump("ARGS", args, System.err);
-                Utils.dump("CMD", cmd.getArgs(), System.err);
+                Utils.dump("CMD", commandLine.getArgs(), System.err);
             }
-            if (cmd.hasOption("h")) {
-                printHelp();
+            if (commandLine.hasOption("h")) {
+                printHelp(options);
                 return false;
             }
 
-            if (cmd.getArgs().length > 0) {
-                classesPackagePath = cmd.getArgs()[0];
-                if (cmd.getArgs().length > 1) {
-                    outputFile = cmd.getArgs()[1];
+            if (commandLine.getArgs().length > 0) {
+                classesPackagePath = commandLine.getArgs()[0];
+                if (commandLine.getArgs().length > 1) {
+                    outputFile = commandLine.getArgs()[1];
                 }
             }
 
-            if (cmd.hasOption(optionClassesPackagePath.getOpt())) {
-                classesPackagePath = cmd.getOptionValue(optionClassesPackagePath.getOpt());
+            if (commandLine.hasOption(optionClassesPackagePath.getOpt())) {
+                classesPackagePath = commandLine.getOptionValue(optionClassesPackagePath.getOpt());
                 if (debug) {
                     System.err.println(optionClassesPackagePath.getDescription() + " set to [" + classesPackagePath + "]");
                 }
             }
-            if (cmd.hasOption(optionOutputFile.getOpt())) {
-                outputFile = cmd.getOptionValue(optionOutputFile.getOpt());
+            if (commandLine.hasOption(optionOutputFile.getOpt())) {
+                outputFile = commandLine.getOptionValue(optionOutputFile.getOpt());
                 if (debug) {
                     System.err.println(optionOutputFile.getDescription() + " set to [" + outputFile + "]");
                 }
             }
-            if (cmd.hasOption(optionConfigFile.getOpt())) {
-                configurationFile = cmd.getOptionValue(optionConfigFile.getOpt());
+            if (commandLine.hasOption(optionConfigFile.getOpt())) {
+                configurationFile = commandLine.getOptionValue(optionConfigFile.getOpt());
                 if (debug) {
                     System.err.println(optionConfigFile.getDescription() + " set to [" + configurationFile + "]");
                 }
@@ -91,18 +88,30 @@ public class Main {
 
         } catch (ParseException e) {
             System.err.println(e.getMessage());
-            printHelp();
+            printHelp(options);
             return false;
         }
         return true;
     }
 
     private static void printHelp() {
+        printHelp(options);
+    }
+
+    private static void printHelp(Options options) {
+        HelpFormatter helper = new HelpFormatter();
+
         String className = Main.class.getCanonicalName();
         PrintWriter outError = new PrintWriter(System.err);
 
-        // TODO : Handle BasicParser deprecation
-        helper.printHelp(outError, helper.defaultWidth, "java " + className + " <query> <options>", "", options, helper.defaultLeftPad, helper.defaultDescPad, "");
+        // TODO : Handle deprecations
+        helper.printHelp(outError, helper.defaultWidth,
+                "java " + className + " <query> <options>",
+                "",
+                options,
+                helper.defaultLeftPad,
+                helper.defaultDescPad,
+                "");
         outError.close();
     }
 
@@ -119,12 +128,13 @@ public class Main {
         }
 
         if (debug) {
-            System.err.println("Path [" + classesPackagePath + "]");
-            System.err.println("OutputFile [" + outputFile + "]");
+            System.err.println("Path              [" + classesPackagePath + "]");
+            System.err.println("OutputFile        [" + outputFile + "]");
+            System.err.println("ConfigurationFile [" + configurationFile + "]");
         }
 
         if ((null == classesPackagePath) || (classesPackagePath.isBlank())) {
-            System.err.println("Path not defined [" + classesPackagePath + "]");
+            System.err.println("Path not defined  [" + classesPackagePath + "]");
             printHelp();
             return;
         }
