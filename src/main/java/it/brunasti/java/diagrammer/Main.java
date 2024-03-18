@@ -37,12 +37,14 @@ public class Main {
 
         options = new Options();
         Option optionHelp = new Option("h", "help", false, "Help");
+        Option optionShortUsage = new Option("?", false, "Quick Reference");
         Option optionDebug = new Option("d", "debug", false, "Execute in debug mode");
         Option optionOutputFile = new Option("o", "output", true, "Output File");
         Option optionConfigFile = new Option("c", "config", true, "Configuration File");
         Option optionClassesPackagePath = new Option("p", "path", true, "Classes Package path");
 
         options.addOption(optionHelp);
+        options.addOption(optionShortUsage);
         options.addOption(optionDebug);
         options.addOption(optionOutputFile);
         options.addOption(optionConfigFile);
@@ -62,6 +64,11 @@ public class Main {
             }
             if (commandLine.hasOption("h")) {
                 printHelp(options);
+                return false;
+            }
+
+            if (commandLine.hasOption("?")) {
+                printUsage(options);
                 return false;
             }
 
@@ -103,7 +110,26 @@ public class Main {
         String className = Main.class.getCanonicalName();
         PrintWriter outError = new PrintWriter(System.err);
 
+        helper.printHelp(outError,
+                100,
+                "java " + className,
+                "",
+                options,
+                4,
+                4,
+                "");
+
+        outError.close();
+    }
+
+    private static void printUsage(Options options) {
+        HelpFormatter helper = new HelpFormatter();
+
+        String className = Main.class.getCanonicalName();
+        PrintWriter outError = new PrintWriter(System.err);
+
         helper.printUsage(outError, 100, "java " + className, options);
+
         outError.close();
     }
 

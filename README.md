@@ -7,14 +7,21 @@ By Paolo Brunasti
 
 Usage via CLI
 
-```
-usage: java it.brunasti.java.diagrammer.Main <query> <options>
- -d,--debug     Execute in debug mode
- -h,--help      Help
- -o,--output    Output File
- -p,--path      Classes Package path
-```
+> java it.brunasti.java.diagrammer.Main -?
+> 
+> usage: java it.brunasti.java.diagrammer.Main [-?] [-c \<arg\>] [-d] [-h] [-o \<arg\>] [-p \<arg\>]
 
+```
+java it.brunasti.java.diagrammer.Main -h
+
+usage: java it.brunasti.java.diagrammer.Main
+    -?                   Quick Reference
+    -c,--config <arg>    Configuration File
+    -d,--debug           Execute in debug mode
+    -h,--help            Help
+    -o,--output <arg>    Output File
+    -p,--path <arg>      Classes Package path
+```
 
 ---
 
