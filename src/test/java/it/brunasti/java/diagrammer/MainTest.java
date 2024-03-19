@@ -8,7 +8,6 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
 public class MainTest implements TestConstants {
 
-
   // Test Main methods ---------------------------
   @Test
   @DisplayName("Call Main public methods")
@@ -45,19 +44,26 @@ public class MainTest implements TestConstants {
     args[1] = outputFileName;
     assertDoesNotThrow(() -> Main.main(args));
 
-    String[] fullArgs = new String[11];
+    String[] fullArgs = new String[9];
     fullArgs[0] = classesDirectory;
     fullArgs[1] = outputFileName;
     fullArgs[2] = "-d";
-    fullArgs[3] = "-d";
-    fullArgs[4] = "-d";
-    fullArgs[5] = "-c";
-    fullArgs[6] = configurationFileName;
-    fullArgs[7] = "-o";
-    fullArgs[8] = outputFileName;
-    fullArgs[9] = "-p";
-    fullArgs[10] = classesDirectory;
+    fullArgs[3] = "-c";
+    fullArgs[4] = configurationFileName;
+    fullArgs[5] = "-o";
+    fullArgs[6] = outputFileName;
+    fullArgs[7] = "-p";
+    fullArgs[8] = classesDirectory;
     assertDoesNotThrow(() -> Main.main(fullArgs));
+
+    String[] moreArgs = new String[6];
+    moreArgs[0] = "-c";
+    moreArgs[1] = configurationFileName;
+    moreArgs[2] = "-o";
+    moreArgs[3] = outputFileName;
+    moreArgs[4] = "-p";
+    moreArgs[5] = classesDirectory;
+    assertDoesNotThrow(() -> Main.main(moreArgs));
   }
 
   @Test
@@ -72,4 +78,32 @@ public class MainTest implements TestConstants {
     assertDoesNotThrow(() -> Main.main(argsHelp));
   }
 
+  @Test
+  @DisplayName("Call Main main with errors")
+  void testMainMethod_Errors() {
+    String[] args = new String[1];
+    args[0] = "-x";
+    assertDoesNotThrow(() -> Main.main(args));
+
+    String[] argsHelp = new String[1];
+    argsHelp[0] = "-z";
+    assertDoesNotThrow(() -> Main.main(argsHelp));
+  }
+
+  @Test
+  @DisplayName("Call Main main to StdOut")
+  void testMainMethod_StdOut() {
+    String[] args = new String[1];
+    args[0] = classesDirectory;
+    assertDoesNotThrow(() -> Main.main(args));
+  }
+
+  @Test
+  @DisplayName("Call Main main on test classes")
+  void testMainMethod_Test() {
+    String[] args = new String[2];
+    args[0] = testClassesDirectory;
+    args[1] = testOutputFileName;
+    assertDoesNotThrow(() -> Main.main(args));
+  }
 }

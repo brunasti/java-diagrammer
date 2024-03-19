@@ -7,10 +7,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ClassDiagrammerTest implements TestConstants {
 
-
   // Test generateDiagram function ---------------------------
   @Test
-  @DisplayName("Generate diagram from dir without classes")
+  @DisplayName("Generate Diagram from dir without classes")
   void testGenerateDiagram_Empty() {
     ClassDiagrammer classDiagrammer = new ClassDiagrammer();
     assertDoesNotThrow(() -> classDiagrammer.generateDiagram(javaSrcDirectory,configurationFileName));

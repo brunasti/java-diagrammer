@@ -9,6 +9,9 @@ import java.io.PrintWriter;
 // This Main uses https://commons.apache.org/proper/commons-cli/usage.html
 public class Main {
 
+    static CommandLine commandLine;
+    static ClassDiagrammer classDiagrammer;
+
     private static boolean debug = false;
 
     private static String classesPackagePath = "";
@@ -16,6 +19,16 @@ public class Main {
     private static String configurationFile = "";
 
     private static Options options;
+
+    private static void reset() {
+        debug = false;
+
+        classesPackagePath = "";
+        outputFile = "";
+        configurationFile = "";
+
+        options = null;
+    }
 
     public static void setDebug(boolean value) {
         debug = value;
@@ -28,7 +41,6 @@ public class Main {
     }
 
     private static boolean processCommandLine(String[] args) {
-        CommandLine commandLine;
 
         // Reset all the flags, to avoid multiple sequence runs interfering
         debug = false;
@@ -142,6 +154,8 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        reset();
+
         boolean correctCLI = processCommandLine(args);
 
         debug("CommandLine parsed [" + correctCLI + "]");
@@ -179,7 +193,7 @@ public class Main {
             output = System.out;
         }
 
-        ClassDiagrammer classDiagrammer = new ClassDiagrammer(output);
+        classDiagrammer = new ClassDiagrammer(output);
         classDiagrammer.generateDiagram(classesPackagePath, configurationFile);
 
         if (null != file) {

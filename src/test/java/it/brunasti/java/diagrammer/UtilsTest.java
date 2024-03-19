@@ -99,7 +99,7 @@ public class UtilsTest implements TestConstants {
     try {
       Set<String> list = Utils.listFilesUsingFilesList(tempDirectory);
       assertNotNull(list);
-      assertEquals(4,list.size());
+      assertEquals(5,list.size());
     } catch (IOException ioex) {
       ioex.printStackTrace();
     }
@@ -170,7 +170,7 @@ public class UtilsTest implements TestConstants {
   }
 
   @Test
-  @DisplayName("Dump array with null")
+  @DisplayName("Dump Array with null")
   void testDump_WithNull() {
     Object[] objects = new Object[3];
     objects[1] = "1";
