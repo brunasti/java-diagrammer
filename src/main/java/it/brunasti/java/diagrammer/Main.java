@@ -9,17 +9,17 @@ import java.io.PrintWriter;
 // This Main uses https://commons.apache.org/proper/commons-cli/usage.html
 public class Main {
 
-    static ClassDiagrammer classDiagrammer;
+    private static boolean debug = false;
 
-    static boolean debug = false;
-    static boolean dump = false;
-    static boolean trace = false;
-
-    static String classesPackagePath = "";
-    static String outputFile = "";
-    static String configurationFile = "";
+    private static String classesPackagePath = "";
+    private static String outputFile = "";
+    private static String configurationFile = "";
 
     private static Options options;
+
+    public static void setDebug(boolean value) {
+        debug = value;
+    }
 
     public static void debug(String message) {
         if (debug) {
@@ -27,13 +27,11 @@ public class Main {
         }
     }
 
-    public static boolean processCommandLine(String[] args) {
+    private static boolean processCommandLine(String[] args) {
         CommandLine commandLine;
 
         // Reset all the flags, to avoid multiple sequence runs interfering
         debug = false;
-        dump = false;
-        trace = false;
 
         options = new Options();
         Option optionHelp = new Option("h", "help", false, "Help");
@@ -92,7 +90,7 @@ public class Main {
                 debug(optionConfigFile.getDescription() + " set to [" + configurationFile + "]");
             }
 
-        } catch (ParseException e) {
+        } catch (ParseException | NullPointerException e) {
             System.err.println(e.getMessage());
             printHelp(options);
             return false;
@@ -100,11 +98,16 @@ public class Main {
         return true;
     }
 
-    private static void printHelp() {
+    static void printHelp() {
         printHelp(options);
     }
 
-    private static void printHelp(Options options) {
+    static void printHelp(Options options) {
+        if (null == options) {
+            System.err.println("ERROR: No options provided to printHelp");
+            return;
+        }
+
         HelpFormatter helper = new HelpFormatter();
 
         String className = Main.class.getCanonicalName();
@@ -122,7 +125,12 @@ public class Main {
         outError.close();
     }
 
-    private static void printUsage(Options options) {
+    static void printUsage(Options options) {
+        if (null == options) {
+            System.err.println("ERROR: No options provided to printUsage");
+            return;
+        }
+
         HelpFormatter helper = new HelpFormatter();
 
         String className = Main.class.getCanonicalName();
@@ -171,7 +179,7 @@ public class Main {
             output = System.out;
         }
 
-        classDiagrammer = new ClassDiagrammer(output);
+        ClassDiagrammer classDiagrammer = new ClassDiagrammer(output);
         classDiagrammer.generateDiagram(classesPackagePath, configurationFile);
 
         if (null != file) {

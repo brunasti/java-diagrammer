@@ -10,6 +10,7 @@ public interface TestConstants {
   String classesDirectory = "./target/classes";
   String configurationFileName = "./temp/config.json";
   String wrongFileName = "./temp/output.puml";
+  String outputFileName = wrongFileName;
   String wrongJsonFileName = "./temp/wrong.json";
 
 

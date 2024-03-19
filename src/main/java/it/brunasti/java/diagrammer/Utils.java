@@ -39,11 +39,19 @@ public final class Utils {
   }
 
   public static void dump(final String t, final ArrayList<Object> arr) {
-    dump(t, arr.toArray());
+    if (null == arr) {
+      dump(t, (Object[]) null);
+    } else {
+      dump(t, arr.toArray());
+    }
   }
 
-  public static void dump(final String t, final Set<Object> arr) {
-    dump(t, arr.toArray());
+  public static void dump(final String t, final Set<Object> set) {
+    if (null == set) {
+      dump(t, (Object[]) null);
+    } else {
+      dump(t, set.toArray());
+    }
   }
 
   // Directories functions -----------------------------------------

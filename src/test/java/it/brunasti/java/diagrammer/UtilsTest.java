@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.nio.file.NoSuchFileException;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -57,7 +59,7 @@ public class UtilsTest implements TestConstants {
   // Test listDirectories function ---------------------------
   @Test
   @DisplayName("List Temp directory")
-  void testlistDirectories_Temp() {
+  void testListDirectories_Temp() {
     assertDoesNotThrow(() -> Utils.listDirectories(tempDirectory));
     try {
       Set<String> list = Utils.listDirectories(tempDirectory);
@@ -70,7 +72,7 @@ public class UtilsTest implements TestConstants {
 
   @Test
   @DisplayName("List Src directory")
-  void testlistDirectories_Src() {
+  void testListDirectories_Src() {
     assertDoesNotThrow(() -> Utils.listDirectories(srcDirectory));
     try {
       Set<String> list = Utils.listDirectories(srcDirectory);
@@ -83,7 +85,7 @@ public class UtilsTest implements TestConstants {
 
   @Test
   @DisplayName("List non existing directory")
-  void testlistDirectories_NonExisting() {
+  void testListDirectories_NonExisting() {
     Throwable exception = assertThrows(NoSuchFileException.class, () -> Utils.listDirectories(nonExistingDirectory));
     assertEquals("./errorDir", exception.getMessage());
   }
@@ -123,5 +125,64 @@ public class UtilsTest implements TestConstants {
     assertEquals("./errorDir", exception.getMessage());
   }
 
+
+  // Test dump function ---------------------------
+  @Test
+  @DisplayName("Dump null array")
+  void testDump_Void() {
+    Object[] objects = null;
+    assertDoesNotThrow(() -> Utils.dump("", objects));
+
+    ArrayList<Object> arrayList = null;
+    assertDoesNotThrow(() -> Utils.dump("", arrayList));
+
+    Set<Object> set = null;
+    assertDoesNotThrow(() -> Utils.dump("", set));
+  }
+
+  @Test
+  @DisplayName("Dump Empty array")
+  void testDump_Empty() {
+    Object[] objects = new Object[0];
+    assertDoesNotThrow(() -> Utils.dump("", objects));
+
+    ArrayList<Object> arrayList = new ArrayList<>();
+    assertDoesNotThrow(() -> Utils.dump("", arrayList));
+
+    Set<Object> set = new HashSet<>();
+    assertDoesNotThrow(() -> Utils.dump("", set));
+  }
+
+  @Test
+  @DisplayName("Dump Simple array")
+  void testDump_Simple() {
+    Object[] objects = new Object[1];
+    objects[0] = "0";
+    assertDoesNotThrow(() -> Utils.dump("", objects));
+
+    ArrayList<Object> arrayList = new ArrayList<>();
+    arrayList.add(objects);
+    assertDoesNotThrow(() -> Utils.dump("", arrayList));
+
+    Set<Object> set = new HashSet<>();
+    set.add(arrayList);
+    assertDoesNotThrow(() -> Utils.dump("", set));
+  }
+
+  @Test
+  @DisplayName("Dump array with null")
+  void testDump_WithNull() {
+    Object[] objects = new Object[3];
+    objects[1] = "1";
+    assertDoesNotThrow(() -> Utils.dump("", objects));
+
+    ArrayList<Object> arrayList = new ArrayList<>();
+    arrayList.add(objects);
+    assertDoesNotThrow(() -> Utils.dump("", arrayList));
+
+    Set<Object> set = new HashSet<>();
+    set.add(arrayList);
+    assertDoesNotThrow(() -> Utils.dump("", set));
+  }
 
 }
