@@ -1,0 +1,34 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+' GENERATE CLASS DIAGRAM ===========
+' Generator     : it.brunasti.java.diagrammer.ClassDiagrammer
+' Path          : [./target/test-classes]
+' Configuration : []
+' Generated at  : Tue Mar 19 22:07:43 CET 2024
+
+
+
+' CLASSES =======
+class it.brunasti.java.diagrammer.ClassDiagrammerTest
+class it.brunasti.java.diagrammer.UtilsTest
+interface it.brunasti.java.diagrammer.TestConstants
+class it.brunasti.java.diagrammer.MainTest
+
+' INHERITANCES =======
+
+' IMPLEMENT INTERFACE =======
+it.brunasti.java.diagrammer.ClassDiagrammerTest ..|> it.brunasti.java.diagrammer.TestConstants
+it.brunasti.java.diagrammer.UtilsTest ..|> it.brunasti.java.diagrammer.TestConstants
+it.brunasti.java.diagrammer.MainTest ..|> it.brunasti.java.diagrammer.TestConstants
+
+' FIELDS =======
+
+' USES =======
+it.brunasti.java.diagrammer.ClassDiagrammerTest ..> it.brunasti.java.diagrammer.ClassDiagrammer
+it.brunasti.java.diagrammer.UtilsTest ..> Ljava.lang.Object
+it.brunasti.java.diagrammer.MainTest ..> Ljava.lang.String
+it.brunasti.java.diagrammer.MainTest ..> org.apache.commons.cli.Options
+
+
+@enduml
