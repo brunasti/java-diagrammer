@@ -5,6 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class MainTest implements TestConstants {
 
@@ -101,9 +102,10 @@ public class MainTest implements TestConstants {
   @Test
   @DisplayName("Call Main main on test classes")
   void testMainMethod_Test() {
-    String[] args = new String[2];
+    String[] args = new String[3];
     args[0] = testClassesDirectory;
     args[1] = testOutputFileName;
+    args[2] = "-d";
     assertDoesNotThrow(() -> Main.main(args));
   }
 
@@ -115,4 +117,18 @@ public class MainTest implements TestConstants {
     args[1] = nonExistingDirectoryAndFile;
     assertDoesNotThrow(() -> Main.main(args));
   }
+
+  // Test Constructor ---------------------------
+  @Test
+  @DisplayName("Constructor")
+  void testConstructor() {
+    Main main = getMain();
+    assertNotNull(main);
+  }
+
+  Main getMain() {
+    return new Main();
+  }
+
+
 }

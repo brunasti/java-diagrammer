@@ -185,4 +185,17 @@ public class UtilsTest implements TestConstants {
     assertDoesNotThrow(() -> Utils.dump("", set));
   }
 
+
+  // Test Constructor ---------------------------
+  @Test
+  @DisplayName("Constructor")
+  void testConstructor() {
+    Utils utils = getUtils();
+    assertNotNull(utils);
+  }
+
+  Utils getUtils() {
+    return new Utils();
+  }
+
 }

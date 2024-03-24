@@ -206,6 +206,7 @@ public class ClassDiagrammer {
         try {
           Method[] methods = objectClazz.getMethods();
           for (Method method : methods) {
+            Main.debug("generateUses " + method.getName() + " : " + method.getSignature());
             String type = method.getReturnType().toString();
             writeUses(objectClazz, type);
 

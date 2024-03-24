@@ -16,7 +16,7 @@ import org.json.simple.parser.JSONParser;
 
 public final class Utils {
 
-  private Utils() {
+  protected Utils() {
   }
 
   public static void dump(final String t, final Object[] arr) {
@@ -71,7 +71,7 @@ public final class Utils {
           throws IOException {
     try (Stream<Path> stream = Files.list(Paths.get(dir))) {
       return stream
-              .filter(file -> Files.isDirectory(file))
+              .filter(Files::isDirectory)
               .map(Path::getFileName)
               .map(Path::toString)
               .collect(Collectors.toSet());

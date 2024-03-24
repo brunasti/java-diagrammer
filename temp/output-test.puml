@@ -5,17 +5,24 @@
 ' Generator     : it.brunasti.java.diagrammer.ClassDiagrammer
 ' Path          : [./target/test-classes]
 ' Configuration : []
-' Generated at  : Sun Mar 24 16:07:10 CET 2024
+' Generated at  : Sun Mar 24 16:30:45 CET 2024
 
 
 
 ' CLASSES =======
 class it.brunasti.java.diagrammer.ClassDiagrammerTest
 class it.brunasti.java.diagrammer.UtilsTest
+class it.brunasti.java.diagrammer.TestBaseClass
+enum it.brunasti.java.diagrammer.TestEnumClass
 interface it.brunasti.java.diagrammer.TestConstants
 class it.brunasti.java.diagrammer.MainTest
+class it.brunasti.java.diagrammer.TestExtendedClass
+abstract it.brunasti.java.diagrammer.TestAbstractClass
 
 ' INHERITANCES =======
+it.brunasti.java.diagrammer.TestBaseClass --|> it.brunasti.java.diagrammer.TestAbstractClass
+it.brunasti.java.diagrammer.TestEnumClass --|> java.lang.Enum
+it.brunasti.java.diagrammer.TestExtendedClass --|> it.brunasti.java.diagrammer.TestBaseClass
 
 ' IMPLEMENT INTERFACE =======
 it.brunasti.java.diagrammer.ClassDiagrammerTest ..|> it.brunasti.java.diagrammer.TestConstants
@@ -26,7 +33,9 @@ it.brunasti.java.diagrammer.MainTest ..|> it.brunasti.java.diagrammer.TestConsta
 
 ' USES =======
 it.brunasti.java.diagrammer.ClassDiagrammerTest ..> it.brunasti.java.diagrammer.ClassDiagrammer
+it.brunasti.java.diagrammer.UtilsTest ..> it.brunasti.java.diagrammer.Utils
 it.brunasti.java.diagrammer.UtilsTest ..> Ljava.lang.Object
+it.brunasti.java.diagrammer.MainTest ..> it.brunasti.java.diagrammer.Main
 it.brunasti.java.diagrammer.MainTest ..> Ljava.lang.String
 it.brunasti.java.diagrammer.MainTest ..> org.apache.commons.cli.Options
 
