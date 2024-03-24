@@ -29,4 +29,11 @@ public class ClassDiagrammerTest implements TestConstants {
     assertDoesNotThrow(() -> classDiagrammer.generateDiagram(nonExistingDirectory,configurationFileName));
   }
 
+  @Test
+  @DisplayName("Config file non existing")
+  void testGenerateDiagram_NoConfig() {
+    ClassDiagrammer classDiagrammer = new ClassDiagrammer();
+    assertDoesNotThrow(() -> classDiagrammer.generateDiagram(classesDirectory,nonExistingJsonFileName));
+  }
+
 }

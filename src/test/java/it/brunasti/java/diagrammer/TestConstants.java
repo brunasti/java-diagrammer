@@ -5,6 +5,7 @@ public interface TestConstants {
   // Test config ---------------------------
   String tempDirectory = "./temp";
   String nonExistingDirectory = "./errorDir";
+  String nonExistingDirectoryAndFile = "./errorDir/test.txt";
   String srcDirectory = "./src";
   String javaSrcDirectory = "./src/main/java";
   String classesDirectory = "./target/classes";
@@ -14,6 +15,7 @@ public interface TestConstants {
   String testOutputFileName = "./temp/output-test.puml";
   String wrongFileName = outputFileName;
   String wrongJsonFileName = "./temp/wrong.json";
+  String nonExistingJsonFileName = "./temp/nofile.json";
 
 
 }

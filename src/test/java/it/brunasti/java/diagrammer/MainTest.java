@@ -106,4 +106,13 @@ public class MainTest implements TestConstants {
     args[1] = testOutputFileName;
     assertDoesNotThrow(() -> Main.main(args));
   }
+
+  @Test
+  @DisplayName("Call Main main with output for non existing file")
+  void testMainMethod_ErrorOutputFile() {
+    String[] args = new String[2];
+    args[0] = testClassesDirectory;
+    args[1] = nonExistingDirectoryAndFile;
+    assertDoesNotThrow(() -> Main.main(args));
+  }
 }

@@ -28,7 +28,7 @@ import org.json.simple.JSONObject;
 public class ClassDiagrammer {
   // TODO: Manage arrays (LString...)
 
-  // Reference to a PrintStream to bre used for the diagram
+  // Reference to a PrintStream to be used for the diagram
   // By default is the Standard.out, but it can be redirected
   // to a file.
   private final PrintStream output;
@@ -42,9 +42,6 @@ public class ClassDiagrammer {
   // List of already written Uses, to avoid multiple connections
   private HashSet<String> usesWritten = new HashSet<>();
 
-  private ClassLoader classLoader = null;
-
-
   public ClassDiagrammer() {
     this.output = System.out;
   }
@@ -53,18 +50,24 @@ public class ClassDiagrammer {
     this.output = output;
   }
 
-  private void setClassLoader(final String path) {
+  private ClassLoader getClassLoader(final String path) {
     try {
       File file = new File(path);
+
+      if (!file.exists()) {
+        System.err.println("Class loader directory not existing");
+        return null;
+      }
 
       // Convert File to a URL
       URL url = file.toURI().toURL();
       URL[] urls = new URL[]{url};
 
       // Create a new class loader with the directory
-      classLoader = new URLClassLoader(urls);
+      return new URLClassLoader(urls);
     } catch (IOException e) {
       e.printStackTrace();
+      return null;
     }
   }
 
@@ -90,9 +93,9 @@ public class ClassDiagrammer {
 
       Set<String> dirs = Utils.listDirectories(newPath);
 
-      dirs.forEach(dir -> {
-        iterateSubDirectories(path, localPackage + "." + dir, files);
-      });
+      dirs.forEach(dir ->
+        iterateSubDirectories(path, localPackage + "." + dir, files)
+      );
 
       return files;
     } catch (Exception ex) {
@@ -121,9 +124,9 @@ public class ClassDiagrammer {
       JSONObject exclude = (JSONObject) jsonObject.get("exclude");
 
       JSONArray classes = (JSONArray) exclude.get("classes");
-      Iterator iterator = classes.iterator();
+      Iterator<JSONObject> iterator = (Iterator<JSONObject>)classes.iterator();
       while (iterator.hasNext()) {
-        JSONObject object = (JSONObject) iterator.next();
+        JSONObject object = iterator.next();
         Main.debug("  - excludeClass JSONObject [" + object + "]");
         String excludeClass = object.get("class").toString();
         Main.debug("  - excludeClass [" + excludeClass + "]");
@@ -131,9 +134,9 @@ public class ClassDiagrammer {
       }
 
       JSONArray packages = (JSONArray) exclude.get("packages");
-      iterator = packages.iterator();
+      iterator = (Iterator<JSONObject>)packages.iterator();
       while (iterator.hasNext()) {
-        JSONObject object = (JSONObject) iterator.next();
+        JSONObject object = iterator.next();
         Main.debug("  - excludePackage JSONObject [" + object + "]");
         String excludePackage = object.get("package").toString();
         Main.debug("  - excludePackage [" + excludePackage + "]");
@@ -229,9 +232,7 @@ public class ClassDiagrammer {
       // TODO Handle enumeration "fields"
       if (!objectClazz.isEnum()) {
         try {
-          Field[] fields = objectClazz.getFields();
-          for (int i = 0; i < fields.length; i++) {
-            Field field = fields[i];
+          for (Field field : objectClazz.getFields()) {
             if (isTypeToBeConnected(objectClazz, field)) {
               output.println(objectClazz.getClassName()
                       + " --> " + field.getType());
@@ -249,10 +250,9 @@ public class ClassDiagrammer {
     output.println("' IMPLEMENT INTERFACE =======");
     classes.forEach(objectClazz -> {
       try {
-        JavaClass[] interfaces = objectClazz.getInterfaces();
-        for (int i = 0; i < interfaces.length; i++) {
+        for (JavaClass javaClass : objectClazz.getInterfaces()) {
           output.println(objectClazz.getClassName() + " ..|> "
-                  + interfaces[i].getClassName());
+                  + javaClass.getClassName());
         }
       } catch (Exception ex) {
         System.err.println(ex.getMessage());
@@ -319,7 +319,6 @@ public class ClassDiagrammer {
     toBeExcludedClasses = null;
     configurationFileName = "";
     usesWritten = new HashSet<>();
-    classLoader = null;
   }
 
   public void generateDiagram(final String path, final String configurationFile) {
@@ -333,13 +332,17 @@ public class ClassDiagrammer {
     }
 
     ArrayList<String> files = new ArrayList<>();
+    ClassLoader classLoader = getClassLoader(path);
+    if (null == classLoader) {
+      System.err.println("Class loader not created");
+      return;
+    }
 
     try {
-      setClassLoader(path);
       Set<String> dirs = Utils.listDirectories(path);
-      dirs.forEach(dir -> {
-        files.addAll(iterateSubDirectories(path, dir));
-      });
+      dirs.forEach(dir ->
+        files.addAll(iterateSubDirectories(path, dir))
+      );
     } catch (IOException e) {
       e.printStackTrace();
     }
