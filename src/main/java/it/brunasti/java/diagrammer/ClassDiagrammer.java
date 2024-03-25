@@ -271,7 +271,7 @@ public class ClassDiagrammer {
             Main.debug("' <- " + imprt + "(" + importedFile + ")");
             if (isTypeToBeConnected(objectClazz, importedFile)) {
               output.println(objectClazz.getClassName()
-                      + " --o " + importedFile);
+                      + " ..o " + importedFile);
             }
           }
         } catch (Exception ex) {
