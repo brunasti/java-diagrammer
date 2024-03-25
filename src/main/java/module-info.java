@@ -3,4 +3,5 @@ module java.diagrammer {
   requires commons.cli;
 //  requires org.json;
   requires json.simple;
+  requires com.thoughtworks.qdox;
 }

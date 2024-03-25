@@ -5,7 +5,7 @@
 ' Generator     : it.brunasti.java.diagrammer.ClassDiagrammer
 ' Path          : [./target/classes]
 ' Configuration : [./temp/config.json]
-' Generated at  : Mon Mar 25 09:32:58 CET 2024
+' Generated at  : Mon Mar 25 13:13:47 CET 2024
 
 
 
@@ -13,6 +13,7 @@
 class it.brunasti.java.diagrammer.ClassDiagrammer
 class it.brunasti.java.diagrammer.Utils
 class it.brunasti.java.diagrammer.Main
+class it.brunasti.java.diagrammer.ImportsIdentifier
 
 ' INHERITANCES =======
 
@@ -35,11 +36,13 @@ it.brunasti.java.diagrammer.Utils ..> org.json.simple.JSONObject
 it.brunasti.java.diagrammer.Utils ..> java.nio.file.Path
 it.brunasti.java.diagrammer.Main ..> Ljava.lang.String
 it.brunasti.java.diagrammer.Main ..> org.apache.commons.cli.Options
+it.brunasti.java.diagrammer.ImportsIdentifier ..> Ljava.lang.String
 
 ' IMPORTS =======
 ' it.brunasti.java.diagrammer.ClassDiagrammer
 ' it.brunasti.java.diagrammer.Utils
 ' it.brunasti.java.diagrammer.Main
+' it.brunasti.java.diagrammer.ImportsIdentifier
 
 
 @enduml

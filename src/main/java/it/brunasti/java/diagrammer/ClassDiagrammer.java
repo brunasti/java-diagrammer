@@ -25,7 +25,8 @@ import org.json.simple.JSONObject;
  *
  */
 public class ClassDiagrammer {
-  // TODO: Add import connections (for "closed" classes)
+  // TODO: Add import connections (for "closed" classes) as a flag
+  //   with the specification of the source code directory (where the Java files are...)
   // TODO: add flag to avoid or not the self reflection
   // TODO: Manage arrays (LString...)
 
