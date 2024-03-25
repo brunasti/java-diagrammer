@@ -32,6 +32,9 @@ public class Main {
         options = null;
     }
 
+    // TODO : Make the debug an int and check for debug level when printing the message
+    //  with a default value set so that the main messages got printed out if no level
+    //  is set (but the flag is true
     public static void setDebug(boolean value) {
         debug = value;
     }

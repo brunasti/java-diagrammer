@@ -288,8 +288,8 @@ public class ClassDiagrammer {
     classes.forEach(objectClazz -> {
       try {
         for (JavaClass javaClass : objectClazz.getInterfaces()) {
-          output.println(objectClazz.getClassName() + " ..|> "
-                  + javaClass.getClassName());
+          output.println( javaClass.getClassName() + " <|.. "
+                  + objectClazz.getClassName());
         }
       } catch (Exception ex) {
         System.err.println(ex.getMessage());
@@ -304,8 +304,8 @@ public class ClassDiagrammer {
       try {
         if (!"java.lang.Object".equals(
                 objectClazz.getSuperClass().getClassName())) {
-          output.println(objectClazz.getClassName() + " --|> "
-                  + objectClazz.getSuperClass().getClassName());
+          output.println( objectClazz.getSuperClass().getClassName() + " <|-- "
+                  + objectClazz.getClassName());
         }
       } catch (Exception ex) {
         System.err.println(ex.getMessage());
