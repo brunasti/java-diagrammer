@@ -14,6 +14,7 @@ public class Main {
 
     private static boolean debug = false;
 
+    private static String javaPackagePath = "";
     private static String classesPackagePath = "";
     private static String outputFile = "";
     private static String configurationFile = "";
@@ -24,6 +25,7 @@ public class Main {
         debug = false;
 
         classesPackagePath = "";
+        javaPackagePath = "";
         outputFile = "";
         configurationFile = "";
 
@@ -48,10 +50,15 @@ public class Main {
         options = new Options();
         Option optionHelp = new Option("h", "help", false, "Help");
         Option optionShortUsage = new Option("?", false, "Quick Reference");
-        Option optionDebug = new Option("d", "debug", false, "Execute in debug mode");
+        Option optionDebug = new Option("d", "debug", false,
+                "Execute in debug mode");
         Option optionOutputFile = new Option("o", "output", true, "Output File");
-        Option optionConfigFile = new Option("c", "config", true, "Configuration File");
-        Option optionClassesPackagePath = new Option("p", "path", true, "Classes Package path");
+        Option optionConfigFile = new Option("c", "config", true,
+                "Configuration File");
+        Option optionClassesPackagePath = new Option("p", "path", true,
+                "Classes Package path");
+        Option optionIncludeImports = new Option("i", "includeImport", true,
+                "Include imports as define in Java files in path");
 
         options.addOption(optionHelp);
         options.addOption(optionShortUsage);
@@ -59,6 +66,7 @@ public class Main {
         options.addOption(optionOutputFile);
         options.addOption(optionConfigFile);
         options.addOption(optionClassesPackagePath);
+        options.addOption(optionIncludeImports);
 
         try {
             CommandLineParser parser = new DefaultParser();
@@ -92,6 +100,13 @@ public class Main {
             if (commandLine.hasOption(optionClassesPackagePath.getOpt())) {
                 classesPackagePath = commandLine.getOptionValue(optionClassesPackagePath.getOpt());
                 debug(optionClassesPackagePath.getDescription() + " set to [" + classesPackagePath + "]");
+            }
+            if (commandLine.hasOption(optionIncludeImports.getOpt())) {
+                javaPackagePath = commandLine.getOptionValue(optionIncludeImports.getOpt());
+                if (!javaPackagePath.endsWith("/")) {
+                    javaPackagePath = javaPackagePath + "/";
+                }
+                debug(optionIncludeImports.getDescription() + " set to [" + javaPackagePath + "]");
             }
             if (commandLine.hasOption(optionOutputFile.getOpt())) {
                 outputFile = commandLine.getOptionValue(optionOutputFile.getOpt());
@@ -166,6 +181,7 @@ public class Main {
         }
 
         debug(    "Path              [" + classesPackagePath + "]\n"
+                + "Java files Path   [" + javaPackagePath + "]\n"
                 + "OutputFile        [" + outputFile + "]\n"
                 + "ConfigurationFile [" + configurationFile + "]");
 
@@ -194,7 +210,7 @@ public class Main {
         }
 
         classDiagrammer = new ClassDiagrammer(output);
-        classDiagrammer.generateDiagram(classesPackagePath, configurationFile);
+        classDiagrammer.generateDiagram(classesPackagePath, configurationFile, javaPackagePath);
 
         if (null != file) {
             try {

@@ -11,7 +11,6 @@ import java.net.URLClassLoader;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
-import org.apache.bcel.classfile.Constant;
 import org.apache.bcel.classfile.Field;
 import org.apache.bcel.classfile.JavaClass;
 import org.apache.bcel.classfile.Method;
@@ -249,21 +248,39 @@ public class ClassDiagrammer {
     output.println();
   }
 
-  private void generateImports(final ArrayList<JavaClass> classes) {
-    output.println("' IMPORTS =======");
-    classes.forEach(objectClazz -> {
-      if (!objectClazz.isEnum()) {
+  private void generateImports(final ArrayList<JavaClass> classes, String javaFilesPath) {
+    if ((null != javaFilesPath) && (!javaFilesPath.isBlank())) {
+
+      output.println("' IMPORTS =======");
+      output.println("' Java Files Path : " + javaFilesPath);
+      classes.forEach(objectClazz -> {
         output.println("' " + objectClazz.getClassName());
+        String javaClass = javaFilesPath + objectClazz.getClassName().replace(".", "/") + ImportsIdentifier.FILE_TYPE;
+        Set<String> imports = ImportsIdentifier.extractImports(javaClass, javaFilesPath);
         try {
-          for (Constant constant : objectClazz.getConstantPool().getConstantPool()) {
-            output.println("' <- " + constant.getClass().getName());
+          for (String imprt : imports) {
+            String importedFile = imprt;
+            if (importedFile.startsWith("static")) {
+              Main.debug("' replace static in " + importedFile);
+              importedFile = importedFile.replace("static", "");
+            }
+            if (importedFile.endsWith(".*")) {
+              Main.debug("' replace .* in " + importedFile);
+              importedFile = importedFile.replace(".*", "");
+            }
+            Main.debug("' <- " + imprt + "(" + importedFile + ")");
+            if (isTypeToBeConnected(objectClazz, importedFile)) {
+              output.println(objectClazz.getClassName()
+                      + " --o " + importedFile);
+            }
           }
         } catch (Exception ex) {
-          System.err.println(ex.getMessage());
+          System.err.println("generateImports : "+ ex.getMessage());
         }
-      }
-    });
-    output.println();
+        output.println();
+      });
+      output.println();
+    }
   }
 
   private void generateImplements(final ArrayList<JavaClass> classes) {
@@ -320,16 +337,19 @@ public class ClassDiagrammer {
     output.println("@enduml");
   }
 
-  private void generateHeader(final String path, final String configurationFile) {
+  private void generateHeader(final String path, final String configurationFile, String javaFilesPath) {
     Date now = new Date();
     output.println("@startuml");
     output.println("'https://plantuml.com/class-diagram");
     output.println();
     output.println("' GENERATE CLASS DIAGRAM ===========");
-    output.println("' Generator     : " + this.getClass().getName());
-    output.println("' Path          : [" + path + "]");
-    output.println("' Configuration : [" + configurationFile + "]");
-    output.println("' Generated at  : " + now);
+    output.println("' Generator       : " + this.getClass().getName());
+    output.println("' Path            : [" + path + "]");
+    if ((null != javaFilesPath) && (!javaFilesPath.isBlank())) {
+      output.println("' Java Files Path : [" + javaFilesPath + "]");
+    }
+    output.println("' Configuration   : [" + configurationFile + "]");
+    output.println("' Generated at    : " + now);
     output.println();
   }
 
@@ -341,7 +361,7 @@ public class ClassDiagrammer {
     usesWritten = new HashSet<>();
   }
 
-  public void generateDiagram(final String path, final String configurationFile) {
+  public void generateDiagram(final String path, final String configurationFile, String javaFilesPath) {
     cleanLocalVars();
 
     configurationFileName = configurationFile;
@@ -381,13 +401,13 @@ public class ClassDiagrammer {
         }
       });
 
-      generateHeader(path, configurationFile);
+      generateHeader(path, configurationFile, javaFilesPath);
       generateClasses(classes);
       generateInheritances(classes);
       generateImplements(classes);
       generateFields(classes);
       generateUses(classes);
-      generateImports(classes);
+      generateImports(classes, javaFilesPath);
       generateFooter();
 
     } catch (Exception e) {

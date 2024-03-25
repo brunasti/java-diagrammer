@@ -45,7 +45,7 @@ public class MainTest implements TestConstants {
     args[1] = outputFileName;
     assertDoesNotThrow(() -> Main.main(args));
 
-    String[] fullArgs = new String[9];
+    String[] fullArgs = new String[11];
     fullArgs[0] = classesDirectory;
     fullArgs[1] = outputFileName;
     fullArgs[2] = "-d";
@@ -55,15 +55,19 @@ public class MainTest implements TestConstants {
     fullArgs[6] = outputFileName;
     fullArgs[7] = "-p";
     fullArgs[8] = classesDirectory;
+    fullArgs[9] = "-i";
+    fullArgs[10] = javaSrcDirectory;
     assertDoesNotThrow(() -> Main.main(fullArgs));
 
-    String[] moreArgs = new String[6];
+    String[] moreArgs = new String[8];
     moreArgs[0] = "-c";
     moreArgs[1] = configurationFileName;
     moreArgs[2] = "-o";
     moreArgs[3] = outputFileName;
     moreArgs[4] = "-p";
     moreArgs[5] = classesDirectory;
+    fullArgs[6] = "-i";
+    fullArgs[7] = javaSrcDirectory;
     assertDoesNotThrow(() -> Main.main(moreArgs));
   }
 

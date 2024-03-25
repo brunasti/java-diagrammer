@@ -2,10 +2,11 @@
 'https://plantuml.com/class-diagram
 
 ' GENERATE CLASS DIAGRAM ===========
-' Generator     : it.brunasti.java.diagrammer.ClassDiagrammer
-' Path          : [./target/classes]
-' Configuration : [./temp/config.json]
-' Generated at  : Mon Mar 25 13:13:47 CET 2024
+' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
+' Path            : [./target/classes]
+' Java Files Path : [./src/main/java/]
+' Configuration   : [./temp/config.json]
+' Generated at    : Mon Mar 25 14:19:17 CET 2024
 
 
 
@@ -39,10 +40,39 @@ it.brunasti.java.diagrammer.Main ..> org.apache.commons.cli.Options
 it.brunasti.java.diagrammer.ImportsIdentifier ..> Ljava.lang.String
 
 ' IMPORTS =======
+' Java Files Path : ./src/main/java/
 ' it.brunasti.java.diagrammer.ClassDiagrammer
+it.brunasti.java.diagrammer.ClassDiagrammer --o org.apache.bcel.util.ClassLoaderRepository
+it.brunasti.java.diagrammer.ClassDiagrammer --o java.net.URLClassLoader
+it.brunasti.java.diagrammer.ClassDiagrammer --o org.apache.bcel.classfile.Field
+it.brunasti.java.diagrammer.ClassDiagrammer --o org.json.simple.JSONObject
+it.brunasti.java.diagrammer.ClassDiagrammer --o java.net.URL
+it.brunasti.java.diagrammer.ClassDiagrammer --o org.apache.bcel.classfile.Method
+it.brunasti.java.diagrammer.ClassDiagrammer --o org.apache.bcel.generic.Type
+it.brunasti.java.diagrammer.ClassDiagrammer --o org.json.simple.JSONArray
+it.brunasti.java.diagrammer.ClassDiagrammer --o org.apache.bcel.classfile.JavaClass
+
 ' it.brunasti.java.diagrammer.Utils
+it.brunasti.java.diagrammer.Utils --o java.io.PrintStream
+it.brunasti.java.diagrammer.Utils --o org.json.simple.JSONObject
+it.brunasti.java.diagrammer.Utils --o java.nio.file.Files
+it.brunasti.java.diagrammer.Utils --o java.nio.file.Paths
+it.brunasti.java.diagrammer.Utils --o org.json.simple.parser.JSONParser
+it.brunasti.java.diagrammer.Utils --o java.io.IOException
+it.brunasti.java.diagrammer.Utils --o java.io.FileReader
+it.brunasti.java.diagrammer.Utils --o java.nio.file.Path
+
 ' it.brunasti.java.diagrammer.Main
+it.brunasti.java.diagrammer.Main --o java.io.PrintStream
+it.brunasti.java.diagrammer.Main --o java.io.PrintWriter
+it.brunasti.java.diagrammer.Main --o java.io.FileOutputStream
+
 ' it.brunasti.java.diagrammer.ImportsIdentifier
+it.brunasti.java.diagrammer.ImportsIdentifier --o com.thoughtworks.qdox.JavaProjectBuilder
+it.brunasti.java.diagrammer.ImportsIdentifier --o com.thoughtworks.qdox.model.JavaSource
+it.brunasti.java.diagrammer.ImportsIdentifier --o java.io.FileReader
+it.brunasti.java.diagrammer.ImportsIdentifier --o java.io.FileNotFoundException
+
 
 
 @enduml

@@ -17,12 +17,13 @@ Usage via CLI
 java it.brunasti.java.diagrammer.Main -h
 
 usage: java it.brunasti.java.diagrammer.Main
-    -?                   Quick Reference
-    -c,--config <arg>    Configuration File
-    -d,--debug           Execute in debug mode
-    -h,--help            Help
-    -o,--output <arg>    Output File
-    -p,--path <arg>      Classes Package path
+    -?                          Quick Reference
+    -c,--config <arg>           Configuration File
+    -d,--debug                  Execute in debug mode
+    -h,--help                   Help
+    -i,--includeImport <arg>    Include imports as define in Java files in path
+    -o,--output <arg>           Output File
+    -p,--path <arg>             Classes Package path
 ```
 
 ---
@@ -51,6 +52,10 @@ More complete command line execution, with all libraries needed:
 Example of result of the java-diagrammer applied to itself:
 
 ![java-diagrammer class diagram](temp/output.png)
+
+Example of result of the java-diagrammer applied to itself with the Import analysis activated:
+
+![java-diagrammer class diagram](temp/output-import.png)
 
 
 --- 

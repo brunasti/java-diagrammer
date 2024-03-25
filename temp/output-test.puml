@@ -2,10 +2,10 @@
 'https://plantuml.com/class-diagram
 
 ' GENERATE CLASS DIAGRAM ===========
-' Generator     : it.brunasti.java.diagrammer.ClassDiagrammer
-' Path          : [./target/test-classes]
-' Configuration : []
-' Generated at  : Mon Mar 25 13:13:47 CET 2024
+' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
+' Path            : [./target/test-classes]
+' Configuration   : []
+' Generated at    : Mon Mar 25 14:19:17 CET 2024
 
 
 
@@ -38,15 +38,6 @@ it.brunasti.java.diagrammer.UtilsTest ..> Ljava.lang.Object
 it.brunasti.java.diagrammer.MainTest ..> it.brunasti.java.diagrammer.Main
 it.brunasti.java.diagrammer.MainTest ..> Ljava.lang.String
 it.brunasti.java.diagrammer.MainTest ..> org.apache.commons.cli.Options
-
-' IMPORTS =======
-' it.brunasti.java.diagrammer.ClassDiagrammerTest
-' it.brunasti.java.diagrammer.UtilsTest
-' it.brunasti.java.diagrammer.TestBaseClass
-' it.brunasti.java.diagrammer.TestConstants
-' it.brunasti.java.diagrammer.MainTest
-' it.brunasti.java.diagrammer.TestExtendedClass
-' it.brunasti.java.diagrammer.TestAbstractClass
 
 
 @enduml

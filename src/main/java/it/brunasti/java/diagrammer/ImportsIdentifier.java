@@ -16,60 +16,57 @@ import com.thoughtworks.qdox.model.JavaSource;
 
 public class ImportsIdentifier {
 
-//  private static String sysPath ="/Users/paolobrunasti/Work/Mine/java-diagrammer/java-diagrammer/src/main/java/";
-  private static String sysPath ="/Users/paolobrunasti/Work/Mine/java-diagrammer/java-diagrammer/src/test/java/";
-  private static String fileType = ".java";
-  private static Set<String> importFiles = new HashSet<>();
+  public static final String FILE_TYPE = ".java";
+
+  private static final String mySysPath ="/Users/paolobrunasti/Work/Mine/java-diagrammer/java-diagrammer/src/test/java/";
   private static Set<String> packages = new HashSet<>();
 
   public static void main(String[] args) throws FileNotFoundException {
     String className = "it/brunasti/java/diagrammer/ClassDiagrammerTest";
-    String path = sysPath + className + fileType;
+    String path = mySysPath + className + FILE_TYPE;
 
-    Set<String> imports = printImports(path);
-//    System.out.println("Import: " + importFiles);
+    Set<String> imports = extractImports(path, mySysPath);
 
+    System.out.println("Imports : ");
     for (String imp : imports) {
       System.out.println(" - : " + imp);
     }
-
-//    System.out.println("Packages: " + packages);
+    System.out.println("Packages : ");
+    for (String pack : packages) {
+      System.out.println(" - : " + pack);
+    }
   }
 
-  private static Set<String> printImports(String path) throws FileNotFoundException {
-//    System.out.println("printImports - path " + path);
-    JavaProjectBuilder jp = new JavaProjectBuilder();
+  public static Set<String> extractImports(String path, String sysPath) {
+    Set<String> importFiles = new HashSet<>();
+
     try {
+      JavaProjectBuilder jp = new JavaProjectBuilder();
       jp.addSource(new FileReader(path));
 
       Collection<JavaSource> srcs = jp.getSources();
 
       for (JavaSource src : srcs) {
-//        System.out.println("printImports - Package " + src.getPackage());
         packages.add(src.getPackage().toString());
 
         for (String imprt : src.getImports()) {
-          if (imprt.startsWith("")) {
-
+//          if (imprt.startsWith("")) {
             try {
               if (importFiles.contains(imprt)) {
                 continue;
               }
               importFiles.add(imprt);
-//              System.out.println("  - File " + imprt);
-
-              imprt = sysPath + imprt.replaceAll("\\.", "/") + fileType;
-              printImports(imprt);
+              imprt = sysPath + imprt.replaceAll("\\.", "/") + FILE_TYPE;
+              extractImports(imprt, sysPath);
             } catch (Exception ex) {
-              System.err.println("  Error printImports : " + path + " = " + ex.getMessage());
+              Main.debug("  Error printImports : " + path + " = " + ex.getMessage());
             }
-          }
+//          }
         }
       }
     } catch (Exception ex) {
-      System.err.println("  Error : " + path + " = " + ex.getMessage());
+      Main.debug("  Error : " + path + " = " + ex.getMessage());
     }
     return importFiles;
   }
-
 }
