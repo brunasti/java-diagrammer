@@ -1,9 +1,6 @@
 /*
- * Copyright (c) 2024. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
- * Morbi non lorem porttitor neque feugiat blandit. Ut vitae ipsum eget quam lacinia accumsan.
- * Etiam sed turpis ac ipsum condimentum fringilla. Maecenas magna.
- * Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus.
- * Vestibulum commodo. Ut rhoncus gravida arcu.
+ * Copyright (c) 2024.
+ * Paolo Brunasti
  */
 
 package it.brunasti.java.diagrammer;
@@ -13,6 +10,8 @@ import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
+
+import org.apache.bcel.classfile.Constant;
 import org.apache.bcel.classfile.Field;
 import org.apache.bcel.classfile.JavaClass;
 import org.apache.bcel.classfile.Method;
@@ -26,6 +25,8 @@ import org.json.simple.JSONObject;
  *
  */
 public class ClassDiagrammer {
+  // TODO: Add import connections (for "closed" classes)
+  // TODO: add flag to avoid or not the self reflection
   // TODO: Manage arrays (LString...)
 
   // Reference to a PrintStream to be used for the diagram
@@ -247,6 +248,23 @@ public class ClassDiagrammer {
     output.println();
   }
 
+  private void generateImports(final ArrayList<JavaClass> classes) {
+    output.println("' IMPORTS =======");
+    classes.forEach(objectClazz -> {
+      if (!objectClazz.isEnum()) {
+        output.println("' " + objectClazz.getClassName());
+        try {
+          for (Constant constant : objectClazz.getConstantPool().getConstantPool()) {
+            output.println("' <- " + constant.getClass().getName());
+          }
+        } catch (Exception ex) {
+          System.err.println(ex.getMessage());
+        }
+      }
+    });
+    output.println();
+  }
+
   private void generateImplements(final ArrayList<JavaClass> classes) {
     output.println("' IMPLEMENT INTERFACE =======");
     classes.forEach(objectClazz -> {
@@ -368,6 +386,7 @@ public class ClassDiagrammer {
       generateImplements(classes);
       generateFields(classes);
       generateUses(classes);
+      generateImports(classes);
       generateFooter();
 
     } catch (Exception e) {

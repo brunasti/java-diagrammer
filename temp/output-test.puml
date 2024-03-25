@@ -5,7 +5,7 @@
 ' Generator     : it.brunasti.java.diagrammer.ClassDiagrammer
 ' Path          : [./target/test-classes]
 ' Configuration : []
-' Generated at  : Sun Mar 24 16:30:45 CET 2024
+' Generated at  : Mon Mar 25 09:32:58 CET 2024
 
 
 
@@ -38,6 +38,15 @@ it.brunasti.java.diagrammer.UtilsTest ..> Ljava.lang.Object
 it.brunasti.java.diagrammer.MainTest ..> it.brunasti.java.diagrammer.Main
 it.brunasti.java.diagrammer.MainTest ..> Ljava.lang.String
 it.brunasti.java.diagrammer.MainTest ..> org.apache.commons.cli.Options
+
+' IMPORTS =======
+' it.brunasti.java.diagrammer.ClassDiagrammerTest
+' it.brunasti.java.diagrammer.UtilsTest
+' it.brunasti.java.diagrammer.TestBaseClass
+' it.brunasti.java.diagrammer.TestConstants
+' it.brunasti.java.diagrammer.MainTest
+' it.brunasti.java.diagrammer.TestExtendedClass
+' it.brunasti.java.diagrammer.TestAbstractClass
 
 
 @enduml
