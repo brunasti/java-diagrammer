@@ -6,7 +6,7 @@
 ' Path            : [./target/classes]
 ' Java Files Path : [./src/main/java/]
 ' Configuration   : [./temp/config.json]
-' Generated at    : Wed Mar 27 11:37:08 CET 2024
+' Generated at    : Wed Mar 27 12:01:27 CET 2024
 
 
 
@@ -31,25 +31,22 @@ it.brunasti.java.diagrammer.ClassDiagrammer ..> java.io.PrintStream
 it.brunasti.java.diagrammer.ClassDiagrammer ..> org.apache.bcel.classfile.JavaClass
 it.brunasti.java.diagrammer.ClassDiagrammer ..> org.apache.bcel.classfile.Field
 it.brunasti.java.diagrammer.ClassDiagrammer ..> org.apache.bcel.util.ClassLoaderRepository
-it.brunasti.java.diagrammer.Utils ..> Ljava.lang.Object
 it.brunasti.java.diagrammer.Utils ..> java.io.PrintStream
 it.brunasti.java.diagrammer.Utils ..> org.json.simple.JSONObject
 it.brunasti.java.diagrammer.Utils ..> java.nio.file.Path
-it.brunasti.java.diagrammer.Main ..> Ljava.lang.String
 it.brunasti.java.diagrammer.Main ..> org.apache.commons.cli.Options
 
 ' IMPORTS =======
 ' Java Files Path : ./src/main/java/
 ' it.brunasti.java.diagrammer.ClassDiagrammer
 it.brunasti.java.diagrammer.ClassDiagrammer ..o org.apache.bcel.util.ClassLoaderRepository
+it.brunasti.java.diagrammer.ClassDiagrammer ..o java.net.URLClassLoader
 it.brunasti.java.diagrammer.ClassDiagrammer ..o org.apache.bcel.classfile.Field
+it.brunasti.java.diagrammer.ClassDiagrammer ..o org.json.simple.JSONObject
 it.brunasti.java.diagrammer.ClassDiagrammer ..o java.net.URL
 it.brunasti.java.diagrammer.ClassDiagrammer ..o org.apache.bcel.classfile.Method
-it.brunasti.java.diagrammer.ClassDiagrammer ..o org.json.simple.JSONArray
-it.brunasti.java.diagrammer.ClassDiagrammer ..o java.net.URLClassLoader
-it.brunasti.java.diagrammer.ClassDiagrammer ..o org.json.simple.JSONObject
 it.brunasti.java.diagrammer.ClassDiagrammer ..o org.apache.bcel.generic.Type
-it.brunasti.java.diagrammer.ClassDiagrammer ..o org.apache.bcel.classfile.Constant
+it.brunasti.java.diagrammer.ClassDiagrammer ..o org.json.simple.JSONArray
 it.brunasti.java.diagrammer.ClassDiagrammer ..o org.apache.bcel.classfile.JavaClass
 
 ' it.brunasti.java.diagrammer.Utils

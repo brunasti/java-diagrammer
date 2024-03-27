@@ -111,11 +111,8 @@ public class ClassDiagrammer {
     toBeExcludedPackages = new HashSet<>();
     toBeExcludedClasses = new HashSet<>();
     if ((null == configurationFileName) || (configurationFileName.isBlank())) {
+      toBeExcludedPackages.add("Ljava.lang.");
       toBeExcludedPackages.add("java.lang.");
-      toBeExcludedPackages.add("java.util.");
-
-      toBeExcludedClasses.add("org.slf4j.Logger");
-      toBeExcludedClasses.add("org.joda.time.DateTime");
     } else {
       JSONObject jsonObject = Utils.loadConfigurationFile(configurationFileName);
       if (null == jsonObject) {
@@ -316,101 +313,25 @@ public class ClassDiagrammer {
   private void generateEnum(JavaClass javaClass, ClassLoader classLoader) {
     // TODO Handle enumeration "fields"
     Main.debug("ENUM : " + javaClass.getClassName());
-    String[] enumFields = null;
+    String[] enumFields = new String[0];
 
     try {
       Class loadedClass = classLoader.loadClass(javaClass.getClassName());
-//      Main.debug("  - o : " + loadedClass);
-//      Main.debug("  - o : " + loadedClass.isEnum());
+      Main.debug("  - loadedClass : " + loadedClass);
+      Main.debug("  - loadedClass : " + loadedClass.isEnum());
 
-//      Main.debug("  - o.f : " + loadedClass.getFields());
-//      Main.debug("  - o.f : " + loadedClass.getFields().length);
       enumFields = new String[loadedClass.getFields().length];
-
       int i = 0;
       for (java.lang.reflect.Field field : loadedClass.getFields()) {
-//        Main.debug("      - o.Field : " + field);
-//        Main.debug("      - o.Name : " + field.getName());
+        Main.debug("      - loadedClass.Field : " + field);
+        Main.debug("      - loadedClass.Field.Name : " + field.getName());
         enumFields[i] = field.getName();
         i++;
       }
 
-//      Main.debug("  - o.ec : " + loadedClass.getEnumConstants());
-//      Main.debug("  - o.ec : " + loadedClass.getEnumConstants().length);
-//      for (Object field : loadedClass.getEnumConstants()) {
-//        Main.debug("      - o.ec.object : " + field);
-////            Main.debug("      - o.Name : " + field.getName());
-//      }
-//      Main.debug("  - o.m : " + loadedClass.getDeclaredMethods());
-//      Main.debug("  - o.m : " + loadedClass.getDeclaredMethods().length);
-//      for (Object field : loadedClass.getDeclaredMethods()) {
-//        Main.debug("      - o.m .method: " + field);
-////            Main.debug("      - o.Name : " + field.getName());
-//      }
-//
-//      try {
-//        Main.debug("      - o.m .values : ");
-//        java.lang.reflect.Method valuesMethod = loadedClass.getMethod("values");
-//        Main.debug("      - o.m .valuesMethod : " + valuesMethod);
-//        Object[] values = (Object[])valuesMethod.invoke(loadedClass); // pass arg
-//        Main.debug("      - o.m .values : " + values);
-//        Main.debug("      - o.m .values : " + values.length);
-//        for (Object value : values) {
-//          Main.debug("      - o.m .value: " + value);
-//        }
-//
-//
-//        Main.debug("      - o.e : ");
-//        try {
-//          java.lang.reflect.Method m = loadedClass.getMethod("values", null);
-//          Main.debug("   - invoke " + m.invoke(loadedClass, null));
-//          Object[] objects = (Object[]) m.invoke(loadedClass, null);
-//          Main.debug("   - invoke objects " + objects);
-//          Main.debug("   - invoke objects " + objects.length);
-//          for(Object obj : objects) {
-//            Main.debug("   - invoke - " + obj);
-//          }
-//        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException ex) {
-//          Main.debug("could not find enum");
-//        }
-//
-//        Main.debug("      - o.e 2 : ");
-//        Object[] objects = loadedClass.getEnumConstants();
-//// now this is not what I want, but almost
-//        for(Object obj : objects) {
-//          try {
-//            java.lang.reflect.Field keyField = obj.getClass().getDeclaredField("value");
-//            keyField.setAccessible(true); // if it is private for example.
-//            Main.debug("value : " + keyField.get(obj));
-//          } catch (NoSuchFieldException e) {
-//            // fallback to toString()
-//            Main.debug("value : " + obj);
-//          }
-//        }
-//      } catch (Exception e) {
-//        e.printStackTrace();
-//      }
-//
     } catch (Exception ex) {
       ex.printStackTrace();
     }
-//
-//    Main.debug("  - Fields : " + javaClass.getFields());
-//    for (Field field : javaClass.getFields()) {
-//      Main.debug("    - Field : " + field);
-//      Main.debug("    - Sign : " + field.getSignature());
-//      Main.debug("    - Name : " + field.getName());
-//    }
-//    Main.debug("  - constant : " + javaClass.getConstantPool().getConstantPool());
-//    Main.debug("  - constant : " + javaClass.getConstantPool().getConstantPool().length);
-//    for (Constant c : javaClass.getConstantPool().getConstantPool()) {
-//      Main.debug("      - Const : " + c);
-//    }
-//    Main.debug("  - methods : " + javaClass.getMethods());
-//    Main.debug("  - methods : " + javaClass.getMethods().length);
-//    for (Method c : javaClass.getMethods()) {
-//      Main.debug("      - method : " + c);
-//    }
 
     output.println("enum " + javaClass.getClassName() + "{");
     for (String enumValue : enumFields) {
@@ -435,8 +356,6 @@ public class ClassDiagrammer {
       }
     });
     output.println();
-
-//    Main.setDebug(false);
   }
 
   private void generateFooter() {
@@ -457,6 +376,7 @@ public class ClassDiagrammer {
     }
     output.println("' Configuration   : [" + configurationFile + "]");
     output.println("' Generated at    : " + now);
+    // TODO : Add legenda for the types of links
     output.println();
   }
 

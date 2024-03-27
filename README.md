@@ -57,6 +57,10 @@ Example of result of the java-diagrammer applied to itself with the Import analy
 
 ![java-diagrammer class diagram](temp/output-import.png)
 
+Example of result of the java-diagrammer applied to its own test classes:
+
+![java-diagrammer class diagram](temp/output-test.png)
+
 
 --- 
 
