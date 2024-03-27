@@ -3,10 +3,9 @@
 
 ' GENERATE CLASS DIAGRAM ===========
 ' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
-' Path            : [/Users/paolobrunasti/Work/Mine/java-diagrammer/java-diagrammer/target/test-classes]
-' Java Files Path : [/Users/paolobrunasti/Work/Mine/java-diagrammer/java-diagrammer/src/test/java/]
+' Path            : [./target/test-classes]
 ' Configuration   : []
-' Generated at    : Wed Mar 27 17:11:51 CET 2024
+' Generated at    : Wed Mar 27 17:14:08 CET 2024
 legend
 Connections legend
 ----
@@ -59,49 +58,6 @@ it.brunasti.java.diagrammer.UtilsTest ..> java.util.Set
 it.brunasti.java.diagrammer.UtilsTest ..> java.util.ArrayList
 it.brunasti.java.diagrammer.MainTest ..> it.brunasti.java.diagrammer.Main
 it.brunasti.java.diagrammer.MainTest ..> org.apache.commons.cli.Options
-
-' IMPORTS =======
-' Java Files Path : /Users/paolobrunasti/Work/Mine/java-diagrammer/java-diagrammer/src/test/java/
-' it.brunasti.java.diagrammer.ClassDiagrammerTest
-it.brunasti.java.diagrammer.ClassDiagrammerTest ..o org.junit.jupiter.api.Test
-it.brunasti.java.diagrammer.ClassDiagrammerTest ..o  org.junit.jupiter.api.Assertions
-it.brunasti.java.diagrammer.ClassDiagrammerTest ..o org.junit.jupiter.api.DisplayName
-
-' it.brunasti.java.diagrammer.UtilsTest
-it.brunasti.java.diagrammer.UtilsTest ..o org.junit.jupiter.api.Test
-it.brunasti.java.diagrammer.UtilsTest ..o java.util.HashSet
-it.brunasti.java.diagrammer.UtilsTest ..o java.nio.file.NoSuchFileException
-it.brunasti.java.diagrammer.UtilsTest ..o org.json.simple.JSONObject
-it.brunasti.java.diagrammer.UtilsTest ..o  org.junit.jupiter.api.Assertions
-it.brunasti.java.diagrammer.UtilsTest ..o java.util.Set
-it.brunasti.java.diagrammer.UtilsTest ..o java.io.IOException
-it.brunasti.java.diagrammer.UtilsTest ..o org.json.simple.JSONArray
-it.brunasti.java.diagrammer.UtilsTest ..o org.junit.jupiter.api.DisplayName
-it.brunasti.java.diagrammer.UtilsTest ..o java.util.ArrayList
-
-' it.brunasti.java.diagrammer.TestConstants
-
-' it.brunasti.java.diagrammer.teststructure.TestAbstractClass
-
-' it.brunasti.java.diagrammer.teststructure.TestBaseClass
-it.brunasti.java.diagrammer.teststructure.TestBaseClass ..o it.brunasti.java.diagrammer.TestConstants
-
-' it.brunasti.java.diagrammer.teststructure.TestEnumClass
-
-' it.brunasti.java.diagrammer.teststructure.TestExtendedClass
-
-' it.brunasti.java.diagrammer.teststructure.TestOtherClass
-it.brunasti.java.diagrammer.teststructure.TestOtherClass ..o it.brunasti.java.diagrammer.TestConstants
-it.brunasti.java.diagrammer.teststructure.TestOtherClass ..o  org.junit.jupiter.api.Assertions.assertDoesNotThrow
-it.brunasti.java.diagrammer.teststructure.TestOtherClass ..o java.util.Set
-
-' it.brunasti.java.diagrammer.MainTest
-it.brunasti.java.diagrammer.MainTest ..o org.junit.jupiter.api.Test
-it.brunasti.java.diagrammer.MainTest ..o  org.junit.jupiter.api.Assertions.assertDoesNotThrow
-it.brunasti.java.diagrammer.MainTest ..o org.apache.commons.cli.Options
-it.brunasti.java.diagrammer.MainTest ..o  org.junit.jupiter.api.Assertions.assertNotNull
-it.brunasti.java.diagrammer.MainTest ..o org.junit.jupiter.api.DisplayName
-
 
 
 @enduml

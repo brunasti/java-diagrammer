@@ -6,7 +6,16 @@
 ' Path            : [./target/test-classes]
 ' Java Files Path : [./src/test/java/]
 ' Configuration   : [./temp/config.json]
-' Generated at    : Wed Mar 27 16:17:40 CET 2024
+' Generated at    : Wed Mar 27 17:14:07 CET 2024
+legend
+Connections legend
+----
+--|> : Extends
+..|> : Implements
+
+--> : Fields and Attributes
+..> : uses
+end legend
 
 
 
