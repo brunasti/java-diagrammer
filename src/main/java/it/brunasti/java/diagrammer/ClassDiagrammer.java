@@ -27,7 +27,8 @@ public class ClassDiagrammer {
   // TODO: add flag to avoid or not the self reflection
   // TODO: Manage arrays (LString...)
   // TODO: Add the option to extract Methods and Attributes, Protected Private or Abstract (MA-PPA)
-  // TODO : Avoid generic catch(Exception)
+  // TODO: Avoid generic catch(Exception)
+  // TODO: option to add "hide empty members" in diagram
 
   // Reference to a PrintStream to be used for the diagram
   // By default is the Standard.out, but it can be redirected
@@ -384,7 +385,13 @@ public class ClassDiagrammer {
     }
     output.println("' Configuration   : [" + configurationFile + "]");
     output.println("' Generated at    : " + now);
-    // TODO : Add legenda for the types of links
+    // TODO : Add legend for the types of links - specified by CLI param
+    String legendFileContent = Utils.readFileToString("./temp/default_legend.txt");
+    if (!legendFileContent.isBlank()) {
+      output.println("legend");
+      output.println(legendFileContent);
+      output.println("end legend");
+    }
     output.println();
   }
 

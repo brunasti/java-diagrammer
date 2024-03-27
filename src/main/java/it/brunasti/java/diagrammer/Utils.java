@@ -1,5 +1,6 @@
 package it.brunasti.java.diagrammer;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -7,6 +8,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -16,7 +18,15 @@ import org.json.simple.parser.JSONParser;
 
 public final class Utils {
 
-  protected Utils() {
+  Utils() {
+  }
+
+  public static String readFileToString(String fileName) {
+    try {
+      return new Scanner(new File(fileName)).useDelimiter("\\Z").next();
+    } catch (Exception ex) {
+      return "";
+    }
   }
 
   public static void dump(final String t, final Object[] arr) {

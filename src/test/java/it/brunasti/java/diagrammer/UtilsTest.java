@@ -51,7 +51,7 @@ public class UtilsTest implements TestConstants {
     JSONObject jsonObject = Utils.loadConfigurationFile(configurationFileName + ".error");
     assertNull(jsonObject);
 
-    jsonObject = Utils.loadConfigurationFile(wrongFileName);
+    jsonObject = Utils.loadConfigurationFile(wrongConfigurationFileName);
     assertNull(jsonObject);
   }
 
@@ -197,5 +197,28 @@ public class UtilsTest implements TestConstants {
   Utils getUtils() {
     return new Utils();
   }
+
+
+  // Test listDirectories function ---------------------------
+  @Test
+  @DisplayName("Read File to String")
+  void testReadFileToString() {
+    assertDoesNotThrow(() -> Utils.readFileToString(configurationFileName));
+    String fileContent = Utils.readFileToString(configurationFileName);
+    assertNotNull(fileContent);
+    System.out.println(fileContent);
+
+    assertDoesNotThrow(() -> Utils.readFileToString(nonExistingJsonFileName));
+    fileContent = Utils.readFileToString(nonExistingJsonFileName);
+    assertNotNull(fileContent);
+    System.out.println(fileContent);
+
+    assertDoesNotThrow(() -> Utils.readFileToString(defaultLegendFileName));
+    fileContent = Utils.readFileToString(defaultLegendFileName);
+    assertNotNull(fileContent);
+    System.out.println(fileContent);
+
+  }
+
 
 }

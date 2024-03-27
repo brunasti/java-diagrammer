@@ -1,0 +1,7 @@
+Connections legend
+----
+--|> : Extends
+..|> : Implements
+
+--> : Fields and Attributes
+..> : uses

@@ -14,17 +14,24 @@ public interface TestConstants {
   String tempDirectory = "./temp";
   String nonExistingDirectory = "./errorDir";
   String nonExistingDirectoryAndFile = "./errorDir/test.txt";
+
+
   String srcDirectory = "./src";
   String javaSrcDirectory = "./src/main/java";
   String testJavaSrcDirectory = "./src/test/java";
+
   String classesDirectory = "./target/classes";
   String testClassesDirectory = "./target/test-classes";
-  String configurationFileName = "./temp/config.json";
+
   String outputFileName = "./temp/output.puml";
   String testOutputFileName = "./temp/output-test.puml";
-  String wrongFileName = outputFileName;
+
+  String configurationFileName = "./temp/config.json";
+  String wrongConfigurationFileName = outputFileName;
+
   String wrongJsonFileName = "./temp/wrong.json";
   String nonExistingJsonFileName = "./temp/nofile.json";
 
+  String defaultLegendFileName = "./temp/default_legend.txt";
 
 }
