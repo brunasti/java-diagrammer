@@ -99,7 +99,7 @@ public class UtilsTest implements TestConstants {
     try {
       Set<String> list = Utils.listFilesUsingFilesList(tempDirectory);
       assertNotNull(list);
-      assertEquals(8,list.size());
+      assertEquals(9,list.size());
     } catch (IOException ioex) {
       ioex.printStackTrace();
     }

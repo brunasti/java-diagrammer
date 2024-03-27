@@ -24,10 +24,10 @@ import org.json.simple.JSONObject;
  *
  */
 public class ClassDiagrammer {
-  // TODO: Add import connections (for "closed" classes) as a flag
-  //   with the specification of the source code directory (where the Java files are...)
   // TODO: add flag to avoid or not the self reflection
   // TODO: Manage arrays (LString...)
+  // TODO: Add the option to extract Methods and Attributes, Protected Private or Abstract (MA-PPA)
+  // TODO : Avoid generic catch(Exception)
 
   // Reference to a PrintStream to be used for the diagram
   // By default is the Standard.out, but it can be redirected
@@ -116,7 +116,7 @@ public class ClassDiagrammer {
     } else {
       JSONObject jsonObject = Utils.loadConfigurationFile(configurationFileName);
       if (null == jsonObject) {
-        Main.debug("initToBeExcluded : no data in config file " + configurationFileName);
+        Main.debug(2, "initToBeExcluded : no data in config file " + configurationFileName);
         return false;
       }
       JSONObject exclude = (JSONObject) jsonObject.get("exclude");
@@ -125,9 +125,9 @@ public class ClassDiagrammer {
       Iterator<JSONObject> iterator = (Iterator<JSONObject>)classes.iterator();
       while (iterator.hasNext()) {
         JSONObject object = iterator.next();
-        Main.debug("  - excludeClass JSONObject [" + object + "]");
+        Main.debug(2, "  - excludeClass JSONObject [" + object + "]");
         String excludeClass = object.get("class").toString();
-        Main.debug("  - excludeClass [" + excludeClass + "]");
+        Main.debug(2, "  - excludeClass [" + excludeClass + "]");
         toBeExcludedClasses.add(excludeClass);
       }
 
@@ -135,9 +135,9 @@ public class ClassDiagrammer {
       iterator = (Iterator<JSONObject>)packages.iterator();
       while (iterator.hasNext()) {
         JSONObject object = iterator.next();
-        Main.debug("  - excludePackage JSONObject [" + object + "]");
+        Main.debug(2, "  - excludePackage JSONObject [" + object + "]");
         String excludePackage = object.get("package").toString();
-        Main.debug("  - excludePackage [" + excludePackage + "]");
+        Main.debug(2, "  - excludePackage [" + excludePackage + "]");
         toBeExcludedPackages.add(excludePackage);
       }
     }
@@ -173,7 +173,7 @@ public class ClassDiagrammer {
 
     AtomicReference<Boolean> excludedPackage = new AtomicReference<>(false);
     toBeExcludedPackages.forEach(localPackage -> {
-      Main.debug("      - package : " + localPackage);
+      Main.debug(4, "      - package : " + localPackage);
       if (type.startsWith(localPackage)) {
         Main.debug("    -> exclude package " + type);
         excludedPackage.set(true);
@@ -257,14 +257,14 @@ public class ClassDiagrammer {
           for (String imprt : imports) {
             String importedFile = imprt;
             if (importedFile.startsWith("static")) {
-              Main.debug("' replace static in " + importedFile);
+              Main.debug(4, " replace static in " + importedFile);
               importedFile = importedFile.replace("static", "");
             }
             if (importedFile.endsWith(".*")) {
-              Main.debug("' replace .* in " + importedFile);
+              Main.debug(4, " replace .* in " + importedFile);
               importedFile = importedFile.replace(".*", "");
             }
-            Main.debug("' <- " + imprt + "(" + importedFile + ")");
+            Main.debug(" <- " + imprt + "(" + importedFile + ")");
             if (isTypeToBeConnected(javaClass, importedFile)) {
               output.println(javaClass.getClassName()
                       + " ..o " + importedFile);
@@ -311,26 +311,24 @@ public class ClassDiagrammer {
   }
 
   private void generateEnum(JavaClass javaClass, ClassLoader classLoader) {
-    // TODO Handle enumeration "fields"
     Main.debug("ENUM : " + javaClass.getClassName());
     String[] enumFields = new String[0];
 
     try {
       Class loadedClass = classLoader.loadClass(javaClass.getClassName());
-      Main.debug("  - loadedClass : " + loadedClass);
-      Main.debug("  - loadedClass : " + loadedClass.isEnum());
+      Main.debug(4, "  - loadedClass : " + loadedClass);
+      Main.debug(4, "  - loadedClass : " + loadedClass.isEnum());
 
       enumFields = new String[loadedClass.getFields().length];
       int i = 0;
       for (java.lang.reflect.Field field : loadedClass.getFields()) {
-        Main.debug("      - loadedClass.Field : " + field);
-        Main.debug("      - loadedClass.Field.Name : " + field.getName());
+        Main.debug(4, "      - loadedClass.Field : " + field);
+        Main.debug(4, "      - loadedClass.Field.Name : " + field.getName());
         enumFields[i] = field.getName();
         i++;
       }
-
-    } catch (Exception ex) {
-      ex.printStackTrace();
+    } catch (ClassNotFoundException cex) {
+      cex.printStackTrace();
     }
 
     output.println("enum " + javaClass.getClassName() + "{");

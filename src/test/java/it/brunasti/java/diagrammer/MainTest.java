@@ -13,10 +13,42 @@ public class MainTest implements TestConstants {
   @Test
   @DisplayName("Call Main public methods")
   void testMainPublicMethods() {
-    assertDoesNotThrow(() -> Main.debug("Message 1"));
+    System.err.println("Main.debug ------ false");
+    assertDoesNotThrow(() -> Main.debug("Message false"));
 
+    System.err.println("Main.debug ------ true");
     Main.setDebug(true);
-    assertDoesNotThrow(() -> Main.debug("Message 2"));
+    assertDoesNotThrow(() -> Main.debug("Message true"));
+
+    System.err.println("Main.debug ------ 4");
+    Main.setDebug(4);
+    assertDoesNotThrow(() -> Main.debug("Message"));
+    assertDoesNotThrow(() -> Main.debug(2,"Message 2"));
+    assertDoesNotThrow(() -> Main.debug(4,"Message 4"));
+
+    System.err.println("Main.debug ------ 0");
+    Main.setDebug(0);
+    assertDoesNotThrow(() -> Main.debug("Message"));
+    assertDoesNotThrow(() -> Main.debug(0,"Message 0"));
+    assertDoesNotThrow(() -> Main.debug(2,"Message 2"));
+    assertDoesNotThrow(() -> Main.debug(4,"Message 4"));
+
+    System.err.println("Main.debug ------ 2");
+    Main.setDebug(2);
+    assertDoesNotThrow(() -> Main.debug("Message"));
+    assertDoesNotThrow(() -> Main.debug(0,"Message 0"));
+    assertDoesNotThrow(() -> Main.debug(2,"Message 2"));
+    assertDoesNotThrow(() -> Main.debug(4,"Message 4"));
+
+    System.err.println("Main.debug ------ false");
+    Main.setDebug(false);
+    assertDoesNotThrow(() -> Main.debug("Message"));
+    assertDoesNotThrow(() -> Main.debug(0,"Message 0"));
+    assertDoesNotThrow(() -> Main.debug(2,"Message 2"));
+    assertDoesNotThrow(() -> Main.debug(4,"Message 4"));
+
+    System.err.println("Main.debug ------ end -----");
+
 
     assertDoesNotThrow(() -> Main.printHelp());
     assertDoesNotThrow(() -> Main.printHelp(null));

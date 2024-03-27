@@ -41,12 +41,12 @@ public class ImportsIdentifier {
             imprt = sysPath + imprt.replaceAll("\\.", "/") + FILE_TYPE;
             extractImports(imprt, sysPath);
           } catch (Exception ex) {
-            Main.debug("  Error printImports : " + path + " = " + ex.getMessage());
+            Main.debug(4, "  Error ImportsIdentifier.extractImports : " + ex.getMessage() + " = " + path + " - " + imprt);
           }
         }
       }
     } catch (Exception ex) {
-      Main.debug("  Error : " + path + " = " + ex.getMessage());
+      Main.debug(3, "  Error ImportsIdentifier.extractImports : " + ex.getMessage() + " = " + path);
     }
     return importFiles;
   }

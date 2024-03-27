@@ -9,10 +9,13 @@ import java.io.PrintWriter;
 // This Main uses https://commons.apache.org/proper/commons-cli/usage.html
 public class Main {
 
+    private static final int DEFAULT_DEBUG_LEVEL = 3;
+
     static CommandLine commandLine;
     static ClassDiagrammer classDiagrammer;
 
     private static boolean debug = false;
+    private static int debugLevel = 3;
 
     private static String javaPackagePath = "";
     private static String classesPackagePath = "";
@@ -23,6 +26,7 @@ public class Main {
 
     private static void reset() {
         debug = false;
+        debugLevel = DEFAULT_DEBUG_LEVEL;
 
         classesPackagePath = "";
         javaPackagePath = "";
@@ -32,16 +36,23 @@ public class Main {
         options = null;
     }
 
-    // TODO : Make the debug an int and check for debug level when printing the message
-    //  with a default value set so that the main messages got printed out if no level
-    //  is set (but the flag is true
     public static void setDebug(boolean value) {
         debug = value;
     }
+    public static void setDebug(int value) {
+        setDebug(value > 0);
+        debugLevel = value;
+    }
 
     public static void debug(String message) {
+        debug(DEFAULT_DEBUG_LEVEL,message);
+    }
+
+    public static void debug(int level, String message) {
         if (debug) {
-            System.err.println(message);
+            if (level <= debugLevel) {
+                System.err.println(message);
+            }
         }
     }
 

@@ -92,3 +92,15 @@ Here below an example and the base structure:
 }
 ```
 
+
+## How to reduce diagram complexity
+
+### Exclude classes and packages with the Config file
+
+### Create a derived diagram with "remove" statements
+
+## Caveat
+
+//TODO : Write about the compiled code issue with the Enum classes....
+
+
