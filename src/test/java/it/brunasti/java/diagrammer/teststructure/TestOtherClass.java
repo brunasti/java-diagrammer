@@ -7,12 +7,12 @@ package it.brunasti.java.diagrammer.teststructure;
 
 import it.brunasti.java.diagrammer.TestConstants;
 
-public class TestBaseClass extends TestAbstractClass implements TestConstants {
+public class TestOtherClass extends TestAbstractClass implements TestConstants {
   TestBaseClass selfTest;
   TestEnumClass e;
 
-  public TestBaseClass() {
-    selfTest = this;
+  public TestOtherClass() {
+    selfTest = new TestBaseClass();
     TestEnumClass e1 = TestEnumClass.FIRST;
     e = e1;
   }

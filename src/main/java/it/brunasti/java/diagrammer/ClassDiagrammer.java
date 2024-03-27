@@ -147,18 +147,18 @@ public class ClassDiagrammer {
     return true;
   }
 
-  private boolean isTypeToBeConnected(final JavaClass objectClazz,
+  private boolean isTypeToBeConnected(final JavaClass javaClass,
                                       final Field field) {
     String type = field.getType().toString();
-    return isTypeToBeConnected(objectClazz, type);
+    return isTypeToBeConnected(javaClass, type);
   }
 
-  private boolean isTypeToBeConnected(final JavaClass objectClazz,
+  private boolean isTypeToBeConnected(final JavaClass javaClass,
                                       final String type) {
-    Main.debug("isTypeToBeConnected " + objectClazz.getClassName() + " to " + type);
+    Main.debug("isTypeToBeConnected " + javaClass.getClassName() + " to " + type);
 
     // Avoid self referencing loops
-    if (type.equals(objectClazz.getClassName())) {
+    if (type.equals(javaClass.getClassName())) {
       Main.debug("  - self ref");
       return false;
     }
@@ -190,9 +190,9 @@ public class ClassDiagrammer {
   // ---------------------------------
   // Functions to generate the diagram
 
-  private void writeUses(final JavaClass objectClazz, final String type) {
-    if (isTypeToBeConnected(objectClazz, type)) {
-      String use = objectClazz.getClassName() + " ..> " + type;
+  private void writeUses(final JavaClass javaClass, final String type) {
+    if (isTypeToBeConnected(javaClass, type)) {
+      String use = javaClass.getClassName() + " ..> " + type;
       if (!usesWritten.contains(use)) {
         output.println(use);
         usesWritten.add(use);
@@ -202,14 +202,14 @@ public class ClassDiagrammer {
 
   private void generateUses(final ArrayList<JavaClass> classes) {
     output.println("' USES =======");
-    classes.forEach(objectClazz -> {
-      if (!objectClazz.isEnum()) {
+    classes.forEach(javaClass -> {
+      if (!javaClass.isEnum()) {
         try {
-          Method[] methods = objectClazz.getMethods();
+          Method[] methods = javaClass.getMethods();
           for (Method method : methods) {
             Main.debug("generateUses " + method.getName() + " : " + method.getSignature());
             String type = method.getReturnType().toString();
-            writeUses(objectClazz, type);
+            writeUses(javaClass, type);
 
             Type[] arguments = method.getArgumentTypes();
             for (Type argument : arguments) {
@@ -217,7 +217,7 @@ public class ClassDiagrammer {
                       .substring(1)
                       .replace("/", ".")
                       .replace(";", "");
-              writeUses(objectClazz, type);
+              writeUses(javaClass, type);
             }
           }
         } catch (Exception ex) {
@@ -230,13 +230,12 @@ public class ClassDiagrammer {
 
   private void generateFields(final ArrayList<JavaClass> classes) {
     output.println("' FIELDS =======");
-    classes.forEach(objectClazz -> {
-      // TODO Handle enumeration "fields"
-      if (!objectClazz.isEnum()) {
+    classes.forEach(javaClass -> {
+      if (!javaClass.isEnum()) {
         try {
-          for (Field field : objectClazz.getFields()) {
-            if (isTypeToBeConnected(objectClazz, field)) {
-              output.println(objectClazz.getClassName()
+          for (Field field : javaClass.getFields()) {
+            if (isTypeToBeConnected(javaClass, field)) {
+              output.println(javaClass.getClassName()
                       + " --> " + field.getType());
             }
           }
@@ -253,10 +252,10 @@ public class ClassDiagrammer {
 
       output.println("' IMPORTS =======");
       output.println("' Java Files Path : " + javaFilesPath);
-      classes.forEach(objectClazz -> {
-        output.println("' " + objectClazz.getClassName());
-        String javaClass = javaFilesPath + objectClazz.getClassName().replace(".", "/") + ImportsIdentifier.FILE_TYPE;
-        Set<String> imports = ImportsIdentifier.extractImports(javaClass, javaFilesPath);
+      classes.forEach(javaClass -> {
+        output.println("' " + javaClass.getClassName());
+        String javaClassName = javaFilesPath + javaClass.getClassName().replace(".", "/") + ImportsIdentifier.FILE_TYPE;
+        Set<String> imports = ImportsIdentifier.extractImports(javaClassName, javaFilesPath);
         try {
           for (String imprt : imports) {
             String importedFile = imprt;
@@ -269,8 +268,8 @@ public class ClassDiagrammer {
               importedFile = importedFile.replace(".*", "");
             }
             Main.debug("' <- " + imprt + "(" + importedFile + ")");
-            if (isTypeToBeConnected(objectClazz, importedFile)) {
-              output.println(objectClazz.getClassName()
+            if (isTypeToBeConnected(javaClass, importedFile)) {
+              output.println(javaClass.getClassName()
                       + " ..o " + importedFile);
             }
           }
@@ -285,11 +284,11 @@ public class ClassDiagrammer {
 
   private void generateImplements(final ArrayList<JavaClass> classes) {
     output.println("' IMPLEMENT INTERFACE =======");
-    classes.forEach(objectClazz -> {
+    classes.forEach(javaClass -> {
       try {
-        for (JavaClass javaClass : objectClazz.getInterfaces()) {
-          output.println( javaClass.getClassName() + " <|.. "
-                  + objectClazz.getClassName());
+        for (JavaClass javaInterface : javaClass.getInterfaces()) {
+          output.println( javaInterface.getClassName() + " <|.. "
+                  + javaClass.getClassName());
         }
       } catch (Exception ex) {
         System.err.println(ex.getMessage());
@@ -300,12 +299,12 @@ public class ClassDiagrammer {
 
   private void generateInheritances(final ArrayList<JavaClass> classes) {
     output.println("' INHERITANCES =======");
-    classes.forEach(objectClazz -> {
+    classes.forEach(javaClass -> {
       try {
         if (!"java.lang.Object".equals(
-                objectClazz.getSuperClass().getClassName())) {
-          output.println( objectClazz.getSuperClass().getClassName() + " <|-- "
-                  + objectClazz.getClassName());
+                javaClass.getSuperClass().getClassName())) {
+          output.println( javaClass.getSuperClass().getClassName() + " <|-- "
+                  + javaClass.getClassName());
         }
       } catch (Exception ex) {
         System.err.println(ex.getMessage());
@@ -314,22 +313,130 @@ public class ClassDiagrammer {
     output.println();
   }
 
-  private void generateClasses(final ArrayList<JavaClass> classes) {
+  private void generateEnum(JavaClass javaClass, ClassLoader classLoader) {
+    // TODO Handle enumeration "fields"
+    Main.debug("ENUM : " + javaClass.getClassName());
+    String[] enumFields = null;
+
+    try {
+      Class loadedClass = classLoader.loadClass(javaClass.getClassName());
+//      Main.debug("  - o : " + loadedClass);
+//      Main.debug("  - o : " + loadedClass.isEnum());
+
+//      Main.debug("  - o.f : " + loadedClass.getFields());
+//      Main.debug("  - o.f : " + loadedClass.getFields().length);
+      enumFields = new String[loadedClass.getFields().length];
+
+      int i = 0;
+      for (java.lang.reflect.Field field : loadedClass.getFields()) {
+//        Main.debug("      - o.Field : " + field);
+//        Main.debug("      - o.Name : " + field.getName());
+        enumFields[i] = field.getName();
+        i++;
+      }
+
+//      Main.debug("  - o.ec : " + loadedClass.getEnumConstants());
+//      Main.debug("  - o.ec : " + loadedClass.getEnumConstants().length);
+//      for (Object field : loadedClass.getEnumConstants()) {
+//        Main.debug("      - o.ec.object : " + field);
+////            Main.debug("      - o.Name : " + field.getName());
+//      }
+//      Main.debug("  - o.m : " + loadedClass.getDeclaredMethods());
+//      Main.debug("  - o.m : " + loadedClass.getDeclaredMethods().length);
+//      for (Object field : loadedClass.getDeclaredMethods()) {
+//        Main.debug("      - o.m .method: " + field);
+////            Main.debug("      - o.Name : " + field.getName());
+//      }
+//
+//      try {
+//        Main.debug("      - o.m .values : ");
+//        java.lang.reflect.Method valuesMethod = loadedClass.getMethod("values");
+//        Main.debug("      - o.m .valuesMethod : " + valuesMethod);
+//        Object[] values = (Object[])valuesMethod.invoke(loadedClass); // pass arg
+//        Main.debug("      - o.m .values : " + values);
+//        Main.debug("      - o.m .values : " + values.length);
+//        for (Object value : values) {
+//          Main.debug("      - o.m .value: " + value);
+//        }
+//
+//
+//        Main.debug("      - o.e : ");
+//        try {
+//          java.lang.reflect.Method m = loadedClass.getMethod("values", null);
+//          Main.debug("   - invoke " + m.invoke(loadedClass, null));
+//          Object[] objects = (Object[]) m.invoke(loadedClass, null);
+//          Main.debug("   - invoke objects " + objects);
+//          Main.debug("   - invoke objects " + objects.length);
+//          for(Object obj : objects) {
+//            Main.debug("   - invoke - " + obj);
+//          }
+//        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException ex) {
+//          Main.debug("could not find enum");
+//        }
+//
+//        Main.debug("      - o.e 2 : ");
+//        Object[] objects = loadedClass.getEnumConstants();
+//// now this is not what I want, but almost
+//        for(Object obj : objects) {
+//          try {
+//            java.lang.reflect.Field keyField = obj.getClass().getDeclaredField("value");
+//            keyField.setAccessible(true); // if it is private for example.
+//            Main.debug("value : " + keyField.get(obj));
+//          } catch (NoSuchFieldException e) {
+//            // fallback to toString()
+//            Main.debug("value : " + obj);
+//          }
+//        }
+//      } catch (Exception e) {
+//        e.printStackTrace();
+//      }
+//
+    } catch (Exception ex) {
+      ex.printStackTrace();
+    }
+//
+//    Main.debug("  - Fields : " + javaClass.getFields());
+//    for (Field field : javaClass.getFields()) {
+//      Main.debug("    - Field : " + field);
+//      Main.debug("    - Sign : " + field.getSignature());
+//      Main.debug("    - Name : " + field.getName());
+//    }
+//    Main.debug("  - constant : " + javaClass.getConstantPool().getConstantPool());
+//    Main.debug("  - constant : " + javaClass.getConstantPool().getConstantPool().length);
+//    for (Constant c : javaClass.getConstantPool().getConstantPool()) {
+//      Main.debug("      - Const : " + c);
+//    }
+//    Main.debug("  - methods : " + javaClass.getMethods());
+//    Main.debug("  - methods : " + javaClass.getMethods().length);
+//    for (Method c : javaClass.getMethods()) {
+//      Main.debug("      - method : " + c);
+//    }
+
+    output.println("enum " + javaClass.getClassName() + "{");
+    for (String enumValue : enumFields) {
+      output.println("  "+enumValue);
+    }
+    output.println("}");    
+  }
+  
+  private void generateClasses(final ArrayList<JavaClass> classes, ClassLoader classLoader) {
     output.println();
     output.println();
     output.println("' CLASSES =======");
-    classes.forEach(objectClazz -> {
-      if (objectClazz.isEnum()) {
-        output.println("enum " + objectClazz.getClassName());
-      } else if (objectClazz.isInterface()) {
-        output.println("interface " + objectClazz.getClassName());
-      } else if (objectClazz.isAbstract()) {
-        output.println("abstract " + objectClazz.getClassName());
+    classes.forEach(javaClass -> {
+      if (javaClass.isEnum()) {
+        generateEnum(javaClass, classLoader);
+      } else if (javaClass.isInterface()) {
+        output.println("interface " + javaClass.getClassName());
+      } else if (javaClass.isAbstract()) {
+        output.println("abstract " + javaClass.getClassName());
       } else {
-        output.println("class " + objectClazz.getClassName());
+        output.println("class " + javaClass.getClassName());
       }
     });
     output.println();
+
+//    Main.setDebug(false);
   }
 
   private void generateFooter() {
@@ -394,15 +501,15 @@ public class ClassDiagrammer {
 
       files.forEach(file -> {
         try {
-          JavaClass objectClazz = rep.loadClass(file);
-          classes.add(objectClazz);
+          JavaClass javaClass = rep.loadClass(file);
+          classes.add(javaClass);
         } catch (ClassNotFoundException e) {
           System.err.println(e.getMessage());
         }
       });
 
       generateHeader(path, configurationFile, javaFilesPath);
-      generateClasses(classes);
+      generateClasses(classes, classLoader);
       generateInheritances(classes);
       generateImplements(classes);
       generateFields(classes);

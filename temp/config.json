@@ -6,12 +6,12 @@
       },
       {
         "class": "java.lang.String"
-      },
-      {
-        "class": "org.joda.time.DateTime"
       }
     ],
     "packages": [
+      {
+        "package": "Ljava.lang."
+      },
       {
         "package": "java.lang."
       },
