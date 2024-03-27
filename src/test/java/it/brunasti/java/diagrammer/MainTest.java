@@ -128,6 +128,33 @@ public class MainTest implements TestConstants {
   }
 
   @Test
+  @DisplayName("Call Main main with debug")
+  void testMainMethod_Debug() {
+    System.err.println("Call Main main with debug ---- ");
+
+    System.err.println("[-d]");
+    String[] args = new String[1];
+    args[0] = "-d";
+    assertDoesNotThrow(() -> Main.main(args));
+
+    System.err.println("[-d 2]");
+    String[] argsHelp = new String[2];
+    argsHelp[0] = "-d";
+    argsHelp[1] = "2";
+    assertDoesNotThrow(() -> Main.main(argsHelp));
+
+    System.err.println("[-d 999]");
+    argsHelp[0] = "-d";
+    argsHelp[1] = "999";
+    assertDoesNotThrow(() -> Main.main(argsHelp));
+
+    System.err.println("[-d xxx]");
+    argsHelp[0] = "-d";
+    argsHelp[1] = "xxx";
+    assertDoesNotThrow(() -> Main.main(argsHelp));
+  }
+
+  @Test
   @DisplayName("Call Main main to StdOut")
   void testMainMethod_StdOut() {
     String[] args = new String[1];
@@ -138,11 +165,29 @@ public class MainTest implements TestConstants {
   @Test
   @DisplayName("Call Main main on test classes")
   void testMainMethod_Test() {
+
+    String[] fullArgs = new String[12];
+    fullArgs[0] = testClassesDirectory;
+    fullArgs[1] = testOutputFileName;
+    fullArgs[2] = "-d";
+    fullArgs[3] = "6";
+    fullArgs[4] = "-c";
+    fullArgs[5] = configurationFileName;
+    fullArgs[6] = "-o";
+    fullArgs[7] = outputFileName;
+    fullArgs[8] = "-p";
+    fullArgs[9] = testClassesDirectory;
+    fullArgs[10] = "-i";
+    fullArgs[11] = testJavaSrcDirectory;
+    assertDoesNotThrow(() -> Main.main(fullArgs));
+
     String[] args = new String[3];
     args[0] = testClassesDirectory;
     args[1] = testOutputFileName;
     args[2] = "-d";
     assertDoesNotThrow(() -> Main.main(args));
+
+
   }
 
   @Test

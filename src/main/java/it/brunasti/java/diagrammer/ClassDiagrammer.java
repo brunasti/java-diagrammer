@@ -198,6 +198,7 @@ public class ClassDiagrammer {
   }
 
   private void generateUses(final ArrayList<JavaClass> classes) {
+    Main.debug(2, "generateUses() ------------------");
     output.println("' USES =======");
     classes.forEach(javaClass -> {
       if (!javaClass.isEnum()) {
@@ -226,6 +227,7 @@ public class ClassDiagrammer {
   }
 
   private void generateFields(final ArrayList<JavaClass> classes) {
+    Main.debug(2, "generateFields() ------------------");
     output.println("' FIELDS =======");
     classes.forEach(javaClass -> {
       if (!javaClass.isEnum()) {
@@ -245,16 +247,19 @@ public class ClassDiagrammer {
   }
 
   private void generateImports(final ArrayList<JavaClass> classes, String javaFilesPath) {
+    Main.debug(2, "generateImports() ------------------");
     if ((null != javaFilesPath) && (!javaFilesPath.isBlank())) {
 
       output.println("' IMPORTS =======");
       output.println("' Java Files Path : " + javaFilesPath);
       classes.forEach(javaClass -> {
+        Main.debug(3, "  ---------- " + javaClass.getClassName());
         output.println("' " + javaClass.getClassName());
         String javaClassName = javaFilesPath + javaClass.getClassName().replace(".", "/") + ImportsIdentifier.FILE_TYPE;
         Set<String> imports = ImportsIdentifier.extractImports(javaClassName, javaFilesPath);
         try {
           for (String imprt : imports) {
+            Main.debug(3, "    -------- " + imprt);
             String importedFile = imprt;
             if (importedFile.startsWith("static")) {
               Main.debug(4, " replace static in " + importedFile);
@@ -280,6 +285,7 @@ public class ClassDiagrammer {
   }
 
   private void generateImplements(final ArrayList<JavaClass> classes) {
+    Main.debug(2, "generateImplements() ------------------");
     output.println("' IMPLEMENT INTERFACE =======");
     classes.forEach(javaClass -> {
       try {
@@ -295,6 +301,7 @@ public class ClassDiagrammer {
   }
 
   private void generateInheritances(final ArrayList<JavaClass> classes) {
+    Main.debug(2, "generateInheritances() ------------------");
     output.println("' INHERITANCES =======");
     classes.forEach(javaClass -> {
       try {
@@ -339,6 +346,7 @@ public class ClassDiagrammer {
   }
   
   private void generateClasses(final ArrayList<JavaClass> classes, ClassLoader classLoader) {
+    Main.debug(2, "generateClasses() ------------------");
     output.println();
     output.println();
     output.println("' CLASSES =======");
@@ -357,11 +365,13 @@ public class ClassDiagrammer {
   }
 
   private void generateFooter() {
+    Main.debug(2, "generateFooter() ------------------");
     output.println();
     output.println("@enduml");
   }
 
   private void generateHeader(final String path, final String configurationFile, String javaFilesPath) {
+    Main.debug(2, "generateHeader() ------------------");
     Date now = new Date();
     output.println("@startuml");
     output.println("'https://plantuml.com/class-diagram");

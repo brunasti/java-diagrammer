@@ -3,71 +3,89 @@
 
 ' GENERATE CLASS DIAGRAM ===========
 ' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
-' Path            : [./target/classes]
-' Java Files Path : [./src/main/java/]
+' Path            : [./target/test-classes]
+' Java Files Path : [./src/test/java/]
 ' Configuration   : [./temp/config.json]
-' Generated at    : Wed Mar 27 15:32:08 CET 2024
+' Generated at    : Wed Mar 27 16:17:40 CET 2024
 
 
 
 ' CLASSES =======
-class it.brunasti.java.diagrammer.ClassDiagrammer
-class it.brunasti.java.diagrammer.Utils
-class it.brunasti.java.diagrammer.Main
-class it.brunasti.java.diagrammer.ImportsIdentifier
+class it.brunasti.java.diagrammer.ClassDiagrammerTest
+class it.brunasti.java.diagrammer.UtilsTest
+interface it.brunasti.java.diagrammer.TestConstants
+abstract it.brunasti.java.diagrammer.teststructure.TestAbstractClass
+class it.brunasti.java.diagrammer.teststructure.TestBaseClass
+enum it.brunasti.java.diagrammer.teststructure.TestEnumClass{
+  FIRST
+  SECOND
+  THIRD
+}
+class it.brunasti.java.diagrammer.teststructure.TestExtendedClass
+class it.brunasti.java.diagrammer.teststructure.TestOtherClass
+class it.brunasti.java.diagrammer.MainTest
 
 ' INHERITANCES =======
+it.brunasti.java.diagrammer.teststructure.TestAbstractClass <|-- it.brunasti.java.diagrammer.teststructure.TestBaseClass
+java.lang.Enum <|-- it.brunasti.java.diagrammer.teststructure.TestEnumClass
+it.brunasti.java.diagrammer.teststructure.TestBaseClass <|-- it.brunasti.java.diagrammer.teststructure.TestExtendedClass
+it.brunasti.java.diagrammer.teststructure.TestAbstractClass <|-- it.brunasti.java.diagrammer.teststructure.TestOtherClass
 
 ' IMPLEMENT INTERFACE =======
+it.brunasti.java.diagrammer.TestConstants <|.. it.brunasti.java.diagrammer.ClassDiagrammerTest
+it.brunasti.java.diagrammer.TestConstants <|.. it.brunasti.java.diagrammer.UtilsTest
+it.brunasti.java.diagrammer.TestConstants <|.. it.brunasti.java.diagrammer.teststructure.TestBaseClass
+it.brunasti.java.diagrammer.TestConstants <|.. it.brunasti.java.diagrammer.teststructure.TestOtherClass
+it.brunasti.java.diagrammer.TestConstants <|.. it.brunasti.java.diagrammer.MainTest
 
 ' FIELDS =======
-it.brunasti.java.diagrammer.ClassDiagrammer --> java.io.PrintStream
-it.brunasti.java.diagrammer.Main --> org.apache.commons.cli.CommandLine
-it.brunasti.java.diagrammer.Main --> it.brunasti.java.diagrammer.ClassDiagrammer
-it.brunasti.java.diagrammer.Main --> org.apache.commons.cli.Options
+it.brunasti.java.diagrammer.teststructure.TestBaseClass --> it.brunasti.java.diagrammer.teststructure.TestEnumClass
+it.brunasti.java.diagrammer.teststructure.TestOtherClass --> it.brunasti.java.diagrammer.teststructure.TestBaseClass
+it.brunasti.java.diagrammer.teststructure.TestOtherClass --> it.brunasti.java.diagrammer.teststructure.TestEnumClass
 
 ' USES =======
-it.brunasti.java.diagrammer.ClassDiagrammer ..> java.io.PrintStream
-it.brunasti.java.diagrammer.ClassDiagrammer ..> org.apache.bcel.classfile.JavaClass
-it.brunasti.java.diagrammer.ClassDiagrammer ..> org.apache.bcel.classfile.Field
-it.brunasti.java.diagrammer.ClassDiagrammer ..> org.apache.bcel.util.ClassLoaderRepository
-it.brunasti.java.diagrammer.Utils ..> java.io.PrintStream
-it.brunasti.java.diagrammer.Utils ..> org.json.simple.JSONObject
-it.brunasti.java.diagrammer.Utils ..> java.nio.file.Path
-it.brunasti.java.diagrammer.Main ..> org.apache.commons.cli.Options
+it.brunasti.java.diagrammer.ClassDiagrammerTest ..> it.brunasti.java.diagrammer.ClassDiagrammer
+it.brunasti.java.diagrammer.UtilsTest ..> it.brunasti.java.diagrammer.Utils
+it.brunasti.java.diagrammer.MainTest ..> it.brunasti.java.diagrammer.Main
+it.brunasti.java.diagrammer.MainTest ..> org.apache.commons.cli.Options
 
 ' IMPORTS =======
-' Java Files Path : ./src/main/java/
-' it.brunasti.java.diagrammer.ClassDiagrammer
-it.brunasti.java.diagrammer.ClassDiagrammer ..o org.apache.bcel.util.ClassLoaderRepository
-it.brunasti.java.diagrammer.ClassDiagrammer ..o java.net.URLClassLoader
-it.brunasti.java.diagrammer.ClassDiagrammer ..o org.apache.bcel.classfile.Field
-it.brunasti.java.diagrammer.ClassDiagrammer ..o org.json.simple.JSONObject
-it.brunasti.java.diagrammer.ClassDiagrammer ..o java.net.URL
-it.brunasti.java.diagrammer.ClassDiagrammer ..o org.apache.bcel.classfile.Method
-it.brunasti.java.diagrammer.ClassDiagrammer ..o org.apache.bcel.generic.Type
-it.brunasti.java.diagrammer.ClassDiagrammer ..o org.json.simple.JSONArray
-it.brunasti.java.diagrammer.ClassDiagrammer ..o org.apache.bcel.classfile.JavaClass
+' Java Files Path : ./src/test/java/
+' it.brunasti.java.diagrammer.ClassDiagrammerTest
+it.brunasti.java.diagrammer.ClassDiagrammerTest ..o org.junit.jupiter.api.Test
+it.brunasti.java.diagrammer.ClassDiagrammerTest ..o  org.junit.jupiter.api.Assertions
+it.brunasti.java.diagrammer.ClassDiagrammerTest ..o org.junit.jupiter.api.DisplayName
 
-' it.brunasti.java.diagrammer.Utils
-it.brunasti.java.diagrammer.Utils ..o java.io.PrintStream
-it.brunasti.java.diagrammer.Utils ..o org.json.simple.JSONObject
-it.brunasti.java.diagrammer.Utils ..o java.nio.file.Files
-it.brunasti.java.diagrammer.Utils ..o java.nio.file.Paths
-it.brunasti.java.diagrammer.Utils ..o org.json.simple.parser.JSONParser
-it.brunasti.java.diagrammer.Utils ..o java.io.IOException
-it.brunasti.java.diagrammer.Utils ..o java.io.FileReader
-it.brunasti.java.diagrammer.Utils ..o java.nio.file.Path
+' it.brunasti.java.diagrammer.UtilsTest
+it.brunasti.java.diagrammer.UtilsTest ..o org.junit.jupiter.api.Test
+it.brunasti.java.diagrammer.UtilsTest ..o java.nio.file.NoSuchFileException
+it.brunasti.java.diagrammer.UtilsTest ..o org.json.simple.JSONObject
+it.brunasti.java.diagrammer.UtilsTest ..o  org.junit.jupiter.api.Assertions
+it.brunasti.java.diagrammer.UtilsTest ..o java.io.IOException
+it.brunasti.java.diagrammer.UtilsTest ..o org.json.simple.JSONArray
+it.brunasti.java.diagrammer.UtilsTest ..o org.junit.jupiter.api.DisplayName
 
-' it.brunasti.java.diagrammer.Main
-it.brunasti.java.diagrammer.Main ..o java.io.PrintStream
-it.brunasti.java.diagrammer.Main ..o java.io.PrintWriter
-it.brunasti.java.diagrammer.Main ..o java.io.FileOutputStream
+' it.brunasti.java.diagrammer.TestConstants
 
-' it.brunasti.java.diagrammer.ImportsIdentifier
-it.brunasti.java.diagrammer.ImportsIdentifier ..o com.thoughtworks.qdox.JavaProjectBuilder
-it.brunasti.java.diagrammer.ImportsIdentifier ..o com.thoughtworks.qdox.model.JavaSource
-it.brunasti.java.diagrammer.ImportsIdentifier ..o java.io.FileReader
+' it.brunasti.java.diagrammer.teststructure.TestAbstractClass
+
+' it.brunasti.java.diagrammer.teststructure.TestBaseClass
+it.brunasti.java.diagrammer.teststructure.TestBaseClass ..o it.brunasti.java.diagrammer.TestConstants
+
+' it.brunasti.java.diagrammer.teststructure.TestEnumClass
+
+' it.brunasti.java.diagrammer.teststructure.TestExtendedClass
+
+' it.brunasti.java.diagrammer.teststructure.TestOtherClass
+it.brunasti.java.diagrammer.teststructure.TestOtherClass ..o it.brunasti.java.diagrammer.TestConstants
+it.brunasti.java.diagrammer.teststructure.TestOtherClass ..o  org.junit.jupiter.api.Assertions.assertDoesNotThrow
+
+' it.brunasti.java.diagrammer.MainTest
+it.brunasti.java.diagrammer.MainTest ..o org.junit.jupiter.api.Test
+it.brunasti.java.diagrammer.MainTest ..o  org.junit.jupiter.api.Assertions.assertDoesNotThrow
+it.brunasti.java.diagrammer.MainTest ..o org.apache.commons.cli.Options
+it.brunasti.java.diagrammer.MainTest ..o  org.junit.jupiter.api.Assertions.assertNotNull
+it.brunasti.java.diagrammer.MainTest ..o org.junit.jupiter.api.DisplayName
 
 
 

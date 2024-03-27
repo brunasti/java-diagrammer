@@ -64,8 +64,10 @@ public class Main {
         options = new Options();
         Option optionHelp = new Option("h", "help", false, "Help");
         Option optionShortUsage = new Option("?", false, "Quick Reference");
-        Option optionDebug = new Option("d", "debug", false,
-                "Execute in debug mode");
+        Option optionDebug = Option.builder().option("d").longOpt("debug").hasArg(true).optionalArg(true)
+                .desc("Execute in debug mode, optionally with desired level").build();
+//        Option optionDebug = new Option("d", "debug", true,
+//                "Execute in debug mode, with optional level");
         Option optionOutputFile = new Option("o", "output", true, "Output File");
         Option optionConfigFile = new Option("c", "config", true,
                 "Configuration File");
@@ -87,9 +89,25 @@ public class Main {
 
             commandLine = parser.parse(options, args);
 
-            if (commandLine.hasOption("d")) {
-                debug = true;
+            if (commandLine.hasOption(optionDebug.getOpt())) {
+                String debugLevelString = commandLine.getOptionValue(optionDebug.getOpt());
+                System.err.println(optionDebug.getDescription() + " set to [" + debugLevelString + "]");
+                if (debugLevelString != null) {
+                    try {
+                        int dl = Integer.parseInt(debugLevelString);
+                        setDebug(dl);
+                    } catch (Exception ex ) {
+                        ex.printStackTrace(System.err);
+                        return false;
+                    }
+                } else {
+                    setDebug(true);
+                }
             }
+//            if (commandLine.hasOption("d")) {
+//                int debugLevel =
+//                debug = true;
+//            }
             if (debug) {
                 Utils.dump("ARGS", args, System.err);
                 Utils.dump("CMD", commandLine.getArgs(), System.err);
@@ -162,8 +180,6 @@ public class Main {
                 4,
                 4,
                 "");
-
-        outError.close();
     }
 
     static void printUsage(Options options) {
@@ -178,8 +194,6 @@ public class Main {
         PrintWriter outError = new PrintWriter(System.err);
 
         helper.printUsage(outError, 100, "java " + className, options);
-
-        outError.close();
     }
 
     public static void main(String[] args) {

@@ -13,6 +13,7 @@ import java.util.Set;
 import com.thoughtworks.qdox.JavaProjectBuilder;
 import com.thoughtworks.qdox.model.JavaSource;
 
+// TODO: Create ad hoc test case for this class
 public class ImportsIdentifier {
 
   public static final String FILE_TYPE = ".java";

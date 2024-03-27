@@ -16,6 +16,7 @@ public interface TestConstants {
   String nonExistingDirectoryAndFile = "./errorDir/test.txt";
   String srcDirectory = "./src";
   String javaSrcDirectory = "./src/main/java";
+  String testJavaSrcDirectory = "./src/test/java";
   String classesDirectory = "./target/classes";
   String testClassesDirectory = "./target/test-classes";
   String configurationFileName = "./temp/config.json";

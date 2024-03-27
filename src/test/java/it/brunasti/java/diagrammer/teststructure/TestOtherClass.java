@@ -6,6 +6,10 @@
 package it.brunasti.java.diagrammer.teststructure;
 
 import it.brunasti.java.diagrammer.TestConstants;
+import it.brunasti.java.diagrammer.TestConstants;
+import java.util.Set;
+
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
 public class TestOtherClass extends TestAbstractClass implements TestConstants {
   TestBaseClass selfTest;
