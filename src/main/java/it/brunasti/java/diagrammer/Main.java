@@ -224,31 +224,25 @@ public class Main {
 
     FileOutputStream file = null;
 
-    PrintStream output = null;
+    try {
+      PrintStream output = System.out;
 
-    if ((null != outputFile) && (!outputFile.isBlank())) {
-      try {
+      if ((null != outputFile) && (!outputFile.isBlank())) {
         // Creates a FileOutputStream
         file = new FileOutputStream(outputFile);
 
         // Creates a PrintWriter
         output = new PrintStream(file, true);
-      } catch (Exception ex) {
-        ex.printStackTrace();
       }
-    } else {
-      output = System.out;
-    }
 
-    classDiagrammer = new ClassDiagrammer(output);
-    classDiagrammer.generateDiagram(classesPackagePath, configurationFile, javaPackagePath);
+      classDiagrammer = new ClassDiagrammer(output);
+      classDiagrammer.generateDiagram(classesPackagePath, configurationFile, javaPackagePath);
 
-    if (null != file) {
-      try {
+      if (null != file) {
         file.close();
-      } catch (Exception ex) {
-        ex.printStackTrace();
       }
+    } catch (Exception ex) {
+      ex.printStackTrace();
     }
   }
 }
