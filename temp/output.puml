@@ -5,7 +5,7 @@
 ' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
 ' Path            : [./target/classes]
 ' Configuration   : []
-' Generated at    : Thu Mar 28 13:00:39 CET 2024
+' Generated at    : Thu Mar 28 13:42:48 CET 2024
 legend
 Connections legend
 ----
@@ -44,6 +44,7 @@ it.brunasti.java.diagrammer.ClassDiagrammer ..> org.apache.bcel.classfile.JavaCl
 it.brunasti.java.diagrammer.ClassDiagrammer ..> org.apache.bcel.classfile.Field
 it.brunasti.java.diagrammer.ClassDiagrammer ..> java.util.ArrayList
 it.brunasti.java.diagrammer.ClassDiagrammer ..> org.apache.bcel.util.ClassLoaderRepository
+it.brunasti.java.diagrammer.ClassDiagrammer ..> it.brunasti.java.diagrammer.ImportsIdentifier
 it.brunasti.java.diagrammer.ClassDiagrammer ..> java.util.concurrent.atomic.AtomicReference
 it.brunasti.java.diagrammer.Utils ..> java.io.PrintStream
 it.brunasti.java.diagrammer.Utils ..> java.util.ArrayList
@@ -52,6 +53,9 @@ it.brunasti.java.diagrammer.Utils ..> org.json.simple.JSONObject
 it.brunasti.java.diagrammer.Utils ..> java.nio.file.Path
 it.brunasti.java.diagrammer.Main ..> org.apache.commons.cli.Options
 it.brunasti.java.diagrammer.ImportsIdentifier ..> java.util.Set
+
+' IMPORTS =======
+' Java Files Path : 
 
 
 @enduml

@@ -5,7 +5,7 @@
 ' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
 ' Path            : [./target/test-classes]
 ' Configuration   : []
-' Generated at    : Thu Mar 28 13:00:39 CET 2024
+' Generated at    : Thu Mar 28 13:42:48 CET 2024
 legend
 Connections legend
 ----
@@ -43,6 +43,7 @@ it.brunasti.java.diagrammer.teststructure.TestAbstractClass <|-- it.brunasti.jav
 ' IMPLEMENT INTERFACE =======
 it.brunasti.java.diagrammer.TestConstants <|.. it.brunasti.java.diagrammer.ClassDiagrammerTest
 it.brunasti.java.diagrammer.TestConstants <|.. it.brunasti.java.diagrammer.UtilsTest
+it.brunasti.java.diagrammer.TestConstants <|.. it.brunasti.java.diagrammer.ImportsIdentifierTest
 it.brunasti.java.diagrammer.TestConstants <|.. it.brunasti.java.diagrammer.teststructure.TestBaseClass
 it.brunasti.java.diagrammer.TestConstants <|.. it.brunasti.java.diagrammer.teststructure.TestOtherClass
 it.brunasti.java.diagrammer.TestConstants <|.. it.brunasti.java.diagrammer.MainTest
@@ -58,8 +59,13 @@ it.brunasti.java.diagrammer.ClassDiagrammerTest ..> it.brunasti.java.diagrammer.
 it.brunasti.java.diagrammer.UtilsTest ..> it.brunasti.java.diagrammer.Utils
 it.brunasti.java.diagrammer.UtilsTest ..> java.util.Set
 it.brunasti.java.diagrammer.UtilsTest ..> java.util.ArrayList
+it.brunasti.java.diagrammer.ImportsIdentifierTest ..> java.util.Set
+it.brunasti.java.diagrammer.ImportsIdentifierTest ..> it.brunasti.java.diagrammer.ImportsIdentifier
 it.brunasti.java.diagrammer.MainTest ..> it.brunasti.java.diagrammer.Main
 it.brunasti.java.diagrammer.MainTest ..> org.apache.commons.cli.Options
+
+' IMPORTS =======
+' Java Files Path : 
 
 
 @enduml

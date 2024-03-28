@@ -20,6 +20,8 @@ public class ImportsIdentifier {
   public static final String FILE_TYPE = ".java";
 
   public Set<String> extractImports(String path, String sysPath) {
+    Main.debug(4, "ImportsIdentifier.extractImports : " + path + " - " + sysPath);
+
     Set<String> importFiles = new HashSet<>();
     // TODO : Could even extract packages....
     //    Set<String> packages = new HashSet<>();
@@ -31,17 +33,20 @@ public class ImportsIdentifier {
       Collection<JavaSource> srcs = jp.getSources();
 
       for (JavaSource src : srcs) {
+        Main.debug(8, "ImportsIdentifier.extractImports : src " + src);
         //        packages.add(src.getPackage().toString());
 
         for (String imprt : src.getImports()) {
+          Main.debug(5, "ImportsIdentifier.extractImports : imprt " + imprt);
           // TODO: could exclude imports with a test like : if (imprt.startsWith("")) {
           try {
             if (importFiles.contains(imprt)) {
               continue;
             }
             importFiles.add(imprt);
-            imprt = sysPath + imprt.replaceAll("\\.", "/") + FILE_TYPE;
-            extractImports(imprt, sysPath);
+            String newImprt = sysPath + imprt.replaceAll("\\.", "/") + FILE_TYPE;
+            Main.debug(6, "ImportsIdentifier.extractImports : newImprt " + newImprt);
+            extractImports(newImprt, sysPath);
           } catch (Exception ex) {
             Main.debug(4, "  Error ImportsIdentifier.extractImports : "
                     + ex.getMessage() + " = " + path + " - " + imprt);
