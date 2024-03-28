@@ -101,6 +101,10 @@ public class MainTest implements TestConstants {
     fullArgs[6] = "-i";
     fullArgs[7] = javaSrcDirectory;
     assertDoesNotThrow(() -> Main.main(moreArgs));
+
+    args[0] = classesDirectory;
+    args[1] = outputFileName;
+    assertDoesNotThrow(() -> Main.main(args));
   }
 
   @Test
@@ -174,7 +178,7 @@ public class MainTest implements TestConstants {
     fullArgs[4] = "-c";
     fullArgs[5] = configurationFileName;
     fullArgs[6] = "-o";
-    fullArgs[7] = outputFileName;
+    fullArgs[7] = testOutputFileName;
     fullArgs[8] = "-p";
     fullArgs[9] = testClassesDirectory;
     fullArgs[10] = "-i";

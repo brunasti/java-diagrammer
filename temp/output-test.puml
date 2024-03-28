@@ -5,15 +5,15 @@
 ' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
 ' Path            : [./target/test-classes]
 ' Configuration   : []
-' Generated at    : Wed Mar 27 17:14:08 CET 2024
+' Generated at    : Thu Mar 28 10:23:34 CET 2024
 legend
 Connections legend
 ----
 --|> : Extends
 ..|> : Implements
-
+----
 --> : Fields and Attributes
-..> : uses
+..> : Uses
 end legend
 
 
@@ -47,6 +47,7 @@ it.brunasti.java.diagrammer.TestConstants <|.. it.brunasti.java.diagrammer.tests
 it.brunasti.java.diagrammer.TestConstants <|.. it.brunasti.java.diagrammer.MainTest
 
 ' FIELDS =======
+it.brunasti.java.diagrammer.teststructure.TestBaseClass --> it.brunasti.java.diagrammer.teststructure.TestBaseClass
 it.brunasti.java.diagrammer.teststructure.TestBaseClass --> it.brunasti.java.diagrammer.teststructure.TestEnumClass
 it.brunasti.java.diagrammer.teststructure.TestOtherClass --> it.brunasti.java.diagrammer.teststructure.TestBaseClass
 it.brunasti.java.diagrammer.teststructure.TestOtherClass --> it.brunasti.java.diagrammer.teststructure.TestEnumClass

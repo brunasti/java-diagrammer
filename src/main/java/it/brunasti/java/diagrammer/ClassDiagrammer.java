@@ -24,7 +24,7 @@ import org.json.simple.JSONObject;
  *
  */
 public class ClassDiagrammer {
-  // TODO: add flag to avoid or not the self reflection
+  // TODO: Move files from temp directory to more appropriate ones
   // TODO: Manage arrays (LString...)
   // TODO: Add the option to extract Methods and Attributes, Protected Private or Abstract (MA-PPA)
   // TODO: Avoid generic catch(Exception)
@@ -155,11 +155,12 @@ public class ClassDiagrammer {
                                       final String type) {
     Main.debug("isTypeToBeConnected " + javaClass.getClassName() + " to " + type);
 
-    // Avoid self referencing loops
-    if (type.equals(javaClass.getClassName())) {
-      Main.debug("  - self ref");
-      return false;
-    }
+    // TODO: add flag to avoid or not the self reflection
+//    // Avoid self referencing loops
+//    if (type.equals(javaClass.getClassName())) {
+//      Main.debug("  - self ref");
+//      return false;
+//    }
 
     // If the type is all lowercase, then is a primitive type
     if (type.toLowerCase().equals(type)) {
