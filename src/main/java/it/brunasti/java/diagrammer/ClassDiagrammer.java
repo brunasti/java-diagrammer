@@ -25,8 +25,11 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 /**
+ * Generate a PrintUML class diagram from the compiled Java classes.
  *
- *
+ * @author  Paolo Brunasti
+ * @version %I%, %G%
+ * @see     it.brunasti.java
  */
 public class ClassDiagrammer {
   // TODO: Move files from temp directory to more appropriate ones
@@ -392,7 +395,7 @@ public class ClassDiagrammer {
     }
     output.println("' Configuration   : [" + configurationFile + "]");
     output.println("' Generated at    : " + new Date());
-    // TODO : Add legend for the types of links - specified by CLI param
+    // TODO : Add flag specified by CLI param to activate the legend
     String legendFileContent = Utils.readFileToString("./temp/default_legend.txt");
     if (!legendFileContent.isBlank()) {
       output.println("legend");
@@ -410,6 +413,16 @@ public class ClassDiagrammer {
     usesWritten = new HashSet<>();
   }
 
+  /** Generate a diagram for the class files.
+   * Generate a diagram for the class files located in the path,
+   * with a configuration written in configurationFile and
+   * in case searching for source in javaFilesPath
+   *
+   * @param path The path to the compiled Java classes directory.
+   * @param configurationFile The configuration file with the list
+   *                          of packages and classes to exclude.
+   * @param javaFilesPath The path to the source Java files directory.
+   */
   public void generateDiagram(final String path,
                               final String configurationFile,
                               final String javaFilesPath) {

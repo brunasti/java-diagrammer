@@ -12,7 +12,9 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
-// TODO: Create ad hoc test case for this class
+/**
+ *
+ */
 public class ImportsIdentifier {
 
   public static final String FILE_TYPE = ".java";
