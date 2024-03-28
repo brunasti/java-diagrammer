@@ -10,7 +10,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Set;
 
-// TODO: implement the test cases for this class
 class ImportsIdentifierTest implements TestConstants {
 
   @Test

@@ -1,14 +1,7 @@
 /**
- * Provides the classes necessary to create an applet and the classes an applet uses
- * to communicate with its applet context.
- * <p>
- * The applet framework involves two entities:
- * the applet and the applet context. An applet is an embeddable window with a few
- * extra methods that the applet context
- * can use to initialize, start, and stop the applet.
- *
+ * Generate a PlantUML Class diagram from a compiled Java class collection.
+ * <p*
  * @since 1.0
- * @see java.awt
  */
 
 package it.brunasti.java.diagrammer;
