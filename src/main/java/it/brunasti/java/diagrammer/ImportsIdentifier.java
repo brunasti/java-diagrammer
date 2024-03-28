@@ -5,13 +5,12 @@
 
 package it.brunasti.java.diagrammer;
 
+import com.thoughtworks.qdox.JavaProjectBuilder;
+import com.thoughtworks.qdox.model.JavaSource;
 import java.io.FileReader;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
-
-import com.thoughtworks.qdox.JavaProjectBuilder;
-import com.thoughtworks.qdox.model.JavaSource;
 
 // TODO: Create ad hoc test case for this class
 public class ImportsIdentifier {
@@ -42,12 +41,14 @@ public class ImportsIdentifier {
             imprt = sysPath + imprt.replaceAll("\\.", "/") + FILE_TYPE;
             extractImports(imprt, sysPath);
           } catch (Exception ex) {
-            Main.debug(4, "  Error ImportsIdentifier.extractImports : " + ex.getMessage() + " = " + path + " - " + imprt);
+            Main.debug(4, "  Error ImportsIdentifier.extractImports : "
+                    + ex.getMessage() + " = " + path + " - " + imprt);
           }
         }
       }
     } catch (Exception ex) {
-      Main.debug(3, "  Error ImportsIdentifier.extractImports : " + ex.getMessage() + " = " + path);
+      Main.debug(3, "  Error ImportsIdentifier.extractImports : "
+              + ex.getMessage() + " = " + path);
     }
     return importFiles;
   }

@@ -30,7 +30,7 @@ public final class Utils {
   }
 
   public static void dump(final String t, final Object[] arr) {
-    dump(t,arr,System.out);
+    dump(t, arr, System.out);
   }
 
   public static void dump(final String t, final Object[] arr, PrintStream output) {
