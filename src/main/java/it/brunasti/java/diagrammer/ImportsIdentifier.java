@@ -19,7 +19,7 @@ public class ImportsIdentifier {
 
   public static final String FILE_TYPE = ".java";
 
-  public static Set<String> extractImports(String path, String sysPath) {
+  public Set<String> extractImports(String path, String sysPath) {
     Set<String> importFiles = new HashSet<>();
     // TODO : Could even extract packages....
     //    Set<String> packages = new HashSet<>();

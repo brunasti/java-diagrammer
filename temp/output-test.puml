@@ -5,7 +5,7 @@
 ' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
 ' Path            : [./target/test-classes]
 ' Configuration   : []
-' Generated at    : Thu Mar 28 10:25:06 CET 2024
+' Generated at    : Thu Mar 28 13:00:39 CET 2024
 legend
 Connections legend
 ----
@@ -22,6 +22,7 @@ end legend
 class it.brunasti.java.diagrammer.ClassDiagrammerTest
 class it.brunasti.java.diagrammer.UtilsTest
 interface it.brunasti.java.diagrammer.TestConstants
+class it.brunasti.java.diagrammer.ImportsIdentifierTest
 abstract it.brunasti.java.diagrammer.teststructure.TestAbstractClass
 class it.brunasti.java.diagrammer.teststructure.TestBaseClass
 enum it.brunasti.java.diagrammer.teststructure.TestEnumClass{

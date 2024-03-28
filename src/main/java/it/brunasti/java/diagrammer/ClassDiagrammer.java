@@ -256,17 +256,18 @@ public class ClassDiagrammer {
 
   private void generateImports(final ArrayList<JavaClass> classes, String javaFilesPath) {
     Main.debug(2, "generateImports() ------------------");
+    output.println("' IMPORTS =======");
+    output.println("' Java Files Path : " + javaFilesPath);
     if ((null != javaFilesPath) && (!javaFilesPath.isBlank())) {
+      ImportsIdentifier importsIdentifier = new ImportsIdentifier();
 
-      output.println("' IMPORTS =======");
-      output.println("' Java Files Path : " + javaFilesPath);
       classes.forEach(javaClass -> {
         Main.debug(3, "  ---------- " + javaClass.getClassName());
         output.println("' " + javaClass.getClassName());
         String javaClassName = javaFilesPath
                 + javaClass.getClassName().replace(".", "/")
                 + ImportsIdentifier.FILE_TYPE;
-        Set<String> imports = ImportsIdentifier.extractImports(javaClassName, javaFilesPath);
+        Set<String> imports = importsIdentifier.extractImports(javaClassName, javaFilesPath);
         try {
           for (String imprt : imports) {
             Main.debug(3, "    -------- " + imprt);
@@ -290,8 +291,10 @@ public class ClassDiagrammer {
         }
         output.println();
       });
-      output.println();
+    } else {
+      Main.debug(3, "generateImports() --- Not generated because javaFilesPath not provided");
     }
+    output.println();
   }
 
   private void generateImplements(final ArrayList<JavaClass> classes) {
