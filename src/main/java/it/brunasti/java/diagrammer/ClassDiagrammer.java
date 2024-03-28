@@ -5,12 +5,17 @@
 
 package it.brunasti.java.diagrammer;
 
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintStream;
 import java.net.URL;
 import java.net.URLClassLoader;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
-
 import org.apache.bcel.classfile.Field;
 import org.apache.bcel.classfile.JavaClass;
 import org.apache.bcel.classfile.Method;
@@ -29,6 +34,7 @@ public class ClassDiagrammer {
   // TODO: Add the option to extract Methods and Attributes, Protected Private or Abstract (MA-PPA)
   // TODO: Avoid generic catch(Exception)
   // TODO: option to add "hide empty members" in diagram
+  // TODO: add Javadoc comments
 
   // Reference to a PrintStream to be used for the diagram
   // By default is the Standard.out, but it can be redirected
@@ -95,9 +101,7 @@ public class ClassDiagrammer {
 
       Set<String> dirs = Utils.listDirectories(newPath);
 
-      dirs.forEach(dir ->
-        iterateSubDirectories(path, localPackage + "." + dir, files)
-      );
+      dirs.forEach(dir -> iterateSubDirectories(path, localPackage + "." + dir, files));
 
       return files;
     } catch (Exception ex) {
@@ -105,7 +109,6 @@ public class ClassDiagrammer {
       return null;
     }
   }
-
 
 
   private boolean initToBeExcluded(String configurationFileName) {
@@ -123,7 +126,7 @@ public class ClassDiagrammer {
       JSONObject exclude = (JSONObject) jsonObject.get("exclude");
 
       JSONArray classes = (JSONArray) exclude.get("classes");
-      Iterator<JSONObject> iterator = (Iterator<JSONObject>)classes.iterator();
+      Iterator<JSONObject> iterator = (Iterator<JSONObject>) classes.iterator();
       while (iterator.hasNext()) {
         JSONObject object = iterator.next();
         Main.debug(2, "  - excludeClass JSONObject [" + object + "]");
@@ -133,7 +136,7 @@ public class ClassDiagrammer {
       }
 
       JSONArray packages = (JSONArray) exclude.get("packages");
-      iterator = (Iterator<JSONObject>)packages.iterator();
+      iterator = (Iterator<JSONObject>) packages.iterator();
       while (iterator.hasNext()) {
         JSONObject object = iterator.next();
         Main.debug(2, "  - excludePackage JSONObject [" + object + "]");
@@ -156,11 +159,11 @@ public class ClassDiagrammer {
     Main.debug("isTypeToBeConnected " + javaClass.getClassName() + " to " + type);
 
     // TODO: add flag to avoid or not the self reflection
-//    // Avoid self referencing loops
-//    if (type.equals(javaClass.getClassName())) {
-//      Main.debug("  - self ref");
-//      return false;
-//    }
+    //    // Avoid self referencing loops
+    //    if (type.equals(javaClass.getClassName())) {
+    //      Main.debug("  - self ref");
+    //      return false;
+    //    }
 
     // If the type is all lowercase, then is a primitive type
     if (type.toLowerCase().equals(type)) {
@@ -257,7 +260,9 @@ public class ClassDiagrammer {
       classes.forEach(javaClass -> {
         Main.debug(3, "  ---------- " + javaClass.getClassName());
         output.println("' " + javaClass.getClassName());
-        String javaClassName = javaFilesPath + javaClass.getClassName().replace(".", "/") + ImportsIdentifier.FILE_TYPE;
+        String javaClassName = javaFilesPath
+                + javaClass.getClassName().replace(".", "/")
+                + ImportsIdentifier.FILE_TYPE;
         Set<String> imports = ImportsIdentifier.extractImports(javaClassName, javaFilesPath);
         try {
           for (String imprt : imports) {
@@ -278,7 +283,7 @@ public class ClassDiagrammer {
             }
           }
         } catch (Exception ex) {
-          System.err.println("generateImports : "+ ex.getMessage());
+          System.err.println("generateImports : " + ex.getMessage());
         }
         output.println();
       });
@@ -292,7 +297,7 @@ public class ClassDiagrammer {
     classes.forEach(javaClass -> {
       try {
         for (JavaClass javaInterface : javaClass.getInterfaces()) {
-          output.println( javaInterface.getClassName() + " <|.. "
+          output.println(javaInterface.getClassName() + " <|.. "
                   + javaClass.getClassName());
         }
       } catch (Exception ex) {
@@ -309,7 +314,7 @@ public class ClassDiagrammer {
       try {
         if (!"java.lang.Object".equals(
                 javaClass.getSuperClass().getClassName())) {
-          output.println( javaClass.getSuperClass().getClassName() + " <|-- "
+          output.println(javaClass.getSuperClass().getClassName() + " <|-- "
                   + javaClass.getClassName());
         }
       } catch (Exception ex) {
@@ -342,7 +347,7 @@ public class ClassDiagrammer {
 
     output.println("enum " + javaClass.getClassName() + "{");
     for (String enumValue : enumFields) {
-      output.println("  "+enumValue);
+      output.println("  " + enumValue);
     }
     output.println("}");    
   }
@@ -372,9 +377,10 @@ public class ClassDiagrammer {
     output.println("@enduml");
   }
 
-  private void generateHeader(final String path, final String configurationFile, String javaFilesPath) {
+  private void generateHeader(final String path,
+                              final String configurationFile,
+                              String javaFilesPath) {
     Main.debug(2, "generateHeader() ------------------");
-    Date now = new Date();
     output.println("@startuml");
     output.println("'https://plantuml.com/class-diagram");
     output.println();
@@ -385,7 +391,7 @@ public class ClassDiagrammer {
       output.println("' Java Files Path : [" + javaFilesPath + "]");
     }
     output.println("' Configuration   : [" + configurationFile + "]");
-    output.println("' Generated at    : " + now);
+    output.println("' Generated at    : " + new Date());
     // TODO : Add legend for the types of links - specified by CLI param
     String legendFileContent = Utils.readFileToString("./temp/default_legend.txt");
     if (!legendFileContent.isBlank()) {
@@ -404,7 +410,9 @@ public class ClassDiagrammer {
     usesWritten = new HashSet<>();
   }
 
-  public void generateDiagram(final String path, final String configurationFile, String javaFilesPath) {
+  public void generateDiagram(final String path,
+                              final String configurationFile,
+                              final String javaFilesPath) {
     cleanLocalVars();
 
     configurationFileName = configurationFile;
@@ -423,9 +431,7 @@ public class ClassDiagrammer {
 
     try {
       Set<String> dirs = Utils.listDirectories(path);
-      dirs.forEach(dir ->
-        files.addAll(iterateSubDirectories(path, dir))
-      );
+      dirs.forEach(dir -> files.addAll(iterateSubDirectories(path, dir)));
     } catch (IOException e) {
       e.printStackTrace();
     }
