@@ -4,8 +4,17 @@
 ' GENERATE CLASS DIAGRAM ===========
 ' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
 ' Path            : [./target/classes]
-' Configuration   : []
-' Generated at    : Fri Mar 29 12:10:16 CET 2024
+' Configuration   : [./docs/config-withLegend.json]
+' Generated at    : Fri Mar 29 12:29:38 CET 2024
+legend
+Connections legend
+----
+--|> : Extends
+..|> : Implements
+----
+--> : Fields and Attributes
+..> : Usses
+end legend
 
 
 
@@ -21,30 +30,21 @@ class it.brunasti.java.diagrammer.ImportsIdentifier
 
 ' FIELDS =======
 it.brunasti.java.diagrammer.ClassDiagrammer --> java.io.PrintStream
-it.brunasti.java.diagrammer.ClassDiagrammer --> java.util.HashSet
-it.brunasti.java.diagrammer.ClassDiagrammer --> java.util.HashSet
-it.brunasti.java.diagrammer.ClassDiagrammer --> java.util.HashSet
 it.brunasti.java.diagrammer.Main --> org.apache.commons.cli.CommandLine
 it.brunasti.java.diagrammer.Main --> it.brunasti.java.diagrammer.ClassDiagrammer
 it.brunasti.java.diagrammer.Main --> org.apache.commons.cli.Options
 
 ' USES =======
 it.brunasti.java.diagrammer.ClassDiagrammer ..> java.io.PrintStream
-it.brunasti.java.diagrammer.ClassDiagrammer ..> java.util.Set
 it.brunasti.java.diagrammer.ClassDiagrammer ..> org.json.simple.JSONObject
 it.brunasti.java.diagrammer.ClassDiagrammer ..> org.apache.bcel.classfile.JavaClass
 it.brunasti.java.diagrammer.ClassDiagrammer ..> org.apache.bcel.classfile.Field
-it.brunasti.java.diagrammer.ClassDiagrammer ..> java.util.ArrayList
 it.brunasti.java.diagrammer.ClassDiagrammer ..> org.apache.bcel.util.ClassLoaderRepository
 it.brunasti.java.diagrammer.ClassDiagrammer ..> it.brunasti.java.diagrammer.ImportsIdentifier
-it.brunasti.java.diagrammer.ClassDiagrammer ..> java.util.concurrent.atomic.AtomicReference
 it.brunasti.java.diagrammer.Utils ..> java.io.PrintStream
-it.brunasti.java.diagrammer.Utils ..> java.util.ArrayList
-it.brunasti.java.diagrammer.Utils ..> java.util.Set
 it.brunasti.java.diagrammer.Utils ..> org.json.simple.JSONObject
 it.brunasti.java.diagrammer.Utils ..> java.nio.file.Path
 it.brunasti.java.diagrammer.Main ..> org.apache.commons.cli.Options
-it.brunasti.java.diagrammer.ImportsIdentifier ..> java.util.Set
 
 ' IMPORTS =======
 ' Java Files Path : 

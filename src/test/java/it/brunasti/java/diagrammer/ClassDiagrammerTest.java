@@ -21,6 +21,7 @@ public class ClassDiagrammerTest implements TestConstants {
     Main.setDebug(5);
     ClassDiagrammer classDiagrammer = new ClassDiagrammer();
     assertDoesNotThrow(() -> classDiagrammer.generateDiagram(classesDirectory,configurationFileName,javaSrcDirectory));
+    assertDoesNotThrow(() -> classDiagrammer.generateDiagram(classesDirectory,configurationWithLegendFileName,javaSrcDirectory));
     Main.setDebug(false);
   }
 

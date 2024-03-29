@@ -19,5 +19,6 @@
         "package": "java.util."
       }
     ]
-  }
+  },
+  "legendFile" : "./docs/default_legend.txt"
 }

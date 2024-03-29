@@ -29,6 +29,7 @@ public interface TestConstants {
   String testOutputFileName = docsDirectory + "output-test.puml";
 
   String configurationFileName = docsDirectory + "config.json";
+  String configurationWithLegendFileName = docsDirectory + "config-withLegend.json";
   String wrongConfigurationFileName = outputFileName;
 
   String wrongJsonFileName = testResourcesDirectory + "wrong.json";

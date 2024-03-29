@@ -50,12 +50,16 @@ public class MainTest implements TestConstants {
     System.err.println("Main.debug ------ end -----");
 
 
+    Options options = new Options();
+
+
+    System.err.println("Main.printHelp ------");
     assertDoesNotThrow(() -> Main.printHelp());
     assertDoesNotThrow(() -> Main.printHelp(null));
-    assertDoesNotThrow(() -> Main.printUsage(null));
-
-    Options options = new Options();
     assertDoesNotThrow(() -> Main.printHelp(options));
+
+    System.err.println("Main.printUsage ------");
+    assertDoesNotThrow(() -> Main.printUsage(null));
     assertDoesNotThrow(() -> Main.printUsage(options));
   }
 
@@ -72,11 +76,13 @@ public class MainTest implements TestConstants {
   @Test
   @DisplayName("Call Main main with parameters")
   void testMainMethod_Params() {
+    System.err.println("Main.main ------ 2 args -----");
     String[] args = new String[2];
     args[0] = classesDirectory;
     args[1] = outputFileName;
     assertDoesNotThrow(() -> Main.main(args));
 
+    System.err.println("Main.main ------ 11 args -----");
     String[] fullArgs = new String[11];
     fullArgs[0] = classesDirectory;
     fullArgs[1] = outputFileName;
@@ -91,6 +97,7 @@ public class MainTest implements TestConstants {
     fullArgs[10] = javaSrcDirectory;
     assertDoesNotThrow(() -> Main.main(fullArgs));
 
+    System.err.println("Main.main ------ 8 args -----");
     String[] moreArgs = new String[8];
     moreArgs[0] = "-c";
     moreArgs[1] = configurationFileName;
@@ -98,13 +105,19 @@ public class MainTest implements TestConstants {
     moreArgs[3] = outputFileName;
     moreArgs[4] = "-p";
     moreArgs[5] = classesDirectory;
-    fullArgs[6] = "-i";
-    fullArgs[7] = javaSrcDirectory;
+    moreArgs[6] = "-i";
+    moreArgs[7] = javaSrcDirectory;
     assertDoesNotThrow(() -> Main.main(moreArgs));
 
-    args[0] = classesDirectory;
-    args[1] = outputFileName;
-    assertDoesNotThrow(() -> Main.main(args));
+    System.err.println("Main.main ------ 6 args ----- configurationWithLegendFileName");
+    String[] lastArgs = new String[6];
+    lastArgs[0] = "-c";
+    lastArgs[1] = configurationWithLegendFileName;
+    lastArgs[2] = "-o";
+    lastArgs[3] = outputFileName;
+    lastArgs[4] = "-p";
+    lastArgs[5] = classesDirectory;
+    assertDoesNotThrow(() -> Main.main(lastArgs));
   }
 
   @Test

@@ -130,8 +130,11 @@ public class ClassDiagrammer {
   }
 
   private void loadLegendConfiguration(JSONObject jsonObject) {
-    legendFileName = jsonObject.get("legendFile").toString();
-    Main.debug(2, "  - legendFile [" + legendFileName + "]");
+    Object legendFile = jsonObject.get("legendFile");
+    if (legendFile != null) {
+      legendFileName = legendFile.toString();
+      Main.debug(4, "  - legendFile [" + legendFileName + "]");
+    }
   }
 
   private void loadExcludeConfiguration(JSONObject jsonObject) {
