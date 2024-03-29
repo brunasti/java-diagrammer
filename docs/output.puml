@@ -2,10 +2,19 @@
 'https://plantuml.com/class-diagram
 
 ' GENERATE CLASS DIAGRAM ===========
-' Generator     : it.brunasti.java.diagrammer.ClassDiagrammer
-' Path          : [./target/classes]
-' Configuration : [./temp/config.json]
-' Generated at  : Sun Mar 24 15:43:56 CET 2024
+' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
+' Path            : [./target/classes]
+' Configuration   : []
+' Generated at    : Fri Mar 29 11:39:03 CET 2024
+legend
+Connections legend
+----
+--|> : Extends
+..|> : Implements
+----
+--> : Fields and Attributes
+..> : Usses
+end legend
 
 
 
@@ -13,6 +22,7 @@
 class it.brunasti.java.diagrammer.ClassDiagrammer
 class it.brunasti.java.diagrammer.Utils
 class it.brunasti.java.diagrammer.Main
+class it.brunasti.java.diagrammer.ImportsIdentifier
 
 ' INHERITANCES =======
 
@@ -20,21 +30,32 @@ class it.brunasti.java.diagrammer.Main
 
 ' FIELDS =======
 it.brunasti.java.diagrammer.ClassDiagrammer --> java.io.PrintStream
+it.brunasti.java.diagrammer.ClassDiagrammer --> java.util.HashSet
+it.brunasti.java.diagrammer.ClassDiagrammer --> java.util.HashSet
+it.brunasti.java.diagrammer.ClassDiagrammer --> java.util.HashSet
 it.brunasti.java.diagrammer.Main --> org.apache.commons.cli.CommandLine
 it.brunasti.java.diagrammer.Main --> it.brunasti.java.diagrammer.ClassDiagrammer
 it.brunasti.java.diagrammer.Main --> org.apache.commons.cli.Options
 
 ' USES =======
 it.brunasti.java.diagrammer.ClassDiagrammer ..> java.io.PrintStream
+it.brunasti.java.diagrammer.ClassDiagrammer ..> java.util.Set
 it.brunasti.java.diagrammer.ClassDiagrammer ..> org.apache.bcel.classfile.JavaClass
 it.brunasti.java.diagrammer.ClassDiagrammer ..> org.apache.bcel.classfile.Field
+it.brunasti.java.diagrammer.ClassDiagrammer ..> java.util.ArrayList
 it.brunasti.java.diagrammer.ClassDiagrammer ..> org.apache.bcel.util.ClassLoaderRepository
-it.brunasti.java.diagrammer.Utils ..> Ljava.lang.Object
+it.brunasti.java.diagrammer.ClassDiagrammer ..> it.brunasti.java.diagrammer.ImportsIdentifier
+it.brunasti.java.diagrammer.ClassDiagrammer ..> java.util.concurrent.atomic.AtomicReference
 it.brunasti.java.diagrammer.Utils ..> java.io.PrintStream
+it.brunasti.java.diagrammer.Utils ..> java.util.ArrayList
+it.brunasti.java.diagrammer.Utils ..> java.util.Set
 it.brunasti.java.diagrammer.Utils ..> org.json.simple.JSONObject
 it.brunasti.java.diagrammer.Utils ..> java.nio.file.Path
-it.brunasti.java.diagrammer.Main ..> Ljava.lang.String
 it.brunasti.java.diagrammer.Main ..> org.apache.commons.cli.Options
+it.brunasti.java.diagrammer.ImportsIdentifier ..> java.util.Set
+
+' IMPORTS =======
+' Java Files Path : 
 
 
 @enduml

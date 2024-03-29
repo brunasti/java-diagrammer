@@ -11,7 +11,11 @@ import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 
-// This Main uses https://commons.apache.org/proper/commons-cli/usage.html
+/**
+ * Entry point for the CLI version of the ClassDiagrammer.
+ * This Main uses the library form Apache for Command Line Interface:
+ * <a href="https://commons.apache.org/proper/commons-cli/usage.html">commons-cli</a>
+ */
 public class Main {
 
   private static final int DEFAULT_DEBUG_LEVEL = 3;
@@ -50,10 +54,21 @@ public class Main {
     debugLevel = value;
   }
 
+  /**
+   * Print to StdError a message if the debug level is higher than the DEFAULT_DEBUG_LEVEL.
+   *
+   * @param message Debugging message
+   */
   public static void debug(String message) {
     debug(DEFAULT_DEBUG_LEVEL, message);
   }
 
+  /**
+   * Print to StdError a message if the debug level is higher than the one passed in the level.
+   *
+   * @param level Level of this message, to be compared with the current debug level
+   * @param message Debugging message
+   */
   public static void debug(int level, String message) {
     if (debug) {
       if (level <= debugLevel) {
@@ -199,6 +214,11 @@ public class Main {
     helper.printUsage(outError, 100, "java " + className, options);
   }
 
+  /**
+   * Entry point for the CLI version of the ClassDiagrammer.
+   *
+   * @param args Command Line options
+   */
   public static void main(String[] args) {
     reset();
 

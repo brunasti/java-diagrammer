@@ -25,8 +25,8 @@ public interface TestConstants {
   String classesDirectory = "./target/classes";
   String testClassesDirectory = "./target/test-classes";
 
-  String outputFileName = tempDirectory + "output.puml";
-  String testOutputFileName = tempDirectory + "output-test.puml";
+  String outputFileName = docsDirectory + "output.puml";
+  String testOutputFileName = docsDirectory + "output-test.puml";
 
   String configurationFileName = testResourcesDirectory + "config.json";
   String wrongConfigurationFileName = outputFileName;
