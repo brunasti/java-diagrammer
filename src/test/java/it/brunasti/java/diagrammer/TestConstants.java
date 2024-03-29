@@ -11,27 +11,29 @@ package it.brunasti.java.diagrammer;
 public interface TestConstants {
 
   // Test config ---------------------------
-  String tempDirectory = "./temp";
+  String tempDirectory = "./temp/";
+  String testResourcesDirectory = "./src/test/resources/";
+  String docsDirectory = "./docs/";
   String nonExistingDirectory = "./errorDir";
   String nonExistingDirectoryAndFile = "./errorDir/test.txt";
 
 
-  String srcDirectory = "./src";
-  String javaSrcDirectory = "./src/main/java";
-  String testJavaSrcDirectory = "./src/test/java";
+  String srcDirectory = "./src/";
+  String javaSrcDirectory = srcDirectory + "main/java";
+  String testJavaSrcDirectory = srcDirectory + "test/java";
 
   String classesDirectory = "./target/classes";
   String testClassesDirectory = "./target/test-classes";
 
-  String outputFileName = "./temp/output.puml";
-  String testOutputFileName = "./temp/output-test.puml";
+  String outputFileName = tempDirectory + "output.puml";
+  String testOutputFileName = tempDirectory + "output-test.puml";
 
-  String configurationFileName = "./temp/config.json";
+  String configurationFileName = testResourcesDirectory + "config.json";
   String wrongConfigurationFileName = outputFileName;
 
-  String wrongJsonFileName = "./temp/wrong.json";
-  String nonExistingJsonFileName = "./temp/nofile.json";
+  String wrongJsonFileName = testResourcesDirectory + "wrong.json";
+  String nonExistingJsonFileName = tempDirectory + "nofile.json";
 
-  String defaultLegendFileName = "./temp/default_legend.txt";
+  String defaultLegendFileName = docsDirectory + "default_legend.txt";
 
 }

@@ -70,7 +70,7 @@ If you don't want to include some whole java Packages or specific Classes,
 add them in the JSON configuration file which you will indicate in the command line.
 Here below an example and the base structure:
 
-[Configuration file example](temp/config.json)
+[Configuration file example](docs/config.json)
 
 ```
 {

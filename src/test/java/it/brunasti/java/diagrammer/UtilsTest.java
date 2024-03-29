@@ -58,7 +58,7 @@ public class UtilsTest implements TestConstants {
 
   // Test listDirectories function ---------------------------
   @Test
-  @DisplayName("List Temp directory")
+  @DisplayName("List Temp sub directories")
   void testListDirectories_Temp() {
     assertDoesNotThrow(() -> Utils.listDirectories(tempDirectory));
     try {
@@ -71,7 +71,7 @@ public class UtilsTest implements TestConstants {
   }
 
   @Test
-  @DisplayName("List Src directory")
+  @DisplayName("List Src sub directories")
   void testListDirectories_Src() {
     assertDoesNotThrow(() -> Utils.listDirectories(srcDirectory));
     try {
@@ -93,13 +93,13 @@ public class UtilsTest implements TestConstants {
 
   // Test listFilesUsingFilesList function ---------------------------
   @Test
-  @DisplayName("List Files in temp directory")
-  void testListFilesUsingFilesList_Temp() {
-    assertDoesNotThrow(() -> Utils.listFilesUsingFilesList(tempDirectory));
+  @DisplayName("List Files in test resources directory")
+  void testListFilesUsingFilesList_Resources() {
+    assertDoesNotThrow(() -> Utils.listFilesUsingFilesList(testResourcesDirectory));
     try {
-      Set<String> list = Utils.listFilesUsingFilesList(tempDirectory);
+      Set<String> list = Utils.listFilesUsingFilesList(testResourcesDirectory);
       assertNotNull(list);
-      assertEquals(10,list.size());
+      assertEquals(3,list.size());
     } catch (IOException ioex) {
       ioex.printStackTrace();
     }

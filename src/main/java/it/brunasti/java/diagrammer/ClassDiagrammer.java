@@ -38,6 +38,7 @@ public class ClassDiagrammer {
   // TODO: Avoid generic catch(Exception)
   // TODO: option to add "hide empty members" in diagram
   // TODO: add Javadoc comments
+  // TODO: create more meaningful tests
 
   // Reference to a PrintStream to be used for the diagram
   // By default is the Standard.out, but it can be redirected
@@ -399,7 +400,7 @@ public class ClassDiagrammer {
     output.println("' Configuration   : [" + configurationFile + "]");
     output.println("' Generated at    : " + new Date());
     // TODO : Add flag specified by CLI param to activate the legend
-    String legendFileContent = Utils.readFileToString("./temp/default_legend.txt");
+    String legendFileContent = Utils.readFileToString("./docs/default_legend.txt");
     if (!legendFileContent.isBlank()) {
       output.println("legend");
       output.println(legendFileContent);
