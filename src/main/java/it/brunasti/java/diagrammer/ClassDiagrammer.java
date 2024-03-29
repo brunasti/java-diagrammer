@@ -39,6 +39,7 @@ public class ClassDiagrammer {
   // TODO: option to add "hide empty members" in diagram
   // TODO: add Javadoc comments
   // TODO: create more meaningful tests
+  // TODO: generate diagram image from PlantUML file automatically
 
   // Reference to a PrintStream to be used for the diagram
   // By default is the Standard.out, but it can be redirected

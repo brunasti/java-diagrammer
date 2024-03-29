@@ -4,4 +4,4 @@ Connections legend
 ..|> : Implements
 ----
 --> : Fields and Attributes
-..> : Usses
+..> : Uses
