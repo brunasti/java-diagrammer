@@ -5,16 +5,7 @@
 ' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
 ' Path            : [./target/test-classes]
 ' Configuration   : []
-' Generated at    : Fri Mar 29 11:39:04 CET 2024
-legend
-Connections legend
-----
---|> : Extends
-..|> : Implements
-----
---> : Fields and Attributes
-..> : Usses
-end legend
+' Generated at    : Fri Mar 29 12:10:16 CET 2024
 
 
 

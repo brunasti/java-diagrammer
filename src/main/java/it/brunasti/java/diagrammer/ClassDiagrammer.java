@@ -45,11 +45,13 @@ public class ClassDiagrammer {
   // to a file.
   private final PrintStream output;
 
+  // CONFIGURATION SETTINGS ------------------------
   // Lists of the packages and classes to be excluded in the diagram
   private HashSet<String> toBeExcludedPackages = null;
   private HashSet<String> toBeExcludedClasses = null;
 
-  private String configurationFileName = "";
+  private String legendFileName = "";
+
 
   // List of already written Uses, to avoid multiple connections
   private HashSet<String> usesWritten = new HashSet<>();
@@ -115,20 +117,27 @@ public class ClassDiagrammer {
   }
 
 
-  private boolean initToBeExcluded(String configurationFileName) {
-    toBeExcludedPackages = new HashSet<>();
-    toBeExcludedClasses = new HashSet<>();
-    if ((null == configurationFileName) || (configurationFileName.isBlank())) {
-      toBeExcludedPackages.add("Ljava.lang.");
-      toBeExcludedPackages.add("java.lang.");
-    } else {
-      JSONObject jsonObject = Utils.loadConfigurationFile(configurationFileName);
-      if (null == jsonObject) {
-        Main.debug(2, "initToBeExcluded : no data in config file " + configurationFileName);
-        return false;
-      }
-      JSONObject exclude = (JSONObject) jsonObject.get("exclude");
+  // Load Configuration ------------------------
 
+  private void setDefaultConfiguration() {
+    toBeExcludedPackages.add("Ljava.lang.");
+    toBeExcludedPackages.add("java.lang.");
+  }
+
+  private void loadJsonConfiguration(JSONObject jsonObject) {
+    loadExcludeConfiguration(jsonObject);
+    loadLegendConfiguration(jsonObject);
+  }
+
+  private void loadLegendConfiguration(JSONObject jsonObject) {
+    legendFileName = jsonObject.get("legendFile").toString();
+    Main.debug(2, "  - legendFile [" + legendFileName + "]");
+  }
+
+  private void loadExcludeConfiguration(JSONObject jsonObject) {
+    JSONObject exclude = (JSONObject) jsonObject.get("exclude");
+
+    if (exclude != null) {
       JSONArray classes = (JSONArray) exclude.get("classes");
       Iterator<JSONObject> iterator = (Iterator<JSONObject>) classes.iterator();
       while (iterator.hasNext()) {
@@ -149,8 +158,32 @@ public class ClassDiagrammer {
         toBeExcludedPackages.add(excludePackage);
       }
     }
+  }
+
+  private boolean loadJsonConfigurationFromFile(String configurationFileName) {
+    Main.debug(1, "loadJsonConfigurationFromFile : " + configurationFileName);
+    JSONObject jsonObject = Utils.loadConfigurationFile(configurationFileName);
+    if (null == jsonObject) {
+      Main.debug(2, "loadJsonConfigurationFromFile : no data in config file " + configurationFileName);
+      return false;
+    }
+
+    loadJsonConfiguration(jsonObject);
     return true;
   }
+
+  private boolean loadConfiguration(String configurationFileName) {
+    toBeExcludedPackages = new HashSet<>();
+    toBeExcludedClasses = new HashSet<>();
+
+    if ((null == configurationFileName) || (configurationFileName.isBlank())) {
+      setDefaultConfiguration();
+      return true;
+    } else {
+      return loadJsonConfigurationFromFile(configurationFileName);
+    }
+  }
+
 
   private boolean isTypeToBeConnected(final JavaClass javaClass,
                                       final Field field) {
@@ -399,8 +432,7 @@ public class ClassDiagrammer {
     }
     output.println("' Configuration   : [" + configurationFile + "]");
     output.println("' Generated at    : " + new Date());
-    // TODO : Add flag specified by CLI param to activate the legend
-    String legendFileContent = Utils.readFileToString("./docs/default_legend.txt");
+    String legendFileContent = Utils.readFileToString(legendFileName);
     if (!legendFileContent.isBlank()) {
       output.println("legend");
       output.println(legendFileContent);
@@ -413,7 +445,6 @@ public class ClassDiagrammer {
     // Reset all variables to avoid conflicts in case of multiple run
     toBeExcludedPackages = null;
     toBeExcludedClasses = null;
-    configurationFileName = "";
     usesWritten = new HashSet<>();
   }
 
@@ -432,8 +463,7 @@ public class ClassDiagrammer {
                               final String javaFilesPath) {
     cleanLocalVars();
 
-    configurationFileName = configurationFile;
-    boolean initiated = initToBeExcluded(configurationFileName);
+    boolean initiated = loadConfiguration(configurationFile);
     if (!initiated) {
       System.err.println("Exclusion config not loaded");
       return;
