@@ -5,7 +5,7 @@
 ' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
 ' Path            : [./target/test-classes]
 ' Configuration   : []
-' Generated at    : Tue Apr 02 10:16:12 CEST 2024
+' Generated at    : Tue Apr 02 10:39:18 CEST 2024
 
 
 
@@ -25,6 +25,7 @@ enum it.brunasti.java.diagrammer.teststructure.TestEnumClass{
 class it.brunasti.java.diagrammer.teststructure.TestExtendedClass
 class it.brunasti.java.diagrammer.teststructure.TestOtherClass
 class it.brunasti.java.diagrammer.MainTest
+class it.brunasti.java.diagrammer.DocumentGenerationTest
 
 ' INHERITANCES =======
 it.brunasti.java.diagrammer.teststructure.TestAbstractClass <|-- it.brunasti.java.diagrammer.teststructure.TestBaseClass
@@ -39,6 +40,7 @@ it.brunasti.java.diagrammer.TestConstants <|.. it.brunasti.java.diagrammer.Impor
 it.brunasti.java.diagrammer.TestConstants <|.. it.brunasti.java.diagrammer.teststructure.TestBaseClass
 it.brunasti.java.diagrammer.TestConstants <|.. it.brunasti.java.diagrammer.teststructure.TestOtherClass
 it.brunasti.java.diagrammer.TestConstants <|.. it.brunasti.java.diagrammer.MainTest
+it.brunasti.java.diagrammer.TestConstants <|.. it.brunasti.java.diagrammer.DocumentGenerationTest
 
 ' FIELDS =======
 it.brunasti.java.diagrammer.teststructure.TestBaseClass --> it.brunasti.java.diagrammer.teststructure.TestBaseClass
@@ -53,10 +55,12 @@ it.brunasti.java.diagrammer.UtilsTest ..> java.util.Set
 it.brunasti.java.diagrammer.UtilsTest ..> java.util.ArrayList
 it.brunasti.java.diagrammer.ImportsIdentifierTest ..> java.util.Set
 it.brunasti.java.diagrammer.ImportsIdentifierTest ..> it.brunasti.java.diagrammer.ImportsIdentifier
-it.brunasti.java.diagrammer.DiagramPlotterTest ..> it.brunasti.java.diagrammer.DiagramPlotter
 it.brunasti.java.diagrammer.DiagramPlotterTest ..> java.util.List
+it.brunasti.java.diagrammer.DiagramPlotterTest ..> it.brunasti.java.diagrammer.DiagramPlotter
 it.brunasti.java.diagrammer.MainTest ..> it.brunasti.java.diagrammer.Main
 it.brunasti.java.diagrammer.MainTest ..> org.apache.commons.cli.Options
+it.brunasti.java.diagrammer.DocumentGenerationTest ..> java.util.List
+it.brunasti.java.diagrammer.DocumentGenerationTest ..> it.brunasti.java.diagrammer.DiagramPlotter
 
 ' IMPORTS =======
 ' Java Files Path : 

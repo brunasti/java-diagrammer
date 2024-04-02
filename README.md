@@ -51,15 +51,15 @@ More complete command line execution, with all libraries needed:
 
 Example of result of the java-diagrammer applied to itself:
 
-![java-diagrammer class diagram](temp/output.png)
+![java-diagrammer class diagram](docs/output.png)
 
 Example of result of the java-diagrammer applied to itself with the Import analysis activated:
 
-![java-diagrammer class diagram](temp/output-import.png)
+![java-diagrammer class diagram](docs/output-import.png)
 
 Example of result of the java-diagrammer applied to its own test classes:
 
-![java-diagrammer class diagram](temp/output-test.png)
+![java-diagrammer class diagram](docs/output-test.png)
 
 
 --- 

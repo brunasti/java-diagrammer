@@ -24,4 +24,14 @@ class DiagramPlotterTest {
     assertThrows(FileNotFoundException.class, () -> diagramPlotter.renderFile("./docs/output.puml", "./xxtemp/", "test-output"));
   }
 
+  @Test
+  void diagramPlotterTest_generateDocumentations() {
+    System.err.println("diagramPlotterTest_generateDocumentations");
+    DiagramPlotter diagramPlotter = new DiagramPlotter();
+
+    System.err.println("diagramPlotterTest_generateDocumentations - output.puml");
+    assertDoesNotThrow(() -> diagramPlotter.renderFile("./docs/output.puml", "./docs/", "output"));
+
+  }
+
 }
