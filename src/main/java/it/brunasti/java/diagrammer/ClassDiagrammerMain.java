@@ -17,6 +17,7 @@ import org.apache.commons.cli.ParseException;
  * <a href="https://commons.apache.org/proper/commons-cli/usage.html">commons-cli</a>
  */
 public class ClassDiagrammerMain {
+  // TODO: Extract debug functions to a different class.
 
   private static final int DEFAULT_DEBUG_LEVEL = 3;
 
@@ -45,10 +46,23 @@ public class ClassDiagrammerMain {
     options = null;
   }
 
+  /**
+   * Set debug flag, on or off.
+   * If the level is false, then the debug system is set off.
+   *
+   * @param value New flag value
+   */
   public static void setDebug(boolean value) {
     debug = value;
   }
 
+  /**
+   * Set debug flag to the desired level.
+   * If the level is 0, then the debug system is set off, using
+   * the overloaded setDebug(boolean) function.
+   *
+   * @param value Desired level of the debug system
+   */
   public static void setDebug(int value) {
     setDebug(value > 0);
     debugLevel = value;

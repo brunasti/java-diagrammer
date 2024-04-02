@@ -13,12 +13,19 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- *
+ * Analyse a Java file and determinate the imported Java sources and Packages.
  */
 public class ImportsIdentifier {
 
   public static final String FILE_TYPE = ".java";
 
+  /**
+   * Extract the list of imported Java sources and Packages of a Java class source.
+   *
+   * @param path Java class source file.
+   * @param sysPath Path to the Java source files.
+   * @return Set (list) of imported Java sources or Packages.
+   */
   public Set<String> extractImports(String path, String sysPath) {
     ClassDiagrammerMain.debug(4, "ImportsIdentifier.extractImports : " + path + " - " + sysPath);
 
@@ -34,7 +41,6 @@ public class ImportsIdentifier {
 
       for (JavaSource src : srcs) {
         ClassDiagrammerMain.debug(8, "ImportsIdentifier.extractImports : src " + src);
-        //        packages.add(src.getPackage().toString());
 
         for (String imprt : src.getImports()) {
           ClassDiagrammerMain.debug(5, "ImportsIdentifier.extractImports : imprt " + imprt);
@@ -44,9 +50,9 @@ public class ImportsIdentifier {
               continue;
             }
             importFiles.add(imprt);
-            String newImprt = sysPath + imprt.replaceAll("\\.", "/") + FILE_TYPE;
-            ClassDiagrammerMain.debug(6, "ImportsIdentifier.extractImports : newImprt " + newImprt);
-            extractImports(newImprt, sysPath);
+            String newImport = sysPath + imprt.replaceAll("\\.", "/") + FILE_TYPE;
+            ClassDiagrammerMain.debug(6, "ImportsIdentifier.extractImports : newImport " + newImport);
+            extractImports(newImport, sysPath);
           } catch (Exception ex) {
             ClassDiagrammerMain.debug(4, "  Error ImportsIdentifier.extractImports : "
                     + ex.getMessage() + " = " + path + " - " + imprt);

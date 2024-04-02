@@ -40,6 +40,7 @@ public class ClassDiagrammer {
   // TODO: add Javadoc comments
   // TODO: create more meaningful tests
   // TODO: Rebuild the project in a clean env (libs dependencies....)
+  // TODO: Create a UI version where you can graphically select the directory, config, flags....
 
   // Reference to a PrintStream to be used for the diagram
   // By default is the Standard.out, but it can be redirected
@@ -57,10 +58,21 @@ public class ClassDiagrammer {
   // List of already written Uses, to avoid multiple connections
   private HashSet<String> usesWritten = new HashSet<>();
 
+  /**
+   * Instantiate a CLassDiagrammer with output directed to StandardOut.
+   */
   public ClassDiagrammer() {
     this.output = System.out;
   }
 
+  /**
+   * Instantiate a CLassDiagrammer with output directed to a passed PrintStream.
+   * Used in case to create an output file, passing a PrintStream pointing
+   * to the desired file.
+   * If System.out is passed, the output is to StandardOut.
+   *
+   * @param output The PrintStream to which the output will be directed.
+   */
   public ClassDiagrammer(PrintStream output) {
     this.output = output;
   }
@@ -168,7 +180,8 @@ public class ClassDiagrammer {
     ClassDiagrammerMain.debug(1, "loadJsonConfigurationFromFile : " + configurationFileName);
     JSONObject jsonObject = Utils.loadConfigurationFile(configurationFileName);
     if (null == jsonObject) {
-      ClassDiagrammerMain.debug(2, "loadJsonConfigurationFromFile : no data in config file " + configurationFileName);
+      ClassDiagrammerMain.debug(2,
+              "loadJsonConfigurationFromFile : no data in config file " + configurationFileName);
       return false;
     }
 
@@ -251,7 +264,8 @@ public class ClassDiagrammer {
         try {
           Method[] methods = javaClass.getMethods();
           for (Method method : methods) {
-            ClassDiagrammerMain.debug("generateUses " + method.getName() + " : " + method.getSignature());
+            ClassDiagrammerMain.debug("generateUses " + method.getName()
+                    + " : " + method.getSignature());
             String type = method.getReturnType().toString();
             writeUses(javaClass, type);
 
@@ -330,7 +344,8 @@ public class ClassDiagrammer {
         output.println();
       });
     } else {
-      ClassDiagrammerMain.debug(3, "generateImports() --- Not generated because javaFilesPath not provided");
+      ClassDiagrammerMain.debug(3,
+              "generateImports() --- Not generated because javaFilesPath not provided");
     }
     output.println();
   }
