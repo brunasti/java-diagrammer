@@ -27,7 +27,7 @@ public class ImportsIdentifier {
    * @return Set (list) of imported Java sources or Packages.
    */
   public Set<String> extractImports(String path, String sysPath) {
-    ClassDiagrammerMain.debug(4, "ImportsIdentifier.extractImports : " + path + " - " + sysPath);
+    Debugger.debug(4, "ImportsIdentifier.extractImports : " + path + " - " + sysPath);
 
     Set<String> importFiles = new HashSet<>();
     // TODO : Could even extract packages....
@@ -40,10 +40,10 @@ public class ImportsIdentifier {
       Collection<JavaSource> srcs = jp.getSources();
 
       for (JavaSource src : srcs) {
-        ClassDiagrammerMain.debug(8, "ImportsIdentifier.extractImports : src " + src);
+        Debugger.debug(8, "ImportsIdentifier.extractImports : src " + src);
 
         for (String imprt : src.getImports()) {
-          ClassDiagrammerMain.debug(5, "ImportsIdentifier.extractImports : imprt " + imprt);
+          Debugger.debug(5, "ImportsIdentifier.extractImports : imprt " + imprt);
           // TODO: could exclude imports with a test like : if (imprt.startsWith("")) {
           try {
             if (importFiles.contains(imprt)) {
@@ -51,16 +51,16 @@ public class ImportsIdentifier {
             }
             importFiles.add(imprt);
             String newImport = sysPath + imprt.replaceAll("\\.", "/") + FILE_TYPE;
-            ClassDiagrammerMain.debug(6, "ImportsIdentifier.extractImports : newImport " + newImport);
+            Debugger.debug(6, "ImportsIdentifier.extractImports : newImport " + newImport);
             extractImports(newImport, sysPath);
           } catch (Exception ex) {
-            ClassDiagrammerMain.debug(4, "  Error ImportsIdentifier.extractImports : "
+            Debugger.debug(4, "  Error ImportsIdentifier.extractImports : "
                     + ex.getMessage() + " = " + path + " - " + imprt);
           }
         }
       }
     } catch (Exception ex) {
-      ClassDiagrammerMain.debug(3, "  Error ImportsIdentifier.extractImports : "
+      Debugger.debug(3, "  Error ImportsIdentifier.extractImports : "
               + ex.getMessage() + " = " + path);
     }
     return importFiles;

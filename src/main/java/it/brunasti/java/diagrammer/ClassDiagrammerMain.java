@@ -17,15 +17,9 @@ import org.apache.commons.cli.ParseException;
  * <a href="https://commons.apache.org/proper/commons-cli/usage.html">commons-cli</a>
  */
 public class ClassDiagrammerMain {
-  // TODO: Extract debug functions to a different class.
-
-  private static final int DEFAULT_DEBUG_LEVEL = 3;
 
   static CommandLine commandLine;
   static ClassDiagrammer classDiagrammer;
-
-  private static boolean debug = false;
-  private static int debugLevel = 3;
 
   private static String javaPackagePath = "";
   private static String classesPackagePath = "";
@@ -35,8 +29,7 @@ public class ClassDiagrammerMain {
   private static Options options;
 
   private static void reset() {
-    debug = false;
-    debugLevel = DEFAULT_DEBUG_LEVEL;
+    Debugger.reset();
 
     classesPackagePath = "";
     javaPackagePath = "";
@@ -46,55 +39,12 @@ public class ClassDiagrammerMain {
     options = null;
   }
 
-  /**
-   * Set debug flag, on or off.
-   * If the level is false, then the debug system is set off.
-   *
-   * @param value New flag value
-   */
-  public static void setDebug(boolean value) {
-    debug = value;
-  }
 
-  /**
-   * Set debug flag to the desired level.
-   * If the level is 0, then the debug system is set off, using
-   * the overloaded setDebug(boolean) function.
-   *
-   * @param value Desired level of the debug system
-   */
-  public static void setDebug(int value) {
-    setDebug(value > 0);
-    debugLevel = value;
-  }
-
-  /**
-   * Print to StdError a message if the debug level is higher than the DEFAULT_DEBUG_LEVEL.
-   *
-   * @param message Debugging message
-   */
-  public static void debug(String message) {
-    debug(DEFAULT_DEBUG_LEVEL, message);
-  }
-
-  /**
-   * Print to StdError a message if the debug level is higher than the one passed in the level.
-   *
-   * @param level Level of this message, to be compared with the current debug level
-   * @param message Debugging message
-   */
-  public static void debug(int level, String message) {
-    if (debug) {
-      if (level <= debugLevel) {
-        System.err.println(message);
-      }
-    }
-  }
 
   private static boolean processCommandLine(String[] args) {
 
     // Reset all the flags, to avoid multiple sequence runs interfering
-    debug = false;
+    reset();
 
     options = new Options();
     Option optionHelp = new Option("h", "help", false, "Help");
@@ -130,16 +80,16 @@ public class ClassDiagrammerMain {
         if (debugLevelString != null) {
           try {
             int dl = Integer.parseInt(debugLevelString);
-            setDebug(dl);
+            Debugger.setDebug(dl);
           } catch (Exception ex) {
             ex.printStackTrace(System.err);
             return false;
           }
         } else {
-          setDebug(true);
+          Debugger.setDebug(true);
         }
       }
-      if (debug) {
+      if (Debugger.isDebug()) {
         Utils.dump("ARGS", args, System.err);
         Utils.dump("CMD", commandLine.getArgs(), System.err);
       }
@@ -162,7 +112,7 @@ public class ClassDiagrammerMain {
 
       if (commandLine.hasOption(optionClassesPackagePath.getOpt())) {
         classesPackagePath = commandLine.getOptionValue(optionClassesPackagePath.getOpt());
-        debug(optionClassesPackagePath.getDescription()
+        Debugger.debug(optionClassesPackagePath.getDescription()
                 + " set to [" + classesPackagePath + "]");
       }
       if (commandLine.hasOption(optionIncludeImports.getOpt())) {
@@ -170,15 +120,15 @@ public class ClassDiagrammerMain {
         if (!javaPackagePath.endsWith("/")) {
           javaPackagePath = javaPackagePath + "/";
         }
-        debug(optionIncludeImports.getDescription() + " set to [" + javaPackagePath + "]");
+        Debugger.debug(optionIncludeImports.getDescription() + " set to [" + javaPackagePath + "]");
       }
       if (commandLine.hasOption(optionOutputFile.getOpt())) {
         outputFile = commandLine.getOptionValue(optionOutputFile.getOpt());
-        debug(optionOutputFile.getDescription() + " set to [" + outputFile + "]");
+        Debugger.debug(optionOutputFile.getDescription() + " set to [" + outputFile + "]");
       }
       if (commandLine.hasOption(optionConfigFile.getOpt())) {
         configurationFile = commandLine.getOptionValue(optionConfigFile.getOpt());
-        debug(optionConfigFile.getDescription() + " set to [" + configurationFile + "]");
+        Debugger.debug(optionConfigFile.getDescription() + " set to [" + configurationFile + "]");
       }
 
     } catch (ParseException | NullPointerException e) {
@@ -238,14 +188,14 @@ public class ClassDiagrammerMain {
 
     boolean cliIsCorrect = processCommandLine(args);
 
-    debug("CommandLine parsed [" + cliIsCorrect + "]");
+    Debugger.debug("CommandLine parsed [" + cliIsCorrect + "]");
 
     if (!cliIsCorrect) {
       printHelp();
       return;
     }
 
-    debug("Path              [" + classesPackagePath + "]\n"
+    Debugger.debug("Path              [" + classesPackagePath + "]\n"
             + "Java files Path   [" + javaPackagePath + "]\n"
             + "OutputFile        [" + outputFile + "]\n"
             + "ConfigurationFile [" + configurationFile + "]");

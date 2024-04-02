@@ -5,7 +5,7 @@
 ' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
 ' Path            : [./target/test-classes]
 ' Configuration   : []
-' Generated at    : Tue Apr 02 13:48:50 CEST 2024
+' Generated at    : Tue Apr 02 15:06:48 CEST 2024
 
 
 
@@ -14,6 +14,9 @@ class it.brunasti.java.diagrammer.ClassDiagrammerTest
 class it.brunasti.java.diagrammer.UtilsTest
 interface it.brunasti.java.diagrammer.TestConstants
 class it.brunasti.java.diagrammer.ImportsIdentifierTest
+class it.brunasti.java.diagrammer.teststructure.TestExtendedClass
+class it.brunasti.java.diagrammer.teststructure.TestOtherClass
+class it.brunasti.java.diagrammer.DocumentGenerationTest
 class it.brunasti.java.diagrammer.DiagramPlotterTest
 abstract it.brunasti.java.diagrammer.teststructure.TestAbstractClass
 class it.brunasti.java.diagrammer.teststructure.TestBaseClass
@@ -22,31 +25,30 @@ enum it.brunasti.java.diagrammer.teststructure.TestEnumClass{
   SECOND
   THIRD
 }
-class it.brunasti.java.diagrammer.teststructure.TestExtendedClass
-class it.brunasti.java.diagrammer.teststructure.TestOtherClass
 class it.brunasti.java.diagrammer.ClassDiagrammerMainTest
-class it.brunasti.java.diagrammer.DocumentGenerationTest
+class it.brunasti.java.diagrammer.DebuggerTest
 
 ' INHERITANCES =======
-it.brunasti.java.diagrammer.teststructure.TestAbstractClass <|-- it.brunasti.java.diagrammer.teststructure.TestBaseClass
-java.lang.Enum <|-- it.brunasti.java.diagrammer.teststructure.TestEnumClass
 it.brunasti.java.diagrammer.teststructure.TestBaseClass <|-- it.brunasti.java.diagrammer.teststructure.TestExtendedClass
 it.brunasti.java.diagrammer.teststructure.TestAbstractClass <|-- it.brunasti.java.diagrammer.teststructure.TestOtherClass
+it.brunasti.java.diagrammer.teststructure.TestAbstractClass <|-- it.brunasti.java.diagrammer.teststructure.TestBaseClass
+java.lang.Enum <|-- it.brunasti.java.diagrammer.teststructure.TestEnumClass
 
 ' IMPLEMENT INTERFACE =======
 it.brunasti.java.diagrammer.TestConstants <|.. it.brunasti.java.diagrammer.ClassDiagrammerTest
 it.brunasti.java.diagrammer.TestConstants <|.. it.brunasti.java.diagrammer.UtilsTest
 it.brunasti.java.diagrammer.TestConstants <|.. it.brunasti.java.diagrammer.ImportsIdentifierTest
-it.brunasti.java.diagrammer.TestConstants <|.. it.brunasti.java.diagrammer.teststructure.TestBaseClass
 it.brunasti.java.diagrammer.TestConstants <|.. it.brunasti.java.diagrammer.teststructure.TestOtherClass
-it.brunasti.java.diagrammer.TestConstants <|.. it.brunasti.java.diagrammer.ClassDiagrammerMainTest
 it.brunasti.java.diagrammer.TestConstants <|.. it.brunasti.java.diagrammer.DocumentGenerationTest
+it.brunasti.java.diagrammer.TestConstants <|.. it.brunasti.java.diagrammer.teststructure.TestBaseClass
+it.brunasti.java.diagrammer.TestConstants <|.. it.brunasti.java.diagrammer.ClassDiagrammerMainTest
+it.brunasti.java.diagrammer.TestConstants <|.. it.brunasti.java.diagrammer.DebuggerTest
 
 ' FIELDS =======
-it.brunasti.java.diagrammer.teststructure.TestBaseClass --> it.brunasti.java.diagrammer.teststructure.TestBaseClass
-it.brunasti.java.diagrammer.teststructure.TestBaseClass --> it.brunasti.java.diagrammer.teststructure.TestEnumClass
 it.brunasti.java.diagrammer.teststructure.TestOtherClass --> it.brunasti.java.diagrammer.teststructure.TestBaseClass
 it.brunasti.java.diagrammer.teststructure.TestOtherClass --> it.brunasti.java.diagrammer.teststructure.TestEnumClass
+it.brunasti.java.diagrammer.teststructure.TestBaseClass --> it.brunasti.java.diagrammer.teststructure.TestBaseClass
+it.brunasti.java.diagrammer.teststructure.TestBaseClass --> it.brunasti.java.diagrammer.teststructure.TestEnumClass
 
 ' USES =======
 it.brunasti.java.diagrammer.ClassDiagrammerTest ..> it.brunasti.java.diagrammer.ClassDiagrammer
@@ -55,12 +57,13 @@ it.brunasti.java.diagrammer.UtilsTest ..> java.util.Set
 it.brunasti.java.diagrammer.UtilsTest ..> java.util.ArrayList
 it.brunasti.java.diagrammer.ImportsIdentifierTest ..> java.util.Set
 it.brunasti.java.diagrammer.ImportsIdentifierTest ..> it.brunasti.java.diagrammer.ImportsIdentifier
+it.brunasti.java.diagrammer.DocumentGenerationTest ..> java.util.List
+it.brunasti.java.diagrammer.DocumentGenerationTest ..> it.brunasti.java.diagrammer.DiagramPlotter
 it.brunasti.java.diagrammer.DiagramPlotterTest ..> java.util.List
 it.brunasti.java.diagrammer.DiagramPlotterTest ..> it.brunasti.java.diagrammer.DiagramPlotter
 it.brunasti.java.diagrammer.ClassDiagrammerMainTest ..> it.brunasti.java.diagrammer.ClassDiagrammerMain
 it.brunasti.java.diagrammer.ClassDiagrammerMainTest ..> org.apache.commons.cli.Options
-it.brunasti.java.diagrammer.DocumentGenerationTest ..> java.util.List
-it.brunasti.java.diagrammer.DocumentGenerationTest ..> it.brunasti.java.diagrammer.DiagramPlotter
+it.brunasti.java.diagrammer.DebuggerTest ..> it.brunasti.java.diagrammer.Debugger
 
 ' IMPORTS =======
 ' Java Files Path : 

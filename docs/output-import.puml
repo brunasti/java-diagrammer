@@ -6,13 +6,14 @@
 ' Path            : [./target/classes]
 ' Java Files Path : [./src/main/java/]
 ' Configuration   : [./docs/config.json]
-' Generated at    : Tue Apr 02 13:48:49 CEST 2024
+' Generated at    : Tue Apr 02 15:06:47 CEST 2024
 
 
 
 ' CLASSES =======
 class it.brunasti.java.diagrammer.ClassDiagrammer
 class it.brunasti.java.diagrammer.Utils
+class it.brunasti.java.diagrammer.Debugger
 class it.brunasti.java.diagrammer.ClassDiagrammerMain
 class it.brunasti.java.diagrammer.ImportsIdentifier
 class it.brunasti.java.diagrammer.DiagramPlotter
@@ -66,6 +67,11 @@ it.brunasti.java.diagrammer.Utils ..o org.json.simple.JSONObject
 it.brunasti.java.diagrammer.Utils ..o java.nio.file.Paths
 it.brunasti.java.diagrammer.Utils ..o java.io.FileReader
 it.brunasti.java.diagrammer.Utils ..o java.nio.file.Path
+
+' it.brunasti.java.diagrammer.Debugger
+it.brunasti.java.diagrammer.Debugger ..o java.io.PrintStream
+it.brunasti.java.diagrammer.Debugger ..o java.io.PrintWriter
+it.brunasti.java.diagrammer.Debugger ..o java.io.FileOutputStream
 
 ' it.brunasti.java.diagrammer.ClassDiagrammerMain
 it.brunasti.java.diagrammer.ClassDiagrammerMain ..o java.io.PrintStream

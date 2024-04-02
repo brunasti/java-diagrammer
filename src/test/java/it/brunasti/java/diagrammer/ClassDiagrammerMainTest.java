@@ -13,43 +13,6 @@ public class ClassDiagrammerMainTest implements TestConstants {
   @Test
   @DisplayName("Call ClassDiagrammerMain public methods")
   void testMainPublicMethods() {
-    System.err.println("ClassDiagrammerMain.debug ------ false");
-    assertDoesNotThrow(() -> ClassDiagrammerMain.debug("Message false"));
-
-    System.err.println("ClassDiagrammerMain.debug ------ true");
-    ClassDiagrammerMain.setDebug(true);
-    assertDoesNotThrow(() -> ClassDiagrammerMain.debug("Message true"));
-
-    System.err.println("ClassDiagrammerMain.debug ------ 4");
-    ClassDiagrammerMain.setDebug(4);
-    assertDoesNotThrow(() -> ClassDiagrammerMain.debug("Message"));
-    assertDoesNotThrow(() -> ClassDiagrammerMain.debug(2,"Message 2"));
-    assertDoesNotThrow(() -> ClassDiagrammerMain.debug(4,"Message 4"));
-
-    System.err.println("ClassDiagrammerMain.debug ------ 0");
-    ClassDiagrammerMain.setDebug(0);
-    assertDoesNotThrow(() -> ClassDiagrammerMain.debug("Message"));
-    assertDoesNotThrow(() -> ClassDiagrammerMain.debug(0,"Message 0"));
-    assertDoesNotThrow(() -> ClassDiagrammerMain.debug(2,"Message 2"));
-    assertDoesNotThrow(() -> ClassDiagrammerMain.debug(4,"Message 4"));
-
-    System.err.println("ClassDiagrammerMain.debug ------ 2");
-    ClassDiagrammerMain.setDebug(2);
-    assertDoesNotThrow(() -> ClassDiagrammerMain.debug("Message"));
-    assertDoesNotThrow(() -> ClassDiagrammerMain.debug(0,"Message 0"));
-    assertDoesNotThrow(() -> ClassDiagrammerMain.debug(2,"Message 2"));
-    assertDoesNotThrow(() -> ClassDiagrammerMain.debug(4,"Message 4"));
-
-    System.err.println("ClassDiagrammerMain.debug ------ false");
-    ClassDiagrammerMain.setDebug(false);
-    assertDoesNotThrow(() -> ClassDiagrammerMain.debug("Message"));
-    assertDoesNotThrow(() -> ClassDiagrammerMain.debug(0,"Message 0"));
-    assertDoesNotThrow(() -> ClassDiagrammerMain.debug(2,"Message 2"));
-    assertDoesNotThrow(() -> ClassDiagrammerMain.debug(4,"Message 4"));
-
-    System.err.println("ClassDiagrammerMain.debug ------ end -----");
-
-
     Options options = new Options();
 
 

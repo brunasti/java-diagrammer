@@ -5,13 +5,14 @@
 ' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
 ' Path            : [./target/classes]
 ' Configuration   : []
-' Generated at    : Tue Apr 02 13:48:49 CEST 2024
+' Generated at    : Tue Apr 02 15:06:47 CEST 2024
 
 
 
 ' CLASSES =======
 class it.brunasti.java.diagrammer.ClassDiagrammer
 class it.brunasti.java.diagrammer.Utils
+class it.brunasti.java.diagrammer.Debugger
 class it.brunasti.java.diagrammer.ClassDiagrammerMain
 class it.brunasti.java.diagrammer.ImportsIdentifier
 class it.brunasti.java.diagrammer.DiagramPlotter

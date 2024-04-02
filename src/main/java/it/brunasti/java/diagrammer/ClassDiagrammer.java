@@ -146,7 +146,7 @@ public class ClassDiagrammer {
     Object includeFile = jsonObject.get("includeFile");
     if (includeFile != null) {
       includeFileName = includeFile.toString();
-      ClassDiagrammerMain.debug(4, "  - includeFile [" + includeFileName + "]");
+      Debugger.debug(4, "  - includeFile [" + includeFileName + "]");
     }
   }
 
@@ -158,9 +158,9 @@ public class ClassDiagrammer {
       Iterator<JSONObject> iterator = (Iterator<JSONObject>) classes.iterator();
       while (iterator.hasNext()) {
         JSONObject object = iterator.next();
-        ClassDiagrammerMain.debug(2, "  - excludeClass JSONObject [" + object + "]");
+        Debugger.debug(2, "  - excludeClass JSONObject [" + object + "]");
         String excludeClass = object.get("class").toString();
-        ClassDiagrammerMain.debug(2, "  - excludeClass [" + excludeClass + "]");
+        Debugger.debug(2, "  - excludeClass [" + excludeClass + "]");
         toBeExcludedClasses.add(excludeClass);
       }
 
@@ -168,19 +168,19 @@ public class ClassDiagrammer {
       iterator = (Iterator<JSONObject>) packages.iterator();
       while (iterator.hasNext()) {
         JSONObject object = iterator.next();
-        ClassDiagrammerMain.debug(2, "  - excludePackage JSONObject [" + object + "]");
+        Debugger.debug(2, "  - excludePackage JSONObject [" + object + "]");
         String excludePackage = object.get("package").toString();
-        ClassDiagrammerMain.debug(2, "  - excludePackage [" + excludePackage + "]");
+        Debugger.debug(2, "  - excludePackage [" + excludePackage + "]");
         toBeExcludedPackages.add(excludePackage);
       }
     }
   }
 
   private boolean loadJsonConfigurationFromFile(String configurationFileName) {
-    ClassDiagrammerMain.debug(1, "loadJsonConfigurationFromFile : " + configurationFileName);
+    Debugger.debug(1, "loadJsonConfigurationFromFile : " + configurationFileName);
     JSONObject jsonObject = Utils.loadConfigurationFile(configurationFileName);
     if (null == jsonObject) {
-      ClassDiagrammerMain.debug(2,
+      Debugger.debug(2,
               "loadJsonConfigurationFromFile : no data in config file " + configurationFileName);
       return false;
     }
@@ -210,35 +210,35 @@ public class ClassDiagrammer {
 
   private boolean isTypeToBeConnected(final JavaClass javaClass,
                                       final String type) {
-    ClassDiagrammerMain.debug("isTypeToBeConnected " + javaClass.getClassName() + " to " + type);
+    Debugger.debug("isTypeToBeConnected " + javaClass.getClassName() + " to " + type);
 
     // TODO: add flag to avoid or not the self reflection
     //    // Avoid self referencing loops
     //    if (type.equals(javaClass.getClassName())) {
-    //      ClassDiagrammerMain.debug("  - self ref");
+    //      Debugger.debug("  - self ref");
     //      return false;
     //    }
 
     // If the type is all lowercase, then is a primitive type
     if (type.toLowerCase().equals(type)) {
-      ClassDiagrammerMain.debug("  - primitive");
+      Debugger.debug("  - primitive");
       return false;
     }
 
     if (toBeExcludedClasses.contains(type)) {
-      ClassDiagrammerMain.debug("  - exclude class");
+      Debugger.debug("  - exclude class");
       return false;
     }
 
     AtomicReference<Boolean> excludedPackage = new AtomicReference<>(false);
     toBeExcludedPackages.forEach(localPackage -> {
-      ClassDiagrammerMain.debug(4, "      - package : " + localPackage);
+      Debugger.debug(4, "      - package : " + localPackage);
       if (type.startsWith(localPackage)) {
-        ClassDiagrammerMain.debug("    -> exclude package " + type);
+        Debugger.debug("    -> exclude package " + type);
         excludedPackage.set(true);
       }
     });
-    ClassDiagrammerMain.debug("  - exclude package : " + excludedPackage.get());
+    Debugger.debug("  - exclude package : " + excludedPackage.get());
 
     return !excludedPackage.get();
   }
@@ -257,14 +257,14 @@ public class ClassDiagrammer {
   }
 
   private void generateUses(final ArrayList<JavaClass> classes) {
-    ClassDiagrammerMain.debug(2, "generateUses() ------------------");
+    Debugger.debug(2, "generateUses() ------------------");
     output.println("' USES =======");
     classes.forEach(javaClass -> {
       if (!javaClass.isEnum()) {
         try {
           Method[] methods = javaClass.getMethods();
           for (Method method : methods) {
-            ClassDiagrammerMain.debug("generateUses " + method.getName()
+            Debugger.debug("generateUses " + method.getName()
                     + " : " + method.getSignature());
             String type = method.getReturnType().toString();
             writeUses(javaClass, type);
@@ -287,7 +287,7 @@ public class ClassDiagrammer {
   }
 
   private void generateFields(final ArrayList<JavaClass> classes) {
-    ClassDiagrammerMain.debug(2, "generateFields() ------------------");
+    Debugger.debug(2, "generateFields() ------------------");
     output.println("' FIELDS =======");
     classes.forEach(javaClass -> {
       if (!javaClass.isEnum()) {
@@ -307,14 +307,14 @@ public class ClassDiagrammer {
   }
 
   private void generateImports(final ArrayList<JavaClass> classes, String javaFilesPath) {
-    ClassDiagrammerMain.debug(2, "generateImports() ------------------");
+    Debugger.debug(2, "generateImports() ------------------");
     output.println("' IMPORTS =======");
     output.println("' Java Files Path : " + javaFilesPath);
     if ((null != javaFilesPath) && (!javaFilesPath.isBlank())) {
       ImportsIdentifier importsIdentifier = new ImportsIdentifier();
 
       classes.forEach(javaClass -> {
-        ClassDiagrammerMain.debug(3, "  ---------- " + javaClass.getClassName());
+        Debugger.debug(3, "  ---------- " + javaClass.getClassName());
         output.println("' " + javaClass.getClassName());
         String javaClassName = javaFilesPath
                 + javaClass.getClassName().replace(".", "/")
@@ -322,17 +322,17 @@ public class ClassDiagrammer {
         Set<String> imports = importsIdentifier.extractImports(javaClassName, javaFilesPath);
         try {
           for (String imprt : imports) {
-            ClassDiagrammerMain.debug(3, "    -------- " + imprt);
+            Debugger.debug(3, "    -------- " + imprt);
             String importedFile = imprt;
             if (importedFile.startsWith("static")) {
-              ClassDiagrammerMain.debug(4, " replace static in " + importedFile);
+              Debugger.debug(4, " replace static in " + importedFile);
               importedFile = importedFile.replace("static", "");
             }
             if (importedFile.endsWith(".*")) {
-              ClassDiagrammerMain.debug(4, " replace .* in " + importedFile);
+              Debugger.debug(4, " replace .* in " + importedFile);
               importedFile = importedFile.replace(".*", "");
             }
-            ClassDiagrammerMain.debug(" <- " + imprt + "(" + importedFile + ")");
+            Debugger.debug(" <- " + imprt + "(" + importedFile + ")");
             if (isTypeToBeConnected(javaClass, importedFile)) {
               output.println(javaClass.getClassName()
                       + " ..o " + importedFile);
@@ -344,14 +344,14 @@ public class ClassDiagrammer {
         output.println();
       });
     } else {
-      ClassDiagrammerMain.debug(3,
+      Debugger.debug(3,
               "generateImports() --- Not generated because javaFilesPath not provided");
     }
     output.println();
   }
 
   private void generateImplements(final ArrayList<JavaClass> classes) {
-    ClassDiagrammerMain.debug(2, "generateImplements() ------------------");
+    Debugger.debug(2, "generateImplements() ------------------");
     output.println("' IMPLEMENT INTERFACE =======");
     classes.forEach(javaClass -> {
       try {
@@ -367,7 +367,7 @@ public class ClassDiagrammer {
   }
 
   private void generateInheritances(final ArrayList<JavaClass> classes) {
-    ClassDiagrammerMain.debug(2, "generateInheritances() ------------------");
+    Debugger.debug(2, "generateInheritances() ------------------");
     output.println("' INHERITANCES =======");
     classes.forEach(javaClass -> {
       try {
@@ -384,19 +384,19 @@ public class ClassDiagrammer {
   }
 
   private void generateEnum(JavaClass javaClass, ClassLoader classLoader) {
-    ClassDiagrammerMain.debug("ENUM : " + javaClass.getClassName());
+    Debugger.debug("ENUM : " + javaClass.getClassName());
     String[] enumFields = new String[0];
 
     try {
       Class loadedClass = classLoader.loadClass(javaClass.getClassName());
-      ClassDiagrammerMain.debug(4, "  - loadedClass : " + loadedClass);
-      ClassDiagrammerMain.debug(4, "  - loadedClass : " + loadedClass.isEnum());
+      Debugger.debug(4, "  - loadedClass : " + loadedClass);
+      Debugger.debug(4, "  - loadedClass : " + loadedClass.isEnum());
 
       enumFields = new String[loadedClass.getFields().length];
       int i = 0;
       for (java.lang.reflect.Field field : loadedClass.getFields()) {
-        ClassDiagrammerMain.debug(4, "      - loadedClass.Field : " + field);
-        ClassDiagrammerMain.debug(4, "      - loadedClass.Field.Name : " + field.getName());
+        Debugger.debug(4, "      - loadedClass.Field : " + field);
+        Debugger.debug(4, "      - loadedClass.Field.Name : " + field.getName());
         enumFields[i] = field.getName();
         i++;
       }
@@ -412,7 +412,7 @@ public class ClassDiagrammer {
   }
   
   private void generateClasses(final ArrayList<JavaClass> classes, ClassLoader classLoader) {
-    ClassDiagrammerMain.debug(2, "generateClasses() ------------------");
+    Debugger.debug(2, "generateClasses() ------------------");
     output.println();
     output.println();
     output.println("' CLASSES =======");
@@ -431,7 +431,7 @@ public class ClassDiagrammer {
   }
 
   private void generateFooter() {
-    ClassDiagrammerMain.debug(2, "generateFooter() ------------------");
+    Debugger.debug(2, "generateFooter() ------------------");
     output.println();
     output.println("@enduml");
   }
@@ -439,7 +439,7 @@ public class ClassDiagrammer {
   private void generateHeader(final String path,
                               final String configurationFile,
                               String javaFilesPath) {
-    ClassDiagrammerMain.debug(2, "generateHeader() ------------------");
+    Debugger.debug(2, "generateHeader() ------------------");
     output.println("@startuml");
     output.println("'https://plantuml.com/class-diagram");
     output.println();
