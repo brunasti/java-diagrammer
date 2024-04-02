@@ -35,13 +35,13 @@ import org.json.simple.JSONObject;
  * @see     it.brunasti.java
  */
 public class ClassDiagrammer {
-  // TODO: Manage arrays (LString...)
+  // TODO: Create a UI version where you can graphically select the directory, config, flags....
   // TODO: Add the option to extract Methods and Attributes, Protected Private or Abstract (MA-PPA)
-  // TODO: Avoid generic catch(Exception)
-  // TODO: add Javadoc comments
+  // TODO: Manage arrays (LString...)
   // TODO: create more meaningful tests
   // TODO: Rebuild the project in a clean env (libs dependencies....)
-  // TODO: Create a UI version where you can graphically select the directory, config, flags....
+  // TODO: Avoid generic catch(Exception)
+  // TODO: add Javadoc comments
 
   // Reference to a PrintStream to be used for the diagram
   // By default is the Standard.out, but it can be redirected

@@ -24,6 +24,13 @@ public final class Utils {
   Utils() {
   }
 
+  /**
+   * Read into memory (String) the content of a file.
+   *
+   * @param fileName Name of the file to be read from.
+   * @return The content of the file as a String.
+   *     In case of exception, an empty String.
+   */
   public static String readFileToString(String fileName) {
     try {
       return new Scanner(new File(fileName)).useDelimiter("\\Z").next();
@@ -32,18 +39,31 @@ public final class Utils {
     }
   }
 
-  public static void dump(final String t, final Object[] arr) {
-    dump(t, arr, System.out);
+  /**
+   * Writes to System.out the content of the Object[] array.
+   *
+   * @param title Identification title of the output text.
+   * @param array Array of Objects to be dumped.
+   */
+  public static void dump(final String title, final Object[] array) {
+    dump(title, array, System.out);
   }
 
-  public static void dump(final String t, final Object[] arr, PrintStream output) {
-    output.println("--------" + t + "-------------");
-    if (arr != null) {
-      if (arr.length == 0) {
+  /**
+   * Writes to the passes PrintStream the content of the Object[] array.
+   *
+   * @param title Identification title of the output text.
+   * @param array Array of Objects to be dumped to the output PrintStream
+   * @param output PrintStream to be written to.
+   */
+  public static void dump(final String title, final Object[] array, PrintStream output) {
+    output.println("--------" + title + "-------------");
+    if (array != null) {
+      if (array.length == 0) {
         output.println("-- EMPTY --");
       } else {
-        for (int i = 0; i < arr.length; i++) {
-          output.println("#" + i + "='" + arr[i] + "'");
+        for (int i = 0; i < array.length; i++) {
+          output.println("#" + i + "='" + array[i] + "'");
         }
       }
     } else {
@@ -51,19 +71,31 @@ public final class Utils {
     }
   }
 
-  public static void dump(final String t, final ArrayList<Object> arr) {
-    if (null == arr) {
-      dump(t, (Object[]) null);
+  /**
+   * Writes to System.out the content of an ArrayList of Objects.
+   *
+   * @param title Identification title of the output text.
+   * @param array ArrayList of Objects to be dumped.
+   */
+  public static void dump(final String title, final ArrayList<Object> array) {
+    if (null == array) {
+      dump(title, (Object[]) null);
     } else {
-      dump(t, arr.toArray());
+      dump(title, array.toArray());
     }
   }
 
-  public static void dump(final String t, final Set<Object> set) {
+  /**
+   * Writes to System.out the content of a Set of Objects.
+   *
+   * @param title Identification title of the output text.
+   * @param set Set of Objects to be dumped.
+   */
+  public static void dump(final String title, final Set<Object> set) {
     if (null == set) {
-      dump(t, (Object[]) null);
+      dump(title, (Object[]) null);
     } else {
-      dump(t, set.toArray());
+      dump(title, set.toArray());
     }
   }
 
