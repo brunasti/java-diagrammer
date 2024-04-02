@@ -63,6 +63,7 @@ public class Debugger {
 
   /**
    * Return the current debug flag value.
+   *
    * @return The debug flag value
    */
   public static boolean isDebug() {
@@ -71,6 +72,7 @@ public class Debugger {
 
   /**
    * Return the current debug level.
+   *
    * @return The current debug level
    */
   public static int getDebug() {
