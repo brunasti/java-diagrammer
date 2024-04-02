@@ -18,11 +18,11 @@ public class ClassDiagrammerTest implements TestConstants {
   @Test
   @DisplayName("Generate Diagram from this same system")
   void testGenerateDiagram_Successful() {
-    Main.setDebug(5);
+    ClassDiagrammerMain.setDebug(5);
     ClassDiagrammer classDiagrammer = new ClassDiagrammer();
     assertDoesNotThrow(() -> classDiagrammer.generateDiagram(classesDirectory,configurationFileName,javaSrcDirectory));
     assertDoesNotThrow(() -> classDiagrammer.generateDiagram(classesDirectory,configurationWithLegendFileName,javaSrcDirectory));
-    Main.setDebug(false);
+    ClassDiagrammerMain.setDebug(false);
   }
 
   @Test

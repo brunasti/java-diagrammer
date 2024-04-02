@@ -23,35 +23,35 @@ class ImportsIdentifierTest implements TestConstants {
             + ImportsIdentifier.FILE_TYPE;
     assertDoesNotThrow(() -> importsIdentifier.extractImports(javaClassName, newSysPath));
     Set<String> imports = importsIdentifier.extractImports(javaClassName, newSysPath);
-    Main.debug("  - imports : " + imports);
-    Main.debug("  - imports : " + imports.size());
+    ClassDiagrammerMain.debug("  - imports : " + imports);
+    ClassDiagrammerMain.debug("  - imports : " + imports.size());
     assertEquals(7, imports.size());
   }
 
 
   @Test
   void extractImports_testStructureClasses() {
-    Main.debug("extractImports_testStructureClasses ---------");
+    ClassDiagrammerMain.debug("extractImports_testStructureClasses ---------");
     ImportsIdentifier importsIdentifier = new ImportsIdentifier();
     String className = TestBaseClass.class.getCanonicalName();
-    Main.debug(" - " + className);
+    ClassDiagrammerMain.debug(" - " + className);
     String newSysPath = testJavaSrcDirectory + '/';
     String javaClassName = newSysPath
             + className.replace(".", "/")
             + ImportsIdentifier.FILE_TYPE;
     Set<String> imports = importsIdentifier.extractImports(javaClassName, newSysPath);
-    Main.debug("   - imports : " + imports);
-    Main.debug("   - imports : " + imports.size());
+    ClassDiagrammerMain.debug("   - imports : " + imports);
+    ClassDiagrammerMain.debug("   - imports : " + imports.size());
     assertEquals(1, imports.size());
 
     className = TestOtherClass.class.getCanonicalName();
-    Main.debug(" - " + className);
+    ClassDiagrammerMain.debug(" - " + className);
     javaClassName = newSysPath
             + className.replace(".", "/")
             + ImportsIdentifier.FILE_TYPE;
     imports = importsIdentifier.extractImports(javaClassName, newSysPath);
-    Main.debug("   - imports : " + imports);
-    Main.debug("   - imports : " + imports.size());
+    ClassDiagrammerMain.debug("   - imports : " + imports);
+    ClassDiagrammerMain.debug("   - imports : " + imports.size());
     assertEquals(3, imports.size());
 
     className = TestExtendedClass.class.getCanonicalName();

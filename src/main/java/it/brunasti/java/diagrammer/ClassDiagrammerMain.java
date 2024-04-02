@@ -13,10 +13,10 @@ import org.apache.commons.cli.ParseException;
 
 /**
  * Entry point for the CLI version of the ClassDiagrammer.
- * This Main uses the library form Apache for Command Line Interface:
+ * This ClassDiagrammerMain uses the library form Apache for Command Line Interface:
  * <a href="https://commons.apache.org/proper/commons-cli/usage.html">commons-cli</a>
  */
-public class Main {
+public class ClassDiagrammerMain {
 
   private static final int DEFAULT_DEBUG_LEVEL = 3;
 
@@ -187,7 +187,7 @@ public class Main {
 
     HelpFormatter helper = new HelpFormatter();
 
-    String className = Main.class.getCanonicalName();
+    String className = ClassDiagrammerMain.class.getCanonicalName();
     PrintWriter outError = new PrintWriter(System.err);
 
     helper.printHelp(outError,
@@ -208,7 +208,7 @@ public class Main {
 
     HelpFormatter helper = new HelpFormatter();
 
-    String className = Main.class.getCanonicalName();
+    String className = ClassDiagrammerMain.class.getCanonicalName();
     PrintWriter outError = new PrintWriter(System.err);
 
     helper.printUsage(outError, 100, "java " + className, options);
