@@ -20,5 +20,6 @@
       }
     ]
   },
-  "includeFile" : "./docs/includedFile.txt"
+  "includeFile" : "./docs/includedFile.txt",
+  "selfReflection" : false
 }

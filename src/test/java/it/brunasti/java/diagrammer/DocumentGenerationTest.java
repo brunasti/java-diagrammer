@@ -39,7 +39,7 @@ class DocumentGenerationTest implements TestConstants {
     System.err.println("generateDocumentations - output-import.png");
     assertDoesNotThrow(() -> diagramPlotter.renderFile(outputWithImportFileName, docsDirectory, "output-import"));
 
-    System.err.println("generateDocumentations - "+testOutputFileName);
+    System.err.println("generateDocumentations - " + testOutputFileName);
     String[] testArgs = new String[2];
     testArgs[0] = testClassesDirectory;
     testArgs[1] = testOutputFileName;
@@ -47,8 +47,11 @@ class DocumentGenerationTest implements TestConstants {
 
     System.err.println("generateDocumentations - output-test.png");
     assertDoesNotThrow(() -> diagramPlotter.renderFile(testOutputFileName, docsDirectory, "output-test"));
+  }
 
-    System.err.println("generateDocumentations - Diagram with included file");
+  @Test
+  void generateDocumentations_extras() {
+    System.err.println("generateDocumentations_extras - Diagram with included file");
     String[] lastArgs = new String[6];
     lastArgs[0] = "-c";
     lastArgs[1] = configurationWithIncludeFileName;

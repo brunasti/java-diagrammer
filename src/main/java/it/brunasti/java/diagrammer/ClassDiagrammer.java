@@ -54,6 +54,7 @@ public class ClassDiagrammer {
   private HashSet<String> toBeExcludedClasses = null;
 
   private String includeFileName = "";
+  private boolean flagAvoidSelfReferring = false;
 
 
   // List of already written Uses, to avoid multiple connections
@@ -101,46 +102,20 @@ public class ClassDiagrammer {
 
 
 
-  // ----------------------------------------------------
-  // Functions to iterate through packages subdirectories
-  private Set<String> iterateSubDirectories(final String path,
-                                            final String localPackage) {
-    Set<String> files = new HashSet<>();
-    return iterateSubDirectories(path, localPackage, files);
-  }
-
-  private Set<String> iterateSubDirectories(final String path,
-                                            final String localPackage,
-                                            final Set<String> files) {
-    String newPath = path + "/" + localPackage.replace(".", "/");
-    try {
-      Utils.listFilesUsingFilesList(newPath).forEach(file -> {
-        String className = file.replace(".class", "");
-        files.add(localPackage + "." + className);
-      });
-
-      Set<String> dirs = Utils.listDirectories(newPath);
-
-      dirs.forEach(dir -> iterateSubDirectories(path, localPackage + "." + dir, files));
-
-      return files;
-    } catch (Exception ex) {
-      ex.printStackTrace();
-      return null;
-    }
-  }
-
-
-  // Load Configuration ------------------------
+  // ------------------------------------------------------
+  // Load and manage Configuration ------------------------
 
   private void setDefaultConfiguration() {
     toBeExcludedPackages.add("Ljava.lang.");
     toBeExcludedPackages.add("java.lang.");
+    includeFileName = "";
+    flagAvoidSelfReferring = false;
   }
 
   private void loadJsonConfiguration(JSONObject jsonObject) {
     loadExcludeConfiguration(jsonObject);
     loadIncludeFileConfiguration(jsonObject);
+    loadAvoidSelfReflectionConfiguration(jsonObject);
   }
 
   private void loadIncludeFileConfiguration(JSONObject jsonObject) {
@@ -148,6 +123,14 @@ public class ClassDiagrammer {
     if (includeFile != null) {
       includeFileName = includeFile.toString();
       Debugger.debug(4, "  - includeFile [" + includeFileName + "]");
+    }
+  }
+
+  private void loadAvoidSelfReflectionConfiguration(JSONObject jsonObject) {
+    Object selfReflection = jsonObject.get("selfReflection");
+    if (selfReflection != null) {
+      flagAvoidSelfReferring = selfReflection.toString().equalsIgnoreCase("false");
+      Debugger.debug(4, "  - selfReflection [" + flagAvoidSelfReferring + "]");
     }
   }
 
@@ -203,6 +186,41 @@ public class ClassDiagrammer {
   }
 
 
+
+
+  // ----------------------------------------------------
+  // Functions to iterate through packages subdirectories
+  private Set<String> iterateSubDirectories(final String path,
+                                            final String localPackage) {
+    Set<String> files = new HashSet<>();
+    return iterateSubDirectories(path, localPackage, files);
+  }
+
+  private Set<String> iterateSubDirectories(final String path,
+                                            final String localPackage,
+                                            final Set<String> files) {
+    String newPath = path + "/" + localPackage.replace(".", "/");
+    try {
+      Utils.listFilesUsingFilesList(newPath).forEach(file -> {
+        String className = file.replace(".class", "");
+        files.add(localPackage + "." + className);
+      });
+
+      Set<String> dirs = Utils.listDirectories(newPath);
+
+      dirs.forEach(dir -> iterateSubDirectories(path, localPackage + "." + dir, files));
+
+      return files;
+    } catch (Exception ex) {
+      ex.printStackTrace();
+      return null;
+    }
+  }
+
+
+  // ---------------------------------------------------------
+  // Check if Type is to be connected ------------------------
+
   private boolean isTypeToBeConnected(final JavaClass javaClass,
                                       final Field field) {
     String type = field.getType().toString();
@@ -213,12 +231,13 @@ public class ClassDiagrammer {
                                       final String type) {
     Debugger.debug("isTypeToBeConnected " + javaClass.getClassName() + " to " + type);
 
-    // TODO: add flag to avoid or not the self reflection
-    //    // Avoid self referencing loops
-    //    if (type.equals(javaClass.getClassName())) {
-    //      Debugger.debug("  - self ref");
-    //      return false;
-    //    }
+    // Avoid self referencing loops
+    if (flagAvoidSelfReferring) {
+      if (type.equals(javaClass.getClassName())) {
+        Debugger.debug("  - self ref ");
+        return false;
+      }
+    }
 
     // If the type is all lowercase, then is a primitive type
     if (type.toLowerCase().equals(type)) {
@@ -243,6 +262,8 @@ public class ClassDiagrammer {
 
     return !excludedPackage.get();
   }
+
+
 
   // ---------------------------------
   // Functions to generate the diagram

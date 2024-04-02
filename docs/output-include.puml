@@ -5,7 +5,7 @@
 ' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
 ' Path            : [./target/test-classes]
 ' Configuration   : [./docs/config-includeFile.json]
-' Generated at    : Tue Apr 02 15:57:59 CEST 2024
+' Generated at    : Tue Apr 02 16:13:30 CEST 2024
 
 ' Include         : [./docs/includedFile.txt] ---------
 title Example with legend and title
@@ -64,7 +64,6 @@ it.brunasti.java.diagrammer.TestConstants <|.. it.brunasti.java.diagrammer.Debug
 ' FIELDS =======
 it.brunasti.java.diagrammer.teststructure.TestOtherClass --> it.brunasti.java.diagrammer.teststructure.TestBaseClass
 it.brunasti.java.diagrammer.teststructure.TestOtherClass --> it.brunasti.java.diagrammer.teststructure.TestEnumClass
-it.brunasti.java.diagrammer.teststructure.TestBaseClass --> it.brunasti.java.diagrammer.teststructure.TestBaseClass
 it.brunasti.java.diagrammer.teststructure.TestBaseClass --> it.brunasti.java.diagrammer.teststructure.TestEnumClass
 
 ' USES =======
