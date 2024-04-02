@@ -20,5 +20,5 @@
       }
     ]
   },
-  "legendFile" : "./docs/default_legend.txt"
+  "includeFile" : "./docs/default_legend.txt"
 }

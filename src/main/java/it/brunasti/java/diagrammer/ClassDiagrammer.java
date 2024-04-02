@@ -39,7 +39,6 @@ public class ClassDiagrammer {
   // TODO: option to add "hide empty members" in diagram
   // TODO: add Javadoc comments
   // TODO: create more meaningful tests
-  // TODO: instead of Legen, import just generic file content for more flexibility
   // TODO: Rebuild the project in a clean env (libs dependencies....)
 
   // Reference to a PrintStream to be used for the diagram
@@ -52,7 +51,7 @@ public class ClassDiagrammer {
   private HashSet<String> toBeExcludedPackages = null;
   private HashSet<String> toBeExcludedClasses = null;
 
-  private String legendFileName = "";
+  private String includeFileName = "";
 
 
   // List of already written Uses, to avoid multiple connections
@@ -128,14 +127,14 @@ public class ClassDiagrammer {
 
   private void loadJsonConfiguration(JSONObject jsonObject) {
     loadExcludeConfiguration(jsonObject);
-    loadLegendConfiguration(jsonObject);
+    loadIncludeFileConfiguration(jsonObject);
   }
 
-  private void loadLegendConfiguration(JSONObject jsonObject) {
-    Object legendFile = jsonObject.get("legendFile");
-    if (legendFile != null) {
-      legendFileName = legendFile.toString();
-      Main.debug(4, "  - legendFile [" + legendFileName + "]");
+  private void loadIncludeFileConfiguration(JSONObject jsonObject) {
+    Object includeFile = jsonObject.get("includeFile");
+    if (includeFile != null) {
+      includeFileName = includeFile.toString();
+      Main.debug(4, "  - includeFile [" + includeFileName + "]");
     }
   }
 
@@ -437,11 +436,9 @@ public class ClassDiagrammer {
     }
     output.println("' Configuration   : [" + configurationFile + "]");
     output.println("' Generated at    : " + new Date());
-    String legendFileContent = Utils.readFileToString(legendFileName);
-    if (!legendFileContent.isBlank()) {
-      output.println("legend");
-      output.println(legendFileContent);
-      output.println("end legend");
+    String includeFileContent = Utils.readFileToString(includeFileName);
+    if (!includeFileContent.isBlank()) {
+      output.println(includeFileContent);
     }
     output.println();
   }

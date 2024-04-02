@@ -1,3 +1,6 @@
+title Example with legend and title
+
+legend
 Connections legend
 ----
 --|> : Extends
@@ -5,3 +8,4 @@ Connections legend
 ----
 --> : Fields and Attributes
 ..> : Uses
+end legend
