@@ -46,13 +46,6 @@
             <artifactId>json-simple</artifactId>
             <version>1.1.1</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/net.sourceforge.plantuml/plantuml -->
-<!--        <dependency>-->
-<!--            <groupId>net.sourceforge.plantuml</groupId>-->
-<!--            <artifactId>plantuml</artifactId>-->
-<!--            <version>8059</version>-->
-<!--        </dependency>-->
-        <!-- https://mvnrepository.com/artifact/net.sourceforge.plantuml/plantuml-gplv2 -->
         <dependency>
             <groupId>net.sourceforge.plantuml</groupId>
             <artifactId>plantuml-gplv2</artifactId>
