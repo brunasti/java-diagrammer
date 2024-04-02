@@ -124,12 +124,10 @@ public final class Utils {
   }
 
   // JSON functions ----------------------------------
-  public static JSONObject loadConfigurationFile(String configurationFileName) {
+  public static JSONObject loadJsonFile(String jsonFileName) {
     JSONParser parser = new JSONParser();
     try {
-      Object obj = parser.parse(new FileReader(configurationFileName));
-
-      // A JSON object. Key value pairs are unordered. JSONObject supports java.util.Map interface.
+      Object obj = parser.parse(new FileReader(jsonFileName));
       return (JSONObject) obj;
     } catch (Exception e) {
       e.printStackTrace(System.err);

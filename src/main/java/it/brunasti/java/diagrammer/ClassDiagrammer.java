@@ -179,7 +179,7 @@ public class ClassDiagrammer {
 
   private boolean loadJsonConfigurationFromFile(String configurationFileName) {
     Debugger.debug(1, "loadJsonConfigurationFromFile : " + configurationFileName);
-    JSONObject jsonObject = Utils.loadConfigurationFile(configurationFileName);
+    JSONObject jsonObject = Utils.loadJsonFile(configurationFileName);
     if (null == jsonObject) {
       Debugger.debug(2,
               "loadJsonConfigurationFromFile : no data in config file " + configurationFileName);

@@ -19,7 +19,7 @@ public class UtilsTest implements TestConstants {
   @Test
   @DisplayName("Read the configuration file with the correct content")
   void testLoadConfigurationFile_Successful() {
-    JSONObject jsonObject = Utils.loadConfigurationFile(configurationFileName);
+    JSONObject jsonObject = Utils.loadJsonFile(configurationFileName);
     assertNotNull(jsonObject);
 
     JSONObject exclude = (JSONObject) jsonObject.get("exclude");
@@ -35,7 +35,7 @@ public class UtilsTest implements TestConstants {
   @Test
   @DisplayName("Read the configuration file with the wrong content")
   void testLoadConfigurationFile_WrongJSON() {
-    JSONObject jsonObject = Utils.loadConfigurationFile(wrongJsonFileName);
+    JSONObject jsonObject = Utils.loadJsonFile(wrongJsonFileName);
     assertNotNull(jsonObject);
 
     JSONObject exclude = (JSONObject) jsonObject.get("exclude");
@@ -48,10 +48,10 @@ public class UtilsTest implements TestConstants {
   @Test
   @DisplayName("Read the wrong configuration file that doesn't exist or is not json")
   void testLoadConfigurationFile_Fail() {
-    JSONObject jsonObject = Utils.loadConfigurationFile(configurationFileName + ".error");
+    JSONObject jsonObject = Utils.loadJsonFile(configurationFileName + ".error");
     assertNull(jsonObject);
 
-    jsonObject = Utils.loadConfigurationFile(wrongConfigurationFileName);
+    jsonObject = Utils.loadJsonFile(wrongConfigurationFileName);
     assertNull(jsonObject);
   }
 
