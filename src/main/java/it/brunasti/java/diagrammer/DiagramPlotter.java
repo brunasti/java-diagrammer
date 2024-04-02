@@ -36,8 +36,12 @@ public class DiagramPlotter {
                                         String outputDirName,
                                         String renderedImageFile)
           throws IOException {
+    Debugger.debug(5, "Debugger.renderFile - 01 [" + diagramFileName
+            + "] [" + outputDirName + "] [" + renderedImageFile + "] ");
     String diagramContent = Utils.readFileToString(diagramFileName);
+    Debugger.debug(7, "Debugger.renderFile - 02 ");
     Path path = Paths.get(outputDirName);
+    Debugger.debug(7, "Debugger.renderFile - 03 ");
     return render(diagramContent, path, renderedImageFile);
   }
 

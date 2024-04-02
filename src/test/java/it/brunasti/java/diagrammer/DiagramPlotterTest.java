@@ -18,7 +18,9 @@ class DiagramPlotterTest {
     assertDoesNotThrow(() -> diagramPlotter.renderFile("./docs/output.puml", "./temp/", "test-output"));
 
     System.err.println("diagramPlotterTest_renderFile - NoSuchElementException inputFile");
-    assertThrows(NoSuchElementException.class, () -> diagramPlotter.renderFile("./docs/output-notExist.puml", "./temp/", "test-output"));
+    Debugger.setDebug(10);
+    assertThrows(NoSuchElementException.class, () -> diagramPlotter.renderFile("./docs/output-notExist.puml", "./temp/", "xxx-test-output"));
+    Debugger.setDebug(false);
 
     System.err.println("diagramPlotterTest_renderFile - NoSuchElementException no target dir");
     assertThrows(FileNotFoundException.class, () -> diagramPlotter.renderFile("./docs/output.puml", "./xxtemp/", "test-output"));
