@@ -75,7 +75,7 @@ public class ClassDiagrammerMainTest implements TestConstants {
     System.err.println("ClassDiagrammerMain.main ------ 6 args ----- configurationWithLegendFileName");
     String[] lastArgs = new String[6];
     lastArgs[0] = "-c";
-    lastArgs[1] = configurationWithLegendFileName;
+    lastArgs[1] = configurationWithIncludeFileName;
     lastArgs[2] = "-o";
     lastArgs[3] = outputFileName;
     lastArgs[4] = "-p";

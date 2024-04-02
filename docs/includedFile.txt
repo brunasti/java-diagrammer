@@ -1,5 +1,8 @@
 title Example with legend and title
 
+hide empty members
+
+
 legend
 Connections legend
 ----

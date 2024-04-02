@@ -32,11 +32,9 @@ import org.json.simple.JSONObject;
  * @see     it.brunasti.java
  */
 public class ClassDiagrammer {
-  // TODO: Move files from temp directory to more appropriate ones
   // TODO: Manage arrays (LString...)
   // TODO: Add the option to extract Methods and Attributes, Protected Private or Abstract (MA-PPA)
   // TODO: Avoid generic catch(Exception)
-  // TODO: option to add "hide empty members" in diagram
   // TODO: add Javadoc comments
   // TODO: create more meaningful tests
   // TODO: Rebuild the project in a clean env (libs dependencies....)
@@ -453,7 +451,10 @@ public class ClassDiagrammer {
     output.println("' Generated at    : " + new Date());
     String includeFileContent = Utils.readFileToString(includeFileName);
     if (!includeFileContent.isBlank()) {
+      output.println();
+      output.println("' Include         : [" + includeFileName + "] ---------");
       output.println(includeFileContent);
+      output.println("' Include end     : --------------------------");
     }
     output.println();
   }

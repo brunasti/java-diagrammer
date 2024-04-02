@@ -27,15 +27,16 @@ public interface TestConstants {
 
   String outputFileName = docsDirectory + "output.puml";
   String outputWithImportFileName = docsDirectory + "output-import.puml";
+  String outputWithIncludeFileName = docsDirectory + "output-include.puml";
   String testOutputFileName = docsDirectory + "output-test.puml";
 
   String configurationFileName = docsDirectory + "config.json";
-  String configurationWithLegendFileName = docsDirectory + "config-withLegend.json";
+  String configurationWithIncludeFileName = docsDirectory + "config-includeFile.json";
   String wrongConfigurationFileName = outputFileName;
 
   String wrongJsonFileName = testResourcesDirectory + "wrong.json";
   String nonExistingJsonFileName = tempDirectory + "nofile.json";
 
-  String defaultLegendFileName = docsDirectory + "default_legend.txt";
+  String defaultLegendFileName = docsDirectory + "includedFile.txt";
 
 }

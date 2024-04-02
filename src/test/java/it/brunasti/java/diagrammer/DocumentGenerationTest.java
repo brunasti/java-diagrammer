@@ -48,6 +48,16 @@ class DocumentGenerationTest implements TestConstants {
     System.err.println("generateDocumentations - output-test.png");
     assertDoesNotThrow(() -> diagramPlotter.renderFile(testOutputFileName, docsDirectory, "output-test"));
 
+    System.err.println("generateDocumentations - Diagram with included file");
+    String[] lastArgs = new String[6];
+    lastArgs[0] = "-c";
+    lastArgs[1] = configurationWithIncludeFileName;
+    lastArgs[2] = "-o";
+    lastArgs[3] = outputWithIncludeFileName;
+    lastArgs[4] = "-p";
+    lastArgs[5] = testClassesDirectory;
+    assertDoesNotThrow(() -> ClassDiagrammerMain.main(lastArgs));
+
   }
 
 }
