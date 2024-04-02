@@ -201,7 +201,7 @@ public class ClassDiagrammer {
                                             final Set<String> files) {
     String newPath = path + "/" + localPackage.replace(".", "/");
     try {
-      Utils.listFilesUsingFilesList(newPath).forEach(file -> {
+      Utils.listFiles(newPath).forEach(file -> {
         String className = file.replace(".class", "");
         files.add(localPackage + "." + className);
       });

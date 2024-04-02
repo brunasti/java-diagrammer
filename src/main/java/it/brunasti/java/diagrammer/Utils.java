@@ -101,7 +101,14 @@ public final class Utils {
 
   // Directories functions -----------------------------------------
 
-  public static Set<String> listFilesUsingFilesList(final String dir)
+  /**
+   * List files in a directory.
+   *
+   * @param dir Directory from which extract the list of files
+   * @return Set of file names
+   * @throws IOException If the directory is not found
+   */
+  public static Set<String> listFiles(final String dir)
           throws IOException {
     try (Stream<Path> stream = Files.list(Paths.get(dir))) {
       return stream
@@ -112,6 +119,13 @@ public final class Utils {
     }
   }
 
+  /**
+   * List directories in a directory.
+   *
+   * @param dir Directory from which extract the list of directories
+   * @return Set of directory names
+   * @throws IOException If the root directory is not found
+   */
   public static Set<String> listDirectories(final String dir)
           throws IOException {
     try (Stream<Path> stream = Files.list(Paths.get(dir))) {
@@ -123,6 +137,12 @@ public final class Utils {
     }
   }
 
+  /**
+   * Load a JSON File content.
+   *
+   * @param jsonFileName Name of the file in JSON format
+   * @return The JSONObject corresponding to the file content
+   */
   // JSON functions ----------------------------------
   public static JSONObject loadJsonFile(String jsonFileName) {
     JSONParser parser = new JSONParser();

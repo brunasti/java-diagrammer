@@ -95,9 +95,9 @@ public class UtilsTest implements TestConstants {
   @Test
   @DisplayName("List Files in test resources directory")
   void testListFilesUsingFilesList_Resources() {
-    assertDoesNotThrow(() -> Utils.listFilesUsingFilesList(testResourcesDirectory));
+    assertDoesNotThrow(() -> Utils.listFiles(testResourcesDirectory));
     try {
-      Set<String> list = Utils.listFilesUsingFilesList(testResourcesDirectory);
+      Set<String> list = Utils.listFiles(testResourcesDirectory);
       assertNotNull(list);
       assertEquals(2,list.size());
     } catch (IOException ioex) {
@@ -108,9 +108,9 @@ public class UtilsTest implements TestConstants {
   @Test
   @DisplayName("List Files in Src directory")
   void testListFilesUsingFilesList_Src() {
-    assertDoesNotThrow(() -> Utils.listFilesUsingFilesList(srcDirectory));
+    assertDoesNotThrow(() -> Utils.listFiles(srcDirectory));
     try {
-      Set<String> list = Utils.listFilesUsingFilesList(srcDirectory);
+      Set<String> list = Utils.listFiles(srcDirectory);
       assertNotNull(list);
       assertEquals(0,list.size());
     } catch (IOException ioex) {
@@ -121,7 +121,7 @@ public class UtilsTest implements TestConstants {
   @Test
   @DisplayName("List Files in non existing directory")
   void testListFilesUsingFilesList_NonExisting() {
-    Throwable exception = assertThrows(NoSuchFileException.class, () -> Utils.listFilesUsingFilesList(nonExistingDirectory));
+    Throwable exception = assertThrows(NoSuchFileException.class, () -> Utils.listFiles(nonExistingDirectory));
     assertEquals("./errorDir", exception.getMessage());
   }
 
