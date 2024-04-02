@@ -42,20 +42,20 @@ public class ImportsIdentifier {
       for (JavaSource src : srcs) {
         Debugger.debug(8, "ImportsIdentifier.extractImports : src " + src);
 
-        for (String imprt : src.getImports()) {
-          Debugger.debug(5, "ImportsIdentifier.extractImports : imprt " + imprt);
-          // TODO: could exclude imports with a test like : if (imprt.startsWith("")) {
+        for (String importName : src.getImports()) {
+          Debugger.debug(5, "ImportsIdentifier.extractImports : importName " + importName);
+          // TODO: could exclude imports with a test like : if (importName.startsWith("")) {
           try {
-            if (importFiles.contains(imprt)) {
+            if (importFiles.contains(importName)) {
               continue;
             }
-            importFiles.add(imprt);
-            String newImport = sysPath + imprt.replaceAll("\\.", "/") + FILE_TYPE;
+            importFiles.add(importName);
+            String newImport = sysPath + importName.replaceAll("\\.", "/") + FILE_TYPE;
             Debugger.debug(6, "ImportsIdentifier.extractImports : newImport " + newImport);
             extractImports(newImport, sysPath);
           } catch (Exception ex) {
             Debugger.debug(4, "  Error ImportsIdentifier.extractImports : "
-                    + ex.getMessage() + " = " + path + " - " + imprt);
+                    + ex.getMessage() + " = " + path + " - " + importName);
           }
         }
       }
