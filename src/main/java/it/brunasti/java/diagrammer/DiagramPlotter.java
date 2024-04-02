@@ -21,30 +21,14 @@ import net.sourceforge.plantuml.preproc.Defines;
  */
 public class DiagramPlotter {
 
-  private List<FileImageData> renderFile(String fileName, String outputDir)
-          throws IOException {
-    return renderFile(fileName, outputDir, "output");
-  }
-
-  private List<FileImageData> renderFile(String fileName, String outputDir, String targetFile)
+  public List<FileImageData> renderFile(String fileName, String outputDir, String targetFile)
           throws IOException {
     String diagramContent = Utils.readFileToString(fileName);
     Path path = Paths.get(outputDir);
     return render(diagramContent, path, targetFile);
   }
 
-  private List<FileImageData> renderFile(String fileName, Path outputDir)
-          throws IOException {
-    String diagramContent = Utils.readFileToString(fileName);
-    return render(diagramContent, outputDir);
-  }
-
-  private List<FileImageData> render(String source, Path outputDir)
-          throws IOException {
-    return render(source, outputDir, "output");
-  }
-
-  private List<FileImageData> render(String source, Path outputDir, String outFile)
+  public List<FileImageData> render(String source, Path outputDir, String outFile)
           throws IOException {
     final SourceStringReader reader = new SourceStringReader(Defines.createEmpty(),
             source, UTF_8.name(), Collections.emptyList());
@@ -52,14 +36,5 @@ public class DiagramPlotter {
     final SuggestedFile suggestedFile
             = SuggestedFile.fromOutputFile(outputDir.resolve(outFile).toFile(), PNG, 0);
     return PSystemUtils.exportDiagrams(diagram, suggestedFile, new FileFormatOption(PNG), false);
-  }
-
-  public static void main(String[] args) {
-    try {
-      DiagramPlotter diagramPlotter = new DiagramPlotter();
-      diagramPlotter.renderFile("./docs/output.puml", "./temp/", "test-output");
-    } catch (Exception ex) {
-      ex.printStackTrace();
-    }
   }
 }

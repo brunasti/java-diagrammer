@@ -5,7 +5,7 @@
 ' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
 ' Path            : [./target/classes]
 ' Configuration   : [./docs/config-withLegend.json]
-' Generated at    : Fri Mar 29 13:14:27 CET 2024
+' Generated at    : Tue Apr 02 10:16:12 CEST 2024
 legend
 Connections legend
 ----
@@ -13,7 +13,7 @@ Connections legend
 ..|> : Implements
 ----
 --> : Fields and Attributes
-..> : Usses
+..> : Uses
 end legend
 
 
@@ -23,6 +23,7 @@ class it.brunasti.java.diagrammer.ClassDiagrammer
 class it.brunasti.java.diagrammer.Utils
 class it.brunasti.java.diagrammer.Main
 class it.brunasti.java.diagrammer.ImportsIdentifier
+class it.brunasti.java.diagrammer.DiagramPlotter
 
 ' INHERITANCES =======
 
@@ -45,6 +46,7 @@ it.brunasti.java.diagrammer.Utils ..> java.io.PrintStream
 it.brunasti.java.diagrammer.Utils ..> org.json.simple.JSONObject
 it.brunasti.java.diagrammer.Utils ..> java.nio.file.Path
 it.brunasti.java.diagrammer.Main ..> org.apache.commons.cli.Options
+it.brunasti.java.diagrammer.DiagramPlotter ..> java.nio.file.Path
 
 ' IMPORTS =======
 ' Java Files Path : 
