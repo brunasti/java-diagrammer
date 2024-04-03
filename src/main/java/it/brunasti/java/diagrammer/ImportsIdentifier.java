@@ -7,6 +7,8 @@ package it.brunasti.java.diagrammer;
 
 import com.thoughtworks.qdox.JavaProjectBuilder;
 import com.thoughtworks.qdox.model.JavaSource;
+
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Collection;
 import java.util.HashSet;
@@ -45,21 +47,16 @@ public class ImportsIdentifier {
         for (String importName : src.getImports()) {
           Debugger.debug(5, "ImportsIdentifier.extractImports : importName " + importName);
           // TODO: could exclude imports with a test like : if (importName.startsWith("")) {
-          try {
-            if (importFiles.contains(importName)) {
-              continue;
-            }
-            importFiles.add(importName);
-            String newImport = sysPath + importName.replaceAll("\\.", "/") + FILE_TYPE;
-            Debugger.debug(6, "ImportsIdentifier.extractImports : newImport " + newImport);
-            extractImports(newImport, sysPath);
-          } catch (Exception ex) {
-            Debugger.debug(4, "  Error ImportsIdentifier.extractImports : "
-                    + ex.getMessage() + " = " + path + " - " + importName);
+          if (importFiles.contains(importName)) {
+            continue;
           }
+          importFiles.add(importName);
+          String newImport = sysPath + importName.replaceAll("\\.", "/") + FILE_TYPE;
+          Debugger.debug(6, "ImportsIdentifier.extractImports : newImport " + newImport);
+          extractImports(newImport, sysPath);
         }
       }
-    } catch (Exception ex) {
+    } catch (FileNotFoundException ex) {
       Debugger.debug(3, "  Error ImportsIdentifier.extractImports : "
               + ex.getMessage() + " = " + path);
     }

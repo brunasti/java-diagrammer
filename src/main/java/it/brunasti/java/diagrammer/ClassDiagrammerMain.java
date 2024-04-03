@@ -1,8 +1,7 @@
 package it.brunasti.java.diagrammer;
 
-import java.io.FileOutputStream;
-import java.io.PrintStream;
-import java.io.PrintWriter;
+import java.io.*;
+
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
@@ -81,8 +80,9 @@ public class ClassDiagrammerMain {
           try {
             int dl = Integer.parseInt(debugLevelString);
             Debugger.setDebug(dl);
-          } catch (Exception ex) {
-            ex.printStackTrace(System.err);
+          } catch (NumberFormatException ex) {
+            System.err.println("Error the option Debug ("
+                    + optionDebug.getDescription() + ") : " + ex.getMessage());
             return false;
           }
         } else {
@@ -225,7 +225,7 @@ public class ClassDiagrammerMain {
       if (null != file) {
         file.close();
       }
-    } catch (Exception ex) {
+    } catch (IOException ex) {
       ex.printStackTrace();
     }
   }

@@ -1,9 +1,6 @@
 package it.brunasti.java.diagrammer;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.PrintStream;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -14,6 +11,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 
 /**
@@ -149,7 +147,7 @@ public final class Utils {
     try {
       Object obj = parser.parse(new FileReader(jsonFileName));
       return (JSONObject) obj;
-    } catch (Exception e) {
+    } catch (IOException | ParseException e) {
       e.printStackTrace(System.err);
       return null;
     }

@@ -6,7 +6,7 @@
 ' Path            : [./target/classes]
 ' Java Files Path : [./src/main/java/]
 ' Configuration   : [./docs/config.json]
-' Generated at    : Wed Apr 03 12:28:54 CEST 2024
+' Generated at    : Wed Apr 03 12:49:56 CEST 2024
 
 
 
@@ -58,25 +58,19 @@ it.brunasti.java.diagrammer.ClassDiagrammer ..o org.apache.bcel.generic.Type
 it.brunasti.java.diagrammer.ClassDiagrammer ..o org.apache.bcel.classfile.JavaClass
 
 ' it.brunasti.java.diagrammer.Utils
-it.brunasti.java.diagrammer.Utils ..o java.io.PrintStream
-it.brunasti.java.diagrammer.Utils ..o java.nio.file.Files
-it.brunasti.java.diagrammer.Utils ..o org.json.simple.parser.JSONParser
-it.brunasti.java.diagrammer.Utils ..o java.io.IOException
-it.brunasti.java.diagrammer.Utils ..o java.io.File
 it.brunasti.java.diagrammer.Utils ..o org.json.simple.JSONObject
+it.brunasti.java.diagrammer.Utils ..o org.json.simple.parser.ParseException
+it.brunasti.java.diagrammer.Utils ..o java.nio.file.Files
 it.brunasti.java.diagrammer.Utils ..o java.nio.file.Paths
-it.brunasti.java.diagrammer.Utils ..o java.io.FileReader
+it.brunasti.java.diagrammer.Utils ..o org.json.simple.parser.JSONParser
 it.brunasti.java.diagrammer.Utils ..o java.nio.file.Path
 
 ' it.brunasti.java.diagrammer.Debugger
 
 ' it.brunasti.java.diagrammer.ClassDiagrammerMain
-it.brunasti.java.diagrammer.ClassDiagrammerMain ..o java.io.PrintStream
-it.brunasti.java.diagrammer.ClassDiagrammerMain ..o java.io.PrintWriter
 it.brunasti.java.diagrammer.ClassDiagrammerMain ..o org.apache.commons.cli.CommandLineParser
 it.brunasti.java.diagrammer.ClassDiagrammerMain ..o org.apache.commons.cli.ParseException
 it.brunasti.java.diagrammer.ClassDiagrammerMain ..o org.apache.commons.cli.Options
-it.brunasti.java.diagrammer.ClassDiagrammerMain ..o java.io.FileOutputStream
 it.brunasti.java.diagrammer.ClassDiagrammerMain ..o org.apache.commons.cli.CommandLine
 it.brunasti.java.diagrammer.ClassDiagrammerMain ..o org.apache.commons.cli.HelpFormatter
 it.brunasti.java.diagrammer.ClassDiagrammerMain ..o org.apache.commons.cli.Option
@@ -86,6 +80,7 @@ it.brunasti.java.diagrammer.ClassDiagrammerMain ..o org.apache.commons.cli.Defau
 it.brunasti.java.diagrammer.ImportsIdentifier ..o com.thoughtworks.qdox.JavaProjectBuilder
 it.brunasti.java.diagrammer.ImportsIdentifier ..o com.thoughtworks.qdox.model.JavaSource
 it.brunasti.java.diagrammer.ImportsIdentifier ..o java.io.FileReader
+it.brunasti.java.diagrammer.ImportsIdentifier ..o java.io.FileNotFoundException
 
 ' it.brunasti.java.diagrammer.DiagramPlotter
 it.brunasti.java.diagrammer.DiagramPlotter ..o net.sourceforge.plantuml.core.Diagram

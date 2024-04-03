@@ -28,8 +28,13 @@ public class ClassDiagrammerTest implements TestConstants {
   @Test
   @DisplayName("Generate Diagram from non existing directory")
   void testGenerateDiagram_Nodir() {
+    Debugger.setDebug(5);
     ClassDiagrammer classDiagrammer = new ClassDiagrammer();
-    assertDoesNotThrow(() -> classDiagrammer.generateDiagram(nonExistingDirectory,configurationFileName, null));
+    assertDoesNotThrow(() ->
+            classDiagrammer.generateDiagram(
+                    nonExistingDirectory,
+                    configurationFileName,
+                    null));
   }
 
   @Test

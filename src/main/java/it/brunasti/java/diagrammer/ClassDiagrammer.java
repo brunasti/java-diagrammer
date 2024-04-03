@@ -499,17 +499,18 @@ public class ClassDiagrammer {
     }
 
     ArrayList<String> files = new ArrayList<>();
-    ClassLoader classLoader = getClassLoader(path);
-    if (null == classLoader) {
-      System.err.println("Class loader not created");
-      return;
-    }
-
     try {
       Set<String> dirs = Utils.listDirectories(path);
       dirs.forEach(dir -> files.addAll(iterateSubDirectories(path, dir)));
     } catch (IOException e) {
       System.err.println("Error listing directories : " + e.getMessage());
+    }
+
+    ClassLoader classLoader = getClassLoader(path);
+    Debugger.debug(2, "classLoader [" + classLoader + "]");
+    if (null == classLoader) {
+      System.err.println("Class loader not created");
+      return;
     }
 
     ClassLoaderRepository rep = new ClassLoaderRepository(classLoader);
