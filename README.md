@@ -107,6 +107,11 @@ Here below an example and the base structure:
 [How to Configure the Development Environment](docs/howToConfigure.md)
 
 
+### Create Javadoc
+
+[How to generate the Javadoc of the project](docs/howToJavadoc.md)
+
+
 
 ## Caveat
 
