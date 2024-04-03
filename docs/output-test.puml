@@ -5,7 +5,7 @@
 ' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
 ' Path            : [./target/test-classes]
 ' Configuration   : []
-' Generated at    : Wed Apr 03 10:36:28 CEST 2024
+' Generated at    : Wed Apr 03 10:47:49 CEST 2024
 
 
 
@@ -55,13 +55,16 @@ it.brunasti.java.diagrammer.ClassDiagrammerTest ..> it.brunasti.java.diagrammer.
 it.brunasti.java.diagrammer.UtilsTest ..> it.brunasti.java.diagrammer.Utils
 it.brunasti.java.diagrammer.UtilsTest ..> java.util.Set
 it.brunasti.java.diagrammer.UtilsTest ..> java.util.ArrayList
+it.brunasti.java.diagrammer.UtilsTest ..> Ljava.lang.Object
 it.brunasti.java.diagrammer.ImportsIdentifierTest ..> java.util.Set
 it.brunasti.java.diagrammer.ImportsIdentifierTest ..> it.brunasti.java.diagrammer.ImportsIdentifier
+it.brunasti.java.diagrammer.DocumentGenerationTest ..> Ljava.lang.String
 it.brunasti.java.diagrammer.DocumentGenerationTest ..> java.util.List
 it.brunasti.java.diagrammer.DocumentGenerationTest ..> it.brunasti.java.diagrammer.DiagramPlotter
 it.brunasti.java.diagrammer.DiagramPlotterTest ..> java.util.List
 it.brunasti.java.diagrammer.DiagramPlotterTest ..> it.brunasti.java.diagrammer.DiagramPlotter
 it.brunasti.java.diagrammer.ClassDiagrammerMainTest ..> it.brunasti.java.diagrammer.ClassDiagrammerMain
+it.brunasti.java.diagrammer.ClassDiagrammerMainTest ..> Ljava.lang.String
 it.brunasti.java.diagrammer.ClassDiagrammerMainTest ..> org.apache.commons.cli.Options
 it.brunasti.java.diagrammer.DebuggerTest ..> it.brunasti.java.diagrammer.Debugger
 

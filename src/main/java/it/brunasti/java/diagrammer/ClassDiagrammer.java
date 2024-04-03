@@ -41,7 +41,6 @@ public class ClassDiagrammer {
   // TODO: create more meaningful tests
   // TODO: Rebuild the project in a clean env (libs dependencies....)
   // TODO: Avoid generic catch(Exception)
-  // TODO: add Javadoc comments
 
   // Reference to a PrintStream to be used for the diagram
   // By default is the Standard.out, but it can be redirected
@@ -61,14 +60,14 @@ public class ClassDiagrammer {
   private HashSet<String> usesWritten = new HashSet<>();
 
   /**
-   * Instantiate a CLassDiagrammer with output directed to StandardOut.
+   * Instantiate a ClassDiagrammer with output directed to StandardOut.
    */
   public ClassDiagrammer() {
     this.output = System.out;
   }
 
   /**
-   * Instantiate a CLassDiagrammer with output directed to a passed PrintStream.
+   * Instantiate a ClassDiagrammer with output directed to a passed PrintStream.
    * Used in case to create an output file, passing a PrintStream pointing
    * to the desired file.
    * If System.out is passed, the output is to StandardOut.
@@ -106,7 +105,7 @@ public class ClassDiagrammer {
   // Load and manage Configuration ------------------------
 
   private void setDefaultConfiguration() {
-    toBeExcludedPackages.add("Ljava.lang.");
+//    toBeExcludedPackages.add("Ljava.lang.");
     toBeExcludedPackages.add("java.lang.");
     includeFileName = "";
     flagAvoidSelfReferring = false;
