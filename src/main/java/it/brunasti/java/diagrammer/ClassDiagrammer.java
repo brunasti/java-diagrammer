@@ -39,7 +39,6 @@ public class ClassDiagrammer {
   // TODO: Add the option to extract Methods and Attributes, Protected Private or Abstract (MA-PPA)
   // TODO: Manage arrays (LString...)
   // TODO: create more meaningful tests
-  // TODO: Rebuild the project in a clean env (libs dependencies....)
   // TODO: Avoid generic catch(Exception)
 
   // Reference to a PrintStream to be used for the diagram
@@ -94,7 +93,7 @@ public class ClassDiagrammer {
       // Create a new class loader with the directory
       return new URLClassLoader(urls);
     } catch (IOException e) {
-      e.printStackTrace();
+      System.err.println("Error getting the ClassLoader : " + e.getMessage());
       return null;
     }
   }
@@ -105,7 +104,8 @@ public class ClassDiagrammer {
   // Load and manage Configuration ------------------------
 
   private void setDefaultConfiguration() {
-//    toBeExcludedPackages.add("Ljava.lang.");
+    // TODO: how to manage Ljava and similar?
+    // toBeExcludedPackages.add("Ljava.lang.");
     toBeExcludedPackages.add("java.lang.");
     includeFileName = "";
     flagAvoidSelfReferring = false;
@@ -210,8 +210,8 @@ public class ClassDiagrammer {
       dirs.forEach(dir -> iterateSubDirectories(path, localPackage + "." + dir, files));
 
       return files;
-    } catch (Exception ex) {
-      ex.printStackTrace();
+    } catch (IOException ex) {
+      System.err.println("Error iterating along a subDirectory : " + ex.getMessage());
       return null;
     }
   }
@@ -282,25 +282,21 @@ public class ClassDiagrammer {
     output.println("' USES =======");
     classes.forEach(javaClass -> {
       if (!javaClass.isEnum()) {
-        try {
-          Method[] methods = javaClass.getMethods();
-          for (Method method : methods) {
-            Debugger.debug("generateUses " + method.getName()
-                    + " : " + method.getSignature());
-            String type = method.getReturnType().toString();
-            writeUses(javaClass, type);
+        Method[] methods = javaClass.getMethods();
+        for (Method method : methods) {
+          Debugger.debug("generateUses " + method.getName()
+                  + " : " + method.getSignature());
+          String type = method.getReturnType().toString();
+          writeUses(javaClass, type);
 
-            Type[] arguments = method.getArgumentTypes();
-            for (Type argument : arguments) {
-              type = argument.getSignature()
-                      .substring(1)
-                      .replace("/", ".")
-                      .replace(";", "");
-              writeUses(javaClass, type);
-            }
+          Type[] arguments = method.getArgumentTypes();
+          for (Type argument : arguments) {
+            type = argument.getSignature()
+                    .substring(1)
+                    .replace("/", ".")
+                    .replace(";", "");
+            writeUses(javaClass, type);
           }
-        } catch (Exception ex) {
-          System.err.println(ex.getMessage());
         }
       }
     });
@@ -312,15 +308,11 @@ public class ClassDiagrammer {
     output.println("' FIELDS =======");
     classes.forEach(javaClass -> {
       if (!javaClass.isEnum()) {
-        try {
-          for (Field field : javaClass.getFields()) {
-            if (isTypeToBeConnected(javaClass, field)) {
-              output.println(javaClass.getClassName()
-                      + " --> " + field.getType());
-            }
+        for (Field field : javaClass.getFields()) {
+          if (isTypeToBeConnected(javaClass, field)) {
+            output.println(javaClass.getClassName()
+                    + " --> " + field.getType());
           }
-        } catch (Exception ex) {
-          System.err.println(ex.getMessage());
         }
       }
     });
@@ -341,26 +333,22 @@ public class ClassDiagrammer {
                 + javaClass.getClassName().replace(".", "/")
                 + ImportsIdentifier.FILE_TYPE;
         Set<String> imports = importsIdentifier.extractImports(javaClassName, javaFilesPath);
-        try {
-          for (String imprt : imports) {
-            Debugger.debug(3, "    -------- " + imprt);
-            String importedFile = imprt;
-            if (importedFile.startsWith("static")) {
-              Debugger.debug(4, " replace static in " + importedFile);
-              importedFile = importedFile.replace("static", "");
-            }
-            if (importedFile.endsWith(".*")) {
-              Debugger.debug(4, " replace .* in " + importedFile);
-              importedFile = importedFile.replace(".*", "");
-            }
-            Debugger.debug(" <- " + imprt + "(" + importedFile + ")");
-            if (isTypeToBeConnected(javaClass, importedFile)) {
-              output.println(javaClass.getClassName()
-                      + " ..o " + importedFile);
-            }
+        for (String importString : imports) {
+          Debugger.debug(3, "    -------- " + importString);
+          String importedFile = importString;
+          if (importedFile.startsWith("static")) {
+            Debugger.debug(4, " replace static in " + importedFile);
+            importedFile = importedFile.replace("static", "");
           }
-        } catch (Exception ex) {
-          System.err.println("generateImports : " + ex.getMessage());
+          if (importedFile.endsWith(".*")) {
+            Debugger.debug(4, " replace .* in " + importedFile);
+            importedFile = importedFile.replace(".*", "");
+          }
+          Debugger.debug(" <- " + importString + "(" + importedFile + ")");
+          if (isTypeToBeConnected(javaClass, importedFile)) {
+            output.println(javaClass.getClassName()
+                    + " ..o " + importedFile);
+          }
         }
         output.println();
       });
@@ -380,8 +368,8 @@ public class ClassDiagrammer {
           output.println(javaInterface.getClassName() + " <|.. "
                   + javaClass.getClassName());
         }
-      } catch (Exception ex) {
-        System.err.println(ex.getMessage());
+      } catch (ClassNotFoundException ex) {
+        System.err.println("Error generating `Implements` relations : " + ex.getMessage());
       }
     });
     output.println();
@@ -397,8 +385,8 @@ public class ClassDiagrammer {
           output.println(javaClass.getSuperClass().getClassName() + " <|-- "
                   + javaClass.getClassName());
         }
-      } catch (Exception ex) {
-        System.err.println(ex.getMessage());
+      } catch (ClassNotFoundException ex) {
+        System.err.println("Error generating `Inheritance` relations : " + ex.getMessage());
       }
     });
     output.println();
@@ -422,7 +410,7 @@ public class ClassDiagrammer {
         i++;
       }
     } catch (ClassNotFoundException cex) {
-      cex.printStackTrace();
+      System.err.println("Error generating `Enum` class : " + cex.getMessage());
     }
 
     output.println("enum " + javaClass.getClassName() + "{");
@@ -521,34 +509,29 @@ public class ClassDiagrammer {
       Set<String> dirs = Utils.listDirectories(path);
       dirs.forEach(dir -> files.addAll(iterateSubDirectories(path, dir)));
     } catch (IOException e) {
-      e.printStackTrace();
+      System.err.println("Error listing directories : " + e.getMessage());
     }
 
-    try {
-      ClassLoaderRepository rep = new ClassLoaderRepository(classLoader);
+    ClassLoaderRepository rep = new ClassLoaderRepository(classLoader);
 
-      ArrayList<JavaClass> classes = new ArrayList<>();
+    ArrayList<JavaClass> classes = new ArrayList<>();
 
-      files.forEach(file -> {
-        try {
-          JavaClass javaClass = rep.loadClass(file);
-          classes.add(javaClass);
-        } catch (ClassNotFoundException e) {
-          System.err.println(e.getMessage());
-        }
-      });
+    files.forEach(file -> {
+      try {
+        JavaClass javaClass = rep.loadClass(file);
+        classes.add(javaClass);
+      } catch (ClassNotFoundException e) {
+        System.err.println("Error loading class : " + e.getMessage());
+      }
+    });
 
-      generateHeader(path, configurationFile, javaFilesPath);
-      generateClasses(classes, classLoader);
-      generateInheritances(classes);
-      generateImplements(classes);
-      generateFields(classes);
-      generateUses(classes);
-      generateImports(classes, javaFilesPath);
-      generateFooter();
-
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
+    generateHeader(path, configurationFile, javaFilesPath);
+    generateClasses(classes, classLoader);
+    generateInheritances(classes);
+    generateImplements(classes);
+    generateFields(classes);
+    generateUses(classes);
+    generateImports(classes, javaFilesPath);
+    generateFooter();
   }
 }
