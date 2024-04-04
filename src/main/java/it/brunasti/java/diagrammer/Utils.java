@@ -135,13 +135,15 @@ public final class Utils {
     }
   }
 
+
+  // JSON functions ----------------------------------
+
   /**
    * Load a JSON File content.
    *
    * @param jsonFileName Name of the file in JSON format
    * @return The JSONObject corresponding to the file content
    */
-  // JSON functions ----------------------------------
   public static JSONObject loadJsonFile(String jsonFileName) {
     JSONParser parser = new JSONParser();
     try {

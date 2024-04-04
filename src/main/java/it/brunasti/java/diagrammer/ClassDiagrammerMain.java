@@ -162,6 +162,7 @@ public class ClassDiagrammerMain {
             4,
             4,
             "");
+    outError.flush();
   }
 
   static void printUsage(Options options) {
@@ -223,7 +224,7 @@ public class ClassDiagrammerMain {
       classDiagrammer.generateDiagram(classesPackagePath, configurationFile, javaPackagePath);
 
       if (null != file) {
-        file.close();
+        file.flush();
       }
     } catch (IOException ex) {
       ex.printStackTrace();

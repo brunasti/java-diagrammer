@@ -38,6 +38,7 @@ public class ClassDiagrammer {
   // TODO: Create a UI version where you can graphically select the directory, config, flags....
   // TODO: Add the option to extract Methods and Attributes, Protected Private or Abstract (MA-PPA)
   // TODO: Manage arrays (LString...)
+  // TODO: Remove "Lorem ipsum" (in test classes)
   // TODO: create more meaningful tests
   // TODO: Avoid generic catch(Exception)
 
@@ -494,7 +495,7 @@ public class ClassDiagrammer {
 
     boolean initiated = loadConfiguration(configurationFile);
     if (!initiated) {
-      System.err.println("Exclusion config not loaded");
+      System.err.println("Configuration JSON not loaded");
       return;
     }
 
