@@ -5,8 +5,8 @@
 ' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
 ' Path            : [./target/classes]
 ' Java Files Path : [./src/main/java/]
-' Configuration   : [./src/test/resources/config.json]
-' Generated at    : Wed Apr 10 16:35:33 CEST 2024
+' Configuration   : [./docs/config.json]
+' Generated at    : Tue Apr 23 13:54:32 CEST 2024
 
 
 
@@ -24,45 +24,20 @@ class it.brunasti.java.diagrammer.DiagramPlotter
 
 ' FIELDS =======
 it.brunasti.java.diagrammer.ClassDiagrammer --> java.io.PrintStream
-it.brunasti.java.diagrammer.ClassDiagrammer --> java.util.HashSet
-it.brunasti.java.diagrammer.ClassDiagrammer --> java.util.HashSet
-it.brunasti.java.diagrammer.ClassDiagrammer --> java.lang.String
-it.brunasti.java.diagrammer.ClassDiagrammer --> java.util.HashSet
 it.brunasti.java.diagrammer.ClassDiagrammerMain --> org.apache.commons.cli.CommandLine
 it.brunasti.java.diagrammer.ClassDiagrammerMain --> it.brunasti.java.diagrammer.ClassDiagrammer
-it.brunasti.java.diagrammer.ClassDiagrammerMain --> java.lang.String
-it.brunasti.java.diagrammer.ClassDiagrammerMain --> java.lang.String
-it.brunasti.java.diagrammer.ClassDiagrammerMain --> java.lang.String
-it.brunasti.java.diagrammer.ClassDiagrammerMain --> java.lang.String
 it.brunasti.java.diagrammer.ClassDiagrammerMain --> org.apache.commons.cli.Options
-it.brunasti.java.diagrammer.ImportsIdentifier --> java.lang.String
 
 ' USES =======
 it.brunasti.java.diagrammer.ClassDiagrammer ..> java.io.PrintStream
-it.brunasti.java.diagrammer.ClassDiagrammer ..> java.lang.ClassLoader
-it.brunasti.java.diagrammer.ClassDiagrammer ..> java.lang.String
 it.brunasti.java.diagrammer.ClassDiagrammer ..> org.json.simple.JSONObject
-it.brunasti.java.diagrammer.ClassDiagrammer ..> java.util.Set
 it.brunasti.java.diagrammer.ClassDiagrammer ..> org.apache.bcel.classfile.JavaClass
 it.brunasti.java.diagrammer.ClassDiagrammer ..> org.apache.bcel.classfile.Field
-it.brunasti.java.diagrammer.ClassDiagrammer ..> java.util.ArrayList
 it.brunasti.java.diagrammer.ClassDiagrammer ..> org.apache.bcel.util.ClassLoaderRepository
 it.brunasti.java.diagrammer.ClassDiagrammer ..> it.brunasti.java.diagrammer.ImportsIdentifier
-it.brunasti.java.diagrammer.ClassDiagrammer ..> java.util.concurrent.atomic.AtomicReference
-it.brunasti.java.diagrammer.Utils ..> java.lang.String
-it.brunasti.java.diagrammer.Utils ..> Ljava.lang.Object
 it.brunasti.java.diagrammer.Utils ..> java.io.PrintStream
-it.brunasti.java.diagrammer.Utils ..> java.util.ArrayList
-it.brunasti.java.diagrammer.Utils ..> java.util.Set
 it.brunasti.java.diagrammer.Utils ..> org.json.simple.JSONObject
-it.brunasti.java.diagrammer.Utils ..> java.nio.file.Path
-it.brunasti.java.diagrammer.Debugger ..> java.lang.String
-it.brunasti.java.diagrammer.ClassDiagrammerMain ..> Ljava.lang.String
 it.brunasti.java.diagrammer.ClassDiagrammerMain ..> org.apache.commons.cli.Options
-it.brunasti.java.diagrammer.ImportsIdentifier ..> java.util.Set
-it.brunasti.java.diagrammer.ImportsIdentifier ..> java.lang.String
-it.brunasti.java.diagrammer.DiagramPlotter ..> java.util.List
-it.brunasti.java.diagrammer.DiagramPlotter ..> java.lang.String
 it.brunasti.java.diagrammer.DiagramPlotter ..> java.nio.file.Path
 
 ' IMPORTS =======
@@ -71,34 +46,23 @@ it.brunasti.java.diagrammer.DiagramPlotter ..> java.nio.file.Path
 it.brunasti.java.diagrammer.ClassDiagrammer ..o java.io.PrintStream
 it.brunasti.java.diagrammer.ClassDiagrammer ..o org.apache.bcel.util.ClassLoaderRepository
 it.brunasti.java.diagrammer.ClassDiagrammer ..o org.apache.bcel.classfile.Field
-it.brunasti.java.diagrammer.ClassDiagrammer ..o java.util.Iterator
 it.brunasti.java.diagrammer.ClassDiagrammer ..o java.net.URL
-it.brunasti.java.diagrammer.ClassDiagrammer ..o java.util.Date
 it.brunasti.java.diagrammer.ClassDiagrammer ..o org.apache.bcel.classfile.Method
-it.brunasti.java.diagrammer.ClassDiagrammer ..o java.util.Set
 it.brunasti.java.diagrammer.ClassDiagrammer ..o java.io.IOException
-it.brunasti.java.diagrammer.ClassDiagrammer ..o java.util.concurrent.atomic.AtomicReference
 it.brunasti.java.diagrammer.ClassDiagrammer ..o org.json.simple.JSONArray
 it.brunasti.java.diagrammer.ClassDiagrammer ..o java.io.File
-it.brunasti.java.diagrammer.ClassDiagrammer ..o java.util.ArrayList
-it.brunasti.java.diagrammer.ClassDiagrammer ..o java.util.HashSet
 it.brunasti.java.diagrammer.ClassDiagrammer ..o java.net.URLClassLoader
 it.brunasti.java.diagrammer.ClassDiagrammer ..o org.json.simple.JSONObject
 it.brunasti.java.diagrammer.ClassDiagrammer ..o org.apache.bcel.generic.Type
 it.brunasti.java.diagrammer.ClassDiagrammer ..o org.apache.bcel.classfile.JavaClass
 
 ' it.brunasti.java.diagrammer.Utils
-it.brunasti.java.diagrammer.Utils ..o java.util.stream.Stream
 it.brunasti.java.diagrammer.Utils ..o org.json.simple.JSONObject
 it.brunasti.java.diagrammer.Utils ..o org.json.simple.parser.ParseException
 it.brunasti.java.diagrammer.Utils ..o java.nio.file.Files
 it.brunasti.java.diagrammer.Utils ..o java.nio.file.Paths
 it.brunasti.java.diagrammer.Utils ..o org.json.simple.parser.JSONParser
-it.brunasti.java.diagrammer.Utils ..o java.util.Scanner
-it.brunasti.java.diagrammer.Utils ..o java.util.Set
 it.brunasti.java.diagrammer.Utils ..o java.nio.file.Path
-it.brunasti.java.diagrammer.Utils ..o java.util.stream.Collectors
-it.brunasti.java.diagrammer.Utils ..o java.util.ArrayList
 
 ' it.brunasti.java.diagrammer.Debugger
 
@@ -112,11 +76,8 @@ it.brunasti.java.diagrammer.ClassDiagrammerMain ..o org.apache.commons.cli.Optio
 it.brunasti.java.diagrammer.ClassDiagrammerMain ..o org.apache.commons.cli.DefaultParser
 
 ' it.brunasti.java.diagrammer.ImportsIdentifier
-it.brunasti.java.diagrammer.ImportsIdentifier ..o java.util.HashSet
 it.brunasti.java.diagrammer.ImportsIdentifier ..o com.thoughtworks.qdox.JavaProjectBuilder
 it.brunasti.java.diagrammer.ImportsIdentifier ..o com.thoughtworks.qdox.model.JavaSource
-it.brunasti.java.diagrammer.ImportsIdentifier ..o java.util.Collection
-it.brunasti.java.diagrammer.ImportsIdentifier ..o java.util.Set
 it.brunasti.java.diagrammer.ImportsIdentifier ..o java.io.FileReader
 it.brunasti.java.diagrammer.ImportsIdentifier ..o java.io.FileNotFoundException
 
@@ -127,13 +88,11 @@ it.brunasti.java.diagrammer.DiagramPlotter ..o net.sourceforge.plantuml.FileForm
 it.brunasti.java.diagrammer.DiagramPlotter ..o java.io.IOException
 it.brunasti.java.diagrammer.DiagramPlotter ..o net.sourceforge.plantuml.FileImageData
 it.brunasti.java.diagrammer.DiagramPlotter ..o  net.sourceforge.plantuml.FileFormat.PNG
-it.brunasti.java.diagrammer.DiagramPlotter ..o java.util.List
 it.brunasti.java.diagrammer.DiagramPlotter ..o java.nio.file.Paths
 it.brunasti.java.diagrammer.DiagramPlotter ..o net.sourceforge.plantuml.PSystemUtils
 it.brunasti.java.diagrammer.DiagramPlotter ..o net.sourceforge.plantuml.preproc.Defines
 it.brunasti.java.diagrammer.DiagramPlotter ..o  java.nio.charset.StandardCharsets.UTF_8
 it.brunasti.java.diagrammer.DiagramPlotter ..o java.nio.file.Path
-it.brunasti.java.diagrammer.DiagramPlotter ..o java.util.Collections
 it.brunasti.java.diagrammer.DiagramPlotter ..o net.sourceforge.plantuml.SourceStringReader
 
 

@@ -6,6 +6,7 @@ import static net.sourceforge.plantuml.FileFormat.PNG;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import net.sourceforge.plantuml.FileFormatOption;
@@ -60,9 +61,13 @@ public class DiagramPlotter {
           throws IOException {
     final SourceStringReader reader = new SourceStringReader(Defines.createEmpty(),
             source, UTF_8.name(), Collections.emptyList());
-    final Diagram diagram = reader.getBlocks().getFirst().getDiagram();
-    final SuggestedFile suggestedFile
-            = SuggestedFile.fromOutputFile(outputDir.resolve(outFile).toFile(), PNG, 0);
-    return PSystemUtils.exportDiagrams(diagram, suggestedFile, new FileFormatOption(PNG), false);
+    if (!reader.getBlocks().isEmpty()) {
+      final Diagram diagram = reader.getBlocks().getFirst().getDiagram();
+      final SuggestedFile suggestedFile
+              = SuggestedFile.fromOutputFile(outputDir.resolve(outFile).toFile(), PNG, 0);
+      return PSystemUtils.exportDiagrams(diagram, suggestedFile, new FileFormatOption(PNG), false);
+    } else {
+      return new ArrayList<>();
+    }
   }
 }

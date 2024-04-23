@@ -5,7 +5,7 @@
 ' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
 ' Path            : [./target/classes]
 ' Configuration   : []
-' Generated at    : Wed Apr 10 16:35:32 CEST 2024
+' Generated at    : Tue Apr 23 13:54:32 CEST 2024
 
 
 
@@ -45,7 +45,6 @@ it.brunasti.java.diagrammer.Utils ..> java.io.PrintStream
 it.brunasti.java.diagrammer.Utils ..> java.util.ArrayList
 it.brunasti.java.diagrammer.Utils ..> java.util.Set
 it.brunasti.java.diagrammer.Utils ..> org.json.simple.JSONObject
-it.brunasti.java.diagrammer.Utils ..> java.nio.file.Path
 it.brunasti.java.diagrammer.ClassDiagrammerMain ..> Ljava.lang.String
 it.brunasti.java.diagrammer.ClassDiagrammerMain ..> org.apache.commons.cli.Options
 it.brunasti.java.diagrammer.ImportsIdentifier ..> java.util.Set
