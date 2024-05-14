@@ -541,7 +541,7 @@ public class ClassDiagrammer {
     try {
       Set<String> dirs = Utils.listDirectories(path);
       dirs.forEach(dir -> files.addAll(iterateSubDirectories(path, dir)));
-    } catch (IOException e) {
+    } catch (IOException | NullPointerException e) {
       System.err.println("Error listing directories : " + e.getMessage());
     }
 
