@@ -20,7 +20,7 @@
             <artifactId>Java-Utils</artifactId>
             <version>1.0.0</version>
             <scope>system</scope>
-            <systemPath>/Users/paolobrunasti/Work/Mine/jiraplotter/lib/Java-Utils-1.0.0.jar</systemPath>
+            <systemPath>/Users/paolo/Work/Mine/java-diagrammer/lib/Java-Utils-1.0.0.jar</systemPath>
         </dependency>
 
         <dependency>

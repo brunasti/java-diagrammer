@@ -21,6 +21,8 @@ public class ImportsIdentifier {
 
   public static final String FILE_TYPE = ".java";
 
+  private Set<String> exploredPaths = new HashSet<>();
+
   /**
    * Extract the list of imported Java sources and Packages of a Java class source.
    *
@@ -32,9 +34,17 @@ public class ImportsIdentifier {
     Debugger.debug(4, "ImportsIdentifier.extractImports : " + path + " - " + sysPath);
 
     Set<String> importFiles = new HashSet<>();
+
+    String key = path+"#"+sysPath;
+    if (exploredPaths.contains(key)) {
+      Debugger.debug(4, "ImportsIdentifier.extractImports : ALREADY EXPLORED " + path + " - " + sysPath);
+      return importFiles;
+    }
+
+    exploredPaths.add(key);
+
     // TODO : Could even extract packages....
     //    Set<String> packages = new HashSet<>();
-
     try {
       JavaProjectBuilder jp = new JavaProjectBuilder();
       jp.addSource(new FileReader(path));

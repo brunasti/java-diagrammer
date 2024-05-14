@@ -264,13 +264,50 @@ public class ClassDiagrammer {
   }
 
 
+  private boolean isToBeExcluded(final String type) {
+    Debugger.debug("isToBeExcluded " + type);
+
+//    // Avoid self referencing loops
+//    if (flagAvoidSelfReferring) {
+//      if (type.equals(javaClass.getClassName())) {
+//        Debugger.debug("  - self ref ");
+//        return false;
+//      }
+//    }
+//
+//    // If the type is all lowercase, then is a primitive type
+//    if (type.toLowerCase().equals(type)) {
+//      Debugger.debug("  - primitive");
+//      return false;
+//    }
+//
+    if (toBeExcludedClasses.contains(type)) {
+      Debugger.debug("  - exclude class");
+      return true;
+    }
+
+    AtomicReference<Boolean> excludedPackage = new AtomicReference<>(false);
+    toBeExcludedPackages.forEach(localPackage -> {
+      Debugger.debug(4, "      - package : " + localPackage);
+      if (type.startsWith(localPackage)) {
+        Debugger.debug("    -> exclude package " + type);
+        excludedPackage.set(true);
+      }
+    });
+    Debugger.debug("  - exclude package : " + excludedPackage.get());
+
+    return excludedPackage.get();
+  }
+
+
 
   // ---------------------------------
   // Functions to generate the diagram
 
   private void writeUses(final JavaClass javaClass, final String type) {
     if (isTypeToBeConnected(javaClass, type)) {
-      String use = javaClass.getClassName() + " ..> " + type;
+      String correctedType = type.replace("[","").replace("]", "");
+      String use = javaClass.getClassName() + " ..> " + correctedType;
       if (!usesWritten.contains(use)) {
         output.println(use);
         usesWritten.add(use);
@@ -311,8 +348,9 @@ public class ClassDiagrammer {
       if (!javaClass.isEnum()) {
         for (Field field : javaClass.getFields()) {
           if (isTypeToBeConnected(javaClass, field)) {
+            String correctedType = field.getType().toString().replace("[","").replace("]", "");
             output.println(javaClass.getClassName()
-                    + " --> " + field.getType());
+                    + " --> " + correctedType);
           }
         }
       }
@@ -519,9 +557,13 @@ public class ClassDiagrammer {
     ArrayList<JavaClass> classes = new ArrayList<>();
 
     files.forEach(file -> {
+      System.out.println("Loading class : " + file);
       try {
-        JavaClass javaClass = rep.loadClass(file);
-        classes.add(javaClass);
+        // Exclude files which are in the config "exclude" sections
+        if (!isToBeExcluded(file)) {
+          JavaClass javaClass = rep.loadClass(file);
+          classes.add(javaClass);
+        }
       } catch (ClassNotFoundException e) {
         System.err.println("Error loading class : " + e.getMessage());
       }

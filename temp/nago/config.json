@@ -1,0 +1,29 @@
+{
+  "exclude": {
+    "classes": [
+      {
+        "class": "org.slf4j.Logger"
+      },
+      {
+        "class": "java.lang.String"
+      }
+    ],
+    "packages": [
+      {
+        "package": "old.it."
+      },
+      {
+        "package": "de.intarsys.pdf."
+      },
+      {
+        "package": "Ljava.lang."
+      },
+      {
+        "package": "java.lang."
+      },
+      {
+        "package": "java.util."
+      }
+    ]
+  }
+}
