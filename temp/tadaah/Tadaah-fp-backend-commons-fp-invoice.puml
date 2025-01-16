@@ -1,0 +1,174 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+' GENERATE CLASS DIAGRAM ===========
+' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
+' Path            : [/Users/paolo/Work/Tadaah/fp-backend-commons/fp-commons-invoice/build/classes/java/main]
+' Java Files Path : [/Users/paolo/Work/Tadaah/fp-backend-commons/fp-commons-invoice/src/main/java/]
+' Configuration   : [/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/config.json]
+' Generated at    : Thu Jan 16 13:38:45 CET 2025
+
+
+
+' CLASSES =======
+enum com.freelanceplaza.invoices.enums.InvoiceBucketReference{
+  PDF
+  XML
+  HTML
+}
+class com.freelanceplaza.invoices.dtos.InvoiceHires
+class com.freelanceplaza.invoices.InvoiceMemberIdFormatterImpl
+enum com.freelanceplaza.invoices.enums.PaymentAssignmentStatus{
+  NOT_CREATED_PENDING
+  CREATED
+  FAILED
+  EXPIRED
+  COMPLETED
+}
+class com.freelanceplaza.invoices.dtos.ShiftHire
+class com.freelanceplaza.invoices.exceptions.InvoiceMemberParseException
+interface com.freelanceplaza.invoices.InvoiceMemberIdFormatter
+class com.freelanceplaza.invoices.dtos.InvoiceMemberId
+enum com.freelanceplaza.invoices.enums.HireFlowStatus{
+  SUCCESS
+  CANCEL_LAST_MINUTE
+}
+class com.freelanceplaza.invoices.dtos.InvoiceHires$BucketReference
+enum com.freelanceplaza.invoices.enums.InvoiceType{
+  MEDIATION
+  SHIFT_FEES
+  KYC_DEDUCTION
+}
+enum com.freelanceplaza.invoices.enums.MemberType{
+  FREELANCER
+  ORGANIZATION
+  PLATFORM
+  LOCATION
+}
+class com.freelanceplaza.invoices.dtos.KycDeductionEvent
+class com.freelanceplaza.invoices.dtos.PaymentAssignmentEvent
+
+' INHERITANCES =======
+java.lang.Enum <|-- com.freelanceplaza.invoices.enums.InvoiceBucketReference
+java.lang.Enum <|-- com.freelanceplaza.invoices.enums.PaymentAssignmentStatus
+java.lang.RuntimeException <|-- com.freelanceplaza.invoices.exceptions.InvoiceMemberParseException
+java.lang.Enum <|-- com.freelanceplaza.invoices.enums.HireFlowStatus
+java.lang.Enum <|-- com.freelanceplaza.invoices.enums.InvoiceType
+java.lang.Enum <|-- com.freelanceplaza.invoices.enums.MemberType
+
+' IMPLEMENT INTERFACE =======
+com.freelanceplaza.invoices.InvoiceMemberIdFormatter <|.. com.freelanceplaza.invoices.InvoiceMemberIdFormatterImpl
+
+' FIELDS =======
+com.freelanceplaza.invoices.dtos.InvoiceHires --> com.freelanceplaza.invoices.enums.MemberType
+com.freelanceplaza.invoices.dtos.InvoiceHires --> com.freelanceplaza.invoices.enums.MemberType
+com.freelanceplaza.invoices.dtos.InvoiceHires --> com.freelanceplaza.commons.fpcommons.enums.Currency
+com.freelanceplaza.invoices.dtos.InvoiceHires --> com.freelanceplaza.invoices.enums.InvoiceType
+com.freelanceplaza.invoices.dtos.InvoiceHires --> java.time.Instant
+com.freelanceplaza.invoices.dtos.InvoiceHires --> java.time.Instant
+com.freelanceplaza.invoices.dtos.ShiftHire --> com.freelanceplaza.invoices.enums.MemberType
+com.freelanceplaza.invoices.dtos.ShiftHire --> java.time.Instant
+com.freelanceplaza.invoices.dtos.ShiftHire --> java.time.Instant
+com.freelanceplaza.invoices.dtos.ShiftHire --> com.freelanceplaza.commons.fpcommons.enums.Currency
+com.freelanceplaza.invoices.dtos.ShiftHire --> com.freelanceplaza.invoices.enums.HireFlowStatus
+com.freelanceplaza.invoices.dtos.InvoiceMemberId --> com.freelanceplaza.invoices.enums.MemberType
+com.freelanceplaza.invoices.dtos.InvoiceHires$BucketReference --> com.freelanceplaza.invoices.enums.InvoiceBucketReference
+com.freelanceplaza.invoices.dtos.KycDeductionEvent --> com.freelanceplaza.commons.fpcommons.enums.Currency
+com.freelanceplaza.invoices.dtos.KycDeductionEvent --> java.time.Instant
+com.freelanceplaza.invoices.dtos.KycDeductionEvent --> java.time.Instant
+com.freelanceplaza.invoices.dtos.PaymentAssignmentEvent --> com.freelanceplaza.commons.fpcommons.enums.Currency
+com.freelanceplaza.invoices.dtos.PaymentAssignmentEvent --> com.freelanceplaza.invoices.enums.PaymentAssignmentStatus
+com.freelanceplaza.invoices.dtos.PaymentAssignmentEvent --> java.time.Instant
+com.freelanceplaza.invoices.dtos.PaymentAssignmentEvent --> java.time.Instant
+com.freelanceplaza.invoices.dtos.PaymentAssignmentEvent --> java.time.Instant
+
+' USES =======
+com.freelanceplaza.invoices.dtos.InvoiceHires ..> com.freelanceplaza.invoices.enums.MemberType
+com.freelanceplaza.invoices.dtos.InvoiceHires ..> com.freelanceplaza.commons.fpcommons.enums.Currency
+com.freelanceplaza.invoices.dtos.InvoiceHires ..> com.freelanceplaza.invoices.enums.InvoiceType
+com.freelanceplaza.invoices.dtos.InvoiceHires ..> java.time.Instant
+com.freelanceplaza.invoices.dtos.InvoiceHires ..> com.freelanceplaza.invoices.dtos.InvoiceHires
+com.freelanceplaza.invoices.InvoiceMemberIdFormatterImpl ..> com.freelanceplaza.invoices.dtos.InvoiceMemberId
+com.freelanceplaza.invoices.InvoiceMemberIdFormatterImpl ..> com.freelanceplaza.invoices.exceptions.InvoiceMemberParseException
+com.freelanceplaza.invoices.InvoiceMemberIdFormatterImpl ..> com.freelanceplaza.invoices.enums.MemberType
+com.freelanceplaza.invoices.dtos.ShiftHire ..> com.freelanceplaza.invoices.dtos.ShiftHire
+com.freelanceplaza.invoices.dtos.ShiftHire ..> com.freelanceplaza.invoices.enums.MemberType
+com.freelanceplaza.invoices.dtos.ShiftHire ..> java.time.Instant
+com.freelanceplaza.invoices.dtos.ShiftHire ..> com.freelanceplaza.commons.fpcommons.enums.Currency
+com.freelanceplaza.invoices.dtos.ShiftHire ..> com.freelanceplaza.invoices.enums.HireFlowStatus
+com.freelanceplaza.invoices.InvoiceMemberIdFormatter ..> com.freelanceplaza.invoices.dtos.InvoiceMemberId
+com.freelanceplaza.invoices.dtos.InvoiceMemberId ..> com.freelanceplaza.invoices.enums.MemberType
+com.freelanceplaza.invoices.dtos.InvoiceMemberId ..> com.freelanceplaza.invoices.dtos.InvoiceMemberId
+com.freelanceplaza.invoices.dtos.InvoiceHires$BucketReference ..> com.freelanceplaza.invoices.enums.InvoiceBucketReference
+com.freelanceplaza.invoices.dtos.InvoiceHires$BucketReference ..> com.freelanceplaza.invoices.dtos.InvoiceHires$BucketReference
+com.freelanceplaza.invoices.dtos.KycDeductionEvent ..> com.freelanceplaza.commons.fpcommons.enums.Currency
+com.freelanceplaza.invoices.dtos.KycDeductionEvent ..> java.time.Instant
+com.freelanceplaza.invoices.dtos.KycDeductionEvent ..> com.freelanceplaza.invoices.dtos.KycDeductionEvent
+com.freelanceplaza.invoices.dtos.PaymentAssignmentEvent ..> com.freelanceplaza.commons.fpcommons.enums.Currency
+com.freelanceplaza.invoices.dtos.PaymentAssignmentEvent ..> com.freelanceplaza.invoices.enums.PaymentAssignmentStatus
+com.freelanceplaza.invoices.dtos.PaymentAssignmentEvent ..> java.time.Instant
+com.freelanceplaza.invoices.dtos.PaymentAssignmentEvent ..> com.freelanceplaza.invoices.dtos.PaymentAssignmentEvent
+
+' IMPORTS =======
+' Java Files Path : /Users/paolo/Work/Tadaah/fp-backend-commons/fp-commons-invoice/src/main/java/
+' com.freelanceplaza.invoices.enums.InvoiceBucketReference
+
+' com.freelanceplaza.invoices.dtos.InvoiceHires
+com.freelanceplaza.invoices.dtos.InvoiceHires ..o com.freelanceplaza.invoices.enums.InvoiceBucketReference
+com.freelanceplaza.invoices.dtos.InvoiceHires ..o com.freelanceplaza.commons.fpcommons.enums.Currency
+com.freelanceplaza.invoices.dtos.InvoiceHires ..o com.freelanceplaza.invoices.enums.MemberType
+com.freelanceplaza.invoices.dtos.InvoiceHires ..o lombok.Setter
+com.freelanceplaza.invoices.dtos.InvoiceHires ..o lombok.Getter
+com.freelanceplaza.invoices.dtos.InvoiceHires ..o java.time.Instant
+com.freelanceplaza.invoices.dtos.InvoiceHires ..o com.freelanceplaza.invoices.enums.InvoiceType
+
+' com.freelanceplaza.invoices.InvoiceMemberIdFormatterImpl
+com.freelanceplaza.invoices.InvoiceMemberIdFormatterImpl ..o com.freelanceplaza.invoices.enums.MemberType
+com.freelanceplaza.invoices.InvoiceMemberIdFormatterImpl ..o lombok.Getter
+com.freelanceplaza.invoices.InvoiceMemberIdFormatterImpl ..o lombok.NonNull
+com.freelanceplaza.invoices.InvoiceMemberIdFormatterImpl ..o lombok.RequiredArgsConstructor
+com.freelanceplaza.invoices.InvoiceMemberIdFormatterImpl ..o com.freelanceplaza.invoices.exceptions.InvoiceMemberParseException
+com.freelanceplaza.invoices.InvoiceMemberIdFormatterImpl ..o com.freelanceplaza.invoices.dtos.InvoiceMemberId
+
+' com.freelanceplaza.invoices.enums.PaymentAssignmentStatus
+
+' com.freelanceplaza.invoices.dtos.ShiftHire
+com.freelanceplaza.invoices.dtos.ShiftHire ..o com.freelanceplaza.commons.fpcommons.enums.Currency
+com.freelanceplaza.invoices.dtos.ShiftHire ..o com.freelanceplaza.invoices.enums.MemberType
+com.freelanceplaza.invoices.dtos.ShiftHire ..o lombok.Setter
+com.freelanceplaza.invoices.dtos.ShiftHire ..o lombok.Getter
+com.freelanceplaza.invoices.dtos.ShiftHire ..o java.time.Instant
+com.freelanceplaza.invoices.dtos.ShiftHire ..o com.freelanceplaza.invoices.enums.HireFlowStatus
+
+' com.freelanceplaza.invoices.exceptions.InvoiceMemberParseException
+
+' com.freelanceplaza.invoices.InvoiceMemberIdFormatter
+com.freelanceplaza.invoices.InvoiceMemberIdFormatter ..o com.freelanceplaza.invoices.exceptions.InvoiceMemberParseException
+com.freelanceplaza.invoices.InvoiceMemberIdFormatter ..o com.freelanceplaza.invoices.dtos.InvoiceMemberId
+
+' com.freelanceplaza.invoices.dtos.InvoiceMemberId
+
+' com.freelanceplaza.invoices.enums.HireFlowStatus
+
+' com.freelanceplaza.invoices.dtos.InvoiceHires$BucketReference
+
+' com.freelanceplaza.invoices.enums.InvoiceType
+
+' com.freelanceplaza.invoices.enums.MemberType
+
+' com.freelanceplaza.invoices.dtos.KycDeductionEvent
+com.freelanceplaza.invoices.dtos.KycDeductionEvent ..o com.freelanceplaza.commons.fpcommons.enums.Currency
+com.freelanceplaza.invoices.dtos.KycDeductionEvent ..o lombok.Setter
+com.freelanceplaza.invoices.dtos.KycDeductionEvent ..o lombok.Getter
+com.freelanceplaza.invoices.dtos.KycDeductionEvent ..o java.time.Instant
+
+' com.freelanceplaza.invoices.dtos.PaymentAssignmentEvent
+com.freelanceplaza.invoices.dtos.PaymentAssignmentEvent ..o com.freelanceplaza.commons.fpcommons.enums.Currency
+com.freelanceplaza.invoices.dtos.PaymentAssignmentEvent ..o lombok.Setter
+com.freelanceplaza.invoices.dtos.PaymentAssignmentEvent ..o lombok.Getter
+com.freelanceplaza.invoices.dtos.PaymentAssignmentEvent ..o com.freelanceplaza.invoices.enums.PaymentAssignmentStatus
+com.freelanceplaza.invoices.dtos.PaymentAssignmentEvent ..o java.time.Instant
+
+
+
+@enduml
