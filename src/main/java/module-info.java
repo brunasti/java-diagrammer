@@ -10,5 +10,5 @@ module it.brunasti.java.diagrammer {
   requires json.simple;
   requires com.thoughtworks.qdox;
   requires net.sourceforge.plantuml;
-  requires Java.Utils;
+  requires it.brunasti.java.utils.Utils;
 }

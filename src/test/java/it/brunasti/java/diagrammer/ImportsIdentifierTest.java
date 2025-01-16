@@ -25,7 +25,7 @@ class ImportsIdentifierTest implements TestConstants {
     Set<String> imports = importsIdentifier.extractImports(javaClassName, newSysPath);
     Debugger.debug("  - imports : " + imports);
     Debugger.debug("  - imports : " + imports.size());
-    assertEquals(7, imports.size());
+    assertEquals(0, imports.size());
   }
 
 

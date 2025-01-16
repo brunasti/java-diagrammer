@@ -52,7 +52,7 @@ public class ImportsIdentifier {
       Collection<JavaSource> srcs = jp.getSources();
 
       for (JavaSource src : srcs) {
-        Debugger.debug(8, "ImportsIdentifier.extractImports : src " + src);
+//        Debugger.debug(8, "ImportsIdentifier.extractImports : src " + src);
 
         for (String importName : src.getImports()) {
           Debugger.debug(5, "ImportsIdentifier.extractImports : importName " + importName);

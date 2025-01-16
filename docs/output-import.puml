@@ -6,13 +6,14 @@
 ' Path            : [./target/classes]
 ' Java Files Path : [./src/main/java/]
 ' Configuration   : [./docs/config.json]
-' Generated at    : Tue May 14 20:10:19 CEST 2024
+' Generated at    : Thu Jan 16 10:21:25 CET 2025
 
 
 
 ' CLASSES =======
 class it.brunasti.java.diagrammer.ClassDiagrammer
 class it.brunasti.java.diagrammer.Utils
+interface it.brunasti.java.diagrammer.package-info
 class it.brunasti.java.diagrammer.Debugger
 class it.brunasti.java.diagrammer.ClassDiagrammerMain
 class it.brunasti.java.diagrammer.ImportsIdentifier
@@ -58,6 +59,8 @@ it.brunasti.java.diagrammer.ClassDiagrammer ..o org.apache.bcel.classfile.JavaCl
 
 ' it.brunasti.java.diagrammer.Utils
 it.brunasti.java.diagrammer.Utils ..o org.json.simple.JSONObject
+
+' it.brunasti.java.diagrammer.package-info
 
 ' it.brunasti.java.diagrammer.Debugger
 
