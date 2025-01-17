@@ -1,0 +1,269 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+' GENERATE CLASS DIAGRAM ===========
+' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
+' Path            : [/Users/paolo/Work/Tadaah/fp-backend-auth-proxy/build/classes/java/main]
+' Java Files Path : [/Users/paolo/Work/Tadaah/fp-backend-auth-proxy/src/main/java/]
+' Configuration   : [/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/config.json]
+' Generated at    : Fri Jan 17 14:24:50 CET 2025
+
+
+
+' CLASSES =======
+class com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$1
+class com.freelanceplaza.authproxy.config.AuthTokenValidatorIssuers
+class com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator
+enum com.freelanceplaza.authproxy.idassigner.PasswordGenerator$CharType{
+  LOWER
+  UPPER
+  NUMBER
+  SPECIAL
+}
+class com.freelanceplaza.authproxy.idassigner.controller.OktaController
+class com.freelanceplaza.authproxy.security.FPJwtDecoders$ExtendedJwtDecoder
+class com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator$1
+class com.freelanceplaza.authproxy.controllers.TokenController
+class com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$Auth0AssignUserMetadataRequest
+class com.freelanceplaza.authproxy.config.ApplicationConfiguration
+class com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$5
+class com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$4
+class com.freelanceplaza.authproxy.idassigner.CreateUserAuth0Request
+class com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$3
+class com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$2
+class com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$9
+class com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$10
+class com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$8
+class com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$7
+class com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$11
+class com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$12
+class com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$6
+class com.freelanceplaza.authproxy.exceptions.ServiceExceptionHandler
+class com.freelanceplaza.authproxy.AuthProxyApplication
+class com.freelanceplaza.authproxy.exceptions.ErrorResponse
+class com.freelanceplaza.authproxy.exceptions.NotFoundException
+class com.freelanceplaza.authproxy.idassigner.PasswordGenerator$PasswordGeneratorConfiguration$PasswordGeneratorConfigurationBuilder
+class com.freelanceplaza.authproxy.config.ApiPortConfiguration$OktaAuthPortWrapper
+class com.freelanceplaza.authproxy.security.FPJwtDecoders
+class com.freelanceplaza.authproxy.config.ApiPortConfiguration
+class com.freelanceplaza.authproxy.exceptions.AuthProxyException
+class com.freelanceplaza.authproxy.config.SecurityConfig
+class com.freelanceplaza.authproxy.config.RedisConfiguration
+class com.freelanceplaza.authproxy.exceptions.OktaPortException
+class com.freelanceplaza.authproxy.idassigner.PasswordGenerator
+class com.freelanceplaza.authproxy.config.ApiPortConfiguration$TenantConfiguration
+class com.freelanceplaza.authproxy.idassigner.PasswordGenerator$PasswordGeneratorConfiguration
+class com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort
+class com.freelanceplaza.authproxy.security.FPJwtDecoders$JwtDecoderBundle
+class com.freelanceplaza.authproxy.idassigner.PasswordGenerator$1
+
+' INHERITANCES =======
+java.lang.Enum <|-- com.freelanceplaza.authproxy.idassigner.PasswordGenerator$CharType
+java.lang.RuntimeException <|-- com.freelanceplaza.authproxy.exceptions.NotFoundException
+java.lang.RuntimeException <|-- com.freelanceplaza.authproxy.exceptions.AuthProxyException
+java.lang.RuntimeException <|-- com.freelanceplaza.authproxy.exceptions.OktaPortException
+
+' IMPLEMENT INTERFACE =======
+
+' FIELDS =======
+com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$1 --> com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort
+com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator --> com.freelanceplaza.authproxy.idassigner.PasswordGenerator
+com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator --> com.freelanceplaza.commons.fpcommons.caching.TokenCache
+com.freelanceplaza.authproxy.idassigner.controller.OktaController --> com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator
+com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator$1 --> com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator
+com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$Auth0AssignUserMetadataRequest --> com.freelanceplaza.commons.fphttpclient.okta.Auth0UserDetails$Metadata
+com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$5 --> com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort
+com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$4 --> com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort
+com.freelanceplaza.authproxy.idassigner.CreateUserAuth0Request --> com.freelanceplaza.commons.fphttpclient.okta.Auth0UserDetails$Metadata
+com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$3 --> com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort
+com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$2 --> com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort
+com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$9 --> com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort
+com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$10 --> com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort
+com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$8 --> com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort
+com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$7 --> com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort
+com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$11 --> com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort
+com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$12 --> com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort
+com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$6 --> com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort
+com.freelanceplaza.authproxy.config.ApiPortConfiguration$OktaAuthPortWrapper --> com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort
+com.freelanceplaza.authproxy.config.SecurityConfig --> com.freelanceplaza.authproxy.config.AuthTokenValidatorIssuers
+com.freelanceplaza.authproxy.idassigner.PasswordGenerator --> com.freelanceplaza.authproxy.idassigner.PasswordGenerator$PasswordGeneratorConfiguration
+
+' USES =======
+com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$1 ..> com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort
+com.freelanceplaza.authproxy.config.AuthTokenValidatorIssuers ..> com.freelanceplaza.authproxy.config.AuthTokenValidatorIssuers
+com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator ..> com.freelanceplaza.commons.fphttpclient.authproxy.requests.AssignIdRequest
+com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator ..> com.freelanceplaza.commons.fphttpclient.okta.Auth0Organization
+com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator ..> com.freelanceplaza.commons.fphttpclient.authproxy.requests.CreateOrganizationRequest
+com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator ..> com.freelanceplaza.authproxy.config.ApiPortConfiguration$OktaAuthPortWrapper
+com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator ..> com.freelanceplaza.commons.fphttpclient.authproxy.requests.AddMembersToOrganizationRequest
+com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator ..> com.freelanceplaza.commons.fphttpclient.authproxy.requests.AddRolesToOrganizationMemberRequest
+com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator ..> com.freelanceplaza.commons.fphttpclient.okta.Auth0UserDetails
+com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator ..> com.freelanceplaza.commons.fphttpclient.authproxy.requests.CreateOrganizationUserRequest
+com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator ..> com.freelanceplaza.authproxy.exceptions.OktaPortException
+com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator ..> com.freelanceplaza.authproxy.idassigner.PasswordGenerator
+com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator ..> com.freelanceplaza.commons.fpcommons.caching.TokenCache
+com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator ..> com.freelanceplaza.commons.fphttpclient.okta.Auth0Role
+com.freelanceplaza.authproxy.idassigner.controller.OktaController ..> com.freelanceplaza.commons.fphttpclient.authproxy.requests.AssignIdRequest
+com.freelanceplaza.authproxy.idassigner.controller.OktaController ..> com.freelanceplaza.commons.fphttpclient.authproxy.requests.CreateOrganizationUserRequest
+com.freelanceplaza.authproxy.idassigner.controller.OktaController ..> com.freelanceplaza.commons.fphttpclient.authproxy.requests.CreateOrganizationRequest
+com.freelanceplaza.authproxy.idassigner.controller.OktaController ..> com.freelanceplaza.commons.fphttpclient.authproxy.requests.AddMembersToOrganizationRequest
+com.freelanceplaza.authproxy.idassigner.controller.OktaController ..> com.freelanceplaza.commons.fphttpclient.authproxy.requests.AddRolesToOrganizationMemberRequest
+com.freelanceplaza.authproxy.idassigner.controller.OktaController ..> com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator
+com.freelanceplaza.authproxy.security.FPJwtDecoders$ExtendedJwtDecoder ..> com.freelanceplaza.authproxy.security.FPJwtDecoders$JwtDecoderBundle
+com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator$1 ..> com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator
+com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$Auth0AssignUserMetadataRequest ..> com.freelanceplaza.commons.fphttpclient.okta.Auth0UserDetails$Metadata
+com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$Auth0AssignUserMetadataRequest ..> com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$Auth0AssignUserMetadataRequest
+com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$5 ..> com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort
+com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$4 ..> com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort
+com.freelanceplaza.authproxy.idassigner.CreateUserAuth0Request ..> com.freelanceplaza.commons.fphttpclient.okta.Auth0UserDetails$Metadata
+com.freelanceplaza.authproxy.idassigner.CreateUserAuth0Request ..> com.freelanceplaza.authproxy.idassigner.CreateUserAuth0Request
+com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$3 ..> com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort
+com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$2 ..> com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort
+com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$9 ..> com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort
+com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$10 ..> com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort
+com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$8 ..> com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort
+com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$7 ..> com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort
+com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$11 ..> com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort
+com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$12 ..> com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort
+com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$6 ..> com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort
+com.freelanceplaza.authproxy.exceptions.ServiceExceptionHandler ..> com.freelanceplaza.authproxy.exceptions.NotFoundException
+com.freelanceplaza.authproxy.exceptions.ServiceExceptionHandler ..> com.freelanceplaza.commons.fphttpclient.exceptions.HttpClientException
+com.freelanceplaza.authproxy.exceptions.ErrorResponse ..> com.freelanceplaza.authproxy.exceptions.ErrorResponse
+com.freelanceplaza.authproxy.idassigner.PasswordGenerator$PasswordGeneratorConfiguration$PasswordGeneratorConfigurationBuilder ..> com.freelanceplaza.authproxy.idassigner.PasswordGenerator$PasswordGeneratorConfiguration$PasswordGeneratorConfigurationBuilder
+com.freelanceplaza.authproxy.idassigner.PasswordGenerator$PasswordGeneratorConfiguration$PasswordGeneratorConfigurationBuilder ..> C
+com.freelanceplaza.authproxy.idassigner.PasswordGenerator$PasswordGeneratorConfiguration$PasswordGeneratorConfigurationBuilder ..> com.freelanceplaza.authproxy.idassigner.PasswordGenerator$PasswordGeneratorConfiguration
+com.freelanceplaza.authproxy.config.ApiPortConfiguration$OktaAuthPortWrapper ..> com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort
+com.freelanceplaza.authproxy.config.ApiPortConfiguration$OktaAuthPortWrapper ..> com.freelanceplaza.authproxy.config.ApiPortConfiguration$OktaAuthPortWrapper
+com.freelanceplaza.authproxy.security.FPJwtDecoders ..> com.freelanceplaza.authproxy.security.FPJwtDecoders$JwtDecoderBundle
+com.freelanceplaza.authproxy.config.ApiPortConfiguration ..> com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator
+com.freelanceplaza.authproxy.config.ApiPortConfiguration ..> com.freelanceplaza.commons.fpcommons.caching.TokenCache
+com.freelanceplaza.authproxy.config.ApiPortConfiguration ..> com.freelanceplaza.authproxy.idassigner.PasswordGenerator
+com.freelanceplaza.authproxy.config.ApiPortConfiguration ..> com.freelanceplaza.authproxy.config.ApiPortConfiguration
+com.freelanceplaza.authproxy.config.ApiPortConfiguration ..> com.freelanceplaza.authproxy.config.ApiPortConfiguration$OktaAuthPortWrapper
+com.freelanceplaza.authproxy.config.SecurityConfig ..> com.freelanceplaza.authproxy.idassigner.PasswordGenerator
+com.freelanceplaza.authproxy.config.SecurityConfig ..> com.freelanceplaza.authproxy.config.AuthTokenValidatorIssuers
+com.freelanceplaza.authproxy.config.RedisConfiguration ..> com.freelanceplaza.commons.fpcommons.caching.JedisPoolWrapper
+com.freelanceplaza.authproxy.config.RedisConfiguration ..> com.freelanceplaza.commons.fpcommons.caching.TokenCache
+com.freelanceplaza.authproxy.config.RedisConfiguration ..> com.freelanceplaza.authproxy.config.RedisConfiguration
+com.freelanceplaza.authproxy.idassigner.PasswordGenerator ..> com.freelanceplaza.authproxy.idassigner.PasswordGenerator$PasswordGeneratorConfiguration
+com.freelanceplaza.authproxy.idassigner.PasswordGenerator ..> com.freelanceplaza.authproxy.idassigner.PasswordGenerator$CharType
+com.freelanceplaza.authproxy.idassigner.PasswordGenerator ..> C
+com.freelanceplaza.authproxy.config.ApiPortConfiguration$TenantConfiguration ..> com.freelanceplaza.authproxy.config.ApiPortConfiguration$TenantConfiguration
+com.freelanceplaza.authproxy.idassigner.PasswordGenerator$PasswordGeneratorConfiguration ..> C
+com.freelanceplaza.authproxy.idassigner.PasswordGenerator$PasswordGeneratorConfiguration ..> com.freelanceplaza.authproxy.idassigner.PasswordGenerator$PasswordGeneratorConfiguration$PasswordGeneratorConfigurationBuilder
+com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort ..> com.freelanceplaza.commons.fphttpclient.tokenhandlers.ClientCredentialsTokenHandler
+com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort ..> com.freelanceplaza.commons.fphttpclient.okta.Auth0UserDetails
+com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort ..> com.freelanceplaza.commons.fphttpclient.okta.Auth0Organization
+com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort ..> com.freelanceplaza.authproxy.idassigner.CreateUserAuth0Request
+com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort ..> com.freelanceplaza.authproxy.exceptions.NotFoundException
+
+' IMPORTS =======
+' Java Files Path : /Users/paolo/Work/Tadaah/fp-backend-auth-proxy/src/main/java/
+' com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$1
+
+' com.freelanceplaza.authproxy.config.AuthTokenValidatorIssuers
+
+' com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator
+com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator ..o com.freelanceplaza.commons.fphttpclient.okta.Auth0Organization
+com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator ..o com.freelanceplaza.commons.fpcommons.caching.TokenCache
+com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator ..o org.apache.commons.lang3.StringUtils
+com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator ..o com.freelanceplaza.authproxy.idassigner.CreateUserAuth0Request
+com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator ..o com.freelanceplaza.commons.fphttpclient.okta.Auth0UserDetails
+com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator ..o com.freelanceplaza.authproxy.exceptions.NotFoundException
+com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator ..o com.freelanceplaza.commons.fphttpclient.okta.Auth0Role
+com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator ..o com.freelanceplaza.authproxy.config.ApiPortConfiguration
+com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator ..o com.freelanceplaza.authproxy.exceptions.AuthProxyException
+com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator ..o com.freelanceplaza.authproxy.exceptions.OktaPortException
+com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator ..o com.freelanceplaza.authproxy.idassigner.PasswordGenerator
+com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator ..o com.freelanceplaza.commons.fphttpclient.exceptions.HttpClientException
+
+' com.freelanceplaza.authproxy.idassigner.PasswordGenerator$CharType
+
+' com.freelanceplaza.authproxy.idassigner.controller.OktaController
+com.freelanceplaza.authproxy.idassigner.controller.OktaController ..o com.freelanceplaza.commons.fpcommons.utils.async.AsyncUtils
+com.freelanceplaza.authproxy.idassigner.controller.OktaController ..o com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator
+com.freelanceplaza.authproxy.idassigner.controller.OktaController ..o com.freelanceplaza.commons.fphttpclient.okta.Auth0UserDetails
+
+' com.freelanceplaza.authproxy.security.FPJwtDecoders$ExtendedJwtDecoder
+
+' com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator$1
+
+' com.freelanceplaza.authproxy.controllers.TokenController
+
+' com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$Auth0AssignUserMetadataRequest
+
+' com.freelanceplaza.authproxy.config.ApplicationConfiguration
+com.freelanceplaza.authproxy.config.ApplicationConfiguration ..o com.freelanceplaza.commons.fpcommons.utils.async.AsyncUtils
+
+' com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$5
+
+' com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$4
+
+' com.freelanceplaza.authproxy.idassigner.CreateUserAuth0Request
+
+' com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$3
+
+' com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$2
+
+' com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$9
+
+' com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$10
+
+' com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$8
+
+' com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$7
+
+' com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$11
+
+' com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$12
+
+' com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort$6
+
+' com.freelanceplaza.authproxy.exceptions.ServiceExceptionHandler
+com.freelanceplaza.authproxy.exceptions.ServiceExceptionHandler ..o com.freelanceplaza.commons.fphttpclient.exceptions.HttpClientException
+
+' com.freelanceplaza.authproxy.AuthProxyApplication
+
+' com.freelanceplaza.authproxy.exceptions.ErrorResponse
+
+' com.freelanceplaza.authproxy.exceptions.NotFoundException
+
+' com.freelanceplaza.authproxy.idassigner.PasswordGenerator$PasswordGeneratorConfiguration$PasswordGeneratorConfigurationBuilder
+
+' com.freelanceplaza.authproxy.config.ApiPortConfiguration$OktaAuthPortWrapper
+
+' com.freelanceplaza.authproxy.security.FPJwtDecoders
+com.freelanceplaza.authproxy.security.FPJwtDecoders ..o com.nimbusds.jwt.JWTParser
+
+' com.freelanceplaza.authproxy.config.ApiPortConfiguration
+
+' com.freelanceplaza.authproxy.exceptions.AuthProxyException
+
+' com.freelanceplaza.authproxy.config.SecurityConfig
+com.freelanceplaza.authproxy.config.SecurityConfig ..o com.freelanceplaza.commons.fpauthentication.filters.AudienceFilter
+com.freelanceplaza.authproxy.config.SecurityConfig ..o com.freelanceplaza.commons.fpauthentication.config.AudienceConfig
+com.freelanceplaza.authproxy.config.SecurityConfig ..o com.freelanceplaza.authproxy.security.FPJwtDecoders
+com.freelanceplaza.authproxy.config.SecurityConfig ..o com.freelanceplaza.authproxy.idassigner.PasswordGenerator
+
+' com.freelanceplaza.authproxy.config.RedisConfiguration
+com.freelanceplaza.authproxy.config.RedisConfiguration ..o com.freelanceplaza.commons.fpcommons.caching.TokenCache
+com.freelanceplaza.authproxy.config.RedisConfiguration ..o com.freelanceplaza.commons.fpcommons.caching.JedisPoolWrapper
+com.freelanceplaza.authproxy.config.RedisConfiguration ..o com.freelanceplaza.commons.fphttpclient.tokenhandlers.cache.RedisTokenCache
+
+' com.freelanceplaza.authproxy.exceptions.OktaPortException
+
+' com.freelanceplaza.authproxy.idassigner.PasswordGenerator
+
+' com.freelanceplaza.authproxy.config.ApiPortConfiguration$TenantConfiguration
+
+' com.freelanceplaza.authproxy.idassigner.PasswordGenerator$PasswordGeneratorConfiguration
+
+' com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort
+
+' com.freelanceplaza.authproxy.security.FPJwtDecoders$JwtDecoderBundle
+
+' com.freelanceplaza.authproxy.idassigner.PasswordGenerator$1
+
+
+
+@enduml

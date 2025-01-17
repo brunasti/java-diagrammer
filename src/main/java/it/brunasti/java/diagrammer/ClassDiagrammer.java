@@ -408,7 +408,7 @@ public class ClassDiagrammer {
                   + javaClass.getClassName());
         }
       } catch (ClassNotFoundException ex) {
-        System.err.println("Error generating `Implements` relations : " + ex.getMessage());
+        Debugger.debug(2, "Error generating `Implements` relations : " + ex.getMessage());
       }
     });
     output.println();
@@ -425,7 +425,7 @@ public class ClassDiagrammer {
                   + javaClass.getClassName());
         }
       } catch (ClassNotFoundException ex) {
-        System.err.println("Error generating `Inheritance` relations : " + ex.getMessage());
+        Debugger.debug(2, "Error generating `Inheritance` relations : " + ex.getMessage());
       }
     });
     output.println();
@@ -449,7 +449,7 @@ public class ClassDiagrammer {
         i++;
       }
     } catch (ClassNotFoundException cex) {
-      System.err.println("Error generating `Enum` class : " + cex.getMessage());
+      Debugger.debug(2,"Error generating `Enum` class : " + cex.getMessage());
     }
 
     output.println("enum " + javaClass.getClassName() + "{");
@@ -533,7 +533,7 @@ public class ClassDiagrammer {
 
     boolean initiated = loadConfiguration(configurationFile);
     if (!initiated) {
-      System.err.println("Configuration JSON not loaded");
+      Debugger.debug(1,"Configuration JSON not loaded");
       return;
     }
 
@@ -542,13 +542,13 @@ public class ClassDiagrammer {
       Set<String> dirs = Utils.listDirectories(path);
       dirs.forEach(dir -> files.addAll(iterateSubDirectories(path, dir)));
     } catch (IOException | NullPointerException e) {
-      System.err.println("Error listing directories : " + e.getMessage());
+      Debugger.debug(1,"Error listing directories : " + e.getMessage());
     }
 
     ClassLoader classLoader = getClassLoader(path);
     Debugger.debug(2, "classLoader [" + classLoader + "]");
     if (null == classLoader) {
-      System.err.println("Class loader not created");
+      Debugger.debug(1,"Class loader not created");
       return;
     }
 
@@ -557,7 +557,7 @@ public class ClassDiagrammer {
     ArrayList<JavaClass> classes = new ArrayList<>();
 
     files.forEach(file -> {
-      System.out.println("Loading class : " + file);
+      Debugger.debug("Loading class : " + file);
       try {
         // Exclude files which are in the config "exclude" sections
         if (!isToBeExcluded(file)) {
@@ -565,7 +565,7 @@ public class ClassDiagrammer {
           classes.add(javaClass);
         }
       } catch (ClassNotFoundException e) {
-        System.err.println("Error loading class : " + e.getMessage());
+        Debugger.debug(2,"Error loading class : " + e.getMessage());
       }
     });
 

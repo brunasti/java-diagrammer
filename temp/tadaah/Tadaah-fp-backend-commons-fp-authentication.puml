@@ -1,0 +1,80 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+' GENERATE CLASS DIAGRAM ===========
+' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
+' Path            : [/Users/paolo/Work/Tadaah/fp-backend-commons/fp-authentication/build/classes/java/main]
+' Java Files Path : [/Users/paolo/Work/Tadaah/fp-backend-commons/fp-authentication/src/main/java/]
+' Configuration   : [/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/config.json]
+' Generated at    : Fri Jan 17 14:24:50 CET 2025
+
+
+
+' CLASSES =======
+class com.freelanceplaza.commons.fpauthentication.tokenhandlers.BypassTokenHandler
+class com.freelanceplaza.commons.fpauthentication.AuthDecoderException
+class com.freelanceplaza.commons.fpauthentication.filters.OrganizationFilter
+class com.freelanceplaza.commons.fpauthentication.filters.AudienceFilter
+class com.freelanceplaza.commons.fpauthentication.RemoteJwtDecoder
+class com.freelanceplaza.commons.fpauthentication.http.AuthDecoderHttpClient
+class com.freelanceplaza.commons.fpauthentication.config.AudienceConfig
+class com.freelanceplaza.commons.fpauthentication.config.AuthDecoderConfig
+class com.freelanceplaza.commons.fpauthentication.dto.JwtDto
+class com.freelanceplaza.commons.fpauthentication.filters.RequiredClaimFilter
+class com.freelanceplaza.commons.fpauthentication.authorityconverters.FPAuthoritiesConverter
+class com.freelanceplaza.commons.fpauthentication.authorityconverters.FPAuthoritiesConverter$1
+
+' INHERITANCES =======
+java.lang.RuntimeException <|-- com.freelanceplaza.commons.fpauthentication.AuthDecoderException
+java.util.HashMap <|-- com.freelanceplaza.commons.fpauthentication.authorityconverters.FPAuthoritiesConverter$1
+
+' IMPLEMENT INTERFACE =======
+
+' FIELDS =======
+com.freelanceplaza.commons.fpauthentication.filters.AudienceFilter --> com.freelanceplaza.commons.fpauthentication.config.AudienceConfig
+com.freelanceplaza.commons.fpauthentication.RemoteJwtDecoder --> com.freelanceplaza.commons.fpauthentication.http.AuthDecoderHttpClient
+com.freelanceplaza.commons.fpauthentication.RemoteJwtDecoder --> com.freelanceplaza.commons.fpcommons.caching.TokenCache
+
+' USES =======
+com.freelanceplaza.commons.fpauthentication.filters.AudienceFilter ..> com.freelanceplaza.commons.fpauthentication.config.AudienceConfig
+com.freelanceplaza.commons.fpauthentication.RemoteJwtDecoder ..> com.freelanceplaza.commons.fpauthentication.http.AuthDecoderHttpClient
+com.freelanceplaza.commons.fpauthentication.RemoteJwtDecoder ..> com.freelanceplaza.commons.fpauthentication.RemoteJwtDecoder
+com.freelanceplaza.commons.fpauthentication.RemoteJwtDecoder ..> com.freelanceplaza.commons.fpcommons.caching.TokenCache
+com.freelanceplaza.commons.fpauthentication.config.AudienceConfig ..> com.freelanceplaza.commons.fpauthentication.config.AudienceConfig
+com.freelanceplaza.commons.fpauthentication.config.AuthDecoderConfig ..> com.freelanceplaza.commons.fpauthentication.config.AuthDecoderConfig
+com.freelanceplaza.commons.fpauthentication.dto.JwtDto ..> com.freelanceplaza.commons.fpauthentication.dto.JwtDto
+
+' IMPORTS =======
+' Java Files Path : /Users/paolo/Work/Tadaah/fp-backend-commons/fp-authentication/src/main/java/
+' com.freelanceplaza.commons.fpauthentication.tokenhandlers.BypassTokenHandler
+com.freelanceplaza.commons.fpauthentication.tokenhandlers.BypassTokenHandler ..o com.freelanceplaza.commons.fpcommons.httpclient.TokenHandler
+
+' com.freelanceplaza.commons.fpauthentication.AuthDecoderException
+
+' com.freelanceplaza.commons.fpauthentication.filters.OrganizationFilter
+
+' com.freelanceplaza.commons.fpauthentication.filters.AudienceFilter
+com.freelanceplaza.commons.fpauthentication.filters.AudienceFilter ..o com.freelanceplaza.commons.fpauthentication.config.AudienceConfig
+
+' com.freelanceplaza.commons.fpauthentication.RemoteJwtDecoder
+com.freelanceplaza.commons.fpauthentication.RemoteJwtDecoder ..o com.freelanceplaza.commons.fpcommons.caching.TokenCache
+com.freelanceplaza.commons.fpauthentication.RemoteJwtDecoder ..o com.freelanceplaza.commons.fpauthentication.dto.JwtDto
+com.freelanceplaza.commons.fpauthentication.RemoteJwtDecoder ..o com.freelanceplaza.commons.fpauthentication.http.AuthDecoderHttpClient
+
+' com.freelanceplaza.commons.fpauthentication.http.AuthDecoderHttpClient
+
+' com.freelanceplaza.commons.fpauthentication.config.AudienceConfig
+
+' com.freelanceplaza.commons.fpauthentication.config.AuthDecoderConfig
+
+' com.freelanceplaza.commons.fpauthentication.dto.JwtDto
+
+' com.freelanceplaza.commons.fpauthentication.filters.RequiredClaimFilter
+
+' com.freelanceplaza.commons.fpauthentication.authorityconverters.FPAuthoritiesConverter
+
+' com.freelanceplaza.commons.fpauthentication.authorityconverters.FPAuthoritiesConverter$1
+
+
+
+@enduml
