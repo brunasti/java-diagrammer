@@ -1,0 +1,64 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+' GENERATE CLASS DIAGRAM ===========
+' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
+' Path            : [/Users/paolo/Work/Tadaah/fp-backend-commons/fp-http-client-dto/build/classes/java/main]
+' Java Files Path : [/Users/paolo/Work/Tadaah/fp-backend-commons/fp-http-client-dto/src/main/java/]
+' Configuration   : [/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/config.json]
+' Generated at    : Fri Jan 17 09:59:02 CET 2025
+
+
+
+' CLASSES =======
+enum com.freelanceplaza.organizations.commons.enums.Status{
+  PENDING
+  ACTIVE
+  BLOCKED
+}
+enum com.freelanceplaza.organizations.enums.OnboardingStatus{
+  REGISTERING
+  FOR_REVIEW
+  REJECTED
+  APPROVED
+}
+class com.freelanceplaza.organizations.dtos.OrganizationStatusDto$OrganizationStatusDtoBuilder
+class com.freelanceplaza.organizations.dtos.OrganizationStatusDto
+
+' INHERITANCES =======
+java.lang.Enum <|-- com.freelanceplaza.organizations.commons.enums.Status
+java.lang.Enum <|-- com.freelanceplaza.organizations.enums.OnboardingStatus
+
+' IMPLEMENT INTERFACE =======
+
+' FIELDS =======
+com.freelanceplaza.organizations.dtos.OrganizationStatusDto$OrganizationStatusDtoBuilder --> com.freelanceplaza.organizations.commons.enums.Status
+com.freelanceplaza.organizations.dtos.OrganizationStatusDto$OrganizationStatusDtoBuilder --> com.freelanceplaza.organizations.enums.OnboardingStatus
+com.freelanceplaza.organizations.dtos.OrganizationStatusDto --> com.freelanceplaza.organizations.commons.enums.Status
+com.freelanceplaza.organizations.dtos.OrganizationStatusDto --> com.freelanceplaza.organizations.enums.OnboardingStatus
+
+' USES =======
+com.freelanceplaza.organizations.dtos.OrganizationStatusDto$OrganizationStatusDtoBuilder ..> com.freelanceplaza.organizations.dtos.OrganizationStatusDto$OrganizationStatusDtoBuilder
+com.freelanceplaza.organizations.dtos.OrganizationStatusDto$OrganizationStatusDtoBuilder ..> com.freelanceplaza.organizations.commons.enums.Status
+com.freelanceplaza.organizations.dtos.OrganizationStatusDto$OrganizationStatusDtoBuilder ..> com.freelanceplaza.organizations.enums.OnboardingStatus
+com.freelanceplaza.organizations.dtos.OrganizationStatusDto$OrganizationStatusDtoBuilder ..> com.freelanceplaza.organizations.dtos.OrganizationStatusDto
+com.freelanceplaza.organizations.dtos.OrganizationStatusDto ..> com.freelanceplaza.organizations.dtos.OrganizationStatusDto$OrganizationStatusDtoBuilder
+com.freelanceplaza.organizations.dtos.OrganizationStatusDto ..> com.freelanceplaza.organizations.commons.enums.Status
+com.freelanceplaza.organizations.dtos.OrganizationStatusDto ..> com.freelanceplaza.organizations.enums.OnboardingStatus
+com.freelanceplaza.organizations.dtos.OrganizationStatusDto ..> com.freelanceplaza.organizations.dtos.OrganizationStatusDto
+
+' IMPORTS =======
+' Java Files Path : /Users/paolo/Work/Tadaah/fp-backend-commons/fp-http-client-dto/src/main/java/
+' com.freelanceplaza.organizations.commons.enums.Status
+
+' com.freelanceplaza.organizations.enums.OnboardingStatus
+
+' com.freelanceplaza.organizations.dtos.OrganizationStatusDto$OrganizationStatusDtoBuilder
+
+' com.freelanceplaza.organizations.dtos.OrganizationStatusDto
+com.freelanceplaza.organizations.dtos.OrganizationStatusDto ..o com.freelanceplaza.organizations.commons.enums.Status
+com.freelanceplaza.organizations.dtos.OrganizationStatusDto ..o com.freelanceplaza.organizations.enums.OnboardingStatus
+
+
+
+@enduml
