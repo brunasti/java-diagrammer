@@ -4,9 +4,9 @@
 ' GENERATE CLASS DIAGRAM ===========
 ' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
 ' Path            : [/Users/paolo/Work/Tadaah/fp-backend-notification-service/build/classes/java/main]
-' Java Files Path : [/Users/paolo/Work/Tadaah/fp-backend-notification/src/main/java/]
+' Java Files Path : [/Users/paolo/Work/Tadaah/fp-backend-notification-service/src/main/java/]
 ' Configuration   : [/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/config.json]
-' Generated at    : Fri Jan 17 09:59:02 CET 2025
+' Generated at    : Fri Jan 17 13:52:33 CET 2025
 
 
 
@@ -560,8 +560,11 @@ com.freelanceplaza.notification.listeners.PaymentAssignmentStatusListener ..> co
 com.freelanceplaza.notification.listeners.PaymentAssignmentStatusListener ..> com.freelanceplaza.notification.services.PaymentService
 
 ' IMPORTS =======
-' Java Files Path : /Users/paolo/Work/Tadaah/fp-backend-notification/src/main/java/
+' Java Files Path : /Users/paolo/Work/Tadaah/fp-backend-notification-service/src/main/java/
 ' com.freelanceplaza.notification.listeners.UserSyncListener
+com.freelanceplaza.notification.listeners.UserSyncListener ..o com.freelanceplaza.notification.services.UserService
+com.freelanceplaza.notification.listeners.UserSyncListener ..o com.freelanceplaza.commons.fpcommons.sync.users.UserSyncMessage
+com.freelanceplaza.notification.listeners.UserSyncListener ..o com.freelanceplaza.commons.fpcommons.crypto.Decoder
 
 ' com.freelanceplaza.notification.utils.NotificationConstants
 
@@ -572,18 +575,53 @@ com.freelanceplaza.notification.listeners.PaymentAssignmentStatusListener ..> co
 ' com.freelanceplaza.notification.validation.ValidationError
 
 ' com.freelanceplaza.notification.controllers.AuthorizationController
+com.freelanceplaza.notification.controllers.AuthorizationController ..o com.freelanceplaza.notification.enums.MobilePlatform
+com.freelanceplaza.notification.controllers.AuthorizationController ..o com.freelanceplaza.notification.services.UserService
+com.freelanceplaza.notification.controllers.AuthorizationController ..o com.freelanceplaza.notification.config.security.SecurityUtils
+com.freelanceplaza.notification.controllers.AuthorizationController ..o com.freelanceplaza.notification.dto.TokenUserHandler
 
 ' com.freelanceplaza.notification.services.InvoiceService
+com.freelanceplaza.notification.services.InvoiceService ..o com.freelanceplaza.notification.utils.NotificationConstants
+com.freelanceplaza.notification.services.InvoiceService ..o com.freelanceplaza.notification.utils.DateTimeUtils
+com.freelanceplaza.notification.services.InvoiceService ..o com.freelanceplaza.notification.entities.Vertical
+com.freelanceplaza.notification.services.InvoiceService ..o com.freelanceplaza.commons.fpcommons.enums.EmailTopics
+com.freelanceplaza.notification.services.InvoiceService ..o com.freelanceplaza.commons.fpcommons.notifications.AttachmentDto
+com.freelanceplaza.notification.services.InvoiceService ..o com.freelanceplaza.commons.fpcommons.notifications.Receiver
+com.freelanceplaza.notification.services.InvoiceService ..o com.freelanceplaza.notification.repositories.VerticalRepository
+com.freelanceplaza.notification.services.InvoiceService ..o com.freelanceplaza.notification.utils.PaymentAssignmentConstants
+com.freelanceplaza.notification.services.InvoiceService ..o com.freelanceplaza.notification.config.PlatformConfiguration
+com.freelanceplaza.notification.services.InvoiceService ..o com.freelanceplaza.notification.repositories.InvoiceRepository
+com.freelanceplaza.notification.services.InvoiceService ..o com.freelanceplaza.invoices.dtos.InvoiceHires
+com.freelanceplaza.notification.services.InvoiceService ..o com.freelanceplaza.commons.fpcommons.notifications.Message
+com.freelanceplaza.notification.services.InvoiceService ..o com.freelanceplaza.notification.entities.InvoiceBundle
+com.freelanceplaza.notification.services.InvoiceService ..o com.freelanceplaza.notification.utils.MessageUtils
+com.freelanceplaza.notification.services.InvoiceService ..o com.freelanceplaza.notification.publishers.NotificationPublisher
+com.freelanceplaza.notification.services.InvoiceService ..o com.freelanceplaza.invoices.enums.MemberType
+com.freelanceplaza.notification.services.InvoiceService ..o com.freelanceplaza.notification.entities.Recipient
+com.freelanceplaza.notification.services.InvoiceService ..o com.freelanceplaza.notification.entities.Invoice
+com.freelanceplaza.notification.services.InvoiceService ..o com.freelanceplaza.notification.repositories.InvoiceBundleRepository
+com.freelanceplaza.notification.services.InvoiceService ..o com.freelanceplaza.notification.repositories.RecipientRepository
+com.freelanceplaza.notification.services.InvoiceService ..o com.freelanceplaza.notification.dto.GroupedInvoiceDTO
 
 ' com.freelanceplaza.notification.entities.Address
 
 ' com.freelanceplaza.notification.dto.Notification
+com.freelanceplaza.notification.dto.Notification ..o com.freelanceplaza.notification.services.NotificationGateway
 
 ' com.freelanceplaza.notification.services.EmailNotificationFactory
+com.freelanceplaza.notification.services.EmailNotificationFactory ..o com.freelanceplaza.notification.utils.NotificationConstants
+com.freelanceplaza.notification.services.EmailNotificationFactory ..o com.freelanceplaza.notification.entities.Vertical
+com.freelanceplaza.notification.services.EmailNotificationFactory ..o com.freelanceplaza.commons.fpcommons.enums.EmailTopics
+com.freelanceplaza.notification.services.EmailNotificationFactory ..o com.freelanceplaza.commons.fpcommons.notifications.AttachmentDto
+com.freelanceplaza.notification.services.EmailNotificationFactory ..o com.freelanceplaza.notification.entities.EmailAddress
+com.freelanceplaza.notification.services.EmailNotificationFactory ..o com.freelanceplaza.notification.dto.EmailNotification
+com.freelanceplaza.notification.services.EmailNotificationFactory ..o com.freelanceplaza.notification.entities.Recipient
+com.freelanceplaza.notification.services.EmailNotificationFactory ..o com.freelanceplaza.notification.repositories.VerticalRepository
 
 ' com.freelanceplaza.notification.config.aws.SQSConfig$FPDefaultListenerContainerRegistry
 
 ' com.freelanceplaza.notification.repositories.LegalEntityRepository
+com.freelanceplaza.notification.repositories.LegalEntityRepository ..o com.freelanceplaza.notification.entities.LegalEntity
 
 ' com.freelanceplaza.notification.dto.PushNotification$Android
 
@@ -598,18 +636,37 @@ com.freelanceplaza.notification.listeners.PaymentAssignmentStatusListener ..> co
 ' com.freelanceplaza.notification.dto.TokenUserHandler
 
 ' com.freelanceplaza.notification.entities.MobileDeviceToken
+com.freelanceplaza.notification.entities.MobileDeviceToken ..o com.freelanceplaza.notification.enums.MobilePlatform
 
 ' com.freelanceplaza.notification.dto.PaymentAccountStatusChangedMessage
+com.freelanceplaza.notification.dto.PaymentAccountStatusChangedMessage ..o com.freelanceplaza.notification.enums.PaymentAccountStatus
 
 ' com.freelanceplaza.notification.dto.PushNotification$FcmV1Message
 
 ' com.freelanceplaza.notification.utils.CurrencyUtils$1
 
 ' com.freelanceplaza.notification.listeners.OrganizationUserSyncListener
+com.freelanceplaza.notification.listeners.OrganizationUserSyncListener ..o com.freelanceplaza.notification.utils.NotificationConstants
+com.freelanceplaza.notification.listeners.OrganizationUserSyncListener ..o com.freelanceplaza.commons.fpcommons.sync.organizationusers.OrganizationStatus
+com.freelanceplaza.notification.listeners.OrganizationUserSyncListener ..o com.freelanceplaza.notification.services.UserService
+com.freelanceplaza.notification.listeners.OrganizationUserSyncListener ..o com.freelanceplaza.commons.fpcommons.sync.organizationusers.UserStatus
+com.freelanceplaza.notification.listeners.OrganizationUserSyncListener ..o com.freelanceplaza.commons.fpcommons.enums.EmailTopics
+com.freelanceplaza.notification.listeners.OrganizationUserSyncListener ..o com.freelanceplaza.commons.fpcommons.notifications.Receiver
+com.freelanceplaza.notification.listeners.OrganizationUserSyncListener ..o com.freelanceplaza.commons.fpcommons.sync.organizationusers.OrganizationUserSyncMessage
+com.freelanceplaza.notification.listeners.OrganizationUserSyncListener ..o com.freelanceplaza.commons.fpcommons.sync.organizations.OrganizationSync
+com.freelanceplaza.notification.listeners.OrganizationUserSyncListener ..o com.freelanceplaza.commons.fpcommons.sync.users.UserSync
+com.freelanceplaza.notification.listeners.OrganizationUserSyncListener ..o com.freelanceplaza.notification.exceptions.NotificationException
+com.freelanceplaza.notification.listeners.OrganizationUserSyncListener ..o com.freelanceplaza.commons.fpcommons.crypto.Decoder
+com.freelanceplaza.notification.listeners.OrganizationUserSyncListener ..o com.freelanceplaza.commons.fpcommons.notifications.Message
+com.freelanceplaza.notification.listeners.OrganizationUserSyncListener ..o com.freelanceplaza.notification.publishers.NotificationPublisher
+com.freelanceplaza.notification.listeners.OrganizationUserSyncListener ..o com.freelanceplaza.notification.services.OrganizationService
 
 ' com.freelanceplaza.notification.validation.JsonFieldErrors
 
 ' com.freelanceplaza.notification.listeners.OrganizationSyncListener
+com.freelanceplaza.notification.listeners.OrganizationSyncListener ..o com.freelanceplaza.commons.fpcommons.sync.organizations.OrganizationSyncMessage
+com.freelanceplaza.notification.listeners.OrganizationSyncListener ..o com.freelanceplaza.commons.fpcommons.crypto.Decoder
+com.freelanceplaza.notification.listeners.OrganizationSyncListener ..o com.freelanceplaza.notification.services.OrganizationService
 
 ' com.freelanceplaza.notification.entities.Recipient
 
@@ -620,6 +677,9 @@ com.freelanceplaza.notification.listeners.PaymentAssignmentStatusListener ..> co
 ' com.freelanceplaza.notification.dto.PushNotification$Alert
 
 ' com.freelanceplaza.notification.config.RedisConfiguration
+com.freelanceplaza.notification.config.RedisConfiguration ..o com.freelanceplaza.commons.fpcommons.caching.TokenCache
+com.freelanceplaza.notification.config.RedisConfiguration ..o com.freelanceplaza.commons.fpcommons.caching.JedisPoolWrapper
+com.freelanceplaza.notification.config.RedisConfiguration ..o com.freelanceplaza.commons.fphttpclient.tokenhandlers.cache.RedisTokenCache
 
 ' com.freelanceplaza.notification.validation.notification.ValidBoolean
 
@@ -628,22 +688,56 @@ com.freelanceplaza.notification.listeners.PaymentAssignmentStatusListener ..> co
 ' com.freelanceplaza.notification.controllers.ThymeleafRendererController$TemplateResource
 
 ' com.freelanceplaza.notification.config.security.AuthConfiguration
+com.freelanceplaza.notification.config.security.AuthConfiguration ..o com.freelanceplaza.commons.fpauthentication.filters.AudienceFilter
+com.freelanceplaza.notification.config.security.AuthConfiguration ..o com.freelanceplaza.commons.fpauthentication.filters.OrganizationFilter
+com.freelanceplaza.notification.config.security.AuthConfiguration ..o com.freelanceplaza.commons.fpauthentication.config.AudienceConfig
+com.freelanceplaza.notification.config.security.AuthConfiguration ..o com.freelanceplaza.commons.fpauthentication.filters.RequiredClaimFilter
+com.freelanceplaza.notification.config.security.AuthConfiguration ..o com.freelanceplaza.commons.fpauthentication.http.AuthDecoderHttpClient
+com.freelanceplaza.notification.config.security.AuthConfiguration ..o com.freelanceplaza.commons.fpauthentication.config.AuthDecoderConfig
 
 ' com.freelanceplaza.notification.dto.PushNotification$Webpush
 
 ' com.freelanceplaza.notification.services.EmailNotificationFactory$RecipientHandler
 
 ' com.freelanceplaza.notification.services.workfinished.WorkFinishedService
+com.freelanceplaza.notification.services.workfinished.WorkFinishedService ..o com.freelanceplaza.commons.fpcommons.notifications.Message
+com.freelanceplaza.notification.services.workfinished.WorkFinishedService ..o com.freelanceplaza.invoices.dtos.ShiftHire
+com.freelanceplaza.notification.services.workfinished.WorkFinishedService ..o com.freelanceplaza.commons.fpcommons.notifications.Receiver
+com.freelanceplaza.notification.services.workfinished.WorkFinishedService ..o com.freelanceplaza.notification.publishers.NotificationPublisher
+com.freelanceplaza.notification.services.workfinished.WorkFinishedService ..o com.freelanceplaza.invoices.enums.MemberType
+com.freelanceplaza.notification.services.workfinished.WorkFinishedService ..o com.freelanceplaza.notification.entities.Recipient
+com.freelanceplaza.notification.services.workfinished.WorkFinishedService ..o com.freelanceplaza.notification.repositories.RecipientRepository
 
 ' com.freelanceplaza.notification.config.security.AudienceValidator
 
 ' com.freelanceplaza.notification.listeners.NotificationEventListener
+com.freelanceplaza.notification.listeners.NotificationEventListener ..o com.freelanceplaza.commons.fpcommons.notifications.Message
+com.freelanceplaza.notification.listeners.NotificationEventListener ..o com.freelanceplaza.notification.services.NotificationComposer
+com.freelanceplaza.notification.listeners.NotificationEventListener ..o com.freelanceplaza.commons.fpcommons.crypto.Decoder
 
 ' com.freelanceplaza.notification.services.LegalEntityMapper
+com.freelanceplaza.notification.services.LegalEntityMapper ..o com.freelanceplaza.commons.fpcommons.sync.organizations.OrganizationSync
+com.freelanceplaza.notification.services.LegalEntityMapper ..o com.freelanceplaza.commons.fpcommons.sync.users.UserSync
+com.freelanceplaza.notification.services.LegalEntityMapper ..o com.freelanceplaza.notification.entities.LegalEntity
 
 ' com.freelanceplaza.notification.validation.notification.BooleanValueValidator
+com.freelanceplaza.notification.validation.notification.BooleanValueValidator ..o com.freelanceplaza.notification.validation.CommonJsonErrorValidator
+com.freelanceplaza.notification.validation.notification.BooleanValueValidator ..o com.freelanceplaza.notification.validation.ValidationError
 
 ' com.freelanceplaza.notification.services.notification.FreelancerNotificationService
+com.freelanceplaza.notification.services.notification.FreelancerNotificationService ..o com.freelanceplaza.notification.utils.NotificationConstants
+com.freelanceplaza.notification.services.notification.FreelancerNotificationService ..o net.fortuna.ical4j.model.parameter.Cn
+com.freelanceplaza.notification.services.notification.FreelancerNotificationService ..o com.freelanceplaza.notification.utils.DateTimeUtils
+com.freelanceplaza.notification.services.notification.FreelancerNotificationService ..o com.freelanceplaza.notification.services.NotificationMessageHelper
+com.freelanceplaza.notification.services.notification.FreelancerNotificationService ..o com.freelanceplaza.commons.fpcommons.notifications.Message
+com.freelanceplaza.notification.services.notification.FreelancerNotificationService ..o com.freelanceplaza.notification.utils.MessageUtils
+com.freelanceplaza.notification.services.notification.FreelancerNotificationService ..o com.freelanceplaza.commons.fpcommons.enums.EmailTopics
+com.freelanceplaza.notification.services.notification.FreelancerNotificationService ..o com.freelanceplaza.commons.fpcommons.notifications.Receiver
+com.freelanceplaza.notification.services.notification.FreelancerNotificationService ..o net.fortuna.ical4j.model.Calendar
+com.freelanceplaza.notification.services.notification.FreelancerNotificationService ..o com.freelanceplaza.commons.fpcommons.event.ShiftDetails
+com.freelanceplaza.notification.services.notification.FreelancerNotificationService ..o com.freelanceplaza.commons.fpcommons.event.Hire
+com.freelanceplaza.notification.services.notification.FreelancerNotificationService ..o  com.freelanceplaza.notification.utils.NotificationConstants.FREELANCER_APP_LINK
+com.freelanceplaza.notification.services.notification.FreelancerNotificationService ..o net.fortuna.ical4j.model.component.VEvent
 
 ' com.freelanceplaza.notification.repositories.VerticalRepository
 
@@ -652,22 +746,34 @@ com.freelanceplaza.notification.listeners.PaymentAssignmentStatusListener ..> co
 ' com.freelanceplaza.notification.entities.LegalEntity
 
 ' com.freelanceplaza.notification.services.IOSMessageFactory
+com.freelanceplaza.notification.services.IOSMessageFactory ..o com.freelanceplaza.notification.entities.Recipient
+com.freelanceplaza.notification.services.IOSMessageFactory ..o com.freelanceplaza.notification.entities.Address
+com.freelanceplaza.notification.services.IOSMessageFactory ..o com.freelanceplaza.notification.dto.PushNotification
+com.freelanceplaza.notification.services.IOSMessageFactory ..o com.freelanceplaza.notification.dto.MobilePush
+com.freelanceplaza.notification.services.IOSMessageFactory ..o com.freelanceplaza.notification.entities.MobileDeviceToken
 
 ' com.freelanceplaza.notification.services.InvoiceService$1
 
 ' com.freelanceplaza.notification.controllers.ThymeleafRendererController$MultipartTemplateResolver
 
 ' com.freelanceplaza.notification.services.MobilePushNotificationFactory
+com.freelanceplaza.notification.services.MobilePushNotificationFactory ..o com.freelanceplaza.notification.enums.MobilePlatform
+com.freelanceplaza.notification.services.MobilePushNotificationFactory ..o com.freelanceplaza.commons.fpcommons.notifications.AttachmentDto
+com.freelanceplaza.notification.services.MobilePushNotificationFactory ..o com.freelanceplaza.notification.entities.Recipient
+com.freelanceplaza.notification.services.MobilePushNotificationFactory ..o com.freelanceplaza.notification.dto.MobilePush
+com.freelanceplaza.notification.services.MobilePushNotificationFactory ..o com.freelanceplaza.notification.entities.MobileDeviceToken
 
 ' com.freelanceplaza.notification.services.PaymentService$1
 
 ' com.freelanceplaza.notification.config.PlatformConfiguration
 
 ' com.freelanceplaza.notification.services.S3ServiceImpl
+com.freelanceplaza.notification.services.S3ServiceImpl ..o com.freelanceplaza.notification.exceptions.NotificationException
 
 ' com.freelanceplaza.notification.repositories.AddressRepository
 
 ' com.freelanceplaza.notification.entities.Subscription
+com.freelanceplaza.notification.entities.Subscription ..o com.freelanceplaza.notification.enums.SubscriptionStatus
 
 ' com.freelanceplaza.notification.dto.TokenData
 
@@ -676,14 +782,24 @@ com.freelanceplaza.notification.listeners.PaymentAssignmentStatusListener ..> co
 ' com.freelanceplaza.notification.utils.MessageUtils
 
 ' com.freelanceplaza.notification.controllers.ThymeleafRendererController
+com.freelanceplaza.notification.controllers.ThymeleafRendererController ..o com.freelanceplaza.notification.services.EmailNotificationGateway
 
 ' com.freelanceplaza.notification.services.DeviceTokenRegistrarImpl
+com.freelanceplaza.notification.services.DeviceTokenRegistrarImpl ..o com.freelanceplaza.notification.dto.TokenData
 
 ' com.freelanceplaza.notification.repositories.NotificationTemplateRepository
+com.freelanceplaza.notification.repositories.NotificationTemplateRepository ..o com.freelanceplaza.notification.enums.Channel
+com.freelanceplaza.notification.repositories.NotificationTemplateRepository ..o com.freelanceplaza.notification.enums.RecipientType
+com.freelanceplaza.notification.repositories.NotificationTemplateRepository ..o com.freelanceplaza.notification.entities.NotificationTemplate
 
 ' com.freelanceplaza.notification.config.EmailConfig
 
 ' com.freelanceplaza.notification.config.aws.SNSConfig
+com.freelanceplaza.notification.config.aws.SNSConfig ..o com.freelanceplaza.commons.fpcommons.crypto.Encoder
+com.freelanceplaza.notification.config.aws.SNSConfig ..o com.freelanceplaza.notification.services.DeviceTokenRegistrar
+com.freelanceplaza.notification.config.aws.SNSConfig ..o com.freelanceplaza.notification.publishers.NotificationPublisher
+com.freelanceplaza.notification.config.aws.SNSConfig ..o com.freelanceplaza.notification.services.LocalDeviceTokenRegistrar
+com.freelanceplaza.notification.config.aws.SNSConfig ..o com.freelanceplaza.notification.services.DeviceTokenRegistrarImpl
 
 ' com.freelanceplaza.notification.enums.PaymentAccountStatus
 
@@ -700,20 +816,36 @@ com.freelanceplaza.notification.listeners.PaymentAssignmentStatusListener ..> co
 ' com.freelanceplaza.notification.config.security.SecurityUtils$TokenUser
 
 ' com.freelanceplaza.notification.listeners.PaymentAccountStatusChangedListener
+com.freelanceplaza.notification.listeners.PaymentAccountStatusChangedListener ..o com.freelanceplaza.commons.fpcommons.notifications.Message
+com.freelanceplaza.notification.listeners.PaymentAccountStatusChangedListener ..o com.freelanceplaza.commons.fpcommons.notifications.Receiver
+com.freelanceplaza.notification.listeners.PaymentAccountStatusChangedListener ..o com.freelanceplaza.notification.publishers.NotificationPublisher
+com.freelanceplaza.notification.listeners.PaymentAccountStatusChangedListener ..o com.freelanceplaza.notification.dto.PaymentAccountStatusChangedMessage
 
 ' com.freelanceplaza.notification.services.NotificationService
+com.freelanceplaza.notification.services.NotificationService ..o com.freelanceplaza.notification.dto.NotificationsStatusDto
 
 ' com.freelanceplaza.notification.dto.PushNotification$Default
 
 ' com.freelanceplaza.notification.entities.EmailAddress
 
 ' com.freelanceplaza.notification.services.MessageFactory
+com.freelanceplaza.notification.services.MessageFactory ..o com.freelanceplaza.notification.entities.Recipient
+com.freelanceplaza.notification.services.MessageFactory ..o com.freelanceplaza.notification.dto.Notification
+com.freelanceplaza.notification.services.MessageFactory ..o com.freelanceplaza.notification.entities.Address
 
 ' com.freelanceplaza.notification.services.impl.NotificationServiceImpl
+com.freelanceplaza.notification.services.impl.NotificationServiceImpl ..o com.freelanceplaza.notification.services.NotificationService
+com.freelanceplaza.notification.services.impl.NotificationServiceImpl ..o com.freelanceplaza.notification.repositories.RecipientRepository
+com.freelanceplaza.notification.services.impl.NotificationServiceImpl ..o com.freelanceplaza.notification.dto.NotificationsStatusDto
+com.freelanceplaza.notification.services.impl.NotificationServiceImpl ..o com.freelanceplaza.notification.enums.SubscriptionStatus
+com.freelanceplaza.notification.services.impl.NotificationServiceImpl ..o com.freelanceplaza.notification.repositories.SubscriptionRepository
 
 ' com.freelanceplaza.notification.dto.EmailNotification
 
 ' com.freelanceplaza.notification.exceptions.GlobalExceptionHandler
+com.freelanceplaza.notification.exceptions.GlobalExceptionHandler ..o com.freelanceplaza.notification.validation.JsonFieldErrors
+com.freelanceplaza.notification.exceptions.GlobalExceptionHandler ..o org.apache.commons.lang3.StringUtils
+com.freelanceplaza.notification.exceptions.GlobalExceptionHandler ..o org.apache.logging.log4j.util.Strings
 
 ' com.freelanceplaza.notification.utils.PaymentAssignmentConstants
 
@@ -724,6 +856,17 @@ com.freelanceplaza.notification.listeners.PaymentAssignmentStatusListener ..> co
 ' com.freelanceplaza.notification.enums.MobilePlatform
 
 ' com.freelanceplaza.notification.services.PaymentService
+com.freelanceplaza.notification.services.PaymentService ..o com.freelanceplaza.notification.utils.DateTimeUtils
+com.freelanceplaza.notification.services.PaymentService ..o com.freelanceplaza.commons.fpcommons.notifications.Message
+com.freelanceplaza.notification.services.PaymentService ..o com.freelanceplaza.notification.utils.MessageUtils
+com.freelanceplaza.notification.services.PaymentService ..o com.freelanceplaza.commons.fpcommons.enums.EmailTopics
+com.freelanceplaza.notification.services.PaymentService ..o  com.freelanceplaza.notification.utils.PaymentAssignmentConstants
+com.freelanceplaza.notification.services.PaymentService ..o com.freelanceplaza.commons.fpcommons.notifications.Receiver
+com.freelanceplaza.notification.services.PaymentService ..o com.freelanceplaza.notification.publishers.NotificationPublisher
+com.freelanceplaza.notification.services.PaymentService ..o  com.freelanceplaza.notification.utils.NotificationConstants
+com.freelanceplaza.notification.services.PaymentService ..o com.freelanceplaza.invoices.dtos.PaymentAssignmentEvent
+com.freelanceplaza.notification.services.PaymentService ..o com.freelanceplaza.notification.config.PlatformConfiguration
+com.freelanceplaza.notification.services.PaymentService ..o com.freelanceplaza.notification.utils.CurrencyUtils
 
 ' com.freelanceplaza.notification.services.NotificationMessageHelper
 
@@ -738,6 +881,7 @@ com.freelanceplaza.notification.listeners.PaymentAssignmentStatusListener ..> co
 ' com.freelanceplaza.notification.services.DeviceTokenRegistrar
 
 ' com.freelanceplaza.notification.config.aws.SQSConfig
+com.freelanceplaza.notification.config.aws.SQSConfig ..o com.freelanceplaza.commons.fpcommons.config.FpProfile
 
 ' com.freelanceplaza.notification.publishers.NotificationPublisher
 
@@ -746,6 +890,8 @@ com.freelanceplaza.notification.listeners.PaymentAssignmentStatusListener ..> co
 ' com.freelanceplaza.notification.dto.PushNotification$Notification
 
 ' com.freelanceplaza.notification.listeners.InvoiceGeneratedListener
+com.freelanceplaza.notification.listeners.InvoiceGeneratedListener ..o com.freelanceplaza.invoices.dtos.InvoiceHires
+com.freelanceplaza.notification.listeners.InvoiceGeneratedListener ..o com.freelanceplaza.notification.services.InvoiceService
 
 ' com.freelanceplaza.notification.services.MobilePushNotificationFactory$UserHandler
 
@@ -760,14 +906,28 @@ com.freelanceplaza.notification.listeners.PaymentAssignmentStatusListener ..> co
 ' com.freelanceplaza.notification.repositories.SubscriptionRepository
 
 ' com.freelanceplaza.notification.controllers.NotificationController
+com.freelanceplaza.notification.controllers.NotificationController ..o com.freelanceplaza.notification.services.NotificationService
+com.freelanceplaza.notification.controllers.NotificationController ..o com.freelanceplaza.notification.config.security.SecurityUtils
+com.freelanceplaza.notification.controllers.NotificationController ..o com.freelanceplaza.notification.dto.NotificationsStatusDto
 
 ' com.freelanceplaza.notification.validation.CommonJsonErrorValidator
 
 ' com.freelanceplaza.notification.exceptions.ValidationFailedResponse
 
 ' com.freelanceplaza.notification.listeners.WorkFinishedListener
+com.freelanceplaza.notification.listeners.WorkFinishedListener ..o com.opencsv.exceptions.CsvValidationException
+com.freelanceplaza.notification.listeners.WorkFinishedListener ..o com.freelanceplaza.notification.services.workfinished.WorkFinishedService
+com.freelanceplaza.notification.listeners.WorkFinishedListener ..o com.freelanceplaza.invoices.dtos.ShiftHire
+com.freelanceplaza.notification.listeners.WorkFinishedListener ..o com.opencsv.CSVReader
+com.freelanceplaza.notification.listeners.WorkFinishedListener ..o com.opencsv.bean.CsvToBeanBuilder
+com.freelanceplaza.notification.listeners.WorkFinishedListener ..o com.freelanceplaza.commons.fpcommons.converters.CustomColumnPositionMappingStrategy
+com.freelanceplaza.notification.listeners.WorkFinishedListener ..o com.opencsv.bean.CsvToBean
+com.freelanceplaza.notification.listeners.WorkFinishedListener ..o com.freelanceplaza.notification.services.BucketService
 
 ' com.freelanceplaza.notification.listeners.ApplicationEventListener
+com.freelanceplaza.notification.listeners.ApplicationEventListener ..o com.freelanceplaza.commons.fpcommons.event.ApplicationEvent
+com.freelanceplaza.notification.listeners.ApplicationEventListener ..o com.freelanceplaza.notification.services.ApplicationEventService
+com.freelanceplaza.notification.listeners.ApplicationEventListener ..o com.freelanceplaza.commons.fpcommons.crypto.Decoder
 
 ' com.freelanceplaza.notification.services.S3Service
 
@@ -784,10 +944,20 @@ com.freelanceplaza.notification.listeners.PaymentAssignmentStatusListener ..> co
 ' com.freelanceplaza.notification.enums.RecipientType
 
 ' com.freelanceplaza.notification.config.security.SecurityConfig
+com.freelanceplaza.notification.config.security.SecurityConfig ..o com.freelanceplaza.commons.fpcommons.caching.TokenCache
+com.freelanceplaza.notification.config.security.SecurityConfig ..o com.freelanceplaza.commons.fpauthentication.filters.AudienceFilter
+com.freelanceplaza.notification.config.security.SecurityConfig ..o com.freelanceplaza.commons.fpauthentication.filters.OrganizationFilter
+com.freelanceplaza.notification.config.security.SecurityConfig ..o com.freelanceplaza.commons.fpauthentication.filters.RequiredClaimFilter
+com.freelanceplaza.notification.config.security.SecurityConfig ..o com.freelanceplaza.commons.fpauthentication.authorityconverters.FPAuthoritiesConverter
+com.freelanceplaza.notification.config.security.SecurityConfig ..o com.freelanceplaza.commons.fpauthentication.RemoteJwtDecoder
+com.freelanceplaza.notification.config.security.SecurityConfig ..o com.freelanceplaza.commons.fpauthentication.http.AuthDecoderHttpClient
 
 ' com.freelanceplaza.notification.services.LocalDeviceTokenRegistrar
 
 ' com.freelanceplaza.notification.services.NotificationFactory
+com.freelanceplaza.notification.services.NotificationFactory ..o com.freelanceplaza.notification.entities.Recipient
+com.freelanceplaza.notification.services.NotificationFactory ..o com.freelanceplaza.commons.fpcommons.notifications.AttachmentDto
+com.freelanceplaza.notification.services.NotificationFactory ..o com.freelanceplaza.notification.dto.Notification
 
 ' com.freelanceplaza.notification.services.EmailNotificationFactory$1
 
@@ -796,18 +966,29 @@ com.freelanceplaza.notification.listeners.PaymentAssignmentStatusListener ..> co
 ' com.freelanceplaza.notification.repositories.InvoiceBundleRepository
 
 ' com.freelanceplaza.notification.services.AndroidMessageFactory
+com.freelanceplaza.notification.services.AndroidMessageFactory ..o com.freelanceplaza.notification.entities.Recipient
+com.freelanceplaza.notification.services.AndroidMessageFactory ..o com.freelanceplaza.notification.entities.Address
+com.freelanceplaza.notification.services.AndroidMessageFactory ..o com.freelanceplaza.notification.dto.PushNotification
+com.freelanceplaza.notification.services.AndroidMessageFactory ..o com.freelanceplaza.notification.dto.MobilePush
+com.freelanceplaza.notification.services.AndroidMessageFactory ..o com.freelanceplaza.notification.entities.MobileDeviceToken
 
 ' com.freelanceplaza.notification.enums.SubscriptionStatus
 
 ' com.freelanceplaza.notification.config.ApplicationConfiguration
+com.freelanceplaza.notification.config.ApplicationConfiguration ..o com.freelanceplaza.commons.fpcommons.crypto.Encoder
+com.freelanceplaza.notification.config.ApplicationConfiguration ..o com.freelanceplaza.commons.fpcommons.crypto.Decoder
 
 ' com.freelanceplaza.notification.services.MobilePushMessageFactory
+com.freelanceplaza.notification.services.MobilePushMessageFactory ..o com.freelanceplaza.notification.dto.PushNotification
+com.freelanceplaza.notification.services.MobilePushMessageFactory ..o com.freelanceplaza.notification.dto.MobilePush
 
 ' com.freelanceplaza.notification.services.NotificationGateway
 
 ' com.freelanceplaza.notification.dto.PushNotification$Payload
 
 ' com.freelanceplaza.notification.listeners.PaymentAssignmentStatusListener
+com.freelanceplaza.notification.listeners.PaymentAssignmentStatusListener ..o com.freelanceplaza.notification.services.PaymentService
+com.freelanceplaza.notification.listeners.PaymentAssignmentStatusListener ..o com.freelanceplaza.invoices.dtos.PaymentAssignmentEvent
 
 ' com.freelanceplaza.notification.config.aws.SqsBootstrapConfiguration
 

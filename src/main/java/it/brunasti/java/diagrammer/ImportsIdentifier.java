@@ -7,6 +7,7 @@ package it.brunasti.java.diagrammer;
 
 import com.thoughtworks.qdox.JavaProjectBuilder;
 import com.thoughtworks.qdox.model.JavaSource;
+import com.thoughtworks.qdox.parser.ParseException;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -46,6 +47,7 @@ public class ImportsIdentifier {
     // TODO : Could even extract packages....
     //    Set<String> packages = new HashSet<>();
     try {
+      Debugger.debug(0, "ImportsIdentifier.extractImports : path " + path);
       JavaProjectBuilder jp = new JavaProjectBuilder();
       jp.addSource(new FileReader(path));
 
@@ -67,7 +69,10 @@ public class ImportsIdentifier {
         }
       }
     } catch (FileNotFoundException ex) {
-      Debugger.debug(3, "  Error ImportsIdentifier.extractImports : "
+      Debugger.debug(3, "  Error FileNotFoundException ImportsIdentifier.extractImports : "
+              + ex.getMessage() + " = " + path);
+    } catch (ParseException ex) {
+      Debugger.debug(3, "  Error ParseException ImportsIdentifier.extractImports : "
               + ex.getMessage() + " = " + path);
     }
     return importFiles;
