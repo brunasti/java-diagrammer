@@ -74,8 +74,8 @@ public class ClassDiagrammerMain {
 
       if (commandLine.hasOption(optionDebug.getOpt())) {
         String debugLevelString = commandLine.getOptionValue(optionDebug.getOpt());
-        System.err.println(optionDebug.getDescription()
-                + " set to [" + debugLevelString + "]");
+//        System.err.println(optionDebug.getDescription()
+//                + " set to [" + debugLevelString + "]");
         if (debugLevelString != null) {
           try {
             int dl = Integer.parseInt(debugLevelString);

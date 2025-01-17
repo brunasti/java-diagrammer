@@ -20,7 +20,7 @@ public class AdHocDiagramGenerationTest implements TestConstants {
     // Commons
     System.err.println("ClassDiagrammerMain.main ------ for Tadaah project ----- ["+service+"]["+subService+"]");
 
-    String[] fullArgs = new String[8];
+    String[] fullArgs = new String[10];
     fullArgs[0] = "/Users/paolo/Work/Tadaah/" +repository+ "/build/classes/java/main";
     fullArgs[1] = "/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/Tadaah-"+diagram;
     fullArgs[2] = "-c";
@@ -29,7 +29,8 @@ public class AdHocDiagramGenerationTest implements TestConstants {
     fullArgs[5] = fullArgs[1] + ".puml";
     fullArgs[6] = "-i";
     fullArgs[7] = "/Users/paolo/Work/Tadaah/" +repository+ "/src/main/java";
-//    fullArgs[8] = "-d";
+    fullArgs[8] = "-d";
+    fullArgs[9] = "0";
 
     ClassDiagrammerMain.main(fullArgs);
   }
@@ -39,13 +40,6 @@ public class AdHocDiagramGenerationTest implements TestConstants {
   @Test
   @DisplayName("Call ClassDiagrammerMain for Tadaah projects")
   void testMainPublicMethods() {
-//    Options options = new Options();
-//    String[] fullArgs = new String[9];
-//    fullArgs[2] = "-d";
-//    fullArgs[3] = "-c";
-//    fullArgs[4] = "/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/config.json";
-//    fullArgs[5] = "-o";
-//    fullArgs[7] = "-i";
 
     // Commons
     generateDiagram("fp-backend-commons","fp-commons");

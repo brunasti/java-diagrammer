@@ -486,7 +486,10 @@ public class ClassDiagrammer {
 
   private void generateHeader(final String path,
                               final String configurationFile,
-                              String javaFilesPath) {
+                              String javaFilesPath,
+                              ArrayList<String> files,
+                              ArrayList<JavaClass> classes
+                              ) {
     Debugger.debug(2, "generateHeader() ------------------");
     output.println("@startuml");
     output.println("'https://plantuml.com/class-diagram");
@@ -499,7 +502,34 @@ public class ClassDiagrammer {
     }
     output.println("' Configuration   : [" + configurationFile + "]");
     output.println("' Generated at    : " + new Date());
-    String includeFileContent = Utils.readFileToString(includeFileName);
+    output.println("'");
+
+
+    output.println("'   Stat infos    :");
+    int totelLines = 0;
+    for (String file : files) {
+      String javaFile = javaFilesPath + file.replace(".", "/") + ".java";
+
+      int lines = Utils.countLinesInFile(javaFile);
+      if (lines > 0) {
+        totelLines = totelLines + lines;
+      }
+    }
+
+    int methods = 0;
+    int fields = 0;
+    for (JavaClass javaClass : classes) {
+//        output.println("'     javaClass : [" +  javaClass.getMethods().length + "]");
+      methods = methods + javaClass.getMethods().length;
+      fields = fields + javaClass.getFields().length;
+    }
+    output.println("'       Files : [" +  files.size() + "]");
+    output.println("'       Lines : [" +  totelLines + "]");
+    output.println("'     Classes : [" +  classes.size() + "]");
+    output.println("'     Methods : [" +  methods + "]");
+    output.println("'      Fields : [" +  fields + "]");
+
+      String includeFileContent = Utils.readFileToString(includeFileName);
     if (!includeFileContent.isBlank()) {
       output.println();
       output.println("' Include         : [" + includeFileName + "] ---------");
@@ -569,7 +599,7 @@ public class ClassDiagrammer {
       }
     });
 
-    generateHeader(path, configurationFile, javaFilesPath);
+    generateHeader(path, configurationFile, javaFilesPath, files, classes);
     generateClasses(classes, classLoader);
     generateInheritances(classes);
     generateImplements(classes);

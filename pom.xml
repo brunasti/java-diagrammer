@@ -18,7 +18,7 @@
         <dependency>
             <groupId>it.brunasti.java.utils.Utils</groupId>
             <artifactId>Java-Utils</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
             <scope>system</scope>
             <systemPath>/Users/paolo/IdeaProjects/mine/java-utils/target/it.brunasti.java.utils.Utils-1.0.1.jar</systemPath>
         </dependency>
