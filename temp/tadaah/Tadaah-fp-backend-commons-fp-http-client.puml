@@ -6,7 +6,7 @@
 ' Path            : [/Users/paolo/Work/Tadaah/fp-backend-commons/fp-http-client/build/classes/java/main]
 ' Java Files Path : [/Users/paolo/Work/Tadaah/fp-backend-commons/fp-http-client/src/main/java/]
 ' Configuration   : [/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/config.json]
-' Generated at    : Thu Jan 16 13:38:45 CET 2025
+' Generated at    : Fri Jan 17 09:59:02 CET 2025
 
 
 
@@ -61,7 +61,6 @@ java.lang.RuntimeException <|-- com.freelanceplaza.commons.fphttpclient.exceptio
 ' IMPLEMENT INTERFACE =======
 
 ' FIELDS =======
-com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.UserServiceSyncPortConfig --> com.fasterxml.jackson.databind.ObjectMapper
 com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.UserServiceSyncPortConfig --> com.freelanceplaza.commons.fpcommons.httpclient.TokenHandler
 com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort$2 --> com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort
 com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort$3 --> com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort
@@ -76,22 +75,17 @@ com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.UserServiceSyn
 com.freelanceplaza.commons.fphttpclient.okta.OktaAuthPort$1 --> com.freelanceplaza.commons.fphttpclient.okta.OktaAuthPort
 com.freelanceplaza.commons.fphttpclient.okta.Auth0UserDetails --> com.freelanceplaza.commons.fphttpclient.okta.Auth0UserDetails$Metadata
 com.freelanceplaza.commons.fphttpclient.okta.Auth0UserDetails --> com.freelanceplaza.commons.fphttpclient.okta.Auth0UserDetails$Metadata
-com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort --> com.fasterxml.jackson.databind.ObjectMapper
 com.freelanceplaza.commons.fphttpclient.ports.MachineToMachineApiPort --> com.freelanceplaza.commons.fpcommons.httpclient.TokenHandler
 com.freelanceplaza.commons.fphttpclient.okta.Auth0Organization$EnabledConnection --> com.freelanceplaza.commons.fphttpclient.okta.Auth0Organization$Connection
-com.freelanceplaza.commons.fphttpclient.tokenhandlers.cache.MapTokenCache$CacheObject --> java.time.LocalDateTime
 com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.UserServiceSyncPort --> com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.UserServiceSyncPortConfig
 com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort$HttpRequestWrapper --> org.apache.http.client.methods.HttpRequestBase
-com.freelanceplaza.commons.fphttpclient.exceptions.HttpClientException --> org.springframework.http.HttpStatus
 
 ' USES =======
-com.freelanceplaza.commons.fphttpclient.tokenhandlers.cache.MapTokenCache ..> java.time.Duration
 com.freelanceplaza.commons.fphttpclient.okta.Auth0Organization ..> com.freelanceplaza.commons.fphttpclient.okta.Auth0Organization
 com.freelanceplaza.commons.fphttpclient.authproxy.requests.CreateOrganizationUserRequest ..> com.freelanceplaza.commons.fphttpclient.authproxy.requests.CreateOrganizationUserRequest
 com.freelanceplaza.commons.fphttpclient.authproxy.requests.AddMembersToOrganizationRequest ..> com.freelanceplaza.commons.fphttpclient.authproxy.requests.AddMembersToOrganizationRequest
 com.freelanceplaza.commons.fphttpclient.authproxy.requests.AddRolesToOrganizationMemberRequest ..> com.freelanceplaza.commons.fphttpclient.authproxy.requests.AddRolesToOrganizationMemberRequest
 com.freelanceplaza.commons.fphttpclient.authproxy.requests.AssignIdRequest ..> com.freelanceplaza.commons.fphttpclient.authproxy.requests.AssignIdRequest
-com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.UserServiceSyncPortConfig ..> com.fasterxml.jackson.databind.ObjectMapper
 com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.UserServiceSyncPortConfig ..> com.freelanceplaza.commons.fpcommons.httpclient.TokenHandler
 com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort$2 ..> com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort
 com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort$3 ..> com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort
@@ -105,7 +99,6 @@ com.freelanceplaza.commons.fphttpclient.tokenhandlers.ClientCredentialsTokenHand
 com.freelanceplaza.commons.fphttpclient.tokenhandlers.ClientCredentialsTokenHandler ..> com.freelanceplaza.commons.fphttpclient.okta.OktaAuthPort
 com.freelanceplaza.commons.fphttpclient.tokenhandlers.ClientCredentialsTokenHandler ..> com.freelanceplaza.commons.fpcommons.caching.TokenCache
 com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort$1 ..> com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort
-com.freelanceplaza.commons.fphttpclient.tokenhandlers.cache.RedisTokenCache ..> java.time.Duration
 com.freelanceplaza.commons.fphttpclient.tokenhandlers.cache.RedisTokenCache ..> com.freelanceplaza.commons.fpcommons.caching.JedisPoolWrapper
 com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.UserServiceSyncPort$1 ..> com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.UserServiceSyncPort
 com.freelanceplaza.commons.fphttpclient.okta.Auth0UserDetails$Identity ..> com.freelanceplaza.commons.fphttpclient.okta.Auth0UserDetails$Identity
@@ -113,73 +106,46 @@ com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.Request ..> co
 com.freelanceplaza.commons.fphttpclient.okta.OktaAuthPort$1 ..> com.freelanceplaza.commons.fphttpclient.okta.OktaAuthPort
 com.freelanceplaza.commons.fphttpclient.okta.Auth0UserDetails ..> com.freelanceplaza.commons.fphttpclient.okta.Auth0UserDetails$Metadata
 com.freelanceplaza.commons.fphttpclient.okta.Auth0UserDetails ..> com.freelanceplaza.commons.fphttpclient.okta.Auth0UserDetails
-com.freelanceplaza.commons.fphttpclient.okta.OktaAuthPort ..> com.fasterxml.jackson.databind.ObjectMapper
 com.freelanceplaza.commons.fphttpclient.okta.OktaAuthPort ..> com.freelanceplaza.commons.fphttpclient.okta.AccessToken
-com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort ..> com.fasterxml.jackson.databind.ObjectMapper
-com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort ..> java.net.URI
-com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort ..> com.fasterxml.jackson.core.type.TypeReference
 com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort ..> org.apache.http.HttpEntity
 com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort ..> org.apache.http.client.methods.HttpRequestBase
 com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort ..> org.apache.http.impl.client.CloseableHttpClient
 com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort ..> com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort$HeaderContentTypeHolder
 com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort ..> com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort$HttpRequestWrapper
 com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort ..> com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort$HttpResponseWrapper
-com.freelanceplaza.commons.fphttpclient.ports.MachineToMachineApiPort ..> com.fasterxml.jackson.databind.ObjectMapper
 com.freelanceplaza.commons.fphttpclient.ports.MachineToMachineApiPort ..> com.freelanceplaza.commons.fpcommons.httpclient.TokenHandler
 com.freelanceplaza.commons.fphttpclient.ports.MachineToMachineApiPort ..> org.apache.http.client.methods.HttpRequestBase
-com.freelanceplaza.commons.fphttpclient.ports.MachineToMachineApiPort ..> com.fasterxml.jackson.core.type.TypeReference
 com.freelanceplaza.commons.fphttpclient.okta.Auth0Organization$EnabledConnection ..> com.freelanceplaza.commons.fphttpclient.okta.Auth0Organization$Connection
 com.freelanceplaza.commons.fphttpclient.okta.Auth0Organization$EnabledConnection ..> com.freelanceplaza.commons.fphttpclient.okta.Auth0Organization$EnabledConnection
 com.freelanceplaza.commons.fphttpclient.authproxy.requests.CreateOrganizationRequest ..> com.freelanceplaza.commons.fphttpclient.authproxy.requests.CreateOrganizationRequest
 com.freelanceplaza.commons.fphttpclient.okta.Auth0Role ..> com.freelanceplaza.commons.fphttpclient.okta.Auth0Role
 com.freelanceplaza.commons.fphttpclient.okta.Auth0Organization$Connection ..> com.freelanceplaza.commons.fphttpclient.okta.Auth0Organization$Connection
-com.freelanceplaza.commons.fphttpclient.tokenhandlers.cache.MapTokenCache$CacheObject ..> java.time.LocalDateTime
-com.freelanceplaza.commons.fphttpclient.ports.FormDataConverter ..> com.fasterxml.jackson.databind.ObjectMapper
 com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.Response ..> com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.Response
 com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.UserServiceSyncPort ..> com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.UserServiceSyncPortConfig
 com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.UserServiceSyncPort ..> com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.Response
 com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.UserServiceSyncPort ..> com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.Request
 com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort$HttpRequestWrapper ..> org.apache.http.client.methods.HttpRequestBase
 com.freelanceplaza.commons.fphttpclient.okta.AccessToken ..> com.freelanceplaza.commons.fphttpclient.okta.AccessToken
-com.freelanceplaza.commons.fphttpclient.exceptions.HttpClientException ..> org.springframework.http.HttpStatus
 
 ' IMPORTS =======
 ' Java Files Path : /Users/paolo/Work/Tadaah/fp-backend-commons/fp-http-client/src/main/java/
 ' com.freelanceplaza.commons.fphttpclient.tokenhandlers.cache.MapTokenCache
 com.freelanceplaza.commons.fphttpclient.tokenhandlers.cache.MapTokenCache ..o com.freelanceplaza.commons.fpcommons.caching.TokenCache
-com.freelanceplaza.commons.fphttpclient.tokenhandlers.cache.MapTokenCache ..o java.time.Duration
-com.freelanceplaza.commons.fphttpclient.tokenhandlers.cache.MapTokenCache ..o lombok.RequiredArgsConstructor
-com.freelanceplaza.commons.fphttpclient.tokenhandlers.cache.MapTokenCache ..o java.time.LocalDateTime
 
 ' com.freelanceplaza.commons.fphttpclient.okta.Auth0Organization
-com.freelanceplaza.commons.fphttpclient.okta.Auth0Organization ..o com.fasterxml.jackson.annotation.JsonProperty
-com.freelanceplaza.commons.fphttpclient.okta.Auth0Organization ..o lombok.Setter
-com.freelanceplaza.commons.fphttpclient.okta.Auth0Organization ..o lombok.Getter
-com.freelanceplaza.commons.fphttpclient.okta.Auth0Organization ..o com.fasterxml.jackson.annotation.JsonInclude
 
 ' com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort$HeaderContentTypeHolder
 
 ' com.freelanceplaza.commons.fphttpclient.authproxy.requests.CreateOrganizationUserRequest
-com.freelanceplaza.commons.fphttpclient.authproxy.requests.CreateOrganizationUserRequest ..o lombok.Setter
-com.freelanceplaza.commons.fphttpclient.authproxy.requests.CreateOrganizationUserRequest ..o lombok.Getter
 
 ' com.freelanceplaza.commons.fphttpclient.authproxy.requests.AddMembersToOrganizationRequest
-com.freelanceplaza.commons.fphttpclient.authproxy.requests.AddMembersToOrganizationRequest ..o lombok.Setter
-com.freelanceplaza.commons.fphttpclient.authproxy.requests.AddMembersToOrganizationRequest ..o lombok.Getter
 
 ' com.freelanceplaza.commons.fphttpclient.authproxy.requests.AddRolesToOrganizationMemberRequest
-com.freelanceplaza.commons.fphttpclient.authproxy.requests.AddRolesToOrganizationMemberRequest ..o lombok.Setter
-com.freelanceplaza.commons.fphttpclient.authproxy.requests.AddRolesToOrganizationMemberRequest ..o lombok.Getter
 
 ' com.freelanceplaza.commons.fphttpclient.authproxy.requests.AssignIdRequest
-com.freelanceplaza.commons.fphttpclient.authproxy.requests.AssignIdRequest ..o lombok.Setter
-com.freelanceplaza.commons.fphttpclient.authproxy.requests.AssignIdRequest ..o lombok.Getter
 
 ' com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.UserServiceSyncPortConfig
 com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.UserServiceSyncPortConfig ..o com.freelanceplaza.commons.fpcommons.httpclient.TokenHandler
-com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.UserServiceSyncPortConfig ..o lombok.Getter
-com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.UserServiceSyncPortConfig ..o com.fasterxml.jackson.databind.ObjectMapper
-com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.UserServiceSyncPortConfig ..o lombok.RequiredArgsConstructor
 
 ' com.freelanceplaza.commons.fphttpclient.ports.FormDataConverter$1
 
@@ -195,38 +161,24 @@ com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.UserServiceSyn
 
 ' com.freelanceplaza.commons.fphttpclient.tokenhandlers.ClientCredentialsTokenHandler
 com.freelanceplaza.commons.fphttpclient.tokenhandlers.ClientCredentialsTokenHandler ..o com.freelanceplaza.commons.fpcommons.httpclient.TokenHandler
-com.freelanceplaza.commons.fphttpclient.tokenhandlers.ClientCredentialsTokenHandler ..o lombok.extern.slf4j.Slf4j
-com.freelanceplaza.commons.fphttpclient.tokenhandlers.ClientCredentialsTokenHandler ..o lombok.Builder
 com.freelanceplaza.commons.fphttpclient.tokenhandlers.ClientCredentialsTokenHandler ..o com.freelanceplaza.commons.fpcommons.caching.TokenCache
-com.freelanceplaza.commons.fphttpclient.tokenhandlers.ClientCredentialsTokenHandler ..o java.net.URISyntaxException
-com.freelanceplaza.commons.fphttpclient.tokenhandlers.ClientCredentialsTokenHandler ..o java.time.Duration
-com.freelanceplaza.commons.fphttpclient.tokenhandlers.ClientCredentialsTokenHandler ..o lombok.RequiredArgsConstructor
-com.freelanceplaza.commons.fphttpclient.tokenhandlers.ClientCredentialsTokenHandler ..o java.io.IOException
 com.freelanceplaza.commons.fphttpclient.tokenhandlers.ClientCredentialsTokenHandler ..o com.freelanceplaza.commons.fphttpclient.okta.OktaAuthPort
 
 ' com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort$1
 
 ' com.freelanceplaza.commons.fphttpclient.tokenhandlers.cache.RedisTokenCache
-com.freelanceplaza.commons.fphttpclient.tokenhandlers.cache.RedisTokenCache ..o lombok.extern.slf4j.Slf4j
 com.freelanceplaza.commons.fphttpclient.tokenhandlers.cache.RedisTokenCache ..o com.freelanceplaza.commons.fpcommons.caching.TokenCache
 com.freelanceplaza.commons.fphttpclient.tokenhandlers.cache.RedisTokenCache ..o com.freelanceplaza.commons.fpcommons.caching.JedisPoolWrapper
-com.freelanceplaza.commons.fphttpclient.tokenhandlers.cache.RedisTokenCache ..o java.time.Duration
-com.freelanceplaza.commons.fphttpclient.tokenhandlers.cache.RedisTokenCache ..o lombok.RequiredArgsConstructor
 
 ' com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.UserServiceSyncPort$1
 
 ' com.freelanceplaza.commons.fphttpclient.okta.Auth0UserDetails$Identity
 
 ' com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.Request
-com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.Request ..o lombok.Setter
-com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.Request ..o lombok.Getter
 
 ' com.freelanceplaza.commons.fphttpclient.okta.OktaAuthPort$1
 
 ' com.freelanceplaza.commons.fphttpclient.okta.Auth0UserDetails
-com.freelanceplaza.commons.fphttpclient.okta.Auth0UserDetails ..o com.fasterxml.jackson.annotation.JsonProperty
-com.freelanceplaza.commons.fphttpclient.okta.Auth0UserDetails ..o lombok.Setter
-com.freelanceplaza.commons.fphttpclient.okta.Auth0UserDetails ..o lombok.Getter
 
 ' com.freelanceplaza.commons.fphttpclient.okta.OktaAuthPort
 
@@ -234,12 +186,7 @@ com.freelanceplaza.commons.fphttpclient.okta.Auth0UserDetails ..o lombok.Getter
 
 ' com.freelanceplaza.commons.fphttpclient.ports.MachineToMachineApiPort
 com.freelanceplaza.commons.fphttpclient.ports.MachineToMachineApiPort ..o com.freelanceplaza.commons.fpcommons.httpclient.TokenHandler
-com.freelanceplaza.commons.fphttpclient.ports.MachineToMachineApiPort ..o lombok.extern.slf4j.Slf4j
-com.freelanceplaza.commons.fphttpclient.ports.MachineToMachineApiPort ..o java.net.URISyntaxException
-com.freelanceplaza.commons.fphttpclient.ports.MachineToMachineApiPort ..o com.fasterxml.jackson.databind.ObjectMapper
 com.freelanceplaza.commons.fphttpclient.ports.MachineToMachineApiPort ..o org.apache.http.client.methods.HttpRequestBase
-com.freelanceplaza.commons.fphttpclient.ports.MachineToMachineApiPort ..o java.io.IOException
-com.freelanceplaza.commons.fphttpclient.ports.MachineToMachineApiPort ..o com.fasterxml.jackson.core.type.TypeReference
 com.freelanceplaza.commons.fphttpclient.ports.MachineToMachineApiPort ..o com.freelanceplaza.commons.fphttpclient.exceptions.HttpClientException
 com.freelanceplaza.commons.fphttpclient.ports.MachineToMachineApiPort ..o org.apache.http.HttpHeaders
 
@@ -248,47 +195,29 @@ com.freelanceplaza.commons.fphttpclient.ports.MachineToMachineApiPort ..o org.ap
 ' com.freelanceplaza.commons.fphttpclient.okta.OktaAuthPortRoutes
 
 ' com.freelanceplaza.commons.fphttpclient.authproxy.requests.CreateOrganizationRequest
-com.freelanceplaza.commons.fphttpclient.authproxy.requests.CreateOrganizationRequest ..o lombok.Setter
-com.freelanceplaza.commons.fphttpclient.authproxy.requests.CreateOrganizationRequest ..o lombok.Getter
 
 ' com.freelanceplaza.commons.fphttpclient.okta.Auth0Role
-com.freelanceplaza.commons.fphttpclient.okta.Auth0Role ..o lombok.Setter
-com.freelanceplaza.commons.fphttpclient.okta.Auth0Role ..o lombok.Getter
-com.freelanceplaza.commons.fphttpclient.okta.Auth0Role ..o lombok.EqualsAndHashCode
 
 ' com.freelanceplaza.commons.fphttpclient.okta.Auth0Organization$Connection
 
 ' com.freelanceplaza.commons.fphttpclient.tokenhandlers.cache.MapTokenCache$CacheObject
 
 ' com.freelanceplaza.commons.fphttpclient.ports.FormDataConverter
-com.freelanceplaza.commons.fphttpclient.ports.FormDataConverter ..o lombok.experimental.UtilityClass
 com.freelanceplaza.commons.fphttpclient.ports.FormDataConverter ..o org.apache.http.message.BasicNameValuePair
-com.freelanceplaza.commons.fphttpclient.ports.FormDataConverter ..o com.fasterxml.jackson.databind.ObjectMapper
-com.freelanceplaza.commons.fphttpclient.ports.FormDataConverter ..o com.fasterxml.jackson.core.type.TypeReference
-com.freelanceplaza.commons.fphttpclient.ports.FormDataConverter ..o java.io.File
 
 ' com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort$HttpResponseWrapper
 
 ' com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.Response
 com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.Response ..o com.freelanceplaza.commons.fpcommons.sync.organizations.OrganizationSync
-com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.Response ..o lombok.Setter
 com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.Response ..o com.freelanceplaza.commons.fpcommons.sync.users.UserSync
-com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.Response ..o lombok.Getter
 com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.Response ..o com.freelanceplaza.commons.fpcommons.sync.locations.LocationSync
 
 ' com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.UserServiceSyncPort
 com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.UserServiceSyncPort ..o com.freelanceplaza.commons.fphttpclient.ports.MachineToMachineApiPort
-com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.UserServiceSyncPort ..o java.net.URISyntaxException
-com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.UserServiceSyncPort ..o java.io.IOException
-com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.UserServiceSyncPort ..o java.net.URI
-com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.UserServiceSyncPort ..o com.fasterxml.jackson.core.type.TypeReference
 
 ' com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort$HttpRequestWrapper
 
 ' com.freelanceplaza.commons.fphttpclient.okta.AccessToken
-com.freelanceplaza.commons.fphttpclient.okta.AccessToken ..o com.fasterxml.jackson.annotation.JsonProperty
-com.freelanceplaza.commons.fphttpclient.okta.AccessToken ..o lombok.Setter
-com.freelanceplaza.commons.fphttpclient.okta.AccessToken ..o lombok.Getter
 
 ' com.freelanceplaza.commons.fphttpclient.exceptions.HttpClientException
 

@@ -6,7 +6,7 @@
 ' Path            : [/Users/paolo/Work/Tadaah/fp-backend-commons/fp-authentication/build/classes/java/main]
 ' Java Files Path : [/Users/paolo/Work/Tadaah/fp-backend-commons/fp-autentication/src/main/java/]
 ' Configuration   : [/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/config.json]
-' Generated at    : Thu Jan 16 13:38:44 CET 2025
+' Generated at    : Fri Jan 17 09:59:02 CET 2025
 
 
 
@@ -31,53 +31,18 @@ java.util.HashMap <|-- com.freelanceplaza.commons.fpauthentication.authorityconv
 ' IMPLEMENT INTERFACE =======
 
 ' FIELDS =======
-com.freelanceplaza.commons.fpauthentication.filters.OrganizationFilter --> org.springframework.security.web.authentication.AuthenticationFailureHandler
-com.freelanceplaza.commons.fpauthentication.filters.OrganizationFilter --> org.springframework.security.core.context.SecurityContextHolderStrategy
 com.freelanceplaza.commons.fpauthentication.filters.AudienceFilter --> com.freelanceplaza.commons.fpauthentication.config.AudienceConfig
-com.freelanceplaza.commons.fpauthentication.filters.AudienceFilter --> org.springframework.security.web.authentication.AuthenticationFailureHandler
-com.freelanceplaza.commons.fpauthentication.filters.AudienceFilter --> org.springframework.security.core.context.SecurityContextHolderStrategy
 com.freelanceplaza.commons.fpauthentication.RemoteJwtDecoder --> com.freelanceplaza.commons.fpauthentication.http.AuthDecoderHttpClient
 com.freelanceplaza.commons.fpauthentication.RemoteJwtDecoder --> com.freelanceplaza.commons.fpcommons.caching.TokenCache
-com.freelanceplaza.commons.fpauthentication.RemoteJwtDecoder --> com.fasterxml.jackson.databind.ObjectMapper
-com.freelanceplaza.commons.fpauthentication.http.AuthDecoderHttpClient --> com.fasterxml.jackson.databind.ObjectMapper
-com.freelanceplaza.commons.fpauthentication.dto.JwtDto --> java.time.Instant
-com.freelanceplaza.commons.fpauthentication.dto.JwtDto --> java.time.Instant
-com.freelanceplaza.commons.fpauthentication.filters.RequiredClaimFilter --> org.springframework.security.web.authentication.AuthenticationEntryPointFailureHandler
-com.freelanceplaza.commons.fpauthentication.filters.RequiredClaimFilter --> org.springframework.security.core.context.SecurityContextHolderStrategy
 
 ' USES =======
-com.freelanceplaza.commons.fpauthentication.filters.OrganizationFilter ..> org.springframework.security.core.context.SecurityContextHolderStrategy
-com.freelanceplaza.commons.fpauthentication.filters.OrganizationFilter ..> org.springframework.security.web.authentication.AuthenticationFailureHandler
-com.freelanceplaza.commons.fpauthentication.filters.OrganizationFilter ..> jakarta.servlet.http.HttpServletRequest
-com.freelanceplaza.commons.fpauthentication.filters.OrganizationFilter ..> jakarta.servlet.http.HttpServletResponse
-com.freelanceplaza.commons.fpauthentication.filters.OrganizationFilter ..> jakarta.servlet.FilterChain
-com.freelanceplaza.commons.fpauthentication.filters.OrganizationFilter ..> org.springframework.security.core.AuthenticationException
-com.freelanceplaza.commons.fpauthentication.filters.AudienceFilter ..> org.springframework.security.core.context.SecurityContextHolderStrategy
-com.freelanceplaza.commons.fpauthentication.filters.AudienceFilter ..> org.springframework.security.web.authentication.AuthenticationFailureHandler
-com.freelanceplaza.commons.fpauthentication.filters.AudienceFilter ..> jakarta.servlet.http.HttpServletRequest
-com.freelanceplaza.commons.fpauthentication.filters.AudienceFilter ..> jakarta.servlet.http.HttpServletResponse
-com.freelanceplaza.commons.fpauthentication.filters.AudienceFilter ..> jakarta.servlet.FilterChain
-com.freelanceplaza.commons.fpauthentication.filters.AudienceFilter ..> org.springframework.security.core.AuthenticationException
 com.freelanceplaza.commons.fpauthentication.filters.AudienceFilter ..> com.freelanceplaza.commons.fpauthentication.config.AudienceConfig
-com.freelanceplaza.commons.fpauthentication.RemoteJwtDecoder ..> org.springframework.security.oauth2.jwt.Jwt
 com.freelanceplaza.commons.fpauthentication.RemoteJwtDecoder ..> com.freelanceplaza.commons.fpauthentication.http.AuthDecoderHttpClient
 com.freelanceplaza.commons.fpauthentication.RemoteJwtDecoder ..> com.freelanceplaza.commons.fpauthentication.RemoteJwtDecoder
 com.freelanceplaza.commons.fpauthentication.RemoteJwtDecoder ..> com.freelanceplaza.commons.fpcommons.caching.TokenCache
-com.freelanceplaza.commons.fpauthentication.http.AuthDecoderHttpClient ..> com.fasterxml.jackson.databind.ObjectMapper
-com.freelanceplaza.commons.fpauthentication.http.AuthDecoderHttpClient ..> org.springframework.security.oauth2.jwt.Jwt
 com.freelanceplaza.commons.fpauthentication.config.AudienceConfig ..> com.freelanceplaza.commons.fpauthentication.config.AudienceConfig
 com.freelanceplaza.commons.fpauthentication.config.AuthDecoderConfig ..> com.freelanceplaza.commons.fpauthentication.config.AuthDecoderConfig
-com.freelanceplaza.commons.fpauthentication.dto.JwtDto ..> java.time.Instant
 com.freelanceplaza.commons.fpauthentication.dto.JwtDto ..> com.freelanceplaza.commons.fpauthentication.dto.JwtDto
-com.freelanceplaza.commons.fpauthentication.filters.RequiredClaimFilter ..> org.springframework.security.core.context.SecurityContextHolderStrategy
-com.freelanceplaza.commons.fpauthentication.filters.RequiredClaimFilter ..> org.springframework.security.web.authentication.AuthenticationEntryPointFailureHandler
-com.freelanceplaza.commons.fpauthentication.filters.RequiredClaimFilter ..> jakarta.servlet.http.HttpServletRequest
-com.freelanceplaza.commons.fpauthentication.filters.RequiredClaimFilter ..> jakarta.servlet.http.HttpServletResponse
-com.freelanceplaza.commons.fpauthentication.filters.RequiredClaimFilter ..> jakarta.servlet.FilterChain
-com.freelanceplaza.commons.fpauthentication.filters.RequiredClaimFilter ..> org.springframework.security.core.AuthenticationException
-com.freelanceplaza.commons.fpauthentication.filters.RequiredClaimFilter ..> org.springframework.security.web.util.matcher.AntPathRequestMatcher
-com.freelanceplaza.commons.fpauthentication.authorityconverters.FPAuthoritiesConverter ..> org.springframework.security.oauth2.jwt.Jwt
-com.freelanceplaza.commons.fpauthentication.authorityconverters.FPAuthoritiesConverter ..> org.springframework.security.core.authority.SimpleGrantedAuthority
 
 ' IMPORTS =======
 ' Java Files Path : /Users/paolo/Work/Tadaah/fp-backend-commons/fp-autentication/src/main/java/

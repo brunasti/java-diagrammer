@@ -6,9 +6,48 @@
       },
       {
         "class": "java.lang.String"
+      },
+      {
+        "class": "java.lang.Enum"
       }
     ],
     "packages": [
+      {
+        "package": "org.spring"
+      },
+      {
+        "package": "org.json."
+      },
+      {
+        "package": "org.slf4j."
+      },
+      {
+        "package": "org.hib"
+      },
+      {
+        "package": "org.thy"
+      },
+      {
+        "package": "io."
+      },
+      {
+        "package": "com.fasterxml"
+      },
+      {
+        "package": "com.amazon"
+      },
+      {
+        "package": "software.amazon."
+      },
+      {
+        "package": "redis."
+      },
+      {
+        "package": "jakarta."
+      },
+      {
+        "package": "lombok."
+      },
       {
         "package": "it.brunasti."
       },
@@ -20,6 +59,12 @@
       },
       {
         "package": "Ljava.lang."
+      },
+      {
+        "package": "java."
+      },
+      {
+        "package": "javax."
       },
       {
         "package": "java.lang."

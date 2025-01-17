@@ -43,17 +43,17 @@ public class AdHocDiagramGenerationTest implements TestConstants {
 
     // Invoice
     fullArgs[0] = "/Users/paolo/Work/Tadaah/fp-backend-commons/fp-commons-invoice/build/classes/java/main";
-    fullArgs[1] = "/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/Tadaah-fp-backend-commons-fp-invoice";
+    fullArgs[1] = "/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/Tadaah-fp-backend-commons-fp-commons-invoice";
     fullArgs[2] = "-d";
     fullArgs[3] = "-c";
     fullArgs[4] = "/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/config.json";
     fullArgs[5] = "-o";
-    fullArgs[6] = "/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/Tadaah-fp-backend-commons-fp-invoice.puml";;
+    fullArgs[6] = "/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/Tadaah-fp-backend-commons-fp-commons-invoice.puml";;
     fullArgs[7] = "-i";
     fullArgs[8] = "/Users/paolo/Work/Tadaah/fp-backend-commons/fp-commons-invoice/src/main/java";
     assertDoesNotThrow(() -> ClassDiagrammerMain.main(fullArgs));
 
-    // Invoice
+    // notification
     fullArgs[0] = "/Users/paolo/Work/Tadaah/fp-backend-notification-service/build/classes/java/main";
     fullArgs[1] = "/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/Tadaah-fp-backend-notification";
     fullArgs[2] = "-d";
@@ -75,6 +75,18 @@ public class AdHocDiagramGenerationTest implements TestConstants {
     fullArgs[6] = "/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/Tadaah-fp-backend-commons-fp-http-client.puml";;
     fullArgs[7] = "-i";
     fullArgs[8] = "/Users/paolo/Work/Tadaah/fp-backend-commons/fp-http-client/src/main/java";
+    assertDoesNotThrow(() -> ClassDiagrammerMain.main(fullArgs));
+
+    // Http-client DTO
+    fullArgs[0] = "/Users/paolo/Work/Tadaah/fp-backend-commons/fp-http-client-dto/build/classes/java/main";
+    fullArgs[1] = "/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/Tadaah-fp-backend-commons-fp-http-client-dto";
+    fullArgs[2] = "-d";
+    fullArgs[3] = "-c";
+    fullArgs[4] = "/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/config.json";
+    fullArgs[5] = "-o";
+    fullArgs[6] = "/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/Tadaah-fp-backend-commons-fp-http-client-dto.puml";;
+    fullArgs[7] = "-i";
+    fullArgs[8] = "/Users/paolo/Work/Tadaah/fp-backend-commons/fp-http-client-dto/src/main/java";
     assertDoesNotThrow(() -> ClassDiagrammerMain.main(fullArgs));
   }
 
