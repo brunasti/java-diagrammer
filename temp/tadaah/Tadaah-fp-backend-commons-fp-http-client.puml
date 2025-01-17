@@ -6,7 +6,7 @@
 ' Path            : [/Users/paolo/Work/Tadaah/fp-backend-commons/fp-http-client/build/classes/java/main]
 ' Java Files Path : [/Users/paolo/Work/Tadaah/fp-backend-commons/fp-http-client/src/main/java/]
 ' Configuration   : [/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/config.json]
-' Generated at    : Fri Jan 17 14:59:06 CET 2025
+' Generated at    : Fri Jan 17 20:03:25 CET 2025
 '
 '   Stat infos    :
 '       Files : [38]
@@ -85,7 +85,6 @@ com.freelanceplaza.commons.fphttpclient.okta.Auth0UserDetails --> com.freelancep
 com.freelanceplaza.commons.fphttpclient.ports.MachineToMachineApiPort --> com.freelanceplaza.commons.fpcommons.httpclient.TokenHandler
 com.freelanceplaza.commons.fphttpclient.okta.Auth0Organization$EnabledConnection --> com.freelanceplaza.commons.fphttpclient.okta.Auth0Organization$Connection
 com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.UserServiceSyncPort --> com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.UserServiceSyncPortConfig
-com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort$HttpRequestWrapper --> org.apache.http.client.methods.HttpRequestBase
 
 ' USES =======
 com.freelanceplaza.commons.fphttpclient.okta.Auth0Organization ..> com.freelanceplaza.commons.fphttpclient.okta.Auth0Organization
@@ -114,14 +113,10 @@ com.freelanceplaza.commons.fphttpclient.okta.OktaAuthPort$1 ..> com.freelancepla
 com.freelanceplaza.commons.fphttpclient.okta.Auth0UserDetails ..> com.freelanceplaza.commons.fphttpclient.okta.Auth0UserDetails$Metadata
 com.freelanceplaza.commons.fphttpclient.okta.Auth0UserDetails ..> com.freelanceplaza.commons.fphttpclient.okta.Auth0UserDetails
 com.freelanceplaza.commons.fphttpclient.okta.OktaAuthPort ..> com.freelanceplaza.commons.fphttpclient.okta.AccessToken
-com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort ..> org.apache.http.HttpEntity
-com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort ..> org.apache.http.client.methods.HttpRequestBase
-com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort ..> org.apache.http.impl.client.CloseableHttpClient
 com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort ..> com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort$HeaderContentTypeHolder
 com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort ..> com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort$HttpRequestWrapper
 com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort ..> com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort$HttpResponseWrapper
 com.freelanceplaza.commons.fphttpclient.ports.MachineToMachineApiPort ..> com.freelanceplaza.commons.fpcommons.httpclient.TokenHandler
-com.freelanceplaza.commons.fphttpclient.ports.MachineToMachineApiPort ..> org.apache.http.client.methods.HttpRequestBase
 com.freelanceplaza.commons.fphttpclient.okta.Auth0Organization$EnabledConnection ..> com.freelanceplaza.commons.fphttpclient.okta.Auth0Organization$Connection
 com.freelanceplaza.commons.fphttpclient.okta.Auth0Organization$EnabledConnection ..> com.freelanceplaza.commons.fphttpclient.okta.Auth0Organization$EnabledConnection
 com.freelanceplaza.commons.fphttpclient.authproxy.requests.CreateOrganizationRequest ..> com.freelanceplaza.commons.fphttpclient.authproxy.requests.CreateOrganizationRequest
@@ -131,7 +126,6 @@ com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.Response ..> c
 com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.UserServiceSyncPort ..> com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.UserServiceSyncPortConfig
 com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.UserServiceSyncPort ..> com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.Response
 com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.UserServiceSyncPort ..> com.freelanceplaza.commons.fphttpclient.syncports.userservicesync.Request
-com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort$HttpRequestWrapper ..> org.apache.http.client.methods.HttpRequestBase
 com.freelanceplaza.commons.fphttpclient.okta.AccessToken ..> com.freelanceplaza.commons.fphttpclient.okta.AccessToken
 
 ' IMPORTS =======
@@ -193,9 +187,7 @@ com.freelanceplaza.commons.fphttpclient.tokenhandlers.cache.RedisTokenCache ..o 
 
 ' com.freelanceplaza.commons.fphttpclient.ports.MachineToMachineApiPort
 com.freelanceplaza.commons.fphttpclient.ports.MachineToMachineApiPort ..o com.freelanceplaza.commons.fpcommons.httpclient.TokenHandler
-com.freelanceplaza.commons.fphttpclient.ports.MachineToMachineApiPort ..o org.apache.http.client.methods.HttpRequestBase
 com.freelanceplaza.commons.fphttpclient.ports.MachineToMachineApiPort ..o com.freelanceplaza.commons.fphttpclient.exceptions.HttpClientException
-com.freelanceplaza.commons.fphttpclient.ports.MachineToMachineApiPort ..o org.apache.http.HttpHeaders
 
 ' com.freelanceplaza.commons.fphttpclient.okta.Auth0Organization$EnabledConnection
 
@@ -210,7 +202,6 @@ com.freelanceplaza.commons.fphttpclient.ports.MachineToMachineApiPort ..o org.ap
 ' com.freelanceplaza.commons.fphttpclient.tokenhandlers.cache.MapTokenCache$CacheObject
 
 ' com.freelanceplaza.commons.fphttpclient.ports.FormDataConverter
-com.freelanceplaza.commons.fphttpclient.ports.FormDataConverter ..o org.apache.http.message.BasicNameValuePair
 
 ' com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort$HttpResponseWrapper
 

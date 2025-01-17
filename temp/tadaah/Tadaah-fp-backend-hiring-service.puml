@@ -6,7 +6,7 @@
 ' Path            : [/Users/paolo/Work/Tadaah/fp-backend-hiring-service/build/classes/java/main]
 ' Java Files Path : [/Users/paolo/Work/Tadaah/fp-backend-hiring-service/src/main/java/]
 ' Configuration   : [/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/config.json]
-' Generated at    : Fri Jan 17 14:59:07 CET 2025
+' Generated at    : Fri Jan 17 20:03:25 CET 2025
 '
 '   Stat infos    :
 '       Files : [344]
@@ -2279,7 +2279,6 @@ com.freelanceplaza.hiringservice.services.invoice.InvoiceService ..o com.freelan
 com.freelanceplaza.hiringservice.services.invoice.InvoiceService ..o com.freelanceplaza.invoices.dtos.InvoiceHires
 com.freelanceplaza.hiringservice.services.invoice.InvoiceService ..o com.freelanceplaza.hiringservice.repository.InvoiceRepository
 com.freelanceplaza.hiringservice.services.invoice.InvoiceService ..o com.freelanceplaza.hiringservice.services.HireService
-com.freelanceplaza.hiringservice.services.invoice.InvoiceService ..o org.apache.tomcat.util.http.fileupload.FileUtils
 com.freelanceplaza.hiringservice.services.invoice.InvoiceService ..o com.opencsv.CSVWriter
 com.freelanceplaza.hiringservice.services.invoice.InvoiceService ..o com.freelanceplaza.hiringservice.enums.HireApprovalStatus
 com.freelanceplaza.hiringservice.services.invoice.InvoiceService ..o com.freelanceplaza.invoices.enums.MemberType
@@ -2443,15 +2442,12 @@ com.freelanceplaza.hiringservice.services.NotificationService ..o com.freelancep
 com.freelanceplaza.hiringservice.services.NotificationService ..o com.opencsv.exceptions.CsvRequiredFieldEmptyException
 com.freelanceplaza.hiringservice.services.NotificationService ..o com.freelanceplaza.invoices.dtos.ShiftHire
 com.freelanceplaza.hiringservice.services.NotificationService ..o com.freelanceplaza.hiringservice.entities.Hire
-com.freelanceplaza.hiringservice.services.NotificationService ..o org.apache.commons.collections4.ListUtils
 com.freelanceplaza.hiringservice.services.NotificationService ..o com.freelanceplaza.hiringservice.services.csv.ShiftHireCsvWriter
 com.freelanceplaza.hiringservice.services.NotificationService ..o com.freelanceplaza.hiringservice.repository.HireRepository
 com.freelanceplaza.hiringservice.services.NotificationService ..o com.opencsv.exceptions.CsvDataTypeMismatchException
 com.freelanceplaza.hiringservice.services.NotificationService ..o com.freelanceplaza.hiringservice.httpClients.userservice.UserApiPort
 com.freelanceplaza.hiringservice.services.NotificationService ..o com.freelanceplaza.hiringservice.exceptions.NotificationException
-com.freelanceplaza.hiringservice.services.NotificationService ..o org.apache.commons.lang3.SystemUtils
 com.freelanceplaza.hiringservice.services.NotificationService ..o com.freelanceplaza.hiringservice.entities.Function
-com.freelanceplaza.hiringservice.services.NotificationService ..o org.apache.tomcat.util.http.fileupload.FileUtils
 com.freelanceplaza.hiringservice.services.NotificationService ..o com.opencsv.CSVWriter
 com.freelanceplaza.hiringservice.services.NotificationService ..o com.freelanceplaza.invoices.enums.MemberType
 com.freelanceplaza.hiringservice.services.NotificationService ..o com.opencsv.bean.StatefulBeanToCsv
@@ -2500,7 +2496,6 @@ com.freelanceplaza.hiringservice.mappers.UserMapper ..o com.freelanceplaza.hirin
 ' com.freelanceplaza.hiringservice.entities.QHireCancellationReason
 
 ' com.freelanceplaza.hiringservice.services.assignmentagreement.AssignmentAgreementPdfGenerator
-com.freelanceplaza.hiringservice.services.assignmentagreement.AssignmentAgreementPdfGenerator ..o org.apache.tomcat.util.http.fileupload.FileUtils
 com.freelanceplaza.hiringservice.services.assignmentagreement.AssignmentAgreementPdfGenerator ..o org.xhtmlrenderer.pdf.ITextRenderer
 com.freelanceplaza.hiringservice.services.assignmentagreement.AssignmentAgreementPdfGenerator ..o com.freelanceplaza.hiringservice.exceptions.PdfGenerationException
 
@@ -2631,9 +2626,7 @@ com.freelanceplaza.hiringservice.repository.HireCancellationReasonRepository ..o
 
 ' com.freelanceplaza.hiringservice.exceptions.GlobalExceptionHandler
 com.freelanceplaza.hiringservice.exceptions.GlobalExceptionHandler ..o com.freelanceplaza.hiringservice.validation.ValidationError
-com.freelanceplaza.hiringservice.exceptions.GlobalExceptionHandler ..o org.apache.commons.lang3.StringUtils
 com.freelanceplaza.hiringservice.exceptions.GlobalExceptionHandler ..o com.freelanceplaza.hiringservice.validation.JsonFieldErrors
-com.freelanceplaza.hiringservice.exceptions.GlobalExceptionHandler ..o org.apache.logging.log4j.util.Strings
 
 ' com.freelanceplaza.hiringservice.dtos.userservice.MobileShiftListInfoDto$MobileShiftListInfoDtoBuilder
 
@@ -2762,7 +2755,6 @@ com.freelanceplaza.hiringservice.services.workinghours.WorkingHoursTimeServiceIm
 com.freelanceplaza.hiringservice.listeners.InvoiceCompletedListener ..o com.freelanceplaza.hiringservice.services.invoice.InvoiceService
 com.freelanceplaza.hiringservice.listeners.InvoiceCompletedListener ..o com.freelanceplaza.invoices.dtos.InvoiceHires
 com.freelanceplaza.hiringservice.listeners.InvoiceCompletedListener ..o com.freelanceplaza.commons.fpcommons.config.FpProfile
-com.freelanceplaza.hiringservice.listeners.InvoiceCompletedListener ..o org.apache.commons.lang3.StringUtils
 com.freelanceplaza.hiringservice.listeners.InvoiceCompletedListener ..o com.freelanceplaza.invoices.enums.InvoiceType
 
 ' com.freelanceplaza.hiringservice.repository.ShiftCancellationReasonRepository
@@ -2866,7 +2858,6 @@ com.freelanceplaza.hiringservice.validation.cancellation.HireCancellationRequest
 com.freelanceplaza.hiringservice.validation.cancellation.HireCancellationRequestValidator ..o com.freelanceplaza.hiringservice.dtos.cancellation.HireCancellationRequest
 com.freelanceplaza.hiringservice.validation.cancellation.HireCancellationRequestValidator ..o com.freelanceplaza.hiringservice.validation.CommonJsonErrorValidator
 com.freelanceplaza.hiringservice.validation.cancellation.HireCancellationRequestValidator ..o com.freelanceplaza.hiringservice.enums.CancellationType
-com.freelanceplaza.hiringservice.validation.cancellation.HireCancellationRequestValidator ..o org.apache.commons.lang3.StringUtils
 com.freelanceplaza.hiringservice.validation.cancellation.HireCancellationRequestValidator ..o com.freelanceplaza.hiringservice.services.cancellation.CancellationTypeResolver
 com.freelanceplaza.hiringservice.validation.cancellation.HireCancellationRequestValidator ..o com.freelanceplaza.hiringservice.exceptions.EntityNotFoundException
 com.freelanceplaza.hiringservice.validation.cancellation.HireCancellationRequestValidator ..o com.freelanceplaza.hiringservice.configs.security.SecurityUtils
@@ -2924,7 +2915,6 @@ com.freelanceplaza.hiringservice.validation.cancellation.ShiftCancellationReques
 com.freelanceplaza.hiringservice.validation.cancellation.ShiftCancellationRequestValidator ..o com.freelanceplaza.hiringservice.enums.CancellationType
 com.freelanceplaza.hiringservice.validation.cancellation.ShiftCancellationRequestValidator ..o com.freelanceplaza.hiringservice.dtos.cancellation.ShiftCancellationRequest
 com.freelanceplaza.hiringservice.validation.cancellation.ShiftCancellationRequestValidator ..o com.freelanceplaza.hiringservice.repository.ShiftRepository
-com.freelanceplaza.hiringservice.validation.cancellation.ShiftCancellationRequestValidator ..o org.apache.commons.lang3.StringUtils
 com.freelanceplaza.hiringservice.validation.cancellation.ShiftCancellationRequestValidator ..o com.freelanceplaza.hiringservice.services.cancellation.CancellationTypeResolver
 com.freelanceplaza.hiringservice.validation.cancellation.ShiftCancellationRequestValidator ..o com.freelanceplaza.hiringservice.exceptions.EntityNotFoundException
 com.freelanceplaza.hiringservice.validation.cancellation.ShiftCancellationRequestValidator ..o com.freelanceplaza.hiringservice.repository.ShiftCancellationReasonRepository
@@ -3019,7 +3009,6 @@ com.freelanceplaza.hiringservice.controllers.v1.PrkControllerV1 ..o com.freelanc
 ' com.freelanceplaza.hiringservice.services.assignmentagreement.AssignmentAgreementServiceImpl
 com.freelanceplaza.hiringservice.services.assignmentagreement.AssignmentAgreementServiceImpl ..o com.freelanceplaza.hiringservice.services.UserService
 com.freelanceplaza.hiringservice.services.assignmentagreement.AssignmentAgreementServiceImpl ..o com.freelanceplaza.hiringservice.entities.AssignmentAgreement
-com.freelanceplaza.hiringservice.services.assignmentagreement.AssignmentAgreementServiceImpl ..o org.apache.commons.lang3.StringUtils
 com.freelanceplaza.hiringservice.services.assignmentagreement.AssignmentAgreementServiceImpl ..o com.freelanceplaza.hiringservice.exceptions.EntityNotFoundException
 com.freelanceplaza.hiringservice.services.assignmentagreement.AssignmentAgreementServiceImpl ..o com.freelanceplaza.hiringservice.repository.HireRepository
 com.freelanceplaza.hiringservice.services.assignmentagreement.AssignmentAgreementServiceImpl ..o com.freelanceplaza.hiringservice.exceptions.PdfGenerationException
@@ -3027,7 +3016,6 @@ com.freelanceplaza.hiringservice.services.assignmentagreement.AssignmentAgreemen
 com.freelanceplaza.hiringservice.services.assignmentagreement.AssignmentAgreementServiceImpl ..o com.freelanceplaza.hiringservice.httpClients.userservice.dto.HiringQuery
 com.freelanceplaza.hiringservice.services.assignmentagreement.AssignmentAgreementServiceImpl ..o com.freelanceplaza.hiringservice.configs.PlatformConfiguration
 com.freelanceplaza.hiringservice.services.assignmentagreement.AssignmentAgreementServiceImpl ..o com.freelanceplaza.hiringservice.repository.AssignmentAgreementRepository
-com.freelanceplaza.hiringservice.services.assignmentagreement.AssignmentAgreementServiceImpl ..o org.apache.tomcat.util.http.fileupload.FileUtils
 com.freelanceplaza.hiringservice.services.assignmentagreement.AssignmentAgreementServiceImpl ..o com.freelanceplaza.hiringservice.httpClients.userservice.dto.LegalEntityDto
 com.freelanceplaza.hiringservice.services.assignmentagreement.AssignmentAgreementServiceImpl ..o com.freelanceplaza.hiringservice.configs.AssignmentAgreementConfiguration
 com.freelanceplaza.hiringservice.services.assignmentagreement.AssignmentAgreementServiceImpl ..o com.freelanceplaza.hiringservice.httpClients.userservice.dto.AddressDto

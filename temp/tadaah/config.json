@@ -13,6 +13,15 @@
     ],
     "packages": [
       {
+        "package": "com.nimbusds.jwt."
+      },
+      {
+        "package": "org.apache.commons"
+      },
+      {
+        "package": "org.apache."
+      },
+      {
         "package": "org.spring"
       },
       {
@@ -29,6 +38,9 @@
       },
       {
         "package": "io."
+      },
+      {
+        "package": "liquibase."
       },
       {
         "package": "com.fasterxml"

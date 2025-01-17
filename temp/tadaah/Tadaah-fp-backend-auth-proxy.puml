@@ -6,7 +6,7 @@
 ' Path            : [/Users/paolo/Work/Tadaah/fp-backend-auth-proxy/build/classes/java/main]
 ' Java Files Path : [/Users/paolo/Work/Tadaah/fp-backend-auth-proxy/src/main/java/]
 ' Configuration   : [/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/config.json]
-' Generated at    : Fri Jan 17 14:59:06 CET 2025
+' Generated at    : Fri Jan 17 20:03:25 CET 2025
 '
 '   Stat infos    :
 '       Files : [40]
@@ -173,7 +173,6 @@ com.freelanceplaza.authproxy.idassigner.apiports.OktaMachineToMachineApiPort ..>
 ' com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator
 com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator ..o com.freelanceplaza.commons.fphttpclient.okta.Auth0Organization
 com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator ..o com.freelanceplaza.commons.fpcommons.caching.TokenCache
-com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator ..o org.apache.commons.lang3.StringUtils
 com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator ..o com.freelanceplaza.authproxy.idassigner.CreateUserAuth0Request
 com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator ..o com.freelanceplaza.commons.fphttpclient.okta.Auth0UserDetails
 com.freelanceplaza.authproxy.idassigner.apiports.OktaAuthPortAggregator ..o com.freelanceplaza.authproxy.exceptions.NotFoundException
@@ -240,7 +239,6 @@ com.freelanceplaza.authproxy.exceptions.ServiceExceptionHandler ..o com.freelanc
 ' com.freelanceplaza.authproxy.config.ApiPortConfiguration$OktaAuthPortWrapper
 
 ' com.freelanceplaza.authproxy.security.FPJwtDecoders
-com.freelanceplaza.authproxy.security.FPJwtDecoders ..o com.nimbusds.jwt.JWTParser
 
 ' com.freelanceplaza.authproxy.config.ApiPortConfiguration
 

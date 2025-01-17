@@ -6,7 +6,7 @@
 ' Path            : [/Users/paolo/Work/Tadaah/fp-backend-payment-service/build/classes/java/main]
 ' Java Files Path : [/Users/paolo/Work/Tadaah/fp-backend-payment-service/src/main/java/]
 ' Configuration   : [/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/config.json]
-' Generated at    : Fri Jan 17 14:59:08 CET 2025
+' Generated at    : Fri Jan 17 20:03:26 CET 2025
 '
 '   Stat infos    :
 '       Files : [165]
@@ -268,7 +268,6 @@ com.freelanceplaza.payment.opp.dtos.IOppTransaction <|.. com.freelanceplaza.paym
 com.freelanceplaza.payment.services.ConfigService <|.. com.freelanceplaza.payment.services.impl.ConfigServiceImpl
 
 ' FIELDS =======
-com.freelanceplaza.payment.opp.OppPort$MultipartEntityBuilderWrapper --> org.apache.http.entity.mime.MultipartEntityBuilder
 com.freelanceplaza.payment.dtos.PaymentAccountDto --> com.freelanceplaza.payment.enums.PaymentAccountStatus
 com.freelanceplaza.payment.dtos.PaymentAccountDto --> com.freelanceplaza.commons.fpcommons.enums.Currency
 com.freelanceplaza.payment.services.CustomerService$Customer --> com.freelanceplaza.payment.entities.Organization
@@ -438,8 +437,6 @@ com.freelanceplaza.payment.config.aws.SQSConfig ..> com.freelanceplaza.payment.p
 com.freelanceplaza.payment.config.aws.SQSConfig ..> com.freelanceplaza.payment.producers.TransactionNotificationProcessProducer
 com.freelanceplaza.payment.producers.OppFreelancerProfileMessage ..> com.freelanceplaza.payment.producers.OppFreelancerProfileMessage
 com.freelanceplaza.payment.opp.OppPort$MultipartEntityBuilderWrapper ..> com.freelanceplaza.payment.opp.OppPort$MultipartEntityBuilderWrapper
-com.freelanceplaza.payment.opp.OppPort$MultipartEntityBuilderWrapper ..> org.apache.http.HttpEntity
-com.freelanceplaza.payment.opp.OppPort$MultipartEntityBuilderWrapper ..> org.apache.http.entity.mime.MultipartEntityBuilder
 com.freelanceplaza.payment.dtos.PaymentAccountDto ..> com.freelanceplaza.payment.enums.PaymentAccountStatus
 com.freelanceplaza.payment.dtos.PaymentAccountDto ..> com.freelanceplaza.commons.fpcommons.enums.Currency
 com.freelanceplaza.payment.dtos.PaymentAccountDto ..> com.freelanceplaza.payment.dtos.PaymentAccountDto
@@ -466,7 +463,6 @@ com.freelanceplaza.payment.opp.OppPort ..> com.freelanceplaza.payment.opp.dtos.O
 com.freelanceplaza.payment.opp.OppPort ..> com.freelanceplaza.payment.entities.OppTransaction
 com.freelanceplaza.payment.opp.OppPort ..> com.freelanceplaza.payment.opp.dtos.OppMultiTransactionDto
 com.freelanceplaza.payment.opp.OppPort ..> com.freelanceplaza.payment.opp.dtos.OppTransactionDto
-com.freelanceplaza.payment.opp.OppPort ..> org.apache.http.client.methods.HttpRequestBase
 com.freelanceplaza.payment.opp.OppPort ..> com.freelanceplaza.payment.opp.OppPort$MultipartEntityBuilderWrapper
 com.freelanceplaza.payment.opp.OppPort ..> com.freelanceplaza.payment.entities.Product
 com.freelanceplaza.payment.opp.OppPort ..> com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort$HttpRequestWrapper
@@ -834,16 +830,11 @@ com.freelanceplaza.payment.config.aws.SNSConfig ..o com.freelanceplaza.payment.p
 com.freelanceplaza.payment.config.aws.SNSConfig ..o com.freelanceplaza.payment.producers.PaymentAssignmentEventProducer
 
 ' com.freelanceplaza.payment.opp.OppPort
-com.freelanceplaza.payment.opp.OppPort ..o org.apache.commons.lang3.StringUtils
 com.freelanceplaza.payment.opp.OppPort ..o com.freelanceplaza.payment.config.OppConfiguration
 com.freelanceplaza.payment.opp.OppPort ..o com.freelanceplaza.payment.entities.User
 com.freelanceplaza.payment.opp.OppPort ..o com.neovisionaries.i18n.CountryCode
 com.freelanceplaza.payment.opp.OppPort ..o com.freelanceplaza.commons.fphttpclient.ports.AbstractApiPort
 com.freelanceplaza.payment.opp.OppPort ..o com.freelanceplaza.payment.utils.OppUtils
-com.freelanceplaza.payment.opp.OppPort ..o org.apache.http.entity.mime.MultipartEntityBuilder
-com.freelanceplaza.payment.opp.OppPort ..o org.apache.http.HttpEntity
-com.freelanceplaza.payment.opp.OppPort ..o org.apache.http.client.methods.HttpRequestBase
-com.freelanceplaza.payment.opp.OppPort ..o org.apache.commons.text.StringEscapeUtils
 com.freelanceplaza.payment.opp.OppPort ..o com.freelanceplaza.payment.entities.OppTransaction
 com.freelanceplaza.payment.opp.OppPort ..o com.freelanceplaza.commons.fpcommons.utils.async.AsyncUtils
 com.freelanceplaza.payment.opp.OppPort ..o com.freelanceplaza.payment.services.utils.SeparateTransactionTemplate
@@ -891,7 +882,6 @@ com.freelanceplaza.payment.entities.OppRequirement ..o com.freelanceplaza.paymen
 
 ' com.freelanceplaza.payment.opp.OppTransactionService
 com.freelanceplaza.payment.opp.OppTransactionService ..o com.freelanceplaza.payment.exceptions.PaymentServiceException
-com.freelanceplaza.payment.opp.OppTransactionService ..o org.apache.commons.lang3.StringUtils
 com.freelanceplaza.payment.opp.OppTransactionService ..o com.freelanceplaza.invoices.dtos.PaymentAssignmentEvent
 com.freelanceplaza.payment.opp.OppTransactionService ..o com.freelanceplaza.payment.config.OppConfiguration
 com.freelanceplaza.payment.opp.OppTransactionService ..o com.freelanceplaza.payment.producers.RunBundledTransactionProducer

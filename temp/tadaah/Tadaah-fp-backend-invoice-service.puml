@@ -6,7 +6,7 @@
 ' Path            : [/Users/paolo/Work/Tadaah/fp-backend-invoice-service/build/classes/java/main]
 ' Java Files Path : [/Users/paolo/Work/Tadaah/fp-backend-invoice-service/src/main/java/]
 ' Configuration   : [/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/config.json]
-' Generated at    : Fri Jan 17 14:59:07 CET 2025
+' Generated at    : Fri Jan 17 20:03:26 CET 2025
 '
 '   Stat infos    :
 '       Files : [161]
@@ -909,9 +909,7 @@ freelanceplaza.fpbackendinvoiceservice.service.impl.InvoiceGenerationService ..o
 freelanceplaza.fpbackendinvoiceservice.service.impl.InvoiceGenerationService ..o org.xhtmlrenderer.pdf.ITextRenderer
 freelanceplaza.fpbackendinvoiceservice.service.impl.InvoiceGenerationService ..o  freelanceplaza.fpbackendinvoiceservice.dto.xml.XmlConstants.INVOICE_DATE_FORMAT_XML
 freelanceplaza.fpbackendinvoiceservice.service.impl.InvoiceGenerationService ..o freelanceplaza.fpbackendinvoiceservice.dto.xml.XmlConstants
-freelanceplaza.fpbackendinvoiceservice.service.impl.InvoiceGenerationService ..o org.apache.commons.lang3.SystemUtils
 freelanceplaza.fpbackendinvoiceservice.service.impl.InvoiceGenerationService ..o freelanceplaza.fpbackendinvoiceservice.entity.enums.ProductType
-freelanceplaza.fpbackendinvoiceservice.service.impl.InvoiceGenerationService ..o org.apache.tomcat.util.http.fileupload.FileUtils
 freelanceplaza.fpbackendinvoiceservice.service.impl.InvoiceGenerationService ..o com.freelanceplaza.invoices.enums.InvoiceType
 freelanceplaza.fpbackendinvoiceservice.service.impl.InvoiceGenerationService ..o freelanceplaza.fpbackendinvoiceservice.repository.OrganizationRepository
 freelanceplaza.fpbackendinvoiceservice.service.impl.InvoiceGenerationService ..o freelanceplaza.fpbackendinvoiceservice.repository.FreelancerRepository
@@ -926,7 +924,6 @@ freelanceplaza.fpbackendinvoiceservice.service.impl.MediaReplacedElementFactory 
 freelanceplaza.fpbackendinvoiceservice.service.impl.MediaReplacedElementFactory ..o com.lowagie.text.Image
 freelanceplaza.fpbackendinvoiceservice.service.impl.MediaReplacedElementFactory ..o org.xhtmlrenderer.pdf.ITextImageElement
 freelanceplaza.fpbackendinvoiceservice.service.impl.MediaReplacedElementFactory ..o org.xhtmlrenderer.simple.extend.FormSubmissionListener
-freelanceplaza.fpbackendinvoiceservice.service.impl.MediaReplacedElementFactory ..o org.apache.commons.io.IOUtils
 freelanceplaza.fpbackendinvoiceservice.service.impl.MediaReplacedElementFactory ..o org.w3c.dom.Element
 freelanceplaza.fpbackendinvoiceservice.service.impl.MediaReplacedElementFactory ..o org.xhtmlrenderer.extend.ReplacedElement
 freelanceplaza.fpbackendinvoiceservice.service.impl.MediaReplacedElementFactory ..o org.xhtmlrenderer.extend.ReplacedElementFactory
@@ -937,7 +934,6 @@ freelanceplaza.fpbackendinvoiceservice.service.impl.MediaReplacedElementFactory 
 freelanceplaza.fpbackendinvoiceservice.service.impl.MediaReplacedElementFactory ..o org.xhtmlrenderer.pdf.ITextFSImage
 
 ' freelanceplaza.fpbackendinvoiceservice.controller.InternalController
-freelanceplaza.fpbackendinvoiceservice.controller.InternalController ..o org.apache.tomcat.util.http.fileupload.FileUtils
 freelanceplaza.fpbackendinvoiceservice.controller.InternalController ..o freelanceplaza.fpbackendinvoiceservice.service.impl.InvoiceGenerationService
 freelanceplaza.fpbackendinvoiceservice.controller.InternalController ..o freelanceplaza.fpbackendinvoiceservice.exceptions.InvoiceGenerationException
 

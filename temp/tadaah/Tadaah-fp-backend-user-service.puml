@@ -6,7 +6,7 @@
 ' Path            : [/Users/paolo/Work/Tadaah/fp-backend-user-service/build/classes/java/main]
 ' Java Files Path : [/Users/paolo/Work/Tadaah/fp-backend-user-service/src/main/java/]
 ' Configuration   : [/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/config.json]
-' Generated at    : Fri Jan 17 14:59:08 CET 2025
+' Generated at    : Fri Jan 17 20:03:27 CET 2025
 '
 '   Stat infos    :
 '       Files : [360]
@@ -1423,7 +1423,6 @@ freelanceplaza.fpbackenduserservice.entities.Freelancer$FreelancerBuilder ..> fr
 freelanceplaza.fpbackenduserservice.entities.Freelancer$FreelancerBuilder ..> freelanceplaza.fpbackenduserservice.entities.User$UserBuilder
 freelanceplaza.fpbackenduserservice.dto.LocationGroupDtoResponse ..> freelanceplaza.fpbackenduserservice.dto.LocationGroupDtoResponse
 freelanceplaza.fpbackenduserservice.httpclient.hiringservice.HiringApiPort$1 ..> freelanceplaza.fpbackenduserservice.httpclient.hiringservice.HiringApiPort
-freelanceplaza.fpbackenduserservice.httpclient.authproxy.AuthProxyPort$RetryHandler ..> org.apache.http.protocol.HttpContext
 freelanceplaza.fpbackenduserservice.dto.hiring.FreelancerInfo ..> freelanceplaza.fpbackenduserservice.dto.hiring.FreelancerInfo$FreelancerInfoBuilder
 freelanceplaza.fpbackenduserservice.dto.hiring.FreelancerInfo ..> freelanceplaza.fpbackenduserservice.entities.enums.DateOfBirthSource
 freelanceplaza.fpbackenduserservice.dto.hiring.FreelancerInfo ..> freelanceplaza.fpbackenduserservice.dto.hiring.FreelancerInfo
@@ -2219,8 +2218,6 @@ freelanceplaza.fpbackenduserservice.httpclient.authproxy.AuthProxyPort ..> com.f
 freelanceplaza.fpbackenduserservice.httpclient.authproxy.AuthProxyPort ..> com.freelanceplaza.commons.fphttpclient.authproxy.requests.AssignIdRequest
 freelanceplaza.fpbackenduserservice.httpclient.authproxy.AuthProxyPort ..> com.freelanceplaza.commons.fphttpclient.authproxy.requests.CreateOrganizationRequest
 freelanceplaza.fpbackenduserservice.httpclient.authproxy.AuthProxyPort ..> com.freelanceplaza.commons.fphttpclient.authproxy.requests.CreateOrganizationUserRequest
-freelanceplaza.fpbackenduserservice.httpclient.authproxy.AuthProxyPort ..> org.apache.http.client.methods.HttpRequestBase
-freelanceplaza.fpbackenduserservice.httpclient.authproxy.AuthProxyPort ..> org.apache.http.impl.client.CloseableHttpClient
 freelanceplaza.fpbackenduserservice.dto.dictionary.FunctionCategoryDto$FunctionCategoryDtoBuilderImpl ..> freelanceplaza.fpbackenduserservice.dto.dictionary.FunctionCategoryDto$FunctionCategoryDtoBuilderImpl
 freelanceplaza.fpbackenduserservice.dto.dictionary.FunctionCategoryDto$FunctionCategoryDtoBuilderImpl ..> freelanceplaza.fpbackenduserservice.dto.dictionary.FunctionCategoryDto
 freelanceplaza.fpbackenduserservice.dto.dictionary.FunctionCategoryDto$FunctionCategoryDtoBuilderImpl ..> freelanceplaza.fpbackenduserservice.dto.dictionary.FunctionCategoryDto$FunctionCategoryDtoBuilder
@@ -2264,9 +2261,7 @@ freelanceplaza.fpbackenduserservice.configs.QueryDslConfig ..> com.querydsl.jpa.
 ' freelanceplaza.fpbackenduserservice.entities.QUserEmailVerification
 
 ' freelanceplaza.fpbackenduserservice.exceptions.GlobalExceptionHandler
-freelanceplaza.fpbackenduserservice.exceptions.GlobalExceptionHandler ..o org.apache.commons.lang3.StringUtils
 freelanceplaza.fpbackenduserservice.exceptions.GlobalExceptionHandler ..o freelanceplaza.fpbackenduserservice.validation.JsonFieldErrors
-freelanceplaza.fpbackenduserservice.exceptions.GlobalExceptionHandler ..o org.apache.logging.log4j.util.Strings
 
 ' freelanceplaza.fpbackenduserservice.usersync.UserSyncException
 
@@ -2781,7 +2776,6 @@ freelanceplaza.fpbackenduserservice.controllers.M2mController ..o freelanceplaza
 
 ' freelanceplaza.fpbackenduserservice.util.UserUtils
 freelanceplaza.fpbackenduserservice.util.UserUtils ..o freelanceplaza.fpbackenduserservice.entities.User
-freelanceplaza.fpbackenduserservice.util.UserUtils ..o org.apache.commons.lang3.StringUtils
 
 ' freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusionsHistory$FreelancerLocationExclusionsHistoryBuilder
 
@@ -2875,7 +2869,6 @@ freelanceplaza.fpbackenduserservice.mappers.LocationMapper ..o freelanceplaza.fp
 ' freelanceplaza.fpbackenduserservice.services.impl.FpFreelancerService
 freelanceplaza.fpbackenduserservice.services.impl.FpFreelancerService ..o freelanceplaza.fpbackenduserservice.exceptions.EntityNotFoundException
 freelanceplaza.fpbackenduserservice.services.impl.FpFreelancerService ..o freelanceplaza.fpbackenduserservice.mappers.AddressMapper
-freelanceplaza.fpbackenduserservice.services.impl.FpFreelancerService ..o org.apache.commons.lang3.StringUtils
 freelanceplaza.fpbackenduserservice.services.impl.FpFreelancerService ..o freelanceplaza.fpbackenduserservice.dto.hiring.FreelancerInfo
 freelanceplaza.fpbackenduserservice.services.impl.FpFreelancerService ..o freelanceplaza.fpbackenduserservice.usersync.UserSyncService
 freelanceplaza.fpbackenduserservice.services.impl.FpFreelancerService ..o freelanceplaza.fpbackenduserservice.services.FreelancerService
@@ -2904,7 +2897,6 @@ freelanceplaza.fpbackenduserservice.services.impl.FpFreelancerService ..o com.qu
 ' freelanceplaza.fpbackenduserservice.dto.CustomPredicate
 freelanceplaza.fpbackenduserservice.dto.CustomPredicate ..o com.querydsl.core.types.ExpressionUtils
 freelanceplaza.fpbackenduserservice.dto.CustomPredicate ..o com.querydsl.core.types.Predicate
-freelanceplaza.fpbackenduserservice.dto.CustomPredicate ..o org.apache.commons.lang3.StringUtils
 
 ' freelanceplaza.fpbackenduserservice.dto.documents.CertificateTypeInfo$CertificateTypeInfoBuilder
 
@@ -3020,7 +3012,6 @@ freelanceplaza.fpbackenduserservice.dto.documents.DeleteDocumentDto ..o freelanc
 
 ' freelanceplaza.fpbackenduserservice.validation.email.EmailConfirmationValidator
 freelanceplaza.fpbackenduserservice.validation.email.EmailConfirmationValidator ..o freelanceplaza.fpbackenduserservice.configs.security.SecurityUtils
-freelanceplaza.fpbackenduserservice.validation.email.EmailConfirmationValidator ..o org.apache.commons.lang3.StringUtils
 
 ' freelanceplaza.fpbackenduserservice.entities.enums.AddressType
 
@@ -3087,7 +3078,6 @@ freelanceplaza.fpbackenduserservice.entities.BaseUserEmail ..o freelanceplaza.fp
 ' freelanceplaza.fpbackenduserservice.validation.bsn.BsnRequestValidator
 freelanceplaza.fpbackenduserservice.validation.bsn.BsnRequestValidator ..o freelanceplaza.fpbackenduserservice.validation.ValidationError
 freelanceplaza.fpbackenduserservice.validation.bsn.BsnRequestValidator ..o freelanceplaza.fpbackenduserservice.validation.CommonJsonErrorValidator
-freelanceplaza.fpbackenduserservice.validation.bsn.BsnRequestValidator ..o org.apache.commons.lang3.StringUtils
 
 ' freelanceplaza.fpbackenduserservice.controllers.LocationController
 
@@ -3136,7 +3126,6 @@ freelanceplaza.fpbackenduserservice.services.impl.FileUploadServiceImpl ..o free
 freelanceplaza.fpbackenduserservice.services.impl.FileUploadServiceImpl ..o freelanceplaza.fpbackenduserservice.services.FileUploadService
 freelanceplaza.fpbackenduserservice.services.impl.FileUploadServiceImpl ..o freelanceplaza.fpbackenduserservice.configs.aws.S3Config
 freelanceplaza.fpbackenduserservice.services.impl.FileUploadServiceImpl ..o freelanceplaza.fpbackenduserservice.services.validators.DocumentValidator
-freelanceplaza.fpbackenduserservice.services.impl.FileUploadServiceImpl ..o org.apache.commons.io.FilenameUtils
 
 ' freelanceplaza.fpbackenduserservice.services.validators.DocumentValidatorImpl
 freelanceplaza.fpbackenduserservice.services.validators.DocumentValidatorImpl ..o freelanceplaza.fpbackenduserservice.entities.enums.FileType

@@ -6,7 +6,7 @@
 ' Path            : [/Users/paolo/Work/Tadaah/fp-backend-documents-service/build/classes/java/main]
 ' Java Files Path : [/Users/paolo/Work/Tadaah/fp-backend-documents-service/src/main/java/]
 ' Configuration   : [/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/config.json]
-' Generated at    : Fri Jan 17 14:59:06 CET 2025
+' Generated at    : Fri Jan 17 20:03:25 CET 2025
 '
 '   Stat infos    :
 '       Files : [234]
@@ -456,7 +456,6 @@ com.freelanceplaza.documents.usecase.LanguageLevelDocumentTypeRuleUseCase --> co
 com.freelanceplaza.documents.usecase.LanguageLevelDocumentTypeRuleUseCase --> com.freelanceplaza.documents.repository.BaseDictionaryRepository
 com.freelanceplaza.documents.usecase.LanguageLevelDocumentTypeRuleUseCase --> com.freelanceplaza.documents.repository.LanguageLevelRepository
 com.freelanceplaza.documents.usecase.LanguageLevelDocumentTypeRuleUseCase --> com.freelanceplaza.documents.repository.LanguageLevelDocumentTypeRuleRepository
-com.freelanceplaza.documents.utils.CsvValidationTaskChange --> liquibase.resource.ResourceAccessor
 com.freelanceplaza.documents.sync.document.owner.FreelancerDocumentsSyncService --> com.freelanceplaza.documents.repository.DocumentRepository
 com.freelanceplaza.documents.sync.document.owner.FreelancerDocumentsSyncService --> com.freelanceplaza.documents.sync.document.DocumentTypeSyncMapper
 com.freelanceplaza.documents.sync.document.owner.FreelancerDocumentsSyncService --> com.freelanceplaza.documents.sync.document.owner.FreelancerDocumentsSyncPublisher
@@ -606,7 +605,6 @@ com.freelanceplaza.documents.dto.DocumentDto$DocumentDtoBuilder --> com.freelanc
 com.freelanceplaza.documents.dto.DocumentDto$DocumentDtoBuilder --> com.freelanceplaza.documents.dto.UserDto
 com.freelanceplaza.documents.dto.DocumentDto$DocumentDtoBuilder --> com.freelanceplaza.documents.dto.UserDto
 com.freelanceplaza.documents.dto.DocumentDto$DocumentDtoBuilder --> com.freelanceplaza.documents.entity.enums.QualificationType
-com.freelanceplaza.documents.utils.CsvMigrationTaskChange --> liquibase.resource.ResourceAccessor
 com.freelanceplaza.documents.dto.DocumentOwnerDto --> com.freelanceplaza.documents.entity.enums.OwnerType
 com.freelanceplaza.documents.config.security.AuthConfiguration --> com.freelanceplaza.commons.fpauthentication.config.AudienceConfig
 com.freelanceplaza.documents.config.security.AuthConfiguration --> com.freelanceplaza.commons.fpauthentication.config.AuthDecoderConfig
@@ -754,9 +752,6 @@ com.freelanceplaza.documents.usecase.LanguageLevelDocumentTypeRuleUseCase ..> co
 com.freelanceplaza.documents.dto.DocumentTypeDto$DocumentTypeDtoBuilderImpl ..> com.freelanceplaza.documents.dto.DocumentTypeDto$DocumentTypeDtoBuilderImpl
 com.freelanceplaza.documents.dto.DocumentTypeDto$DocumentTypeDtoBuilderImpl ..> com.freelanceplaza.documents.dto.DocumentTypeDto
 com.freelanceplaza.documents.dto.DocumentTypeDto$DocumentTypeDtoBuilderImpl ..> com.freelanceplaza.documents.dto.DocumentTypeDto$DocumentTypeDtoBuilder
-com.freelanceplaza.documents.utils.CsvValidationTaskChange ..> liquibase.resource.ResourceAccessor
-com.freelanceplaza.documents.utils.CsvValidationTaskChange ..> liquibase.database.Database
-com.freelanceplaza.documents.utils.CsvValidationTaskChange ..> liquibase.exception.ValidationErrors
 com.freelanceplaza.documents.utils.CsvValidationTaskChange ..> com.freelanceplaza.documents.utils.CsvValidationTaskChange
 com.freelanceplaza.documents.entity.document.type.DiplomaDocumentType$DiplomaDocumentTypeBuilderImpl ..> com.freelanceplaza.documents.entity.document.type.DiplomaDocumentType$DiplomaDocumentTypeBuilderImpl
 com.freelanceplaza.documents.entity.document.type.DiplomaDocumentType$DiplomaDocumentTypeBuilderImpl ..> com.freelanceplaza.documents.entity.document.type.DiplomaDocumentType
@@ -1184,13 +1179,9 @@ com.freelanceplaza.documents.dto.DocumentDto$DocumentDtoBuilder ..> com.freelanc
 com.freelanceplaza.documents.dto.DocumentDto$DocumentDtoBuilder ..> com.freelanceplaza.documents.dto.UserDto
 com.freelanceplaza.documents.dto.DocumentDto$DocumentDtoBuilder ..> com.freelanceplaza.documents.entity.enums.QualificationType
 com.freelanceplaza.documents.dto.DocumentDto$DocumentDtoBuilder ..> com.freelanceplaza.documents.dto.DocumentDto
-com.freelanceplaza.documents.utils.CsvMigrationTaskChange ..> liquibase.database.Database
-com.freelanceplaza.documents.utils.CsvMigrationTaskChange ..> liquibase.resource.ResourceAccessor
-com.freelanceplaza.documents.utils.CsvMigrationTaskChange ..> liquibase.exception.ValidationErrors
 com.freelanceplaza.documents.utils.CsvMigrationTaskChange ..> com.freelanceplaza.documents.utils.CsvMigrationTaskChange$StatementParam
 com.freelanceplaza.documents.utils.CsvMigrationTaskChange ..> com.freelanceplaza.documents.utils.CsvMigrationTaskChange$ForeignKey
 com.freelanceplaza.documents.utils.CsvMigrationTaskChange ..> com.freelanceplaza.documents.utils.model.Pair
-com.freelanceplaza.documents.utils.CsvMigrationTaskChange ..> liquibase.executor.jvm.JdbcExecutor
 com.freelanceplaza.documents.utils.CsvMigrationTaskChange ..> com.freelanceplaza.documents.utils.CsvMigrationTaskChange
 com.freelanceplaza.documents.mapper.UniqueDocumentMapper ..> com.freelanceplaza.documents.mapper.DocumentAttachmentMapper
 com.freelanceplaza.documents.mapper.UniqueDocumentMapper ..> com.freelanceplaza.documents.mapper.DocumentOwnerMapper
@@ -1478,12 +1469,6 @@ com.freelanceplaza.documents.usecase.LanguageLevelDocumentTypeRuleUseCase ..o co
 ' com.freelanceplaza.documents.dto.DocumentTypeDto$DocumentTypeDtoBuilderImpl
 
 ' com.freelanceplaza.documents.utils.CsvValidationTaskChange
-com.freelanceplaza.documents.utils.CsvValidationTaskChange ..o liquibase.change.custom.CustomTaskChange
-com.freelanceplaza.documents.utils.CsvValidationTaskChange ..o liquibase.database.Database
-com.freelanceplaza.documents.utils.CsvValidationTaskChange ..o liquibase.exception.CustomChangeException
-com.freelanceplaza.documents.utils.CsvValidationTaskChange ..o liquibase.exception.SetupException
-com.freelanceplaza.documents.utils.CsvValidationTaskChange ..o liquibase.exception.ValidationErrors
-com.freelanceplaza.documents.utils.CsvValidationTaskChange ..o liquibase.resource.ResourceAccessor
 
 ' com.freelanceplaza.documents.repository.QualificationHistoryRepository
 com.freelanceplaza.documents.repository.QualificationHistoryRepository ..o com.freelanceplaza.documents.entity.QualificationHistory
@@ -1504,7 +1489,6 @@ com.freelanceplaza.documents.mapper.DocumentOwnerMapper ..o com.freelanceplaza.d
 
 ' com.freelanceplaza.documents.utils.UserUtils
 com.freelanceplaza.documents.utils.UserUtils ..o com.freelanceplaza.documents.entity.User
-com.freelanceplaza.documents.utils.UserUtils ..o org.apache.commons.lang3.StringUtils
 
 ' com.freelanceplaza.documents.entity.FreelancerDocumentLanguageLevelProof
 
@@ -1513,7 +1497,6 @@ com.freelanceplaza.documents.utils.UserUtils ..o org.apache.commons.lang3.String
 ' com.freelanceplaza.documents.entity.dictionary.Function
 
 ' com.freelanceplaza.documents.config.security.SecurityUtils
-com.freelanceplaza.documents.config.security.SecurityUtils ..o org.apache.commons.lang3.StringUtils
 
 ' com.freelanceplaza.documents.dto.OrganizationDtoFullResponse
 com.freelanceplaza.documents.dto.OrganizationDtoFullResponse ..o com.freelanceplaza.documents.entity.enums.Status
@@ -1986,18 +1969,7 @@ com.freelanceplaza.documents.service.impl.DiplomaDocumentTypeServiceImpl ..o com
 ' com.freelanceplaza.documents.dto.DocumentDto$DocumentDtoBuilder
 
 ' com.freelanceplaza.documents.utils.CsvMigrationTaskChange
-com.freelanceplaza.documents.utils.CsvMigrationTaskChange ..o liquibase.exception.CustomChangeException
-com.freelanceplaza.documents.utils.CsvMigrationTaskChange ..o liquibase.exception.SetupException
-com.freelanceplaza.documents.utils.CsvMigrationTaskChange ..o org.apache.commons.lang3.StringUtils
-com.freelanceplaza.documents.utils.CsvMigrationTaskChange ..o liquibase.exception.ValidationErrors
-com.freelanceplaza.documents.utils.CsvMigrationTaskChange ..o liquibase.statement.SqlStatement
-com.freelanceplaza.documents.utils.CsvMigrationTaskChange ..o liquibase.executor.jvm.JdbcExecutor
-com.freelanceplaza.documents.utils.CsvMigrationTaskChange ..o liquibase.change.custom.CustomTaskChange
-com.freelanceplaza.documents.utils.CsvMigrationTaskChange ..o liquibase.exception.DatabaseException
-com.freelanceplaza.documents.utils.CsvMigrationTaskChange ..o liquibase.database.Database
 com.freelanceplaza.documents.utils.CsvMigrationTaskChange ..o com.freelanceplaza.documents.utils.model.Pair
-com.freelanceplaza.documents.utils.CsvMigrationTaskChange ..o liquibase.resource.ResourceAccessor
-com.freelanceplaza.documents.utils.CsvMigrationTaskChange ..o liquibase.statement.core.RawSqlStatement
 
 ' com.freelanceplaza.documents.mapper.UniqueDocumentMapper
 com.freelanceplaza.documents.mapper.UniqueDocumentMapper ..o com.freelanceplaza.documents.dto.DocumentDto

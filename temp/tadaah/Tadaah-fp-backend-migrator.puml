@@ -6,7 +6,7 @@
 ' Path            : [/Users/paolo/Work/Tadaah/fp-backend-migrator/build/classes/java/main]
 ' Java Files Path : [/Users/paolo/Work/Tadaah/fp-backend-migrator/src/main/java/]
 ' Configuration   : [/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/config.json]
-' Generated at    : Fri Jan 17 14:59:07 CET 2025
+' Generated at    : Fri Jan 17 20:03:26 CET 2025
 '
 '   Stat infos    :
 '       Files : [615]
@@ -2510,7 +2510,6 @@ com.freelanceplaza.fpdbmigration.migration.fpinvoice.FpInvoiceHsDataMigration ..
 com.freelanceplaza.fpdbmigration.migration.fpinvoice.FpInvoiceHsDataMigration ..> com.freelanceplaza.fpdbmigration.db.fphiring.entities.HireApprovalThin
 com.freelanceplaza.fpdbmigration.Utils ..> com.freelanceplaza.fpdbmigration.Utils$Location
 com.freelanceplaza.fpdbmigration.Utils ..> com.freelanceplaza.fpdbmigration.db.common.UserType
-com.freelanceplaza.fpdbmigration.Utils ..> org.apache.commons.lang3.time.StopWatch
 com.freelanceplaza.fpdbmigration.Utils ..> com.freelanceplaza.fpdbmigration.db.fpuser.repositories.OrganizationUserRepository
 com.freelanceplaza.fpdbmigration.db.fpdoc.entity.dictionary.BaseDictionary ..> com.freelanceplaza.fpdbmigration.db.fpdoc.entity.dictionary.DictionaryType
 com.freelanceplaza.fpdbmigration.db.fpdoc.entity.dictionary.BaseDictionary ..> com.freelanceplaza.fpdbmigration.db.fpdoc.entity.dictionary.BaseDictionary
@@ -2949,7 +2948,6 @@ com.freelanceplaza.fpdbmigration.db.fplogs.entities.Migration ..o com.freelancep
 com.freelanceplaza.fpdbmigration.migration.fpuser.auth0.Auth0Service ..o com.freelanceplaza.fpdbmigration.migration.fpuser.auth0.dto.CreateOrganizationUserRequest
 com.freelanceplaza.fpdbmigration.migration.fpuser.auth0.Auth0Service ..o com.freelanceplaza.fpdbmigration.Utils
 com.freelanceplaza.fpdbmigration.migration.fpuser.auth0.Auth0Service ..o com.freelanceplaza.fpdbmigration.db.common.UserType
-com.freelanceplaza.fpdbmigration.migration.fpuser.auth0.Auth0Service ..o org.apache.commons.lang3.StringUtils
 com.freelanceplaza.fpdbmigration.migration.fpuser.auth0.Auth0Service ..o com.freelanceplaza.fpdbmigration.exception.MigrationException
 com.freelanceplaza.fpdbmigration.migration.fpuser.auth0.Auth0Service ..o com.freelanceplaza.fpdbmigration.db.fpuser.entities.Freelancer
 com.freelanceplaza.fpdbmigration.migration.fpuser.auth0.Auth0Service ..o com.mashape.unirest.http.HttpResponse
@@ -2987,7 +2985,6 @@ com.freelanceplaza.fpdbmigration.db.tadaah.repository.TdRegisterFreelancerSector
 com.freelanceplaza.fpdbmigration.db.fpinvoice.entity.Customer ..o com.freelanceplaza.fpdbmigration.db.fpinvoice.MemberType
 
 ' com.freelanceplaza.fpdbmigration.db.fpuser.entities.User
-com.freelanceplaza.fpdbmigration.db.fpuser.entities.User ..o org.apache.commons.lang3.StringUtils
 
 ' com.freelanceplaza.fpdbmigration.db.tadaah.entity.TdDjangoContentType
 
@@ -3313,7 +3310,6 @@ com.freelanceplaza.fpdbmigration.db.fpuser.entities.FavoriteLocationFreelancerHi
 
 ' com.freelanceplaza.fpdbmigration.migration.fpuser.auth0.FpAuth0MigrationService
 com.freelanceplaza.fpdbmigration.migration.fpuser.auth0.FpAuth0MigrationService ..o com.freelanceplaza.fpdbmigration.Utils
-com.freelanceplaza.fpdbmigration.migration.fpuser.auth0.FpAuth0MigrationService ..o org.apache.commons.lang3.time.StopWatch
 com.freelanceplaza.fpdbmigration.migration.fpuser.auth0.FpAuth0MigrationService ..o com.freelanceplaza.fpdbmigration.db.common.UserType
 com.freelanceplaza.fpdbmigration.migration.fpuser.auth0.FpAuth0MigrationService ..o com.freelanceplaza.fpdbmigration.configuration.MigrationProperties
 com.freelanceplaza.fpdbmigration.migration.fpuser.auth0.FpAuth0MigrationService ..o  java.util.Optional.ofNullable
@@ -3498,7 +3494,6 @@ com.freelanceplaza.fpdbmigration.db.tadaah.repository.TdAuthGroupRepository ..o 
 ' com.freelanceplaza.fpdbmigration.migration.fphiring.FpHiringUsDataMigrator
 com.freelanceplaza.fpdbmigration.migration.fphiring.FpHiringUsDataMigrator ..o com.freelanceplaza.fpdbmigration.db.fphiring.repository.HirOrganizationRepository
 com.freelanceplaza.fpdbmigration.migration.fphiring.FpHiringUsDataMigrator ..o com.freelanceplaza.fpdbmigration.db.fphiring.entities.HirUser
-com.freelanceplaza.fpdbmigration.migration.fphiring.FpHiringUsDataMigrator ..o org.apache.commons.lang3.time.StopWatch
 com.freelanceplaza.fpdbmigration.migration.fphiring.FpHiringUsDataMigrator ..o com.freelanceplaza.fpdbmigration.db.fphiring.repository.HirUserRepository
 com.freelanceplaza.fpdbmigration.migration.fphiring.FpHiringUsDataMigrator ..o com.freelanceplaza.fpdbmigration.db.fphiring.entities.HirOrganization
 com.freelanceplaza.fpdbmigration.migration.fphiring.FpHiringUsDataMigrator ..o com.freelanceplaza.fpdbmigration.migration.Migrator
@@ -3762,7 +3757,6 @@ com.freelanceplaza.fpdbmigration.db.tadaah.repository.TdSilkResponseRepository .
 com.freelanceplaza.fpdbmigration.service.RequestProcessor ..o com.freelanceplaza.fpdbmigration.db.fplogs.MigrationStatus
 com.freelanceplaza.fpdbmigration.service.RequestProcessor ..o com.freelanceplaza.fpdbmigration.Utils
 com.freelanceplaza.fpdbmigration.service.RequestProcessor ..o com.freelanceplaza.fpdbmigration.service.stats.MigratorStatus
-com.freelanceplaza.fpdbmigration.service.RequestProcessor ..o org.apache.commons.lang3.time.StopWatch
 com.freelanceplaza.fpdbmigration.service.RequestProcessor ..o com.freelanceplaza.fpdbmigration.migration.Migrator
 com.freelanceplaza.fpdbmigration.service.RequestProcessor ..o com.freelanceplaza.fpdbmigration.service.stats.StatsManager
 com.freelanceplaza.fpdbmigration.service.RequestProcessor ..o com.freelanceplaza.fpdbmigration.exception.MigratorIsBusyException
@@ -4141,7 +4135,6 @@ com.freelanceplaza.fpdbmigration.migration.fpnotification.FpNotificationServiceU
 com.freelanceplaza.fpdbmigration.migration.fpnotification.FpNotificationServiceUserServiceMigration ..o com.freelanceplaza.fpdbmigration.service.stats.StatsManager
 com.freelanceplaza.fpdbmigration.migration.fpnotification.FpNotificationServiceUserServiceMigration ..o com.freelanceplaza.fpdbmigration.db.fpnotification.enums.SubscriptionStatus
 com.freelanceplaza.fpdbmigration.migration.fpnotification.FpNotificationServiceUserServiceMigration ..o com.freelanceplaza.fpdbmigration.db.fpuser.repositories.FreelancerRepository
-com.freelanceplaza.fpdbmigration.migration.fpnotification.FpNotificationServiceUserServiceMigration ..o org.apache.commons.collections4.ListUtils
 com.freelanceplaza.fpdbmigration.migration.fpnotification.FpNotificationServiceUserServiceMigration ..o com.freelanceplaza.fpdbmigration.db.fpuser.entities.User
 com.freelanceplaza.fpdbmigration.migration.fpnotification.FpNotificationServiceUserServiceMigration ..o com.freelanceplaza.fpdbmigration.db.fpuser.entities.enums.Status
 com.freelanceplaza.fpdbmigration.migration.fpnotification.FpNotificationServiceUserServiceMigration ..o com.freelanceplaza.fpdbmigration.db.fpnotification.enums.RecipientType
@@ -4329,19 +4322,16 @@ com.freelanceplaza.fpdbmigration.migration.fphiring.FpHiringShiftMigrator ..o co
 com.freelanceplaza.fpdbmigration.migration.fphiring.FpHiringShiftMigrator ..o com.freelanceplaza.fpdbmigration.exception.MissingRequiredPropertyException
 com.freelanceplaza.fpdbmigration.migration.fphiring.FpHiringShiftMigrator ..o com.freelanceplaza.fpdbmigration.db.fplogs.entities.SkippedEntity
 com.freelanceplaza.fpdbmigration.migration.fphiring.FpHiringShiftMigrator ..o com.freelanceplaza.fpdbmigration.db.fpuser.entities.Location
-com.freelanceplaza.fpdbmigration.migration.fphiring.FpHiringShiftMigrator ..o org.apache.commons.lang3.StringUtils
 com.freelanceplaza.fpdbmigration.migration.fphiring.FpHiringShiftMigrator ..o com.freelanceplaza.fpdbmigration.db.fplogs.entities.EntityType
 com.freelanceplaza.fpdbmigration.migration.fphiring.FpHiringShiftMigrator ..o com.freelanceplaza.fpdbmigration.configuration.MigrationProperties
 com.freelanceplaza.fpdbmigration.migration.fphiring.FpHiringShiftMigrator ..o com.freelanceplaza.fpdbmigration.db.fpuser.entities.Freelancer
 com.freelanceplaza.fpdbmigration.migration.fphiring.FpHiringShiftMigrator ..o com.freelanceplaza.fpdbmigration.migration.RunnerUtils
 com.freelanceplaza.fpdbmigration.migration.fphiring.FpHiringShiftMigrator ..o com.freelanceplaza.fpdbmigration.service.stats.StatsManager
-com.freelanceplaza.fpdbmigration.migration.fphiring.FpHiringShiftMigrator ..o org.apache.commons.lang3.time.StopWatch
 com.freelanceplaza.fpdbmigration.migration.fphiring.FpHiringShiftMigrator ..o com.freelanceplaza.fpdbmigration.exception.MigrationException
 com.freelanceplaza.fpdbmigration.migration.fphiring.FpHiringShiftMigrator ..o com.freelanceplaza.fpdbmigration.migration.Migrator
 com.freelanceplaza.fpdbmigration.migration.fphiring.FpHiringShiftMigrator ..o org.jetbrains.annotations.Nullable
 com.freelanceplaza.fpdbmigration.migration.fphiring.FpHiringShiftMigrator ..o com.freelanceplaza.fpdbmigration.configuration.datasource.DsConstants
 com.freelanceplaza.fpdbmigration.migration.fphiring.FpHiringShiftMigrator ..o org.jetbrains.annotations.NotNull
-com.freelanceplaza.fpdbmigration.migration.fphiring.FpHiringShiftMigrator ..o org.apache.commons.lang3.NotImplementedException
 com.freelanceplaza.fpdbmigration.migration.fphiring.FpHiringShiftMigrator ..o com.freelanceplaza.fpdbmigration.migration.fpdocument.importers.FunctionImporter
 com.freelanceplaza.fpdbmigration.migration.fphiring.FpHiringShiftMigrator ..o com.freelanceplaza.fpdbmigration.db.fpdoc.entity.dictionary.DocFunction
 com.freelanceplaza.fpdbmigration.migration.fphiring.FpHiringShiftMigrator ..o com.freelanceplaza.fpdbmigration.db.fpuser.entities.LocationGroup
@@ -4369,7 +4359,6 @@ com.freelanceplaza.fpdbmigration.migration.fpuser.organization.FpOrganisationMig
 com.freelanceplaza.fpdbmigration.migration.fpuser.organization.FpOrganisationMigrator ..o com.freelanceplaza.fpdbmigration.Utils
 com.freelanceplaza.fpdbmigration.migration.fpuser.organization.FpOrganisationMigrator ..o com.freelanceplaza.fpdbmigration.db.tadaah.repository.TdRegisterOrganisationRepository
 com.freelanceplaza.fpdbmigration.migration.fpuser.organization.FpOrganisationMigrator ..o com.freelanceplaza.fpdbmigration.service.kvk.v2.KvkSearchServiceV2
-com.freelanceplaza.fpdbmigration.migration.fpuser.organization.FpOrganisationMigrator ..o org.apache.commons.lang3.StringUtils
 com.freelanceplaza.fpdbmigration.migration.fpuser.organization.FpOrganisationMigrator ..o com.freelanceplaza.fpdbmigration.configuration.MigrationProperties
 com.freelanceplaza.fpdbmigration.migration.fpuser.organization.FpOrganisationMigrator ..o com.freelanceplaza.fpdbmigration.migration.RunnerUtils
 com.freelanceplaza.fpdbmigration.migration.fpuser.organization.FpOrganisationMigrator ..o com.freelanceplaza.fpdbmigration.service.stats.StatsManager
@@ -4482,7 +4471,6 @@ com.freelanceplaza.fpdbmigration.migration.fpuser.s3.FpUserS3Migration ..o com.f
 com.freelanceplaza.fpdbmigration.migration.fpuser.s3.FpUserS3Migration ..o com.freelanceplaza.fpdbmigration.db.fpuser.entities.enums.FileType
 com.freelanceplaza.fpdbmigration.migration.fpuser.s3.FpUserS3Migration ..o com.freelanceplaza.fpdbmigration.db.fpuser.entities.User
 com.freelanceplaza.fpdbmigration.migration.fpuser.s3.FpUserS3Migration ..o com.freelanceplaza.fpdbmigration.db.fplogs.entities.MigrationError
-com.freelanceplaza.fpdbmigration.migration.fpuser.s3.FpUserS3Migration ..o org.apache.commons.io.FilenameUtils
 
 ' com.freelanceplaza.fpdbmigration.db.tadaah.repository.TdRegisterOrganisationBlacklistedRepository
 
