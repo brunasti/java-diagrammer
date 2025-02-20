@@ -1,0 +1,192 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+' GENERATE CLASS DIAGRAM ===========
+' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
+' Path            : [/Users/paolo/Work/Tadaah/fp-backend-payment-service/build/classes/java/main/com/freelanceplaza/payment/entities]
+' Java Files Path : [/Users/paolo/Work/Tadaah/fp-backend-payment-service/src/main/java/com/freelanceplaza/payment/entities/]
+' Configuration   : [/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/config.json]
+' Generated at    : Thu Feb 20 18:12:52 CET 2025
+'
+'   Stat infos    :
+'       Files : [20]
+'       Lines : [742]
+'     Classes : [20]
+'     Methods : [387]
+'      Fields : [181]
+
+
+
+' CLASSES =======
+class com.freelanceplaza.payment.entities.config.Config
+abstract com.freelanceplaza.payment.entities.Transaction
+class com.freelanceplaza.payment.entities.User
+class com.freelanceplaza.payment.entities.InvoiceBundle
+class com.freelanceplaza.payment.entities.OppAccount
+class com.freelanceplaza.payment.entities.OppTransaction
+class com.freelanceplaza.payment.entities.OppCompliance
+class com.freelanceplaza.payment.entities.Location
+class com.freelanceplaza.payment.entities.config.ConfigHistory
+class com.freelanceplaza.payment.entities.Organization
+class com.freelanceplaza.payment.entities.Invoice
+abstract com.freelanceplaza.payment.entities.PaymentAccount
+class com.freelanceplaza.payment.entities.OppDisapproval
+class com.freelanceplaza.payment.entities.DisapprovalReasonLabel
+class com.freelanceplaza.payment.entities.OppAccountDeduction
+class com.freelanceplaza.payment.entities.Product
+class com.freelanceplaza.payment.entities.OppRequirement
+class com.freelanceplaza.payment.entities.PaymentAssignment
+class com.freelanceplaza.payment.entities.config.ConfigHistory
+class com.freelanceplaza.payment.entities.config.Config
+
+' INHERITANCES =======
+com.freelanceplaza.payment.entities.PaymentAccount <|-- com.freelanceplaza.payment.entities.OppAccount
+com.freelanceplaza.payment.entities.Transaction <|-- com.freelanceplaza.payment.entities.OppTransaction
+
+' IMPLEMENT INTERFACE =======
+
+' FIELDS =======
+com.freelanceplaza.payment.entities.config.Config --> com.freelanceplaza.payment.enums.Units
+com.freelanceplaza.payment.entities.config.Config --> com.freelanceplaza.payment.enums.ConfigSource
+com.freelanceplaza.payment.entities.Transaction --> com.freelanceplaza.commons.fpcommons.enums.Currency
+com.freelanceplaza.payment.entities.Transaction --> com.freelanceplaza.payment.enums.PaymentMethod
+com.freelanceplaza.payment.entities.Transaction --> com.freelanceplaza.payment.enums.TransactionStatus
+com.freelanceplaza.payment.entities.Transaction --> com.freelanceplaza.payment.entities.Transaction
+com.freelanceplaza.payment.entities.Transaction --> com.freelanceplaza.payment.entities.PaymentAccount
+com.freelanceplaza.payment.entities.Transaction --> com.freelanceplaza.payment.entities.Organization
+com.freelanceplaza.payment.entities.Transaction --> com.freelanceplaza.payment.entities.PaymentAssignment
+com.freelanceplaza.payment.entities.User --> com.freelanceplaza.commons.fpcommons.sync.users.UserType
+com.freelanceplaza.payment.entities.OppAccount --> com.freelanceplaza.payment.enums.OppStatus
+com.freelanceplaza.payment.entities.OppAccount --> com.freelanceplaza.payment.enums.OppKycDeductionStatus
+com.freelanceplaza.payment.entities.OppAccount --> com.freelanceplaza.payment.entities.OppCompliance
+com.freelanceplaza.payment.entities.OppTransaction --> com.freelanceplaza.payment.enums.OppTransactionType
+com.freelanceplaza.payment.entities.OppTransaction --> com.freelanceplaza.payment.entities.OppAccountDeduction
+com.freelanceplaza.payment.entities.OppCompliance --> com.freelanceplaza.payment.enums.OppStatus
+com.freelanceplaza.payment.entities.OppCompliance --> com.freelanceplaza.payment.entities.OppAccount
+com.freelanceplaza.payment.entities.Location --> com.freelanceplaza.payment.entities.Organization
+com.freelanceplaza.payment.entities.config.ConfigHistory --> com.freelanceplaza.payment.entities.config.Config
+com.freelanceplaza.payment.entities.Organization --> com.freelanceplaza.commons.fpcommons.sync.organizations.OrganizationStatus
+com.freelanceplaza.payment.entities.Organization --> com.freelanceplaza.commons.fpcommons.sync.organizations.OrganizationType
+com.freelanceplaza.payment.entities.Invoice --> com.freelanceplaza.invoices.enums.MemberType
+com.freelanceplaza.payment.entities.Invoice --> com.freelanceplaza.invoices.enums.MemberType
+com.freelanceplaza.payment.entities.Invoice --> com.freelanceplaza.commons.fpcommons.enums.Currency
+com.freelanceplaza.payment.entities.Invoice --> com.freelanceplaza.payment.entities.InvoiceBundle
+com.freelanceplaza.payment.entities.PaymentAccount --> com.freelanceplaza.payment.entities.User
+com.freelanceplaza.payment.entities.PaymentAccount --> com.freelanceplaza.payment.enums.PaymentAccountStatus
+com.freelanceplaza.payment.entities.OppDisapproval --> com.freelanceplaza.payment.entities.OppRequirement
+com.freelanceplaza.payment.entities.OppAccountDeduction --> com.freelanceplaza.commons.fpcommons.enums.Currency
+com.freelanceplaza.payment.entities.OppAccountDeduction --> com.freelanceplaza.payment.entities.OppAccount
+com.freelanceplaza.payment.entities.OppAccountDeduction --> com.freelanceplaza.payment.entities.OppTransaction
+com.freelanceplaza.payment.entities.Product --> com.freelanceplaza.payment.enums.ProductType
+com.freelanceplaza.payment.entities.OppRequirement --> com.freelanceplaza.payment.enums.OppStatus
+com.freelanceplaza.payment.entities.OppRequirement --> com.freelanceplaza.payment.enums.OppStatus
+com.freelanceplaza.payment.entities.OppRequirement --> com.freelanceplaza.payment.entities.OppCompliance
+com.freelanceplaza.payment.entities.PaymentAssignment --> com.freelanceplaza.invoices.enums.PaymentAssignmentStatus
+com.freelanceplaza.payment.entities.PaymentAssignment --> com.freelanceplaza.commons.fpcommons.enums.Currency
+com.freelanceplaza.payment.entities.PaymentAssignment --> com.freelanceplaza.payment.entities.Transaction
+com.freelanceplaza.payment.entities.PaymentAssignment --> com.freelanceplaza.payment.entities.Organization
+com.freelanceplaza.payment.entities.config.ConfigHistory --> com.freelanceplaza.payment.entities.config.Config
+com.freelanceplaza.payment.entities.config.Config --> com.freelanceplaza.payment.enums.Units
+com.freelanceplaza.payment.entities.config.Config --> com.freelanceplaza.payment.enums.ConfigSource
+
+' USES =======
+com.freelanceplaza.payment.entities.config.Config ..> com.freelanceplaza.payment.enums.Units
+com.freelanceplaza.payment.entities.config.Config ..> com.freelanceplaza.payment.enums.ConfigSource
+com.freelanceplaza.payment.entities.config.Config ..> com.freelanceplaza.payment.entities.config.Config
+com.freelanceplaza.payment.entities.Transaction ..> com.freelanceplaza.commons.fpcommons.enums.Currency
+com.freelanceplaza.payment.entities.Transaction ..> com.freelanceplaza.payment.enums.PaymentMethod
+com.freelanceplaza.payment.entities.Transaction ..> com.freelanceplaza.payment.enums.TransactionStatus
+com.freelanceplaza.payment.entities.Transaction ..> com.freelanceplaza.payment.entities.Transaction
+com.freelanceplaza.payment.entities.Transaction ..> com.freelanceplaza.payment.entities.PaymentAccount
+com.freelanceplaza.payment.entities.Transaction ..> com.freelanceplaza.payment.entities.Organization
+com.freelanceplaza.payment.entities.Transaction ..> com.freelanceplaza.payment.entities.PaymentAssignment
+com.freelanceplaza.payment.entities.User ..> com.freelanceplaza.commons.fpcommons.sync.users.UserType
+com.freelanceplaza.payment.entities.User ..> com.freelanceplaza.payment.entities.User
+com.freelanceplaza.payment.entities.InvoiceBundle ..> com.freelanceplaza.payment.entities.InvoiceBundle
+com.freelanceplaza.payment.entities.OppAccount ..> com.freelanceplaza.payment.enums.OppStatus
+com.freelanceplaza.payment.entities.OppAccount ..> com.freelanceplaza.payment.enums.OppKycDeductionStatus
+com.freelanceplaza.payment.entities.OppAccount ..> com.freelanceplaza.payment.entities.OppCompliance
+com.freelanceplaza.payment.entities.OppAccount ..> com.freelanceplaza.payment.entities.OppAccount
+com.freelanceplaza.payment.entities.OppTransaction ..> com.freelanceplaza.payment.enums.OppTransactionType
+com.freelanceplaza.payment.entities.OppTransaction ..> com.freelanceplaza.payment.entities.OppAccountDeduction
+com.freelanceplaza.payment.entities.OppTransaction ..> com.freelanceplaza.payment.entities.OppTransaction
+com.freelanceplaza.payment.entities.OppCompliance ..> com.freelanceplaza.payment.enums.OppStatus
+com.freelanceplaza.payment.entities.OppCompliance ..> com.freelanceplaza.payment.entities.OppAccount
+com.freelanceplaza.payment.entities.OppCompliance ..> com.freelanceplaza.payment.entities.OppCompliance
+com.freelanceplaza.payment.entities.Location ..> com.freelanceplaza.payment.entities.Organization
+com.freelanceplaza.payment.entities.Location ..> com.freelanceplaza.payment.entities.Location
+com.freelanceplaza.payment.entities.config.ConfigHistory ..> com.freelanceplaza.payment.entities.config.Config
+com.freelanceplaza.payment.entities.config.ConfigHistory ..> com.freelanceplaza.payment.entities.config.ConfigHistory
+com.freelanceplaza.payment.entities.Organization ..> com.freelanceplaza.commons.fpcommons.sync.organizations.OrganizationStatus
+com.freelanceplaza.payment.entities.Organization ..> com.freelanceplaza.commons.fpcommons.sync.organizations.OrganizationType
+com.freelanceplaza.payment.entities.Organization ..> com.freelanceplaza.payment.entities.Organization
+com.freelanceplaza.payment.entities.Invoice ..> com.freelanceplaza.invoices.enums.MemberType
+com.freelanceplaza.payment.entities.Invoice ..> com.freelanceplaza.commons.fpcommons.enums.Currency
+com.freelanceplaza.payment.entities.Invoice ..> com.freelanceplaza.payment.entities.InvoiceBundle
+com.freelanceplaza.payment.entities.Invoice ..> com.freelanceplaza.payment.entities.Invoice
+com.freelanceplaza.payment.entities.PaymentAccount ..> com.freelanceplaza.payment.entities.User
+com.freelanceplaza.payment.entities.PaymentAccount ..> com.freelanceplaza.payment.enums.PaymentAccountStatus
+com.freelanceplaza.payment.entities.PaymentAccount ..> com.freelanceplaza.payment.entities.PaymentAccount
+com.freelanceplaza.payment.entities.OppDisapproval ..> com.freelanceplaza.payment.entities.OppRequirement
+com.freelanceplaza.payment.entities.OppDisapproval ..> com.freelanceplaza.payment.entities.OppDisapproval
+com.freelanceplaza.payment.entities.DisapprovalReasonLabel ..> com.freelanceplaza.payment.entities.DisapprovalReasonLabel
+com.freelanceplaza.payment.entities.OppAccountDeduction ..> com.freelanceplaza.commons.fpcommons.enums.Currency
+com.freelanceplaza.payment.entities.OppAccountDeduction ..> com.freelanceplaza.payment.entities.OppAccount
+com.freelanceplaza.payment.entities.OppAccountDeduction ..> com.freelanceplaza.payment.entities.OppTransaction
+com.freelanceplaza.payment.entities.OppAccountDeduction ..> com.freelanceplaza.payment.entities.OppAccountDeduction
+com.freelanceplaza.payment.entities.Product ..> com.freelanceplaza.payment.enums.ProductType
+com.freelanceplaza.payment.entities.Product ..> com.freelanceplaza.payment.entities.Product
+com.freelanceplaza.payment.entities.OppRequirement ..> com.freelanceplaza.payment.enums.OppStatus
+com.freelanceplaza.payment.entities.OppRequirement ..> com.freelanceplaza.payment.entities.OppCompliance
+com.freelanceplaza.payment.entities.OppRequirement ..> com.freelanceplaza.payment.entities.OppRequirement
+com.freelanceplaza.payment.entities.PaymentAssignment ..> com.freelanceplaza.invoices.enums.PaymentAssignmentStatus
+com.freelanceplaza.payment.entities.PaymentAssignment ..> com.freelanceplaza.commons.fpcommons.enums.Currency
+com.freelanceplaza.payment.entities.PaymentAssignment ..> com.freelanceplaza.payment.entities.Transaction
+com.freelanceplaza.payment.entities.PaymentAssignment ..> com.freelanceplaza.payment.entities.Organization
+com.freelanceplaza.payment.entities.PaymentAssignment ..> com.freelanceplaza.payment.entities.PaymentAssignment
+
+' IMPORTS =======
+' Java Files Path : /Users/paolo/Work/Tadaah/fp-backend-payment-service/src/main/java/com/freelanceplaza/payment/entities/
+' com.freelanceplaza.payment.entities.config.Config
+
+' com.freelanceplaza.payment.entities.Transaction
+
+' com.freelanceplaza.payment.entities.User
+
+' com.freelanceplaza.payment.entities.InvoiceBundle
+
+' com.freelanceplaza.payment.entities.OppAccount
+
+' com.freelanceplaza.payment.entities.OppTransaction
+
+' com.freelanceplaza.payment.entities.OppCompliance
+
+' com.freelanceplaza.payment.entities.Location
+
+' com.freelanceplaza.payment.entities.config.ConfigHistory
+
+' com.freelanceplaza.payment.entities.Organization
+
+' com.freelanceplaza.payment.entities.Invoice
+
+' com.freelanceplaza.payment.entities.PaymentAccount
+
+' com.freelanceplaza.payment.entities.OppDisapproval
+
+' com.freelanceplaza.payment.entities.DisapprovalReasonLabel
+
+' com.freelanceplaza.payment.entities.OppAccountDeduction
+
+' com.freelanceplaza.payment.entities.Product
+
+' com.freelanceplaza.payment.entities.OppRequirement
+
+' com.freelanceplaza.payment.entities.PaymentAssignment
+
+' com.freelanceplaza.payment.entities.config.ConfigHistory
+
+' com.freelanceplaza.payment.entities.config.Config
+
+
+
+@enduml

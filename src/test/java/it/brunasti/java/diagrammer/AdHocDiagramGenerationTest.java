@@ -135,6 +135,14 @@ public class AdHocDiagramGenerationTest implements TestConstants {
             "/Users/paolo/Work/Tadaah/fp-backend-invoice-service/build/classes/java/main/freelanceplaza/fpbackendinvoiceservice/entity",
             "/Users/paolo/Work/Tadaah/fp-backend-invoice-service/src/main/java/freelanceplaza/fpbackendinvoiceservice/entity");
 
+    generateDiagramEntities("notification",
+            "/Users/paolo/Work/Tadaah/fp-backend-notification-service/build/classes/java/main/com/freelanceplaza/notification/entities",
+            "/Users/paolo/Work/Tadaah/fp-backend-notification-service/src/main/java/com/freelanceplaza/notification/entities");
+
+    generateDiagramEntities("payment",
+            "/Users/paolo/Work/Tadaah/fp-backend-payment-service/build/classes/java/main/com/freelanceplaza/payment/entities",
+            "/Users/paolo/Work/Tadaah/fp-backend-payment-service/src/main/java/com/freelanceplaza/payment/entities");
+
     generateDiagramEntities("user",
             "/Users/paolo/Work/Tadaah/fp-backend-user-service/build/classes/java/main/freelanceplaza/fpbackenduserservice/entities",
             "/Users/paolo/Work/Tadaah/fp-backend-user-service/src/main/java/freelanceplaza/fpbackenduserservice/entities");

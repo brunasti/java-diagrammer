@@ -8,6 +8,8 @@ hide *BuilderImpl
 !include Tadaah-entities-documents.puml
 !include Tadaah-entities-hiring.puml
 !include Tadaah-entities-invoice.puml
+!include Tadaah-entities-notification.puml
+!include Tadaah-entities-payment.puml
 !include Tadaah-entities-user.puml
 
 @enduml
