@@ -12,6 +12,9 @@
       },
       {
         "class": "freelanceplaza.fpbackenduserservice.entities.Q"
+      },
+      {
+        "class": "com.freelanceplaza.hiringservice.entities.Q"
       }
     ],
     "packages": [
@@ -89,6 +92,12 @@
       },
       {
         "package": "com.querydsl."
+      },
+      {
+        "package": "com.freelanceplaza.hiringservice.entities.Q"
+      },
+      {
+        "package": "com.freelanceplaza.hiringservice.dtos.common.Q"
       },
       {
         "package": "freelanceplaza.fpbackenduserservice.entities.Q"
