@@ -161,10 +161,10 @@ public class ClassDiagrammer {
   }
 
   private boolean loadJsonConfigurationFromFile(String configurationFileName) {
-    Debugger.debug(1, "loadJsonConfigurationFromFile : " + configurationFileName);
+    Debugger.debug(10, "loadJsonConfigurationFromFile : " + configurationFileName);
     JSONObject jsonObject = Utils.loadJsonFile(configurationFileName);
     if (null == jsonObject) {
-      Debugger.debug(2,
+      Debugger.debug(12,
               "loadJsonConfigurationFromFile : no data in config file " + configurationFileName);
       return false;
     }
@@ -199,7 +199,11 @@ public class ClassDiagrammer {
   private Set<String> iterateSubDirectories(final String path,
                                             final String localPackage,
                                             final Set<String> files) {
+    Debugger.debug(2,
+            "iterateSubDirectories : " + path);
     String newPath = path + "/" + localPackage.replace(".", "/");
+    Debugger.debug(2,
+            "iterateSubDirectories : " + newPath);
     try {
       Utils.listFiles(newPath).forEach(file -> {
         String className = file.replace(".class", "");
@@ -229,43 +233,43 @@ public class ClassDiagrammer {
 
   private boolean isTypeToBeConnected(final JavaClass javaClass,
                                       final String type) {
-    Debugger.debug("isTypeToBeConnected " + javaClass.getClassName() + " to " + type);
+    Debugger.debug(8, "isTypeToBeConnected " + javaClass.getClassName() + " to " + type);
 
     // Avoid self referencing loops
     if (flagAvoidSelfReferring) {
       if (type.equals(javaClass.getClassName())) {
-        Debugger.debug("  - self ref ");
+        Debugger.debug(10, "  - self ref ");
         return false;
       }
     }
 
     // If the type is all lowercase, then is a primitive type
     if (type.toLowerCase().equals(type)) {
-      Debugger.debug("  - primitive");
+      Debugger.debug(10, "  - primitive");
       return false;
     }
 
     if (toBeExcludedClasses.contains(type)) {
-      Debugger.debug("  - exclude class");
+      Debugger.debug(10, "  - exclude class");
       return false;
     }
 
     AtomicReference<Boolean> excludedPackage = new AtomicReference<>(false);
     toBeExcludedPackages.forEach(localPackage -> {
-      Debugger.debug(4, "      - package : " + localPackage);
+      Debugger.debug(8, "      - package : " + localPackage);
       if (type.startsWith(localPackage)) {
-        Debugger.debug("    -> exclude package " + type);
+        Debugger.debug(10,"    -> exclude package " + type);
         excludedPackage.set(true);
       }
     });
-    Debugger.debug("  - exclude package : " + excludedPackage.get());
+    Debugger.debug(8, "  - exclude package : " + excludedPackage.get());
 
     return !excludedPackage.get();
   }
 
 
   private boolean isToBeExcluded(final String type) {
-    Debugger.debug("isToBeExcluded " + type);
+//    Debugger.debug("isToBeExcluded " + type);
 
 //    // Avoid self referencing loops
 //    if (flagAvoidSelfReferring) {
@@ -282,19 +286,19 @@ public class ClassDiagrammer {
 //    }
 //
     if (toBeExcludedClasses.contains(type)) {
-      Debugger.debug("  - exclude class");
+      Debugger.debug(2, "  - exclude class");
       return true;
     }
 
     AtomicReference<Boolean> excludedPackage = new AtomicReference<>(false);
     toBeExcludedPackages.forEach(localPackage -> {
-      Debugger.debug(4, "      - package : " + localPackage);
+      Debugger.debug(10, "      - package : " + localPackage);
       if (type.startsWith(localPackage)) {
-        Debugger.debug("    -> exclude package " + type);
+        Debugger.debug(12, "    -> exclude package " + type);
         excludedPackage.set(true);
       }
     });
-    Debugger.debug("  - exclude package : " + excludedPackage.get());
+    Debugger.debug(12,"  - exclude package : " + excludedPackage.get());
 
     return excludedPackage.get();
   }
@@ -316,13 +320,13 @@ public class ClassDiagrammer {
   }
 
   private void generateUses(final ArrayList<JavaClass> classes) {
-    Debugger.debug(2, "generateUses() ------------------");
+    Debugger.debug(8, "generateUses() ------------------");
     output.println("' USES =======");
     classes.forEach(javaClass -> {
       if (!javaClass.isEnum()) {
         Method[] methods = javaClass.getMethods();
         for (Method method : methods) {
-          Debugger.debug("generateUses " + method.getName()
+          Debugger.debug(10, "generateUses " + method.getName()
                   + " : " + method.getSignature());
           String type = method.getReturnType().toString();
           writeUses(javaClass, type);
@@ -559,6 +563,7 @@ public class ClassDiagrammer {
   public void generateDiagram(final String path,
                               final String configurationFile,
                               final String javaFilesPath) {
+    Debugger.debug(1,"generateDiagram ["+path+"] ["+configurationFile+"] ["+javaFilesPath+"]");
     cleanLocalVars();
 
     boolean initiated = loadConfiguration(configurationFile);
@@ -567,9 +572,13 @@ public class ClassDiagrammer {
       return;
     }
 
+    Debugger.debug(2,"Path : " + path);
     ArrayList<String> files = new ArrayList<>();
     try {
       Set<String> dirs = Utils.listDirectories(path);
+      dirs.add("");
+
+      Debugger.debug(4,"Directories : " + dirs.toString());
       dirs.forEach(dir -> files.addAll(iterateSubDirectories(path, dir)));
     } catch (IOException | NullPointerException e) {
       Debugger.debug(1,"Error listing directories : " + e.getMessage());
@@ -587,15 +596,19 @@ public class ClassDiagrammer {
     ArrayList<JavaClass> classes = new ArrayList<>();
 
     files.forEach(file -> {
-      Debugger.debug("Loading class : " + file);
+      Debugger.debug(2, "Loading class : " + file);
       try {
+        String fileName = file;
+        if ((fileName != null) && (fileName.startsWith("."))) {
+          fileName = fileName.substring(1);
+        }
         // Exclude files which are in the config "exclude" sections
-        if (!isToBeExcluded(file)) {
-          JavaClass javaClass = rep.loadClass(file);
+        if (!isToBeExcluded(fileName)) {
+          JavaClass javaClass = rep.loadClass(fileName);
           classes.add(javaClass);
         }
       } catch (ClassNotFoundException e) {
-        Debugger.debug(2,"Error loading class : " + e.getMessage());
+        Debugger.debug(2,"Error loading class : " + file + " - " + e.getMessage());
       }
     });
 

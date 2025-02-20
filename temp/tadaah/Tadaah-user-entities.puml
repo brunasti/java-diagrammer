@@ -1,0 +1,633 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+' GENERATE CLASS DIAGRAM ===========
+' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
+' Path            : [/Users/paolo/Work/Tadaah/fp-backend-user-service/build/classes/java/main/freelanceplaza/fpbackenduserservice/entities]
+' Java Files Path : [/Users/paolo/Work/Tadaah/fp-backend-user-service/src/main/java/freelanceplaza/fpbackenduserservice/entities/]
+' Configuration   : [/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/config.json]
+' Generated at    : Thu Feb 20 17:44:01 CET 2025
+'
+'   Stat infos    :
+'       Files : [107]
+'       Lines : [1479]
+'     Classes : [107]
+'     Methods : [961]
+'      Fields : [790]
+
+
+
+' CLASSES =======
+enum freelanceplaza.fpbackenduserservice.entities.enums.ExclusionsAction{
+}
+class freelanceplaza.fpbackenduserservice.entities.security.Privilege
+class freelanceplaza.fpbackenduserservice.entities.QLegalEntity
+abstract freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable$BaseCreateAuditableBuilder
+class freelanceplaza.fpbackenduserservice.entities.QVertical
+class freelanceplaza.fpbackenduserservice.entities.security.Role
+class freelanceplaza.fpbackenduserservice.entities.QFavoriteLocationFreelancer
+class freelanceplaza.fpbackenduserservice.entities.LocationGroup$LocationGroupBuilderImpl
+class freelanceplaza.fpbackenduserservice.entities.UserEmailEvent
+enum freelanceplaza.fpbackenduserservice.entities.enums.OrganizationType{
+}
+class freelanceplaza.fpbackenduserservice.entities.QFreelancerLocationExclusions
+class freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusionsHistory$FreelancerLocationExclusionsHistoryBuilderImpl
+class freelanceplaza.fpbackenduserservice.entities.LocationFreelancerId
+class freelanceplaza.fpbackenduserservice.entities.QOrganizationUser
+class freelanceplaza.fpbackenduserservice.entities.FavoriteLocationFreelancerHistory
+enum freelanceplaza.fpbackenduserservice.entities.enums.DateOfBirthSource{
+}
+enum freelanceplaza.fpbackenduserservice.entities.enums.EmailEventType{
+}
+enum freelanceplaza.fpbackenduserservice.entities.enums.FileType{
+}
+interface freelanceplaza.fpbackenduserservice.entities.AuditableCreate
+abstract freelanceplaza.fpbackenduserservice.entities.LocationGroup$LocationGroupBuilder
+class freelanceplaza.fpbackenduserservice.entities.Organization
+abstract freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable
+class freelanceplaza.fpbackenduserservice.entities.Freelancer$1
+class freelanceplaza.fpbackenduserservice.entities.QFreelancer
+class freelanceplaza.fpbackenduserservice.entities.Address
+class freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusions$FreelancerLocationExclusionsBuilderImpl
+enum freelanceplaza.fpbackenduserservice.entities.enums.OrganizationInvoiceSetting{
+}
+enum freelanceplaza.fpbackenduserservice.entities.enums.OwnerType{
+}
+class freelanceplaza.fpbackenduserservice.entities.Vertical
+class freelanceplaza.fpbackenduserservice.entities.LegalEntity
+class freelanceplaza.fpbackenduserservice.entities.FpUser
+class freelanceplaza.fpbackenduserservice.entities.QBaseCreateAuditable
+class freelanceplaza.fpbackenduserservice.entities.User
+enum freelanceplaza.fpbackenduserservice.entities.enums.EmailStatus{
+}
+class freelanceplaza.fpbackenduserservice.entities.OrganizationUser
+abstract freelanceplaza.fpbackenduserservice.entities.User$UserBuilder
+class freelanceplaza.fpbackenduserservice.entities.LocationGroup
+class freelanceplaza.fpbackenduserservice.entities.Address$AddressBuilder
+class freelanceplaza.fpbackenduserservice.entities.security.Role$RoleBuilder
+class freelanceplaza.fpbackenduserservice.entities.security.QPrivilege
+enum freelanceplaza.fpbackenduserservice.entities.enums.FreelancerRegistrationStep{
+}
+class freelanceplaza.fpbackenduserservice.entities.QFavoriteLocationFreelancerHistory
+class freelanceplaza.fpbackenduserservice.entities.QUserRole
+enum freelanceplaza.fpbackenduserservice.entities.enums.HistoryActions{
+}
+class freelanceplaza.fpbackenduserservice.entities.QBaseUserEmail
+class freelanceplaza.fpbackenduserservice.entities.QLocation
+class freelanceplaza.fpbackenduserservice.entities.QFreelancerLocationExclusionsHistory
+class freelanceplaza.fpbackenduserservice.entities.QUserEmailEvent
+class freelanceplaza.fpbackenduserservice.entities.SbiCode
+class freelanceplaza.fpbackenduserservice.entities.QAddress
+enum freelanceplaza.fpbackenduserservice.entities.enums.Status{
+}
+enum freelanceplaza.fpbackenduserservice.entities.enums.LrkRegistrationStatus{
+}
+class freelanceplaza.fpbackenduserservice.entities.QUser
+class freelanceplaza.fpbackenduserservice.entities.security.QRole
+class freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusions
+class freelanceplaza.fpbackenduserservice.entities.FavoriteLocationFreelancer
+class freelanceplaza.fpbackenduserservice.entities.QUserEmailVerification
+abstract freelanceplaza.fpbackenduserservice.entities.Freelancer$FreelancerBuilder
+abstract freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusions$FreelancerLocationExclusionsBuilder
+abstract freelanceplaza.fpbackenduserservice.entities.BaseUserEmail
+enum freelanceplaza.fpbackenduserservice.entities.enums.EmailVerificationMethod{
+}
+class freelanceplaza.fpbackenduserservice.entities.Location$LocationBuilder
+enum freelanceplaza.fpbackenduserservice.entities.enums.AddressType{
+}
+class freelanceplaza.fpbackenduserservice.entities.Freelancer$FreelancerBuilderImpl
+enum freelanceplaza.fpbackenduserservice.entities.enums.OnboardingStatus{
+}
+class freelanceplaza.fpbackenduserservice.entities.QOrganization
+enum freelanceplaza.fpbackenduserservice.entities.enums.DocumentStatus{
+}
+class freelanceplaza.fpbackenduserservice.entities.QFpUser
+class freelanceplaza.fpbackenduserservice.entities.UserRole
+class freelanceplaza.fpbackenduserservice.entities.UserEmail
+class freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusionsHistory
+interface freelanceplaza.fpbackenduserservice.entities.views.OrganizationStatusView
+class freelanceplaza.fpbackenduserservice.entities.User$UserBuilderImpl
+class freelanceplaza.fpbackenduserservice.entities.QLocationFreelancerId
+class freelanceplaza.fpbackenduserservice.entities.Organization$OrganizationBuilder
+class freelanceplaza.fpbackenduserservice.entities.UserEmailVerification
+class freelanceplaza.fpbackenduserservice.entities.Location
+enum freelanceplaza.fpbackenduserservice.entities.enums.Role{
+}
+class freelanceplaza.fpbackenduserservice.entities.QSbiCode
+class freelanceplaza.fpbackenduserservice.entities.QLocationGroup
+class freelanceplaza.fpbackenduserservice.entities.Freelancer
+class freelanceplaza.fpbackenduserservice.entities.LegalEntity$LegalEntityBuilder
+class freelanceplaza.fpbackenduserservice.entities.QUserEmail
+abstract freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusionsHistory$FreelancerLocationExclusionsHistoryBuilder
+enum freelanceplaza.fpbackenduserservice.entities.enums.OwnerType{
+}
+enum freelanceplaza.fpbackenduserservice.entities.enums.EmailStatus{
+}
+enum freelanceplaza.fpbackenduserservice.entities.enums.OnboardingStatus{
+}
+enum freelanceplaza.fpbackenduserservice.entities.enums.OrganizationType{
+}
+enum freelanceplaza.fpbackenduserservice.entities.enums.DocumentStatus{
+}
+enum freelanceplaza.fpbackenduserservice.entities.enums.ExclusionsAction{
+}
+enum freelanceplaza.fpbackenduserservice.entities.enums.Status{
+}
+enum freelanceplaza.fpbackenduserservice.entities.enums.EmailEventType{
+}
+enum freelanceplaza.fpbackenduserservice.entities.enums.OrganizationInvoiceSetting{
+}
+enum freelanceplaza.fpbackenduserservice.entities.enums.Role{
+}
+enum freelanceplaza.fpbackenduserservice.entities.enums.DateOfBirthSource{
+}
+enum freelanceplaza.fpbackenduserservice.entities.enums.HistoryActions{
+}
+enum freelanceplaza.fpbackenduserservice.entities.enums.AddressType{
+}
+enum freelanceplaza.fpbackenduserservice.entities.enums.EmailVerificationMethod{
+}
+enum freelanceplaza.fpbackenduserservice.entities.enums.FileType{
+}
+enum freelanceplaza.fpbackenduserservice.entities.enums.FreelancerRegistrationStep{
+}
+enum freelanceplaza.fpbackenduserservice.entities.enums.LrkRegistrationStatus{
+}
+class freelanceplaza.fpbackenduserservice.entities.security.Role
+class freelanceplaza.fpbackenduserservice.entities.security.Privilege
+class freelanceplaza.fpbackenduserservice.entities.security.QPrivilege
+class freelanceplaza.fpbackenduserservice.entities.security.Role$RoleBuilder
+class freelanceplaza.fpbackenduserservice.entities.security.QRole
+interface freelanceplaza.fpbackenduserservice.entities.views.OrganizationStatusView
+
+' INHERITANCES =======
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.ExclusionsAction
+freelanceplaza.fpbackenduserservice.entities.LocationGroup$LocationGroupBuilder <|-- freelanceplaza.fpbackenduserservice.entities.LocationGroup$LocationGroupBuilderImpl
+freelanceplaza.fpbackenduserservice.entities.BaseUserEmail <|-- freelanceplaza.fpbackenduserservice.entities.UserEmailEvent
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.OrganizationType
+freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusionsHistory$FreelancerLocationExclusionsHistoryBuilder <|-- freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusionsHistory$FreelancerLocationExclusionsHistoryBuilderImpl
+freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable <|-- freelanceplaza.fpbackenduserservice.entities.FavoriteLocationFreelancerHistory
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.DateOfBirthSource
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.EmailEventType
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.FileType
+freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable$BaseCreateAuditableBuilder <|-- freelanceplaza.fpbackenduserservice.entities.LocationGroup$LocationGroupBuilder
+freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusions$FreelancerLocationExclusionsBuilder <|-- freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusions$FreelancerLocationExclusionsBuilderImpl
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.OrganizationInvoiceSetting
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.OwnerType
+freelanceplaza.fpbackenduserservice.entities.Organization <|-- freelanceplaza.fpbackenduserservice.entities.Vertical
+freelanceplaza.fpbackenduserservice.entities.User <|-- freelanceplaza.fpbackenduserservice.entities.FpUser
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.EmailStatus
+freelanceplaza.fpbackenduserservice.entities.User <|-- freelanceplaza.fpbackenduserservice.entities.OrganizationUser
+freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable <|-- freelanceplaza.fpbackenduserservice.entities.LocationGroup
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.FreelancerRegistrationStep
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.HistoryActions
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.Status
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.LrkRegistrationStatus
+freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable <|-- freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusions
+freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable <|-- freelanceplaza.fpbackenduserservice.entities.FavoriteLocationFreelancer
+freelanceplaza.fpbackenduserservice.entities.User$UserBuilder <|-- freelanceplaza.fpbackenduserservice.entities.Freelancer$FreelancerBuilder
+freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable$BaseCreateAuditableBuilder <|-- freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusions$FreelancerLocationExclusionsBuilder
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.EmailVerificationMethod
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.AddressType
+freelanceplaza.fpbackenduserservice.entities.Freelancer$FreelancerBuilder <|-- freelanceplaza.fpbackenduserservice.entities.Freelancer$FreelancerBuilderImpl
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.OnboardingStatus
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.DocumentStatus
+freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable <|-- freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusionsHistory
+freelanceplaza.fpbackenduserservice.entities.User$UserBuilder <|-- freelanceplaza.fpbackenduserservice.entities.User$UserBuilderImpl
+freelanceplaza.fpbackenduserservice.entities.BaseUserEmail <|-- freelanceplaza.fpbackenduserservice.entities.UserEmailVerification
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.Role
+freelanceplaza.fpbackenduserservice.entities.User <|-- freelanceplaza.fpbackenduserservice.entities.Freelancer
+freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable$BaseCreateAuditableBuilder <|-- freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusionsHistory$FreelancerLocationExclusionsHistoryBuilder
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.OwnerType
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.EmailStatus
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.OnboardingStatus
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.OrganizationType
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.DocumentStatus
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.ExclusionsAction
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.Status
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.EmailEventType
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.OrganizationInvoiceSetting
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.Role
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.DateOfBirthSource
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.HistoryActions
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.AddressType
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.EmailVerificationMethod
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.FileType
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.FreelancerRegistrationStep
+java.lang.Enum <|-- freelanceplaza.fpbackenduserservice.entities.enums.LrkRegistrationStatus
+
+' IMPLEMENT INTERFACE =======
+java.io.Serializable <|.. freelanceplaza.fpbackenduserservice.entities.LocationFreelancerId
+freelanceplaza.fpbackenduserservice.entities.AuditableCreate <|.. freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable
+
+' FIELDS =======
+freelanceplaza.fpbackenduserservice.entities.UserEmailEvent --> freelanceplaza.fpbackenduserservice.entities.enums.EmailEventType
+freelanceplaza.fpbackenduserservice.entities.FavoriteLocationFreelancerHistory --> freelanceplaza.fpbackenduserservice.entities.enums.HistoryActions
+freelanceplaza.fpbackenduserservice.entities.LocationGroup$LocationGroupBuilder --> freelanceplaza.fpbackenduserservice.entities.Location
+freelanceplaza.fpbackenduserservice.entities.Organization --> freelanceplaza.fpbackenduserservice.entities.LegalEntity
+freelanceplaza.fpbackenduserservice.entities.Organization --> freelanceplaza.fpbackenduserservice.entities.enums.Status
+freelanceplaza.fpbackenduserservice.entities.Organization --> freelanceplaza.fpbackenduserservice.entities.enums.OnboardingStatus
+freelanceplaza.fpbackenduserservice.entities.Organization --> freelanceplaza.fpbackenduserservice.entities.User
+freelanceplaza.fpbackenduserservice.entities.Organization --> freelanceplaza.fpbackenduserservice.entities.User
+freelanceplaza.fpbackenduserservice.entities.Organization --> freelanceplaza.fpbackenduserservice.entities.enums.OrganizationInvoiceSetting
+freelanceplaza.fpbackenduserservice.entities.Address --> freelanceplaza.fpbackenduserservice.entities.enums.AddressType
+freelanceplaza.fpbackenduserservice.entities.LegalEntity --> freelanceplaza.fpbackenduserservice.entities.Address
+freelanceplaza.fpbackenduserservice.entities.LocationGroup --> freelanceplaza.fpbackenduserservice.entities.Location
+freelanceplaza.fpbackenduserservice.entities.Address$AddressBuilder --> freelanceplaza.fpbackenduserservice.entities.enums.AddressType
+freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusions --> freelanceplaza.fpbackenduserservice.entities.LocationFreelancerId
+freelanceplaza.fpbackenduserservice.entities.FavoriteLocationFreelancer --> freelanceplaza.fpbackenduserservice.entities.LocationFreelancerId
+freelanceplaza.fpbackenduserservice.entities.Freelancer$FreelancerBuilder --> freelanceplaza.fpbackenduserservice.entities.LegalEntity
+freelanceplaza.fpbackenduserservice.entities.Freelancer$FreelancerBuilder --> freelanceplaza.fpbackenduserservice.entities.enums.Status
+freelanceplaza.fpbackenduserservice.entities.Freelancer$FreelancerBuilder --> freelanceplaza.fpbackenduserservice.entities.enums.OnboardingStatus
+freelanceplaza.fpbackenduserservice.entities.Freelancer$FreelancerBuilder --> freelanceplaza.fpbackenduserservice.entities.enums.FreelancerRegistrationStep
+freelanceplaza.fpbackenduserservice.entities.Freelancer$FreelancerBuilder --> freelanceplaza.fpbackenduserservice.entities.User
+freelanceplaza.fpbackenduserservice.entities.Freelancer$FreelancerBuilder --> freelanceplaza.fpbackenduserservice.entities.enums.DateOfBirthSource
+freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusions$FreelancerLocationExclusionsBuilder --> freelanceplaza.fpbackenduserservice.entities.LocationFreelancerId
+freelanceplaza.fpbackenduserservice.entities.BaseUserEmail --> freelanceplaza.fpbackenduserservice.entities.UserEmail
+freelanceplaza.fpbackenduserservice.entities.BaseUserEmail --> freelanceplaza.fpbackenduserservice.entities.enums.EmailVerificationMethod
+freelanceplaza.fpbackenduserservice.entities.Location$LocationBuilder --> freelanceplaza.fpbackenduserservice.entities.Organization
+freelanceplaza.fpbackenduserservice.entities.Location$LocationBuilder --> freelanceplaza.fpbackenduserservice.entities.Address
+freelanceplaza.fpbackenduserservice.entities.Location$LocationBuilder --> com.freelanceplaza.commons.fpcommons.sync.locations.LocationStatus
+freelanceplaza.fpbackenduserservice.entities.UserRole --> freelanceplaza.fpbackenduserservice.entities.User
+freelanceplaza.fpbackenduserservice.entities.UserRole --> freelanceplaza.fpbackenduserservice.entities.security.Role
+freelanceplaza.fpbackenduserservice.entities.UserRole --> freelanceplaza.fpbackenduserservice.entities.Organization
+freelanceplaza.fpbackenduserservice.entities.UserEmail --> freelanceplaza.fpbackenduserservice.entities.enums.EmailStatus
+freelanceplaza.fpbackenduserservice.entities.UserEmail --> freelanceplaza.fpbackenduserservice.entities.User
+freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusionsHistory --> freelanceplaza.fpbackenduserservice.entities.enums.ExclusionsAction
+freelanceplaza.fpbackenduserservice.entities.Organization$OrganizationBuilder --> freelanceplaza.fpbackenduserservice.entities.LegalEntity
+freelanceplaza.fpbackenduserservice.entities.Organization$OrganizationBuilder --> freelanceplaza.fpbackenduserservice.entities.enums.Status
+freelanceplaza.fpbackenduserservice.entities.Organization$OrganizationBuilder --> freelanceplaza.fpbackenduserservice.entities.enums.OnboardingStatus
+freelanceplaza.fpbackenduserservice.entities.Organization$OrganizationBuilder --> freelanceplaza.fpbackenduserservice.entities.User
+freelanceplaza.fpbackenduserservice.entities.Organization$OrganizationBuilder --> freelanceplaza.fpbackenduserservice.entities.User
+freelanceplaza.fpbackenduserservice.entities.Organization$OrganizationBuilder --> freelanceplaza.fpbackenduserservice.entities.enums.OrganizationInvoiceSetting
+freelanceplaza.fpbackenduserservice.entities.Location --> freelanceplaza.fpbackenduserservice.entities.Organization
+freelanceplaza.fpbackenduserservice.entities.Location --> freelanceplaza.fpbackenduserservice.entities.Address
+freelanceplaza.fpbackenduserservice.entities.Location --> com.freelanceplaza.commons.fpcommons.sync.locations.LocationStatus
+freelanceplaza.fpbackenduserservice.entities.Freelancer --> freelanceplaza.fpbackenduserservice.entities.LegalEntity
+freelanceplaza.fpbackenduserservice.entities.Freelancer --> freelanceplaza.fpbackenduserservice.entities.enums.Status
+freelanceplaza.fpbackenduserservice.entities.Freelancer --> freelanceplaza.fpbackenduserservice.entities.enums.OnboardingStatus
+freelanceplaza.fpbackenduserservice.entities.Freelancer --> freelanceplaza.fpbackenduserservice.entities.enums.FreelancerRegistrationStep
+freelanceplaza.fpbackenduserservice.entities.Freelancer --> freelanceplaza.fpbackenduserservice.entities.User
+freelanceplaza.fpbackenduserservice.entities.Freelancer --> freelanceplaza.fpbackenduserservice.entities.enums.DateOfBirthSource
+freelanceplaza.fpbackenduserservice.entities.LegalEntity$LegalEntityBuilder --> freelanceplaza.fpbackenduserservice.entities.Address
+freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusionsHistory$FreelancerLocationExclusionsHistoryBuilder --> freelanceplaza.fpbackenduserservice.entities.enums.ExclusionsAction
+
+' USES =======
+freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable$BaseCreateAuditableBuilder ..> freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable$BaseCreateAuditableBuilder
+freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable$BaseCreateAuditableBuilder ..> freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable
+freelanceplaza.fpbackenduserservice.entities.security.Role ..> freelanceplaza.fpbackenduserservice.entities.security.Role$RoleBuilder
+freelanceplaza.fpbackenduserservice.entities.security.Role ..> freelanceplaza.fpbackenduserservice.entities.security.Role
+freelanceplaza.fpbackenduserservice.entities.LocationGroup$LocationGroupBuilderImpl ..> freelanceplaza.fpbackenduserservice.entities.LocationGroup$LocationGroupBuilderImpl
+freelanceplaza.fpbackenduserservice.entities.LocationGroup$LocationGroupBuilderImpl ..> freelanceplaza.fpbackenduserservice.entities.LocationGroup
+freelanceplaza.fpbackenduserservice.entities.LocationGroup$LocationGroupBuilderImpl ..> freelanceplaza.fpbackenduserservice.entities.LocationGroup$LocationGroupBuilder
+freelanceplaza.fpbackenduserservice.entities.LocationGroup$LocationGroupBuilderImpl ..> freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable
+freelanceplaza.fpbackenduserservice.entities.LocationGroup$LocationGroupBuilderImpl ..> freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable$BaseCreateAuditableBuilder
+freelanceplaza.fpbackenduserservice.entities.UserEmailEvent ..> freelanceplaza.fpbackenduserservice.entities.enums.EmailEventType
+freelanceplaza.fpbackenduserservice.entities.UserEmailEvent ..> freelanceplaza.fpbackenduserservice.entities.UserEmailEvent
+freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusionsHistory$FreelancerLocationExclusionsHistoryBuilderImpl ..> freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusionsHistory$FreelancerLocationExclusionsHistoryBuilderImpl
+freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusionsHistory$FreelancerLocationExclusionsHistoryBuilderImpl ..> freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusionsHistory
+freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusionsHistory$FreelancerLocationExclusionsHistoryBuilderImpl ..> freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusionsHistory$FreelancerLocationExclusionsHistoryBuilder
+freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusionsHistory$FreelancerLocationExclusionsHistoryBuilderImpl ..> freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable
+freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusionsHistory$FreelancerLocationExclusionsHistoryBuilderImpl ..> freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable$BaseCreateAuditableBuilder
+freelanceplaza.fpbackenduserservice.entities.LocationFreelancerId ..> freelanceplaza.fpbackenduserservice.entities.LocationFreelancerId
+freelanceplaza.fpbackenduserservice.entities.FavoriteLocationFreelancerHistory ..> freelanceplaza.fpbackenduserservice.entities.enums.HistoryActions
+freelanceplaza.fpbackenduserservice.entities.FavoriteLocationFreelancerHistory ..> freelanceplaza.fpbackenduserservice.entities.FavoriteLocationFreelancerHistory
+freelanceplaza.fpbackenduserservice.entities.AuditableCreate ..> freelanceplaza.fpbackenduserservice.entities.AuditableCreate
+freelanceplaza.fpbackenduserservice.entities.LocationGroup$LocationGroupBuilder ..> freelanceplaza.fpbackenduserservice.entities.LocationGroup$LocationGroupBuilder
+freelanceplaza.fpbackenduserservice.entities.LocationGroup$LocationGroupBuilder ..> freelanceplaza.fpbackenduserservice.entities.Location
+freelanceplaza.fpbackenduserservice.entities.LocationGroup$LocationGroupBuilder ..> freelanceplaza.fpbackenduserservice.entities.LocationGroup
+freelanceplaza.fpbackenduserservice.entities.LocationGroup$LocationGroupBuilder ..> freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable
+freelanceplaza.fpbackenduserservice.entities.LocationGroup$LocationGroupBuilder ..> freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable$BaseCreateAuditableBuilder
+freelanceplaza.fpbackenduserservice.entities.Organization ..> freelanceplaza.fpbackenduserservice.entities.Organization
+freelanceplaza.fpbackenduserservice.entities.Organization ..> freelanceplaza.fpbackenduserservice.entities.Location
+freelanceplaza.fpbackenduserservice.entities.Organization ..> freelanceplaza.fpbackenduserservice.entities.Organization$OrganizationBuilder
+freelanceplaza.fpbackenduserservice.entities.Organization ..> freelanceplaza.fpbackenduserservice.entities.LegalEntity
+freelanceplaza.fpbackenduserservice.entities.Organization ..> freelanceplaza.fpbackenduserservice.entities.enums.Status
+freelanceplaza.fpbackenduserservice.entities.Organization ..> freelanceplaza.fpbackenduserservice.entities.enums.OnboardingStatus
+freelanceplaza.fpbackenduserservice.entities.Organization ..> freelanceplaza.fpbackenduserservice.entities.User
+freelanceplaza.fpbackenduserservice.entities.Organization ..> freelanceplaza.fpbackenduserservice.entities.enums.OrganizationInvoiceSetting
+freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable ..> freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable$BaseCreateAuditableBuilder
+freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable ..> freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable
+freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable ..> freelanceplaza.fpbackenduserservice.entities.AuditableCreate
+freelanceplaza.fpbackenduserservice.entities.Address ..> freelanceplaza.fpbackenduserservice.entities.Address$AddressBuilder
+freelanceplaza.fpbackenduserservice.entities.Address ..> freelanceplaza.fpbackenduserservice.entities.enums.AddressType
+freelanceplaza.fpbackenduserservice.entities.Address ..> freelanceplaza.fpbackenduserservice.entities.Address
+freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusions$FreelancerLocationExclusionsBuilderImpl ..> freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusions$FreelancerLocationExclusionsBuilderImpl
+freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusions$FreelancerLocationExclusionsBuilderImpl ..> freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusions
+freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusions$FreelancerLocationExclusionsBuilderImpl ..> freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusions$FreelancerLocationExclusionsBuilder
+freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusions$FreelancerLocationExclusionsBuilderImpl ..> freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable
+freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusions$FreelancerLocationExclusionsBuilderImpl ..> freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable$BaseCreateAuditableBuilder
+freelanceplaza.fpbackenduserservice.entities.Vertical ..> freelanceplaza.fpbackenduserservice.entities.Vertical
+freelanceplaza.fpbackenduserservice.entities.LegalEntity ..> freelanceplaza.fpbackenduserservice.entities.LegalEntity$LegalEntityBuilder
+freelanceplaza.fpbackenduserservice.entities.LegalEntity ..> freelanceplaza.fpbackenduserservice.entities.Address
+freelanceplaza.fpbackenduserservice.entities.LegalEntity ..> freelanceplaza.fpbackenduserservice.entities.LegalEntity
+freelanceplaza.fpbackenduserservice.entities.User ..> freelanceplaza.fpbackenduserservice.entities.User$UserBuilder
+freelanceplaza.fpbackenduserservice.entities.User ..> freelanceplaza.fpbackenduserservice.entities.User
+freelanceplaza.fpbackenduserservice.entities.OrganizationUser ..> freelanceplaza.fpbackenduserservice.entities.OrganizationUser
+freelanceplaza.fpbackenduserservice.entities.User$UserBuilder ..> freelanceplaza.fpbackenduserservice.entities.User$UserBuilder
+freelanceplaza.fpbackenduserservice.entities.User$UserBuilder ..> freelanceplaza.fpbackenduserservice.entities.User
+freelanceplaza.fpbackenduserservice.entities.LocationGroup ..> freelanceplaza.fpbackenduserservice.entities.LocationGroup$LocationGroupBuilder
+freelanceplaza.fpbackenduserservice.entities.LocationGroup ..> freelanceplaza.fpbackenduserservice.entities.Location
+freelanceplaza.fpbackenduserservice.entities.LocationGroup ..> freelanceplaza.fpbackenduserservice.entities.LocationGroup
+freelanceplaza.fpbackenduserservice.entities.Address$AddressBuilder ..> freelanceplaza.fpbackenduserservice.entities.Address$AddressBuilder
+freelanceplaza.fpbackenduserservice.entities.Address$AddressBuilder ..> freelanceplaza.fpbackenduserservice.entities.enums.AddressType
+freelanceplaza.fpbackenduserservice.entities.Address$AddressBuilder ..> freelanceplaza.fpbackenduserservice.entities.Address
+freelanceplaza.fpbackenduserservice.entities.security.Role$RoleBuilder ..> freelanceplaza.fpbackenduserservice.entities.security.Role$RoleBuilder
+freelanceplaza.fpbackenduserservice.entities.security.Role$RoleBuilder ..> freelanceplaza.fpbackenduserservice.entities.security.Role
+freelanceplaza.fpbackenduserservice.entities.SbiCode ..> freelanceplaza.fpbackenduserservice.entities.SbiCode
+freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusions ..> freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusions$FreelancerLocationExclusionsBuilder
+freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusions ..> freelanceplaza.fpbackenduserservice.entities.LocationFreelancerId
+freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusions ..> freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusions
+freelanceplaza.fpbackenduserservice.entities.FavoriteLocationFreelancer ..> freelanceplaza.fpbackenduserservice.entities.LocationFreelancerId
+freelanceplaza.fpbackenduserservice.entities.FavoriteLocationFreelancer ..> freelanceplaza.fpbackenduserservice.entities.FavoriteLocationFreelancer
+freelanceplaza.fpbackenduserservice.entities.Freelancer$FreelancerBuilder ..> freelanceplaza.fpbackenduserservice.entities.Freelancer$FreelancerBuilder
+freelanceplaza.fpbackenduserservice.entities.Freelancer$FreelancerBuilder ..> freelanceplaza.fpbackenduserservice.entities.Freelancer
+freelanceplaza.fpbackenduserservice.entities.Freelancer$FreelancerBuilder ..> freelanceplaza.fpbackenduserservice.entities.LegalEntity
+freelanceplaza.fpbackenduserservice.entities.Freelancer$FreelancerBuilder ..> freelanceplaza.fpbackenduserservice.entities.enums.Status
+freelanceplaza.fpbackenduserservice.entities.Freelancer$FreelancerBuilder ..> freelanceplaza.fpbackenduserservice.entities.enums.OnboardingStatus
+freelanceplaza.fpbackenduserservice.entities.Freelancer$FreelancerBuilder ..> freelanceplaza.fpbackenduserservice.entities.enums.FreelancerRegistrationStep
+freelanceplaza.fpbackenduserservice.entities.Freelancer$FreelancerBuilder ..> freelanceplaza.fpbackenduserservice.entities.User
+freelanceplaza.fpbackenduserservice.entities.Freelancer$FreelancerBuilder ..> freelanceplaza.fpbackenduserservice.entities.enums.DateOfBirthSource
+freelanceplaza.fpbackenduserservice.entities.Freelancer$FreelancerBuilder ..> freelanceplaza.fpbackenduserservice.entities.User$UserBuilder
+freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusions$FreelancerLocationExclusionsBuilder ..> freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusions$FreelancerLocationExclusionsBuilder
+freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusions$FreelancerLocationExclusionsBuilder ..> freelanceplaza.fpbackenduserservice.entities.LocationFreelancerId
+freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusions$FreelancerLocationExclusionsBuilder ..> freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusions
+freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusions$FreelancerLocationExclusionsBuilder ..> freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable
+freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusions$FreelancerLocationExclusionsBuilder ..> freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable$BaseCreateAuditableBuilder
+freelanceplaza.fpbackenduserservice.entities.BaseUserEmail ..> freelanceplaza.fpbackenduserservice.entities.UserEmail
+freelanceplaza.fpbackenduserservice.entities.BaseUserEmail ..> freelanceplaza.fpbackenduserservice.entities.enums.EmailVerificationMethod
+freelanceplaza.fpbackenduserservice.entities.BaseUserEmail ..> freelanceplaza.fpbackenduserservice.entities.BaseUserEmail
+freelanceplaza.fpbackenduserservice.entities.Location$LocationBuilder ..> freelanceplaza.fpbackenduserservice.entities.Location$LocationBuilder
+freelanceplaza.fpbackenduserservice.entities.Location$LocationBuilder ..> freelanceplaza.fpbackenduserservice.entities.Organization
+freelanceplaza.fpbackenduserservice.entities.Location$LocationBuilder ..> freelanceplaza.fpbackenduserservice.entities.Address
+freelanceplaza.fpbackenduserservice.entities.Location$LocationBuilder ..> com.freelanceplaza.commons.fpcommons.sync.locations.LocationStatus
+freelanceplaza.fpbackenduserservice.entities.Location$LocationBuilder ..> freelanceplaza.fpbackenduserservice.entities.Location
+freelanceplaza.fpbackenduserservice.entities.Freelancer$FreelancerBuilderImpl ..> freelanceplaza.fpbackenduserservice.entities.Freelancer$FreelancerBuilderImpl
+freelanceplaza.fpbackenduserservice.entities.Freelancer$FreelancerBuilderImpl ..> freelanceplaza.fpbackenduserservice.entities.Freelancer
+freelanceplaza.fpbackenduserservice.entities.Freelancer$FreelancerBuilderImpl ..> freelanceplaza.fpbackenduserservice.entities.Freelancer$FreelancerBuilder
+freelanceplaza.fpbackenduserservice.entities.Freelancer$FreelancerBuilderImpl ..> freelanceplaza.fpbackenduserservice.entities.User
+freelanceplaza.fpbackenduserservice.entities.Freelancer$FreelancerBuilderImpl ..> freelanceplaza.fpbackenduserservice.entities.User$UserBuilder
+freelanceplaza.fpbackenduserservice.entities.UserRole ..> freelanceplaza.fpbackenduserservice.entities.User
+freelanceplaza.fpbackenduserservice.entities.UserRole ..> freelanceplaza.fpbackenduserservice.entities.security.Role
+freelanceplaza.fpbackenduserservice.entities.UserRole ..> freelanceplaza.fpbackenduserservice.entities.Organization
+freelanceplaza.fpbackenduserservice.entities.UserRole ..> freelanceplaza.fpbackenduserservice.entities.UserRole
+freelanceplaza.fpbackenduserservice.entities.UserEmail ..> freelanceplaza.fpbackenduserservice.entities.enums.EmailStatus
+freelanceplaza.fpbackenduserservice.entities.UserEmail ..> freelanceplaza.fpbackenduserservice.entities.User
+freelanceplaza.fpbackenduserservice.entities.UserEmail ..> freelanceplaza.fpbackenduserservice.entities.UserEmail
+freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusionsHistory ..> freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusionsHistory$FreelancerLocationExclusionsHistoryBuilder
+freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusionsHistory ..> freelanceplaza.fpbackenduserservice.entities.enums.ExclusionsAction
+freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusionsHistory ..> freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusionsHistory
+freelanceplaza.fpbackenduserservice.entities.views.OrganizationStatusView ..> freelanceplaza.fpbackenduserservice.entities.enums.Status
+freelanceplaza.fpbackenduserservice.entities.views.OrganizationStatusView ..> freelanceplaza.fpbackenduserservice.entities.enums.OnboardingStatus
+freelanceplaza.fpbackenduserservice.entities.User$UserBuilderImpl ..> freelanceplaza.fpbackenduserservice.entities.User$UserBuilderImpl
+freelanceplaza.fpbackenduserservice.entities.User$UserBuilderImpl ..> freelanceplaza.fpbackenduserservice.entities.User
+freelanceplaza.fpbackenduserservice.entities.User$UserBuilderImpl ..> freelanceplaza.fpbackenduserservice.entities.User$UserBuilder
+freelanceplaza.fpbackenduserservice.entities.Organization$OrganizationBuilder ..> freelanceplaza.fpbackenduserservice.entities.Organization$OrganizationBuilder
+freelanceplaza.fpbackenduserservice.entities.Organization$OrganizationBuilder ..> freelanceplaza.fpbackenduserservice.entities.LegalEntity
+freelanceplaza.fpbackenduserservice.entities.Organization$OrganizationBuilder ..> freelanceplaza.fpbackenduserservice.entities.enums.Status
+freelanceplaza.fpbackenduserservice.entities.Organization$OrganizationBuilder ..> freelanceplaza.fpbackenduserservice.entities.enums.OnboardingStatus
+freelanceplaza.fpbackenduserservice.entities.Organization$OrganizationBuilder ..> freelanceplaza.fpbackenduserservice.entities.User
+freelanceplaza.fpbackenduserservice.entities.Organization$OrganizationBuilder ..> freelanceplaza.fpbackenduserservice.entities.enums.OrganizationInvoiceSetting
+freelanceplaza.fpbackenduserservice.entities.Organization$OrganizationBuilder ..> freelanceplaza.fpbackenduserservice.entities.Organization
+freelanceplaza.fpbackenduserservice.entities.Location ..> com.freelanceplaza.commons.fpcommons.sync.locations.LocationStatus
+freelanceplaza.fpbackenduserservice.entities.Location ..> freelanceplaza.fpbackenduserservice.entities.Location$LocationBuilder
+freelanceplaza.fpbackenduserservice.entities.Location ..> freelanceplaza.fpbackenduserservice.entities.Organization
+freelanceplaza.fpbackenduserservice.entities.Location ..> freelanceplaza.fpbackenduserservice.entities.Address
+freelanceplaza.fpbackenduserservice.entities.Location ..> freelanceplaza.fpbackenduserservice.entities.Location
+freelanceplaza.fpbackenduserservice.entities.Freelancer ..> freelanceplaza.fpbackenduserservice.entities.enums.FreelancerRegistrationStep
+freelanceplaza.fpbackenduserservice.entities.Freelancer ..> freelanceplaza.fpbackenduserservice.entities.enums.DateOfBirthSource
+freelanceplaza.fpbackenduserservice.entities.Freelancer ..> freelanceplaza.fpbackenduserservice.entities.Freelancer$FreelancerBuilder
+freelanceplaza.fpbackenduserservice.entities.Freelancer ..> freelanceplaza.fpbackenduserservice.entities.LegalEntity
+freelanceplaza.fpbackenduserservice.entities.Freelancer ..> freelanceplaza.fpbackenduserservice.entities.enums.Status
+freelanceplaza.fpbackenduserservice.entities.Freelancer ..> freelanceplaza.fpbackenduserservice.entities.enums.OnboardingStatus
+freelanceplaza.fpbackenduserservice.entities.Freelancer ..> freelanceplaza.fpbackenduserservice.entities.User
+freelanceplaza.fpbackenduserservice.entities.Freelancer ..> freelanceplaza.fpbackenduserservice.entities.Freelancer
+freelanceplaza.fpbackenduserservice.entities.Freelancer ..> freelanceplaza.fpbackenduserservice.entities.User$UserBuilder
+freelanceplaza.fpbackenduserservice.entities.LegalEntity$LegalEntityBuilder ..> freelanceplaza.fpbackenduserservice.entities.LegalEntity$LegalEntityBuilder
+freelanceplaza.fpbackenduserservice.entities.LegalEntity$LegalEntityBuilder ..> freelanceplaza.fpbackenduserservice.entities.Address
+freelanceplaza.fpbackenduserservice.entities.LegalEntity$LegalEntityBuilder ..> freelanceplaza.fpbackenduserservice.entities.LegalEntity
+freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusionsHistory$FreelancerLocationExclusionsHistoryBuilder ..> freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusionsHistory$FreelancerLocationExclusionsHistoryBuilder
+freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusionsHistory$FreelancerLocationExclusionsHistoryBuilder ..> freelanceplaza.fpbackenduserservice.entities.enums.ExclusionsAction
+freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusionsHistory$FreelancerLocationExclusionsHistoryBuilder ..> freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusionsHistory
+freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusionsHistory$FreelancerLocationExclusionsHistoryBuilder ..> freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable
+freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusionsHistory$FreelancerLocationExclusionsHistoryBuilder ..> freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable$BaseCreateAuditableBuilder
+
+' IMPORTS =======
+' Java Files Path : /Users/paolo/Work/Tadaah/fp-backend-user-service/src/main/java/freelanceplaza/fpbackenduserservice/entities/
+' freelanceplaza.fpbackenduserservice.entities.enums.ExclusionsAction
+
+' freelanceplaza.fpbackenduserservice.entities.security.Privilege
+
+' freelanceplaza.fpbackenduserservice.entities.QLegalEntity
+
+' freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable$BaseCreateAuditableBuilder
+
+' freelanceplaza.fpbackenduserservice.entities.QVertical
+
+' freelanceplaza.fpbackenduserservice.entities.security.Role
+
+' freelanceplaza.fpbackenduserservice.entities.QFavoriteLocationFreelancer
+
+' freelanceplaza.fpbackenduserservice.entities.LocationGroup$LocationGroupBuilderImpl
+
+' freelanceplaza.fpbackenduserservice.entities.UserEmailEvent
+
+' freelanceplaza.fpbackenduserservice.entities.enums.OrganizationType
+
+' freelanceplaza.fpbackenduserservice.entities.QFreelancerLocationExclusions
+
+' freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusionsHistory$FreelancerLocationExclusionsHistoryBuilderImpl
+
+' freelanceplaza.fpbackenduserservice.entities.LocationFreelancerId
+
+' freelanceplaza.fpbackenduserservice.entities.QOrganizationUser
+
+' freelanceplaza.fpbackenduserservice.entities.FavoriteLocationFreelancerHistory
+
+' freelanceplaza.fpbackenduserservice.entities.enums.DateOfBirthSource
+
+' freelanceplaza.fpbackenduserservice.entities.enums.EmailEventType
+
+' freelanceplaza.fpbackenduserservice.entities.enums.FileType
+
+' freelanceplaza.fpbackenduserservice.entities.AuditableCreate
+
+' freelanceplaza.fpbackenduserservice.entities.LocationGroup$LocationGroupBuilder
+
+' freelanceplaza.fpbackenduserservice.entities.Organization
+
+' freelanceplaza.fpbackenduserservice.entities.BaseCreateAuditable
+
+' freelanceplaza.fpbackenduserservice.entities.Freelancer$1
+
+' freelanceplaza.fpbackenduserservice.entities.QFreelancer
+
+' freelanceplaza.fpbackenduserservice.entities.Address
+
+' freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusions$FreelancerLocationExclusionsBuilderImpl
+
+' freelanceplaza.fpbackenduserservice.entities.enums.OrganizationInvoiceSetting
+
+' freelanceplaza.fpbackenduserservice.entities.enums.OwnerType
+
+' freelanceplaza.fpbackenduserservice.entities.Vertical
+
+' freelanceplaza.fpbackenduserservice.entities.LegalEntity
+
+' freelanceplaza.fpbackenduserservice.entities.FpUser
+
+' freelanceplaza.fpbackenduserservice.entities.QBaseCreateAuditable
+
+' freelanceplaza.fpbackenduserservice.entities.User
+
+' freelanceplaza.fpbackenduserservice.entities.enums.EmailStatus
+
+' freelanceplaza.fpbackenduserservice.entities.OrganizationUser
+
+' freelanceplaza.fpbackenduserservice.entities.User$UserBuilder
+
+' freelanceplaza.fpbackenduserservice.entities.LocationGroup
+
+' freelanceplaza.fpbackenduserservice.entities.Address$AddressBuilder
+
+' freelanceplaza.fpbackenduserservice.entities.security.Role$RoleBuilder
+
+' freelanceplaza.fpbackenduserservice.entities.security.QPrivilege
+
+' freelanceplaza.fpbackenduserservice.entities.enums.FreelancerRegistrationStep
+
+' freelanceplaza.fpbackenduserservice.entities.QFavoriteLocationFreelancerHistory
+
+' freelanceplaza.fpbackenduserservice.entities.QUserRole
+
+' freelanceplaza.fpbackenduserservice.entities.enums.HistoryActions
+
+' freelanceplaza.fpbackenduserservice.entities.QBaseUserEmail
+
+' freelanceplaza.fpbackenduserservice.entities.QLocation
+
+' freelanceplaza.fpbackenduserservice.entities.QFreelancerLocationExclusionsHistory
+
+' freelanceplaza.fpbackenduserservice.entities.QUserEmailEvent
+
+' freelanceplaza.fpbackenduserservice.entities.SbiCode
+
+' freelanceplaza.fpbackenduserservice.entities.QAddress
+
+' freelanceplaza.fpbackenduserservice.entities.enums.Status
+
+' freelanceplaza.fpbackenduserservice.entities.enums.LrkRegistrationStatus
+
+' freelanceplaza.fpbackenduserservice.entities.QUser
+
+' freelanceplaza.fpbackenduserservice.entities.security.QRole
+
+' freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusions
+
+' freelanceplaza.fpbackenduserservice.entities.FavoriteLocationFreelancer
+
+' freelanceplaza.fpbackenduserservice.entities.QUserEmailVerification
+
+' freelanceplaza.fpbackenduserservice.entities.Freelancer$FreelancerBuilder
+
+' freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusions$FreelancerLocationExclusionsBuilder
+
+' freelanceplaza.fpbackenduserservice.entities.BaseUserEmail
+
+' freelanceplaza.fpbackenduserservice.entities.enums.EmailVerificationMethod
+
+' freelanceplaza.fpbackenduserservice.entities.Location$LocationBuilder
+
+' freelanceplaza.fpbackenduserservice.entities.enums.AddressType
+
+' freelanceplaza.fpbackenduserservice.entities.Freelancer$FreelancerBuilderImpl
+
+' freelanceplaza.fpbackenduserservice.entities.enums.OnboardingStatus
+
+' freelanceplaza.fpbackenduserservice.entities.QOrganization
+
+' freelanceplaza.fpbackenduserservice.entities.enums.DocumentStatus
+
+' freelanceplaza.fpbackenduserservice.entities.QFpUser
+
+' freelanceplaza.fpbackenduserservice.entities.UserRole
+
+' freelanceplaza.fpbackenduserservice.entities.UserEmail
+
+' freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusionsHistory
+
+' freelanceplaza.fpbackenduserservice.entities.views.OrganizationStatusView
+
+' freelanceplaza.fpbackenduserservice.entities.User$UserBuilderImpl
+
+' freelanceplaza.fpbackenduserservice.entities.QLocationFreelancerId
+
+' freelanceplaza.fpbackenduserservice.entities.Organization$OrganizationBuilder
+
+' freelanceplaza.fpbackenduserservice.entities.UserEmailVerification
+
+' freelanceplaza.fpbackenduserservice.entities.Location
+
+' freelanceplaza.fpbackenduserservice.entities.enums.Role
+
+' freelanceplaza.fpbackenduserservice.entities.QSbiCode
+
+' freelanceplaza.fpbackenduserservice.entities.QLocationGroup
+
+' freelanceplaza.fpbackenduserservice.entities.Freelancer
+
+' freelanceplaza.fpbackenduserservice.entities.LegalEntity$LegalEntityBuilder
+
+' freelanceplaza.fpbackenduserservice.entities.QUserEmail
+
+' freelanceplaza.fpbackenduserservice.entities.FreelancerLocationExclusionsHistory$FreelancerLocationExclusionsHistoryBuilder
+
+' freelanceplaza.fpbackenduserservice.entities.enums.OwnerType
+
+' freelanceplaza.fpbackenduserservice.entities.enums.EmailStatus
+
+' freelanceplaza.fpbackenduserservice.entities.enums.OnboardingStatus
+
+' freelanceplaza.fpbackenduserservice.entities.enums.OrganizationType
+
+' freelanceplaza.fpbackenduserservice.entities.enums.DocumentStatus
+
+' freelanceplaza.fpbackenduserservice.entities.enums.ExclusionsAction
+
+' freelanceplaza.fpbackenduserservice.entities.enums.Status
+
+' freelanceplaza.fpbackenduserservice.entities.enums.EmailEventType
+
+' freelanceplaza.fpbackenduserservice.entities.enums.OrganizationInvoiceSetting
+
+' freelanceplaza.fpbackenduserservice.entities.enums.Role
+
+' freelanceplaza.fpbackenduserservice.entities.enums.DateOfBirthSource
+
+' freelanceplaza.fpbackenduserservice.entities.enums.HistoryActions
+
+' freelanceplaza.fpbackenduserservice.entities.enums.AddressType
+
+' freelanceplaza.fpbackenduserservice.entities.enums.EmailVerificationMethod
+
+' freelanceplaza.fpbackenduserservice.entities.enums.FileType
+
+' freelanceplaza.fpbackenduserservice.entities.enums.FreelancerRegistrationStep
+
+' freelanceplaza.fpbackenduserservice.entities.enums.LrkRegistrationStatus
+
+' freelanceplaza.fpbackenduserservice.entities.security.Role
+
+' freelanceplaza.fpbackenduserservice.entities.security.Privilege
+
+' freelanceplaza.fpbackenduserservice.entities.security.QPrivilege
+
+' freelanceplaza.fpbackenduserservice.entities.security.Role$RoleBuilder
+
+' freelanceplaza.fpbackenduserservice.entities.security.QRole
+
+' freelanceplaza.fpbackenduserservice.entities.views.OrganizationStatusView
+
+
+
+@enduml

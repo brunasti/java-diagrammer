@@ -47,7 +47,7 @@ public class ImportsIdentifier {
     // TODO : Could even extract packages....
     //    Set<String> packages = new HashSet<>();
     try {
-      Debugger.debug(0, "ImportsIdentifier.extractImports : path " + path);
+      Debugger.debug(4, "ImportsIdentifier.extractImports : path " + path);
       JavaProjectBuilder jp = new JavaProjectBuilder();
       jp.addSource(new FileReader(path));
 

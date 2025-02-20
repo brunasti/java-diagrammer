@@ -99,4 +99,80 @@ public class AdHocDiagramGenerationTest implements TestConstants {
   }
 
 
+  void generateDiagramEntities(String repository, String classesPath, String javaPath) {
+    // Commons
+    String[] fullArgs = new String[10];
+
+    String diagram = repository + "-entities";
+    System.err.println("generateDiagramEntity ------ for Tadaah project Entities----- [" + repository + "][" + diagram + "]");
+    fullArgs[0] = classesPath;
+    fullArgs[1] = "/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/Tadaah-" + diagram;
+    fullArgs[2] = "-c";
+    fullArgs[3] = "/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/config.json";
+    fullArgs[4] = "-o";
+    fullArgs[5] = fullArgs[1] + ".puml";
+    fullArgs[6] = "-i";
+    fullArgs[7] = javaPath;
+    fullArgs[8] = "-d";
+    fullArgs[9] = "3";
+
+    ClassDiagrammerMain.main(fullArgs);
+  }
+
+  @Test
+  @DisplayName("Call generateDiagramEntity for Tadaah projects Entities")
+  void generateDiagramsEntities() {
+//    // Commons
+//    String repository = "user";
+//    String diagram = "user-entities";
+//    String[] fullArgs = new String[10];
+
+
+    generateDiagramEntities("user",
+            "/Users/paolo/Work/Tadaah/fp-backend-user-service/build/classes/java/main/freelanceplaza/fpbackenduserservice/entities",
+            "/Users/paolo/Work/Tadaah/fp-backend-user-service/src/main/java/freelanceplaza/fpbackenduserservice/entities");
+
+//    repository = "user";
+//    diagram = repository+"-entities";
+//    System.err.println("generateDiagramEntity ------ for Tadaah project Entities----- ["+repository+"]["+diagram+"]");
+//    fullArgs[0] =
+////            "/Users/paolo/Work/Tadaah/" +repository+ "/build/classes/java/main";
+//            "/Users/paolo/Work/Tadaah/fp-backend-user-service/build/classes/java/main/freelanceplaza/fpbackenduserservice/entities";
+//    fullArgs[1] = "/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/Tadaah-"+diagram;
+//    fullArgs[2] = "-c";
+//    fullArgs[3] = "/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/config.json";
+//    fullArgs[4] = "-o";
+//    fullArgs[5] = fullArgs[1] + ".puml";
+//    fullArgs[6] = "-i";
+////    fullArgs[7] = "/Users/paolo/Work/Tadaah/" +repository+ "/src/main/java";
+//    fullArgs[7] = "/Users/paolo/Work/Tadaah/fp-backend-user-service/src/main/java/freelanceplaza/fpbackenduserservice/entities";
+//    fullArgs[8] = "-d";
+//    fullArgs[9] = "3";
+//
+//    ClassDiagrammerMain.main(fullArgs);
+
+    generateDiagramEntities("documents",
+            "/Users/paolo/Work/Tadaah/fp-backend-documents-service/build/classes/java/main/com/freelanceplaza/documents/entity",
+            "/Users/paolo/Work/Tadaah/fp-backend-documents-service/src/main/java/com/freelanceplaza/documents/entity");
+
+
+//    repository = "documents";
+//    diagram = repository+"-entities";
+//    System.err.println("generateDiagramEntity ------ for Tadaah project Entities----- ["+repository+"]["+diagram+"]");
+//    fullArgs[0] =
+//            "/Users/paolo/Work/Tadaah/fp-backend-documents-service/build/classes/java/main/com/freelanceplaza/documents/entity";
+//    fullArgs[1] = "/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/Tadaah-"+diagram;
+//    fullArgs[2] = "-c";
+//    fullArgs[3] = "/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/config.json";
+//    fullArgs[4] = "-o";
+//    fullArgs[5] = fullArgs[1] + ".puml";
+//    fullArgs[6] = "-i";
+//    fullArgs[7] = "/Users/paolo/Work/Tadaah/fp-backend-user-service/src/main/java/com/freelanceplaza/documents/entity";
+//    fullArgs[8] = "-d";
+//    fullArgs[9] = "3";
+//    ClassDiagrammerMain.main(fullArgs);
+
+  }
+
+
 }
