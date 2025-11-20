@@ -13,11 +13,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.net.URL;
 import java.net.URLClassLoader;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import org.apache.bcel.classfile.Field;
 import org.apache.bcel.classfile.JavaClass;
@@ -348,13 +344,18 @@ public class ClassDiagrammer {
   private void generateFields(final ArrayList<JavaClass> classes) {
     Debugger.debug(2, "generateFields() ------------------");
     output.println("' FIELDS =======");
+    List done = new ArrayList();
     classes.forEach(javaClass -> {
       if (!javaClass.isEnum()) {
         for (Field field : javaClass.getFields()) {
           if (isTypeToBeConnected(javaClass, field)) {
             String correctedType = field.getType().toString().replace("[","").replace("]", "");
-            output.println(javaClass.getClassName()
-                    + " --> " + correctedType);
+            String rel = javaClass.getClassName()
+                    + " --> " + correctedType;
+            if (!done.contains(rel)) {
+              output.println(rel);
+            }
+            done.add(rel);
           }
         }
       }
@@ -405,11 +406,16 @@ public class ClassDiagrammer {
   private void generateImplements(final ArrayList<JavaClass> classes) {
     Debugger.debug(2, "generateImplements() ------------------");
     output.println("' IMPLEMENT INTERFACE =======");
+    List done = new ArrayList();
     classes.forEach(javaClass -> {
       try {
         for (JavaClass javaInterface : javaClass.getInterfaces()) {
-          output.println(javaInterface.getClassName() + " <|.. "
-                  + javaClass.getClassName());
+          String rel = javaInterface.getClassName() + " <|.. "
+                  + javaClass.getClassName();
+          if (!done.contains(rel)) {
+            output.println(rel);
+          }
+          done.add(rel);
         }
       } catch (ClassNotFoundException ex) {
         Debugger.debug(2, "Error generating `Implements` relations : " + ex.getMessage());
@@ -421,12 +427,17 @@ public class ClassDiagrammer {
   private void generateInheritances(final ArrayList<JavaClass> classes) {
     Debugger.debug(2, "generateInheritances() ------------------");
     output.println("' INHERITANCES =======");
+    List done = new ArrayList();
     classes.forEach(javaClass -> {
       try {
         if (!"java.lang.Object".equals(
                 javaClass.getSuperClass().getClassName())) {
-          output.println(javaClass.getSuperClass().getClassName() + " <|-- "
-                  + javaClass.getClassName());
+          String rel = javaClass.getSuperClass().getClassName() + " <|-- "
+                  + javaClass.getClassName();
+          if (!done.contains(rel)) {
+            output.println(rel);
+          }
+          done.add(rel);
         }
       } catch (ClassNotFoundException ex) {
         Debugger.debug(2, "Error generating `Inheritance` relations : " + ex.getMessage());
@@ -468,15 +479,20 @@ public class ClassDiagrammer {
     output.println();
     output.println();
     output.println("' CLASSES =======");
+
+    List done = new ArrayList();
     classes.forEach(javaClass -> {
-      if (javaClass.isEnum()) {
-        generateEnum(javaClass, classLoader);
-      } else if (javaClass.isInterface()) {
-        output.println("interface " + javaClass.getClassName());
-      } else if (javaClass.isAbstract()) {
-        output.println("abstract " + javaClass.getClassName());
-      } else {
-        output.println("class " + javaClass.getClassName());
+      if (!done.contains(javaClass.getClassName())) {
+        if (javaClass.isEnum()) {
+          generateEnum(javaClass, classLoader);
+        } else if (javaClass.isInterface()) {
+          output.println("interface " + javaClass.getClassName());
+        } else if (javaClass.isAbstract()) {
+          output.println("abstract " + javaClass.getClassName());
+        } else {
+          output.println("class " + javaClass.getClassName());
+        }
+        done.add(javaClass.getClassName());
       }
     });
     output.println();

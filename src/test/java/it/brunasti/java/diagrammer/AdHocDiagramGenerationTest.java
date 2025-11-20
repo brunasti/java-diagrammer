@@ -181,4 +181,32 @@ public class AdHocDiagramGenerationTest implements TestConstants {
   }
 
 
+
+  @Test
+  void generateDiagramForTadaahDbErGenerator() {
+    // Commons
+    String repository = "";
+    String classesPath = "/Users/paolo/Work/Tadaah/tadaah_fp2_data_tools/target/classes";
+    String javaPath = "/Users/paolo/Work/Tadaah/tadaah_fp2_data_tools/src/main/java";
+//    String classesPath = "/Users/paolo/Work/Tadaah/tadaah_fp2_data_tools/target/classes/com/freelancerplaza/analysis";
+//    String javaPath = "/Users/paolo/Work/Tadaah/tadaah_fp2_data_tools/src/main/java/com/freelancerplaza/analysis";
+
+    String[] fullArgs = new String[10];
+
+    String diagram = repository;
+    System.err.println("generateDiagramForTadaahDbErGenerator ------ for Tadaah Db Er Generator----- [" + repository + "][" + diagram + "]");
+    fullArgs[0] = classesPath;
+    fullArgs[1] = "/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/analysis/Tadaah-Analysis" + diagram;
+    fullArgs[2] = "-c";
+    fullArgs[3] = "/Users/paolo/IdeaProjects/mine/java-diagrammer/temp/tadaah/config.json";
+    fullArgs[4] = "-o";
+    fullArgs[5] = fullArgs[1] + ".puml";
+    fullArgs[6] = "-i";
+    fullArgs[7] = javaPath;
+    fullArgs[8] = "-d";
+    fullArgs[9] = "1";
+
+    ClassDiagrammerMain.main(fullArgs);
+  }
+
 }
