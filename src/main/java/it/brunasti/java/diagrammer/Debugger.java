@@ -6,7 +6,7 @@ package it.brunasti.java.diagrammer;
 public class Debugger {
   private static final int DEFAULT_DEBUG_LEVEL = 3;
 
-  private static boolean debug = false;
+  private static boolean debug = true;
   private static int debugLevel = DEFAULT_DEBUG_LEVEL;
 
   public static void reset() {

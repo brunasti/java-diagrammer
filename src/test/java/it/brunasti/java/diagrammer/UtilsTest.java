@@ -64,7 +64,7 @@ public class UtilsTest implements TestConstants {
     try {
       Set<String> list = Utils.listDirectories(tempDirectory);
       assertNotNull(list);
-      assertEquals(2,list.size());
+      assertEquals(3,list.size());
     } catch (IOException ioex) {
       ioex.printStackTrace();
     }
