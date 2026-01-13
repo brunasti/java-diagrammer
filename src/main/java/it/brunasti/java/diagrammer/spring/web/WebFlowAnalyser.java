@@ -154,15 +154,8 @@ public class WebFlowAnalyser {
         Debugger.debug(1,"generateDiagram ["+configurationFile+"] ["+javaFilesPath+"]");
 
         generateHeader(configurationFile, javaFilesPath);
-//        generateClasses(classes, classLoader);
-//        generateInheritances(classes);
-//        generateImplements(classes);
-//        generateFields(classes);
-//        generateUses(classes);
-//        generateImports(classes, javaFilesPath);
         generateFooter();
     }
-
 
     ArrayList<WebPageMaping> pages = new ArrayList<>();
     static final private String mapId = "Mapping(\"";
@@ -172,6 +165,7 @@ public class WebFlowAnalyser {
     public void analyseFile(String fileName) {
         int lastINdex = fileName.lastIndexOf(".");
         fileName = fileName.substring(0,lastINdex);
+        String className = fileName.substring(fileName.lastIndexOf(".")+1);
         String javaFile = javaFilesPath + fileName.replace(".", "/") + ".java";
 
         String classUrl = "";
@@ -209,7 +203,7 @@ public class WebFlowAnalyser {
                         webPageMaping.fileName = fileName;
                         webPageMaping.method = method;
                         webPageMaping.mapping = classUrl+url;
-                        webPageMaping.function = function;
+                        webPageMaping.function = className+"_"+function;
                         pages.add(webPageMaping);
                     }
 

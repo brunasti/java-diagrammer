@@ -1,0 +1,223 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+' GENERATE PAGES DIAGRAM ===========
+' Generator       : it.brunasti.java.diagrammer.spring.web.WebFlowAnalyser
+' Java Files Path : [/Users/paolobrunasti/IdeaProjects/OCTA/stock/src/main/java/]
+' Configuration   : [./docs/config.json]
+' Generated at    : Tue Jan 13 18:17:59 CET 2026
+'
+'   Pages infos    :
+class "GET /api/extern/v1/pharmacy-locations/by/pharmacy-agb/{pharmacyAgb}" as PharmacyLocationDtoAPI_findByAgb {
+    Get
+    com.crolox.pistock.api.extern.PharmacyLocationDtoAPI
+    PharmacyLocationDtoAPI_findByAgb
+}
+
+class "POST /api/extern/v1/product-info/list" as ProductInfoDtoAPI_listProductInfoPerZindex {
+    Post
+    com.crolox.pistock.api.extern.ProductInfoDtoAPI
+    ProductInfoDtoAPI_listProductInfoPerZindex
+}
+
+class "PUT /api/extern/v1/product-request/reduce" as ProductRequestDtoAPI_move {
+    Put
+    com.crolox.pistock.api.extern.ProductRequestDtoAPI
+    ProductRequestDtoAPI_move
+}
+
+class "POST /api/extern/fluenc/stock-on-location/{id}" as StockOnLocationAPI_stockOnLocation {
+    Post
+    com.crolox.pistock.api.extern.fluenc.StockOnLocationAPI
+    StockOnLocationAPI_stockOnLocation
+}
+
+class "GET /api/v1/backorders/by/agb/{agb}" as BackorderAPI_findByAgb {
+    Get
+    com.crolox.pistock.api.gui.BackorderAPI
+    BackorderAPI_findByAgb
+}
+
+class "DELETE /api/v1/backorders/{id}" as BackorderAPI_delete {
+    Delete
+    com.crolox.pistock.api.gui.BackorderAPI
+    BackorderAPI_delete
+}
+
+class "GET /api/v1/pakbonnen/by/agb/{agb}" as PakbonAPI_findByAgb {
+    Get
+    com.crolox.pistock.api.gui.PakbonAPI
+    PakbonAPI_findByAgb
+}
+
+class "DELETE /api/v1/pakbonnen/{id}" as PakbonAPI_delete {
+    Delete
+    com.crolox.pistock.api.gui.PakbonAPI
+    PakbonAPI_delete
+}
+
+class "GET /api/v1/pakbon-dtos/by/agb/{agb}" as PakbonDtoAPI_findByAgb {
+    Get
+    com.crolox.pistock.api.gui.PakbonDtoAPI
+    PakbonDtoAPI_findByAgb
+}
+
+class "GET /api/v1/pakbon-dtos/{id}" as PakbonDtoAPI_findById {
+    Get
+    com.crolox.pistock.api.gui.PakbonDtoAPI
+    PakbonDtoAPI_findById
+}
+
+class "GET /api/v1/pakbon-dtos/{id}/{rpid}" as PakbonDtoAPI_findById {
+    Get
+    com.crolox.pistock.api.gui.PakbonDtoAPI
+    PakbonDtoAPI_findById
+}
+
+class "DELETE /api/v1/pakbon-dtos/{id}" as PakbonDtoAPI_delete {
+    Delete
+    com.crolox.pistock.api.gui.PakbonDtoAPI
+    PakbonDtoAPI_delete
+}
+
+class "GET /api/v1/pharmacies/list/{agb}" as PharmacyAPI_findAll {
+    Get
+    com.crolox.pistock.api.gui.PharmacyAPI
+    PharmacyAPI_findAll
+}
+
+class "GET /api/v1/pharmacies/{agb}" as PharmacyAPI_findByAgb {
+    Get
+    com.crolox.pistock.api.gui.PharmacyAPI
+    PharmacyAPI_findByAgb
+}
+
+class "PUT /api/v1/pharmacies/{agb}" as PharmacyAPI_update {
+    Put
+    com.crolox.pistock.api.gui.PharmacyAPI
+    PharmacyAPI_update
+}
+
+class "DELETE /api/v1/pharmacies/{agb}" as PharmacyAPI_delete {
+    Delete
+    com.crolox.pistock.api.gui.PharmacyAPI
+    PharmacyAPI_delete
+}
+
+class "GET /api/v1/pharmacy_locations/{id}" as PharmacyLocationAPI_findById {
+    Get
+    com.crolox.pistock.api.gui.PharmacyLocationAPI
+    PharmacyLocationAPI_findById
+}
+
+class "PUT /api/v1/pharmacy_locations/{id}" as PharmacyLocationAPI_update {
+    Put
+    com.crolox.pistock.api.gui.PharmacyLocationAPI
+    PharmacyLocationAPI_update
+}
+
+class "DELETE /api/v1/pharmacy_locations/{id}" as PharmacyLocationAPI_delete {
+    Delete
+    com.crolox.pistock.api.gui.PharmacyLocationAPI
+    PharmacyLocationAPI_delete
+}
+
+class "GET /api/v1/product/base/search/nameStartsWith" as ProductSearchAPI_searchProducts {
+    Get
+    com.crolox.pistock.api.gui.ProductSearchAPI
+    ProductSearchAPI_searchProducts
+}
+
+class "GET /api/v1/received-product-dtos/{id}" as ReceivedProductDtosAPI_findById {
+    Get
+    com.crolox.pistock.api.gui.ReceivedProductDtosAPI
+    ReceivedProductDtosAPI_findById
+}
+
+class "GET /api/v1/reservations/{id}" as ReservationAPI_findById {
+    Get
+    com.crolox.pistock.api.gui.ReservationAPI
+    ReservationAPI_findById
+}
+
+class "PUT /api/v1/stock/import/{stockLocationId}" as StockImportAPI_update {
+    Put
+    com.crolox.pistock.api.gui.StockImportAPI
+    StockImportAPI_update
+}
+
+class "GET /api/v1/stock/import/remove/{stockLocationId}" as StockImportAPI_removeStock {
+    Get
+    com.crolox.pistock.api.gui.StockImportAPI
+    StockImportAPI_removeStock
+}
+
+class "PUT /api/v1/wholesales/{id}" as WholesaleAPI_update {
+    Put
+    com.crolox.pistock.api.gui.WholesaleAPI
+    WholesaleAPI_update
+}
+
+class "GET /api/v1/import/agb/{agb}/filename/{filename}" as ImportController_goImport {
+    Get
+    com.crolox.pistock.controller.backend.ImportController
+    ImportController_goImport
+}
+
+class "GET /api/v1/import/pakbonnen/agb/{agb}" as ImportController_goImportPakbonnen {
+    Get
+    com.crolox.pistock.controller.backend.ImportController
+    ImportController_goImportPakbonnen
+}
+
+class "POST /api/v1/get/productsType" as LocalProductsController_getProducts {
+    Post
+    com.crolox.pistock.controller.backend.LocalProductsController
+    LocalProductsController_getProducts
+}
+
+class "POST /api/v1/" as ProductOrderController_orderAndReserveProducts {
+    Post
+    com.crolox.pistock.controller.backend.ProductOrderController
+    ProductOrderController_orderAndReserveProducts
+}
+
+class "POST /api/v1/order-based-on-period" as ProductOrderController_orderBasedOnPeriod {
+    Post
+    com.crolox.pistock.controller.backend.ProductOrderController
+    ProductOrderController_orderBasedOnPeriod
+}
+
+class "POST /api/v1/product/writeoff" as ProductWriteOffController_productWriteOff {
+    Post
+    com.crolox.pistock.controller.backend.ProductWriteOffController
+    ProductWriteOffController_productWriteOff
+}
+
+class "GET /pharmacy_list" as PharmacyController_listPharmacies {
+    Get
+    com.crolox.pistock.controller.gui.PharmacyController
+    PharmacyController_listPharmacies
+}
+
+class "GET /pharmacy_list_as_admin" as PharmacyController_listPharmaciesAsAdmin {
+    Get
+    com.crolox.pistock.controller.gui.PharmacyController
+    PharmacyController_listPharmaciesAsAdmin
+}
+
+class "GET /pharmacy_locations" as PharmacyLocationController_listPharmacyLocations {
+    Get
+    com.crolox.pistock.controller.gui.PharmacyLocationController
+    PharmacyLocationController_listPharmacyLocations
+}
+
+class "GET /wholesale_list" as WholesaleController_listWholesales {
+    Get
+    com.crolox.pistock.controller.gui.WholesaleController
+    WholesaleController_listWholesales
+}
+
+
+
+@enduml

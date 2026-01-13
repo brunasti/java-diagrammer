@@ -5,187 +5,187 @@
 ' Generator       : it.brunasti.java.diagrammer.spring.web.WebFlowAnalyser
 ' Java Files Path : [/Users/paolobrunasti/IdeaProjects/OCTA/labelscout/src/main/java/]
 ' Configuration   : [./docs/config.json]
-' Generated at    : Tue Jan 13 17:31:37 CET 2026
+' Generated at    : Tue Jan 13 18:09:39 CET 2026
 '
 '   Pages infos    :
-class "POST /v1/public/advice" as advice {
+class "POST /v1/public/advice" as LabelscoutServiceV1_advice {
     Post
     nl.crolox.labelscout.service.LabelscoutServiceV1
-    advice
+    LabelscoutServiceV1_advice
 }
 
-class "POST /v1/cgm-advice" as adviceCGM {
+class "POST /v1/cgm-advice" as LabelscoutServiceV1_adviceCGM {
     Post
     nl.crolox.labelscout.service.LabelscoutServiceV1
-    adviceCGM
+    LabelscoutServiceV1_adviceCGM
 }
 
-class "GET /login/admin/" as adminPage {
+class "GET /login/admin/" as AdminPagesController_adminPage {
     Get
     nl.crolox.labelscout.web.AdminPagesController
-    adminPage
+    AdminPagesController_adminPage
 }
 
-class "GET /login/admin/apotheekgroep" as apotheekGroepPage {
+class "GET /login/admin/apotheekgroep" as AdminPagesController_apotheekGroepPage {
     Get
     nl.crolox.labelscout.web.AdminPagesController
-    apotheekGroepPage
+    AdminPagesController_apotheekGroepPage
 }
 
-class "GET /login/admin/label/{id}" as labelPage {
+class "GET /login/admin/label/{id}" as AdminPagesController_labelPage {
     Get
     nl.crolox.labelscout.web.AdminPagesController
-    labelPage
+    AdminPagesController_labelPage
 }
 
-class "GET /login/admin/label/new/{id}" as labelNewPage {
+class "GET /login/admin/label/new/{id}" as AdminPagesController_labelNewPage {
     Get
     nl.crolox.labelscout.web.AdminPagesController
-    labelNewPage
+    AdminPagesController_labelNewPage
 }
 
-class "GET /login/admin/label/edit/{id}" as labelEditPage {
+class "GET /login/admin/label/edit/{id}" as AdminPagesController_labelEditPage {
     Get
     nl.crolox.labelscout.web.AdminPagesController
-    labelEditPage
+    AdminPagesController_labelEditPage
 }
 
-class "GET /login/admin/groep" as groepPage {
+class "GET /login/admin/groep" as AdminPagesController_groepPage {
     Get
     nl.crolox.labelscout.web.AdminPagesController
-    groepPage
+    AdminPagesController_groepPage
 }
 
-class "GET /login/admin/groep/new" as groepNewPage {
+class "GET /login/admin/groep/new" as AdminPagesController_groepNewPage {
     Get
     nl.crolox.labelscout.web.AdminPagesController
-    groepNewPage
+    AdminPagesController_groepNewPage
 }
 
-class "GET /login/admin/groep/{id}" as getGroep {
+class "GET /login/admin/groep/{id}" as AdminPagesController_getGroep {
     Get
     nl.crolox.labelscout.web.AdminPagesController
-    getGroep
+    AdminPagesController_getGroep
 }
 
-class "GET /login/admin/apotheek/{id}" as getApotheek {
+class "GET /login/admin/apotheek/{id}" as AdminPagesController_getApotheek {
     Get
     nl.crolox.labelscout.web.AdminPagesController
-    getApotheek
+    AdminPagesController_getApotheek
 }
 
-class "GET /login/admin/apotheekGroep/{id}" as getApotheekGroep {
+class "GET /login/admin/apotheekGroep/{id}" as AdminPagesController_getApotheekGroep {
     Get
     nl.crolox.labelscout.web.AdminPagesController
-    getApotheekGroep
+    AdminPagesController_getApotheekGroep
 }
 
-class "GET /login/admin/apotheek/" as apotheekNewPage {
+class "GET /login/admin/apotheek/" as AdminPagesController_apotheekNewPage {
     Get
     nl.crolox.labelscout.web.AdminPagesController
-    apotheekNewPage
+    AdminPagesController_apotheekNewPage
 }
 
-class "GET /login/admin/apotheekgroep/new" as apotheekGroepNewPage {
+class "GET /login/admin/apotheekgroep/new" as AdminPagesController_apotheekGroepNewPage {
     Get
     nl.crolox.labelscout.web.AdminPagesController
-    apotheekGroepNewPage
+    AdminPagesController_apotheekGroepNewPage
 }
 
-class "POST /login/admin/apotheek" as apotheekSubmit {
+class "POST /login/admin/apotheek" as AdminPagesController_apotheekSubmit {
     Post
     nl.crolox.labelscout.web.AdminPagesController
-    apotheekSubmit
+    AdminPagesController_apotheekSubmit
 }
 
-class "POST /login/admin/apotheekGroep" as apotheekGroepSubmit {
+class "POST /login/admin/apotheekGroep" as AdminPagesController_apotheekGroepSubmit {
     Post
     nl.crolox.labelscout.web.AdminPagesController
-    apotheekGroepSubmit
+    AdminPagesController_apotheekGroepSubmit
 }
 
-class "POST /login/admin/label" as apotheekGroepLabelSubmit {
+class "POST /login/admin/label" as AdminPagesController_apotheekGroepLabelSubmit {
     Post
     nl.crolox.labelscout.web.AdminPagesController
-    apotheekGroepLabelSubmit
+    AdminPagesController_apotheekGroepLabelSubmit
 }
 
-class "POST /login/admin/groep" as groepSubmit {
+class "POST /login/admin/groep" as AdminPagesController_groepSubmit {
     Post
     nl.crolox.labelscout.web.AdminPagesController
-    groepSubmit
+    AdminPagesController_groepSubmit
 }
 
-class "DELETE /login/admin/apotheek/delete/{id}" as deleteApotheek {
+class "DELETE /login/admin/apotheek/delete/{id}" as AdminPagesController_deleteApotheek {
     Delete
     nl.crolox.labelscout.web.AdminPagesController
-    deleteApotheek
+    AdminPagesController_deleteApotheek
 }
 
-class "DELETE /login/admin/apotheekGroep/delete/{id}" as deleteApotheekGroep {
+class "DELETE /login/admin/apotheekGroep/delete/{id}" as AdminPagesController_deleteApotheekGroep {
     Delete
     nl.crolox.labelscout.web.AdminPagesController
-    deleteApotheekGroep
+    AdminPagesController_deleteApotheekGroep
 }
 
-class "DELETE /login/admin/groep/delete/{id}" as deleteGroep {
+class "DELETE /login/admin/groep/delete/{id}" as AdminPagesController_deleteGroep {
     Delete
     nl.crolox.labelscout.web.AdminPagesController
-    deleteGroep
+    AdminPagesController_deleteGroep
 }
 
-class "GET /login/admin/label/delete/{id}" as deleteLabel {
+class "GET /login/admin/label/delete/{id}" as AdminPagesController_deleteLabel {
     Get
     nl.crolox.labelscout.web.AdminPagesController
-    deleteLabel
+    AdminPagesController_deleteLabel
 }
 
-class "POST /login/admin/label/update-order" as updateOrder {
+class "POST /login/admin/label/update-order" as AdminPagesController_updateOrder {
     Post
     nl.crolox.labelscout.web.AdminPagesController
-    updateOrder
+    AdminPagesController_updateOrder
 }
 
-class "GET /" as homePage {
+class "GET /" as HomeController_homePage {
     Get
     nl.crolox.labelscout.web.HomeController
-    homePage
+    HomeController_homePage
 }
 
-class "GET /login/" as loginPage {
+class "GET /login/" as HomeController_loginPage {
     Get
     nl.crolox.labelscout.web.HomeController
-    loginPage
+    HomeController_loginPage
 }
 
-class "GET /login/notAllowed" as notAllowedPage {
+class "GET /login/notAllowed" as HomeController_notAllowedPage {
     Get
     nl.crolox.labelscout.web.HomeController
-    notAllowedPage
+    HomeController_notAllowedPage
 }
 
-class "GET /login/groupadmin/" as groupAdminPage {
+class "GET /login/groupadmin/" as HomeController_groupAdminPage {
     Get
     nl.crolox.labelscout.web.HomeController
-    groupAdminPage
+    HomeController_groupAdminPage
 }
 
-class "GET /login/user/" as userPage {
+class "GET /login/user/" as HomeController_userPage {
     Get
     nl.crolox.labelscout.web.HomeController
-    userPage
+    HomeController_userPage
 }
 
-class "GET /login/user/optipro" as optiproPage {
+class "GET /login/user/optipro" as HomeController_optiproPage {
     Get
     nl.crolox.labelscout.web.HomeController
-    optiproPage
+    HomeController_optiproPage
 }
 
-class "GET /login/zoeken/zoek" as zoekOpZindex {
+class "GET /login/zoeken/zoek" as ZoekController_zoekOpZindex {
     Get
     nl.crolox.labelscout.web.ZoekController
-    zoekOpZindex
+    ZoekController_zoekOpZindex
 }
 
 

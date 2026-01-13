@@ -3,49 +3,49 @@
 
 !include OCTA-Labelscout-flow_01.puml
 
-functional_API <|-- advice
-functional_API <|-- adviceCGM
+functional_API <|-- LabelscoutServiceV1_advice
+functional_API <|-- LabelscoutServiceV1_adviceCGM
 
-login_Pages <|-- homePage
+login_Pages <|-- HomeController_homePage
 
-homePage --> loginPage
-loginPage .> notAllowedPage
-loginPage --> adminPage
-loginPage --> groupAdminPage
-loginPage --> userPage
-loginPage --> optiproPage
-
-
-adminPage --> apotheekGroepPage
-apotheekGroepPage <--> getApotheekGroep
-apotheekGroepPage <--> apotheekGroepNewPage
-apotheekGroepNewPage --> apotheekGroepSubmit
-apotheekGroepPage <-U- apotheekGroepSubmit
-apotheekGroepPage <--> deleteApotheekGroep
-
-adminPage --> groepPage
-groepPage <--> getGroep
-groepPage <--> deleteGroep
-groepPage <--> groepNewPage
-groepNewPage --> groepSubmit
-groepSubmit -u-> groepPage
-
-groepPage <--> labelPage
-labelPage <--> labelNewPage
-labelPage <--> labelEditPage
-labelPage <--> updateOrder
-labelPage <--> deleteLabel
-labelNewPage --> apotheekGroepLabelSubmit
-apotheekGroepLabelSubmit -u-> labelPage
-
-adminPage <--> getApotheek
-adminPage <--> apotheekNewPage
-adminPage <--> deleteApotheek
-apotheekNewPage --> apotheekSubmit
-apotheekSubmit -u-> adminPage
+HomeController_homePage --> HomeController_loginPage
+HomeController_loginPage .> HomeController_notAllowedPage
+HomeController_loginPage --> AdminPagesController_adminPage
+HomeController_loginPage --> HomeController_groupAdminPage
+HomeController_loginPage --> HomeController_userPage
+HomeController_loginPage --> HomeController_optiproPage
 
 
+AdminPagesController_adminPage --> AdminPagesController_apotheekGroepPage
+AdminPagesController_apotheekGroepPage <--> AdminPagesController_getApotheekGroep
+AdminPagesController_apotheekGroepPage <--> AdminPagesController_apotheekGroepNewPage
+AdminPagesController_apotheekGroepNewPage --> AdminPagesController_apotheekGroepSubmit
+AdminPagesController_apotheekGroepPage <-U- AdminPagesController_apotheekGroepSubmit
+AdminPagesController_apotheekGroepPage <--> AdminPagesController_deleteApotheekGroep
 
-Zoek <|-- zoekOpZindex
+AdminPagesController_adminPage --> AdminPagesController_groepPage
+AdminPagesController_groepPage <--> AdminPagesController_getGroep
+AdminPagesController_groepPage <--> AdminPagesController_deleteGroep
+AdminPagesController_groepPage <--> AdminPagesController_groepNewPage
+AdminPagesController_groepNewPage --> AdminPagesController_groepSubmit
+AdminPagesController_groepSubmit -u-> AdminPagesController_groepPage
+
+AdminPagesController_groepPage <--> AdminPagesController_labelPage
+AdminPagesController_labelPage <--> AdminPagesController_labelNewPage
+AdminPagesController_labelPage <--> AdminPagesController_labelEditPage
+AdminPagesController_labelPage <--> AdminPagesController_updateOrder
+AdminPagesController_labelPage <--> AdminPagesController_deleteLabel
+AdminPagesController_labelNewPage --> AdminPagesController_apotheekGroepLabelSubmit
+AdminPagesController_apotheekGroepLabelSubmit -u-> AdminPagesController_labelPage
+
+AdminPagesController_adminPage <--> AdminPagesController_getApotheek
+AdminPagesController_adminPage <--> AdminPagesController_apotheekNewPage
+AdminPagesController_adminPage <--> AdminPagesController_deleteApotheek
+AdminPagesController_apotheekNewPage --> AdminPagesController_apotheekSubmit
+AdminPagesController_apotheekSubmit -u-> AdminPagesController_adminPage
+
+
+
+Zoek <|-- ZoekController_zoekOpZindex
 
 @enduml
