@@ -1,0 +1,7 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+!include OCTA-Labelscout-flow_02.puml
+hide member
+hide circle
+@enduml

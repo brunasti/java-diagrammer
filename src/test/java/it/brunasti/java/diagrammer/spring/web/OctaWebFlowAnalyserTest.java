@@ -14,7 +14,7 @@ public class OctaWebFlowAnalyserTest implements TestConstants {
     void testMainPublicMethods() {
         System.err.println("WebFlowAnalyserMain.main OCTA");
         String[] fullArgs = new String[6];
-        fullArgs[0] = "/Users/paolobrunasti/IdeaProjects/mine/java-diagrammer/docs/octa/output.puml";
+        fullArgs[0] = "/Users/paolobrunasti/IdeaProjects/mine/java-diagrammer/docs/octa/OCTA-Labelscout-flow_01.puml";
         fullArgs[1] = "-d";
         fullArgs[2] = "-i";
         fullArgs[3] = "/Users/paolobrunasti/IdeaProjects/OCTA/labelscout/src/main/java";

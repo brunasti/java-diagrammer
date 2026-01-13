@@ -1,0 +1,51 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+!include OCTA-Labelscout-flow_01.puml
+
+functional_API <|-- advice
+functional_API <|-- adviceCGM
+
+login_Pages <|-- homePage
+
+homePage --> loginPage
+loginPage .> notAllowedPage
+loginPage --> adminPage
+loginPage --> groupAdminPage
+loginPage --> userPage
+loginPage --> optiproPage
+
+
+adminPage --> apotheekGroepPage
+apotheekGroepPage <--> getApotheekGroep
+apotheekGroepPage <--> apotheekGroepNewPage
+apotheekGroepNewPage --> apotheekGroepSubmit
+apotheekGroepPage <-U- apotheekGroepSubmit
+apotheekGroepPage <--> deleteApotheekGroep
+
+adminPage --> groepPage
+groepPage <--> getGroep
+groepPage <--> deleteGroep
+groepPage <--> groepNewPage
+groepNewPage --> groepSubmit
+groepSubmit -u-> groepPage
+
+groepPage <--> labelPage
+labelPage <--> labelNewPage
+labelPage <--> labelEditPage
+labelPage <--> updateOrder
+labelPage <--> deleteLabel
+labelNewPage --> apotheekGroepLabelSubmit
+apotheekGroepLabelSubmit -u-> labelPage
+
+adminPage <--> getApotheek
+adminPage <--> apotheekNewPage
+adminPage <--> deleteApotheek
+apotheekNewPage --> apotheekSubmit
+apotheekSubmit -u-> adminPage
+
+
+
+Zoek <|-- zoekOpZindex
+
+@enduml

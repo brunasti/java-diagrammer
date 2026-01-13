@@ -84,11 +84,7 @@ public class WebFlowAnalyser {
     private Set<String> iterateSubDirectories(final String path,
                                               final String localPackage,
                                               final Set<String> files) {
-//        Debugger.debug(2,
-//                "iterateSubDirectories : " + path);
         String newPath = path + "/" + localPackage.replace(".", "/");
-//        Debugger.debug(2,
-//                "iterateSubDirectories : " + newPath);
         try {
             Utils.listFiles(newPath).forEach(file -> {
                 String className = file.replace(".class", "");
@@ -131,7 +127,12 @@ public class WebFlowAnalyser {
         for (WebPageMaping page : pages) {
             Debugger.debug(2, " -- "+page.fileName);
             // rectangle "/" as homePage
-            output.println("rectangle \""+page.mapping+"\" as "+page.function);
+            output.println("class \""+page.method.toUpperCase()+" "+page.mapping+"\" as "+page.function+ " {");
+            output.println("    "+page.method);
+            output.println("    "+page.fileName);
+            output.println("    "+page.function);
+            output.println("}");
+            output.println();
 
         }
 

@@ -1,0 +1,193 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+' GENERATE PAGES DIAGRAM ===========
+' Generator       : it.brunasti.java.diagrammer.spring.web.WebFlowAnalyser
+' Java Files Path : [/Users/paolobrunasti/IdeaProjects/OCTA/labelscout/src/main/java/]
+' Configuration   : [./docs/config.json]
+' Generated at    : Tue Jan 13 17:31:37 CET 2026
+'
+'   Pages infos    :
+class "POST /v1/public/advice" as advice {
+    Post
+    nl.crolox.labelscout.service.LabelscoutServiceV1
+    advice
+}
+
+class "POST /v1/cgm-advice" as adviceCGM {
+    Post
+    nl.crolox.labelscout.service.LabelscoutServiceV1
+    adviceCGM
+}
+
+class "GET /login/admin/" as adminPage {
+    Get
+    nl.crolox.labelscout.web.AdminPagesController
+    adminPage
+}
+
+class "GET /login/admin/apotheekgroep" as apotheekGroepPage {
+    Get
+    nl.crolox.labelscout.web.AdminPagesController
+    apotheekGroepPage
+}
+
+class "GET /login/admin/label/{id}" as labelPage {
+    Get
+    nl.crolox.labelscout.web.AdminPagesController
+    labelPage
+}
+
+class "GET /login/admin/label/new/{id}" as labelNewPage {
+    Get
+    nl.crolox.labelscout.web.AdminPagesController
+    labelNewPage
+}
+
+class "GET /login/admin/label/edit/{id}" as labelEditPage {
+    Get
+    nl.crolox.labelscout.web.AdminPagesController
+    labelEditPage
+}
+
+class "GET /login/admin/groep" as groepPage {
+    Get
+    nl.crolox.labelscout.web.AdminPagesController
+    groepPage
+}
+
+class "GET /login/admin/groep/new" as groepNewPage {
+    Get
+    nl.crolox.labelscout.web.AdminPagesController
+    groepNewPage
+}
+
+class "GET /login/admin/groep/{id}" as getGroep {
+    Get
+    nl.crolox.labelscout.web.AdminPagesController
+    getGroep
+}
+
+class "GET /login/admin/apotheek/{id}" as getApotheek {
+    Get
+    nl.crolox.labelscout.web.AdminPagesController
+    getApotheek
+}
+
+class "GET /login/admin/apotheekGroep/{id}" as getApotheekGroep {
+    Get
+    nl.crolox.labelscout.web.AdminPagesController
+    getApotheekGroep
+}
+
+class "GET /login/admin/apotheek/" as apotheekNewPage {
+    Get
+    nl.crolox.labelscout.web.AdminPagesController
+    apotheekNewPage
+}
+
+class "GET /login/admin/apotheekgroep/new" as apotheekGroepNewPage {
+    Get
+    nl.crolox.labelscout.web.AdminPagesController
+    apotheekGroepNewPage
+}
+
+class "POST /login/admin/apotheek" as apotheekSubmit {
+    Post
+    nl.crolox.labelscout.web.AdminPagesController
+    apotheekSubmit
+}
+
+class "POST /login/admin/apotheekGroep" as apotheekGroepSubmit {
+    Post
+    nl.crolox.labelscout.web.AdminPagesController
+    apotheekGroepSubmit
+}
+
+class "POST /login/admin/label" as apotheekGroepLabelSubmit {
+    Post
+    nl.crolox.labelscout.web.AdminPagesController
+    apotheekGroepLabelSubmit
+}
+
+class "POST /login/admin/groep" as groepSubmit {
+    Post
+    nl.crolox.labelscout.web.AdminPagesController
+    groepSubmit
+}
+
+class "DELETE /login/admin/apotheek/delete/{id}" as deleteApotheek {
+    Delete
+    nl.crolox.labelscout.web.AdminPagesController
+    deleteApotheek
+}
+
+class "DELETE /login/admin/apotheekGroep/delete/{id}" as deleteApotheekGroep {
+    Delete
+    nl.crolox.labelscout.web.AdminPagesController
+    deleteApotheekGroep
+}
+
+class "DELETE /login/admin/groep/delete/{id}" as deleteGroep {
+    Delete
+    nl.crolox.labelscout.web.AdminPagesController
+    deleteGroep
+}
+
+class "GET /login/admin/label/delete/{id}" as deleteLabel {
+    Get
+    nl.crolox.labelscout.web.AdminPagesController
+    deleteLabel
+}
+
+class "POST /login/admin/label/update-order" as updateOrder {
+    Post
+    nl.crolox.labelscout.web.AdminPagesController
+    updateOrder
+}
+
+class "GET /" as homePage {
+    Get
+    nl.crolox.labelscout.web.HomeController
+    homePage
+}
+
+class "GET /login/" as loginPage {
+    Get
+    nl.crolox.labelscout.web.HomeController
+    loginPage
+}
+
+class "GET /login/notAllowed" as notAllowedPage {
+    Get
+    nl.crolox.labelscout.web.HomeController
+    notAllowedPage
+}
+
+class "GET /login/groupadmin/" as groupAdminPage {
+    Get
+    nl.crolox.labelscout.web.HomeController
+    groupAdminPage
+}
+
+class "GET /login/user/" as userPage {
+    Get
+    nl.crolox.labelscout.web.HomeController
+    userPage
+}
+
+class "GET /login/user/optipro" as optiproPage {
+    Get
+    nl.crolox.labelscout.web.HomeController
+    optiproPage
+}
+
+class "GET /login/zoeken/zoek" as zoekOpZindex {
+    Get
+    nl.crolox.labelscout.web.ZoekController
+    zoekOpZindex
+}
+
+
+
+@enduml
