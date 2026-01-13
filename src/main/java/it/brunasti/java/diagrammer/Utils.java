@@ -105,8 +105,8 @@ public final class Utils {
     return it.brunasti.java.utils.Utils.loadJsonFile(jsonFileName);
   }
 
-  public static int countLinesInFile(String jsonFileName) {
-    return it.brunasti.java.utils.Utils.countLinesInFile(jsonFileName);
+  public static int countLinesInFile(String fileName) {
+    return it.brunasti.java.utils.Utils.countLinesInFile(fileName);
   }
 
 
