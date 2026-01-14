@@ -16,4 +16,15 @@ public class WebPageMaping {
     public String mapping;
     public String method;
     public String function;
+
+  @Override
+  public String toString() {
+    return "WebPageMaping{" +
+            "file=" + file +
+            ", fileName='" + fileName + '\'' +
+            ", mapping='" + mapping + '\'' +
+            ", method='" + method + '\'' +
+            ", function='" + function + '\'' +
+            '}';
+  }
 }

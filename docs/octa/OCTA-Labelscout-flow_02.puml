@@ -13,7 +13,7 @@ HomeController_loginPage .> HomeController_notAllowedPage
 HomeController_loginPage --> AdminPagesController_adminPage
 HomeController_loginPage --> HomeController_groupAdminPage
 HomeController_loginPage --> HomeController_userPage
-HomeController_loginPage --> HomeController_optiproPage
+HomeController_userPage --> HomeController_optiproPage
 
 
 AdminPagesController_adminPage --> AdminPagesController_apotheekGroepPage
@@ -46,6 +46,7 @@ AdminPagesController_apotheekSubmit -u-> AdminPagesController_adminPage
 
 
 
-Zoek <|-- ZoekController_zoekOpZindex
+Zoek <|-- ZoekController_toonZoekPagina
+ZoekController_toonZoekPagina --> ZoekController_zoekOpZindex
 
 @enduml

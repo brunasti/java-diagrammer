@@ -158,9 +158,10 @@ public class WebFlowAnalyser {
     }
 
     ArrayList<WebPageMaping> pages = new ArrayList<>();
-    static final private String mapId = "Mapping(\"";
-    static final private int mapIdBlockLenght = 100;
+    static final private String mapId = "Mapping";
+    static final private int mapIdBlockLenght = 150;
     static final private int preMapIdBlockLenght = 10;
+    static final private int preIncludeMapIdBlockLenght = 100;
 
     public void analyseFile(String fileName) {
         int lastINdex = fileName.lastIndexOf(".");
@@ -177,37 +178,72 @@ public class WebFlowAnalyser {
                 Debugger.debug(2, " ---- length : "+fileText.length());
                 int index = 0;
                 while (fileText.indexOf(mapId, index) > 0) {
+                    Debugger.debug(2, " - ");
                     Debugger.debug(2, " ---- - index : [" + index + "]");
                     int location = fileText.indexOf(mapId, index);
-                    String block = fileText.substring(location - preMapIdBlockLenght, location + mapIdBlockLenght);
-                    Debugger.debug(2, " ---- - block : [" + block + "]");
+                    String block = fileText.substring(location - preIncludeMapIdBlockLenght, location + mapIdBlockLenght);
 
-                    String method = block.substring(block.indexOf('@')+1, block.indexOf(mapId));
-                    Debugger.debug(2, " ---- - method : [" + method + "]");
+                    if (block.contains("import org.springframework.web.bind.annotation.")) {
 
-                    block = block.substring(block.indexOf(mapId) + mapId.length());
-                    String url = block.substring(0, block.indexOf("\""));
-                    Debugger.debug(2, " ---- - url : [" + url + "]");
-
-                    if (method.equals("Request")) {
-                        classUrl = url;
                     } else {
-                        block = block.substring(block.indexOf(")"));
-                        block = block.substring(0, block.indexOf("("));
-                        String function = block.substring(block.lastIndexOf(" ") + 1);
-                        Debugger.debug(2, " ---- - function : [" + function + "]");
 
-                        Debugger.debug(2, "");
+                      try {
+//                        String method = block.substring(block.lastIndexOf('@') + 1, block.indexOf(mapId));
+                        block = fileText.substring(location - preMapIdBlockLenght, location + mapIdBlockLenght);
+                        Debugger.debug(2, " ---- - block : [" + block + "]");
+                        int end = block.indexOf(" {");
+                        if (end > 0) {
+                          block = block.substring(0, end);
+                        }
+                        Debugger.debug(2, " ---- - block 0 : [" + block + "]");
 
-                        WebPageMaping webPageMaping = new WebPageMaping();
-                        webPageMaping.fileName = fileName;
-                        webPageMaping.method = method;
-                        webPageMaping.mapping = classUrl+url;
-                        webPageMaping.function = className+"_"+function;
-                        pages.add(webPageMaping);
+                        String method = block.substring(block.indexOf('@') + 1, block.indexOf(mapId));
+                        Debugger.debug(2, " ---- - method : [" + method + "]");
+
+                        block = block.substring(block.indexOf(mapId) + mapId.length());
+                        Debugger.debug(2, " ---- - block 2 : [" + block + "]");
+                        String url = "";
+                        if (block.contains("\"")) {
+                          block = block.substring(block.indexOf("\"")+1);
+                          Debugger.debug(2, " ---- - block 2.1 : [" + block + "]");
+                          url = block.substring(0, block.indexOf("\""));
+                          block = block.substring(block.indexOf("\"")+2);
+                          Debugger.debug(2, " ---- - block 2.2 : [" + block + "]");
+                        }
+                        Debugger.debug(2, " ---- - url : [" + url + "]");
+
+                        if (method.equals("Request")) {
+                          classUrl = url;
+                        } else {
+                          Debugger.debug(2, " ---- - block 3.1 : [" + block + "]");
+
+                          String function = "";
+                          if (block.contains(")")) {
+                            block = block.substring(0, block.indexOf("("));
+                            Debugger.debug(2, " ---- - block 3.2 : [" + block + "]");
+                            block = block.substring(block.lastIndexOf(" ")+1);
+                            Debugger.debug(2, " ---- - block 3.3 : [" + block + "]");
+                            function = block;
+
+//                            function = block.substring(block.lastIndexOf(" ") + 1);
+                            Debugger.debug(2, " ---- - function : [" + function + "]");
+                          }
+
+                          WebPageMaping webPageMaping = new WebPageMaping();
+                          webPageMaping.fileName = fileName;
+                          webPageMaping.method = method;
+                          webPageMaping.mapping = classUrl + url;
+                          webPageMaping.function = className + "_" + function;
+                          Debugger.debug(2, " ---- - webPageMaping : [" + webPageMaping + "]");
+                          pages.add(webPageMaping);
+                          Debugger.debug(2, "");
+                        }
+                      } catch (Exception ex) {
+                        ex.printStackTrace();
+                      }
                     }
 
-                    index = location+mapIdBlockLenght;
+                    index = location+mapId.length();
                 }
             }
         }

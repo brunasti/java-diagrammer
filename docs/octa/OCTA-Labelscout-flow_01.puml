@@ -5,7 +5,7 @@
 ' Generator       : it.brunasti.java.diagrammer.spring.web.WebFlowAnalyser
 ' Java Files Path : [/Users/paolobrunasti/IdeaProjects/OCTA/labelscout/src/main/java/]
 ' Configuration   : [./docs/config.json]
-' Generated at    : Tue Jan 13 18:09:39 CET 2026
+' Generated at    : Wed Jan 14 14:36:03 CET 2026
 '
 '   Pages infos    :
 class "POST /v1/public/advice" as LabelscoutServiceV1_advice {
@@ -122,10 +122,10 @@ class "DELETE /login/admin/apotheek/delete/{id}" as AdminPagesController_deleteA
     AdminPagesController_deleteApotheek
 }
 
-class "DELETE /login/admin/apotheekGroep/delete/{id}" as AdminPagesController_deleteApotheekGroep {
+class "DELETE /login/admin/apotheekGroep/delete/{id}" as AdminPagesController_ {
     Delete
     nl.crolox.labelscout.web.AdminPagesController
-    AdminPagesController_deleteApotheekGroep
+    AdminPagesController_
 }
 
 class "DELETE /login/admin/groep/delete/{id}" as AdminPagesController_deleteGroep {
@@ -180,6 +180,12 @@ class "GET /login/user/optipro" as HomeController_optiproPage {
     Get
     nl.crolox.labelscout.web.HomeController
     HomeController_optiproPage
+}
+
+class "GET /login/zoeken" as ZoekController_toonZoekPagina {
+    Get
+    nl.crolox.labelscout.web.ZoekController
+    ZoekController_toonZoekPagina
 }
 
 class "GET /login/zoeken/zoek" as ZoekController_zoekOpZindex {
