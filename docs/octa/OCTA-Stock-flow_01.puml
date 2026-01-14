@@ -5,9 +5,39 @@
 ' Generator       : it.brunasti.java.diagrammer.spring.web.WebFlowAnalyser
 ' Java Files Path : [/Users/paolobrunasti/IdeaProjects/OCTA/stock/src/main/java/]
 ' Configuration   : [./docs/config.json]
-' Generated at    : Tue Jan 13 18:17:59 CET 2026
+' Generated at    : Wed Jan 14 15:41:14 CET 2026
 '
 '   Pages infos    :
+class "DELETE /api/extern/v1/backorder/agb/{agb}/receipt-barcode/{receiptBarcode}/zindex/{zindex}/quantity/{quantity}" as BackorderDtoAPI_deletePost {
+    Delete
+    com.crolox.pistock.api.extern.BackorderDtoAPI
+    BackorderDtoAPI_deletePost
+}
+
+class "POST /api/extern/v1/products" as ExternApiProductDtoAPI_createProduct {
+    Post
+    com.crolox.pistock.api.extern.ExternApiProductDtoAPI
+    ExternApiProductDtoAPI_createProduct
+}
+
+class "PUT /api/extern/v1/products" as ExternApiProductDtoAPI_updateProduct {
+    Put
+    com.crolox.pistock.api.extern.ExternApiProductDtoAPI
+    ExternApiProductDtoAPI_updateProduct
+}
+
+class "GET /api/extern/v1/open-reservations" as OpenReservationsAPI_findOpenReservations {
+    Get
+    com.crolox.pistock.api.extern.OpenReservationsAPI
+    OpenReservationsAPI_findOpenReservations
+}
+
+class "GET /api/extern/v1/pharmacy-locations" as PharmacyLocationDtoAPI_findAll {
+    Get
+    com.crolox.pistock.api.extern.PharmacyLocationDtoAPI
+    PharmacyLocationDtoAPI_findAll
+}
+
 class "GET /api/extern/v1/pharmacy-locations/by/pharmacy-agb/{pharmacyAgb}" as PharmacyLocationDtoAPI_findByAgb {
     Get
     com.crolox.pistock.api.extern.PharmacyLocationDtoAPI
@@ -20,10 +50,142 @@ class "POST /api/extern/v1/product-info/list" as ProductInfoDtoAPI_listProductIn
     ProductInfoDtoAPI_listProductInfoPerZindex
 }
 
+class "DELETE /api/extern/v1/product-locations/stock-location-id/{stockLocationId}/stock-sublocation-name/{subLocationName}" as ProductLocationDtoAPI_deletePostOnReceipt {
+    Delete
+    com.crolox.pistock.api.extern.ProductLocationDtoAPI
+    ProductLocationDtoAPI_deletePostOnReceipt
+}
+
+class "GET /api/extern/v1/product-locations/by/stock-location-id/{stockLocationId}" as ProductLocationDtoAPI_findByStockLocationId {
+    Get
+    com.crolox.pistock.api.extern.ProductLocationDtoAPI
+    ProductLocationDtoAPI_findByStockLocationId
+}
+
+class "GET /api/extern/v1/product-locations/by/stock-location-id/{stockLocationId}/sub-location-name/{subLocationName}" as ProductLocationDtoAPI_findByStockLocationIdAndBySubLocationName {
+    Get
+    com.crolox.pistock.api.extern.ProductLocationDtoAPI
+    ProductLocationDtoAPI_findByStockLocationIdAndBySubLocationName
+}
+
+class "GET /api/extern/v1/product-locations/by/product-location-id/{productLocationId}" as ProductLocationDtoAPI_findByStockLocationIdAndProductLocationId {
+    Get
+    com.crolox.pistock.api.extern.ProductLocationDtoAPI
+    ProductLocationDtoAPI_findByStockLocationIdAndProductLocationId
+}
+
+class "GET /api/extern/v1/product-locations/by/pharmacy-location-id/{pharmacyLocationId}/z-index/{zindex}" as ProductLocationDtoAPI_findByZindex {
+    Get
+    com.crolox.pistock.api.extern.ProductLocationDtoAPI
+    ProductLocationDtoAPI_findByZindex
+}
+
+class "GET /api/extern/v1/product-locations/by/stock-location-id/{stockLocationId}/z-index/{zindex}" as ProductLocationDtoAPI_findByLocationIdAndZindex {
+    Get
+    com.crolox.pistock.api.extern.ProductLocationDtoAPI
+    ProductLocationDtoAPI_findByLocationIdAndZindex
+}
+
+class "GET /api/extern/v1/product-locations/by/pharmacy-agb/{pharmacyAgb}/z-index/{zindex}" as ProductLocationDtoAPI_findByZindexAndPharmacyAgb {
+    Get
+    com.crolox.pistock.api.extern.ProductLocationDtoAPI
+    ProductLocationDtoAPI_findByZindexAndPharmacyAgb
+}
+
+class "GET /api/extern/v1/product-locations/by/pharmacy-location-id/{pharmacyLocationId}/similar/z-index/{zindex}" as ProductLocationDtoAPI_findSimilarByZindex {
+    Get
+    com.crolox.pistock.api.extern.ProductLocationDtoAPI
+    ProductLocationDtoAPI_findSimilarByZindex
+}
+
+class "GET /api/extern/v1/product-locations/by/pharmacy-agb/{pharmacyAgb}/similar/z-index/{zindex}" as ProductLocationDtoAPI_findBySimilarZindexAndPharmacyAgb {
+    Get
+    com.crolox.pistock.api.extern.ProductLocationDtoAPI
+    ProductLocationDtoAPI_findBySimilarZindexAndPharmacyAgb
+}
+
+class "GET /api/extern/v1/product-locations/by/pharmacy-location-id/{pharmacyLocationId}/barcode/{barcode}" as ProductLocationDtoAPI_findByBarcode {
+    Get
+    com.crolox.pistock.api.extern.ProductLocationDtoAPI
+    ProductLocationDtoAPI_findByBarcode
+}
+
+class "GET /api/extern/v1/product-locations/by/pharmacy-agb/{pharmacyAgb}/barcode/{barcode}" as ProductLocationDtoAPI_findByBarcodeAndPharmacyAgb {
+    Get
+    com.crolox.pistock.api.extern.ProductLocationDtoAPI
+    ProductLocationDtoAPI_findByBarcodeAndPharmacyAgb
+}
+
 class "PUT /api/extern/v1/product-request/reduce" as ProductRequestDtoAPI_move {
     Put
     com.crolox.pistock.api.extern.ProductRequestDtoAPI
     ProductRequestDtoAPI_move
+}
+
+class "GET /api/extern/v1/replenish-list/by/stock-location-id/{stockLocationId}" as ReplenishListAPI_findReplenishList {
+    Get
+    com.crolox.pistock.api.extern.ReplenishListAPI
+    ReplenishListAPI_findReplenishList
+}
+
+class "DELETE /api/extern/v1/reservation/agb/{agb}/receipt-barcode/{receiptBarcode}/zindex/{zindex}/quantity/{quantity}" as ReservationDtoAPI_deletePost {
+    Delete
+    com.crolox.pistock.api.extern.ReservationDtoAPI
+    ReservationDtoAPI_deletePost
+}
+
+class "DELETE /api/extern/v1/reservation/agb/{agb}/receipt-barcode/{receiptBarcode}" as ReservationDtoAPI_deletePostOnReceipt {
+    Delete
+    com.crolox.pistock.api.extern.ReservationDtoAPI
+    ReservationDtoAPI_deletePostOnReceipt
+}
+
+class "POST /api/extern/v1/reservation" as ReservationDtoAPI_createReservation {
+    Post
+    com.crolox.pistock.api.extern.ReservationDtoAPI
+    ReservationDtoAPI_createReservation
+}
+
+class "GET /api/extern/v1/reservation-vs-stock/by/stock-location-id/{stockLocationId}" as ReservationVsStockDtoAPI_findByStockLocationId {
+    Get
+    com.crolox.pistock.api.extern.ReservationVsStockDtoAPI
+    ReservationVsStockDtoAPI_findByStockLocationId
+}
+
+class "GET /api/extern/v1/stock-locations/by/pharmacy-location-id/{pharmacyLocationId}" as StockLocationDtoAPI_findByPharmacyLocationId {
+    Get
+    com.crolox.pistock.api.extern.StockLocationDtoAPI
+    StockLocationDtoAPI_findByPharmacyLocationId
+}
+
+class "GET /api/extern/v1/stock-locations/by/pharmacy-agb/{pharmacyAgb}" as StockLocationDtoAPI_findByPharmacyAgb {
+    Get
+    com.crolox.pistock.api.extern.StockLocationDtoAPI
+    StockLocationDtoAPI_findByPharmacyAgb
+}
+
+class "GET /api/extern/v1/stock-per-location" as StockPerLocationAPI_findStockPerLocation {
+    Get
+    com.crolox.pistock.api.extern.StockPerLocationAPI
+    StockPerLocationAPI_findStockPerLocation
+}
+
+class "POST /api/extern/v1/stock-sub-locations" as StockSubLocationDtoAPI_createStockSubLocation {
+    Post
+    com.crolox.pistock.api.extern.StockSubLocationDtoAPI
+    StockSubLocationDtoAPI_createStockSubLocation
+}
+
+class "PUT /api/extern/v1/stock-sub-locations" as StockSubLocationDtoAPI_change {
+    Put
+    com.crolox.pistock.api.extern.StockSubLocationDtoAPI
+    StockSubLocationDtoAPI_change
+}
+
+class "GET /api/extern/v1/gpkEnricher" as TempGpkEnricher_gpkEnricher {
+    Get
+    com.crolox.pistock.api.extern.TempGpkEnricher
+    TempGpkEnricher_gpkEnricher
 }
 
 class "POST /api/extern/fluenc/stock-on-location/{id}" as StockOnLocationAPI_stockOnLocation {
@@ -32,25 +194,73 @@ class "POST /api/extern/fluenc/stock-on-location/{id}" as StockOnLocationAPI_sto
     StockOnLocationAPI_stockOnLocation
 }
 
-class "GET /api/v1/backorders/by/agb/{agb}" as BackorderAPI_findByAgb {
+class "POST /api/extern/fluenc/stock-on-pharmacy-location/{id}" as StockOnLocationAPI_stockOnPharmacyLocation {
+    Post
+    com.crolox.pistock.api.extern.fluenc.StockOnLocationAPI
+    StockOnLocationAPI_stockOnPharmacyLocation
+}
+
+class "PUT /api/extern/fluenc/reduce-by-pharmacy-location-id/{id}/zindex/{zindex}/quantity-taken/{taken}" as StockOnLocationAPI_reduceByPharmacyLocationId {
+    Put
+    com.crolox.pistock.api.extern.fluenc.StockOnLocationAPI
+    StockOnLocationAPI_reduceByPharmacyLocationId
+}
+
+class "PUT /api/extern/fluenc/reduce-by-pharmacy-location-agb/{agb}/zindex/{zindex}/quantity-taken/{taken}" as StockOnLocationAPI_reduceByPharmacyLocationAgb {
+    Put
+    com.crolox.pistock.api.extern.fluenc.StockOnLocationAPI
+    StockOnLocationAPI_reduceByPharmacyLocationAgb
+}
+
+class "PUT /api/extern/fluenc/reduce-by-stock-location-id/{id}/zindex/{zindex}/quantity-taken/{taken}" as StockOnLocationAPI_reduceByStockLocationId {
+    Put
+    com.crolox.pistock.api.extern.fluenc.StockOnLocationAPI
+    StockOnLocationAPI_reduceByStockLocationId
+}
+
+class "GET /by/agb/{agb}" as BackorderAPI_findByAgb {
     Get
     com.crolox.pistock.api.gui.BackorderAPI
     BackorderAPI_findByAgb
 }
 
-class "DELETE /api/v1/backorders/{id}" as BackorderAPI_delete {
+class "DELETE /{id}" as BackorderAPI_delete {
     Delete
     com.crolox.pistock.api.gui.BackorderAPI
     BackorderAPI_delete
 }
 
-class "GET /api/v1/pakbonnen/by/agb/{agb}" as PakbonAPI_findByAgb {
+class "GET /api/v1/delta/by/agb/{agb}/original-agb/{originalAgb}/from/{fromP1}/to/{toP1}/from/{fromP2}/to/{toP2}/selection/{selection}" as DeltaAPI_findByDeltaOverviewParameters {
+    Get
+    com.crolox.pistock.api.gui.DeltaAPI
+    DeltaAPI_findByDeltaOverviewParameters
+}
+
+class "GET /api/v1/order/proposal/by/PharmacyLocationId/{pharmacyLocationId}" as OrderProposalAPI_findByPharmacyLocationId {
+    Get
+    com.crolox.pistock.api.gui.OrderProposalAPI
+    OrderProposalAPI_findByPharmacyLocationId
+}
+
+class "PUT /api/v1/order/proposal" as OrderProposalAPI_create {
+    Put
+    com.crolox.pistock.api.gui.OrderProposalAPI
+    OrderProposalAPI_create
+}
+
+class "GET /api/v1/ordertypes" as OrderTypesAPI_findAll {
+    Get
+    com.crolox.pistock.api.gui.OrderTypesAPI
+    OrderTypesAPI_findAll
+}
+
+class "GET /by/agb/{agb}" as PakbonAPI_findByAgb {
     Get
     com.crolox.pistock.api.gui.PakbonAPI
     PakbonAPI_findByAgb
 }
 
-class "DELETE /api/v1/pakbonnen/{id}" as PakbonAPI_delete {
+class "DELETE /{id}" as PakbonAPI_delete {
     Delete
     com.crolox.pistock.api.gui.PakbonAPI
     PakbonAPI_delete
@@ -80,6 +290,12 @@ class "DELETE /api/v1/pakbon-dtos/{id}" as PakbonDtoAPI_delete {
     PakbonDtoAPI_delete
 }
 
+class "PUT /api/v1/pakbon-dtos" as PakbonDtoAPI_create {
+    Put
+    com.crolox.pistock.api.gui.PakbonDtoAPI
+    PakbonDtoAPI_create
+}
+
 class "GET /api/v1/pharmacies/list/{agb}" as PharmacyAPI_findAll {
     Get
     com.crolox.pistock.api.gui.PharmacyAPI
@@ -92,6 +308,12 @@ class "GET /api/v1/pharmacies/{agb}" as PharmacyAPI_findByAgb {
     PharmacyAPI_findByAgb
 }
 
+class "POST /api/v1/pharmacies" as PharmacyAPI_create {
+    Post
+    com.crolox.pistock.api.gui.PharmacyAPI
+    PharmacyAPI_create
+}
+
 class "PUT /api/v1/pharmacies/{agb}" as PharmacyAPI_update {
     Put
     com.crolox.pistock.api.gui.PharmacyAPI
@@ -102,6 +324,18 @@ class "DELETE /api/v1/pharmacies/{agb}" as PharmacyAPI_delete {
     Delete
     com.crolox.pistock.api.gui.PharmacyAPI
     PharmacyAPI_delete
+}
+
+class "GET /api/v1/pharmacy_locations" as PharmacyLocationAPI_findAll {
+    Get
+    com.crolox.pistock.api.gui.PharmacyLocationAPI
+    PharmacyLocationAPI_findAll
+}
+
+class "POST /api/v1/pharmacy_locations" as PharmacyLocationAPI_create {
+    Post
+    com.crolox.pistock.api.gui.PharmacyLocationAPI
+    PharmacyLocationAPI_create
 }
 
 class "GET /api/v1/pharmacy_locations/{id}" as PharmacyLocationAPI_findById {
@@ -122,10 +356,148 @@ class "DELETE /api/v1/pharmacy_locations/{id}" as PharmacyLocationAPI_delete {
     PharmacyLocationAPI_delete
 }
 
+class "GET /api/v1/products/by/joins/PharmacyLocationId/{pharmacyLocationId}" as ProductAPI_findUsingJoinsByPharmacyLocationId {
+    Get
+    com.crolox.pistock.api.gui.ProductAPI
+    ProductAPI_findUsingJoinsByPharmacyLocationId
+}
+
+class "GET /api/v1/products/by/PharmacyLocationId/{pharmacyLocationId}" as ProductAPI_findByPharmacyLocationId {
+    Get
+    com.crolox.pistock.api.gui.ProductAPI
+    ProductAPI_findByPharmacyLocationId
+}
+
+class "GET /api/v1/products/aips/refresh/{pharmacyLocationId}" as ProductAPI_refreshAIPsByPharmacyLocationId {
+    Get
+    com.crolox.pistock.api.gui.ProductAPI
+    ProductAPI_refreshAIPsByPharmacyLocationId
+}
+
+class "GET /api/v1/products/by/id/{id}" as ProductAPI_findByProductId {
+    Get
+    com.crolox.pistock.api.gui.ProductAPI
+    ProductAPI_findByProductId
+}
+
+class "GET /api/v1/products/by/agb/{agb}" as ProductAPI_findByAGB {
+    Get
+    com.crolox.pistock.api.gui.ProductAPI
+    ProductAPI_findByAGB
+}
+
+class "POST /api/v1/products" as ProductAPI_create {
+    Post
+    com.crolox.pistock.api.gui.ProductAPI
+    ProductAPI_create
+}
+
+class "PUT /api/v1/products/{id}" as ProductAPI_update {
+    Put
+    com.crolox.pistock.api.gui.ProductAPI
+    ProductAPI_update
+}
+
+class "DELETE /api/v1/products/{id}" as ProductAPI_delete {
+    Delete
+    com.crolox.pistock.api.gui.ProductAPI
+    ProductAPI_delete
+}
+
+class "GET /api/v1/product_locations/by/stockLocationId/{stockLocationId}" as ProductLocationAPI_findByStockLocationId {
+    Get
+    com.crolox.pistock.api.gui.ProductLocationAPI
+    ProductLocationAPI_findByStockLocationId
+}
+
+class "GET /api/v1/product_locations/{id}" as ProductLocationAPI_findById {
+    Get
+    com.crolox.pistock.api.gui.ProductLocationAPI
+    ProductLocationAPI_findById
+}
+
+class "GET /api/v1/product_locations/by/pharmacyLocationId/{pharmacyLocationId}" as ProductLocationAPI_findByPharmacyLocationId {
+    Get
+    com.crolox.pistock.api.gui.ProductLocationAPI
+    ProductLocationAPI_findByPharmacyLocationId
+}
+
+class "GET /api/v1/product_locations/by/barcode/{productBarcode}/stock_location_id/{stockLocationId}" as ProductLocationAPI_findByBarcode {
+    Get
+    com.crolox.pistock.api.gui.ProductLocationAPI
+    ProductLocationAPI_findByBarcode
+}
+
+class "GET /api/v1/product_locations/by/zindex/{zindex}/stock_location_id/{stockLocationId}" as ProductLocationAPI_findByZindex {
+    Get
+    com.crolox.pistock.api.gui.ProductLocationAPI
+    ProductLocationAPI_findByZindex
+}
+
+class "POST /api/v1/product_locations" as ProductLocationAPI_create {
+    Post
+    com.crolox.pistock.api.gui.ProductLocationAPI
+    ProductLocationAPI_create
+}
+
+class "PUT /api/v1/product_locations/move/{stockLocationId}/{stockSubLocationId}" as ProductLocationAPI_move {
+    Put
+    com.crolox.pistock.api.gui.ProductLocationAPI
+    ProductLocationAPI_move
+}
+
+class "PUT /api/v1/product_locations/{id}" as ProductLocationAPI_update {
+    Put
+    com.crolox.pistock.api.gui.ProductLocationAPI
+    ProductLocationAPI_update
+}
+
+class "DELETE /api/v1/product_locations/{id}" as ProductLocationAPI_delete {
+    Delete
+    com.crolox.pistock.api.gui.ProductLocationAPI
+    ProductLocationAPI_delete
+}
+
+class "DELETE /api/v1/product_locations/{id}/{deleteProductAsWell}" as ProductLocationAPI_deleteIncludingProduct {
+    Delete
+    com.crolox.pistock.api.gui.ProductLocationAPI
+    ProductLocationAPI_deleteIncludingProduct
+}
+
 class "GET /api/v1/product/base/search/nameStartsWith" as ProductSearchAPI_searchProducts {
     Get
     com.crolox.pistock.api.gui.ProductSearchAPI
     ProductSearchAPI_searchProducts
+}
+
+class "GET /api/v1/product/base/search/nameStartsWith-including-local" as ProductSearchAPI_searchProductsIncludingLocal {
+    Get
+    com.crolox.pistock.api.gui.ProductSearchAPI
+    ProductSearchAPI_searchProductsIncludingLocal
+}
+
+class "GET /api/v1/product/base/search/barcodeIs" as ProductSearchAPI_searchProductsWithBarcode {
+    Get
+    com.crolox.pistock.api.gui.ProductSearchAPI
+    ProductSearchAPI_searchProductsWithBarcode
+}
+
+class "GET /api/v1/product/base/search/barcodeIs/{barcode}/{stockLocationId}" as ProductSearchAPI_searchProductsWithBarcodeStraight {
+    Get
+    com.crolox.pistock.api.gui.ProductSearchAPI
+    ProductSearchAPI_searchProductsWithBarcodeStraight
+}
+
+class "GET /api/v1/product/base/search/par" as ProductSearchAPI_searchProductsWithParameter {
+    Get
+    com.crolox.pistock.api.gui.ProductSearchAPI
+    ProductSearchAPI_searchProductsWithParameter
+}
+
+class "GET /api/v1/productstatus" as ProductStatusAPI_findAll {
+    Get
+    com.crolox.pistock.api.gui.ProductStatusAPI
+    ProductStatusAPI_findAll
 }
 
 class "GET /api/v1/received-product-dtos/{id}" as ReceivedProductDtosAPI_findById {
@@ -140,6 +512,42 @@ class "GET /api/v1/reservations/{id}" as ReservationAPI_findById {
     ReservationAPI_findById
 }
 
+class "GET /api/v1/reservations/by/agb/{agb}/year/{year}/month/{month}/pharmacy-name/{pharmacyName}" as ReservationAPI_findReservationsPerPharmacyPerMonth {
+    Get
+    com.crolox.pistock.api.gui.ReservationAPI
+    ReservationAPI_findReservationsPerPharmacyPerMonth
+}
+
+class "GET /api/v1/reservations/product-locations/based/on/reservation/{reservationId}" as ReservationProductLocationsDtoAPI_findByPharmacyLocationId {
+    Get
+    com.crolox.pistock.api.gui.ReservationProductLocationsDtoAPI
+    ReservationProductLocationsDtoAPI_findByPharmacyLocationId
+}
+
+class "GET /api/v1/reservations-per-pharmacy-per-month/all/agb/{agb}" as ReservationsPerPharmacyPerMonthAPI_findReservationsPerPharmacyPerMonth {
+    Get
+    com.crolox.pistock.api.gui.ReservationsPerPharmacyPerMonthAPI
+    ReservationsPerPharmacyPerMonthAPI_findReservationsPerPharmacyPerMonth
+}
+
+class "GET /api/v1/stockDtos/by/PharmacyLocationId/{pharmacyLocationId}" as StockDtoAPI_findByPharmacyLocationId {
+    Get
+    com.crolox.pistock.api.gui.StockDtoAPI
+    StockDtoAPI_findByPharmacyLocationId
+}
+
+class "GET /api/v1/stockDtos/by-product-barcode/{productBarcode}/and-by-pharmacy-location-id/{pharmacyLocationId}" as StockDtoAPI_findByBarcodeAndPharmacyLocationId {
+    Get
+    com.crolox.pistock.api.gui.StockDtoAPI
+    StockDtoAPI_findByBarcodeAndPharmacyLocationId
+}
+
+class "GET /api/v1/stockDtos/by-zindex/{zindex}/and-by-pharmacy-location-id/{pharmacyLocationId}" as StockDtoAPI_findByBarcodeAndPharmacyLocationId {
+    Get
+    com.crolox.pistock.api.gui.StockDtoAPI
+    StockDtoAPI_findByBarcodeAndPharmacyLocationId
+}
+
 class "PUT /api/v1/stock/import/{stockLocationId}" as StockImportAPI_update {
     Put
     com.crolox.pistock.api.gui.StockImportAPI
@@ -150,6 +558,138 @@ class "GET /api/v1/stock/import/remove/{stockLocationId}" as StockImportAPI_remo
     Get
     com.crolox.pistock.api.gui.StockImportAPI
     StockImportAPI_removeStock
+}
+
+class "GET /api/v1/stock-indicator/by-parmacy-location-id/{pharmacyLocationId}" as StockIndicatorAPI_findAll {
+    Get
+    com.crolox.pistock.api.gui.StockIndicatorAPI
+    StockIndicatorAPI_findAll
+}
+
+class "GET /api/v1/stock-indicator/{id}" as StockIndicatorAPI_findById {
+    Get
+    com.crolox.pistock.api.gui.StockIndicatorAPI
+    StockIndicatorAPI_findById
+}
+
+class "DELETE /api/v1/stock-indicator/{id}" as StockIndicatorAPI_delete {
+    Delete
+    com.crolox.pistock.api.gui.StockIndicatorAPI
+    StockIndicatorAPI_delete
+}
+
+class "POST /api/v1/stock-indicator" as StockIndicatorAPI_save {
+    Post
+    com.crolox.pistock.api.gui.StockIndicatorAPI
+    StockIndicatorAPI_save
+}
+
+class "GET /api/v1/stock-indicator/send/{id}" as StockIndicatorAPI_sendById {
+    Get
+    com.crolox.pistock.api.gui.StockIndicatorAPI
+    StockIndicatorAPI_sendById
+}
+
+class "GET /api/v1/stock_locations" as StockLocationAPI_findAll {
+    Get
+    com.crolox.pistock.api.gui.StockLocationAPI
+    StockLocationAPI_findAll
+}
+
+class "POST /api/v1/stock_locations" as StockLocationAPI_create {
+    Post
+    com.crolox.pistock.api.gui.StockLocationAPI
+    StockLocationAPI_create
+}
+
+class "GET /api/v1/stock_locations/by/PharmacyLocationId/{pharmacyLocationId}" as StockLocationAPI_findByPharmacyLocationId {
+    Get
+    com.crolox.pistock.api.gui.StockLocationAPI
+    StockLocationAPI_findByPharmacyLocationId
+}
+
+class "GET /api/v1/stock_locations/{id}" as StockLocationAPI_findById {
+    Get
+    com.crolox.pistock.api.gui.StockLocationAPI
+    StockLocationAPI_findById
+}
+
+class "GET /api/v1/stock_locations/has_sub_locations/{id}" as StockLocationAPI_hasSubLocations {
+    Get
+    com.crolox.pistock.api.gui.StockLocationAPI
+    StockLocationAPI_hasSubLocations
+}
+
+class "GET /api/v1/stock_locations/sub_location_count/{id}" as StockLocationAPI_subLocationCount {
+    Get
+    com.crolox.pistock.api.gui.StockLocationAPI
+    StockLocationAPI_subLocationCount
+}
+
+class "PUT /api/v1/stock_locations/{id}" as StockLocationAPI_update {
+    Put
+    com.crolox.pistock.api.gui.StockLocationAPI
+    StockLocationAPI_update
+}
+
+class "DELETE /api/v1/stock_locations/{id}" as StockLocationAPI_delete {
+    Delete
+    com.crolox.pistock.api.gui.StockLocationAPI
+    StockLocationAPI_delete
+}
+
+class "GET /api/v1/stock/snapshot/by/agb/{agb}" as StockSnapshotAPI_retrieveStockSnapshotsByAGB {
+    Get
+    com.crolox.pistock.api.gui.StockSnapshotAPI
+    StockSnapshotAPI_retrieveStockSnapshotsByAGB
+}
+
+class "GET /api/v1/stock_sub_locations/available/by/stockLocationId/{stockLocationId}" as StockSubLocationAPI_findEmpty {
+    Get
+    com.crolox.pistock.api.gui.StockSubLocationAPI
+    StockSubLocationAPI_findEmpty
+}
+
+class "POST /api/v1/stock_sub_locations" as StockSubLocationAPI_create {
+    Post
+    com.crolox.pistock.api.gui.StockSubLocationAPI
+    StockSubLocationAPI_create
+}
+
+class "GET /api/v1/stock_sub_locations/by/stockLocationId/{stockLocationId}" as StockSubLocationAPI_findByStockLocationId {
+    Get
+    com.crolox.pistock.api.gui.StockSubLocationAPI
+    StockSubLocationAPI_findByStockLocationId
+}
+
+class "GET /api/v1/stock_sub_locations/by/pharmacyLocationId/{pharmacyLocationId}" as StockSubLocationAPI_findByPharmacyLocationId {
+    Get
+    com.crolox.pistock.api.gui.StockSubLocationAPI
+    StockSubLocationAPI_findByPharmacyLocationId
+}
+
+class "GET /api/v1/stock_sub_locations/available/by/pharmacyLocationId/{pharmacyLocationId}" as StockSubLocationAPI_findAvailableByPharmacyLocationId {
+    Get
+    com.crolox.pistock.api.gui.StockSubLocationAPI
+    StockSubLocationAPI_findAvailableByPharmacyLocationId
+}
+
+class "PUT /api/v1/stock_sub_locations/{id}" as StockSubLocationAPI_update {
+    Put
+    com.crolox.pistock.api.gui.StockSubLocationAPI
+    StockSubLocationAPI_update
+}
+
+class "DELETE /api/v1/stock_sub_locations/{id}" as StockSubLocationAPI_delete {
+    Delete
+    com.crolox.pistock.api.gui.StockSubLocationAPI
+    StockSubLocationAPI_delete
+}
+
+class "GET /api/v1/wholesales" as WholesaleAPI_findAll {
+    Get
+    com.crolox.pistock.api.gui.WholesaleAPI
+    WholesaleAPI_findAll
 }
 
 class "PUT /api/v1/wholesales/{id}" as WholesaleAPI_update {
@@ -176,6 +716,18 @@ class "POST /api/v1/get/productsType" as LocalProductsController_getProducts {
     LocalProductsController_getProducts
 }
 
+class "GET /api/v1/products/create/for/zindexnumber/{zindex}/agb/{agb}" as ProductCreationController_createProductsForZindex {
+    Get
+    com.crolox.pistock.controller.backend.ProductCreationController
+    ProductCreationController_createProductsForZindex
+}
+
+class "GET /api/v1/product/create/for/barcode/{barcode}/agb/{agb}" as ProductCreationController_createProductsForBarcode {
+    Get
+    com.crolox.pistock.controller.backend.ProductCreationController
+    ProductCreationController_createProductsForBarcode
+}
+
 class "POST /api/v1/" as ProductOrderController_orderAndReserveProducts {
     Post
     com.crolox.pistock.controller.backend.ProductOrderController
@@ -192,6 +744,12 @@ class "POST /api/v1/product/writeoff" as ProductWriteOffController_productWriteO
     Post
     com.crolox.pistock.controller.backend.ProductWriteOffController
     ProductWriteOffController_productWriteOff
+}
+
+class "POST /api/extern/v1/" as ReservationController_getProductLocationInfosType {
+    Post
+    com.crolox.pistock.controller.backend.ReservationController
+    ReservationController_getProductLocationInfosType
 }
 
 class "GET /pharmacy_list" as PharmacyController_listPharmacies {

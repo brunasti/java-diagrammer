@@ -158,8 +158,9 @@ public class WebFlowAnalyser {
     }
 
     ArrayList<WebPageMaping> pages = new ArrayList<>();
+    static final private String controllerId = "Controller";
     static final private String mapId = "Mapping";
-    static final private int mapIdBlockLenght = 150;
+    static final private int mapIdBlockLenght = 450;
     static final private int preMapIdBlockLenght = 10;
     static final private int preIncludeMapIdBlockLenght = 100;
 
@@ -172,7 +173,7 @@ public class WebFlowAnalyser {
         String classUrl = "";
         String fileText = Utils.readFileToString(javaFile);
         if (!fileText.isEmpty()) {
-            if (fileText.indexOf(mapId)>0) {
+            if (fileText.indexOf(controllerId)>0) {
                 Debugger.debug(2, "analyseFile - "+fileName);
                 Debugger.debug(2, " ---- "+javaFile);
                 Debugger.debug(2, " ---- length : "+fileText.length());
@@ -180,16 +181,26 @@ public class WebFlowAnalyser {
                 while (fileText.indexOf(mapId, index) > 0) {
                     Debugger.debug(2, " - ");
                     Debugger.debug(2, " ---- - index : [" + index + "]");
+                    Debugger.debug(2, " ---- "+javaFile);
                     int location = fileText.indexOf(mapId, index);
-                    String block = fileText.substring(location - preIncludeMapIdBlockLenght, location + mapIdBlockLenght);
+                    String block = "";
+                    if (fileText.length() > (location + mapIdBlockLenght)) {
+                      block = fileText.substring(location - preIncludeMapIdBlockLenght, location + mapIdBlockLenght);
+                    } else {
+                      block = fileText.substring(location - preIncludeMapIdBlockLenght);
+                    }
 
                     if (block.contains("import org.springframework.web.bind.annotation.")) {
 
                     } else {
 
                       try {
-//                        String method = block.substring(block.lastIndexOf('@') + 1, block.indexOf(mapId));
-                        block = fileText.substring(location - preMapIdBlockLenght, location + mapIdBlockLenght);
+                        if (fileText.length() > (location + mapIdBlockLenght)) {
+                          block = fileText.substring(location - preMapIdBlockLenght, location + mapIdBlockLenght);
+                        } else {
+                          block = fileText.substring(location - preMapIdBlockLenght);
+                        }
+//                        block = fileText.substring(location - preMapIdBlockLenght, location + mapIdBlockLenght);
                         Debugger.debug(2, " ---- - block : [" + block + "]");
                         int end = block.indexOf(" {");
                         if (end > 0) {
@@ -214,7 +225,9 @@ public class WebFlowAnalyser {
 
                         if (method.equals("Request")) {
                           classUrl = url;
-                        } else {
+                        }
+//                        else
+                        {
                           Debugger.debug(2, " ---- - block 3.1 : [" + block + "]");
 
                           String function = "";
@@ -232,10 +245,16 @@ public class WebFlowAnalyser {
                           WebPageMaping webPageMaping = new WebPageMaping();
                           webPageMaping.fileName = fileName;
                           webPageMaping.method = method;
-                          webPageMaping.mapping = classUrl + url;
+                          if (!classUrl.equals(url)) {
+                            url = classUrl + url;
+                          }
+                          webPageMaping.mapping = url;
                           webPageMaping.function = className + "_" + function;
                           Debugger.debug(2, " ---- - webPageMaping : [" + webPageMaping + "]");
-                          pages.add(webPageMaping);
+
+                          if (!method.equals("Request")) {
+                            pages.add(webPageMaping);
+                          }
                           Debugger.debug(2, "");
                         }
                       } catch (Exception ex) {
@@ -243,6 +262,7 @@ public class WebFlowAnalyser {
                       }
                     }
 
+                    Debugger.debug(2, "");
                     index = location+mapId.length();
                 }
             }
