@@ -1,0 +1,253 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+' GENERATE PAGES DIAGRAM ===========
+' Generator       : it.brunasti.java.diagrammer.spring.web.WebFlowAnalyser
+' Java Files Path : [/Users/paolobrunasti/IdeaProjects/OCTA/receipt-handler/backend/src/main/java/]
+' Configuration   : [./docs/config.json]
+' Generated at    : Thu Jan 15 11:56:46 CET 2026
+'
+'   Pages infos    :
+class "GET /api/app/info/name" as AppInfoApi_getApplicationName {
+    Get
+    com.crolox.receipthandler.api.AppInfoApi
+    AppInfoApi_getApplicationName
+}
+
+class "GET /api/app/info/version" as AppInfoApi_getApplicationVersion {
+    Get
+    com.crolox.receipthandler.api.AppInfoApi
+    AppInfoApi_getApplicationVersion
+}
+
+class "GET /api/app/info/timestamp" as AppInfoApi_getApplicationTimeStamp {
+    Get
+    com.crolox.receipthandler.api.AppInfoApi
+    AppInfoApi_getApplicationTimeStamp
+}
+
+class "GET /api/global-config/" as GlobalConfigApi_getGlobalConfig {
+    Get
+    com.crolox.receipthandler.api.GlobalConfigApi
+    GlobalConfigApi_getGlobalConfig
+}
+
+class "PUT /api/global-config/" as GlobalConfigApi_updateOrCreateGlobalConfig {
+    Put
+    com.crolox.receipthandler.api.GlobalConfigApi
+    GlobalConfigApi_updateOrCreateGlobalConfig
+}
+
+class "GET /api/idf-info/all" as IdfInfoApi_getAllIdfInfos {
+    Get
+    com.crolox.receipthandler.api.IdfInfoApi
+    IdfInfoApi_getAllIdfInfos
+}
+
+class "GET /api/idf-info/{id}" as IdfInfoApi_getIdfInfo {
+    Get
+    com.crolox.receipthandler.api.IdfInfoApi
+    IdfInfoApi_getIdfInfo
+}
+
+class "DELETE /api/idf-info/{id}" as IdfInfoApi_deleteIdfInfo {
+    Delete
+    com.crolox.receipthandler.api.IdfInfoApi
+    IdfInfoApi_deleteIdfInfo
+}
+
+class "PUT /api/idf-info/" as IdfInfoApi_updateOrCreateIdfInfo {
+    Put
+    com.crolox.receipthandler.api.IdfInfoApi
+    IdfInfoApi_updateOrCreateIdfInfo
+}
+
+class "POST /api/users/authenticate" as LoginApi_getAuthenicatedUser {
+    Post
+    com.crolox.receipthandler.api.LoginApi
+    LoginApi_getAuthenicatedUser
+}
+
+class "GET /api/users/all" as LoginApi_getUsers {
+    Get
+    com.crolox.receipthandler.api.LoginApi
+    LoginApi_getUsers
+}
+
+class "GET /api/order-moment-priority/all" as OrderMomentPriorityApi_getOrderMomentPriorities {
+    Get
+    com.crolox.receipthandler.api.OrderMomentPriorityApi
+    OrderMomentPriorityApi_getOrderMomentPriorities
+}
+
+class "GET /api/pharmacy/all" as PharmacyApi_getAllPharmacies {
+    Get
+    com.crolox.receipthandler.api.PharmacyApi
+    PharmacyApi_getAllPharmacies
+}
+
+class "GET /api/pharmacy/{agb}" as PharmacyApi_getPharmacy {
+    Get
+    com.crolox.receipthandler.api.PharmacyApi
+    PharmacyApi_getPharmacy
+}
+
+class "DELETE /api/pharmacy/{agb}" as PharmacyApi_deletePharmacy {
+    Delete
+    com.crolox.receipthandler.api.PharmacyApi
+    PharmacyApi_deletePharmacy
+}
+
+class "PUT /api/pharmacy/" as PharmacyApi_updateOrCreatePharmacy {
+    Put
+    com.crolox.receipthandler.api.PharmacyApi
+    PharmacyApi_updateOrCreatePharmacy
+}
+
+class "POST /api/picklist/generate" as PicklistApi_generatePicklist {
+    Post
+    com.crolox.receipthandler.api.PicklistApi
+    PicklistApi_generatePicklist
+}
+
+class "GET /api/queue/all" as QueueApi_getAllQueues {
+    Get
+    com.crolox.receipthandler.api.QueueApi
+    QueueApi_getAllQueues
+}
+
+class "GET /api/queue/{id}" as QueueApi_getQueue {
+    Get
+    com.crolox.receipthandler.api.QueueApi
+    QueueApi_getQueue
+}
+
+class "DELETE /api/queue/{id}" as QueueApi_deleteQueue {
+    Delete
+    com.crolox.receipthandler.api.QueueApi
+    QueueApi_deleteQueue
+}
+
+class "PUT /api/queue/" as QueueApi_updateOrCreateQueue {
+    Put
+    com.crolox.receipthandler.api.QueueApi
+    QueueApi_updateOrCreateQueue
+}
+
+class "GET /api/queue/order/{id}" as QueueApi_orderForQueue {
+    Get
+    com.crolox.receipthandler.api.QueueApi
+    QueueApi_orderForQueue
+}
+
+class "GET /api/queue-overview-dto/all" as QueueOverviewDtoApi_getAllQueueOverviews {
+    Get
+    com.crolox.receipthandler.api.QueueOverviewDtoApi
+    QueueOverviewDtoApi_getAllQueueOverviews
+}
+
+class "GET /api/queue-overview-dto/{id}" as QueueOverviewDtoApi_getQueue {
+    Get
+    com.crolox.receipthandler.api.QueueOverviewDtoApi
+    QueueOverviewDtoApi_getQueue
+}
+
+class "GET /api/queue-type/all" as QueueTypeApi_getQueueTypes {
+    Get
+    com.crolox.receipthandler.api.QueueTypeApi
+    QueueTypeApi_getQueueTypes
+}
+
+class "GET /api/receipt/queue-id/{queueId}" as ReceiptApi_getAllReceiptsByQueueId {
+    Get
+    com.crolox.receipthandler.api.ReceiptApi
+    ReceiptApi_getAllReceiptsByQueueId
+}
+
+class "GET /api/receipt/barcode-or-receipt-number/{barcodeOrReceiptNumber}" as ReceiptApi_findAllByBarcodeOrNumber {
+    Get
+    com.crolox.receipthandler.api.ReceiptApi
+    ReceiptApi_findAllByBarcodeOrNumber
+}
+
+class "GET /api/receipt/creation-date/{creationDateString}" as ReceiptApi_findAllByCreationDate {
+    Get
+    com.crolox.receipthandler.api.ReceiptApi
+    ReceiptApi_findAllByCreationDate
+}
+
+class "GET /api/receipt/delivery-dates/queue-id/{queueId}" as ReceiptApi_getDeliveryDates {
+    Get
+    com.crolox.receipthandler.api.ReceiptApi
+    ReceiptApi_getDeliveryDates
+}
+
+class "GET /api/receipt/{id}" as ReceiptApi_getReceipt {
+    Get
+    com.crolox.receipthandler.api.ReceiptApi
+    ReceiptApi_getReceipt
+}
+
+class "DELETE /api/receipt/{id}" as ReceiptApi_deleteReceipt {
+    Delete
+    com.crolox.receipthandler.api.ReceiptApi
+    ReceiptApi_deleteReceipt
+}
+
+class "POST /api/receipt/send-to-sort/" as ReceiptApi_sendToSort {
+    Post
+    com.crolox.receipthandler.api.ReceiptApi
+    ReceiptApi_sendToSort
+}
+
+class "POST /api/receipt/only-order/" as ReceiptApi_onlyOrder {
+    Post
+    com.crolox.receipthandler.api.ReceiptApi
+    ReceiptApi_onlyOrder
+}
+
+class "DELETE /api/receipt-line/{id}" as ReceiptLineApi_deleteReceiptLine {
+    Delete
+    com.crolox.receipthandler.api.ReceiptLineApi
+    ReceiptLineApi_deleteReceiptLine
+}
+
+class "GET /api/special-zindex/all" as SpecialZindexApi_getAllSpecialZindexs {
+    Get
+    com.crolox.receipthandler.api.SpecialZindexApi
+    SpecialZindexApi_getAllSpecialZindexs
+}
+
+class "GET /api/special-zindex/{id}" as SpecialZindexApi_getSpecialZindex {
+    Get
+    com.crolox.receipthandler.api.SpecialZindexApi
+    SpecialZindexApi_getSpecialZindex
+}
+
+class "DELETE /api/special-zindex/{id}" as SpecialZindexApi_deleteSpecialZindex {
+    Delete
+    com.crolox.receipthandler.api.SpecialZindexApi
+    SpecialZindexApi_deleteSpecialZindex
+}
+
+class "PUT /api/special-zindex/" as SpecialZindexApi_updateOrCreateSpecialZindex {
+    Put
+    com.crolox.receipthandler.api.SpecialZindexApi
+    SpecialZindexApi_updateOrCreateSpecialZindex
+}
+
+class "GET /api/zindex-type/all" as ZindexTypeApi_getZindexTypes {
+    Get
+    com.crolox.receipthandler.api.ZindexTypeApi
+    ZindexTypeApi_getZindexTypes
+}
+
+class "POST /api/extern/v1/partial-packages/" as PartialPackagePrescriptionLinesAPI_acceptPartialPackageRequests {
+    Post
+    com.crolox.receipthandler.extern.api.PartialPackagePrescriptionLinesAPI
+    PartialPackagePrescriptionLinesAPI_acceptPartialPackageRequests
+}
+
+
+
+@enduml
