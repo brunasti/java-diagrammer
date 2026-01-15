@@ -1,0 +1,73 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+' GENERATE PAGES DIAGRAM ===========
+' Generator       : it.brunasti.java.diagrammer.spring.web.WebFlowAnalyser
+' Java Files Path : [/Users/paolobrunasti/IdeaProjects/OCTA/pireceive/src/main/java/]
+' Configuration   : [./docs/config.json]
+' Generated at    : Thu Jan 15 09:55:14 CET 2026
+'
+'   Pages infos    :
+class "GET /api/v1/pharmacy-info/by-smart-tenant-id/{smartTenantId}" as PharmacyInfoAPI_getPharmacyInfoBySmartTenantId {
+    Get
+    com.crolox.pireceive.api.PharmacyInfoAPI
+    PharmacyInfoAPI_getPharmacyInfoBySmartTenantId
+}
+
+class "GET /api/v1/pharmacy-info/by-sender-id/{senderId}" as PharmacyInfoAPI_getPharmacyInfoBySenderId {
+    Get
+    com.crolox.pireceive.api.PharmacyInfoAPI
+    PharmacyInfoAPI_getPharmacyInfoBySenderId
+}
+
+class "GET /api/v1/productgroup/all" as ProductGroupAPI_getAllProductGroups {
+    Get
+    com.crolox.pireceive.api.ProductGroupAPI
+    ProductGroupAPI_getAllProductGroups
+}
+
+class "GET /api/v1/productgroup/all/by/agb/{agb}" as ProductGroupAPI_getAllProductGroupsByAgb {
+    Get
+    com.crolox.pireceive.api.ProductGroupAPI
+    ProductGroupAPI_getAllProductGroupsByAgb
+}
+
+class "GET /api/v1/productgroup/by/agb/{agb}/and/name/{name}" as ProductGroupAPI_getProductGroup {
+    Get
+    com.crolox.pireceive.api.ProductGroupAPI
+    ProductGroupAPI_getProductGroup
+}
+
+class "DELETE /api/v1/productgroup/by/agb/{agb}/and/name/{name}" as ProductGroupAPI_deleteProductGroupByAgbAndByName {
+    Delete
+    com.crolox.pireceive.api.ProductGroupAPI
+    ProductGroupAPI_deleteProductGroupByAgbAndByName
+}
+
+class "PUT /api/v1/productgroup/" as ProductGroupAPI_updateProductGroup {
+    Put
+    com.crolox.pireceive.api.ProductGroupAPI
+    ProductGroupAPI_updateProductGroup
+}
+
+class "POST /api/v1/productgroup/" as ProductGroupAPI_createProductGroup {
+    Post
+    com.crolox.pireceive.api.ProductGroupAPI
+    ProductGroupAPI_createProductGroup
+}
+
+class "POST /config/mail-account/new/config/mail-account/save" as MailAccountController_saveMailAccount {
+    Post
+    com.crolox.pireceive.controller.config.MailAccountController
+    MailAccountController_saveMailAccount
+}
+
+class "POST /config/pharmacies/new/config/pharmacies/save" as PharmacyConfigController_savePharmacy {
+    Post
+    com.crolox.pireceive.controller.config.PharmacyConfigController
+    PharmacyConfigController_savePharmacy
+}
+
+
+
+@enduml

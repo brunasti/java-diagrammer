@@ -1,0 +1,61 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+' GENERATE PAGES DIAGRAM ===========
+' Generator       : it.brunasti.java.diagrammer.spring.web.WebFlowAnalyser
+' Java Files Path : [/Users/paolobrunasti/IdeaProjects/OCTA/zindexproductsservice/src/main/java/]
+' Configuration   : [./docs/config.json]
+' Generated at    : Thu Jan 15 09:55:14 CET 2026
+'
+'   Pages infos    :
+class "GET /products/lastupdate" as InfoController_getProductsUpdateDateTime {
+    Get
+    com.crolox.zindex.products.service.controller.InfoController
+    InfoController_getProductsUpdateDateTime
+}
+
+class "GET /products/total" as InfoController_getProductsTotal {
+    Get
+    com.crolox.zindex.products.service.controller.InfoController
+    InfoController_getProductsTotal
+}
+
+class "GET /products/empty/barcode" as InfoController_getProductsEmptyBarcode {
+    Get
+    com.crolox.zindex.products.service.controller.InfoController
+    InfoController_getProductsEmptyBarcode
+}
+
+class "POST /products/withZindexnumbers" as ProductController_getProducts {
+    Post
+    com.crolox.zindex.products.service.controller.ProductController
+    ProductController_getProducts
+}
+
+class "GET /products/similar/zindex/{zindex}" as ProductController_findByZindexSimilar {
+    Get
+    com.crolox.zindex.products.service.controller.ProductController
+    ProductController_findByZindexSimilar
+}
+
+class "GET /update/old/records/" as ProductController_updateOldProductRecords {
+    Get
+    com.crolox.zindex.products.service.controller.ProductController
+    ProductController_updateOldProductRecords
+}
+
+class "POST /products/filter-on-fridge" as ProductController_filterOnFridge {
+    Post
+    com.crolox.zindex.products.service.controller.ProductController
+    ProductController_filterOnFridge
+}
+
+class "POST /products/filter-on-hulpmiddelen" as ProductController_filterOnHulpmiddelen {
+    Post
+    com.crolox.zindex.products.service.controller.ProductController
+    ProductController_filterOnHulpmiddelen
+}
+
+
+
+@enduml

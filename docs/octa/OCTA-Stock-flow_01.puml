@@ -5,7 +5,7 @@
 ' Generator       : it.brunasti.java.diagrammer.spring.web.WebFlowAnalyser
 ' Java Files Path : [/Users/paolobrunasti/IdeaProjects/OCTA/stock/src/main/java/]
 ' Configuration   : [./docs/config.json]
-' Generated at    : Wed Jan 14 15:41:14 CET 2026
+' Generated at    : Thu Jan 15 09:55:14 CET 2026
 '
 '   Pages infos    :
 class "DELETE /api/extern/v1/backorder/agb/{agb}/receipt-barcode/{receiptBarcode}/zindex/{zindex}/quantity/{quantity}" as BackorderDtoAPI_deletePost {

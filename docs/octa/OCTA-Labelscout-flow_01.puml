@@ -5,7 +5,7 @@
 ' Generator       : it.brunasti.java.diagrammer.spring.web.WebFlowAnalyser
 ' Java Files Path : [/Users/paolobrunasti/IdeaProjects/OCTA/labelscout/src/main/java/]
 ' Configuration   : [./docs/config.json]
-' Generated at    : Wed Jan 14 15:42:16 CET 2026
+' Generated at    : Thu Jan 15 09:55:14 CET 2026
 '
 '   Pages infos    :
 class "POST /v1/public/advice" as LabelscoutServiceV1_advice {

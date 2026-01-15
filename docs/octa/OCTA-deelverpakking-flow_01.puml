@@ -1,0 +1,91 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+' GENERATE PAGES DIAGRAM ===========
+' Generator       : it.brunasti.java.diagrammer.spring.web.WebFlowAnalyser
+' Java Files Path : [/Users/paolobrunasti/IdeaProjects/OCTA/deelverpakking/src/main/java/]
+' Configuration   : [./docs/config.json]
+' Generated at    : Thu Jan 15 09:55:14 CET 2026
+'
+'   Pages infos    :
+class "POST /v1/partialPackage" as DeelverpakkingServiceV1_partialPackage {
+    Post
+    com.crolox.deelverpakking.service.DeelverpakkingServiceV1
+    DeelverpakkingServiceV1_partialPackage
+}
+
+class "POST /v1/getByBarcodeVoorraad" as DeelverpakkingServiceV1_getByBarcodeVoorraad {
+    Post
+    com.crolox.deelverpakking.service.DeelverpakkingServiceV1
+    DeelverpakkingServiceV1_getByBarcodeVoorraad
+}
+
+class "POST /v1/addLocaties" as DeelverpakkingServiceV1_addLocaties {
+    Post
+    com.crolox.deelverpakking.service.DeelverpakkingServiceV1
+    DeelverpakkingServiceV1_addLocaties
+}
+
+class "POST /v1/addByBarcodeVoorraad" as DeelverpakkingServiceV1_addByBarcodeVoorraad {
+    Post
+    com.crolox.deelverpakking.service.DeelverpakkingServiceV1
+    DeelverpakkingServiceV1_addByBarcodeVoorraad
+}
+
+class "POST /v1/getByBarcode" as DeelverpakkingServiceV1_getBarcode {
+    Post
+    com.crolox.deelverpakking.service.DeelverpakkingServiceV1
+    DeelverpakkingServiceV1_getBarcode
+}
+
+class "POST /v1/getByBarcodeAction" as DeelverpakkingServiceV1_getBarcodeAction {
+    Post
+    com.crolox.deelverpakking.service.DeelverpakkingServiceV1
+    DeelverpakkingServiceV1_getBarcodeAction
+}
+
+class "GET /" as HomeController_homePage {
+    Get
+    com.crolox.deelverpakking.web.HomeController
+    HomeController_homePage
+}
+
+class "GET /voorraad" as HomeController_voorraadPage {
+    Get
+    com.crolox.deelverpakking.web.HomeController
+    HomeController_voorraadPage
+}
+
+class "GET /voorraadToevoegen" as HomeController_voorraadToevoegenPage {
+    Get
+    com.crolox.deelverpakking.web.HomeController
+    HomeController_voorraadToevoegenPage
+}
+
+class "GET /locaties" as HomeController_voorraadLocatiePage {
+    Get
+    com.crolox.deelverpakking.web.HomeController
+    HomeController_voorraadLocatiePage
+}
+
+class "GET /deelverpakking/{id}" as HomeController_deelverpakking {
+    Get
+    com.crolox.deelverpakking.web.HomeController
+    HomeController_deelverpakking
+}
+
+class "GET /verwijderen/{id}" as HomeController_verwijderen {
+    Get
+    com.crolox.deelverpakking.web.HomeController
+    HomeController_verwijderen
+}
+
+class "GET /verwijderenDeel/{id}" as HomeController_verwijderenDeel {
+    Get
+    com.crolox.deelverpakking.web.HomeController
+    HomeController_verwijderenDeel
+}
+
+
+
+@enduml
