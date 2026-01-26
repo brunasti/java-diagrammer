@@ -47,7 +47,7 @@ public class OctaDiagramGenerationTest implements TestConstants {
     // Commons
     System.err.println("ClassDiagrammerMain.main ------ for OCTA project ----- ["+service+"]["+subService+"]");
 
-    String[] fullArgs = new String[10];
+    String[] fullArgs = new String[12];
     fullArgs[0] = "/Users/paolobrunasti/IdeaProjects/OCTA/" +repository+ "/build/classes/java/main";
     fullArgs[1] = "/Users/paolobrunasti/IdeaProjects/mine/java-diagrammer/docs/octa/OCTA-"+diagram+"-class-diagram";
     fullArgs[2] = "-c";
@@ -57,7 +57,9 @@ public class OctaDiagramGenerationTest implements TestConstants {
     fullArgs[6] = "-i";
     fullArgs[7] = "/Users/paolobrunasti/IdeaProjects/OCTA/" +repository+ "/src/main/java";
     fullArgs[8] = "-d";
-    fullArgs[9] = "5";
+    fullArgs[9] = "1";
+    fullArgs[10] = "-b";
+    fullArgs[11] = "OCTA-"+diagram+"-class-diagram";
 
 
     ClassDiagrammerMain.main(fullArgs);

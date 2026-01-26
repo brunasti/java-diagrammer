@@ -61,7 +61,7 @@ public class ClassDiagrammer {
    */
   public ClassDiagrammer() {
     this.output = System.out;
-    this.outputFile = "";
+    this.outputFile = "OUT-";
   }
 
   /**
@@ -568,16 +568,10 @@ public class ClassDiagrammer {
     Debugger.debug(2, "generateClasses() ------------------");
     output.println();
     output.println();
-    output.println("' CLASSES =======");
 
     String currentPackage = "";
     boolean flagClosePackage = false;
 
-    List<String> done = new ArrayList<>();
-
-    classes.sort((a,b) -> { return a.getPackageName().compareTo(b.getPackageName());});
-
-    output.println();
     for (JavaClass javaClass : classes) {
       if (!javaClass.getPackageName().equals(currentPackage)) {
         String packageName = javaClass.getPackageName().replace('.','_').toUpperCase();
@@ -588,10 +582,15 @@ public class ClassDiagrammer {
         output.println("'!includesub "+outputFile+".puml!USES_"+packageName);
         output.println("'!includesub "+outputFile+".puml!IMPORTS_"+packageName);
         currentPackage = javaClass.getPackageName();
+        output.println();
       }
     }
     output.println();
     output.println();
+
+    output.println("' CLASSES =======");
+
+    List<String> done = new ArrayList<>();
 
     for (JavaClass javaClass : classes) {
       if (!done.contains(javaClass.getClassName())) {
@@ -752,6 +751,8 @@ public class ClassDiagrammer {
         Debugger.debug(2,"Error loading class : " + file + " - " + e.getMessage());
       }
     });
+
+    classes.sort(Comparator.comparing(JavaClass::getPackageName));
 
     generateHeader(path, configurationFile, javaFilesPath, files, classes);
     generateClasses(classes, classLoader);

@@ -1,0 +1,63 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+'!includesub OCTA-labelscout-class-diagram.puml!NL_CROLOX_LABELSCOUT
+'!includesub OCTA-labelscout-class-diagram.puml!INHERITANCES_NL_CROLOX_LABELSCOUT
+'!includesub OCTA-labelscout-class-diagram.puml!IMPLEMENTS_NL_CROLOX_LABELSCOUT
+'!includesub OCTA-labelscout-class-diagram.puml!FIELDS_NL_CROLOX_LABELSCOUT
+'!includesub OCTA-labelscout-class-diagram.puml!USES_NL_CROLOX_LABELSCOUT
+'!includesub OCTA-labelscout-class-diagram.puml!IMPORTS_NL_CROLOX_LABELSCOUT
+
+'!includesub OCTA-labelscout-class-diagram.puml!NL_CROLOX_LABELSCOUT_ASPECT
+'!includesub OCTA-labelscout-class-diagram.puml!INHERITANCES_NL_CROLOX_LABELSCOUT_ASPECT
+'!includesub OCTA-labelscout-class-diagram.puml!IMPLEMENTS_NL_CROLOX_LABELSCOUT_ASPECT
+'!includesub OCTA-labelscout-class-diagram.puml!FIELDS_NL_CROLOX_LABELSCOUT_ASPECT
+'!includesub OCTA-labelscout-class-diagram.puml!USES_NL_CROLOX_LABELSCOUT_ASPECT
+'!includesub OCTA-labelscout-class-diagram.puml!IMPORTS_NL_CROLOX_LABELSCOUT_ASPECT
+
+'!includesub OCTA-labelscout-class-diagram.puml!NL_CROLOX_LABELSCOUT_DOMAIN
+''!includesub OCTA-labelscout-class-diagram.puml!INHERITANCES_NL_CROLOX_LABELSCOUT_DOMAIN
+'!includesub OCTA-labelscout-class-diagram.puml!IMPLEMENTS_NL_CROLOX_LABELSCOUT_DOMAIN
+'!includesub OCTA-labelscout-class-diagram.puml!FIELDS_NL_CROLOX_LABELSCOUT_DOMAIN
+'!includesub OCTA-labelscout-class-diagram.puml!USES_NL_CROLOX_LABELSCOUT_DOMAIN
+'!includesub OCTA-labelscout-class-diagram.puml!IMPORTS_NL_CROLOX_LABELSCOUT_DOMAIN
+
+'!includesub OCTA-labelscout-class-diagram.puml!NL_CROLOX_LABELSCOUT_HELPER
+'!includesub OCTA-labelscout-class-diagram.puml!INHERITANCES_NL_CROLOX_LABELSCOUT_HELPER
+'!includesub OCTA-labelscout-class-diagram.puml!IMPLEMENTS_NL_CROLOX_LABELSCOUT_HELPER
+'!includesub OCTA-labelscout-class-diagram.puml!FIELDS_NL_CROLOX_LABELSCOUT_HELPER
+'!includesub OCTA-labelscout-class-diagram.puml!USES_NL_CROLOX_LABELSCOUT_HELPER
+'!includesub OCTA-labelscout-class-diagram.puml!IMPORTS_NL_CROLOX_LABELSCOUT_HELPER
+
+'!includesub OCTA-labelscout-class-diagram.puml!NL_CROLOX_LABELSCOUT_INTERCEPTOR
+'!includesub OCTA-labelscout-class-diagram.puml!INHERITANCES_NL_CROLOX_LABELSCOUT_INTERCEPTOR
+'!includesub OCTA-labelscout-class-diagram.puml!IMPLEMENTS_NL_CROLOX_LABELSCOUT_INTERCEPTOR
+'!includesub OCTA-labelscout-class-diagram.puml!FIELDS_NL_CROLOX_LABELSCOUT_INTERCEPTOR
+'!includesub OCTA-labelscout-class-diagram.puml!USES_NL_CROLOX_LABELSCOUT_INTERCEPTOR
+'!includesub OCTA-labelscout-class-diagram.puml!IMPORTS_NL_CROLOX_LABELSCOUT_INTERCEPTOR
+
+'!includesub OCTA-labelscout-class-diagram.puml!NL_CROLOX_LABELSCOUT_REPOSITORY
+'!includesub OCTA-labelscout-class-diagram.puml!INHERITANCES_NL_CROLOX_LABELSCOUT_REPOSITORY
+'!includesub OCTA-labelscout-class-diagram.puml!IMPLEMENTS_NL_CROLOX_LABELSCOUT_REPOSITORY
+'!includesub OCTA-labelscout-class-diagram.puml!FIELDS_NL_CROLOX_LABELSCOUT_REPOSITORY
+'!includesub OCTA-labelscout-class-diagram.puml!USES_NL_CROLOX_LABELSCOUT_REPOSITORY
+'!includesub OCTA-labelscout-class-diagram.puml!IMPORTS_NL_CROLOX_LABELSCOUT_REPOSITORY
+
+!includesub OCTA-labelscout-class-diagram.puml!NL_CROLOX_LABELSCOUT_SERVICE
+'!includesub OCTA-labelscout-class-diagram.puml!INHERITANCES_NL_CROLOX_LABELSCOUT_SERVICE
+'!includesub OCTA-labelscout-class-diagram.puml!IMPLEMENTS_NL_CROLOX_LABELSCOUT_SERVICE
+!includesub OCTA-labelscout-class-diagram.puml!FIELDS_NL_CROLOX_LABELSCOUT_SERVICE
+!includesub OCTA-labelscout-class-diagram.puml!USES_NL_CROLOX_LABELSCOUT_SERVICE
+!includesub OCTA-labelscout-class-diagram.puml!IMPORTS_NL_CROLOX_LABELSCOUT_SERVICE
+
+'!includesub OCTA-labelscout-class-diagram.puml!NL_CROLOX_LABELSCOUT_WEB
+'!includesub OCTA-labelscout-class-diagram.puml!INHERITANCES_NL_CROLOX_LABELSCOUT_WEB
+'!includesub OCTA-labelscout-class-diagram.puml!IMPLEMENTS_NL_CROLOX_LABELSCOUT_WEB
+'!includesub OCTA-labelscout-class-diagram.puml!FIELDS_NL_CROLOX_LABELSCOUT_WEB
+'!includesub OCTA-labelscout-class-diagram.puml!USES_NL_CROLOX_LABELSCOUT_WEB
+'!includesub OCTA-labelscout-class-diagram.puml!IMPORTS_NL_CROLOX_LABELSCOUT_WEB
+
+hide member
+hide circle
+
+@enduml
