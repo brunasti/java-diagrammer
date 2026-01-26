@@ -42,6 +42,7 @@ public class ClassDiagrammer {
   // By default is the Standard.out, but it can be redirected
   // to a file.
   private final PrintStream output;
+  private final String outputFile;
 
   // CONFIGURATION SETTINGS ------------------------
   // Lists of the packages and classes to be excluded in the diagram
@@ -60,6 +61,7 @@ public class ClassDiagrammer {
    */
   public ClassDiagrammer() {
     this.output = System.out;
+    this.outputFile = "";
   }
 
   /**
@@ -70,8 +72,9 @@ public class ClassDiagrammer {
    *
    * @param output The PrintStream to which the output will be directed.
    */
-  public ClassDiagrammer(PrintStream output) {
+  public ClassDiagrammer(PrintStream output, String outputFile) {
     this.output = output;
+    this.outputFile = outputFile;
   }
 
   private ClassLoader getClassLoader(final String path) {
@@ -326,10 +329,13 @@ public class ClassDiagrammer {
     for (JavaClass javaClass : classes) {
       if (!javaClass.getPackageName().equals(currentPackage)) {
         if (flagClosePackage) {
+          output.println();
           output.println("!endsub");
+          output.println();
         }
         flagClosePackage = true;
         counter ++;
+        output.println();
         output.println("!startsub USES_" + javaClass.getPackageName().replace('.','_').toUpperCase());
 //          output.println("!startsub PACKAGE" + counter);
         currentPackage = javaClass.getPackageName();
@@ -507,12 +513,23 @@ public class ClassDiagrammer {
 
     String currentPackage = "";
     boolean flagClosePackage = false;
-    int counter = 0;
 
     List<String> done = new ArrayList<>();
 
     classes.sort((a,b) -> { return a.getPackageName().compareTo(b.getPackageName());});
-//    classes.forEach(javaClass -> {
+
+    output.println();
+    for (JavaClass javaClass : classes) {
+      if (!javaClass.getPackageName().equals(currentPackage)) {
+        String packageName = javaClass.getPackageName().replace('.','_').toUpperCase();
+        output.println("'!includesub "+outputFile+".puml!"+packageName);
+        output.println("'!includesub "+outputFile+".puml!USES_"+packageName);
+        currentPackage = javaClass.getPackageName();
+      }
+    }
+    output.println();
+    output.println();
+
     for (JavaClass javaClass : classes) {
       if (!done.contains(javaClass.getClassName())) {
 
@@ -521,9 +538,7 @@ public class ClassDiagrammer {
             output.println("!endsub");
           }
           flagClosePackage = true;
-          counter ++;
           output.println("!startsub " + javaClass.getPackageName().replace('.','_').toUpperCase());
-//          output.println("!startsub PACKAGE" + counter);
           currentPackage = javaClass.getPackageName();
         }
 
@@ -569,7 +584,6 @@ public class ClassDiagrammer {
     output.println("' Generated at    : " + new Date());
     output.println("'");
 
-
     output.println("'   Stat infos    :");
     int totelLines = 0;
     for (String file : files) {
@@ -594,7 +608,7 @@ public class ClassDiagrammer {
     output.println("'     Methods : [" +  methods + "]");
     output.println("'      Fields : [" +  fields + "]");
 
-      String includeFileContent = Utils.readFileToString(includeFileName);
+    String includeFileContent = Utils.readFileToString(includeFileName);
     if (!includeFileContent.isBlank()) {
       output.println();
       output.println("' Include         : [" + includeFileName + "] ---------");

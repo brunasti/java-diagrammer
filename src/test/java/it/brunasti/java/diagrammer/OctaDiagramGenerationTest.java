@@ -57,7 +57,7 @@ public class OctaDiagramGenerationTest implements TestConstants {
     fullArgs[6] = "-i";
     fullArgs[7] = "/Users/paolobrunasti/IdeaProjects/OCTA/" +repository+ "/src/main/java";
     fullArgs[8] = "-d";
-    fullArgs[9] = "0";
+    fullArgs[9] = "5";
 
 
     ClassDiagrammerMain.main(fullArgs);

@@ -1,29 +1,47 @@
 @startuml
 'https://plantuml.com/class-diagram
 
+'!includesub .puml!NL_CROLOX_LABELSCOUT
+'!includesub .puml!USES_NL_CROLOX_LABELSCOUT
+'!includesub .puml!NL_CROLOX_LABELSCOUT_ASPECT
+'!includesub .puml!USES_NL_CROLOX_LABELSCOUT_ASPECT
+'!includesub .puml!NL_CROLOX_LABELSCOUT_DOMAIN
+'!includesub .puml!USES_NL_CROLOX_LABELSCOUT_DOMAIN
+'!includesub .puml!NL_CROLOX_LABELSCOUT_HELPER
+'!includesub .puml!USES_NL_CROLOX_LABELSCOUT_HELPER
+'!includesub .puml!NL_CROLOX_LABELSCOUT_INTERCEPTOR
+'!includesub .puml!USES_NL_CROLOX_LABELSCOUT_INTERCEPTOR
+'!includesub .puml!NL_CROLOX_LABELSCOUT_REPOSITORY
+'!includesub .puml!USES_NL_CROLOX_LABELSCOUT_REPOSITORY
+'!includesub .puml!NL_CROLOX_LABELSCOUT_SERVICE
+'!includesub .puml!USES_NL_CROLOX_LABELSCOUT_SERVICE
+'!includesub .puml!NL_CROLOX_LABELSCOUT_WEB
+'!includesub .puml!USES_NL_CROLOX_LABELSCOUT_WEB
 
-'!include OCTA-labelscout-class-diagram.puml
+
 !includesub OCTA-labelscout-class-diagram.puml!NL_CROLOX_LABELSCOUT
-'!includesub OCTA-labelscout-class-diagram.puml!NL_CROLOX_LABELSCOUT_ASPECT
+!includesub OCTA-labelscout-class-diagram.puml!NL_CROLOX_LABELSCOUT_ASPECT
 !includesub OCTA-labelscout-class-diagram.puml!NL_CROLOX_LABELSCOUT_DOMAIN
-!includesub OCTA-labelscout-class-diagram.puml!NL_CROLOX_LABELSCOUT_HELPER
-'!includesub OCTA-labelscout-class-diagram.puml!PACKAGE2
-'!includesub OCTA-labelscout-class-diagram.puml!PACKAGE3
-'!includesub OCTA-labelscout-class-diagram.puml!PACKAGE4
-''!includesub OCTA-labelscout-class-diagram.puml!PACKAGE5
-'!includesub OCTA-labelscout-class-diagram.puml!PACKAGE6
-'!includesub OCTA-labelscout-class-diagram.puml!PACKAGE7
-''!includesub OCTA-labelscout-class-diagram.puml!PACKAGE8
+!includesub OCTA-labelscout-class-diagram.puml!NL_CROLOX_LABELSCOUT_INTERCEPTOR
+'!includesub OCTA-labelscout-class-diagram.puml!NL_CROLOX_LABELSCOUT_REPOSITORY
+!includesub OCTA-labelscout-class-diagram.puml!NL_CROLOX_LABELSCOUT_SERVICE
+!includesub OCTA-labelscout-class-diagram.puml!NL_CROLOX_LABELSCOUT_WEB
 
-'!includesub OCTA-labelscout-class-diagram.puml!USES
 !includesub OCTA-labelscout-class-diagram.puml!USES_NL_CROLOX_LABELSCOUT
-'!includesub OCTA-labelscout-class-diagram.puml!USES_NL_CROLOX_LABELSCOUT_ASPECT
+!includesub OCTA-labelscout-class-diagram.puml!USES_NL_CROLOX_LABELSCOUT_ASPECT
+!includesub OCTA-labelscout-class-diagram.puml!USES_NL_CROLOX_LABELSCOUT_DOMAIN
+!includesub OCTA-labelscout-class-diagram.puml!USES_NL_CROLOX_LABELSCOUT_HELPER
+!includesub OCTA-labelscout-class-diagram.puml!USES_NL_CROLOX_LABELSCOUT_INTERCEPTOR
+'!includesub OCTA-labelscout-class-diagram.puml!USES_NL_CROLOX_LABELSCOUT_REPOSITORY
+!includesub OCTA-labelscout-class-diagram.puml!USES_NL_CROLOX_LABELSCOUT_SERVICE
+!includesub OCTA-labelscout-class-diagram.puml!USES_NL_CROLOX_LABELSCOUT_WEB
 
 
-'!includesub OCTA-labelscout-class-diagram.puml!INHERITANCES
-'!includesub OCTA-labelscout-class-diagram.puml!IMPLEMENTS
-'!includesub OCTA-labelscout-class-diagram.puml!FIELDS
-'!includesub OCTA-labelscout-class-diagram.puml!IMPORTS
+
+!includesub OCTA-labelscout-class-diagram.puml!INHERITANCES
+!includesub OCTA-labelscout-class-diagram.puml!IMPLEMENTS
+!includesub OCTA-labelscout-class-diagram.puml!FIELDS
+!includesub OCTA-labelscout-class-diagram.puml!IMPORTS
 
 
 

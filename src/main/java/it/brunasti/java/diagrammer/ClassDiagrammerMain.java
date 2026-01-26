@@ -23,6 +23,7 @@ public class ClassDiagrammerMain {
   private static String javaPackagePath = "";
   private static String classesPackagePath = "";
   private static String outputFile = "";
+  private static String baseOutputFile = "";
   private static String configurationFile = "";
 
   private static Options options;
@@ -34,6 +35,7 @@ public class ClassDiagrammerMain {
     javaPackagePath = "";
     outputFile = "";
     configurationFile = "";
+    baseOutputFile = "";
 
     options = null;
   }
@@ -52,6 +54,7 @@ public class ClassDiagrammerMain {
             .longOpt("debug").hasArg(true).optionalArg(true)
             .desc("Execute in debug mode, optionally with desired level").build();
     Option optionOutputFile = new Option("o", "output", true, "Output File");
+    Option optionBaseOutputFile = new Option("b", "base", true, "Base Output File");
     Option optionConfigFile = new Option("c", "config", true,
             "Configuration File");
     Option optionClassesPackagePath = new Option("p", "path", true,
@@ -63,6 +66,7 @@ public class ClassDiagrammerMain {
     options.addOption(optionShortUsage);
     options.addOption(optionDebug);
     options.addOption(optionOutputFile);
+    options.addOption(optionBaseOutputFile);
     options.addOption(optionConfigFile);
     options.addOption(optionClassesPackagePath);
     options.addOption(optionIncludeImports);
@@ -125,6 +129,10 @@ public class ClassDiagrammerMain {
       if (commandLine.hasOption(optionOutputFile.getOpt())) {
         outputFile = commandLine.getOptionValue(optionOutputFile.getOpt());
         Debugger.debug(optionOutputFile.getDescription() + " set to [" + outputFile + "]");
+      }
+      if (commandLine.hasOption(optionBaseOutputFile.getOpt())) {
+        baseOutputFile = commandLine.getOptionValue(optionBaseOutputFile.getOpt());
+        Debugger.debug(optionBaseOutputFile.getDescription() + " set to [" + baseOutputFile + "]");
       }
       if (commandLine.hasOption(optionConfigFile.getOpt())) {
         configurationFile = commandLine.getOptionValue(optionConfigFile.getOpt());
@@ -199,6 +207,7 @@ public class ClassDiagrammerMain {
     Debugger.debug("Path              [" + classesPackagePath + "]\n"
             + "Java files Path   [" + javaPackagePath + "]\n"
             + "OutputFile        [" + outputFile + "]\n"
+            + "BaseOutputFile    [" + baseOutputFile + "]\n"
             + "ConfigurationFile [" + configurationFile + "]");
 
     if ((null == classesPackagePath) || (classesPackagePath.isBlank())) {
@@ -220,7 +229,7 @@ public class ClassDiagrammerMain {
         output = new PrintStream(file, true);
       }
 
-      classDiagrammer = new ClassDiagrammer(output);
+      classDiagrammer = new ClassDiagrammer(output, baseOutputFile);
       classDiagrammer.generateDiagram(classesPackagePath, configurationFile, javaPackagePath);
 
       if (null != file) {
