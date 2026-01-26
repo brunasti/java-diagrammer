@@ -317,9 +317,24 @@ public class ClassDiagrammer {
 
   private void generateUses(final ArrayList<JavaClass> classes) {
     Debugger.debug(8, "generateUses() ------------------");
+
+    String currentPackage = "";
+    boolean flagClosePackage = false;
+    int counter = 0;
+
     output.println("' USES =======");
-    output.println("!startsub USES");
-    classes.forEach(javaClass -> {
+    for (JavaClass javaClass : classes) {
+      if (!javaClass.getPackageName().equals(currentPackage)) {
+        if (flagClosePackage) {
+          output.println("!endsub");
+        }
+        flagClosePackage = true;
+        counter ++;
+        output.println("!startsub USES_" + javaClass.getPackageName().replace('.','_').toUpperCase());
+//          output.println("!startsub PACKAGE" + counter);
+        currentPackage = javaClass.getPackageName();
+      }
+
       if (!javaClass.isEnum()) {
         Method[] methods = javaClass.getMethods();
         for (Method method : methods) {
@@ -338,8 +353,8 @@ public class ClassDiagrammer {
           }
         }
       }
-    });
-    output.println("!endsub USES");
+    };
+    output.println("!endsub");
     output.println();
   }
 
@@ -507,8 +522,8 @@ public class ClassDiagrammer {
           }
           flagClosePackage = true;
           counter ++;
-//          output.println("!startsub " + javaClass.getPackageName().replace('.','_').toUpperCase());
-          output.println("!startsub PACKAGE" + counter);
+          output.println("!startsub " + javaClass.getPackageName().replace('.','_').toUpperCase());
+//          output.println("!startsub PACKAGE" + counter);
           currentPackage = javaClass.getPackageName();
         }
 
