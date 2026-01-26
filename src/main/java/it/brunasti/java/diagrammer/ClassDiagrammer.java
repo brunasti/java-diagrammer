@@ -323,7 +323,6 @@ public class ClassDiagrammer {
 
     String currentPackage = "";
     boolean flagClosePackage = false;
-    int counter = 0;
 
     output.println("' USES =======");
     for (JavaClass javaClass : classes) {
@@ -334,10 +333,8 @@ public class ClassDiagrammer {
           output.println();
         }
         flagClosePackage = true;
-        counter ++;
         output.println();
         output.println("!startsub USES_" + javaClass.getPackageName().replace('.','_').toUpperCase());
-//          output.println("!startsub PACKAGE" + counter);
         currentPackage = javaClass.getPackageName();
       }
 
@@ -360,16 +357,31 @@ public class ClassDiagrammer {
         }
       }
     };
+    output.println();
     output.println("!endsub");
     output.println();
   }
 
   private void generateFields(final ArrayList<JavaClass> classes) {
     Debugger.debug(2, "generateFields() ------------------");
+    String currentPackage = "";
+    boolean flagClosePackage = false;
+
     output.println("' FIELDS =======");
-    output.println("!startsub FIELDS");
+//    output.println("!startsub FIELDS");
     List done = new ArrayList();
-    classes.forEach(javaClass -> {
+    for (JavaClass javaClass : classes) {
+      if (!javaClass.getPackageName().equals(currentPackage)) {
+        if (flagClosePackage) {
+          output.println();
+          output.println("!endsub");
+          output.println();
+        }
+        flagClosePackage = true;
+        output.println();
+        output.println("!startsub FIELDS_" + javaClass.getPackageName().replace('.','_').toUpperCase());
+        currentPackage = javaClass.getPackageName();
+      }
       if (!javaClass.isEnum()) {
         for (Field field : javaClass.getFields()) {
           if (isTypeToBeConnected(javaClass, field)) {
@@ -383,20 +395,35 @@ public class ClassDiagrammer {
           }
         }
       }
-    });
-    output.println("!endsub FIELDS");
+    };
+    output.println();
+    output.println("!endsub");
     output.println();
   }
 
   private void generateImports(final ArrayList<JavaClass> classes, String javaFilesPath) {
     Debugger.debug(2, "generateImports() ------------------");
+    String currentPackage = "";
+    boolean flagClosePackage = false;
+
     output.println("' IMPORTS =======");
     output.println("' Java Files Path : " + javaFilesPath);
-    output.println("!startsub IMPORTS");
+//    output.println("!startsub IMPORTS");
     if ((null != javaFilesPath) && (!javaFilesPath.isBlank())) {
       ImportsIdentifier importsIdentifier = new ImportsIdentifier();
 
-      classes.forEach(javaClass -> {
+      for (JavaClass javaClass : classes) {
+        if (!javaClass.getPackageName().equals(currentPackage)) {
+          if (flagClosePackage) {
+            output.println();
+            output.println("!endsub");
+            output.println();
+          }
+          flagClosePackage = true;
+          output.println();
+          output.println("!startsub IMPORTS_" + javaClass.getPackageName().replace('.','_').toUpperCase());
+          currentPackage = javaClass.getPackageName();
+        }
         Debugger.debug(3, "  ---------- " + javaClass.getClassName());
         output.println("' " + javaClass.getClassName());
         String javaClassName = javaFilesPath
@@ -421,21 +448,36 @@ public class ClassDiagrammer {
           }
         }
         output.println();
-      });
+      };
     } else {
       Debugger.debug(3,
               "generateImports() --- Not generated because javaFilesPath not provided");
     }
-    output.println("!endsub IMPORTS");
+    output.println();
+    output.println("!endsub");
     output.println();
   }
 
   private void generateImplements(final ArrayList<JavaClass> classes) {
     Debugger.debug(2, "generateImplements() ------------------");
+    String currentPackage = "";
+    boolean flagClosePackage = false;
+
     output.println("' IMPLEMENT INTERFACE =======");
-    output.println("!startsub IMPLEMENTS");
+//    output.println("!startsub IMPLEMENTS");
     List done = new ArrayList();
-    classes.forEach(javaClass -> {
+    for (JavaClass javaClass : classes) {
+      if (!javaClass.getPackageName().equals(currentPackage)) {
+        if (flagClosePackage) {
+          output.println();
+          output.println("!endsub");
+          output.println();
+        }
+        flagClosePackage = true;
+        output.println();
+        output.println("!startsub IMPLEMENTS_" + javaClass.getPackageName().replace('.','_').toUpperCase());
+        currentPackage = javaClass.getPackageName();
+      }
       try {
         for (JavaClass javaInterface : javaClass.getInterfaces()) {
           String rel = javaInterface.getClassName() + " <|.. "
@@ -448,17 +490,33 @@ public class ClassDiagrammer {
       } catch (ClassNotFoundException ex) {
         Debugger.debug(2, "Error generating `Implements` relations : " + ex.getMessage());
       }
-    });
-    output.println("!endsub IMPLEMENTS");
+    };
+    output.println();
+    output.println("!endsub");
     output.println();
   }
 
   private void generateInheritances(final ArrayList<JavaClass> classes) {
     Debugger.debug(2, "generateInheritances() ------------------");
+    String currentPackage = "";
+    boolean flagClosePackage = false;
+
     output.println("' INHERITANCES =======");
-    output.println("!startsub INHERITANCES");
+//    output.println("!startsub INHERITANCES");
     List done = new ArrayList();
-    classes.forEach(javaClass -> {
+    for (JavaClass javaClass : classes) {
+      if (!javaClass.getPackageName().equals(currentPackage)) {
+        if (flagClosePackage) {
+          output.println();
+          output.println("!endsub");
+          output.println();
+        }
+        flagClosePackage = true;
+        output.println();
+        output.println("!startsub INHERITANCES_" + javaClass.getPackageName().replace('.','_').toUpperCase());
+        currentPackage = javaClass.getPackageName();
+      }
+
       try {
         if (!"java.lang.Object".equals(
                 javaClass.getSuperClass().getClassName())) {
@@ -472,8 +530,9 @@ public class ClassDiagrammer {
       } catch (ClassNotFoundException ex) {
         Debugger.debug(2, "Error generating `Inheritance` relations : " + ex.getMessage());
       }
-    });
-    output.println("!endsub INHERITANCES");
+    };
+    output.println();
+    output.println("!endsub");
     output.println();
   }
 
@@ -523,7 +582,11 @@ public class ClassDiagrammer {
       if (!javaClass.getPackageName().equals(currentPackage)) {
         String packageName = javaClass.getPackageName().replace('.','_').toUpperCase();
         output.println("'!includesub "+outputFile+".puml!"+packageName);
+        output.println("'!includesub "+outputFile+".puml!INHERITANCES_"+packageName);
+        output.println("'!includesub "+outputFile+".puml!IMPLEMENTS_"+packageName);
+        output.println("'!includesub "+outputFile+".puml!FIELDS_"+packageName);
         output.println("'!includesub "+outputFile+".puml!USES_"+packageName);
+        output.println("'!includesub "+outputFile+".puml!IMPORTS_"+packageName);
         currentPackage = javaClass.getPackageName();
       }
     }
@@ -535,7 +598,9 @@ public class ClassDiagrammer {
 
         if (!javaClass.getPackageName().equals(currentPackage)) {
           if (flagClosePackage) {
+            output.println();
             output.println("!endsub");
+            output.println();
           }
           flagClosePackage = true;
           output.println("!startsub " + javaClass.getPackageName().replace('.','_').toUpperCase());
@@ -554,6 +619,7 @@ public class ClassDiagrammer {
         done.add(javaClass.getClassName());
       }
     };
+    output.println();
     output.println("!endsub");
     output.println();
   }
