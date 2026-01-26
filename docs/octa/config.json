@@ -1,0 +1,52 @@
+{
+  "exclude": {
+    "classes": [
+      {
+        "class": "org.slf4j.Logger"
+      },
+      {
+        "class": "java.lang.String"
+      }
+    ],
+    "packages": [
+      {
+        "package": "Lnl."
+      },
+      {
+        "package": "Ljava.lang."
+      },
+      {
+        "package": "java."
+      },
+      {
+        "package": "javax."
+      },
+      {
+        "package": "Lorg.hibernate."
+      },
+      {
+        "package": "java.lang.annotation."
+      },
+      {
+        "package": "lombok."
+      },
+      {
+        "package": "com.fasterxml."
+      },
+      {
+        "package": "java.lang."
+      },
+      {
+        "package": "java.util."
+      },
+      {
+        "package": "nz.net.ultraq."
+      },
+      {
+        "package": "org."
+      }
+    ]
+  },
+  "includeFile" : "./docs/includedFile.txt",
+  "selfReflection" : false
+}

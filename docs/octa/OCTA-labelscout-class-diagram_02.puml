@@ -1,0 +1,11 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+!include OCTA-labelscout-class-diagram.puml
+hide member
+hide circle
+hide nl.crolox.labelscout.repository
+hide java
+
+'nl.crolox.labelscout.helper.Product$ProductPrice ------- nl.crolox.labelscout.domain.AuditLog
+@enduml
