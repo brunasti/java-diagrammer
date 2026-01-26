@@ -318,6 +318,7 @@ public class ClassDiagrammer {
   private void generateUses(final ArrayList<JavaClass> classes) {
     Debugger.debug(8, "generateUses() ------------------");
     output.println("' USES =======");
+    output.println("!startsub USES");
     classes.forEach(javaClass -> {
       if (!javaClass.isEnum()) {
         Method[] methods = javaClass.getMethods();
@@ -338,12 +339,14 @@ public class ClassDiagrammer {
         }
       }
     });
+    output.println("!endsub USES");
     output.println();
   }
 
   private void generateFields(final ArrayList<JavaClass> classes) {
     Debugger.debug(2, "generateFields() ------------------");
     output.println("' FIELDS =======");
+    output.println("!startsub FIELDS");
     List done = new ArrayList();
     classes.forEach(javaClass -> {
       if (!javaClass.isEnum()) {
@@ -360,6 +363,7 @@ public class ClassDiagrammer {
         }
       }
     });
+    output.println("!endsub FIELDS");
     output.println();
   }
 
@@ -367,6 +371,7 @@ public class ClassDiagrammer {
     Debugger.debug(2, "generateImports() ------------------");
     output.println("' IMPORTS =======");
     output.println("' Java Files Path : " + javaFilesPath);
+    output.println("!startsub IMPORTS");
     if ((null != javaFilesPath) && (!javaFilesPath.isBlank())) {
       ImportsIdentifier importsIdentifier = new ImportsIdentifier();
 
@@ -400,12 +405,14 @@ public class ClassDiagrammer {
       Debugger.debug(3,
               "generateImports() --- Not generated because javaFilesPath not provided");
     }
+    output.println("!endsub IMPORTS");
     output.println();
   }
 
   private void generateImplements(final ArrayList<JavaClass> classes) {
     Debugger.debug(2, "generateImplements() ------------------");
     output.println("' IMPLEMENT INTERFACE =======");
+    output.println("!startsub IMPLEMENTS");
     List done = new ArrayList();
     classes.forEach(javaClass -> {
       try {
@@ -421,12 +428,14 @@ public class ClassDiagrammer {
         Debugger.debug(2, "Error generating `Implements` relations : " + ex.getMessage());
       }
     });
+    output.println("!endsub IMPLEMENTS");
     output.println();
   }
 
   private void generateInheritances(final ArrayList<JavaClass> classes) {
     Debugger.debug(2, "generateInheritances() ------------------");
     output.println("' INHERITANCES =======");
+    output.println("!startsub INHERITANCES");
     List done = new ArrayList();
     classes.forEach(javaClass -> {
       try {
@@ -443,6 +452,7 @@ public class ClassDiagrammer {
         Debugger.debug(2, "Error generating `Inheritance` relations : " + ex.getMessage());
       }
     });
+    output.println("!endsub INHERITANCES");
     output.println();
   }
 
@@ -480,9 +490,28 @@ public class ClassDiagrammer {
     output.println();
     output.println("' CLASSES =======");
 
-    List done = new ArrayList();
-    classes.forEach(javaClass -> {
+    String currentPackage = "";
+    boolean flagClosePackage = false;
+    int counter = 0;
+
+    List<String> done = new ArrayList<>();
+
+    classes.sort((a,b) -> { return a.getPackageName().compareTo(b.getPackageName());});
+//    classes.forEach(javaClass -> {
+    for (JavaClass javaClass : classes) {
       if (!done.contains(javaClass.getClassName())) {
+
+        if (!javaClass.getPackageName().equals(currentPackage)) {
+          if (flagClosePackage) {
+            output.println("!endsub");
+          }
+          flagClosePackage = true;
+          counter ++;
+//          output.println("!startsub " + javaClass.getPackageName().replace('.','_').toUpperCase());
+          output.println("!startsub PACKAGE" + counter);
+          currentPackage = javaClass.getPackageName();
+        }
+
         if (javaClass.isEnum()) {
           generateEnum(javaClass, classLoader);
         } else if (javaClass.isInterface()) {
@@ -494,7 +523,8 @@ public class ClassDiagrammer {
         }
         done.add(javaClass.getClassName());
       }
-    });
+    };
+    output.println("!endsub");
     output.println();
   }
 
