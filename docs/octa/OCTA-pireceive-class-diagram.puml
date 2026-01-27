@@ -1,0 +1,1410 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+' GENERATE CLASS DIAGRAM ===========
+' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
+' Path            : [/Users/paolobrunasti/IdeaProjects/OCTA/pireceive/target/classes]
+' Java Files Path : [/Users/paolobrunasti/IdeaProjects/OCTA/pireceive/src/main/java/]
+' Configuration   : [/Users/paolobrunasti/IdeaProjects/mine/java-diagrammer/docs/octa/config.json]
+' Generated at    : Tue Jan 27 11:50:43 CET 2026
+'
+'   Stat infos    :
+'       Files : [682]
+'       Lines : [16196]
+'     Classes : [164]
+'     Methods : [1444]
+'      Fields : [814]
+
+' Include         : [./docs/includedFile.txt] ---------
+title Example with legend and title
+
+hide empty members
+
+
+legend
+Connections legend
+----
+--|> : Extends
+..|> : Implements
+----
+--> : Fields and Attributes
+..> : Uses
+end legend
+' Include end     : --------------------------
+
+
+
+'!includesub OCTA-pireceive-class-diagram.puml!COM_CROLOX_PIRECEIVE
+'!includesub OCTA-pireceive-class-diagram.puml!INHERITANCES_COM_CROLOX_PIRECEIVE
+'!includesub OCTA-pireceive-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PIRECEIVE
+'!includesub OCTA-pireceive-class-diagram.puml!FIELDS_COM_CROLOX_PIRECEIVE
+'!includesub OCTA-pireceive-class-diagram.puml!USES_COM_CROLOX_PIRECEIVE
+'!includesub OCTA-pireceive-class-diagram.puml!IMPORTS_COM_CROLOX_PIRECEIVE
+
+'!includesub OCTA-pireceive-class-diagram.puml!COM_CROLOX_PIRECEIVE_API
+'!includesub OCTA-pireceive-class-diagram.puml!INHERITANCES_COM_CROLOX_PIRECEIVE_API
+'!includesub OCTA-pireceive-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PIRECEIVE_API
+'!includesub OCTA-pireceive-class-diagram.puml!FIELDS_COM_CROLOX_PIRECEIVE_API
+'!includesub OCTA-pireceive-class-diagram.puml!USES_COM_CROLOX_PIRECEIVE_API
+'!includesub OCTA-pireceive-class-diagram.puml!IMPORTS_COM_CROLOX_PIRECEIVE_API
+
+'!includesub OCTA-pireceive-class-diagram.puml!COM_CROLOX_PIRECEIVE_COMMON
+'!includesub OCTA-pireceive-class-diagram.puml!INHERITANCES_COM_CROLOX_PIRECEIVE_COMMON
+'!includesub OCTA-pireceive-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PIRECEIVE_COMMON
+'!includesub OCTA-pireceive-class-diagram.puml!FIELDS_COM_CROLOX_PIRECEIVE_COMMON
+'!includesub OCTA-pireceive-class-diagram.puml!USES_COM_CROLOX_PIRECEIVE_COMMON
+'!includesub OCTA-pireceive-class-diagram.puml!IMPORTS_COM_CROLOX_PIRECEIVE_COMMON
+
+'!includesub OCTA-pireceive-class-diagram.puml!COM_CROLOX_PIRECEIVE_COMPONENT
+'!includesub OCTA-pireceive-class-diagram.puml!INHERITANCES_COM_CROLOX_PIRECEIVE_COMPONENT
+'!includesub OCTA-pireceive-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PIRECEIVE_COMPONENT
+'!includesub OCTA-pireceive-class-diagram.puml!FIELDS_COM_CROLOX_PIRECEIVE_COMPONENT
+'!includesub OCTA-pireceive-class-diagram.puml!USES_COM_CROLOX_PIRECEIVE_COMPONENT
+'!includesub OCTA-pireceive-class-diagram.puml!IMPORTS_COM_CROLOX_PIRECEIVE_COMPONENT
+
+'!includesub OCTA-pireceive-class-diagram.puml!COM_CROLOX_PIRECEIVE_CONFIG
+'!includesub OCTA-pireceive-class-diagram.puml!INHERITANCES_COM_CROLOX_PIRECEIVE_CONFIG
+'!includesub OCTA-pireceive-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PIRECEIVE_CONFIG
+'!includesub OCTA-pireceive-class-diagram.puml!FIELDS_COM_CROLOX_PIRECEIVE_CONFIG
+'!includesub OCTA-pireceive-class-diagram.puml!USES_COM_CROLOX_PIRECEIVE_CONFIG
+'!includesub OCTA-pireceive-class-diagram.puml!IMPORTS_COM_CROLOX_PIRECEIVE_CONFIG
+
+'!includesub OCTA-pireceive-class-diagram.puml!COM_CROLOX_PIRECEIVE_CONTROLLER_CONFIG
+'!includesub OCTA-pireceive-class-diagram.puml!INHERITANCES_COM_CROLOX_PIRECEIVE_CONTROLLER_CONFIG
+'!includesub OCTA-pireceive-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PIRECEIVE_CONTROLLER_CONFIG
+'!includesub OCTA-pireceive-class-diagram.puml!FIELDS_COM_CROLOX_PIRECEIVE_CONTROLLER_CONFIG
+'!includesub OCTA-pireceive-class-diagram.puml!USES_COM_CROLOX_PIRECEIVE_CONTROLLER_CONFIG
+'!includesub OCTA-pireceive-class-diagram.puml!IMPORTS_COM_CROLOX_PIRECEIVE_CONTROLLER_CONFIG
+
+'!includesub OCTA-pireceive-class-diagram.puml!COM_CROLOX_PIRECEIVE_DOMAIN_PERSISTENCE
+'!includesub OCTA-pireceive-class-diagram.puml!INHERITANCES_COM_CROLOX_PIRECEIVE_DOMAIN_PERSISTENCE
+'!includesub OCTA-pireceive-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PIRECEIVE_DOMAIN_PERSISTENCE
+'!includesub OCTA-pireceive-class-diagram.puml!FIELDS_COM_CROLOX_PIRECEIVE_DOMAIN_PERSISTENCE
+'!includesub OCTA-pireceive-class-diagram.puml!USES_COM_CROLOX_PIRECEIVE_DOMAIN_PERSISTENCE
+'!includesub OCTA-pireceive-class-diagram.puml!IMPORTS_COM_CROLOX_PIRECEIVE_DOMAIN_PERSISTENCE
+
+'!includesub OCTA-pireceive-class-diagram.puml!COM_CROLOX_PIRECEIVE_DTO
+'!includesub OCTA-pireceive-class-diagram.puml!INHERITANCES_COM_CROLOX_PIRECEIVE_DTO
+'!includesub OCTA-pireceive-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PIRECEIVE_DTO
+'!includesub OCTA-pireceive-class-diagram.puml!FIELDS_COM_CROLOX_PIRECEIVE_DTO
+'!includesub OCTA-pireceive-class-diagram.puml!USES_COM_CROLOX_PIRECEIVE_DTO
+'!includesub OCTA-pireceive-class-diagram.puml!IMPORTS_COM_CROLOX_PIRECEIVE_DTO
+
+'!includesub OCTA-pireceive-class-diagram.puml!COM_CROLOX_PIRECEIVE_EXCEPTION
+'!includesub OCTA-pireceive-class-diagram.puml!INHERITANCES_COM_CROLOX_PIRECEIVE_EXCEPTION
+'!includesub OCTA-pireceive-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PIRECEIVE_EXCEPTION
+'!includesub OCTA-pireceive-class-diagram.puml!FIELDS_COM_CROLOX_PIRECEIVE_EXCEPTION
+'!includesub OCTA-pireceive-class-diagram.puml!USES_COM_CROLOX_PIRECEIVE_EXCEPTION
+'!includesub OCTA-pireceive-class-diagram.puml!IMPORTS_COM_CROLOX_PIRECEIVE_EXCEPTION
+
+'!includesub OCTA-pireceive-class-diagram.puml!COM_CROLOX_PIRECEIVE_REGISTRAR
+'!includesub OCTA-pireceive-class-diagram.puml!INHERITANCES_COM_CROLOX_PIRECEIVE_REGISTRAR
+'!includesub OCTA-pireceive-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PIRECEIVE_REGISTRAR
+'!includesub OCTA-pireceive-class-diagram.puml!FIELDS_COM_CROLOX_PIRECEIVE_REGISTRAR
+'!includesub OCTA-pireceive-class-diagram.puml!USES_COM_CROLOX_PIRECEIVE_REGISTRAR
+'!includesub OCTA-pireceive-class-diagram.puml!IMPORTS_COM_CROLOX_PIRECEIVE_REGISTRAR
+
+'!includesub OCTA-pireceive-class-diagram.puml!COM_CROLOX_PIRECEIVE_REPOSITORY
+'!includesub OCTA-pireceive-class-diagram.puml!INHERITANCES_COM_CROLOX_PIRECEIVE_REPOSITORY
+'!includesub OCTA-pireceive-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PIRECEIVE_REPOSITORY
+'!includesub OCTA-pireceive-class-diagram.puml!FIELDS_COM_CROLOX_PIRECEIVE_REPOSITORY
+'!includesub OCTA-pireceive-class-diagram.puml!USES_COM_CROLOX_PIRECEIVE_REPOSITORY
+'!includesub OCTA-pireceive-class-diagram.puml!IMPORTS_COM_CROLOX_PIRECEIVE_REPOSITORY
+
+'!includesub OCTA-pireceive-class-diagram.puml!COM_CROLOX_PIRECEIVE_SCHEDULED
+'!includesub OCTA-pireceive-class-diagram.puml!INHERITANCES_COM_CROLOX_PIRECEIVE_SCHEDULED
+'!includesub OCTA-pireceive-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PIRECEIVE_SCHEDULED
+'!includesub OCTA-pireceive-class-diagram.puml!FIELDS_COM_CROLOX_PIRECEIVE_SCHEDULED
+'!includesub OCTA-pireceive-class-diagram.puml!USES_COM_CROLOX_PIRECEIVE_SCHEDULED
+'!includesub OCTA-pireceive-class-diagram.puml!IMPORTS_COM_CROLOX_PIRECEIVE_SCHEDULED
+
+'!includesub OCTA-pireceive-class-diagram.puml!COM_CROLOX_PIRECEIVE_SERVICE
+'!includesub OCTA-pireceive-class-diagram.puml!INHERITANCES_COM_CROLOX_PIRECEIVE_SERVICE
+'!includesub OCTA-pireceive-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PIRECEIVE_SERVICE
+'!includesub OCTA-pireceive-class-diagram.puml!FIELDS_COM_CROLOX_PIRECEIVE_SERVICE
+'!includesub OCTA-pireceive-class-diagram.puml!USES_COM_CROLOX_PIRECEIVE_SERVICE
+'!includesub OCTA-pireceive-class-diagram.puml!IMPORTS_COM_CROLOX_PIRECEIVE_SERVICE
+
+'!includesub OCTA-pireceive-class-diagram.puml!COM_CROLOX_PIRECEIVE_SERVICE_MAIL
+'!includesub OCTA-pireceive-class-diagram.puml!INHERITANCES_COM_CROLOX_PIRECEIVE_SERVICE_MAIL
+'!includesub OCTA-pireceive-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PIRECEIVE_SERVICE_MAIL
+'!includesub OCTA-pireceive-class-diagram.puml!FIELDS_COM_CROLOX_PIRECEIVE_SERVICE_MAIL
+'!includesub OCTA-pireceive-class-diagram.puml!USES_COM_CROLOX_PIRECEIVE_SERVICE_MAIL
+'!includesub OCTA-pireceive-class-diagram.puml!IMPORTS_COM_CROLOX_PIRECEIVE_SERVICE_MAIL
+
+'!includesub OCTA-pireceive-class-diagram.puml!COM_CROLOX_PIRECEIVE_SINGLETON
+'!includesub OCTA-pireceive-class-diagram.puml!INHERITANCES_COM_CROLOX_PIRECEIVE_SINGLETON
+'!includesub OCTA-pireceive-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PIRECEIVE_SINGLETON
+'!includesub OCTA-pireceive-class-diagram.puml!FIELDS_COM_CROLOX_PIRECEIVE_SINGLETON
+'!includesub OCTA-pireceive-class-diagram.puml!USES_COM_CROLOX_PIRECEIVE_SINGLETON
+'!includesub OCTA-pireceive-class-diagram.puml!IMPORTS_COM_CROLOX_PIRECEIVE_SINGLETON
+
+'!includesub OCTA-pireceive-class-diagram.puml!COM_CROLOX_PIRECEIVE_STATUS
+'!includesub OCTA-pireceive-class-diagram.puml!INHERITANCES_COM_CROLOX_PIRECEIVE_STATUS
+'!includesub OCTA-pireceive-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PIRECEIVE_STATUS
+'!includesub OCTA-pireceive-class-diagram.puml!FIELDS_COM_CROLOX_PIRECEIVE_STATUS
+'!includesub OCTA-pireceive-class-diagram.puml!USES_COM_CROLOX_PIRECEIVE_STATUS
+'!includesub OCTA-pireceive-class-diagram.puml!IMPORTS_COM_CROLOX_PIRECEIVE_STATUS
+
+'!includesub OCTA-pireceive-class-diagram.puml!COM_CROLOX_PIRECEIVE_UTIL
+'!includesub OCTA-pireceive-class-diagram.puml!INHERITANCES_COM_CROLOX_PIRECEIVE_UTIL
+'!includesub OCTA-pireceive-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PIRECEIVE_UTIL
+'!includesub OCTA-pireceive-class-diagram.puml!FIELDS_COM_CROLOX_PIRECEIVE_UTIL
+'!includesub OCTA-pireceive-class-diagram.puml!USES_COM_CROLOX_PIRECEIVE_UTIL
+'!includesub OCTA-pireceive-class-diagram.puml!IMPORTS_COM_CROLOX_PIRECEIVE_UTIL
+
+
+
+' CLASSES =======
+!startsub COM_CROLOX_PIRECEIVE
+class com.crolox.pireceive.PiReceive
+class com.crolox.pireceive.PiReceive$1
+
+!endsub
+
+!startsub COM_CROLOX_PIRECEIVE_API
+class com.crolox.pireceive.api.ProductGroupAPI
+class com.crolox.pireceive.api.PharmacyInfoAPI
+
+!endsub
+
+!startsub COM_CROLOX_PIRECEIVE_COMMON
+class com.crolox.pireceive.common.SingletonArea
+enum com.crolox.pireceive.common.ProductQueryType{
+  BY_ZINDEX
+  BY_ATC_CODE
+  BY_PRK_CODE
+  BY_GPK_CODE
+  BY_PRODUCT_BARCODE
+  BY_ZINDEX_NUMBERS
+}
+enum com.crolox.pireceive.common.DataType{
+  CF
+  BVG
+  EDI
+}
+enum com.crolox.pireceive.common.EmailProtocol{
+  POP3
+  IMAP
+}
+enum com.crolox.pireceive.common.ForwardingType{
+  NO_FORWARDING_TO_WHOLESALE
+  ALL_TO_WHOLESALE_AND_PHARMACY
+  HERHAAL_TO_WHOLESALE
+  REGULIER_TO_WHOLESALE
+  INCONTENENCE_TO_WHOLESALE
+  INCONTENENCE_TO_PHARMACY
+  HULPMIDDELEN_TO_WHOLESALE
+  HULPMIDDELEN_TO_PHARMACY
+  COPY_TO_OTHER_PHARMACY
+  HERHAAL_TO_OTHER_PHARMACY
+  REGULIER_TO_OTHER_PHARMACY
+  INCONTENENCE_TO_OTHER_PHARMACY
+  NON_INCONTENENCE_TO_OTHER_PHARMACY
+  HULPMIDDELEN_TO_OTHER_PHARMACY
+  NON_HULPMIDDELEN_TO_OTHER_PHARMACY
+  KOELKAST_TO_OTHER_PHARMACY
+  NON_KOELKAST_TO_OTHER_PHARMACY
+}
+enum com.crolox.pireceive.common.AIS{
+  CGM
+  PHARMASYS
+  PHARMACOM
+  APRO
+  OTHER
+  NOT_SET
+}
+enum com.crolox.pireceive.common.PackageQuantityCalculationRule{
+  PIFARMA_QUANTITY_IS_PIFARMA_CONTENT
+  PIFARMA_UNIT_IS_ST_AND_ZINDEX_UNIT_NOT_ST_WHILE_QUANTITY_PER_SUBPACKAGE_IS_GREATER_THEN_ONE
+  PIFARMA_UNIT_IS_NOT_ST_AND_ZINDEX_UNIT_IS_NOT_ST
+  PIFARMA_UNIT_IS_ST_AND_ZINDEX_UNIT_NOT_ST_WHILE_QUANTITY_PER_SUBPACKAGE_IS_ONE
+  DEFAULT
+}
+enum com.crolox.pireceive.common.ProcessingType{
+  DEFAULT
+  TO_WHOLESALE
+  SPLIT_HERHAAL
+  SPLIT_ON_MAX_PATIENTS_AND_HERHAAL
+  TO_CF_MANAGER
+  TO_RECEIPT_HANDLER
+}
+enum com.crolox.pireceive.common.MailboxStatus{
+  OK
+  ERROR
+}
+enum com.crolox.pireceive.common.FileDestination{
+  RAW_PICKORDERS
+  FAILED
+  PACKLIST
+  UNSUPPORTED
+  BVG_ORDERS
+}
+
+!endsub
+
+!startsub COM_CROLOX_PIRECEIVE_COMPONENT
+class com.crolox.pireceive.component.WholesaleBean
+class com.crolox.pireceive.component.FileReceiver
+
+!endsub
+
+!startsub COM_CROLOX_PIRECEIVE_CONFIG
+class com.crolox.pireceive.config.AppContextEventListener
+
+!endsub
+
+!startsub COM_CROLOX_PIRECEIVE_CONTROLLER_CONFIG
+class com.crolox.pireceive.controller.config.MailAccountController
+class com.crolox.pireceive.controller.config.ProductGroupController
+class com.crolox.pireceive.controller.config.HomeController
+class com.crolox.pireceive.controller.config.PharmacyConfigController
+class com.crolox.pireceive.controller.config.WaitingPickordersController
+
+!endsub
+
+!startsub COM_CROLOX_PIRECEIVE_DOMAIN_PERSISTENCE
+class com.crolox.pireceive.domain.persistence.PickorderClob
+class com.crolox.pireceive.domain.persistence.Pharmacy
+class com.crolox.pireceive.domain.persistence.MailAccount
+class com.crolox.pireceive.domain.persistence.TraceLog
+class com.crolox.pireceive.domain.persistence.MessageId
+class com.crolox.pireceive.domain.persistence.ProductGroup
+
+!endsub
+
+!startsub COM_CROLOX_PIRECEIVE_DTO
+class com.crolox.pireceive.dto.WholesaleDto
+class com.crolox.pireceive.dto.BodyText
+class com.crolox.pireceive.dto.PharmacyInfoDto
+class com.crolox.pireceive.dto.IdfInfoDto
+class com.crolox.pireceive.dto.PickOrderPatients
+class com.crolox.pireceive.dto.ProductDto
+class com.crolox.pireceive.dto.MailData
+class com.crolox.pireceive.dto.BvgOrder
+
+!endsub
+
+!startsub COM_CROLOX_PIRECEIVE_EXCEPTION
+class com.crolox.pireceive.exception.ApplicationException
+
+!endsub
+
+!startsub COM_CROLOX_PIRECEIVE_REGISTRAR
+class com.crolox.pireceive.registrar.PickorderClobRegistrar
+
+!endsub
+
+!startsub COM_CROLOX_PIRECEIVE_REPOSITORY
+interface com.crolox.pireceive.repository.PharmacyRepository
+interface com.crolox.pireceive.repository.MessageIdRepository
+interface com.crolox.pireceive.repository.PickorderClobRepository
+interface com.crolox.pireceive.repository.TraceLogRepository
+interface com.crolox.pireceive.repository.MailAccountRepository
+interface com.crolox.pireceive.repository.ProductGroupRepository
+
+!endsub
+
+!startsub COM_CROLOX_PIRECEIVE_SCHEDULED
+class com.crolox.pireceive.scheduled.Housekeeping
+class com.crolox.pireceive.scheduled.Monitoring
+class com.crolox.pireceive.scheduled.StatusLogger
+
+!endsub
+
+!startsub COM_CROLOX_PIRECEIVE_SERVICE
+class com.crolox.pireceive.service.MailAccountService
+class com.crolox.pireceive.service.ProductGroupService
+class com.crolox.pireceive.service.MessageIdService
+class com.crolox.pireceive.service.PickorderClobService
+class com.crolox.pireceive.service.FileService
+class com.crolox.pireceive.service.MQService
+class com.crolox.pireceive.service.PakbonService
+class com.crolox.pireceive.service.SplitByReceiptPrefixService
+class com.crolox.pireceive.service.TraceLogService
+class com.crolox.pireceive.service.BvgOrderService
+class com.crolox.pireceive.service.PickorderClobService$1
+class com.crolox.pireceive.service.ProductQueryService$2
+class com.crolox.pireceive.service.ProductQueryService$1
+class com.crolox.pireceive.service.ProductQueryService
+class com.crolox.pireceive.service.ForwardService
+class com.crolox.pireceive.service.IdfService
+class com.crolox.pireceive.service.SplitService
+class com.crolox.pireceive.service.SlackService
+class com.crolox.pireceive.service.PharmacyService
+class com.crolox.pireceive.service.ProductEnrichService
+class com.crolox.pireceive.service.LogService
+
+!endsub
+
+!startsub COM_CROLOX_PIRECEIVE_SERVICE_MAIL
+class com.crolox.pireceive.service.mail.EmailSender$1
+class com.crolox.pireceive.service.mail.EmailSender$2
+class com.crolox.pireceive.service.mail.Pop3EmailReader
+class com.crolox.pireceive.service.mail.ImapEmailReader
+class com.crolox.pireceive.service.mail.EmailSender
+interface com.crolox.pireceive.service.mail.EmailReader
+
+!endsub
+
+!startsub COM_CROLOX_PIRECEIVE_SINGLETON
+class com.crolox.pireceive.singleton.PakbonQueue
+class com.crolox.pireceive.singleton.PickOrdersQueue
+class com.crolox.pireceive.singleton.Counts
+
+!endsub
+
+!startsub COM_CROLOX_PIRECEIVE_STATUS
+class com.crolox.pireceive.status.MailboxStatusList
+class com.crolox.pireceive.status.MailBoxStatusInfo
+
+!endsub
+
+!startsub COM_CROLOX_PIRECEIVE_UTIL
+class com.crolox.pireceive.util.JaxbValidationEventHandler
+class com.crolox.pireceive.util.PakbonUtils
+class com.crolox.pireceive.util.CommonUtils
+
+!endsub
+
+' INHERITANCES =======
+
+!startsub INHERITANCES_COM_CROLOX_PIRECEIVE
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PIRECEIVE_API
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PIRECEIVE_COMMON
+java.lang.Enum <|-- com.crolox.pireceive.common.ProductQueryType
+java.lang.Enum <|-- com.crolox.pireceive.common.DataType
+java.lang.Enum <|-- com.crolox.pireceive.common.EmailProtocol
+java.lang.Enum <|-- com.crolox.pireceive.common.ForwardingType
+java.lang.Enum <|-- com.crolox.pireceive.common.AIS
+java.lang.Enum <|-- com.crolox.pireceive.common.PackageQuantityCalculationRule
+java.lang.Enum <|-- com.crolox.pireceive.common.ProcessingType
+java.lang.Enum <|-- com.crolox.pireceive.common.MailboxStatus
+java.lang.Enum <|-- com.crolox.pireceive.common.FileDestination
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PIRECEIVE_COMPONENT
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PIRECEIVE_CONFIG
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PIRECEIVE_CONTROLLER_CONFIG
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PIRECEIVE_DOMAIN_PERSISTENCE
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PIRECEIVE_DTO
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PIRECEIVE_EXCEPTION
+java.lang.Exception <|-- com.crolox.pireceive.exception.ApplicationException
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PIRECEIVE_REGISTRAR
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PIRECEIVE_REPOSITORY
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PIRECEIVE_SCHEDULED
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PIRECEIVE_SERVICE
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PIRECEIVE_SERVICE_MAIL
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PIRECEIVE_SINGLETON
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PIRECEIVE_STATUS
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PIRECEIVE_UTIL
+
+!endsub
+
+' IMPLEMENT INTERFACE =======
+
+!startsub IMPLEMENTS_COM_CROLOX_PIRECEIVE
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PIRECEIVE_API
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PIRECEIVE_COMMON
+java.io.Serializable <|.. com.crolox.pireceive.common.SingletonArea
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PIRECEIVE_COMPONENT
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PIRECEIVE_CONFIG
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PIRECEIVE_CONTROLLER_CONFIG
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PIRECEIVE_DOMAIN_PERSISTENCE
+java.io.Serializable <|.. com.crolox.pireceive.domain.persistence.PickorderClob
+java.io.Serializable <|.. com.crolox.pireceive.domain.persistence.Pharmacy
+java.lang.Comparable <|.. com.crolox.pireceive.domain.persistence.Pharmacy
+java.io.Serializable <|.. com.crolox.pireceive.domain.persistence.MailAccount
+java.io.Serializable <|.. com.crolox.pireceive.domain.persistence.TraceLog
+java.lang.Comparable <|.. com.crolox.pireceive.domain.persistence.TraceLog
+java.io.Serializable <|.. com.crolox.pireceive.domain.persistence.MessageId
+java.io.Serializable <|.. com.crolox.pireceive.domain.persistence.ProductGroup
+java.lang.Comparable <|.. com.crolox.pireceive.domain.persistence.ProductGroup
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PIRECEIVE_DTO
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PIRECEIVE_EXCEPTION
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PIRECEIVE_REGISTRAR
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PIRECEIVE_REPOSITORY
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PIRECEIVE_SCHEDULED
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PIRECEIVE_SERVICE
+java.util.Comparator <|.. com.crolox.pireceive.service.PickorderClobService$1
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PIRECEIVE_SERVICE_MAIL
+java.lang.Runnable <|.. com.crolox.pireceive.service.mail.EmailSender$1
+com.crolox.pireceive.service.mail.EmailReader <|.. com.crolox.pireceive.service.mail.Pop3EmailReader
+com.crolox.pireceive.service.mail.EmailReader <|.. com.crolox.pireceive.service.mail.ImapEmailReader
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PIRECEIVE_SINGLETON
+java.io.Serializable <|.. com.crolox.pireceive.singleton.PakbonQueue
+java.io.Serializable <|.. com.crolox.pireceive.singleton.PickOrdersQueue
+java.io.Serializable <|.. com.crolox.pireceive.singleton.Counts
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PIRECEIVE_STATUS
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PIRECEIVE_UTIL
+
+!endsub
+
+' FIELDS =======
+
+!startsub FIELDS_COM_CROLOX_PIRECEIVE
+com.crolox.pireceive.PiReceive --> com.crolox.pireceive.domain.persistence.MailAccount
+com.crolox.pireceive.PiReceive --> com.crolox.pireceive.service.PharmacyService
+com.crolox.pireceive.PiReceive --> com.crolox.pireceive.service.mail.ImapEmailReader
+com.crolox.pireceive.PiReceive --> com.crolox.pireceive.service.mail.Pop3EmailReader
+com.crolox.pireceive.PiReceive --> com.crolox.pireceive.service.MailAccountService
+com.crolox.pireceive.PiReceive --> com.crolox.pireceive.service.mail.EmailSender
+com.crolox.pireceive.PiReceive --> com.crolox.pireceive.service.LogService
+com.crolox.pireceive.PiReceive --> com.crolox.pireceive.service.SplitService
+com.crolox.pireceive.PiReceive --> com.crolox.pireceive.service.SplitByReceiptPrefixService
+com.crolox.pireceive.PiReceive --> com.crolox.pireceive.service.PakbonService
+com.crolox.pireceive.PiReceive --> com.crolox.pireceive.service.BvgOrderService
+com.crolox.pireceive.PiReceive --> com.crolox.pireceive.service.FileService
+com.crolox.pireceive.PiReceive --> com.crolox.pireceive.service.SlackService
+com.crolox.pireceive.PiReceive --> com.crolox.pireceive.service.ProductGroupService
+com.crolox.pireceive.PiReceive --> com.crolox.pireceive.component.FileReceiver
+com.crolox.pireceive.PiReceive --> com.crolox.pireceive.service.TraceLogService
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PIRECEIVE_API
+com.crolox.pireceive.api.ProductGroupAPI --> com.crolox.pireceive.service.ProductGroupService
+com.crolox.pireceive.api.PharmacyInfoAPI --> com.crolox.pireceive.service.PharmacyService
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PIRECEIVE_COMMON
+com.crolox.pireceive.common.SingletonArea --> com.crolox.pireceive.status.MailboxStatusList
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PIRECEIVE_COMPONENT
+com.crolox.pireceive.component.FileReceiver --> com.crolox.pireceive.service.BvgOrderService
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PIRECEIVE_CONFIG
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PIRECEIVE_CONTROLLER_CONFIG
+com.crolox.pireceive.controller.config.MailAccountController --> com.crolox.pireceive.service.MailAccountService
+com.crolox.pireceive.controller.config.ProductGroupController --> com.crolox.pireceive.service.ProductGroupService
+com.crolox.pireceive.controller.config.ProductGroupController --> com.crolox.pireceive.service.PharmacyService
+com.crolox.pireceive.controller.config.HomeController --> com.crolox.pireceive.service.SlackService
+com.crolox.pireceive.controller.config.PharmacyConfigController --> com.crolox.pireceive.service.PharmacyService
+com.crolox.pireceive.controller.config.PharmacyConfigController --> com.crolox.pireceive.service.ProductGroupService
+com.crolox.pireceive.controller.config.WaitingPickordersController --> com.crolox.pireceive.service.PickorderClobService
+com.crolox.pireceive.controller.config.WaitingPickordersController --> com.crolox.pireceive.service.PharmacyService
+com.crolox.pireceive.controller.config.WaitingPickordersController --> com.crolox.pireceive.service.SplitService
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PIRECEIVE_DOMAIN_PERSISTENCE
+com.crolox.pireceive.domain.persistence.PickorderClob --> com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.pireceive.domain.persistence.Pharmacy --> com.crolox.pireceive.common.ProcessingType
+com.crolox.pireceive.domain.persistence.Pharmacy --> com.crolox.pireceive.common.ForwardingType
+com.crolox.pireceive.domain.persistence.Pharmacy --> com.crolox.pireceive.common.AIS
+com.crolox.pireceive.domain.persistence.MailAccount --> com.crolox.pireceive.common.EmailProtocol
+com.crolox.pireceive.domain.persistence.TraceLog --> com.crolox.pireceive.common.DataType
+com.crolox.pireceive.domain.persistence.ProductGroup --> com.crolox.odessa.constants.DestinationType
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PIRECEIVE_DTO
+com.crolox.pireceive.dto.IdfInfoDto --> com.crolox.pireceive.domain.persistence.Pharmacy
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PIRECEIVE_EXCEPTION
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PIRECEIVE_REGISTRAR
+com.crolox.pireceive.registrar.PickorderClobRegistrar --> com.crolox.pireceive.repository.PickorderClobRepository
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PIRECEIVE_REPOSITORY
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PIRECEIVE_SCHEDULED
+com.crolox.pireceive.scheduled.Housekeeping --> com.crolox.pireceive.repository.TraceLogRepository
+com.crolox.pireceive.scheduled.Monitoring --> com.crolox.pireceive.service.TraceLogService
+com.crolox.pireceive.scheduled.Monitoring --> com.crolox.pireceive.service.SlackService
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PIRECEIVE_SERVICE
+com.crolox.pireceive.service.MailAccountService --> com.crolox.pireceive.repository.MailAccountRepository
+com.crolox.pireceive.service.ProductGroupService --> com.crolox.pireceive.repository.ProductGroupRepository
+com.crolox.pireceive.service.ProductGroupService --> com.crolox.pireceive.service.PharmacyService
+com.crolox.pireceive.service.MessageIdService --> com.crolox.pireceive.repository.MessageIdRepository
+com.crolox.pireceive.service.MessageIdService --> com.crolox.pireceive.service.LogService
+com.crolox.pireceive.service.PickorderClobService --> com.crolox.pireceive.repository.PickorderClobRepository
+com.crolox.pireceive.service.PickorderClobService --> com.crolox.pireceive.repository.PharmacyRepository
+com.crolox.pireceive.service.FileService --> com.crolox.pireceive.service.LogService
+com.crolox.pireceive.service.PakbonService --> com.crolox.pireceive.service.MQService
+com.crolox.pireceive.service.PakbonService --> com.crolox.pireceive.service.PharmacyService
+com.crolox.pireceive.service.PakbonService --> com.crolox.pireceive.service.LogService
+com.crolox.pireceive.service.TraceLogService --> com.crolox.pireceive.repository.TraceLogRepository
+com.crolox.pireceive.service.BvgOrderService --> com.crolox.pireceive.service.MQService
+com.crolox.pireceive.service.BvgOrderService --> com.crolox.pireceive.service.LogService
+com.crolox.pireceive.service.BvgOrderService --> com.crolox.pireceive.component.WholesaleBean
+com.crolox.pireceive.service.PickorderClobService$1 --> com.crolox.pireceive.service.PickorderClobService
+com.crolox.pireceive.service.ProductQueryService$2 --> com.crolox.pireceive.service.ProductQueryService
+com.crolox.pireceive.service.ProductQueryService$1 --> com.crolox.pireceive.service.ProductQueryService
+com.crolox.pireceive.service.ForwardService --> com.crolox.pireceive.service.MQService
+com.crolox.pireceive.service.ForwardService --> com.crolox.pireceive.service.ProductEnrichService
+com.crolox.pireceive.service.ForwardService --> com.crolox.pireceive.service.FileService
+com.crolox.pireceive.service.ForwardService --> com.crolox.pireceive.service.IdfService
+com.crolox.pireceive.service.ForwardService --> com.crolox.pireceive.service.MessageIdService
+com.crolox.pireceive.service.ForwardService --> com.crolox.pireceive.service.TraceLogService
+com.crolox.pireceive.service.IdfService --> com.crolox.pireceive.repository.PharmacyRepository
+com.crolox.pireceive.service.SplitService --> com.crolox.pireceive.repository.PharmacyRepository
+com.crolox.pireceive.service.SplitService --> com.crolox.pireceive.service.PickorderClobService
+com.crolox.pireceive.service.SplitService --> com.crolox.pireceive.service.ForwardService
+com.crolox.pireceive.service.SplitService --> com.crolox.pireceive.service.LogService
+com.crolox.pireceive.service.SplitService --> com.crolox.pireceive.service.ProductEnrichService
+com.crolox.pireceive.service.SlackService --> com.slack.api.Slack
+com.crolox.pireceive.service.PharmacyService --> com.crolox.pireceive.repository.PharmacyRepository
+com.crolox.pireceive.service.ProductEnrichService --> com.crolox.pireceive.service.PharmacyService
+com.crolox.pireceive.service.ProductEnrichService --> com.crolox.pireceive.service.ProductQueryService
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PIRECEIVE_SERVICE_MAIL
+com.crolox.pireceive.service.mail.EmailSender$1 --> com.crolox.pireceive.dto.MailData
+com.crolox.pireceive.service.mail.EmailSender$1 --> com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.pireceive.service.mail.EmailSender$1 --> com.crolox.pireceive.service.mail.EmailSender
+com.crolox.pireceive.service.mail.EmailSender$2 --> com.crolox.pireceive.service.mail.EmailSender
+com.crolox.pireceive.service.mail.EmailSender --> com.crolox.pireceive.service.LogService
+com.crolox.pireceive.service.mail.EmailSender --> com.crolox.pireceive.service.TraceLogService
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PIRECEIVE_SINGLETON
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PIRECEIVE_STATUS
+com.crolox.pireceive.status.MailBoxStatusInfo --> com.crolox.pireceive.common.MailboxStatus
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PIRECEIVE_UTIL
+
+!endsub
+
+' USES =======
+
+!startsub USES_COM_CROLOX_PIRECEIVE
+com.crolox.pireceive.PiReceive ..> com.crolox.pireceive.dto.MailData
+com.crolox.pireceive.PiReceive ..> com.crolox.pireceive.domain.persistence.MailAccount
+com.crolox.pireceive.PiReceive ..> com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.pireceive.PiReceive ..> com.crolox.pireceive.domain.persistence.Pharmacy
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PIRECEIVE_API
+com.crolox.pireceive.api.ProductGroupAPI ..> com.crolox.pireceive.domain.persistence.ProductGroup
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PIRECEIVE_COMMON
+com.crolox.pireceive.common.SingletonArea ..> com.crolox.pireceive.status.MailboxStatusList
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PIRECEIVE_COMPONENT
+com.crolox.pireceive.component.WholesaleBean ..> com.crolox.pireceive.dto.WholesaleDto
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PIRECEIVE_CONFIG
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PIRECEIVE_CONTROLLER_CONFIG
+com.crolox.pireceive.controller.config.MailAccountController ..> com.crolox.pireceive.domain.persistence.MailAccount
+com.crolox.pireceive.controller.config.PharmacyConfigController ..> com.crolox.pireceive.domain.persistence.Pharmacy
+com.crolox.pireceive.controller.config.WaitingPickordersController ..> com.crolox.odessa.pickorderio.entity.PickOrderType
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PIRECEIVE_DOMAIN_PERSISTENCE
+com.crolox.pireceive.domain.persistence.PickorderClob ..> com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.pireceive.domain.persistence.Pharmacy ..> com.crolox.pireceive.common.AIS
+com.crolox.pireceive.domain.persistence.Pharmacy ..> com.crolox.pireceive.common.ProcessingType
+com.crolox.pireceive.domain.persistence.Pharmacy ..> com.crolox.pireceive.common.ForwardingType
+com.crolox.pireceive.domain.persistence.MailAccount ..> com.crolox.pireceive.common.EmailProtocol
+com.crolox.pireceive.domain.persistence.TraceLog ..> com.crolox.pireceive.common.DataType
+com.crolox.pireceive.domain.persistence.ProductGroup ..> com.crolox.odessa.constants.DestinationType
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PIRECEIVE_DTO
+com.crolox.pireceive.dto.IdfInfoDto ..> com.crolox.pireceive.domain.persistence.Pharmacy
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PIRECEIVE_EXCEPTION
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PIRECEIVE_REGISTRAR
+com.crolox.pireceive.registrar.PickorderClobRegistrar ..> com.crolox.pireceive.repository.PickorderClobRepository
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PIRECEIVE_REPOSITORY
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PIRECEIVE_SCHEDULED
+com.crolox.pireceive.scheduled.Housekeeping ..> com.crolox.pireceive.common.FileDestination
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PIRECEIVE_SERVICE
+com.crolox.pireceive.service.MailAccountService ..> com.crolox.pireceive.domain.persistence.MailAccount
+com.crolox.pireceive.service.ProductGroupService ..> com.crolox.pireceive.domain.persistence.ProductGroup
+com.crolox.pireceive.service.PickorderClobService ..> com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.pireceive.service.PickorderClobService ..> com.crolox.pireceive.domain.persistence.PickorderClob
+com.crolox.pireceive.service.PickorderClobService ..> com.crolox.pireceive.domain.persistence.Pharmacy
+com.crolox.pireceive.service.FileService ..> com.crolox.pireceive.common.FileDestination
+com.crolox.pireceive.service.FileService ..> com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.pireceive.service.MQService ..> B
+com.crolox.pireceive.service.MQService ..> com.crolox.pireceive.dto.BvgOrder
+com.crolox.pireceive.service.SplitByReceiptPrefixService ..> com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.pireceive.service.SplitByReceiptPrefixService ..> com.crolox.odessa.pickorderio.entity.ReceiptType
+com.crolox.pireceive.service.SplitByReceiptPrefixService ..> com.crolox.odessa.pickorderio.entity.ProductType
+com.crolox.pireceive.service.SplitByReceiptPrefixService ..> com.crolox.odessa.pickorderio.entity.PickOrderLineType
+com.crolox.pireceive.service.SplitByReceiptPrefixService ..> com.crolox.odessa.pickorderio.entity.PatientType
+com.crolox.pireceive.service.TraceLogService ..> com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.pireceive.service.TraceLogService ..> com.crolox.pireceive.domain.persistence.Pharmacy
+com.crolox.pireceive.service.TraceLogService ..> com.crolox.pireceive.domain.persistence.TraceLog
+com.crolox.pireceive.service.BvgOrderService ..> com.crolox.pireceive.dto.WholesaleDto
+com.crolox.pireceive.service.PickorderClobService$1 ..> com.crolox.pireceive.service.PickorderClobService
+com.crolox.pireceive.service.PickorderClobService$1 ..> com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.pireceive.service.ProductQueryService$2 ..> com.crolox.pireceive.service.ProductQueryService
+com.crolox.pireceive.service.ProductQueryService$1 ..> com.crolox.pireceive.service.ProductQueryService
+com.crolox.pireceive.service.ProductQueryService ..> com.crolox.pireceive.common.ProductQueryType
+com.crolox.pireceive.service.ForwardService ..> com.crolox.pireceive.domain.persistence.Pharmacy
+com.crolox.pireceive.service.ForwardService ..> com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.pireceive.service.IdfService ..> com.crolox.pireceive.domain.persistence.Pharmacy
+com.crolox.pireceive.service.SplitService ..> com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.pireceive.service.SplitService ..> com.crolox.pireceive.domain.persistence.Pharmacy
+com.crolox.pireceive.service.SplitService ..> com.crolox.odessa.pickorderio.pojo.SplittedPickOrderTypes
+com.crolox.pireceive.service.SplitService ..> com.crolox.odessa.pickorderio.entity.ProductType
+com.crolox.pireceive.service.SplitService ..> com.crolox.odessa.pickorderio.entity.PickOrderLineType
+com.crolox.pireceive.service.SplitService ..> com.crolox.odessa.pickorderio.entity.PatientType
+com.crolox.pireceive.service.PharmacyService ..> com.crolox.pireceive.domain.persistence.Pharmacy
+com.crolox.pireceive.service.PharmacyService ..> com.crolox.odessa.pickorderio.entity.SmartInfoType
+com.crolox.pireceive.service.ProductEnrichService ..> com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.pireceive.service.ProductEnrichService ..> com.crolox.pireceive.dto.ProductDto
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PIRECEIVE_SERVICE_MAIL
+com.crolox.pireceive.service.mail.EmailSender$1 ..> com.crolox.pireceive.service.mail.EmailSender
+com.crolox.pireceive.service.mail.EmailSender$1 ..> com.crolox.pireceive.dto.MailData
+com.crolox.pireceive.service.mail.EmailSender$1 ..> com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.pireceive.service.mail.EmailSender$2 ..> com.crolox.pireceive.service.mail.EmailSender
+com.crolox.pireceive.service.mail.EmailSender ..> com.crolox.pireceive.dto.MailData
+com.crolox.pireceive.service.mail.EmailSender ..> com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.pireceive.service.mail.EmailReader ..> com.crolox.pireceive.dto.MailData
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PIRECEIVE_SINGLETON
+com.crolox.pireceive.singleton.PickOrdersQueue ..> com.crolox.odessa.pickorderio.entity.PickOrderType
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PIRECEIVE_STATUS
+com.crolox.pireceive.status.MailboxStatusList ..> com.crolox.pireceive.common.MailboxStatus
+com.crolox.pireceive.status.MailBoxStatusInfo ..> com.crolox.pireceive.common.MailboxStatus
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PIRECEIVE_UTIL
+com.crolox.pireceive.util.CommonUtils ..> com.crolox.odessa.pickorderio.entity.PickOrderType
+
+!endsub
+
+' IMPORTS =======
+' Java Files Path : /Users/paolobrunasti/IdeaProjects/OCTA/pireceive/src/main/java/
+
+!startsub IMPORTS_COM_CROLOX_PIRECEIVE
+' com.crolox.pireceive.PiReceive
+com.crolox.pireceive.PiReceive ..o com.crolox.pireceive.util.CommonUtils
+com.crolox.pireceive.PiReceive ..o com.crolox.pireceive.domain.persistence.Pharmacy
+com.crolox.pireceive.PiReceive ..o  com.crolox.odessa.pickorderio.util.PickOrderUtil.setDelayedReceiptsOnPostponed
+com.crolox.pireceive.PiReceive ..o com.crolox.odessa.pickorderio.util.PickOrderUtil
+com.crolox.pireceive.PiReceive ..o com.crolox.pireceive.singleton.PakbonQueue
+com.crolox.pireceive.PiReceive ..o com.crolox.odessa.pickorderio.pojo.SplittedPickOrderTypes
+com.crolox.pireceive.PiReceive ..o com.crolox.pireceive.domain.persistence.MailAccount
+com.crolox.pireceive.PiReceive ..o com.crolox.pireceive.component.FileReceiver
+com.crolox.pireceive.PiReceive ..o com.crolox.pireceive.dto.MailData
+com.crolox.pireceive.PiReceive ..o com.crolox.pireceive.service.mail.Pop3EmailReader
+com.crolox.pireceive.PiReceive ..o com.crolox.odessa.pickorderio.util.Sorter
+com.crolox.pireceive.PiReceive ..o com.crolox.pireceive.service.mail.ImapEmailReader
+com.crolox.pireceive.PiReceive ..o com.crolox.pireceive.exception.ApplicationException
+com.crolox.pireceive.PiReceive ..o com.crolox.odessa.pickorderio.entity.SmartInfoType
+com.crolox.pireceive.PiReceive ..o com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.pireceive.PiReceive ..o com.crolox.pireceive.service.mail.EmailSender
+com.crolox.pireceive.PiReceive ..o com.crolox.pireceive.singleton.PickOrdersQueue
+com.crolox.pireceive.PiReceive ..o com.crolox.odessa.pickorderio.util.Filter
+com.crolox.pireceive.PiReceive ..o com.crolox.odessa.pickorderio.util.Splitter
+com.crolox.pireceive.PiReceive ..o com.crolox.pireceive.domain.persistence.ProductGroup
+
+' com.crolox.pireceive.PiReceive$1
+
+' com.crolox.pireceive.PiReceive$1
+
+' com.crolox.pireceive.PiReceive
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PIRECEIVE_API
+' com.crolox.pireceive.api.ProductGroupAPI
+com.crolox.pireceive.api.ProductGroupAPI ..o com.crolox.pireceive.util.CommonUtils
+com.crolox.pireceive.api.ProductGroupAPI ..o com.crolox.pireceive.service.ProductGroupService
+com.crolox.pireceive.api.ProductGroupAPI ..o com.crolox.pireceive.domain.persistence.ProductGroup
+
+' com.crolox.pireceive.api.PharmacyInfoAPI
+com.crolox.pireceive.api.PharmacyInfoAPI ..o com.crolox.pireceive.util.CommonUtils
+com.crolox.pireceive.api.PharmacyInfoAPI ..o com.crolox.pireceive.domain.persistence.Pharmacy
+com.crolox.pireceive.api.PharmacyInfoAPI ..o com.crolox.pireceive.dto.PharmacyInfoDto
+com.crolox.pireceive.api.PharmacyInfoAPI ..o com.crolox.pireceive.service.PharmacyService
+
+' com.crolox.pireceive.api.ProductGroupAPI
+
+' com.crolox.pireceive.api.PharmacyInfoAPI
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PIRECEIVE_COMMON
+' com.crolox.pireceive.common.SingletonArea
+
+' com.crolox.pireceive.common.ProductQueryType
+
+' com.crolox.pireceive.common.DataType
+
+' com.crolox.pireceive.common.EmailProtocol
+
+' com.crolox.pireceive.common.ForwardingType
+
+' com.crolox.pireceive.common.AIS
+
+' com.crolox.pireceive.common.PackageQuantityCalculationRule
+
+' com.crolox.pireceive.common.ProcessingType
+
+' com.crolox.pireceive.common.MailboxStatus
+
+' com.crolox.pireceive.common.FileDestination
+com.crolox.pireceive.common.FileDestination ..o com.crolox.pireceive.util.CommonUtils
+
+' com.crolox.pireceive.common.AIS
+
+' com.crolox.pireceive.common.PackageQuantityCalculationRule
+
+' com.crolox.pireceive.common.ForwardingType
+
+' com.crolox.pireceive.common.MailboxStatus
+
+' com.crolox.pireceive.common.ProductQueryType
+
+' com.crolox.pireceive.common.FileDestination
+
+' com.crolox.pireceive.common.DataType
+
+' com.crolox.pireceive.common.EmailProtocol
+
+' com.crolox.pireceive.common.SingletonArea
+
+' com.crolox.pireceive.common.ProcessingType
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PIRECEIVE_COMPONENT
+' com.crolox.pireceive.component.WholesaleBean
+
+' com.crolox.pireceive.component.FileReceiver
+
+' com.crolox.pireceive.component.WholesaleBean
+
+' com.crolox.pireceive.component.FileReceiver
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PIRECEIVE_CONFIG
+' com.crolox.pireceive.config.AppContextEventListener
+
+' com.crolox.pireceive.config.AppContextEventListener
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PIRECEIVE_CONTROLLER_CONFIG
+' com.crolox.pireceive.controller.config.MailAccountController
+com.crolox.pireceive.controller.config.MailAccountController ..o com.crolox.pireceive.domain.persistence.MailAccount
+com.crolox.pireceive.controller.config.MailAccountController ..o com.crolox.pireceive.service.MailAccountService
+
+' com.crolox.pireceive.controller.config.ProductGroupController
+com.crolox.pireceive.controller.config.ProductGroupController ..o com.crolox.pireceive.domain.persistence.Pharmacy
+com.crolox.pireceive.controller.config.ProductGroupController ..o com.crolox.pireceive.service.ProductGroupService
+com.crolox.pireceive.controller.config.ProductGroupController ..o com.crolox.pireceive.service.PharmacyService
+com.crolox.pireceive.controller.config.ProductGroupController ..o com.crolox.pireceive.domain.persistence.ProductGroup
+
+' com.crolox.pireceive.controller.config.HomeController
+com.crolox.pireceive.controller.config.HomeController ..o com.crolox.pireceive.singleton.Counts
+com.crolox.pireceive.controller.config.HomeController ..o com.crolox.pireceive.service.SlackService
+
+' com.crolox.pireceive.controller.config.PharmacyConfigController
+com.crolox.pireceive.controller.config.PharmacyConfigController ..o com.crolox.pireceive.util.CommonUtils
+com.crolox.pireceive.controller.config.PharmacyConfigController ..o com.crolox.pireceive.domain.persistence.Pharmacy
+com.crolox.pireceive.controller.config.PharmacyConfigController ..o com.crolox.pireceive.service.ProductGroupService
+com.crolox.pireceive.controller.config.PharmacyConfigController ..o com.crolox.pireceive.service.PharmacyService
+
+' com.crolox.pireceive.controller.config.WaitingPickordersController
+com.crolox.pireceive.controller.config.WaitingPickordersController ..o com.crolox.pireceive.PiReceive
+com.crolox.pireceive.controller.config.WaitingPickordersController ..o com.crolox.pireceive.domain.persistence.Pharmacy
+com.crolox.pireceive.controller.config.WaitingPickordersController ..o com.crolox.odessa.pickorderio.util.PickOrderUtil
+com.crolox.pireceive.controller.config.WaitingPickordersController ..o com.crolox.pireceive.service.SplitService
+com.crolox.pireceive.controller.config.WaitingPickordersController ..o com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.pireceive.controller.config.WaitingPickordersController ..o com.crolox.pireceive.service.PharmacyService
+com.crolox.pireceive.controller.config.WaitingPickordersController ..o com.crolox.pireceive.service.PickorderClobService
+
+' com.crolox.pireceive.controller.config.WaitingPickordersController
+
+' com.crolox.pireceive.controller.config.MailAccountController
+
+' com.crolox.pireceive.controller.config.HomeController
+
+' com.crolox.pireceive.controller.config.ProductGroupController
+
+' com.crolox.pireceive.controller.config.PharmacyConfigController
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PIRECEIVE_DOMAIN_PERSISTENCE
+' com.crolox.pireceive.domain.persistence.PickorderClob
+
+' com.crolox.pireceive.domain.persistence.Pharmacy
+
+' com.crolox.pireceive.domain.persistence.MailAccount
+
+' com.crolox.pireceive.domain.persistence.TraceLog
+
+' com.crolox.pireceive.domain.persistence.MessageId
+
+' com.crolox.pireceive.domain.persistence.ProductGroup
+
+' com.crolox.pireceive.domain.persistence.ProductGroup
+
+' com.crolox.pireceive.domain.persistence.MailAccount
+
+' com.crolox.pireceive.domain.persistence.TraceLog
+
+' com.crolox.pireceive.domain.persistence.MessageId
+
+' com.crolox.pireceive.domain.persistence.Pharmacy
+
+' com.crolox.pireceive.domain.persistence.PickorderClob
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PIRECEIVE_DTO
+' com.crolox.pireceive.dto.WholesaleDto
+
+' com.crolox.pireceive.dto.BodyText
+
+' com.crolox.pireceive.dto.PharmacyInfoDto
+
+' com.crolox.pireceive.dto.IdfInfoDto
+
+' com.crolox.pireceive.dto.PickOrderPatients
+com.crolox.pireceive.dto.PickOrderPatients ..o com.crolox.odessa.pickorderio.entity.PatientType
+
+' com.crolox.pireceive.dto.ProductDto
+com.crolox.pireceive.dto.ProductDto ..o net.minidev.json.annotate.JsonIgnore
+
+' com.crolox.pireceive.dto.MailData
+
+' com.crolox.pireceive.dto.BvgOrder
+
+' com.crolox.pireceive.dto.IdfInfoDto
+
+' com.crolox.pireceive.dto.WholesaleDto
+
+' com.crolox.pireceive.dto.PickOrderPatients
+
+' com.crolox.pireceive.dto.BodyText
+
+' com.crolox.pireceive.dto.ProductDto
+
+' com.crolox.pireceive.dto.MailData
+
+' com.crolox.pireceive.dto.BvgOrder
+
+' com.crolox.pireceive.dto.PharmacyInfoDto
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PIRECEIVE_EXCEPTION
+' com.crolox.pireceive.exception.ApplicationException
+
+' com.crolox.pireceive.exception.ApplicationException
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PIRECEIVE_REGISTRAR
+' com.crolox.pireceive.registrar.PickorderClobRegistrar
+com.crolox.pireceive.registrar.PickorderClobRegistrar ..o com.crolox.pireceive.repository.PickorderClobRepository
+
+' com.crolox.pireceive.registrar.PickorderClobRegistrar
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PIRECEIVE_REPOSITORY
+' com.crolox.pireceive.repository.PharmacyRepository
+
+' com.crolox.pireceive.repository.MessageIdRepository
+com.crolox.pireceive.repository.MessageIdRepository ..o com.crolox.pireceive.domain.persistence.MessageId
+
+' com.crolox.pireceive.repository.PickorderClobRepository
+
+' com.crolox.pireceive.repository.TraceLogRepository
+
+' com.crolox.pireceive.repository.MailAccountRepository
+
+' com.crolox.pireceive.repository.ProductGroupRepository
+
+' com.crolox.pireceive.repository.TraceLogRepository
+
+' com.crolox.pireceive.repository.MessageIdRepository
+
+' com.crolox.pireceive.repository.PickorderClobRepository
+
+' com.crolox.pireceive.repository.MailAccountRepository
+
+' com.crolox.pireceive.repository.PharmacyRepository
+
+' com.crolox.pireceive.repository.ProductGroupRepository
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PIRECEIVE_SCHEDULED
+' com.crolox.pireceive.scheduled.Housekeeping
+com.crolox.pireceive.scheduled.Housekeeping ..o com.crolox.pireceive.common.FileDestination
+com.crolox.pireceive.scheduled.Housekeeping ..o com.crolox.pireceive.repository.TraceLogRepository
+
+' com.crolox.pireceive.scheduled.Monitoring
+com.crolox.pireceive.scheduled.Monitoring ..o com.crolox.pireceive.singleton.Counts
+com.crolox.pireceive.scheduled.Monitoring ..o com.crolox.pireceive.exception.ApplicationException
+com.crolox.pireceive.scheduled.Monitoring ..o com.crolox.pireceive.service.SlackService
+com.crolox.pireceive.scheduled.Monitoring ..o com.crolox.pireceive.service.TraceLogService
+com.crolox.pireceive.scheduled.Monitoring ..o com.crolox.pireceive.domain.persistence.TraceLog
+
+' com.crolox.pireceive.scheduled.StatusLogger
+com.crolox.pireceive.scheduled.StatusLogger ..o com.crolox.pireceive.common.SingletonArea
+com.crolox.pireceive.scheduled.StatusLogger ..o com.crolox.pireceive.util.CommonUtils
+com.crolox.pireceive.scheduled.StatusLogger ..o com.crolox.pireceive.exception.ApplicationException
+
+' com.crolox.pireceive.scheduled.StatusLogger
+
+' com.crolox.pireceive.scheduled.Housekeeping
+
+' com.crolox.pireceive.scheduled.Monitoring
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PIRECEIVE_SERVICE
+' com.crolox.pireceive.service.MailAccountService
+
+' com.crolox.pireceive.service.ProductGroupService
+
+' com.crolox.pireceive.service.MessageIdService
+com.crolox.pireceive.service.MessageIdService ..o com.crolox.pireceive.repository.MessageIdRepository
+com.crolox.pireceive.service.MessageIdService ..o com.crolox.pireceive.domain.persistence.MessageId
+com.crolox.pireceive.service.MessageIdService ..o com.crolox.pireceive.exception.ApplicationException
+
+' com.crolox.pireceive.service.PickorderClobService
+
+' com.crolox.pireceive.service.FileService
+com.crolox.pireceive.service.FileService ..o com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.pireceive.service.FileService ..o com.crolox.pireceive.util.CommonUtils
+com.crolox.pireceive.service.FileService ..o com.crolox.odessa.pickorderio.service.PickorderIO
+com.crolox.pireceive.service.FileService ..o com.crolox.pireceive.common.FileDestination
+
+' com.crolox.pireceive.service.MQService
+com.crolox.pireceive.service.MQService ..o com.crolox.pireceive.util.CommonUtils
+com.crolox.pireceive.service.MQService ..o com.crolox.pireceive.dto.BvgOrder
+
+' com.crolox.pireceive.service.PakbonService
+com.crolox.pireceive.service.PakbonService ..o com.crolox.pireceive.dto.IdfInfoDto
+com.crolox.pireceive.service.PakbonService ..o com.crolox.pireceive.util.PakbonUtils
+com.crolox.pireceive.service.PakbonService ..o  com.crolox.pireceive.service.MQService.UNIQUE_ROUTING_KEY_PART
+
+' com.crolox.pireceive.service.SplitByReceiptPrefixService
+com.crolox.pireceive.service.SplitByReceiptPrefixService ..o com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.pireceive.service.SplitByReceiptPrefixService ..o com.crolox.pireceive.exception.ApplicationException
+com.crolox.pireceive.service.SplitByReceiptPrefixService ..o com.crolox.odessa.pickorderio.entity.ReceiptType
+com.crolox.pireceive.service.SplitByReceiptPrefixService ..o com.crolox.odessa.pickorderio.util.DeepClone
+com.crolox.pireceive.service.SplitByReceiptPrefixService ..o com.crolox.odessa.pickorderio.entity.PatientType
+
+' com.crolox.pireceive.service.TraceLogService
+
+' com.crolox.pireceive.service.BvgOrderService
+
+' com.crolox.pireceive.service.PickorderClobService$1
+
+' com.crolox.pireceive.service.ProductQueryService$2
+
+' com.crolox.pireceive.service.ProductQueryService$1
+
+' com.crolox.pireceive.service.ProductQueryService
+com.crolox.pireceive.service.ProductQueryService ..o com.crolox.pireceive.common.ProductQueryType
+com.crolox.pireceive.service.ProductQueryService ..o com.crolox.pireceive.dto.ProductDto
+com.crolox.pireceive.service.ProductQueryService ..o com.crolox.pireceive.exception.ApplicationException
+
+' com.crolox.pireceive.service.ForwardService
+com.crolox.pireceive.service.ForwardService ..o com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.pireceive.service.ForwardService ..o com.crolox.pireceive.util.CommonUtils
+com.crolox.pireceive.service.ForwardService ..o com.crolox.odessa.pickorderio.service.PickorderIO
+com.crolox.pireceive.service.ForwardService ..o com.crolox.pireceive.domain.persistence.Pharmacy
+com.crolox.pireceive.service.ForwardService ..o com.crolox.pireceive.exception.ApplicationException
+com.crolox.pireceive.service.ForwardService ..o com.crolox.pireceive.common.FileDestination
+com.crolox.pireceive.service.ForwardService ..o com.crolox.odessa.pickorderio.common.AdditionalInfoContentType
+
+' com.crolox.pireceive.service.IdfService
+com.crolox.pireceive.service.IdfService ..o com.crolox.pireceive.repository.PharmacyRepository
+com.crolox.pireceive.service.IdfService ..o com.crolox.pireceive.domain.persistence.Pharmacy
+
+' com.crolox.pireceive.service.SplitService
+
+' com.crolox.pireceive.service.SlackService
+
+' com.crolox.pireceive.service.PharmacyService
+
+' com.crolox.pireceive.service.ProductEnrichService
+com.crolox.pireceive.service.ProductEnrichService ..o com.crolox.odessa.pickorderio.util.CommonUtil
+com.crolox.pireceive.service.ProductEnrichService ..o  com.crolox.odessa.pickorderio.common.Constants.ST
+com.crolox.pireceive.service.ProductEnrichService ..o com.crolox.pireceive.dto.ProductDto
+
+' com.crolox.pireceive.service.LogService
+
+' com.crolox.pireceive.service.MQService
+
+' com.crolox.pireceive.service.ProductQueryService
+
+' com.crolox.pireceive.service.LogService
+
+' com.crolox.pireceive.service.ProductQueryService$1
+
+' com.crolox.pireceive.service.ProductQueryService$2
+
+' com.crolox.pireceive.service.PharmacyService
+
+' com.crolox.pireceive.service.SplitByReceiptPrefixService
+
+' com.crolox.pireceive.service.ProductEnrichService
+
+' com.crolox.pireceive.service.FileService
+
+' com.crolox.pireceive.service.SlackService
+
+' com.crolox.pireceive.service.PakbonService
+
+' com.crolox.pireceive.service.ProductGroupService
+
+' com.crolox.pireceive.service.TraceLogService
+
+' com.crolox.pireceive.service.ForwardService
+
+' com.crolox.pireceive.service.BvgOrderService
+
+' com.crolox.pireceive.service.MailAccountService
+
+' com.crolox.pireceive.service.SplitService
+
+' com.crolox.pireceive.service.MessageIdService
+
+' com.crolox.pireceive.service.IdfService
+
+' com.crolox.pireceive.service.PickorderClobService
+
+' com.crolox.pireceive.service.PickorderClobService$1
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PIRECEIVE_SERVICE_MAIL
+' com.crolox.pireceive.service.mail.EmailSender$1
+
+' com.crolox.pireceive.service.mail.EmailSender$2
+
+' com.crolox.pireceive.service.mail.Pop3EmailReader
+
+' com.crolox.pireceive.service.mail.ImapEmailReader
+
+' com.crolox.pireceive.service.mail.EmailSender
+
+' com.crolox.pireceive.service.mail.EmailReader
+com.crolox.pireceive.service.mail.EmailReader ..o com.crolox.pireceive.common.SingletonArea
+com.crolox.pireceive.service.mail.EmailReader ..o com.crolox.pireceive.common.MailboxStatus
+com.crolox.pireceive.service.mail.EmailReader ..o com.crolox.pireceive.util.CommonUtils
+com.crolox.pireceive.service.mail.EmailReader ..o com.crolox.pireceive.util.PakbonUtils
+com.crolox.pireceive.service.mail.EmailReader ..o com.crolox.pireceive.service.FileService
+com.crolox.pireceive.service.mail.EmailReader ..o com.crolox.pireceive.exception.ApplicationException
+com.crolox.pireceive.service.mail.EmailReader ..o com.crolox.pireceive.common.FileDestination
+com.crolox.pireceive.service.mail.EmailReader ..o com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.pireceive.service.mail.EmailReader ..o com.crolox.odessa.pickorderio.service.PickorderIO
+com.crolox.pireceive.service.mail.EmailReader ..o com.crolox.pireceive.dto.MailData
+
+' com.crolox.pireceive.service.mail.EmailSender
+
+' com.crolox.pireceive.service.mail.EmailReader
+
+' com.crolox.pireceive.service.mail.EmailSender$2
+
+' com.crolox.pireceive.service.mail.EmailSender$1
+
+' com.crolox.pireceive.service.mail.ImapEmailReader
+
+' com.crolox.pireceive.service.mail.Pop3EmailReader
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PIRECEIVE_SINGLETON
+' com.crolox.pireceive.singleton.PakbonQueue
+
+' com.crolox.pireceive.singleton.PickOrdersQueue
+
+' com.crolox.pireceive.singleton.Counts
+
+' com.crolox.pireceive.singleton.PickOrdersQueue
+
+' com.crolox.pireceive.singleton.Counts
+
+' com.crolox.pireceive.singleton.PakbonQueue
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PIRECEIVE_STATUS
+' com.crolox.pireceive.status.MailboxStatusList
+
+' com.crolox.pireceive.status.MailBoxStatusInfo
+com.crolox.pireceive.status.MailBoxStatusInfo ..o com.crolox.pireceive.common.MailboxStatus
+
+' com.crolox.pireceive.status.MailBoxStatusInfo
+
+' com.crolox.pireceive.status.MailboxStatusList
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PIRECEIVE_UTIL
+' com.crolox.pireceive.util.JaxbValidationEventHandler
+
+' com.crolox.pireceive.util.PakbonUtils
+
+' com.crolox.pireceive.util.CommonUtils
+
+' com.crolox.pireceive.util.PakbonUtils
+
+' com.crolox.pireceive.util.CommonUtils
+
+' com.crolox.pireceive.util.JaxbValidationEventHandler
+
+
+!endsub
+
+
+@enduml

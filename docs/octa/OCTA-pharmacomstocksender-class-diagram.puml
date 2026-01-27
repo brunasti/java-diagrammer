@@ -1,0 +1,585 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+' GENERATE CLASS DIAGRAM ===========
+' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
+' Path            : [/Users/paolobrunasti/IdeaProjects/OCTA/pharmacomstocksender/build/classes/java/main]
+' Java Files Path : [/Users/paolobrunasti/IdeaProjects/OCTA/pharmacomstocksender/src/main/java/]
+' Configuration   : [/Users/paolobrunasti/IdeaProjects/mine/java-diagrammer/docs/octa/config.json]
+' Generated at    : Tue Jan 27 11:50:43 CET 2026
+'
+'   Stat infos    :
+'       Files : [66]
+'       Lines : [1266]
+'     Classes : [66]
+'     Methods : [396]
+'      Fields : [188]
+
+' Include         : [./docs/includedFile.txt] ---------
+title Example with legend and title
+
+hide empty members
+
+
+legend
+Connections legend
+----
+--|> : Extends
+..|> : Implements
+----
+--> : Fields and Attributes
+..> : Uses
+end legend
+' Include end     : --------------------------
+
+
+
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!NL_CROLOX_PHARMACOMSTOCKSENDER
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!INHERITANCES_NL_CROLOX_PHARMACOMSTOCKSENDER
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!IMPLEMENTS_NL_CROLOX_PHARMACOMSTOCKSENDER
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!FIELDS_NL_CROLOX_PHARMACOMSTOCKSENDER
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!USES_NL_CROLOX_PHARMACOMSTOCKSENDER
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!IMPORTS_NL_CROLOX_PHARMACOMSTOCKSENDER
+
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!NL_CROLOX_PHARMACOMSTOCKSENDER_GENERATED
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!INHERITANCES_NL_CROLOX_PHARMACOMSTOCKSENDER_GENERATED
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!IMPLEMENTS_NL_CROLOX_PHARMACOMSTOCKSENDER_GENERATED
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!FIELDS_NL_CROLOX_PHARMACOMSTOCKSENDER_GENERATED
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!USES_NL_CROLOX_PHARMACOMSTOCKSENDER_GENERATED
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!IMPORTS_NL_CROLOX_PHARMACOMSTOCKSENDER_GENERATED
+
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!NL_CROLOX_PHARMACOMSTOCKSENDER_HELPER
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!INHERITANCES_NL_CROLOX_PHARMACOMSTOCKSENDER_HELPER
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!IMPLEMENTS_NL_CROLOX_PHARMACOMSTOCKSENDER_HELPER
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!FIELDS_NL_CROLOX_PHARMACOMSTOCKSENDER_HELPER
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!USES_NL_CROLOX_PHARMACOMSTOCKSENDER_HELPER
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!IMPORTS_NL_CROLOX_PHARMACOMSTOCKSENDER_HELPER
+
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!NL_CROLOX_PHARMACOMSTOCKSENDER_INTERCEPTOR
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!INHERITANCES_NL_CROLOX_PHARMACOMSTOCKSENDER_INTERCEPTOR
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!IMPLEMENTS_NL_CROLOX_PHARMACOMSTOCKSENDER_INTERCEPTOR
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!FIELDS_NL_CROLOX_PHARMACOMSTOCKSENDER_INTERCEPTOR
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!USES_NL_CROLOX_PHARMACOMSTOCKSENDER_INTERCEPTOR
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!IMPORTS_NL_CROLOX_PHARMACOMSTOCKSENDER_INTERCEPTOR
+
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!NL_CROLOX_PHARMACOMSTOCKSENDER_MODEL
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!INHERITANCES_NL_CROLOX_PHARMACOMSTOCKSENDER_MODEL
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!IMPLEMENTS_NL_CROLOX_PHARMACOMSTOCKSENDER_MODEL
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!FIELDS_NL_CROLOX_PHARMACOMSTOCKSENDER_MODEL
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!USES_NL_CROLOX_PHARMACOMSTOCKSENDER_MODEL
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!IMPORTS_NL_CROLOX_PHARMACOMSTOCKSENDER_MODEL
+
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!NL_CROLOX_PHARMACOMSTOCKSENDER_REPOSITORY
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!INHERITANCES_NL_CROLOX_PHARMACOMSTOCKSENDER_REPOSITORY
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!IMPLEMENTS_NL_CROLOX_PHARMACOMSTOCKSENDER_REPOSITORY
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!FIELDS_NL_CROLOX_PHARMACOMSTOCKSENDER_REPOSITORY
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!USES_NL_CROLOX_PHARMACOMSTOCKSENDER_REPOSITORY
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!IMPORTS_NL_CROLOX_PHARMACOMSTOCKSENDER_REPOSITORY
+
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!NL_PHARMAPARTNERS_SERVICES_FILEDELIVERSERVICE_HEADER_V1
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!INHERITANCES_NL_PHARMAPARTNERS_SERVICES_FILEDELIVERSERVICE_HEADER_V1
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!IMPLEMENTS_NL_PHARMAPARTNERS_SERVICES_FILEDELIVERSERVICE_HEADER_V1
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!FIELDS_NL_PHARMAPARTNERS_SERVICES_FILEDELIVERSERVICE_HEADER_V1
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!USES_NL_PHARMAPARTNERS_SERVICES_FILEDELIVERSERVICE_HEADER_V1
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!IMPORTS_NL_PHARMAPARTNERS_SERVICES_FILEDELIVERSERVICE_HEADER_V1
+
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!NL_PHARMAPARTNERS_SERVICES_FILEDELIVERSERVICE_V2
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!INHERITANCES_NL_PHARMAPARTNERS_SERVICES_FILEDELIVERSERVICE_V2
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!IMPLEMENTS_NL_PHARMAPARTNERS_SERVICES_FILEDELIVERSERVICE_V2
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!FIELDS_NL_PHARMAPARTNERS_SERVICES_FILEDELIVERSERVICE_V2
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!USES_NL_PHARMAPARTNERS_SERVICES_FILEDELIVERSERVICE_V2
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!IMPORTS_NL_PHARMAPARTNERS_SERVICES_FILEDELIVERSERVICE_V2
+
+
+
+' CLASSES =======
+!startsub NL_CROLOX_PHARMACOMSTOCKSENDER
+class nl.crolox.pharmacomstocksender.SSLTrustManager$1
+class nl.crolox.pharmacomstocksender.CustomSoapHeader
+class nl.crolox.pharmacomstocksender.FileDeliveryService
+class nl.crolox.pharmacomstocksender.SSLTrustManager
+class nl.crolox.pharmacomstocksender.WebServiceConfig$1
+class nl.crolox.pharmacomstocksender.WebServiceConfig$2
+class nl.crolox.pharmacomstocksender.WebServiceConfig$3
+class nl.crolox.pharmacomstocksender.SoapPrefixCallback
+class nl.crolox.pharmacomstocksender.PharmacomStockSenderApplication
+class nl.crolox.pharmacomstocksender.WebServiceConfig
+class nl.crolox.pharmacomstocksender.AppConfig
+class nl.crolox.pharmacomstocksender.NamespaceFixCallback
+
+!endsub
+
+!startsub NL_CROLOX_PHARMACOMSTOCKSENDER_GENERATED
+class nl.crolox.pharmacomstocksender.generated.ObjectFactory
+
+!endsub
+
+!startsub NL_CROLOX_PHARMACOMSTOCKSENDER_HELPER
+class nl.crolox.pharmacomstocksender.helper.Product
+class nl.crolox.pharmacomstocksender.helper.StockItem
+
+!endsub
+
+!startsub NL_CROLOX_PHARMACOMSTOCKSENDER_INTERCEPTOR
+class nl.crolox.pharmacomstocksender.interceptor.DaoInterceptor
+
+!endsub
+
+!startsub NL_CROLOX_PHARMACOMSTOCKSENDER_MODEL
+class nl.crolox.pharmacomstocksender.model.Apotheek
+
+!endsub
+
+!startsub NL_CROLOX_PHARMACOMSTOCKSENDER_REPOSITORY
+interface nl.crolox.pharmacomstocksender.repository.ApotheekRepository
+
+!endsub
+
+!startsub NL_PHARMAPARTNERS_SERVICES_FILEDELIVERSERVICE_HEADER_V1
+class nl.pharmapartners.services.filedeliverservice.header.v1.ObjectFactory
+
+!endsub
+
+!startsub NL_PHARMAPARTNERS_SERVICES_FILEDELIVERSERVICE_V2
+enum nl.pharmapartners.services.filedeliverservice.v2.ResultcodeType{
+  OK
+  SERVICE_CONFIGURATION_ERROR
+  INVALID_RECIPIENT
+  NO_SUBSCRIPTION_FOUND
+  SERVICE_TEMPORARILY_UNAVAILABLE
+  PROCESSING_ERROR
+}
+enum nl.pharmapartners.services.filedeliverservice.v2.FiletypeType{
+  CFA
+  INSURER_PARAMS
+  INSURER_PRICES
+  ADJUSTMENTS_AND_FEES
+  PRODUCT_PREFERENCES
+  EV_SMART_ASSORTIMENT
+  EV_SMART_VOORRAAD
+  EV_GROOTHANDEL_VOORRAAD
+  OTC_INZET
+}
+class nl.pharmapartners.services.filedeliverservice.v2.GetFileProcessingReportResponse
+class nl.pharmapartners.services.filedeliverservice.v2.FileIdentification
+enum nl.pharmapartners.services.filedeliverservice.v2.ReportstatusType{
+  OK
+  NOT_AVAILABLE
+}
+class nl.pharmapartners.services.filedeliverservice.v2.GetFileProcessingStatusResponse
+enum nl.pharmapartners.services.filedeliverservice.v2.ProcessingstatusType{
+  WAITING
+  PROCESSING
+  PROCESSED
+  FAILED
+  PROCESSED_WITH_WARNINGS
+  UNSUPPORTED_OPERATION
+  UNKNOWN_FILEID
+}
+interface nl.pharmapartners.services.filedeliverservice.v2.package-info
+class nl.pharmapartners.services.filedeliverservice.v2.DeliverFileResponse
+class nl.pharmapartners.services.filedeliverservice.v2.DeliverFileRequest
+class nl.pharmapartners.services.filedeliverservice.v2.LinesProcessed
+class nl.pharmapartners.services.filedeliverservice.v2.ObjectFactory
+class nl.pharmapartners.services.filedeliverservice.v2.Result
+class nl.pharmapartners.services.filedeliverservice.v2.File
+
+!endsub
+
+' INHERITANCES =======
+
+!startsub INHERITANCES_NL_CROLOX_PHARMACOMSTOCKSENDER
+
+!endsub
+
+
+!startsub INHERITANCES_NL_CROLOX_PHARMACOMSTOCKSENDER_GENERATED
+
+!endsub
+
+
+!startsub INHERITANCES_NL_CROLOX_PHARMACOMSTOCKSENDER_HELPER
+
+!endsub
+
+
+!startsub INHERITANCES_NL_CROLOX_PHARMACOMSTOCKSENDER_INTERCEPTOR
+
+!endsub
+
+
+!startsub INHERITANCES_NL_CROLOX_PHARMACOMSTOCKSENDER_MODEL
+
+!endsub
+
+
+!startsub INHERITANCES_NL_CROLOX_PHARMACOMSTOCKSENDER_REPOSITORY
+
+!endsub
+
+
+!startsub INHERITANCES_NL_PHARMAPARTNERS_SERVICES_FILEDELIVERSERVICE_HEADER_V1
+
+!endsub
+
+
+!startsub INHERITANCES_NL_PHARMAPARTNERS_SERVICES_FILEDELIVERSERVICE_V2
+java.lang.Enum <|-- nl.pharmapartners.services.filedeliverservice.v2.ResultcodeType
+java.lang.Enum <|-- nl.pharmapartners.services.filedeliverservice.v2.FiletypeType
+java.lang.Enum <|-- nl.pharmapartners.services.filedeliverservice.v2.ReportstatusType
+java.lang.Enum <|-- nl.pharmapartners.services.filedeliverservice.v2.ProcessingstatusType
+
+!endsub
+
+' IMPLEMENT INTERFACE =======
+
+!startsub IMPLEMENTS_NL_CROLOX_PHARMACOMSTOCKSENDER
+javax.net.ssl.X509TrustManager <|.. nl.crolox.pharmacomstocksender.SSLTrustManager$1
+javax.net.ssl.X509TrustManager <|.. nl.crolox.pharmacomstocksender.WebServiceConfig$2
+
+!endsub
+
+
+!startsub IMPLEMENTS_NL_CROLOX_PHARMACOMSTOCKSENDER_GENERATED
+
+!endsub
+
+
+!startsub IMPLEMENTS_NL_CROLOX_PHARMACOMSTOCKSENDER_HELPER
+
+!endsub
+
+
+!startsub IMPLEMENTS_NL_CROLOX_PHARMACOMSTOCKSENDER_INTERCEPTOR
+
+!endsub
+
+
+!startsub IMPLEMENTS_NL_CROLOX_PHARMACOMSTOCKSENDER_MODEL
+
+!endsub
+
+
+!startsub IMPLEMENTS_NL_CROLOX_PHARMACOMSTOCKSENDER_REPOSITORY
+
+!endsub
+
+
+!startsub IMPLEMENTS_NL_PHARMAPARTNERS_SERVICES_FILEDELIVERSERVICE_HEADER_V1
+
+!endsub
+
+
+!startsub IMPLEMENTS_NL_PHARMAPARTNERS_SERVICES_FILEDELIVERSERVICE_V2
+
+!endsub
+
+' FIELDS =======
+
+!startsub FIELDS_NL_CROLOX_PHARMACOMSTOCKSENDER
+nl.crolox.pharmacomstocksender.FileDeliveryService --> nl.crolox.pharmacomstocksender.repository.ApotheekRepository
+nl.crolox.pharmacomstocksender.WebServiceConfig$1 --> nl.crolox.pharmacomstocksender.WebServiceConfig
+nl.crolox.pharmacomstocksender.WebServiceConfig$2 --> nl.crolox.pharmacomstocksender.WebServiceConfig
+nl.crolox.pharmacomstocksender.WebServiceConfig$3 --> nl.crolox.pharmacomstocksender.WebServiceConfig
+
+!endsub
+
+
+!startsub FIELDS_NL_CROLOX_PHARMACOMSTOCKSENDER_GENERATED
+
+!endsub
+
+
+!startsub FIELDS_NL_CROLOX_PHARMACOMSTOCKSENDER_HELPER
+
+!endsub
+
+
+!startsub FIELDS_NL_CROLOX_PHARMACOMSTOCKSENDER_INTERCEPTOR
+
+!endsub
+
+
+!startsub FIELDS_NL_CROLOX_PHARMACOMSTOCKSENDER_MODEL
+
+!endsub
+
+
+!startsub FIELDS_NL_CROLOX_PHARMACOMSTOCKSENDER_REPOSITORY
+
+!endsub
+
+
+!startsub FIELDS_NL_PHARMAPARTNERS_SERVICES_FILEDELIVERSERVICE_HEADER_V1
+
+!endsub
+
+
+!startsub FIELDS_NL_PHARMAPARTNERS_SERVICES_FILEDELIVERSERVICE_V2
+nl.pharmapartners.services.filedeliverservice.v2.GetFileProcessingReportResponse --> nl.pharmapartners.services.filedeliverservice.v2.Result
+nl.pharmapartners.services.filedeliverservice.v2.GetFileProcessingReportResponse --> nl.pharmapartners.services.filedeliverservice.v2.ReportstatusType
+nl.pharmapartners.services.filedeliverservice.v2.GetFileProcessingReportResponse --> nl.pharmapartners.services.filedeliverservice.v2.File
+nl.pharmapartners.services.filedeliverservice.v2.FileIdentification --> nl.pharmapartners.services.filedeliverservice.v2.FiletypeType
+nl.pharmapartners.services.filedeliverservice.v2.GetFileProcessingStatusResponse --> nl.pharmapartners.services.filedeliverservice.v2.Result
+nl.pharmapartners.services.filedeliverservice.v2.GetFileProcessingStatusResponse --> nl.pharmapartners.services.filedeliverservice.v2.ProcessingstatusType
+nl.pharmapartners.services.filedeliverservice.v2.GetFileProcessingStatusResponse --> nl.pharmapartners.services.filedeliverservice.v2.LinesProcessed
+nl.pharmapartners.services.filedeliverservice.v2.DeliverFileResponse --> nl.pharmapartners.services.filedeliverservice.v2.Result
+nl.pharmapartners.services.filedeliverservice.v2.DeliverFileRequest --> nl.pharmapartners.services.filedeliverservice.v2.FiletypeType
+nl.pharmapartners.services.filedeliverservice.v2.DeliverFileRequest --> nl.pharmapartners.services.filedeliverservice.v2.File
+nl.pharmapartners.services.filedeliverservice.v2.Result --> nl.pharmapartners.services.filedeliverservice.v2.ResultcodeType
+
+!endsub
+
+' USES =======
+
+!startsub USES_NL_CROLOX_PHARMACOMSTOCKSENDER
+nl.crolox.pharmacomstocksender.SSLTrustManager$1 ..> Ljava.security.cert.X509Certificate
+nl.crolox.pharmacomstocksender.FileDeliveryService ..> nl.crolox.pharmacomstocksender.model.Apotheek
+nl.crolox.pharmacomstocksender.FileDeliveryService ..> nl.crolox.pharmacomstocksender.helper.Product
+nl.crolox.pharmacomstocksender.WebServiceConfig$1 ..> nl.crolox.pharmacomstocksender.WebServiceConfig
+nl.crolox.pharmacomstocksender.WebServiceConfig$2 ..> nl.crolox.pharmacomstocksender.WebServiceConfig
+nl.crolox.pharmacomstocksender.WebServiceConfig$2 ..> Ljava.security.cert.X509Certificate
+nl.crolox.pharmacomstocksender.WebServiceConfig$3 ..> nl.crolox.pharmacomstocksender.WebServiceConfig
+
+!endsub
+
+
+!startsub USES_NL_CROLOX_PHARMACOMSTOCKSENDER_GENERATED
+
+!endsub
+
+
+!startsub USES_NL_CROLOX_PHARMACOMSTOCKSENDER_HELPER
+
+!endsub
+
+
+!startsub USES_NL_CROLOX_PHARMACOMSTOCKSENDER_INTERCEPTOR
+
+!endsub
+
+
+!startsub USES_NL_CROLOX_PHARMACOMSTOCKSENDER_MODEL
+
+!endsub
+
+
+!startsub USES_NL_CROLOX_PHARMACOMSTOCKSENDER_REPOSITORY
+
+!endsub
+
+
+!startsub USES_NL_PHARMAPARTNERS_SERVICES_FILEDELIVERSERVICE_HEADER_V1
+
+!endsub
+
+
+!startsub USES_NL_PHARMAPARTNERS_SERVICES_FILEDELIVERSERVICE_V2
+nl.pharmapartners.services.filedeliverservice.v2.GetFileProcessingReportResponse ..> nl.pharmapartners.services.filedeliverservice.v2.Result
+nl.pharmapartners.services.filedeliverservice.v2.GetFileProcessingReportResponse ..> nl.pharmapartners.services.filedeliverservice.v2.ReportstatusType
+nl.pharmapartners.services.filedeliverservice.v2.GetFileProcessingReportResponse ..> nl.pharmapartners.services.filedeliverservice.v2.File
+nl.pharmapartners.services.filedeliverservice.v2.FileIdentification ..> nl.pharmapartners.services.filedeliverservice.v2.FiletypeType
+nl.pharmapartners.services.filedeliverservice.v2.GetFileProcessingStatusResponse ..> nl.pharmapartners.services.filedeliverservice.v2.Result
+nl.pharmapartners.services.filedeliverservice.v2.GetFileProcessingStatusResponse ..> nl.pharmapartners.services.filedeliverservice.v2.ProcessingstatusType
+nl.pharmapartners.services.filedeliverservice.v2.GetFileProcessingStatusResponse ..> nl.pharmapartners.services.filedeliverservice.v2.LinesProcessed
+nl.pharmapartners.services.filedeliverservice.v2.DeliverFileResponse ..> nl.pharmapartners.services.filedeliverservice.v2.Result
+nl.pharmapartners.services.filedeliverservice.v2.DeliverFileRequest ..> nl.pharmapartners.services.filedeliverservice.v2.FiletypeType
+nl.pharmapartners.services.filedeliverservice.v2.DeliverFileRequest ..> nl.pharmapartners.services.filedeliverservice.v2.File
+nl.pharmapartners.services.filedeliverservice.v2.ObjectFactory ..> nl.pharmapartners.services.filedeliverservice.v2.DeliverFileRequest
+nl.pharmapartners.services.filedeliverservice.v2.ObjectFactory ..> nl.pharmapartners.services.filedeliverservice.v2.DeliverFileResponse
+nl.pharmapartners.services.filedeliverservice.v2.ObjectFactory ..> nl.pharmapartners.services.filedeliverservice.v2.FileIdentification
+nl.pharmapartners.services.filedeliverservice.v2.ObjectFactory ..> nl.pharmapartners.services.filedeliverservice.v2.GetFileProcessingStatusResponse
+nl.pharmapartners.services.filedeliverservice.v2.ObjectFactory ..> nl.pharmapartners.services.filedeliverservice.v2.GetFileProcessingReportResponse
+nl.pharmapartners.services.filedeliverservice.v2.ObjectFactory ..> nl.pharmapartners.services.filedeliverservice.v2.Result
+nl.pharmapartners.services.filedeliverservice.v2.ObjectFactory ..> nl.pharmapartners.services.filedeliverservice.v2.File
+nl.pharmapartners.services.filedeliverservice.v2.ObjectFactory ..> nl.pharmapartners.services.filedeliverservice.v2.LinesProcessed
+nl.pharmapartners.services.filedeliverservice.v2.Result ..> nl.pharmapartners.services.filedeliverservice.v2.ResultcodeType
+nl.pharmapartners.services.filedeliverservice.v2.File ..> B
+
+!endsub
+
+' IMPORTS =======
+' Java Files Path : /Users/paolobrunasti/IdeaProjects/OCTA/pharmacomstocksender/src/main/java/
+
+!startsub IMPORTS_NL_CROLOX_PHARMACOMSTOCKSENDER
+' nl.crolox.pharmacomstocksender.SSLTrustManager$1
+
+' nl.crolox.pharmacomstocksender.CustomSoapHeader
+
+' nl.crolox.pharmacomstocksender.FileDeliveryService
+nl.crolox.pharmacomstocksender.FileDeliveryService ..o nl.crolox.pharmacomstocksender.helper.StockItem
+nl.crolox.pharmacomstocksender.FileDeliveryService ..o nl.crolox.pharmacomstocksender.helper.Product
+nl.crolox.pharmacomstocksender.FileDeliveryService ..o nl.crolox.pharmacomstocksender.model.Apotheek
+nl.crolox.pharmacomstocksender.FileDeliveryService ..o nl.pharmapartners.services.filedeliverservice.v2.DeliverFileResponse
+nl.crolox.pharmacomstocksender.FileDeliveryService ..o nl.pharmapartners.services.filedeliverservice.v2.DeliverFileRequest
+nl.crolox.pharmacomstocksender.FileDeliveryService ..o nl.pharmapartners.services.filedeliverservice.v2.File
+nl.crolox.pharmacomstocksender.FileDeliveryService ..o nl.pharmapartners.services.filedeliverservice.v2.FiletypeType
+nl.crolox.pharmacomstocksender.FileDeliveryService ..o nl.crolox.pharmacomstocksender.repository.ApotheekRepository
+
+' nl.crolox.pharmacomstocksender.SSLTrustManager
+
+' nl.crolox.pharmacomstocksender.WebServiceConfig$1
+
+' nl.crolox.pharmacomstocksender.WebServiceConfig$2
+
+' nl.crolox.pharmacomstocksender.WebServiceConfig$3
+
+' nl.crolox.pharmacomstocksender.SoapPrefixCallback
+
+' nl.crolox.pharmacomstocksender.PharmacomStockSenderApplication
+
+' nl.crolox.pharmacomstocksender.WebServiceConfig
+nl.crolox.pharmacomstocksender.WebServiceConfig ..o com.sun.xml.bind.marshaller.NamespacePrefixMapper
+
+' nl.crolox.pharmacomstocksender.AppConfig
+
+' nl.crolox.pharmacomstocksender.NamespaceFixCallback
+
+' nl.crolox.pharmacomstocksender.AppConfig
+
+' nl.crolox.pharmacomstocksender.PharmacomStockSenderApplication
+
+' nl.crolox.pharmacomstocksender.FileDeliveryService
+
+' nl.crolox.pharmacomstocksender.SSLTrustManager
+
+' nl.crolox.pharmacomstocksender.SoapPrefixCallback
+
+' nl.crolox.pharmacomstocksender.CustomSoapHeader
+
+' nl.crolox.pharmacomstocksender.WebServiceConfig$3
+
+' nl.crolox.pharmacomstocksender.SSLTrustManager$1
+
+' nl.crolox.pharmacomstocksender.WebServiceConfig$1
+
+' nl.crolox.pharmacomstocksender.WebServiceConfig$2
+
+' nl.crolox.pharmacomstocksender.WebServiceConfig
+
+' nl.crolox.pharmacomstocksender.NamespaceFixCallback
+
+
+!endsub
+
+
+!startsub IMPORTS_NL_CROLOX_PHARMACOMSTOCKSENDER_GENERATED
+' nl.crolox.pharmacomstocksender.generated.ObjectFactory
+
+' nl.crolox.pharmacomstocksender.generated.ObjectFactory
+
+
+!endsub
+
+
+!startsub IMPORTS_NL_CROLOX_PHARMACOMSTOCKSENDER_HELPER
+' nl.crolox.pharmacomstocksender.helper.Product
+
+' nl.crolox.pharmacomstocksender.helper.StockItem
+
+' nl.crolox.pharmacomstocksender.helper.StockItem
+
+' nl.crolox.pharmacomstocksender.helper.Product
+
+
+!endsub
+
+
+!startsub IMPORTS_NL_CROLOX_PHARMACOMSTOCKSENDER_INTERCEPTOR
+' nl.crolox.pharmacomstocksender.interceptor.DaoInterceptor
+
+' nl.crolox.pharmacomstocksender.interceptor.DaoInterceptor
+
+
+!endsub
+
+
+!startsub IMPORTS_NL_CROLOX_PHARMACOMSTOCKSENDER_MODEL
+' nl.crolox.pharmacomstocksender.model.Apotheek
+
+' nl.crolox.pharmacomstocksender.model.Apotheek
+
+
+!endsub
+
+
+!startsub IMPORTS_NL_CROLOX_PHARMACOMSTOCKSENDER_REPOSITORY
+' nl.crolox.pharmacomstocksender.repository.ApotheekRepository
+
+' nl.crolox.pharmacomstocksender.repository.ApotheekRepository
+
+
+!endsub
+
+
+!startsub IMPORTS_NL_PHARMAPARTNERS_SERVICES_FILEDELIVERSERVICE_HEADER_V1
+' nl.pharmapartners.services.filedeliverservice.header.v1.ObjectFactory
+
+' nl.pharmapartners.services.filedeliverservice.header.v1.ObjectFactory
+
+
+!endsub
+
+
+!startsub IMPORTS_NL_PHARMAPARTNERS_SERVICES_FILEDELIVERSERVICE_V2
+' nl.pharmapartners.services.filedeliverservice.v2.ResultcodeType
+
+' nl.pharmapartners.services.filedeliverservice.v2.FiletypeType
+
+' nl.pharmapartners.services.filedeliverservice.v2.GetFileProcessingReportResponse
+
+' nl.pharmapartners.services.filedeliverservice.v2.FileIdentification
+
+' nl.pharmapartners.services.filedeliverservice.v2.ReportstatusType
+
+' nl.pharmapartners.services.filedeliverservice.v2.GetFileProcessingStatusResponse
+
+' nl.pharmapartners.services.filedeliverservice.v2.ProcessingstatusType
+
+' nl.pharmapartners.services.filedeliverservice.v2.package-info
+
+' nl.pharmapartners.services.filedeliverservice.v2.DeliverFileResponse
+
+' nl.pharmapartners.services.filedeliverservice.v2.DeliverFileRequest
+
+' nl.pharmapartners.services.filedeliverservice.v2.LinesProcessed
+
+' nl.pharmapartners.services.filedeliverservice.v2.ObjectFactory
+
+' nl.pharmapartners.services.filedeliverservice.v2.Result
+
+' nl.pharmapartners.services.filedeliverservice.v2.File
+
+' nl.pharmapartners.services.filedeliverservice.v2.package-info
+
+' nl.pharmapartners.services.filedeliverservice.v2.ReportstatusType
+
+' nl.pharmapartners.services.filedeliverservice.v2.ObjectFactory
+
+' nl.pharmapartners.services.filedeliverservice.v2.LinesProcessed
+
+' nl.pharmapartners.services.filedeliverservice.v2.GetFileProcessingStatusResponse
+
+' nl.pharmapartners.services.filedeliverservice.v2.DeliverFileResponse
+
+' nl.pharmapartners.services.filedeliverservice.v2.DeliverFileRequest
+
+' nl.pharmapartners.services.filedeliverservice.v2.FileIdentification
+
+' nl.pharmapartners.services.filedeliverservice.v2.Result
+
+' nl.pharmapartners.services.filedeliverservice.v2.FiletypeType
+
+' nl.pharmapartners.services.filedeliverservice.v2.GetFileProcessingReportResponse
+
+' nl.pharmapartners.services.filedeliverservice.v2.File
+
+' nl.pharmapartners.services.filedeliverservice.v2.ProcessingstatusType
+
+' nl.pharmapartners.services.filedeliverservice.v2.ResultcodeType
+
+
+!endsub
+
+
+@enduml

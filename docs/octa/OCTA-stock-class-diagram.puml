@@ -1,0 +1,2949 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+' GENERATE CLASS DIAGRAM ===========
+' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
+' Path            : [/Users/paolobrunasti/IdeaProjects/OCTA/stock/target/classes]
+' Java Files Path : [/Users/paolobrunasti/IdeaProjects/OCTA/stock/src/main/java/]
+' Configuration   : [/Users/paolobrunasti/IdeaProjects/mine/java-diagrammer/docs/octa/config.json]
+' Generated at    : Tue Jan 27 11:50:43 CET 2026
+'
+'   Stat infos    :
+'       Files : [1029]
+'       Lines : [41328]
+'     Classes : [438]
+'     Methods : [4480]
+'      Fields : [1990]
+
+' Include         : [./docs/includedFile.txt] ---------
+title Example with legend and title
+
+hide empty members
+
+
+legend
+Connections legend
+----
+--|> : Extends
+..|> : Implements
+----
+--> : Fields and Attributes
+..> : Uses
+end legend
+' Include end     : --------------------------
+
+
+
+'!includesub OCTA-stock-class-diagram.puml!COM_CROLOX_PISTOCK
+'!includesub OCTA-stock-class-diagram.puml!INHERITANCES_COM_CROLOX_PISTOCK
+'!includesub OCTA-stock-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISTOCK
+'!includesub OCTA-stock-class-diagram.puml!FIELDS_COM_CROLOX_PISTOCK
+'!includesub OCTA-stock-class-diagram.puml!USES_COM_CROLOX_PISTOCK
+'!includesub OCTA-stock-class-diagram.puml!IMPORTS_COM_CROLOX_PISTOCK
+
+'!includesub OCTA-stock-class-diagram.puml!COM_CROLOX_PISTOCK_API_EXTERN
+'!includesub OCTA-stock-class-diagram.puml!INHERITANCES_COM_CROLOX_PISTOCK_API_EXTERN
+'!includesub OCTA-stock-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISTOCK_API_EXTERN
+'!includesub OCTA-stock-class-diagram.puml!FIELDS_COM_CROLOX_PISTOCK_API_EXTERN
+'!includesub OCTA-stock-class-diagram.puml!USES_COM_CROLOX_PISTOCK_API_EXTERN
+'!includesub OCTA-stock-class-diagram.puml!IMPORTS_COM_CROLOX_PISTOCK_API_EXTERN
+
+'!includesub OCTA-stock-class-diagram.puml!COM_CROLOX_PISTOCK_API_EXTERN_FLUENC
+'!includesub OCTA-stock-class-diagram.puml!INHERITANCES_COM_CROLOX_PISTOCK_API_EXTERN_FLUENC
+'!includesub OCTA-stock-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISTOCK_API_EXTERN_FLUENC
+'!includesub OCTA-stock-class-diagram.puml!FIELDS_COM_CROLOX_PISTOCK_API_EXTERN_FLUENC
+'!includesub OCTA-stock-class-diagram.puml!USES_COM_CROLOX_PISTOCK_API_EXTERN_FLUENC
+'!includesub OCTA-stock-class-diagram.puml!IMPORTS_COM_CROLOX_PISTOCK_API_EXTERN_FLUENC
+
+'!includesub OCTA-stock-class-diagram.puml!COM_CROLOX_PISTOCK_API_EXTERN_FLUENC_DTO
+'!includesub OCTA-stock-class-diagram.puml!INHERITANCES_COM_CROLOX_PISTOCK_API_EXTERN_FLUENC_DTO
+'!includesub OCTA-stock-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISTOCK_API_EXTERN_FLUENC_DTO
+'!includesub OCTA-stock-class-diagram.puml!FIELDS_COM_CROLOX_PISTOCK_API_EXTERN_FLUENC_DTO
+'!includesub OCTA-stock-class-diagram.puml!USES_COM_CROLOX_PISTOCK_API_EXTERN_FLUENC_DTO
+'!includesub OCTA-stock-class-diagram.puml!IMPORTS_COM_CROLOX_PISTOCK_API_EXTERN_FLUENC_DTO
+
+'!includesub OCTA-stock-class-diagram.puml!COM_CROLOX_PISTOCK_API_GUI
+'!includesub OCTA-stock-class-diagram.puml!INHERITANCES_COM_CROLOX_PISTOCK_API_GUI
+'!includesub OCTA-stock-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISTOCK_API_GUI
+'!includesub OCTA-stock-class-diagram.puml!FIELDS_COM_CROLOX_PISTOCK_API_GUI
+'!includesub OCTA-stock-class-diagram.puml!USES_COM_CROLOX_PISTOCK_API_GUI
+'!includesub OCTA-stock-class-diagram.puml!IMPORTS_COM_CROLOX_PISTOCK_API_GUI
+
+'!includesub OCTA-stock-class-diagram.puml!COM_CROLOX_PISTOCK_API_GUI_DTO
+'!includesub OCTA-stock-class-diagram.puml!INHERITANCES_COM_CROLOX_PISTOCK_API_GUI_DTO
+'!includesub OCTA-stock-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISTOCK_API_GUI_DTO
+'!includesub OCTA-stock-class-diagram.puml!FIELDS_COM_CROLOX_PISTOCK_API_GUI_DTO
+'!includesub OCTA-stock-class-diagram.puml!USES_COM_CROLOX_PISTOCK_API_GUI_DTO
+'!includesub OCTA-stock-class-diagram.puml!IMPORTS_COM_CROLOX_PISTOCK_API_GUI_DTO
+
+'!includesub OCTA-stock-class-diagram.puml!COM_CROLOX_PISTOCK_ASPECT
+'!includesub OCTA-stock-class-diagram.puml!INHERITANCES_COM_CROLOX_PISTOCK_ASPECT
+'!includesub OCTA-stock-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISTOCK_ASPECT
+'!includesub OCTA-stock-class-diagram.puml!FIELDS_COM_CROLOX_PISTOCK_ASPECT
+'!includesub OCTA-stock-class-diagram.puml!USES_COM_CROLOX_PISTOCK_ASPECT
+'!includesub OCTA-stock-class-diagram.puml!IMPORTS_COM_CROLOX_PISTOCK_ASPECT
+
+'!includesub OCTA-stock-class-diagram.puml!COM_CROLOX_PISTOCK_COMMON
+'!includesub OCTA-stock-class-diagram.puml!INHERITANCES_COM_CROLOX_PISTOCK_COMMON
+'!includesub OCTA-stock-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISTOCK_COMMON
+'!includesub OCTA-stock-class-diagram.puml!FIELDS_COM_CROLOX_PISTOCK_COMMON
+'!includesub OCTA-stock-class-diagram.puml!USES_COM_CROLOX_PISTOCK_COMMON
+'!includesub OCTA-stock-class-diagram.puml!IMPORTS_COM_CROLOX_PISTOCK_COMMON
+
+'!includesub OCTA-stock-class-diagram.puml!COM_CROLOX_PISTOCK_CONFIG
+'!includesub OCTA-stock-class-diagram.puml!INHERITANCES_COM_CROLOX_PISTOCK_CONFIG
+'!includesub OCTA-stock-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISTOCK_CONFIG
+'!includesub OCTA-stock-class-diagram.puml!FIELDS_COM_CROLOX_PISTOCK_CONFIG
+'!includesub OCTA-stock-class-diagram.puml!USES_COM_CROLOX_PISTOCK_CONFIG
+'!includesub OCTA-stock-class-diagram.puml!IMPORTS_COM_CROLOX_PISTOCK_CONFIG
+
+'!includesub OCTA-stock-class-diagram.puml!COM_CROLOX_PISTOCK_CONTROLLER_BACKEND
+'!includesub OCTA-stock-class-diagram.puml!INHERITANCES_COM_CROLOX_PISTOCK_CONTROLLER_BACKEND
+'!includesub OCTA-stock-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISTOCK_CONTROLLER_BACKEND
+'!includesub OCTA-stock-class-diagram.puml!FIELDS_COM_CROLOX_PISTOCK_CONTROLLER_BACKEND
+'!includesub OCTA-stock-class-diagram.puml!USES_COM_CROLOX_PISTOCK_CONTROLLER_BACKEND
+'!includesub OCTA-stock-class-diagram.puml!IMPORTS_COM_CROLOX_PISTOCK_CONTROLLER_BACKEND
+
+'!includesub OCTA-stock-class-diagram.puml!COM_CROLOX_PISTOCK_CONTROLLER_GUI
+'!includesub OCTA-stock-class-diagram.puml!INHERITANCES_COM_CROLOX_PISTOCK_CONTROLLER_GUI
+'!includesub OCTA-stock-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISTOCK_CONTROLLER_GUI
+'!includesub OCTA-stock-class-diagram.puml!FIELDS_COM_CROLOX_PISTOCK_CONTROLLER_GUI
+'!includesub OCTA-stock-class-diagram.puml!USES_COM_CROLOX_PISTOCK_CONTROLLER_GUI
+'!includesub OCTA-stock-class-diagram.puml!IMPORTS_COM_CROLOX_PISTOCK_CONTROLLER_GUI
+
+'!includesub OCTA-stock-class-diagram.puml!COM_CROLOX_PISTOCK_DTO
+'!includesub OCTA-stock-class-diagram.puml!INHERITANCES_COM_CROLOX_PISTOCK_DTO
+'!includesub OCTA-stock-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISTOCK_DTO
+'!includesub OCTA-stock-class-diagram.puml!FIELDS_COM_CROLOX_PISTOCK_DTO
+'!includesub OCTA-stock-class-diagram.puml!USES_COM_CROLOX_PISTOCK_DTO
+'!includesub OCTA-stock-class-diagram.puml!IMPORTS_COM_CROLOX_PISTOCK_DTO
+
+'!includesub OCTA-stock-class-diagram.puml!COM_CROLOX_PISTOCK_EXCEPTION
+'!includesub OCTA-stock-class-diagram.puml!INHERITANCES_COM_CROLOX_PISTOCK_EXCEPTION
+'!includesub OCTA-stock-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISTOCK_EXCEPTION
+'!includesub OCTA-stock-class-diagram.puml!FIELDS_COM_CROLOX_PISTOCK_EXCEPTION
+'!includesub OCTA-stock-class-diagram.puml!USES_COM_CROLOX_PISTOCK_EXCEPTION
+'!includesub OCTA-stock-class-diagram.puml!IMPORTS_COM_CROLOX_PISTOCK_EXCEPTION
+
+'!includesub OCTA-stock-class-diagram.puml!COM_CROLOX_PISTOCK_INTERCEPTOR
+'!includesub OCTA-stock-class-diagram.puml!INHERITANCES_COM_CROLOX_PISTOCK_INTERCEPTOR
+'!includesub OCTA-stock-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISTOCK_INTERCEPTOR
+'!includesub OCTA-stock-class-diagram.puml!FIELDS_COM_CROLOX_PISTOCK_INTERCEPTOR
+'!includesub OCTA-stock-class-diagram.puml!USES_COM_CROLOX_PISTOCK_INTERCEPTOR
+'!includesub OCTA-stock-class-diagram.puml!IMPORTS_COM_CROLOX_PISTOCK_INTERCEPTOR
+
+'!includesub OCTA-stock-class-diagram.puml!COM_CROLOX_PISTOCK_MODEL
+'!includesub OCTA-stock-class-diagram.puml!INHERITANCES_COM_CROLOX_PISTOCK_MODEL
+'!includesub OCTA-stock-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISTOCK_MODEL
+'!includesub OCTA-stock-class-diagram.puml!FIELDS_COM_CROLOX_PISTOCK_MODEL
+'!includesub OCTA-stock-class-diagram.puml!USES_COM_CROLOX_PISTOCK_MODEL
+'!includesub OCTA-stock-class-diagram.puml!IMPORTS_COM_CROLOX_PISTOCK_MODEL
+
+'!includesub OCTA-stock-class-diagram.puml!COM_CROLOX_PISTOCK_ORDER
+'!includesub OCTA-stock-class-diagram.puml!INHERITANCES_COM_CROLOX_PISTOCK_ORDER
+'!includesub OCTA-stock-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISTOCK_ORDER
+'!includesub OCTA-stock-class-diagram.puml!FIELDS_COM_CROLOX_PISTOCK_ORDER
+'!includesub OCTA-stock-class-diagram.puml!USES_COM_CROLOX_PISTOCK_ORDER
+'!includesub OCTA-stock-class-diagram.puml!IMPORTS_COM_CROLOX_PISTOCK_ORDER
+
+'!includesub OCTA-stock-class-diagram.puml!COM_CROLOX_PISTOCK_POJO
+'!includesub OCTA-stock-class-diagram.puml!INHERITANCES_COM_CROLOX_PISTOCK_POJO
+'!includesub OCTA-stock-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISTOCK_POJO
+'!includesub OCTA-stock-class-diagram.puml!FIELDS_COM_CROLOX_PISTOCK_POJO
+'!includesub OCTA-stock-class-diagram.puml!USES_COM_CROLOX_PISTOCK_POJO
+'!includesub OCTA-stock-class-diagram.puml!IMPORTS_COM_CROLOX_PISTOCK_POJO
+
+'!includesub OCTA-stock-class-diagram.puml!COM_CROLOX_PISTOCK_QUEUE
+'!includesub OCTA-stock-class-diagram.puml!INHERITANCES_COM_CROLOX_PISTOCK_QUEUE
+'!includesub OCTA-stock-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISTOCK_QUEUE
+'!includesub OCTA-stock-class-diagram.puml!FIELDS_COM_CROLOX_PISTOCK_QUEUE
+'!includesub OCTA-stock-class-diagram.puml!USES_COM_CROLOX_PISTOCK_QUEUE
+'!includesub OCTA-stock-class-diagram.puml!IMPORTS_COM_CROLOX_PISTOCK_QUEUE
+
+'!includesub OCTA-stock-class-diagram.puml!COM_CROLOX_PISTOCK_REPOSITORY
+'!includesub OCTA-stock-class-diagram.puml!INHERITANCES_COM_CROLOX_PISTOCK_REPOSITORY
+'!includesub OCTA-stock-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISTOCK_REPOSITORY
+'!includesub OCTA-stock-class-diagram.puml!FIELDS_COM_CROLOX_PISTOCK_REPOSITORY
+'!includesub OCTA-stock-class-diagram.puml!USES_COM_CROLOX_PISTOCK_REPOSITORY
+'!includesub OCTA-stock-class-diagram.puml!IMPORTS_COM_CROLOX_PISTOCK_REPOSITORY
+
+'!includesub OCTA-stock-class-diagram.puml!COM_CROLOX_PISTOCK_REQUEST_BODY
+'!includesub OCTA-stock-class-diagram.puml!INHERITANCES_COM_CROLOX_PISTOCK_REQUEST_BODY
+'!includesub OCTA-stock-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISTOCK_REQUEST_BODY
+'!includesub OCTA-stock-class-diagram.puml!FIELDS_COM_CROLOX_PISTOCK_REQUEST_BODY
+'!includesub OCTA-stock-class-diagram.puml!USES_COM_CROLOX_PISTOCK_REQUEST_BODY
+'!includesub OCTA-stock-class-diagram.puml!IMPORTS_COM_CROLOX_PISTOCK_REQUEST_BODY
+
+'!includesub OCTA-stock-class-diagram.puml!COM_CROLOX_PISTOCK_SCHEDULED
+'!includesub OCTA-stock-class-diagram.puml!INHERITANCES_COM_CROLOX_PISTOCK_SCHEDULED
+'!includesub OCTA-stock-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISTOCK_SCHEDULED
+'!includesub OCTA-stock-class-diagram.puml!FIELDS_COM_CROLOX_PISTOCK_SCHEDULED
+'!includesub OCTA-stock-class-diagram.puml!USES_COM_CROLOX_PISTOCK_SCHEDULED
+'!includesub OCTA-stock-class-diagram.puml!IMPORTS_COM_CROLOX_PISTOCK_SCHEDULED
+
+'!includesub OCTA-stock-class-diagram.puml!COM_CROLOX_PISTOCK_SERVICE
+'!includesub OCTA-stock-class-diagram.puml!INHERITANCES_COM_CROLOX_PISTOCK_SERVICE
+'!includesub OCTA-stock-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISTOCK_SERVICE
+'!includesub OCTA-stock-class-diagram.puml!FIELDS_COM_CROLOX_PISTOCK_SERVICE
+'!includesub OCTA-stock-class-diagram.puml!USES_COM_CROLOX_PISTOCK_SERVICE
+'!includesub OCTA-stock-class-diagram.puml!IMPORTS_COM_CROLOX_PISTOCK_SERVICE
+
+'!includesub OCTA-stock-class-diagram.puml!COM_CROLOX_PISTOCK_UTIL
+'!includesub OCTA-stock-class-diagram.puml!INHERITANCES_COM_CROLOX_PISTOCK_UTIL
+'!includesub OCTA-stock-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISTOCK_UTIL
+'!includesub OCTA-stock-class-diagram.puml!FIELDS_COM_CROLOX_PISTOCK_UTIL
+'!includesub OCTA-stock-class-diagram.puml!USES_COM_CROLOX_PISTOCK_UTIL
+'!includesub OCTA-stock-class-diagram.puml!IMPORTS_COM_CROLOX_PISTOCK_UTIL
+
+'!includesub OCTA-stock-class-diagram.puml!COM_CROLOX_PISTOCK_VIEW
+'!includesub OCTA-stock-class-diagram.puml!INHERITANCES_COM_CROLOX_PISTOCK_VIEW
+'!includesub OCTA-stock-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISTOCK_VIEW
+'!includesub OCTA-stock-class-diagram.puml!FIELDS_COM_CROLOX_PISTOCK_VIEW
+'!includesub OCTA-stock-class-diagram.puml!USES_COM_CROLOX_PISTOCK_VIEW
+'!includesub OCTA-stock-class-diagram.puml!IMPORTS_COM_CROLOX_PISTOCK_VIEW
+
+
+
+' CLASSES =======
+!startsub COM_CROLOX_PISTOCK
+class com.crolox.pistock.PiStock
+
+!endsub
+
+!startsub COM_CROLOX_PISTOCK_API_EXTERN
+class com.crolox.pistock.api.extern.PharmacyLocationDto
+class com.crolox.pistock.api.extern.ZindexNumbers
+class com.crolox.pistock.api.extern.BackorderDtoAPI
+class com.crolox.pistock.api.extern.ExternApiProductDtoAPI
+class com.crolox.pistock.api.extern.PharmacyLocationDtoAPI
+class com.crolox.pistock.api.extern.StockLocationDtoAPI
+class com.crolox.pistock.api.extern.ReservationDtoAPI
+class com.crolox.pistock.api.extern.ProductLocationDto
+class com.crolox.pistock.api.extern.ExternApiProductDto
+class com.crolox.pistock.api.extern.ProductRequestDtoAPI
+class com.crolox.pistock.api.extern.StockSubLocationDto
+class com.crolox.pistock.api.extern.ProductInfoDtoAPI
+class com.crolox.pistock.api.extern.Stock
+class com.crolox.pistock.api.extern.OpenReservationsAPI
+class com.crolox.pistock.api.extern.TempGpkEnricher
+class com.crolox.pistock.api.extern.StockSubLocationDtoAPI
+class com.crolox.pistock.api.extern.ReplenishListAPI
+class com.crolox.pistock.api.extern.StockPerLocationAPI
+class com.crolox.pistock.api.extern.StockLocationDto
+class com.crolox.pistock.api.extern.ReservationVsStockDto
+class com.crolox.pistock.api.extern.ReservationVsStockDtoAPI
+class com.crolox.pistock.api.extern.ReservationDto
+class com.crolox.pistock.api.extern.ProductLocationDtoAPI
+class com.crolox.pistock.api.extern.ProductInfoDto
+
+!endsub
+
+!startsub COM_CROLOX_PISTOCK_API_EXTERN_FLUENC
+class com.crolox.pistock.api.extern.fluenc.StockOnLocationAPI
+
+!endsub
+
+!startsub COM_CROLOX_PISTOCK_API_EXTERN_FLUENC_DTO
+class com.crolox.pistock.api.extern.fluenc.dto.StockOnLocation
+class com.crolox.pistock.api.extern.fluenc.dto.StockOnPharmacyLocation
+class com.crolox.pistock.api.extern.fluenc.dto.Stock
+class com.crolox.pistock.api.extern.fluenc.dto.Location
+
+!endsub
+
+!startsub COM_CROLOX_PISTOCK_API_GUI
+class com.crolox.pistock.api.gui.StockIndicatorAPI
+class com.crolox.pistock.api.gui.ReservationsPerPharmacyPerMonthAPI
+class com.crolox.pistock.api.gui.StockImportAPI
+class com.crolox.pistock.api.gui.ProductStatusAPI
+class com.crolox.pistock.api.gui.PakbonDtoAPI
+class com.crolox.pistock.api.gui.PharmacyLocationAPI
+class com.crolox.pistock.api.gui.ReservationProductLocationsDtoAPI
+class com.crolox.pistock.api.gui.PharmacyAPI
+class com.crolox.pistock.api.gui.StockSnapshotAPI
+class com.crolox.pistock.api.gui.ProductAPI
+class com.crolox.pistock.api.gui.OrderTypesAPI
+class com.crolox.pistock.api.gui.WholesaleAPI
+class com.crolox.pistock.api.gui.OrderProposalAPI
+class com.crolox.pistock.api.gui.BackorderAPI
+class com.crolox.pistock.api.gui.StockLocationAPI
+class com.crolox.pistock.api.gui.ReservationAPI
+class com.crolox.pistock.api.gui.ProductSearchAPI
+class com.crolox.pistock.api.gui.DeltaAPI
+class com.crolox.pistock.api.gui.ReceivedProductDtosAPI
+class com.crolox.pistock.api.gui.StockSubLocationAPI
+class com.crolox.pistock.api.gui.PakbonAPI
+class com.crolox.pistock.api.gui.ProductLocationAPI
+class com.crolox.pistock.api.gui.StockDtoAPI
+
+!endsub
+
+!startsub COM_CROLOX_PISTOCK_API_GUI_DTO
+class com.crolox.pistock.api.gui.dto.ProductGuiDto
+
+!endsub
+
+!startsub COM_CROLOX_PISTOCK_ASPECT
+class com.crolox.pistock.aspect.LoggingAspect
+interface com.crolox.pistock.aspect.Loggable
+
+!endsub
+
+!startsub COM_CROLOX_PISTOCK_COMMON
+class com.crolox.pistock.common.ApplicationConstants
+enum com.crolox.pistock.common.ProductStatus{
+  NORMAL
+  CLOSING_SALE
+  BLACKLIST
+}
+enum com.crolox.pistock.common.Action{
+}
+enum com.crolox.pistock.common.ChangedBy{
+  PIFARMA_API
+  PISORT_API
+  UPDATE_PAKBON_GUI
+  UPDATE_GUI
+  IMPORT_GUI
+  UNKNOWN_API
+  JUNIT
+  UNKNOWN
+  BACKORDER_REMOVAL_GUI
+}
+enum com.crolox.pistock.common.OrderType{
+  BVG
+  MAIL_BODY
+}
+enum com.crolox.pistock.common.EmailBodyTag{
+  IDF
+  ORDER_RECORDS
+}
+enum com.crolox.pistock.common.ImportType{
+  ZINDEX_BASED
+  BARCODE_BASED
+  COMMENT
+  INVALID
+}
+
+!endsub
+
+!startsub COM_CROLOX_PISTOCK_CONFIG
+class com.crolox.pistock.config.MvcConfig
+class com.crolox.pistock.config.AppContextEventListener
+
+!endsub
+
+!startsub COM_CROLOX_PISTOCK_CONTROLLER_BACKEND
+class com.crolox.pistock.controller.backend.ProductOrderController
+class com.crolox.pistock.controller.backend.LocalProductsController
+class com.crolox.pistock.controller.backend.ProductWriteOffController
+class com.crolox.pistock.controller.backend.ProductCreationController
+class com.crolox.pistock.controller.backend.ProductOrderHelper
+class com.crolox.pistock.controller.backend.ReservationController
+class com.crolox.pistock.controller.backend.ImportController
+class com.crolox.pistock.controller.backend.ProductOderHelperPrescriptionAmount
+
+!endsub
+
+!startsub COM_CROLOX_PISTOCK_CONTROLLER_GUI
+class com.crolox.pistock.controller.gui.WholesaleController
+class com.crolox.pistock.controller.gui.PharmacyLocationController
+class com.crolox.pistock.controller.gui.MainController
+class com.crolox.pistock.controller.gui.PharmacyController
+
+!endsub
+
+!startsub COM_CROLOX_PISTOCK_DTO
+class com.crolox.pistock.dto.ProductWriteOffDto
+class com.crolox.pistock.dto.IntInt
+class com.crolox.pistock.dto.ReceiptZindexQuantity
+class com.crolox.pistock.dto.StockDto
+class com.crolox.pistock.dto.BvgOrder
+class com.crolox.pistock.dto.BvgOrderDto
+class com.crolox.pistock.dto.EmbeddedProductList
+class com.crolox.pistock.dto.AgbPharmacy
+class com.crolox.pistock.dto.ReceivedProductDto
+class com.crolox.pistock.dto.OrderQuantityWholesaleDto
+class com.crolox.pistock.dto.ImportRecordData
+class com.crolox.pistock.dto.PakbonDto
+class com.crolox.pistock.dto.ZindexReservation
+class com.crolox.pistock.dto.MailOrder
+class com.crolox.pistock.dto.ReservationDto
+class com.crolox.pistock.dto.BvgOrderDetailRecordDTO
+class com.crolox.pistock.dto.EmbeddedProductListWrapper
+class com.crolox.pistock.dto.PharmacyDto
+class com.crolox.pistock.dto.StockSnapshotDto
+class com.crolox.pistock.dto.ReservationsPerPharmacyPerMonthDto
+class com.crolox.pistock.dto.ProductOrderDto
+class com.crolox.pistock.dto.DeltaOverviewParameters
+class com.crolox.pistock.dto.ProductDto
+class com.crolox.pistock.dto.ImportFileRecordDto
+class com.crolox.pistock.dto.ReservationsProductLocationsDto
+
+!endsub
+
+!startsub COM_CROLOX_PISTOCK_EXCEPTION
+class com.crolox.pistock.exception.ApplicationException
+class com.crolox.pistock.exception.GlobalExceptionHandler
+class com.crolox.pistock.exception.ResourceNotFoundException
+class com.crolox.pistock.exception.BadRequestException
+class com.crolox.pistock.exception.ErrorDetails
+
+!endsub
+
+!startsub COM_CROLOX_PISTOCK_INTERCEPTOR
+class com.crolox.pistock.interceptor.StockChangeTracker
+
+!endsub
+
+!startsub COM_CROLOX_PISTOCK_MODEL
+class com.crolox.pistock.model.StockSubLocation
+class com.crolox.pistock.model.Pharmacy
+class com.crolox.pistock.model.IdfSequence
+class com.crolox.pistock.model.Reservation
+class com.crolox.pistock.model.Log
+class com.crolox.pistock.model.Product
+class com.crolox.pistock.model.PharmacyLocation
+class com.crolox.pistock.model.ReceivedProduct
+class com.crolox.pistock.model.StockLocation
+class com.crolox.pistock.model.ProductRequest
+class com.crolox.pistock.model.StockIndicator
+class com.crolox.pistock.model.Backorder
+class com.crolox.pistock.model.Pakbon
+class com.crolox.pistock.model.ProductLocation
+class com.crolox.pistock.model.Wholesale
+class com.crolox.pistock.model.StockSnapshot
+
+!endsub
+
+!startsub COM_CROLOX_PISTOCK_ORDER
+class com.crolox.pistock.order.OrderService
+class com.crolox.pistock.order.OrderTotals
+class com.crolox.pistock.order.OrderReportDetailRecord
+class com.crolox.pistock.order.OrderPeriodSelection
+
+!endsub
+
+!startsub COM_CROLOX_PISTOCK_POJO
+class com.crolox.pistock.pojo.StockInfoFile
+class com.crolox.pistock.pojo.ZindexQuantity
+class com.crolox.pistock.pojo.AgbZindexNumbers
+class com.crolox.pistock.pojo.Delta
+class com.crolox.pistock.pojo.OrderProposal
+class com.crolox.pistock.pojo.EatBackordersRequestMessage
+class com.crolox.pistock.pojo.OrderProposals
+class com.crolox.pistock.pojo.SftpParameters
+
+!endsub
+
+!startsub COM_CROLOX_PISTOCK_QUEUE
+class com.crolox.pistock.queue.BVGOrderProcessingQueue
+class com.crolox.pistock.queue.ProductCreationStack
+class com.crolox.pistock.queue.ReceiptBarcodeQueueHandler
+class com.crolox.pistock.queue.MailOrderProcessingQueue
+class com.crolox.pistock.queue.CentralBVGOrderProcessingQueue
+class com.crolox.pistock.queue.BackorderEatingStack
+
+!endsub
+
+!startsub COM_CROLOX_PISTOCK_REPOSITORY
+interface com.crolox.pistock.repository.PakbonRepository
+interface com.crolox.pistock.repository.PharmacyLocationRepository
+interface com.crolox.pistock.repository.ProductRepository
+interface com.crolox.pistock.repository.PharmacyRepository
+interface com.crolox.pistock.repository.StockIndicatorRepository
+interface com.crolox.pistock.repository.ProductRequestRepository
+interface com.crolox.pistock.repository.ReplenishListRepository
+interface com.crolox.pistock.repository.ProductLocationRepository
+interface com.crolox.pistock.repository.OpenReservationsRepository
+interface com.crolox.pistock.repository.BackorderRepository
+interface com.crolox.pistock.repository.ReceivedProductRepository
+interface com.crolox.pistock.repository.StockSnapshotRepository
+interface com.crolox.pistock.repository.StockLocationRepository
+interface com.crolox.pistock.repository.StockPerLocationRepository
+interface com.crolox.pistock.repository.WholesaleRepository
+interface com.crolox.pistock.repository.IdfSequenceRepository
+interface com.crolox.pistock.repository.StockSubLocationRepository
+interface com.crolox.pistock.repository.ReservationRepository
+interface com.crolox.pistock.repository.ProductGuiDtoRepository
+
+!endsub
+
+!startsub COM_CROLOX_PISTOCK_REQUEST_BODY
+class com.crolox.pistock.request.body.ProductCreationMessage
+
+!endsub
+
+!startsub COM_CROLOX_PISTOCK_SCHEDULED
+class com.crolox.pistock.scheduled.StackProcessing
+class com.crolox.pistock.scheduled.ReportsDataCollector
+class com.crolox.pistock.scheduled.StockInfoSender
+class com.crolox.pistock.scheduled.StockReducer
+class com.crolox.pistock.scheduled.BvgOrderSender
+class com.crolox.pistock.scheduled.Housekeeping
+class com.crolox.pistock.scheduled.AddStock
+class com.crolox.pistock.scheduled.EnrichingBackordersWithProductInfo
+class com.crolox.pistock.scheduled.UpdateProductsAIP
+class com.crolox.pistock.scheduled.MailOrderSender
+
+!endsub
+
+!startsub COM_CROLOX_PISTOCK_SERVICE
+class com.crolox.pistock.service.OrderNewStockProposalService
+class com.crolox.pistock.service.OpenReservationsService
+class com.crolox.pistock.service.ReservationVsStockService
+class com.crolox.pistock.service.DigipharmaService
+class com.crolox.pistock.service.OrderAndReserveService
+class com.crolox.pistock.service.ReplenishListService
+class com.crolox.pistock.service.ReservationsProductLocationsDtoService
+class com.crolox.pistock.service.SendOrdersThroughRabbitMQ
+class com.crolox.pistock.service.PakbonInfo
+class com.crolox.pistock.service.BackorderService
+class com.crolox.pistock.service.PakbonService
+class com.crolox.pistock.service.WriteOffService
+class com.crolox.pistock.service.SlackService
+class com.crolox.pistock.service.StockSubLocationService
+class com.crolox.pistock.service.StockIndicatorService
+class com.crolox.pistock.service.OrderAndReserveService$QuantityInStockAndLocations
+class com.crolox.pistock.service.ProductLocationService
+class com.crolox.pistock.service.PakbonFileService
+class com.crolox.pistock.service.PakbonReceiver
+interface com.crolox.pistock.service.SendOrders
+class com.crolox.pistock.service.StockDtoService
+class com.crolox.pistock.service.ReservationsPerPharmacyPerMonthService
+class com.crolox.pistock.service.DeltaService
+class com.crolox.pistock.service.ImportService
+class com.crolox.pistock.service.ProductService$1
+class com.crolox.pistock.service.ProductSearchService$1
+class com.crolox.pistock.service.WholesaleService
+class com.crolox.pistock.service.ProductSearchService$3
+class com.crolox.pistock.service.ProductSearchService$2
+class com.crolox.pistock.service.ProductSearchService
+class com.crolox.pistock.service.PharmacyService
+class com.crolox.pistock.service.StockSnapshotService
+class com.crolox.pistock.service.ProductService
+class com.crolox.pistock.service.OrderNewStockService
+class com.crolox.pistock.service.ReservationService
+class com.crolox.pistock.service.PharmacyLocationService
+class com.crolox.pistock.service.ProductCreationService
+class com.crolox.pistock.service.StockLocationService
+class com.crolox.pistock.service.IdfSequenceService
+class com.crolox.pistock.service.StockPerLocationService
+class com.crolox.pistock.service.StockInfoSenderService
+class com.crolox.pistock.service.ReceivedProductService
+
+!endsub
+
+!startsub COM_CROLOX_PISTOCK_UTIL
+class com.crolox.pistock.util.PakbonUtils
+class com.crolox.pistock.util.CommonUtils
+
+!endsub
+
+!startsub COM_CROLOX_PISTOCK_VIEW
+class com.crolox.pistock.view.StockPerLocation
+class com.crolox.pistock.view.ReplenishList
+class com.crolox.pistock.view.OpenReservations
+
+!endsub
+
+' INHERITANCES =======
+
+!startsub INHERITANCES_COM_CROLOX_PISTOCK
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISTOCK_API_EXTERN
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISTOCK_API_EXTERN_FLUENC
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISTOCK_API_EXTERN_FLUENC_DTO
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISTOCK_API_GUI
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISTOCK_API_GUI_DTO
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISTOCK_ASPECT
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISTOCK_COMMON
+java.lang.Enum <|-- com.crolox.pistock.common.ProductStatus
+java.lang.Enum <|-- com.crolox.pistock.common.Action
+java.lang.Enum <|-- com.crolox.pistock.common.ChangedBy
+java.lang.Enum <|-- com.crolox.pistock.common.OrderType
+java.lang.Enum <|-- com.crolox.pistock.common.EmailBodyTag
+java.lang.Enum <|-- com.crolox.pistock.common.ImportType
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISTOCK_CONFIG
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISTOCK_CONTROLLER_BACKEND
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISTOCK_CONTROLLER_GUI
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISTOCK_DTO
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISTOCK_EXCEPTION
+java.lang.Exception <|-- com.crolox.pistock.exception.ApplicationException
+java.lang.Exception <|-- com.crolox.pistock.exception.ResourceNotFoundException
+java.lang.Exception <|-- com.crolox.pistock.exception.BadRequestException
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISTOCK_INTERCEPTOR
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISTOCK_MODEL
+com.crolox.pistock.model.ProductRequest <|-- com.crolox.pistock.model.Reservation
+com.crolox.pistock.model.ProductRequest <|-- com.crolox.pistock.model.Backorder
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISTOCK_ORDER
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISTOCK_POJO
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISTOCK_QUEUE
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISTOCK_REPOSITORY
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISTOCK_REQUEST_BODY
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISTOCK_SCHEDULED
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISTOCK_SERVICE
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISTOCK_UTIL
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISTOCK_VIEW
+
+!endsub
+
+' IMPLEMENT INTERFACE =======
+
+!startsub IMPLEMENTS_COM_CROLOX_PISTOCK
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISTOCK_API_EXTERN
+java.lang.Comparable <|.. com.crolox.pistock.api.extern.ProductLocationDto
+java.lang.Comparable <|.. com.crolox.pistock.api.extern.ReservationVsStockDto
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISTOCK_API_EXTERN_FLUENC
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISTOCK_API_EXTERN_FLUENC_DTO
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISTOCK_API_GUI
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISTOCK_API_GUI_DTO
+java.io.Serializable <|.. com.crolox.pistock.api.gui.dto.ProductGuiDto
+java.lang.Comparable <|.. com.crolox.pistock.api.gui.dto.ProductGuiDto
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISTOCK_ASPECT
+java.lang.annotation.Annotation <|.. com.crolox.pistock.aspect.Loggable
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISTOCK_COMMON
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISTOCK_CONFIG
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISTOCK_CONTROLLER_BACKEND
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISTOCK_CONTROLLER_GUI
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISTOCK_DTO
+java.lang.Comparable <|.. com.crolox.pistock.dto.StockDto
+java.lang.Comparable <|.. com.crolox.pistock.dto.AgbPharmacy
+java.lang.Comparable <|.. com.crolox.pistock.dto.ReceivedProductDto
+java.lang.Comparable <|.. com.crolox.pistock.dto.ZindexReservation
+java.lang.Comparable <|.. com.crolox.pistock.dto.PharmacyDto
+java.lang.Comparable <|.. com.crolox.pistock.dto.StockSnapshotDto
+java.lang.Comparable <|.. com.crolox.pistock.dto.ReservationsPerPharmacyPerMonthDto
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISTOCK_EXCEPTION
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISTOCK_INTERCEPTOR
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISTOCK_MODEL
+java.io.Serializable <|.. com.crolox.pistock.model.StockSubLocation
+java.lang.Comparable <|.. com.crolox.pistock.model.StockSubLocation
+java.io.Serializable <|.. com.crolox.pistock.model.Pharmacy
+java.lang.Comparable <|.. com.crolox.pistock.model.Pharmacy
+java.io.Serializable <|.. com.crolox.pistock.model.IdfSequence
+java.lang.Comparable <|.. com.crolox.pistock.model.Reservation
+java.io.Serializable <|.. com.crolox.pistock.model.Log
+java.io.Serializable <|.. com.crolox.pistock.model.Product
+java.lang.Comparable <|.. com.crolox.pistock.model.Product
+java.io.Serializable <|.. com.crolox.pistock.model.PharmacyLocation
+java.lang.Comparable <|.. com.crolox.pistock.model.PharmacyLocation
+java.io.Serializable <|.. com.crolox.pistock.model.ReceivedProduct
+java.lang.Comparable <|.. com.crolox.pistock.model.ReceivedProduct
+java.io.Serializable <|.. com.crolox.pistock.model.StockLocation
+java.lang.Comparable <|.. com.crolox.pistock.model.StockLocation
+java.io.Serializable <|.. com.crolox.pistock.model.ProductRequest
+java.io.Serializable <|.. com.crolox.pistock.model.StockIndicator
+java.lang.Comparable <|.. com.crolox.pistock.model.StockIndicator
+java.lang.Comparable <|.. com.crolox.pistock.model.Backorder
+java.io.Serializable <|.. com.crolox.pistock.model.Pakbon
+java.lang.Comparable <|.. com.crolox.pistock.model.Pakbon
+java.io.Serializable <|.. com.crolox.pistock.model.ProductLocation
+java.lang.Comparable <|.. com.crolox.pistock.model.ProductLocation
+java.io.Serializable <|.. com.crolox.pistock.model.Wholesale
+java.lang.Comparable <|.. com.crolox.pistock.model.Wholesale
+java.io.Serializable <|.. com.crolox.pistock.model.StockSnapshot
+java.lang.Comparable <|.. com.crolox.pistock.model.StockSnapshot
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISTOCK_ORDER
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISTOCK_POJO
+java.lang.Comparable <|.. com.crolox.pistock.pojo.Delta
+java.lang.Comparable <|.. com.crolox.pistock.pojo.OrderProposal
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISTOCK_QUEUE
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISTOCK_REPOSITORY
+com.crolox.pistock.repository.ProductRequestRepository <|.. com.crolox.pistock.repository.BackorderRepository
+com.crolox.pistock.repository.ProductRequestRepository <|.. com.crolox.pistock.repository.ReservationRepository
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISTOCK_REQUEST_BODY
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISTOCK_SCHEDULED
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISTOCK_SERVICE
+com.crolox.pistock.service.SendOrders <|.. com.crolox.pistock.service.SendOrdersThroughRabbitMQ
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISTOCK_UTIL
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISTOCK_VIEW
+
+!endsub
+
+' FIELDS =======
+
+!startsub FIELDS_COM_CROLOX_PISTOCK
+com.crolox.pistock.PiStock --> com.crolox.pistock.service.WholesaleService
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISTOCK_API_EXTERN
+com.crolox.pistock.api.extern.BackorderDtoAPI --> com.crolox.pistock.service.BackorderService
+com.crolox.pistock.api.extern.ExternApiProductDtoAPI --> com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.api.extern.ExternApiProductDtoAPI --> com.crolox.pistock.service.ProductCreationService
+com.crolox.pistock.api.extern.ExternApiProductDtoAPI --> com.crolox.pistock.service.ProductService
+com.crolox.pistock.api.extern.PharmacyLocationDtoAPI --> com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.api.extern.StockLocationDtoAPI --> com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.api.extern.StockLocationDtoAPI --> com.crolox.pistock.service.StockLocationService
+com.crolox.pistock.api.extern.ReservationDtoAPI --> com.crolox.pistock.service.ReservationService
+com.crolox.pistock.api.extern.ReservationDtoAPI --> com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.api.extern.ReservationDtoAPI --> com.crolox.pistock.service.ProductService
+com.crolox.pistock.api.extern.ProductInfoDtoAPI --> com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.api.extern.ProductInfoDtoAPI --> com.crolox.pistock.service.ProductLocationService
+com.crolox.pistock.api.extern.ProductInfoDtoAPI --> com.crolox.pistock.service.StockLocationService
+com.crolox.pistock.api.extern.ProductInfoDtoAPI --> com.crolox.pistock.service.ProductSearchService
+com.crolox.pistock.api.extern.OpenReservationsAPI --> com.crolox.pistock.service.OpenReservationsService
+com.crolox.pistock.api.extern.TempGpkEnricher --> com.crolox.pistock.service.ProductService
+com.crolox.pistock.api.extern.StockSubLocationDtoAPI --> com.crolox.pistock.service.ProductService
+com.crolox.pistock.api.extern.StockSubLocationDtoAPI --> com.crolox.pistock.service.ProductLocationService
+com.crolox.pistock.api.extern.StockSubLocationDtoAPI --> com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.api.extern.StockSubLocationDtoAPI --> com.crolox.pistock.service.ProductSearchService
+com.crolox.pistock.api.extern.StockSubLocationDtoAPI --> com.crolox.pistock.service.StockSubLocationService
+com.crolox.pistock.api.extern.StockSubLocationDtoAPI --> com.crolox.pistock.service.BackorderService
+com.crolox.pistock.api.extern.StockSubLocationDtoAPI --> com.crolox.pistock.service.ReservationService
+com.crolox.pistock.api.extern.StockSubLocationDtoAPI --> com.crolox.pistock.service.StockLocationService
+com.crolox.pistock.api.extern.ReplenishListAPI --> com.crolox.pistock.service.ReplenishListService
+com.crolox.pistock.api.extern.StockPerLocationAPI --> com.crolox.pistock.service.StockPerLocationService
+com.crolox.pistock.api.extern.ReservationVsStockDtoAPI --> com.crolox.pistock.service.ReservationVsStockService
+com.crolox.pistock.api.extern.ProductLocationDtoAPI --> com.crolox.pistock.service.ProductService
+com.crolox.pistock.api.extern.ProductLocationDtoAPI --> com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.api.extern.ProductLocationDtoAPI --> com.crolox.pistock.service.ProductLocationService
+com.crolox.pistock.api.extern.ProductLocationDtoAPI --> com.crolox.pistock.service.StockLocationService
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISTOCK_API_EXTERN_FLUENC
+com.crolox.pistock.api.extern.fluenc.StockOnLocationAPI --> com.crolox.pistock.service.ProductLocationService
+com.crolox.pistock.api.extern.fluenc.StockOnLocationAPI --> com.crolox.pistock.service.StockLocationService
+com.crolox.pistock.api.extern.fluenc.StockOnLocationAPI --> com.crolox.pistock.service.PharmacyLocationService
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISTOCK_API_EXTERN_FLUENC_DTO
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISTOCK_API_GUI
+com.crolox.pistock.api.gui.StockIndicatorAPI --> com.crolox.pistock.service.StockIndicatorService
+com.crolox.pistock.api.gui.StockIndicatorAPI --> com.crolox.pistock.service.StockInfoSenderService
+com.crolox.pistock.api.gui.ReservationsPerPharmacyPerMonthAPI --> com.crolox.pistock.service.ReservationsPerPharmacyPerMonthService
+com.crolox.pistock.api.gui.StockImportAPI --> com.crolox.pistock.service.ImportService
+com.crolox.pistock.api.gui.PakbonDtoAPI --> com.crolox.pistock.service.PakbonService
+com.crolox.pistock.api.gui.PharmacyLocationAPI --> com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.api.gui.ReservationProductLocationsDtoAPI --> com.crolox.pistock.service.ReservationService
+com.crolox.pistock.api.gui.ReservationProductLocationsDtoAPI --> com.crolox.pistock.service.ReservationsProductLocationsDtoService
+com.crolox.pistock.api.gui.PharmacyAPI --> com.crolox.pistock.service.PharmacyService
+com.crolox.pistock.api.gui.StockSnapshotAPI --> com.crolox.pistock.service.StockSnapshotService
+com.crolox.pistock.api.gui.ProductAPI --> com.crolox.pistock.service.ProductService
+com.crolox.pistock.api.gui.ProductAPI --> com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.api.gui.WholesaleAPI --> com.crolox.pistock.service.WholesaleService
+com.crolox.pistock.api.gui.OrderProposalAPI --> com.crolox.pistock.service.PharmacyService
+com.crolox.pistock.api.gui.OrderProposalAPI --> com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.api.gui.OrderProposalAPI --> com.crolox.pistock.service.OrderNewStockProposalService
+com.crolox.pistock.api.gui.OrderProposalAPI --> com.crolox.pistock.service.OrderAndReserveService
+com.crolox.pistock.api.gui.BackorderAPI --> com.crolox.pistock.service.BackorderService
+com.crolox.pistock.api.gui.StockLocationAPI --> com.crolox.pistock.service.StockLocationService
+com.crolox.pistock.api.gui.StockLocationAPI --> com.crolox.pistock.service.StockSubLocationService
+com.crolox.pistock.api.gui.ReservationAPI --> com.crolox.pistock.service.ReservationService
+com.crolox.pistock.api.gui.ReservationAPI --> com.crolox.pistock.service.ReservationsPerPharmacyPerMonthService
+com.crolox.pistock.api.gui.ProductSearchAPI --> com.crolox.pistock.service.ProductSearchService
+com.crolox.pistock.api.gui.ProductSearchAPI --> com.crolox.pistock.service.ProductService
+com.crolox.pistock.api.gui.DeltaAPI --> com.crolox.pistock.service.DeltaService
+com.crolox.pistock.api.gui.DeltaAPI --> com.crolox.pistock.service.BackorderService
+com.crolox.pistock.api.gui.DeltaAPI --> com.crolox.pistock.service.ReservationService
+com.crolox.pistock.api.gui.DeltaAPI --> com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.api.gui.ReceivedProductDtosAPI --> com.crolox.pistock.service.ReceivedProductService
+com.crolox.pistock.api.gui.StockSubLocationAPI --> com.crolox.pistock.service.StockSubLocationService
+com.crolox.pistock.api.gui.PakbonAPI --> com.crolox.pistock.service.PakbonService
+com.crolox.pistock.api.gui.ProductLocationAPI --> com.crolox.pistock.common.ChangedBy
+com.crolox.pistock.api.gui.ProductLocationAPI --> com.crolox.pistock.service.ProductLocationService
+com.crolox.pistock.api.gui.ProductLocationAPI --> com.crolox.pistock.service.StockLocationService
+com.crolox.pistock.api.gui.ProductLocationAPI --> com.crolox.pistock.service.StockSubLocationService
+com.crolox.pistock.api.gui.StockDtoAPI --> com.crolox.pistock.service.StockDtoService
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISTOCK_API_GUI_DTO
+com.crolox.pistock.api.gui.dto.ProductGuiDto --> com.crolox.pistock.common.ProductStatus
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISTOCK_ASPECT
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISTOCK_COMMON
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISTOCK_CONFIG
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISTOCK_CONTROLLER_BACKEND
+com.crolox.pistock.controller.backend.ProductOrderController --> com.crolox.pistock.service.WholesaleService
+com.crolox.pistock.controller.backend.ProductOrderController --> com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.controller.backend.ProductOrderController --> com.crolox.pistock.service.PharmacyService
+com.crolox.pistock.controller.backend.ProductOrderController --> com.crolox.pistock.service.OrderAndReserveService
+com.crolox.pistock.controller.backend.ProductOrderController --> com.crolox.pistock.order.OrderService
+com.crolox.pistock.controller.backend.LocalProductsController --> com.crolox.pistock.service.ProductService
+com.crolox.pistock.controller.backend.ProductWriteOffController --> com.crolox.pistock.common.ChangedBy
+com.crolox.pistock.controller.backend.ProductWriteOffController --> com.crolox.pistock.service.ProductLocationService
+com.crolox.pistock.controller.backend.ReservationController --> com.crolox.pistock.service.ReservationService
+com.crolox.pistock.controller.backend.ImportController --> com.crolox.pistock.service.ImportService
+com.crolox.pistock.controller.backend.ImportController --> com.crolox.pistock.service.PakbonFileService
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISTOCK_CONTROLLER_GUI
+com.crolox.pistock.controller.gui.MainController --> com.crolox.pistock.service.ProductService
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISTOCK_DTO
+com.crolox.pistock.dto.StockDto --> com.crolox.pistock.model.ProductLocation
+com.crolox.pistock.dto.OrderQuantityWholesaleDto --> com.crolox.pistock.model.Wholesale
+com.crolox.pistock.dto.ImportRecordData --> com.crolox.pistock.common.ImportType
+com.crolox.pistock.dto.PakbonDto --> com.crolox.pistock.model.Pakbon
+com.crolox.pistock.dto.ReservationDto --> com.crolox.odessa.pickorderio.entity.HeaderType
+com.crolox.pistock.dto.ReservationDto --> com.crolox.odessa.pickorderio.entity.ShippingInfoType
+com.crolox.pistock.dto.EmbeddedProductListWrapper --> com.crolox.pistock.dto.EmbeddedProductList
+com.crolox.pistock.dto.PharmacyDto --> com.crolox.pistock.common.OrderType
+com.crolox.pistock.dto.PharmacyDto --> com.crolox.pistock.model.Wholesale
+com.crolox.pistock.dto.ProductOrderDto --> com.crolox.pistock.dto.PharmacyDto
+com.crolox.pistock.dto.ProductDto --> com.crolox.pistock.dto.PharmacyDto
+com.crolox.pistock.dto.ImportFileRecordDto --> com.crolox.pistock.common.ProductStatus
+com.crolox.pistock.dto.ReservationsProductLocationsDto --> com.crolox.pistock.model.Reservation
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISTOCK_EXCEPTION
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISTOCK_INTERCEPTOR
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISTOCK_MODEL
+com.crolox.pistock.model.Pharmacy --> com.crolox.pistock.common.OrderType
+com.crolox.pistock.model.Pharmacy --> com.crolox.pistock.model.Wholesale
+com.crolox.pistock.model.Log --> com.crolox.pistock.common.Action
+com.crolox.pistock.model.Product --> com.crolox.pistock.common.ProductStatus
+com.crolox.pistock.model.Pakbon --> com.crolox.pistock.dto.IntInt
+com.crolox.pistock.model.ProductLocation --> com.crolox.pistock.common.ChangedBy
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISTOCK_ORDER
+com.crolox.pistock.order.OrderService --> com.crolox.pistock.service.ReservationService
+com.crolox.pistock.order.OrderService --> com.crolox.pistock.service.ProductService
+com.crolox.pistock.order.OrderService --> com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.order.OrderService --> com.crolox.pistock.service.PharmacyService
+com.crolox.pistock.order.OrderService --> com.crolox.pistock.service.OrderAndReserveService
+com.crolox.pistock.order.OrderService --> com.crolox.pistock.service.BackorderService
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISTOCK_POJO
+com.crolox.pistock.pojo.StockInfoFile --> com.crolox.pistock.pojo.SftpParameters
+com.crolox.pistock.pojo.Delta --> com.crolox.pistock.common.ProductStatus
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISTOCK_QUEUE
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISTOCK_REPOSITORY
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISTOCK_REQUEST_BODY
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISTOCK_SCHEDULED
+com.crolox.pistock.scheduled.StackProcessing --> com.crolox.pistock.service.ProductCreationService
+com.crolox.pistock.scheduled.StackProcessing --> com.crolox.pistock.service.BackorderService
+com.crolox.pistock.scheduled.ReportsDataCollector --> com.crolox.pistock.repository.StockSnapshotRepository
+com.crolox.pistock.scheduled.ReportsDataCollector --> com.crolox.pistock.repository.PharmacyLocationRepository
+com.crolox.pistock.scheduled.ReportsDataCollector --> com.crolox.pistock.service.ProductService
+com.crolox.pistock.scheduled.StockInfoSender --> com.crolox.pistock.service.StockInfoSenderService
+com.crolox.pistock.scheduled.StockReducer --> com.crolox.pistock.service.WriteOffService
+com.crolox.pistock.scheduled.BvgOrderSender --> com.crolox.pistock.service.SendOrders
+com.crolox.pistock.scheduled.Housekeeping --> com.crolox.pistock.service.BackorderService
+com.crolox.pistock.scheduled.Housekeeping --> com.crolox.pistock.repository.StockSnapshotRepository
+com.crolox.pistock.scheduled.Housekeeping --> com.crolox.pistock.service.ReservationService
+com.crolox.pistock.scheduled.AddStock --> com.crolox.pistock.service.OrderNewStockService
+com.crolox.pistock.scheduled.EnrichingBackordersWithProductInfo --> com.crolox.pistock.service.BackorderService
+com.crolox.pistock.scheduled.EnrichingBackordersWithProductInfo --> com.crolox.pistock.service.ProductSearchService
+com.crolox.pistock.scheduled.EnrichingBackordersWithProductInfo --> com.crolox.pistock.service.ProductService
+com.crolox.pistock.scheduled.EnrichingBackordersWithProductInfo --> com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.scheduled.UpdateProductsAIP --> com.crolox.pistock.service.ProductService
+com.crolox.pistock.scheduled.MailOrderSender --> com.crolox.pistock.queue.MailOrderProcessingQueue
+com.crolox.pistock.scheduled.MailOrderSender --> com.crolox.pistock.service.SendOrders
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISTOCK_SERVICE
+com.crolox.pistock.service.OrderNewStockProposalService --> com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.service.OrderNewStockProposalService --> com.crolox.pistock.service.BackorderService
+com.crolox.pistock.service.OrderNewStockProposalService --> com.crolox.pistock.service.ReservationService
+com.crolox.pistock.service.OrderNewStockProposalService --> com.crolox.pistock.service.ProductService
+com.crolox.pistock.service.OrderNewStockProposalService --> com.crolox.pistock.service.WholesaleService
+com.crolox.pistock.service.OrderNewStockProposalService --> com.crolox.pistock.service.PharmacyService
+com.crolox.pistock.service.OpenReservationsService --> com.crolox.pistock.repository.OpenReservationsRepository
+com.crolox.pistock.service.ReservationVsStockService --> com.crolox.pistock.service.ReservationService
+com.crolox.pistock.service.ReservationVsStockService --> com.crolox.pistock.service.ProductLocationService
+com.crolox.pistock.service.OrderAndReserveService --> com.crolox.pistock.service.PharmacyService
+com.crolox.pistock.service.OrderAndReserveService --> com.crolox.pistock.service.ProductService
+com.crolox.pistock.service.OrderAndReserveService --> com.crolox.pistock.service.ProductLocationService
+com.crolox.pistock.service.OrderAndReserveService --> com.crolox.pistock.service.ReservationService
+com.crolox.pistock.service.OrderAndReserveService --> com.crolox.pistock.service.BackorderService
+com.crolox.pistock.service.OrderAndReserveService --> com.crolox.pistock.service.IdfSequenceService
+com.crolox.pistock.service.OrderAndReserveService --> com.crolox.pistock.queue.MailOrderProcessingQueue
+com.crolox.pistock.service.ReplenishListService --> com.crolox.pistock.repository.ReplenishListRepository
+com.crolox.pistock.service.ReservationsProductLocationsDtoService --> com.crolox.pistock.service.ReservationService
+com.crolox.pistock.service.ReservationsProductLocationsDtoService --> com.crolox.pistock.service.ProductLocationService
+com.crolox.pistock.service.ReservationsProductLocationsDtoService --> com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.service.ReservationsProductLocationsDtoService --> com.crolox.pistock.service.StockLocationService
+com.crolox.pistock.service.SendOrdersThroughRabbitMQ --> com.crolox.pistock.service.SlackService
+com.crolox.pistock.service.PakbonInfo --> com.crolox.pistock.model.PharmacyLocation
+com.crolox.pistock.service.BackorderService --> com.crolox.pistock.repository.ProductRepository
+com.crolox.pistock.service.BackorderService --> com.crolox.pistock.repository.BackorderRepository
+com.crolox.pistock.service.PakbonService --> com.crolox.pistock.common.ChangedBy
+com.crolox.pistock.service.PakbonService --> com.crolox.pistock.repository.PakbonRepository
+com.crolox.pistock.service.PakbonService --> com.crolox.pistock.service.ReceivedProductService
+com.crolox.pistock.service.PakbonService --> com.crolox.pistock.service.ProductLocationService
+com.crolox.pistock.service.PakbonService --> com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.service.PakbonService --> com.crolox.pistock.service.StockLocationService
+com.crolox.pistock.service.WriteOffService --> com.crolox.pistock.service.ReservationService
+com.crolox.pistock.service.WriteOffService --> com.crolox.pistock.service.BackorderService
+com.crolox.pistock.service.WriteOffService --> com.crolox.pistock.service.ProductLocationService
+com.crolox.pistock.service.SlackService --> com.slack.api.Slack
+com.crolox.pistock.service.StockSubLocationService --> com.crolox.pistock.repository.StockSubLocationRepository
+com.crolox.pistock.service.StockSubLocationService --> com.crolox.pistock.repository.StockLocationRepository
+com.crolox.pistock.service.StockSubLocationService --> com.crolox.pistock.service.ProductLocationService
+com.crolox.pistock.service.StockIndicatorService --> com.crolox.pistock.repository.StockIndicatorRepository
+com.crolox.pistock.service.StockIndicatorService --> com.crolox.pistock.service.SendOrders
+com.crolox.pistock.service.ProductLocationService --> com.crolox.pistock.repository.ProductLocationRepository
+com.crolox.pistock.service.ProductLocationService --> com.crolox.pistock.service.ProductService
+com.crolox.pistock.service.ProductLocationService --> com.crolox.pistock.repository.StockLocationRepository
+com.crolox.pistock.service.ProductLocationService --> com.crolox.pistock.service.ReservationService
+com.crolox.pistock.service.ProductLocationService --> com.crolox.pistock.repository.PharmacyLocationRepository
+com.crolox.pistock.service.PakbonFileService --> com.crolox.pistock.service.PakbonReceiver
+com.crolox.pistock.service.PakbonReceiver --> com.crolox.pistock.service.ProductSearchService
+com.crolox.pistock.service.PakbonReceiver --> com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.service.PakbonReceiver --> com.crolox.pistock.service.ReceivedProductService
+com.crolox.pistock.service.PakbonReceiver --> com.crolox.pistock.service.ProductLocationService
+com.crolox.pistock.service.PakbonReceiver --> com.crolox.pistock.repository.ProductRepository
+com.crolox.pistock.service.PakbonReceiver --> com.crolox.pistock.service.BackorderService
+com.crolox.pistock.service.PakbonReceiver --> com.crolox.pistock.service.PharmacyService
+com.crolox.pistock.service.PakbonReceiver --> com.crolox.pistock.service.PakbonService
+com.crolox.pistock.service.StockDtoService --> com.crolox.pistock.service.ProductService
+com.crolox.pistock.service.StockDtoService --> com.crolox.pistock.service.ProductLocationService
+com.crolox.pistock.service.StockDtoService --> com.crolox.pistock.service.ReservationService
+com.crolox.pistock.service.StockDtoService --> com.crolox.pistock.service.BackorderService
+com.crolox.pistock.service.StockDtoService --> com.crolox.pistock.service.StockLocationService
+com.crolox.pistock.service.StockDtoService --> com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.service.ReservationsPerPharmacyPerMonthService --> com.crolox.pistock.repository.ReservationRepository
+com.crolox.pistock.service.DeltaService --> com.crolox.pistock.service.BackorderService
+com.crolox.pistock.service.DeltaService --> com.crolox.pistock.service.ReservationService
+com.crolox.pistock.service.DeltaService --> com.crolox.pistock.service.ProductService
+com.crolox.pistock.service.DeltaService --> com.crolox.pistock.service.ProductSearchService
+com.crolox.pistock.service.DeltaService --> com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.service.DeltaService --> com.crolox.pistock.repository.ProductLocationRepository
+com.crolox.pistock.service.ImportService --> com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.service.ImportService --> com.crolox.pistock.service.ProductLocationService
+com.crolox.pistock.service.ImportService --> com.crolox.pistock.service.ProductService
+com.crolox.pistock.service.ImportService --> com.crolox.pistock.service.StockLocationService
+com.crolox.pistock.service.ImportService --> com.crolox.pistock.service.StockSubLocationService
+com.crolox.pistock.service.ProductService$1 --> com.crolox.pistock.service.ProductService
+com.crolox.pistock.service.ProductSearchService$1 --> com.crolox.pistock.service.ProductSearchService
+com.crolox.pistock.service.WholesaleService --> com.crolox.pistock.repository.WholesaleRepository
+com.crolox.pistock.service.ProductSearchService$3 --> com.crolox.pistock.service.ProductSearchService
+com.crolox.pistock.service.ProductSearchService$2 --> com.crolox.pistock.service.ProductSearchService
+com.crolox.pistock.service.PharmacyService --> com.crolox.pistock.repository.PharmacyRepository
+com.crolox.pistock.service.PharmacyService --> com.crolox.pistock.repository.ProductRepository
+com.crolox.pistock.service.PharmacyService --> com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.service.PharmacyService --> com.crolox.pistock.service.WholesaleService
+com.crolox.pistock.service.StockSnapshotService --> com.crolox.pistock.repository.StockSnapshotRepository
+com.crolox.pistock.service.ProductService --> com.crolox.pistock.repository.ProductRepository
+com.crolox.pistock.service.ProductService --> com.crolox.pistock.repository.ProductLocationRepository
+com.crolox.pistock.service.ProductService --> com.crolox.pistock.service.ProductSearchService
+com.crolox.pistock.service.ProductService --> com.crolox.pistock.repository.PharmacyLocationRepository
+com.crolox.pistock.service.ProductService --> com.crolox.pistock.repository.StockLocationRepository
+com.crolox.pistock.service.ProductService --> com.crolox.pistock.service.ReservationService
+com.crolox.pistock.service.ProductService --> com.crolox.pistock.service.PharmacyService
+com.crolox.pistock.service.ProductService --> com.crolox.pistock.repository.ProductGuiDtoRepository
+com.crolox.pistock.service.OrderNewStockService --> com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.service.OrderNewStockService --> com.crolox.pistock.service.OrderNewStockProposalService
+com.crolox.pistock.service.OrderNewStockService --> com.crolox.pistock.service.OrderAndReserveService
+com.crolox.pistock.service.OrderNewStockService --> com.crolox.pistock.service.PharmacyService
+com.crolox.pistock.service.ReservationService --> com.crolox.pistock.repository.ReservationRepository
+com.crolox.pistock.service.ReservationService --> com.crolox.pistock.repository.ProductRepository
+com.crolox.pistock.service.PharmacyLocationService --> com.crolox.pistock.repository.PharmacyLocationRepository
+com.crolox.pistock.service.PharmacyLocationService --> com.crolox.pistock.service.StockLocationService
+com.crolox.pistock.service.PharmacyLocationService --> com.crolox.pistock.service.WholesaleService
+com.crolox.pistock.service.PharmacyLocationService --> com.crolox.pistock.repository.ProductRepository
+com.crolox.pistock.service.ProductCreationService --> com.crolox.pistock.service.ProductService
+com.crolox.pistock.service.ProductCreationService --> com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.service.StockLocationService --> com.crolox.pistock.repository.ProductLocationRepository
+com.crolox.pistock.service.StockLocationService --> com.crolox.pistock.repository.StockLocationRepository
+com.crolox.pistock.service.IdfSequenceService --> com.crolox.pistock.repository.IdfSequenceRepository
+com.crolox.pistock.service.StockPerLocationService --> com.crolox.pistock.repository.StockPerLocationRepository
+com.crolox.pistock.service.StockInfoSenderService --> com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.service.StockInfoSenderService --> com.crolox.pistock.service.StockIndicatorService
+com.crolox.pistock.service.StockInfoSenderService --> com.crolox.pistock.service.ProductService
+com.crolox.pistock.service.StockInfoSenderService --> com.crolox.pistock.service.DigipharmaService
+com.crolox.pistock.service.ReceivedProductService --> com.crolox.pistock.repository.ReceivedProductRepository
+com.crolox.pistock.service.ReceivedProductService --> com.crolox.pistock.repository.ProductRepository
+com.crolox.pistock.service.ReceivedProductService --> com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.service.ReceivedProductService --> com.crolox.pistock.service.StockLocationService
+com.crolox.pistock.service.ReceivedProductService --> com.crolox.pistock.service.ProductLocationService
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISTOCK_UTIL
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISTOCK_VIEW
+
+!endsub
+
+' USES =======
+
+!startsub USES_COM_CROLOX_PISTOCK
+com.crolox.pistock.PiStock ..> com.crolox.pistock.service.PakbonReceiver
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISTOCK_API_EXTERN
+com.crolox.pistock.api.extern.PharmacyLocationDto ..> com.crolox.pistock.model.PharmacyLocation
+com.crolox.pistock.api.extern.ExternApiProductDtoAPI ..> com.crolox.pistock.api.extern.ExternApiProductDto
+com.crolox.pistock.api.extern.PharmacyLocationDtoAPI ..> com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.api.extern.StockLocationDtoAPI ..> com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.api.extern.StockLocationDtoAPI ..> com.crolox.pistock.service.StockLocationService
+com.crolox.pistock.api.extern.ReservationDtoAPI ..> com.crolox.pistock.api.extern.ReservationDto
+com.crolox.pistock.api.extern.ReservationDtoAPI ..> com.crolox.odessa.pickorderio.entity.ShippingInfoType
+com.crolox.pistock.api.extern.ReservationDtoAPI ..> com.crolox.odessa.pickorderio.entity.HeaderType
+com.crolox.pistock.api.extern.ProductLocationDto ..> com.crolox.pistock.model.ProductLocation
+com.crolox.pistock.api.extern.ProductRequestDtoAPI ..> com.crolox.odessa.dto.ReceiptBarcodes
+com.crolox.pistock.api.extern.ProductInfoDtoAPI ..> com.crolox.pistock.api.extern.ZindexNumbers
+com.crolox.pistock.api.extern.ProductInfoDtoAPI ..> com.crolox.pistock.api.extern.Stock
+com.crolox.pistock.api.extern.ProductInfoDtoAPI ..> com.crolox.pistock.api.extern.ProductLocationDto
+com.crolox.pistock.api.extern.ProductInfoDtoAPI ..> com.crolox.pistock.model.ProductLocation
+com.crolox.pistock.api.extern.ProductInfoDtoAPI ..> com.crolox.pistock.model.StockLocation
+com.crolox.pistock.api.extern.ProductInfoDtoAPI ..> com.crolox.pistock.api.extern.ProductInfoDto
+com.crolox.pistock.api.extern.ProductInfoDtoAPI ..> com.crolox.pistock.dto.ProductDto
+com.crolox.pistock.api.extern.StockSubLocationDtoAPI ..> com.crolox.pistock.api.extern.StockSubLocationDto
+com.crolox.pistock.api.extern.StockSubLocationDtoAPI ..> com.crolox.pistock.model.Product
+com.crolox.pistock.api.extern.StockSubLocationDtoAPI ..> com.crolox.pistock.model.PharmacyLocation
+com.crolox.pistock.api.extern.StockSubLocationDtoAPI ..> com.crolox.pistock.model.StockSubLocation
+com.crolox.pistock.api.extern.StockSubLocationDtoAPI ..> com.crolox.pistock.service.ProductService
+com.crolox.pistock.api.extern.StockSubLocationDtoAPI ..> com.crolox.pistock.service.ProductLocationService
+com.crolox.pistock.api.extern.StockSubLocationDtoAPI ..> com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.api.extern.StockSubLocationDtoAPI ..> com.crolox.pistock.service.ProductSearchService
+com.crolox.pistock.api.extern.StockSubLocationDtoAPI ..> com.crolox.pistock.service.StockSubLocationService
+com.crolox.pistock.api.extern.StockSubLocationDtoAPI ..> com.crolox.pistock.service.BackorderService
+com.crolox.pistock.api.extern.StockSubLocationDtoAPI ..> com.crolox.pistock.service.ReservationService
+com.crolox.pistock.api.extern.StockSubLocationDtoAPI ..> com.crolox.pistock.service.StockLocationService
+com.crolox.pistock.api.extern.StockLocationDto ..> com.crolox.pistock.model.StockLocation
+com.crolox.pistock.api.extern.ProductLocationDtoAPI ..> com.crolox.pistock.service.ProductService
+com.crolox.pistock.api.extern.ProductLocationDtoAPI ..> com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.api.extern.ProductLocationDtoAPI ..> com.crolox.pistock.service.ProductLocationService
+com.crolox.pistock.api.extern.ProductLocationDtoAPI ..> com.crolox.pistock.service.StockLocationService
+com.crolox.pistock.api.extern.ProductInfoDto ..> com.crolox.pistock.api.extern.Stock
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISTOCK_API_EXTERN_FLUENC
+com.crolox.pistock.api.extern.fluenc.StockOnLocationAPI ..> com.crolox.pistock.api.extern.fluenc.dto.StockOnPharmacyLocation
+com.crolox.pistock.api.extern.fluenc.StockOnLocationAPI ..> com.crolox.pistock.model.ProductLocation
+com.crolox.pistock.api.extern.fluenc.StockOnLocationAPI ..> com.crolox.pistock.api.extern.fluenc.dto.StockOnLocation
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISTOCK_API_EXTERN_FLUENC_DTO
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISTOCK_API_GUI
+com.crolox.pistock.api.gui.StockIndicatorAPI ..> com.crolox.pistock.model.StockIndicator
+com.crolox.pistock.api.gui.PakbonDtoAPI ..> com.crolox.pistock.dto.PakbonDto
+com.crolox.pistock.api.gui.PharmacyLocationAPI ..> com.crolox.pistock.model.PharmacyLocation
+com.crolox.pistock.api.gui.PharmacyLocationAPI ..> com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.api.gui.PharmacyAPI ..> com.crolox.pistock.model.Pharmacy
+com.crolox.pistock.api.gui.PharmacyAPI ..> com.crolox.pistock.service.PharmacyService
+com.crolox.pistock.api.gui.StockSnapshotAPI ..> com.crolox.pistock.service.StockSnapshotService
+com.crolox.pistock.api.gui.ProductAPI ..> com.crolox.pistock.model.Product
+com.crolox.pistock.api.gui.ProductAPI ..> com.crolox.pistock.service.ProductService
+com.crolox.pistock.api.gui.ProductAPI ..> com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.api.gui.WholesaleAPI ..> com.crolox.pistock.model.Wholesale
+com.crolox.pistock.api.gui.WholesaleAPI ..> com.crolox.pistock.service.WholesaleService
+com.crolox.pistock.api.gui.OrderProposalAPI ..> com.crolox.pistock.pojo.OrderProposals
+com.crolox.pistock.api.gui.OrderProposalAPI ..> com.crolox.pistock.service.PharmacyService
+com.crolox.pistock.api.gui.OrderProposalAPI ..> com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.api.gui.OrderProposalAPI ..> com.crolox.pistock.service.OrderNewStockProposalService
+com.crolox.pistock.api.gui.OrderProposalAPI ..> com.crolox.pistock.service.OrderAndReserveService
+com.crolox.pistock.api.gui.StockLocationAPI ..> com.crolox.pistock.model.StockLocation
+com.crolox.pistock.api.gui.StockLocationAPI ..> com.crolox.pistock.service.StockLocationService
+com.crolox.pistock.api.gui.StockLocationAPI ..> com.crolox.pistock.service.StockSubLocationService
+com.crolox.pistock.api.gui.StockSubLocationAPI ..> com.crolox.pistock.model.StockSubLocation
+com.crolox.pistock.api.gui.StockSubLocationAPI ..> com.crolox.pistock.service.StockSubLocationService
+com.crolox.pistock.api.gui.ProductLocationAPI ..> com.crolox.pistock.model.ProductLocation
+com.crolox.pistock.api.gui.ProductLocationAPI ..> com.crolox.pistock.service.ProductLocationService
+com.crolox.pistock.api.gui.ProductLocationAPI ..> com.crolox.pistock.service.StockLocationService
+com.crolox.pistock.api.gui.ProductLocationAPI ..> com.crolox.pistock.service.StockSubLocationService
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISTOCK_API_GUI_DTO
+com.crolox.pistock.api.gui.dto.ProductGuiDto ..> com.crolox.pistock.common.ProductStatus
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISTOCK_ASPECT
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISTOCK_COMMON
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISTOCK_CONFIG
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISTOCK_CONTROLLER_BACKEND
+com.crolox.pistock.controller.backend.ProductOrderController ..> com.crolox.odessa.dto.OrderAndReserveResponse
+com.crolox.pistock.controller.backend.ProductOrderController ..> com.crolox.odessa.dto.OrderAndReserveRequestsWrapper
+com.crolox.pistock.controller.backend.ProductOrderController ..> com.crolox.pistock.order.OrderPeriodSelection
+com.crolox.pistock.controller.backend.LocalProductsController ..> com.crolox.odessa.pickorderio.entity.ProductsType
+com.crolox.pistock.controller.backend.LocalProductsController ..> com.crolox.pistock.pojo.AgbZindexNumbers
+com.crolox.pistock.controller.backend.ProductWriteOffController ..> com.crolox.pistock.dto.ProductWriteOffDto
+com.crolox.pistock.controller.backend.ProductOrderHelper ..> com.crolox.pistock.controller.backend.ProductOderHelperPrescriptionAmount
+com.crolox.pistock.controller.backend.ReservationController ..> com.crolox.odessa.pickorderio.entity.ProductLocationInfosType
+com.crolox.pistock.controller.backend.ReservationController ..> com.crolox.odessa.dto.PickorderLineKeys
+com.crolox.pistock.controller.backend.ReservationController ..> com.crolox.pistock.model.Reservation
+com.crolox.pistock.controller.backend.ReservationController ..> com.crolox.odessa.pickorderio.entity.ProductLocationInfoType
+com.crolox.pistock.controller.backend.ReservationController ..> com.crolox.odessa.dto.PickorderLineKeysPerAgbCode
+com.crolox.pistock.controller.backend.ReservationController ..> com.crolox.odessa.dto.PickorderLineKey
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISTOCK_CONTROLLER_GUI
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISTOCK_DTO
+com.crolox.pistock.dto.StockDto ..> com.crolox.pistock.model.ProductLocation
+com.crolox.pistock.dto.BvgOrderDto ..> com.crolox.pistock.dto.PharmacyDto
+com.crolox.pistock.dto.ReceivedProductDto ..> com.crolox.pistock.model.ReceivedProduct
+com.crolox.pistock.dto.ReceivedProductDto ..> com.crolox.pistock.model.ProductLocation
+com.crolox.pistock.dto.OrderQuantityWholesaleDto ..> com.crolox.pistock.model.Wholesale
+com.crolox.pistock.dto.ImportRecordData ..> com.crolox.pistock.common.ImportType
+com.crolox.pistock.dto.PakbonDto ..> com.crolox.pistock.model.Pakbon
+com.crolox.pistock.dto.ReservationDto ..> com.crolox.odessa.pickorderio.entity.HeaderType
+com.crolox.pistock.dto.ReservationDto ..> com.crolox.odessa.pickorderio.entity.ShippingInfoType
+com.crolox.pistock.dto.ReservationDto ..> com.crolox.pistock.model.Reservation
+com.crolox.pistock.dto.ReservationDto ..> com.crolox.odessa.dto.ReceiptAgbCodeReceiptBarcode
+com.crolox.pistock.dto.EmbeddedProductListWrapper ..> com.crolox.pistock.dto.EmbeddedProductList
+com.crolox.pistock.dto.PharmacyDto ..> com.crolox.pistock.model.Pharmacy
+com.crolox.pistock.dto.PharmacyDto ..> com.crolox.pistock.model.Wholesale
+com.crolox.pistock.dto.PharmacyDto ..> com.crolox.pistock.common.OrderType
+com.crolox.pistock.dto.ProductOrderDto ..> com.crolox.pistock.dto.PharmacyDto
+com.crolox.pistock.dto.ProductDto ..> com.crolox.pistock.dto.PharmacyDto
+com.crolox.pistock.dto.ImportFileRecordDto ..> com.crolox.pistock.common.ProductStatus
+com.crolox.pistock.dto.ReservationsProductLocationsDto ..> com.crolox.pistock.model.Reservation
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISTOCK_EXCEPTION
+com.crolox.pistock.exception.GlobalExceptionHandler ..> com.crolox.pistock.exception.ResourceNotFoundException
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISTOCK_INTERCEPTOR
+com.crolox.pistock.interceptor.StockChangeTracker ..> com.crolox.pistock.model.ProductLocation
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISTOCK_MODEL
+com.crolox.pistock.model.Pharmacy ..> com.crolox.pistock.model.Wholesale
+com.crolox.pistock.model.Pharmacy ..> com.crolox.pistock.common.OrderType
+com.crolox.pistock.model.Reservation ..> com.crolox.odessa.pickorderio.entity.HeaderType
+com.crolox.pistock.model.Reservation ..> com.crolox.odessa.pickorderio.entity.ShippingInfoType
+com.crolox.pistock.model.Log ..> com.crolox.pistock.common.Action
+com.crolox.pistock.model.Product ..> com.crolox.pistock.dto.ProductDto
+com.crolox.pistock.model.Product ..> com.crolox.pistock.common.ProductStatus
+com.crolox.pistock.model.ProductRequest ..> com.crolox.odessa.pickorderio.entity.HeaderType
+com.crolox.pistock.model.ProductRequest ..> com.crolox.pistock.common.ChangedBy
+com.crolox.pistock.model.Backorder ..> com.crolox.odessa.pickorderio.entity.HeaderType
+com.crolox.pistock.model.Pakbon ..> com.crolox.pistock.dto.IntInt
+com.crolox.pistock.model.ProductLocation ..> com.crolox.pistock.common.ChangedBy
+com.crolox.pistock.model.ProductLocation ..> com.crolox.pistock.api.extern.fluenc.dto.Location
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISTOCK_ORDER
+com.crolox.pistock.order.OrderService ..> com.crolox.pistock.order.OrderPeriodSelection
+com.crolox.pistock.order.OrderService ..> com.crolox.pistock.dto.PharmacyDto
+com.crolox.pistock.order.OrderService ..> com.crolox.odessa.pickorderio.entity.HeaderType
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISTOCK_POJO
+com.crolox.pistock.pojo.StockInfoFile ..> com.crolox.pistock.pojo.SftpParameters
+com.crolox.pistock.pojo.Delta ..> com.crolox.pistock.common.ProductStatus
+com.crolox.pistock.pojo.EatBackordersRequestMessage ..> com.crolox.pistock.model.Reservation
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISTOCK_QUEUE
+com.crolox.pistock.queue.BVGOrderProcessingQueue ..> com.crolox.pistock.dto.BvgOrder
+com.crolox.pistock.queue.ProductCreationStack ..> com.crolox.pistock.request.body.ProductCreationMessage
+com.crolox.pistock.queue.ReceiptBarcodeQueueHandler ..> com.crolox.odessa.dto.ReceiptBarcodes
+com.crolox.pistock.queue.MailOrderProcessingQueue ..> com.crolox.pistock.dto.MailOrder
+com.crolox.pistock.queue.CentralBVGOrderProcessingQueue ..> com.crolox.pistock.dto.BvgOrderDto
+com.crolox.pistock.queue.BackorderEatingStack ..> com.crolox.pistock.pojo.EatBackordersRequestMessage
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISTOCK_REPOSITORY
+com.crolox.pistock.repository.PharmacyLocationRepository ..> com.crolox.pistock.model.PharmacyLocation
+com.crolox.pistock.repository.ProductRepository ..> com.crolox.pistock.model.Product
+com.crolox.pistock.repository.ProductRequestRepository ..> com.crolox.pistock.model.ProductRequest
+com.crolox.pistock.repository.ProductLocationRepository ..> com.crolox.pistock.model.ProductLocation
+com.crolox.pistock.repository.StockLocationRepository ..> com.crolox.pistock.model.StockLocation
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISTOCK_REQUEST_BODY
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISTOCK_SCHEDULED
+com.crolox.pistock.scheduled.ReportsDataCollector ..> com.crolox.pistock.model.StockSnapshot
+com.crolox.pistock.scheduled.StockReducer ..> com.crolox.odessa.dto.ReceiptBarcodes
+com.crolox.pistock.scheduled.StockReducer ..> com.crolox.odessa.dto.ReceiptAgbCodeReceiptBarcode
+com.crolox.pistock.scheduled.BvgOrderSender ..> com.crolox.pistock.dto.BvgOrder
+com.crolox.pistock.scheduled.BvgOrderSender ..> com.crolox.pistock.dto.BvgOrderDto
+com.crolox.pistock.scheduled.EnrichingBackordersWithProductInfo ..> com.crolox.pistock.model.Backorder
+com.crolox.pistock.scheduled.EnrichingBackordersWithProductInfo ..> com.crolox.pistock.dto.ProductDto
+com.crolox.pistock.scheduled.MailOrderSender ..> com.crolox.pistock.dto.MailOrder
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISTOCK_SERVICE
+com.crolox.pistock.service.OrderNewStockProposalService ..> com.crolox.odessa.dto.OrderAndReserveRequestsWrapper
+com.crolox.pistock.service.OrderNewStockProposalService ..> com.crolox.pistock.model.PharmacyLocation
+com.crolox.pistock.service.OrderNewStockProposalService ..> com.crolox.pistock.dto.PharmacyDto
+com.crolox.pistock.service.ReservationVsStockService ..> com.crolox.pistock.api.extern.ReservationVsStockDto
+com.crolox.pistock.service.ReservationVsStockService ..> com.crolox.pistock.model.ProductLocation
+com.crolox.pistock.service.DigipharmaService ..> com.crolox.pistock.model.StockIndicator
+com.crolox.pistock.service.OrderAndReserveService ..> com.crolox.pistock.order.OrderTotals
+com.crolox.pistock.service.OrderAndReserveService ..> com.crolox.odessa.dto.OrderAndReserveRequestsWrapper
+com.crolox.pistock.service.OrderAndReserveService ..> com.crolox.pistock.dto.PharmacyDto
+com.crolox.pistock.service.OrderAndReserveService ..> com.crolox.pistock.model.PharmacyLocation
+com.crolox.pistock.service.OrderAndReserveService ..> com.crolox.odessa.pickorderio.entity.HeaderType
+com.crolox.pistock.service.OrderAndReserveService ..> com.crolox.odessa.dto.OrderAndReserveResponse
+com.crolox.pistock.service.OrderAndReserveService ..> com.crolox.pistock.model.Wholesale
+com.crolox.pistock.service.OrderAndReserveService ..> com.crolox.pistock.model.IdfSequence
+com.crolox.pistock.service.OrderAndReserveService ..> com.crolox.pistock.service.OrderAndReserveService$QuantityInStockAndLocations
+com.crolox.pistock.service.OrderAndReserveService ..> com.crolox.pistock.model.ProductLocation
+com.crolox.pistock.service.OrderAndReserveService ..> com.crolox.odessa.dto.OrderAndReserveRequest
+com.crolox.pistock.service.OrderAndReserveService ..> com.crolox.pistock.dto.ReceiptZindexQuantity
+com.crolox.pistock.service.OrderAndReserveService ..> com.crolox.pistock.dto.ReservationDto
+com.crolox.pistock.service.OrderAndReserveService ..> com.crolox.pistock.dto.ProductOrderDto
+com.crolox.pistock.service.ReservationsProductLocationsDtoService ..> com.crolox.pistock.dto.ReservationsProductLocationsDto
+com.crolox.pistock.service.ReservationsProductLocationsDtoService ..> com.crolox.pistock.model.Reservation
+com.crolox.pistock.service.ReservationsProductLocationsDtoService ..> com.crolox.pistock.model.ProductLocation
+com.crolox.pistock.service.ReservationsProductLocationsDtoService ..> com.crolox.pistock.model.StockLocation
+com.crolox.pistock.service.SendOrdersThroughRabbitMQ ..> com.crolox.pistock.dto.BvgOrder
+com.crolox.pistock.service.SendOrdersThroughRabbitMQ ..> com.crolox.pistock.dto.BvgOrderDto
+com.crolox.pistock.service.SendOrdersThroughRabbitMQ ..> com.crolox.pistock.dto.MailOrder
+com.crolox.pistock.service.SendOrdersThroughRabbitMQ ..> com.crolox.odessa.dto.ZindexQuantityOverview
+com.crolox.pistock.service.SendOrdersThroughRabbitMQ ..> com.crolox.pistock.pojo.StockInfoFile
+com.crolox.pistock.service.PakbonInfo ..> com.crolox.pistock.model.PharmacyLocation
+com.crolox.pistock.service.BackorderService ..> com.crolox.pistock.model.Backorder
+com.crolox.pistock.service.BackorderService ..> com.crolox.pistock.pojo.EatBackordersRequestMessage
+com.crolox.pistock.service.BackorderService ..> com.crolox.pistock.dto.ReceiptZindexQuantity
+com.crolox.pistock.service.PakbonService ..> com.crolox.pistock.model.Pakbon
+com.crolox.pistock.service.PakbonService ..> com.crolox.pistock.model.StockLocation
+com.crolox.pistock.service.PakbonService ..> com.crolox.pistock.model.PharmacyLocation
+com.crolox.pistock.service.PakbonService ..> com.crolox.pistock.dto.PakbonDto
+com.crolox.pistock.service.PakbonService ..> com.crolox.pistock.model.ProductLocation
+com.crolox.pistock.service.PakbonService ..> com.crolox.pistock.model.ReceivedProduct
+com.crolox.pistock.service.PakbonService ..> com.crolox.pistock.dto.ReceivedProductDto
+com.crolox.pistock.service.WriteOffService ..> com.crolox.odessa.dto.ReceiptBarcodes
+com.crolox.pistock.service.WriteOffService ..> com.crolox.odessa.dto.ReceiptAgbCodeReceiptBarcode
+com.crolox.pistock.service.StockSubLocationService ..> com.crolox.pistock.model.StockSubLocation
+com.crolox.pistock.service.StockSubLocationService ..> com.crolox.pistock.repository.StockSubLocationRepository
+com.crolox.pistock.service.StockSubLocationService ..> com.crolox.pistock.repository.StockLocationRepository
+com.crolox.pistock.service.StockSubLocationService ..> com.crolox.pistock.service.ProductLocationService
+com.crolox.pistock.service.StockSubLocationService ..> com.crolox.pistock.model.ProductLocation
+com.crolox.pistock.service.StockIndicatorService ..> com.crolox.pistock.model.StockIndicator
+com.crolox.pistock.service.StockIndicatorService ..> com.crolox.pistock.pojo.StockInfoFile
+com.crolox.pistock.service.StockIndicatorService ..> com.crolox.odessa.dto.ZindexQuantityOverview
+com.crolox.pistock.service.StockIndicatorService ..> com.crolox.odessa.dto.StockZindexQuantity
+com.crolox.pistock.service.ProductLocationService ..> com.crolox.pistock.model.PharmacyLocation
+com.crolox.pistock.service.ProductLocationService ..> com.crolox.pistock.common.ChangedBy
+com.crolox.pistock.service.ProductLocationService ..> com.crolox.pistock.model.StockLocation
+com.crolox.pistock.service.ProductLocationService ..> com.crolox.pistock.model.ProductLocation
+com.crolox.pistock.service.ProductLocationService ..> com.crolox.pistock.repository.ProductLocationRepository
+com.crolox.pistock.service.ProductLocationService ..> com.crolox.pistock.service.ProductService
+com.crolox.pistock.service.ProductLocationService ..> com.crolox.pistock.repository.StockLocationRepository
+com.crolox.pistock.service.ProductLocationService ..> com.crolox.pistock.service.ReservationService
+com.crolox.pistock.service.ProductLocationService ..> com.crolox.pistock.repository.PharmacyLocationRepository
+com.crolox.pistock.service.PakbonReceiver ..> com.crolox.pistock.service.PakbonInfo
+com.crolox.pistock.service.PakbonReceiver ..> com.crolox.pistock.model.PharmacyLocation
+com.crolox.pistock.service.PakbonReceiver ..> com.crolox.pistock.dto.ProductDto
+com.crolox.pistock.service.PakbonReceiver ..> com.crolox.pistock.model.Pakbon
+com.crolox.pistock.service.PakbonReceiver ..> com.crolox.pistock.model.ReceivedProduct
+com.crolox.pistock.service.SendOrders ..> com.crolox.pistock.dto.BvgOrderDto
+com.crolox.pistock.service.SendOrders ..> com.crolox.pistock.dto.BvgOrder
+com.crolox.pistock.service.SendOrders ..> com.crolox.pistock.dto.MailOrder
+com.crolox.pistock.service.SendOrders ..> com.crolox.odessa.dto.ZindexQuantityOverview
+com.crolox.pistock.service.SendOrders ..> com.crolox.pistock.pojo.StockInfoFile
+com.crolox.pistock.service.StockDtoService ..> com.crolox.pistock.model.ProductLocation
+com.crolox.pistock.service.StockDtoService ..> com.crolox.pistock.dto.StockDto
+com.crolox.pistock.service.DeltaService ..> com.crolox.pistock.dto.DeltaOverviewParameters
+com.crolox.pistock.service.DeltaService ..> com.crolox.pistock.model.Backorder
+com.crolox.pistock.service.DeltaService ..> com.crolox.pistock.model.Product
+com.crolox.pistock.service.DeltaService ..> com.crolox.pistock.pojo.Delta
+com.crolox.pistock.service.DeltaService ..> com.crolox.pistock.dto.ProductDto
+com.crolox.pistock.service.ImportService ..> com.crolox.pistock.dto.ImportRecordData
+com.crolox.pistock.service.ImportService ..> com.crolox.pistock.model.PharmacyLocation
+com.crolox.pistock.service.ImportService ..> com.crolox.pistock.model.ProductLocation
+com.crolox.pistock.service.ImportService ..> com.crolox.pistock.model.StockLocation
+com.crolox.pistock.service.ImportService ..> com.crolox.pistock.model.StockSubLocation
+com.crolox.pistock.service.ProductService$1 ..> com.crolox.pistock.service.ProductService
+com.crolox.pistock.service.ProductSearchService$1 ..> com.crolox.pistock.service.ProductSearchService
+com.crolox.pistock.service.WholesaleService ..> com.crolox.pistock.model.Wholesale
+com.crolox.pistock.service.WholesaleService ..> com.crolox.pistock.repository.WholesaleRepository
+com.crolox.pistock.service.ProductSearchService$3 ..> com.crolox.pistock.service.ProductSearchService
+com.crolox.pistock.service.ProductSearchService$2 ..> com.crolox.pistock.service.ProductSearchService
+com.crolox.pistock.service.ProductSearchService ..> com.crolox.pistock.dto.ProductDto
+com.crolox.pistock.service.ProductSearchService ..> com.crolox.pistock.model.Product
+com.crolox.pistock.service.PharmacyService ..> com.crolox.pistock.model.Wholesale
+com.crolox.pistock.service.PharmacyService ..> com.crolox.pistock.dto.PharmacyDto
+com.crolox.pistock.service.PharmacyService ..> com.crolox.pistock.model.PharmacyLocation
+com.crolox.pistock.service.PharmacyService ..> com.crolox.pistock.model.Pharmacy
+com.crolox.pistock.service.StockSnapshotService ..> com.crolox.pistock.model.StockSnapshot
+com.crolox.pistock.service.ProductService ..> com.crolox.pistock.api.gui.dto.ProductGuiDto
+com.crolox.pistock.service.ProductService ..> com.crolox.odessa.pickorderio.entity.ProductsType
+com.crolox.pistock.service.ProductService ..> com.crolox.pistock.model.PharmacyLocation
+com.crolox.pistock.service.ProductService ..> com.crolox.pistock.dto.ProductDto
+com.crolox.pistock.service.ProductService ..> com.crolox.pistock.model.Product
+com.crolox.pistock.service.ProductService ..> com.crolox.pistock.dto.PharmacyDto
+com.crolox.pistock.service.ProductService ..> com.crolox.pistock.repository.ProductRepository
+com.crolox.pistock.service.ProductService ..> com.crolox.pistock.repository.ProductLocationRepository
+com.crolox.pistock.service.ProductService ..> com.crolox.pistock.service.ProductSearchService
+com.crolox.pistock.service.ProductService ..> com.crolox.pistock.repository.PharmacyLocationRepository
+com.crolox.pistock.service.ProductService ..> com.crolox.pistock.repository.StockLocationRepository
+com.crolox.pistock.service.ProductService ..> com.crolox.pistock.service.ReservationService
+com.crolox.pistock.service.ProductService ..> com.crolox.pistock.service.PharmacyService
+com.crolox.pistock.service.ProductService ..> com.crolox.odessa.pickorderio.entity.ProductType
+com.crolox.pistock.service.ReservationService ..> com.crolox.pistock.model.Reservation
+com.crolox.pistock.service.ReservationService ..> com.crolox.pistock.dto.ReceiptZindexQuantity
+com.crolox.pistock.service.PharmacyLocationService ..> com.crolox.pistock.model.PharmacyLocation
+com.crolox.pistock.service.PharmacyLocationService ..> com.crolox.pistock.repository.PharmacyLocationRepository
+com.crolox.pistock.service.PharmacyLocationService ..> com.crolox.pistock.service.StockLocationService
+com.crolox.pistock.service.PharmacyLocationService ..> com.crolox.pistock.service.WholesaleService
+com.crolox.pistock.service.PharmacyLocationService ..> com.crolox.pistock.repository.ProductRepository
+com.crolox.pistock.service.ProductCreationService ..> com.crolox.pistock.request.body.ProductCreationMessage
+com.crolox.pistock.service.ProductCreationService ..> com.crolox.pistock.model.Product
+com.crolox.pistock.service.ProductCreationService ..> com.crolox.pistock.model.PharmacyLocation
+com.crolox.pistock.service.StockLocationService ..> com.crolox.pistock.model.StockLocation
+com.crolox.pistock.service.StockLocationService ..> com.crolox.pistock.repository.ProductLocationRepository
+com.crolox.pistock.service.StockLocationService ..> com.crolox.pistock.repository.StockLocationRepository
+com.crolox.pistock.service.IdfSequenceService ..> com.crolox.pistock.model.IdfSequence
+com.crolox.pistock.service.ReceivedProductService ..> com.crolox.pistock.model.ReceivedProduct
+com.crolox.pistock.service.ReceivedProductService ..> com.crolox.pistock.dto.IntInt
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISTOCK_UTIL
+com.crolox.pistock.util.CommonUtils ..> Ljava.util.function.Function
+com.crolox.pistock.util.CommonUtils ..> com.crolox.pistock.dto.BvgOrder
+com.crolox.pistock.util.CommonUtils ..> com.crolox.pistock.dto.BvgOrderDto
+com.crolox.pistock.util.CommonUtils ..> com.crolox.pistock.dto.MailOrder
+com.crolox.pistock.util.CommonUtils ..> com.crolox.pistock.model.Product
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISTOCK_VIEW
+
+!endsub
+
+' IMPORTS =======
+' Java Files Path : /Users/paolobrunasti/IdeaProjects/OCTA/stock/src/main/java/
+
+!startsub IMPORTS_COM_CROLOX_PISTOCK
+' com.crolox.pistock.PiStock
+com.crolox.pistock.PiStock ..o com.crolox.pistock.service.WholesaleService
+com.crolox.pistock.PiStock ..o com.crolox.pistock.service.PakbonReceiver
+
+' com.crolox.pistock.PiStock
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISTOCK_API_EXTERN
+' com.crolox.pistock.api.extern.PharmacyLocationDto
+com.crolox.pistock.api.extern.PharmacyLocationDto ..o com.crolox.pistock.model.PharmacyLocation
+
+' com.crolox.pistock.api.extern.ZindexNumbers
+
+' com.crolox.pistock.api.extern.BackorderDtoAPI
+com.crolox.pistock.api.extern.BackorderDtoAPI ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
+com.crolox.pistock.api.extern.BackorderDtoAPI ..o com.crolox.pistock.service.BackorderService
+
+' com.crolox.pistock.api.extern.ExternApiProductDtoAPI
+com.crolox.pistock.api.extern.ExternApiProductDtoAPI ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
+com.crolox.pistock.api.extern.ExternApiProductDtoAPI ..o com.crolox.pistock.service.ProductCreationService
+com.crolox.pistock.api.extern.ExternApiProductDtoAPI ..o com.crolox.pistock.service.ProductService
+com.crolox.pistock.api.extern.ExternApiProductDtoAPI ..o com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.api.extern.ExternApiProductDtoAPI ..o com.crolox.pistock.model.Product
+com.crolox.pistock.api.extern.ExternApiProductDtoAPI ..o com.crolox.pistock.model.PharmacyLocation
+com.crolox.pistock.api.extern.ExternApiProductDtoAPI ..o com.crolox.pistock.util.CommonUtils
+
+' com.crolox.pistock.api.extern.PharmacyLocationDtoAPI
+com.crolox.pistock.api.extern.PharmacyLocationDtoAPI ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
+com.crolox.pistock.api.extern.PharmacyLocationDtoAPI ..o com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.api.extern.PharmacyLocationDtoAPI ..o com.crolox.pistock.model.PharmacyLocation
+com.crolox.pistock.api.extern.PharmacyLocationDtoAPI ..o com.crolox.pistock.util.CommonUtils
+com.crolox.pistock.api.extern.PharmacyLocationDtoAPI ..o com.crolox.pistock.exception.ApplicationException
+
+' com.crolox.pistock.api.extern.StockLocationDtoAPI
+com.crolox.pistock.api.extern.StockLocationDtoAPI ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
+com.crolox.pistock.api.extern.StockLocationDtoAPI ..o com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.api.extern.StockLocationDtoAPI ..o com.crolox.pistock.service.StockLocationService
+com.crolox.pistock.api.extern.StockLocationDtoAPI ..o com.crolox.pistock.util.CommonUtils
+com.crolox.pistock.api.extern.StockLocationDtoAPI ..o com.crolox.pistock.exception.ApplicationException
+
+' com.crolox.pistock.api.extern.ReservationDtoAPI
+com.crolox.pistock.api.extern.ReservationDtoAPI ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
+com.crolox.pistock.api.extern.ReservationDtoAPI ..o com.crolox.odessa.pickorderio.entity.ShippingInfoType
+com.crolox.pistock.api.extern.ReservationDtoAPI ..o com.crolox.pistock.service.ProductService
+com.crolox.pistock.api.extern.ReservationDtoAPI ..o com.crolox.pistock.model.Reservation
+com.crolox.pistock.api.extern.ReservationDtoAPI ..o com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.api.extern.ReservationDtoAPI ..o com.crolox.pistock.model.Product
+com.crolox.pistock.api.extern.ReservationDtoAPI ..o com.crolox.pistock.model.PharmacyLocation
+com.crolox.pistock.api.extern.ReservationDtoAPI ..o com.crolox.pistock.service.ReservationService
+com.crolox.pistock.api.extern.ReservationDtoAPI ..o com.crolox.odessa.pickorderio.entity.HeaderType
+com.crolox.pistock.api.extern.ReservationDtoAPI ..o com.crolox.pistock.util.CommonUtils
+
+' com.crolox.pistock.api.extern.ProductLocationDto
+com.crolox.pistock.api.extern.ProductLocationDto ..o com.crolox.pistock.model.ProductLocation
+
+' com.crolox.pistock.api.extern.ExternApiProductDto
+
+' com.crolox.pistock.api.extern.ProductRequestDtoAPI
+com.crolox.pistock.api.extern.ProductRequestDtoAPI ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
+com.crolox.pistock.api.extern.ProductRequestDtoAPI ..o com.crolox.odessa.dto.ReceiptBarcodes
+com.crolox.pistock.api.extern.ProductRequestDtoAPI ..o com.crolox.pistock.queue.ReceiptBarcodeQueueHandler
+com.crolox.pistock.api.extern.ProductRequestDtoAPI ..o com.crolox.pistock.util.CommonUtils
+com.crolox.pistock.api.extern.ProductRequestDtoAPI ..o com.crolox.pistock.exception.ApplicationException
+
+' com.crolox.pistock.api.extern.StockSubLocationDto
+
+' com.crolox.pistock.api.extern.ProductInfoDtoAPI
+com.crolox.pistock.api.extern.ProductInfoDtoAPI ..o com.crolox.pistock.service.ProductSearchService
+com.crolox.pistock.api.extern.ProductInfoDtoAPI ..o com.crolox.pistock.exception.BadRequestException
+com.crolox.pistock.api.extern.ProductInfoDtoAPI ..o com.crolox.pistock.service.StockLocationService
+com.crolox.pistock.api.extern.ProductInfoDtoAPI ..o com.crolox.pistock.util.CommonUtils
+com.crolox.pistock.api.extern.ProductInfoDtoAPI ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
+com.crolox.pistock.api.extern.ProductInfoDtoAPI ..o com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.api.extern.ProductInfoDtoAPI ..o com.crolox.pistock.model.ProductLocation
+com.crolox.pistock.api.extern.ProductInfoDtoAPI ..o com.crolox.pistock.dto.ProductDto
+com.crolox.pistock.api.extern.ProductInfoDtoAPI ..o com.crolox.pistock.model.StockLocation
+com.crolox.pistock.api.extern.ProductInfoDtoAPI ..o com.crolox.pistock.service.ProductLocationService
+com.crolox.pistock.api.extern.ProductInfoDtoAPI ..o com.crolox.pistock.exception.ApplicationException
+
+' com.crolox.pistock.api.extern.Stock
+
+' com.crolox.pistock.api.extern.OpenReservationsAPI
+com.crolox.pistock.api.extern.OpenReservationsAPI ..o com.crolox.pistock.service.OpenReservationsService
+com.crolox.pistock.api.extern.OpenReservationsAPI ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
+com.crolox.pistock.api.extern.OpenReservationsAPI ..o com.crolox.pistock.view.OpenReservations
+com.crolox.pistock.api.extern.OpenReservationsAPI ..o com.crolox.pistock.util.CommonUtils
+com.crolox.pistock.api.extern.OpenReservationsAPI ..o com.crolox.pistock.exception.ApplicationException
+
+' com.crolox.pistock.api.extern.TempGpkEnricher
+com.crolox.pistock.api.extern.TempGpkEnricher ..o com.crolox.pistock.service.ProductService
+com.crolox.pistock.api.extern.TempGpkEnricher ..o com.crolox.pistock.util.CommonUtils
+com.crolox.pistock.api.extern.TempGpkEnricher ..o com.crolox.pistock.exception.ApplicationException
+
+' com.crolox.pistock.api.extern.StockSubLocationDtoAPI
+com.crolox.pistock.api.extern.StockSubLocationDtoAPI ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
+com.crolox.pistock.api.extern.StockSubLocationDtoAPI ..o com.crolox.pistock.dto.ProductDto
+com.crolox.pistock.api.extern.StockSubLocationDtoAPI ..o com.crolox.pistock.common.ChangedBy
+com.crolox.pistock.api.extern.StockSubLocationDtoAPI ..o com.crolox.pistock.util.CommonUtils
+com.crolox.pistock.api.extern.StockSubLocationDtoAPI ..o com.crolox.pistock.exception.ApplicationException
+
+' com.crolox.pistock.api.extern.ReplenishListAPI
+com.crolox.pistock.api.extern.ReplenishListAPI ..o com.crolox.pistock.view.ReplenishList
+com.crolox.pistock.api.extern.ReplenishListAPI ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
+com.crolox.pistock.api.extern.ReplenishListAPI ..o com.crolox.pistock.service.ReplenishListService
+com.crolox.pistock.api.extern.ReplenishListAPI ..o com.crolox.pistock.util.CommonUtils
+com.crolox.pistock.api.extern.ReplenishListAPI ..o com.crolox.pistock.exception.ApplicationException
+
+' com.crolox.pistock.api.extern.StockPerLocationAPI
+com.crolox.pistock.api.extern.StockPerLocationAPI ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
+com.crolox.pistock.api.extern.StockPerLocationAPI ..o com.crolox.pistock.service.StockPerLocationService
+com.crolox.pistock.api.extern.StockPerLocationAPI ..o com.crolox.pistock.view.StockPerLocation
+com.crolox.pistock.api.extern.StockPerLocationAPI ..o com.crolox.pistock.util.CommonUtils
+com.crolox.pistock.api.extern.StockPerLocationAPI ..o com.crolox.pistock.exception.ApplicationException
+
+' com.crolox.pistock.api.extern.StockLocationDto
+com.crolox.pistock.api.extern.StockLocationDto ..o com.crolox.pistock.model.StockLocation
+
+' com.crolox.pistock.api.extern.ReservationVsStockDto
+
+' com.crolox.pistock.api.extern.ReservationVsStockDtoAPI
+com.crolox.pistock.api.extern.ReservationVsStockDtoAPI ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
+com.crolox.pistock.api.extern.ReservationVsStockDtoAPI ..o com.crolox.pistock.service.ReservationVsStockService
+com.crolox.pistock.api.extern.ReservationVsStockDtoAPI ..o com.crolox.pistock.util.CommonUtils
+com.crolox.pistock.api.extern.ReservationVsStockDtoAPI ..o com.crolox.pistock.exception.ApplicationException
+
+' com.crolox.pistock.api.extern.ReservationDto
+
+' com.crolox.pistock.api.extern.ProductLocationDtoAPI
+com.crolox.pistock.api.extern.ProductLocationDtoAPI ..o com.crolox.pistock.aspect.Loggable
+com.crolox.pistock.api.extern.ProductLocationDtoAPI ..o com.crolox.pistock.model.PharmacyLocation
+com.crolox.pistock.api.extern.ProductLocationDtoAPI ..o com.crolox.pistock.service.StockLocationService
+com.crolox.pistock.api.extern.ProductLocationDtoAPI ..o com.crolox.pistock.util.CommonUtils
+com.crolox.pistock.api.extern.ProductLocationDtoAPI ..o com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.ProductBarcodeInfoExtractor
+com.crolox.pistock.api.extern.ProductLocationDtoAPI ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
+com.crolox.pistock.api.extern.ProductLocationDtoAPI ..o com.crolox.pistock.service.ProductService
+com.crolox.pistock.api.extern.ProductLocationDtoAPI ..o com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.api.extern.ProductLocationDtoAPI ..o com.crolox.pistock.model.Product
+com.crolox.pistock.api.extern.ProductLocationDtoAPI ..o com.crolox.pistock.model.ProductLocation
+com.crolox.pistock.api.extern.ProductLocationDtoAPI ..o com.crolox.pistock.model.StockLocation
+com.crolox.pistock.api.extern.ProductLocationDtoAPI ..o com.crolox.pistock.service.ProductLocationService
+com.crolox.pistock.api.extern.ProductLocationDtoAPI ..o com.crolox.pistock.exception.ApplicationException
+
+' com.crolox.pistock.api.extern.ProductInfoDto
+
+' com.crolox.pistock.api.extern.OpenReservationsAPI
+
+' com.crolox.pistock.api.extern.ExternApiProductDto
+
+' com.crolox.pistock.api.extern.PharmacyLocationDto
+
+' com.crolox.pistock.api.extern.Stock
+
+' com.crolox.pistock.api.extern.ZindexNumbers
+
+' com.crolox.pistock.api.extern.StockSubLocationDtoAPI
+
+' com.crolox.pistock.api.extern.ExternApiProductDtoAPI
+
+' com.crolox.pistock.api.extern.StockLocationDto
+
+' com.crolox.pistock.api.extern.StockSubLocationDto
+
+' com.crolox.pistock.api.extern.ProductLocationDto
+
+' com.crolox.pistock.api.extern.ProductRequestDtoAPI
+
+' com.crolox.pistock.api.extern.TempGpkEnricher
+
+' com.crolox.pistock.api.extern.ReservationVsStockDtoAPI
+
+' com.crolox.pistock.api.extern.StockPerLocationAPI
+
+' com.crolox.pistock.api.extern.ReservationDtoAPI
+
+' com.crolox.pistock.api.extern.ReplenishListAPI
+
+' com.crolox.pistock.api.extern.ReservationDto
+
+' com.crolox.pistock.api.extern.ProductInfoDto
+
+' com.crolox.pistock.api.extern.BackorderDtoAPI
+
+' com.crolox.pistock.api.extern.PharmacyLocationDtoAPI
+
+' com.crolox.pistock.api.extern.StockLocationDtoAPI
+
+' com.crolox.pistock.api.extern.ReservationVsStockDto
+
+' com.crolox.pistock.api.extern.ProductInfoDtoAPI
+
+' com.crolox.pistock.api.extern.ProductLocationDtoAPI
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISTOCK_API_EXTERN_FLUENC
+' com.crolox.pistock.api.extern.fluenc.StockOnLocationAPI
+com.crolox.pistock.api.extern.fluenc.StockOnLocationAPI ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
+com.crolox.pistock.api.extern.fluenc.StockOnLocationAPI ..o com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.api.extern.fluenc.StockOnLocationAPI ..o com.crolox.pistock.api.extern.fluenc.dto.Stock
+com.crolox.pistock.api.extern.fluenc.StockOnLocationAPI ..o com.crolox.pistock.api.extern.fluenc.dto.StockOnPharmacyLocation
+com.crolox.pistock.api.extern.fluenc.StockOnLocationAPI ..o com.crolox.pistock.model.ProductLocation
+com.crolox.pistock.api.extern.fluenc.StockOnLocationAPI ..o com.crolox.pistock.exception.BadRequestException
+com.crolox.pistock.api.extern.fluenc.StockOnLocationAPI ..o com.crolox.pistock.service.StockLocationService
+com.crolox.pistock.api.extern.fluenc.StockOnLocationAPI ..o com.crolox.pistock.service.ProductLocationService
+com.crolox.pistock.api.extern.fluenc.StockOnLocationAPI ..o com.crolox.pistock.api.extern.fluenc.dto.StockOnLocation
+com.crolox.pistock.api.extern.fluenc.StockOnLocationAPI ..o com.crolox.pistock.common.ChangedBy
+com.crolox.pistock.api.extern.fluenc.StockOnLocationAPI ..o com.crolox.pistock.util.CommonUtils
+com.crolox.pistock.api.extern.fluenc.StockOnLocationAPI ..o com.crolox.pistock.exception.ApplicationException
+
+' com.crolox.pistock.api.extern.fluenc.StockOnLocationAPI
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISTOCK_API_EXTERN_FLUENC_DTO
+' com.crolox.pistock.api.extern.fluenc.dto.StockOnLocation
+
+' com.crolox.pistock.api.extern.fluenc.dto.StockOnPharmacyLocation
+
+' com.crolox.pistock.api.extern.fluenc.dto.Stock
+
+' com.crolox.pistock.api.extern.fluenc.dto.Location
+
+' com.crolox.pistock.api.extern.fluenc.dto.Stock
+
+' com.crolox.pistock.api.extern.fluenc.dto.Location
+
+' com.crolox.pistock.api.extern.fluenc.dto.StockOnPharmacyLocation
+
+' com.crolox.pistock.api.extern.fluenc.dto.StockOnLocation
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISTOCK_API_GUI
+' com.crolox.pistock.api.gui.StockIndicatorAPI
+com.crolox.pistock.api.gui.StockIndicatorAPI ..o com.crolox.pistock.service.StockInfoSenderService
+com.crolox.pistock.api.gui.StockIndicatorAPI ..o com.crolox.pistock.model.StockIndicator
+com.crolox.pistock.api.gui.StockIndicatorAPI ..o com.crolox.pistock.util.CommonUtils
+com.crolox.pistock.api.gui.StockIndicatorAPI ..o com.crolox.pistock.service.StockIndicatorService
+com.crolox.pistock.api.gui.StockIndicatorAPI ..o com.crolox.pistock.exception.ApplicationException
+
+' com.crolox.pistock.api.gui.ReservationsPerPharmacyPerMonthAPI
+com.crolox.pistock.api.gui.ReservationsPerPharmacyPerMonthAPI ..o com.crolox.pistock.service.ReservationsPerPharmacyPerMonthService
+com.crolox.pistock.api.gui.ReservationsPerPharmacyPerMonthAPI ..o com.crolox.pistock.dto.ReservationsPerPharmacyPerMonthDto
+
+' com.crolox.pistock.api.gui.StockImportAPI
+com.crolox.pistock.api.gui.StockImportAPI ..o com.crolox.pistock.service.ImportService
+com.crolox.pistock.api.gui.StockImportAPI ..o com.crolox.pistock.util.CommonUtils
+com.crolox.pistock.api.gui.StockImportAPI ..o com.crolox.pistock.exception.ApplicationException
+
+' com.crolox.pistock.api.gui.ProductStatusAPI
+com.crolox.pistock.api.gui.ProductStatusAPI ..o com.crolox.pistock.common.ProductStatus
+
+' com.crolox.pistock.api.gui.PakbonDtoAPI
+com.crolox.pistock.api.gui.PakbonDtoAPI ..o com.crolox.pistock.dto.PakbonDto
+com.crolox.pistock.api.gui.PakbonDtoAPI ..o com.crolox.pistock.service.PakbonService
+com.crolox.pistock.api.gui.PakbonDtoAPI ..o com.crolox.pistock.util.CommonUtils
+com.crolox.pistock.api.gui.PakbonDtoAPI ..o com.crolox.pistock.exception.ApplicationException
+
+' com.crolox.pistock.api.gui.PharmacyLocationAPI
+com.crolox.pistock.api.gui.PharmacyLocationAPI ..o com.crolox.pistock.model.PharmacyLocation
+com.crolox.pistock.api.gui.PharmacyLocationAPI ..o com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.api.gui.PharmacyLocationAPI ..o com.crolox.pistock.util.CommonUtils
+com.crolox.pistock.api.gui.PharmacyLocationAPI ..o com.crolox.pistock.exception.ApplicationException
+
+' com.crolox.pistock.api.gui.ReservationProductLocationsDtoAPI
+com.crolox.pistock.api.gui.ReservationProductLocationsDtoAPI ..o com.crolox.pistock.service.ReservationsProductLocationsDtoService
+com.crolox.pistock.api.gui.ReservationProductLocationsDtoAPI ..o com.crolox.pistock.model.Reservation
+com.crolox.pistock.api.gui.ReservationProductLocationsDtoAPI ..o com.crolox.pistock.service.ReservationService
+com.crolox.pistock.api.gui.ReservationProductLocationsDtoAPI ..o com.crolox.pistock.util.CommonUtils
+com.crolox.pistock.api.gui.ReservationProductLocationsDtoAPI ..o com.crolox.pistock.dto.ReservationsProductLocationsDto
+com.crolox.pistock.api.gui.ReservationProductLocationsDtoAPI ..o com.crolox.pistock.exception.ApplicationException
+
+' com.crolox.pistock.api.gui.PharmacyAPI
+com.crolox.pistock.api.gui.PharmacyAPI ..o com.crolox.pistock.service.PharmacyService
+com.crolox.pistock.api.gui.PharmacyAPI ..o com.crolox.pistock.dto.PharmacyDto
+com.crolox.pistock.api.gui.PharmacyAPI ..o com.crolox.pistock.util.CommonUtils
+com.crolox.pistock.api.gui.PharmacyAPI ..o com.crolox.pistock.model.Pharmacy
+com.crolox.pistock.api.gui.PharmacyAPI ..o com.crolox.pistock.exception.ApplicationException
+
+' com.crolox.pistock.api.gui.StockSnapshotAPI
+com.crolox.pistock.api.gui.StockSnapshotAPI ..o com.crolox.pistock.service.StockSnapshotService
+com.crolox.pistock.api.gui.StockSnapshotAPI ..o com.crolox.pistock.dto.StockSnapshotDto
+
+' com.crolox.pistock.api.gui.ProductAPI
+com.crolox.pistock.api.gui.ProductAPI ..o com.crolox.pistock.service.ProductService
+com.crolox.pistock.api.gui.ProductAPI ..o com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.api.gui.ProductAPI ..o com.crolox.pistock.api.gui.dto.ProductGuiDto
+com.crolox.pistock.api.gui.ProductAPI ..o com.crolox.pistock.model.Product
+com.crolox.pistock.api.gui.ProductAPI ..o com.crolox.pistock.model.PharmacyLocation
+com.crolox.pistock.api.gui.ProductAPI ..o com.crolox.pistock.util.CommonUtils
+com.crolox.pistock.api.gui.ProductAPI ..o com.crolox.pistock.exception.ApplicationException
+
+' com.crolox.pistock.api.gui.OrderTypesAPI
+com.crolox.pistock.api.gui.OrderTypesAPI ..o com.crolox.pistock.common.OrderType
+
+' com.crolox.pistock.api.gui.WholesaleAPI
+com.crolox.pistock.api.gui.WholesaleAPI ..o com.crolox.pistock.model.Wholesale
+com.crolox.pistock.api.gui.WholesaleAPI ..o com.crolox.pistock.service.WholesaleService
+com.crolox.pistock.api.gui.WholesaleAPI ..o com.crolox.pistock.util.CommonUtils
+com.crolox.pistock.api.gui.WholesaleAPI ..o com.crolox.pistock.exception.ApplicationException
+
+' com.crolox.pistock.api.gui.OrderProposalAPI
+com.crolox.pistock.api.gui.OrderProposalAPI ..o com.crolox.pistock.service.OrderNewStockProposalService
+com.crolox.pistock.api.gui.OrderProposalAPI ..o com.crolox.pistock.pojo.OrderProposals
+com.crolox.pistock.api.gui.OrderProposalAPI ..o com.crolox.pistock.dto.PharmacyDto
+com.crolox.pistock.api.gui.OrderProposalAPI ..o com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.api.gui.OrderProposalAPI ..o com.crolox.pistock.model.PharmacyLocation
+com.crolox.pistock.api.gui.OrderProposalAPI ..o com.crolox.pistock.service.OrderAndReserveService
+com.crolox.pistock.api.gui.OrderProposalAPI ..o com.crolox.odessa.dto.OrderAndReserveRequestsWrapper
+com.crolox.pistock.api.gui.OrderProposalAPI ..o com.crolox.pistock.pojo.OrderProposal
+com.crolox.pistock.api.gui.OrderProposalAPI ..o com.crolox.pistock.service.PharmacyService
+com.crolox.pistock.api.gui.OrderProposalAPI ..o com.crolox.pistock.util.CommonUtils
+
+' com.crolox.pistock.api.gui.BackorderAPI
+com.crolox.pistock.api.gui.BackorderAPI ..o com.crolox.pistock.model.Backorder
+com.crolox.pistock.api.gui.BackorderAPI ..o com.crolox.pistock.service.BackorderService
+com.crolox.pistock.api.gui.BackorderAPI ..o com.crolox.pistock.util.CommonUtils
+com.crolox.pistock.api.gui.BackorderAPI ..o com.crolox.pistock.exception.ApplicationException
+
+' com.crolox.pistock.api.gui.StockLocationAPI
+com.crolox.pistock.api.gui.StockLocationAPI ..o com.crolox.pistock.model.StockLocation
+com.crolox.pistock.api.gui.StockLocationAPI ..o com.crolox.pistock.service.StockLocationService
+com.crolox.pistock.api.gui.StockLocationAPI ..o com.crolox.pistock.util.CommonUtils
+com.crolox.pistock.api.gui.StockLocationAPI ..o com.crolox.pistock.service.StockSubLocationService
+com.crolox.pistock.api.gui.StockLocationAPI ..o com.crolox.pistock.exception.ApplicationException
+
+' com.crolox.pistock.api.gui.ReservationAPI
+com.crolox.pistock.api.gui.ReservationAPI ..o com.crolox.pistock.model.Reservation
+com.crolox.pistock.api.gui.ReservationAPI ..o com.crolox.pistock.service.ReservationService
+com.crolox.pistock.api.gui.ReservationAPI ..o com.crolox.pistock.service.ReservationsPerPharmacyPerMonthService
+com.crolox.pistock.api.gui.ReservationAPI ..o com.crolox.pistock.util.CommonUtils
+com.crolox.pistock.api.gui.ReservationAPI ..o com.crolox.pistock.exception.ApplicationException
+
+' com.crolox.pistock.api.gui.ProductSearchAPI
+com.crolox.pistock.api.gui.ProductSearchAPI ..o com.crolox.pistock.dto.EmbeddedProductList
+com.crolox.pistock.api.gui.ProductSearchAPI ..o com.crolox.pistock.service.ProductService
+com.crolox.pistock.api.gui.ProductSearchAPI ..o com.crolox.pistock.service.ProductSearchService
+com.crolox.pistock.api.gui.ProductSearchAPI ..o  com.crolox.pistock.util.CommonUtils.forceParceToLong
+com.crolox.pistock.api.gui.ProductSearchAPI ..o com.crolox.pistock.model.Product
+com.crolox.pistock.api.gui.ProductSearchAPI ..o com.crolox.pistock.dto.ProductDto
+com.crolox.pistock.api.gui.ProductSearchAPI ..o com.crolox.pistock.dto.EmbeddedProductListWrapper
+com.crolox.pistock.api.gui.ProductSearchAPI ..o com.crolox.pistock.util.CommonUtils
+com.crolox.pistock.api.gui.ProductSearchAPI ..o com.crolox.pistock.exception.ApplicationException
+
+' com.crolox.pistock.api.gui.DeltaAPI
+com.crolox.pistock.api.gui.DeltaAPI ..o com.crolox.pistock.dto.DeltaOverviewParameters
+com.crolox.pistock.api.gui.DeltaAPI ..o com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.api.gui.DeltaAPI ..o com.crolox.pistock.pojo.Delta
+com.crolox.pistock.api.gui.DeltaAPI ..o com.crolox.pistock.service.ReservationService
+com.crolox.pistock.api.gui.DeltaAPI ..o com.crolox.pistock.service.BackorderService
+com.crolox.pistock.api.gui.DeltaAPI ..o com.crolox.pistock.util.CommonUtils
+com.crolox.pistock.api.gui.DeltaAPI ..o com.crolox.pistock.service.DeltaService
+
+' com.crolox.pistock.api.gui.ReceivedProductDtosAPI
+com.crolox.pistock.api.gui.ReceivedProductDtosAPI ..o com.crolox.pistock.service.ReceivedProductService
+com.crolox.pistock.api.gui.ReceivedProductDtosAPI ..o com.crolox.pistock.model.ReceivedProduct
+com.crolox.pistock.api.gui.ReceivedProductDtosAPI ..o com.crolox.pistock.dto.ReceivedProductDto
+com.crolox.pistock.api.gui.ReceivedProductDtosAPI ..o com.crolox.pistock.util.CommonUtils
+com.crolox.pistock.api.gui.ReceivedProductDtosAPI ..o com.crolox.pistock.exception.ApplicationException
+
+' com.crolox.pistock.api.gui.StockSubLocationAPI
+com.crolox.pistock.api.gui.StockSubLocationAPI ..o com.crolox.pistock.model.StockSubLocation
+com.crolox.pistock.api.gui.StockSubLocationAPI ..o com.crolox.pistock.util.CommonUtils
+com.crolox.pistock.api.gui.StockSubLocationAPI ..o com.crolox.pistock.service.StockSubLocationService
+com.crolox.pistock.api.gui.StockSubLocationAPI ..o com.crolox.pistock.exception.ApplicationException
+
+' com.crolox.pistock.api.gui.PakbonAPI
+com.crolox.pistock.api.gui.PakbonAPI ..o com.crolox.pistock.model.Pakbon
+com.crolox.pistock.api.gui.PakbonAPI ..o com.crolox.pistock.service.PakbonService
+com.crolox.pistock.api.gui.PakbonAPI ..o com.crolox.pistock.util.CommonUtils
+com.crolox.pistock.api.gui.PakbonAPI ..o com.crolox.pistock.exception.ApplicationException
+
+' com.crolox.pistock.api.gui.ProductLocationAPI
+com.crolox.pistock.api.gui.ProductLocationAPI ..o com.crolox.pistock.model.StockSubLocation
+com.crolox.pistock.api.gui.ProductLocationAPI ..o com.crolox.pistock.model.ProductLocation
+com.crolox.pistock.api.gui.ProductLocationAPI ..o com.crolox.pistock.model.StockLocation
+com.crolox.pistock.api.gui.ProductLocationAPI ..o com.crolox.pistock.service.StockLocationService
+com.crolox.pistock.api.gui.ProductLocationAPI ..o com.crolox.pistock.service.ProductLocationService
+com.crolox.pistock.api.gui.ProductLocationAPI ..o com.crolox.pistock.common.ChangedBy
+com.crolox.pistock.api.gui.ProductLocationAPI ..o com.crolox.pistock.service.StockSubLocationService
+com.crolox.pistock.api.gui.ProductLocationAPI ..o com.crolox.pistock.util.CommonUtils
+com.crolox.pistock.api.gui.ProductLocationAPI ..o com.crolox.pistock.exception.ApplicationException
+
+' com.crolox.pistock.api.gui.StockDtoAPI
+com.crolox.pistock.api.gui.StockDtoAPI ..o com.crolox.pistock.dto.StockDto
+com.crolox.pistock.api.gui.StockDtoAPI ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
+com.crolox.pistock.api.gui.StockDtoAPI ..o com.crolox.pistock.service.StockDtoService
+com.crolox.pistock.api.gui.StockDtoAPI ..o com.crolox.pistock.util.CommonUtils
+com.crolox.pistock.api.gui.StockDtoAPI ..o com.crolox.pistock.exception.ApplicationException
+
+' com.crolox.pistock.api.gui.ReceivedProductDtosAPI
+
+' com.crolox.pistock.api.gui.ProductLocationAPI
+
+' com.crolox.pistock.api.gui.StockLocationAPI
+
+' com.crolox.pistock.api.gui.ReservationProductLocationsDtoAPI
+
+' com.crolox.pistock.api.gui.StockIndicatorAPI
+
+' com.crolox.pistock.api.gui.BackorderAPI
+
+' com.crolox.pistock.api.gui.PharmacyAPI
+
+' com.crolox.pistock.api.gui.ReservationAPI
+
+' com.crolox.pistock.api.gui.DeltaAPI
+
+' com.crolox.pistock.api.gui.OrderProposalAPI
+
+' com.crolox.pistock.api.gui.StockDtoAPI
+
+' com.crolox.pistock.api.gui.PakbonAPI
+
+' com.crolox.pistock.api.gui.ReservationsPerPharmacyPerMonthAPI
+
+' com.crolox.pistock.api.gui.StockSubLocationAPI
+
+' com.crolox.pistock.api.gui.ProductAPI
+
+' com.crolox.pistock.api.gui.StockImportAPI
+
+' com.crolox.pistock.api.gui.StockSnapshotAPI
+
+' com.crolox.pistock.api.gui.WholesaleAPI
+
+' com.crolox.pistock.api.gui.OrderTypesAPI
+
+' com.crolox.pistock.api.gui.PharmacyLocationAPI
+
+' com.crolox.pistock.api.gui.ProductStatusAPI
+
+' com.crolox.pistock.api.gui.ProductSearchAPI
+
+' com.crolox.pistock.api.gui.PakbonDtoAPI
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISTOCK_API_GUI_DTO
+' com.crolox.pistock.api.gui.dto.ProductGuiDto
+
+' com.crolox.pistock.api.gui.dto.ProductGuiDto
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISTOCK_ASPECT
+' com.crolox.pistock.aspect.LoggingAspect
+
+' com.crolox.pistock.aspect.Loggable
+
+' com.crolox.pistock.aspect.LoggingAspect
+
+' com.crolox.pistock.aspect.Loggable
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISTOCK_COMMON
+' com.crolox.pistock.common.ApplicationConstants
+
+' com.crolox.pistock.common.ProductStatus
+
+' com.crolox.pistock.common.Action
+
+' com.crolox.pistock.common.ChangedBy
+
+' com.crolox.pistock.common.OrderType
+
+' com.crolox.pistock.common.EmailBodyTag
+
+' com.crolox.pistock.common.ImportType
+
+' com.crolox.pistock.common.OrderType
+
+' com.crolox.pistock.common.ChangedBy
+
+' com.crolox.pistock.common.ImportType
+
+' com.crolox.pistock.common.Action
+
+' com.crolox.pistock.common.ApplicationConstants
+
+' com.crolox.pistock.common.ProductStatus
+
+' com.crolox.pistock.common.EmailBodyTag
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISTOCK_CONFIG
+' com.crolox.pistock.config.MvcConfig
+
+' com.crolox.pistock.config.AppContextEventListener
+
+' com.crolox.pistock.config.MvcConfig
+
+' com.crolox.pistock.config.AppContextEventListener
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISTOCK_CONTROLLER_BACKEND
+' com.crolox.pistock.controller.backend.ProductOrderController
+com.crolox.pistock.controller.backend.ProductOrderController ..o com.crolox.pistock.order.OrderPeriodSelection
+com.crolox.pistock.controller.backend.ProductOrderController ..o com.crolox.pistock.order.OrderService
+com.crolox.pistock.controller.backend.ProductOrderController ..o com.crolox.pistock.service.WholesaleService
+com.crolox.pistock.controller.backend.ProductOrderController ..o com.crolox.pistock.aspect.Loggable
+com.crolox.pistock.controller.backend.ProductOrderController ..o  com.crolox.pistock.common.ApplicationConstants.PISORT_REQUEST_ID
+com.crolox.pistock.controller.backend.ProductOrderController ..o com.crolox.odessa.dto.OrderAndReserveResponse
+com.crolox.pistock.controller.backend.ProductOrderController ..o com.crolox.pistock.exception.BadRequestException
+com.crolox.pistock.controller.backend.ProductOrderController ..o com.crolox.pistock.model.PharmacyLocation
+com.crolox.pistock.controller.backend.ProductOrderController ..o com.crolox.pistock.service.OrderAndReserveService
+com.crolox.pistock.controller.backend.ProductOrderController ..o com.crolox.odessa.dto.OrderAndReserveRequestsWrapper
+com.crolox.pistock.controller.backend.ProductOrderController ..o com.crolox.pistock.service.PharmacyService
+com.crolox.pistock.controller.backend.ProductOrderController ..o com.crolox.pistock.util.CommonUtils
+com.crolox.pistock.controller.backend.ProductOrderController ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
+com.crolox.pistock.controller.backend.ProductOrderController ..o com.crolox.pistock.dto.PharmacyDto
+com.crolox.pistock.controller.backend.ProductOrderController ..o  com.crolox.odessa.constants.Paths
+com.crolox.pistock.controller.backend.ProductOrderController ..o com.crolox.pistock.service.PharmacyLocationService
+
+' com.crolox.pistock.controller.backend.LocalProductsController
+com.crolox.pistock.controller.backend.LocalProductsController ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
+com.crolox.pistock.controller.backend.LocalProductsController ..o com.crolox.pistock.pojo.AgbZindexNumbers
+com.crolox.pistock.controller.backend.LocalProductsController ..o com.crolox.pistock.service.ProductService
+com.crolox.pistock.controller.backend.LocalProductsController ..o com.crolox.odessa.pickorderio.entity.ProductsType
+com.crolox.pistock.controller.backend.LocalProductsController ..o com.crolox.pistock.aspect.Loggable
+
+' com.crolox.pistock.controller.backend.ProductWriteOffController
+com.crolox.pistock.controller.backend.ProductWriteOffController ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
+com.crolox.pistock.controller.backend.ProductWriteOffController ..o com.crolox.pistock.dto.ProductWriteOffDto
+com.crolox.pistock.controller.backend.ProductWriteOffController ..o com.crolox.pistock.aspect.Loggable
+com.crolox.pistock.controller.backend.ProductWriteOffController ..o com.crolox.pistock.model.ProductLocation
+com.crolox.pistock.controller.backend.ProductWriteOffController ..o com.crolox.pistock.service.ProductLocationService
+com.crolox.pistock.controller.backend.ProductWriteOffController ..o  com.crolox.odessa.constants.Paths.STOCK_ORDER_AND_RESERVE
+com.crolox.pistock.controller.backend.ProductWriteOffController ..o com.crolox.pistock.common.ChangedBy
+com.crolox.pistock.controller.backend.ProductWriteOffController ..o com.crolox.pistock.util.CommonUtils
+
+' com.crolox.pistock.controller.backend.ProductCreationController
+com.crolox.pistock.controller.backend.ProductCreationController ..o com.crolox.pistock.request.body.ProductCreationMessage
+com.crolox.pistock.controller.backend.ProductCreationController ..o com.crolox.pistock.queue.ProductCreationStack
+com.crolox.pistock.controller.backend.ProductCreationController ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
+com.crolox.pistock.controller.backend.ProductCreationController ..o com.crolox.pistock.aspect.Loggable
+
+' com.crolox.pistock.controller.backend.ProductOrderHelper
+
+' com.crolox.pistock.controller.backend.ReservationController
+com.crolox.pistock.controller.backend.ReservationController ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
+com.crolox.pistock.controller.backend.ReservationController ..o com.crolox.odessa.pickorderio.entity.ProductLocationInfoType
+com.crolox.pistock.controller.backend.ReservationController ..o com.crolox.pistock.aspect.Loggable
+com.crolox.pistock.controller.backend.ReservationController ..o com.crolox.pistock.model.Reservation
+com.crolox.pistock.controller.backend.ReservationController ..o  com.crolox.odessa.constants.Paths.STOCK_PRODUCT_LOCATION_INFOS
+com.crolox.pistock.controller.backend.ReservationController ..o com.crolox.odessa.dto.PickorderLineKeys
+com.crolox.pistock.controller.backend.ReservationController ..o com.crolox.odessa.pickorderio.entity.ProductLocationInfosType
+com.crolox.pistock.controller.backend.ReservationController ..o com.crolox.pistock.service.ReservationService
+com.crolox.pistock.controller.backend.ReservationController ..o com.crolox.odessa.dto.PickorderLineKeysPerAgbCode
+
+' com.crolox.pistock.controller.backend.ImportController
+com.crolox.pistock.controller.backend.ImportController ..o com.crolox.pistock.service.ImportService
+com.crolox.pistock.controller.backend.ImportController ..o com.crolox.pistock.service.PakbonFileService
+com.crolox.pistock.controller.backend.ImportController ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
+com.crolox.pistock.controller.backend.ImportController ..o com.crolox.pistock.aspect.Loggable
+
+' com.crolox.pistock.controller.backend.ProductOderHelperPrescriptionAmount
+
+' com.crolox.pistock.controller.backend.ProductOrderController
+
+' com.crolox.pistock.controller.backend.ImportController
+
+' com.crolox.pistock.controller.backend.ProductCreationController
+
+' com.crolox.pistock.controller.backend.LocalProductsController
+
+' com.crolox.pistock.controller.backend.ProductOrderHelper
+
+' com.crolox.pistock.controller.backend.ReservationController
+
+' com.crolox.pistock.controller.backend.ProductWriteOffController
+
+' com.crolox.pistock.controller.backend.ProductOderHelperPrescriptionAmount
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISTOCK_CONTROLLER_GUI
+' com.crolox.pistock.controller.gui.WholesaleController
+com.crolox.pistock.controller.gui.WholesaleController ..o com.crolox.pistock.aspect.Loggable
+
+' com.crolox.pistock.controller.gui.PharmacyLocationController
+com.crolox.pistock.controller.gui.PharmacyLocationController ..o com.crolox.pistock.aspect.Loggable
+
+' com.crolox.pistock.controller.gui.MainController
+com.crolox.pistock.controller.gui.MainController ..o com.crolox.pistock.service.ProductService
+com.crolox.pistock.controller.gui.MainController ..o com.crolox.pistock.aspect.Loggable
+
+' com.crolox.pistock.controller.gui.PharmacyController
+com.crolox.pistock.controller.gui.PharmacyController ..o com.crolox.pistock.aspect.Loggable
+
+' com.crolox.pistock.controller.gui.PharmacyLocationController
+
+' com.crolox.pistock.controller.gui.MainController
+
+' com.crolox.pistock.controller.gui.WholesaleController
+
+' com.crolox.pistock.controller.gui.PharmacyController
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISTOCK_DTO
+' com.crolox.pistock.dto.ProductWriteOffDto
+
+' com.crolox.pistock.dto.IntInt
+
+' com.crolox.pistock.dto.ReceiptZindexQuantity
+
+' com.crolox.pistock.dto.StockDto
+
+' com.crolox.pistock.dto.BvgOrder
+
+' com.crolox.pistock.dto.BvgOrderDto
+
+' com.crolox.pistock.dto.EmbeddedProductList
+
+' com.crolox.pistock.dto.AgbPharmacy
+
+' com.crolox.pistock.dto.ReceivedProductDto
+
+' com.crolox.pistock.dto.OrderQuantityWholesaleDto
+com.crolox.pistock.dto.OrderQuantityWholesaleDto ..o com.crolox.pistock.model.Wholesale
+
+' com.crolox.pistock.dto.ImportRecordData
+
+' com.crolox.pistock.dto.PakbonDto
+
+' com.crolox.pistock.dto.ZindexReservation
+
+' com.crolox.pistock.dto.MailOrder
+
+' com.crolox.pistock.dto.ReservationDto
+com.crolox.pistock.dto.ReservationDto ..o com.crolox.odessa.dto.ReceiptAgbCodeReceiptBarcode
+com.crolox.pistock.dto.ReservationDto ..o com.crolox.odessa.pickorderio.entity.ShippingInfoType
+com.crolox.pistock.dto.ReservationDto ..o com.crolox.odessa.pickorderio.entity.HeaderType
+com.crolox.pistock.dto.ReservationDto ..o com.crolox.pistock.model.Reservation
+
+' com.crolox.pistock.dto.BvgOrderDetailRecordDTO
+
+' com.crolox.pistock.dto.EmbeddedProductListWrapper
+
+' com.crolox.pistock.dto.PharmacyDto
+
+' com.crolox.pistock.dto.StockSnapshotDto
+
+' com.crolox.pistock.dto.ReservationsPerPharmacyPerMonthDto
+
+' com.crolox.pistock.dto.ProductOrderDto
+
+' com.crolox.pistock.dto.DeltaOverviewParameters
+
+' com.crolox.pistock.dto.ProductDto
+
+' com.crolox.pistock.dto.ImportFileRecordDto
+
+' com.crolox.pistock.dto.ReservationsProductLocationsDto
+
+' com.crolox.pistock.dto.ReservationDto
+
+' com.crolox.pistock.dto.ReceivedProductDto
+
+' com.crolox.pistock.dto.BvgOrder
+
+' com.crolox.pistock.dto.StockSnapshotDto
+
+' com.crolox.pistock.dto.ReservationsPerPharmacyPerMonthDto
+
+' com.crolox.pistock.dto.DeltaOverviewParameters
+
+' com.crolox.pistock.dto.EmbeddedProductList
+
+' com.crolox.pistock.dto.ProductWriteOffDto
+
+' com.crolox.pistock.dto.PharmacyDto
+
+' com.crolox.pistock.dto.IntInt
+
+' com.crolox.pistock.dto.ProductOrderDto
+
+' com.crolox.pistock.dto.AgbPharmacy
+
+' com.crolox.pistock.dto.ReceiptZindexQuantity
+
+' com.crolox.pistock.dto.MailOrder
+
+' com.crolox.pistock.dto.ProductDto
+
+' com.crolox.pistock.dto.EmbeddedProductListWrapper
+
+' com.crolox.pistock.dto.ZindexReservation
+
+' com.crolox.pistock.dto.OrderQuantityWholesaleDto
+
+' com.crolox.pistock.dto.BvgOrderDetailRecordDTO
+
+' com.crolox.pistock.dto.ReservationsProductLocationsDto
+
+' com.crolox.pistock.dto.StockDto
+
+' com.crolox.pistock.dto.BvgOrderDto
+
+' com.crolox.pistock.dto.PakbonDto
+
+' com.crolox.pistock.dto.ImportFileRecordDto
+
+' com.crolox.pistock.dto.ImportRecordData
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISTOCK_EXCEPTION
+' com.crolox.pistock.exception.ApplicationException
+
+' com.crolox.pistock.exception.GlobalExceptionHandler
+
+' com.crolox.pistock.exception.ResourceNotFoundException
+
+' com.crolox.pistock.exception.BadRequestException
+
+' com.crolox.pistock.exception.ErrorDetails
+
+' com.crolox.pistock.exception.ApplicationException
+
+' com.crolox.pistock.exception.GlobalExceptionHandler
+
+' com.crolox.pistock.exception.BadRequestException
+
+' com.crolox.pistock.exception.ResourceNotFoundException
+
+' com.crolox.pistock.exception.ErrorDetails
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISTOCK_INTERCEPTOR
+' com.crolox.pistock.interceptor.StockChangeTracker
+com.crolox.pistock.interceptor.StockChangeTracker ..o com.crolox.pistock.common.ApplicationConstants
+com.crolox.pistock.interceptor.StockChangeTracker ..o com.crolox.pistock.model.ProductLocation
+com.crolox.pistock.interceptor.StockChangeTracker ..o io.github.teastman.hibernate.annotation.HibernateEventListener
+com.crolox.pistock.interceptor.StockChangeTracker ..o com.crolox.pistock.queue.BackorderEatingStack
+com.crolox.pistock.interceptor.StockChangeTracker ..o com.crolox.pistock.pojo.EatBackordersRequestMessage
+com.crolox.pistock.interceptor.StockChangeTracker ..o  io.github.teastman.hibernate.tool.HibernateEventUtils.getPropertyIndex
+com.crolox.pistock.interceptor.StockChangeTracker ..o com.crolox.pistock.common.ChangedBy
+
+' com.crolox.pistock.interceptor.StockChangeTracker
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISTOCK_MODEL
+' com.crolox.pistock.model.StockSubLocation
+
+' com.crolox.pistock.model.Pharmacy
+
+' com.crolox.pistock.model.IdfSequence
+com.crolox.pistock.model.IdfSequence ..o com.crolox.pistock.util.CommonUtils
+
+' com.crolox.pistock.model.Reservation
+
+' com.crolox.pistock.model.Log
+com.crolox.pistock.model.Log ..o com.crolox.pistock.common.Action
+
+' com.crolox.pistock.model.Product
+
+' com.crolox.pistock.model.PharmacyLocation
+
+' com.crolox.pistock.model.ReceivedProduct
+
+' com.crolox.pistock.model.StockLocation
+
+' com.crolox.pistock.model.ProductRequest
+com.crolox.pistock.model.ProductRequest ..o  com.crolox.pistock.common.ApplicationConstants
+com.crolox.pistock.model.ProductRequest ..o com.crolox.odessa.pickorderio.entity.HeaderType
+com.crolox.pistock.model.ProductRequest ..o com.crolox.pistock.common.ChangedBy
+
+' com.crolox.pistock.model.StockIndicator
+
+' com.crolox.pistock.model.Backorder
+
+' com.crolox.pistock.model.Pakbon
+
+' com.crolox.pistock.model.ProductLocation
+
+' com.crolox.pistock.model.Wholesale
+
+' com.crolox.pistock.model.StockSnapshot
+
+' com.crolox.pistock.model.ReceivedProduct
+
+' com.crolox.pistock.model.Wholesale
+
+' com.crolox.pistock.model.PharmacyLocation
+
+' com.crolox.pistock.model.IdfSequence
+
+' com.crolox.pistock.model.Log
+
+' com.crolox.pistock.model.StockIndicator
+
+' com.crolox.pistock.model.StockLocation
+
+' com.crolox.pistock.model.Product
+
+' com.crolox.pistock.model.Pharmacy
+
+' com.crolox.pistock.model.ProductRequest
+
+' com.crolox.pistock.model.ProductLocation
+
+' com.crolox.pistock.model.StockSubLocation
+
+' com.crolox.pistock.model.Pakbon
+
+' com.crolox.pistock.model.StockSnapshot
+
+' com.crolox.pistock.model.Backorder
+
+' com.crolox.pistock.model.Reservation
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISTOCK_ORDER
+' com.crolox.pistock.order.OrderService
+
+' com.crolox.pistock.order.OrderTotals
+
+' com.crolox.pistock.order.OrderReportDetailRecord
+
+' com.crolox.pistock.order.OrderPeriodSelection
+
+' com.crolox.pistock.order.OrderReportDetailRecord
+
+' com.crolox.pistock.order.OrderPeriodSelection
+
+' com.crolox.pistock.order.OrderTotals
+
+' com.crolox.pistock.order.OrderService
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISTOCK_POJO
+' com.crolox.pistock.pojo.StockInfoFile
+
+' com.crolox.pistock.pojo.ZindexQuantity
+
+' com.crolox.pistock.pojo.AgbZindexNumbers
+
+' com.crolox.pistock.pojo.Delta
+
+' com.crolox.pistock.pojo.OrderProposal
+
+' com.crolox.pistock.pojo.EatBackordersRequestMessage
+
+' com.crolox.pistock.pojo.OrderProposals
+
+' com.crolox.pistock.pojo.SftpParameters
+
+' com.crolox.pistock.pojo.StockInfoFile
+
+' com.crolox.pistock.pojo.ZindexQuantity
+
+' com.crolox.pistock.pojo.SftpParameters
+
+' com.crolox.pistock.pojo.Delta
+
+' com.crolox.pistock.pojo.AgbZindexNumbers
+
+' com.crolox.pistock.pojo.OrderProposal
+
+' com.crolox.pistock.pojo.OrderProposals
+
+' com.crolox.pistock.pojo.EatBackordersRequestMessage
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISTOCK_QUEUE
+' com.crolox.pistock.queue.BVGOrderProcessingQueue
+
+' com.crolox.pistock.queue.ProductCreationStack
+
+' com.crolox.pistock.queue.ReceiptBarcodeQueueHandler
+
+' com.crolox.pistock.queue.MailOrderProcessingQueue
+
+' com.crolox.pistock.queue.CentralBVGOrderProcessingQueue
+
+' com.crolox.pistock.queue.BackorderEatingStack
+
+' com.crolox.pistock.queue.BackorderEatingStack
+
+' com.crolox.pistock.queue.MailOrderProcessingQueue
+
+' com.crolox.pistock.queue.ProductCreationStack
+
+' com.crolox.pistock.queue.CentralBVGOrderProcessingQueue
+
+' com.crolox.pistock.queue.ReceiptBarcodeQueueHandler
+
+' com.crolox.pistock.queue.BVGOrderProcessingQueue
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISTOCK_REPOSITORY
+' com.crolox.pistock.repository.PakbonRepository
+
+' com.crolox.pistock.repository.PharmacyLocationRepository
+
+' com.crolox.pistock.repository.ProductRepository
+
+' com.crolox.pistock.repository.PharmacyRepository
+
+' com.crolox.pistock.repository.StockIndicatorRepository
+
+' com.crolox.pistock.repository.ProductRequestRepository
+com.crolox.pistock.repository.ProductRequestRepository ..o com.crolox.pistock.dto.AgbPharmacy
+com.crolox.pistock.repository.ProductRequestRepository ..o com.crolox.pistock.dto.ReceiptZindexQuantity
+com.crolox.pistock.repository.ProductRequestRepository ..o com.crolox.pistock.dto.ZindexReservation
+com.crolox.pistock.repository.ProductRequestRepository ..o com.crolox.pistock.model.ProductRequest
+
+' com.crolox.pistock.repository.ReplenishListRepository
+
+' com.crolox.pistock.repository.ProductLocationRepository
+
+' com.crolox.pistock.repository.OpenReservationsRepository
+
+' com.crolox.pistock.repository.BackorderRepository
+
+' com.crolox.pistock.repository.ReceivedProductRepository
+
+' com.crolox.pistock.repository.StockSnapshotRepository
+
+' com.crolox.pistock.repository.StockLocationRepository
+
+' com.crolox.pistock.repository.StockPerLocationRepository
+
+' com.crolox.pistock.repository.WholesaleRepository
+
+' com.crolox.pistock.repository.IdfSequenceRepository
+com.crolox.pistock.repository.IdfSequenceRepository ..o com.crolox.pistock.model.IdfSequence
+
+' com.crolox.pistock.repository.StockSubLocationRepository
+
+' com.crolox.pistock.repository.ReservationRepository
+
+' com.crolox.pistock.repository.ProductGuiDtoRepository
+com.crolox.pistock.repository.ProductGuiDtoRepository ..o  com.crolox.pistock.common.ApplicationConstants.RESERVATION
+com.crolox.pistock.repository.ProductGuiDtoRepository ..o com.crolox.pistock.api.gui.dto.ProductGuiDto
+
+' com.crolox.pistock.repository.PharmacyLocationRepository
+
+' com.crolox.pistock.repository.ProductGuiDtoRepository
+
+' com.crolox.pistock.repository.ProductRequestRepository
+
+' com.crolox.pistock.repository.PakbonRepository
+
+' com.crolox.pistock.repository.StockPerLocationRepository
+
+' com.crolox.pistock.repository.ReservationRepository
+
+' com.crolox.pistock.repository.ReplenishListRepository
+
+' com.crolox.pistock.repository.IdfSequenceRepository
+
+' com.crolox.pistock.repository.StockLocationRepository
+
+' com.crolox.pistock.repository.StockSnapshotRepository
+
+' com.crolox.pistock.repository.StockIndicatorRepository
+
+' com.crolox.pistock.repository.StockSubLocationRepository
+
+' com.crolox.pistock.repository.WholesaleRepository
+
+' com.crolox.pistock.repository.BackorderRepository
+
+' com.crolox.pistock.repository.ProductLocationRepository
+
+' com.crolox.pistock.repository.ProductRepository
+
+' com.crolox.pistock.repository.ReceivedProductRepository
+
+' com.crolox.pistock.repository.OpenReservationsRepository
+
+' com.crolox.pistock.repository.PharmacyRepository
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISTOCK_REQUEST_BODY
+' com.crolox.pistock.request.body.ProductCreationMessage
+
+' com.crolox.pistock.request.body.ProductCreationMessage
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISTOCK_SCHEDULED
+' com.crolox.pistock.scheduled.StackProcessing
+com.crolox.pistock.scheduled.StackProcessing ..o com.crolox.pistock.queue.ProductCreationStack
+com.crolox.pistock.scheduled.StackProcessing ..o com.crolox.pistock.queue.BackorderEatingStack
+com.crolox.pistock.scheduled.StackProcessing ..o com.crolox.pistock.service.ProductCreationService
+com.crolox.pistock.scheduled.StackProcessing ..o com.crolox.pistock.service.BackorderService
+
+' com.crolox.pistock.scheduled.ReportsDataCollector
+com.crolox.pistock.scheduled.ReportsDataCollector ..o com.crolox.pistock.service.ProductService
+com.crolox.pistock.scheduled.ReportsDataCollector ..o com.crolox.pistock.repository.PharmacyLocationRepository
+com.crolox.pistock.scheduled.ReportsDataCollector ..o com.crolox.pistock.model.PharmacyLocation
+com.crolox.pistock.scheduled.ReportsDataCollector ..o com.crolox.pistock.dto.StockSnapshotDto
+com.crolox.pistock.scheduled.ReportsDataCollector ..o com.crolox.pistock.model.StockSnapshot
+com.crolox.pistock.scheduled.ReportsDataCollector ..o com.crolox.pistock.repository.StockSnapshotRepository
+
+' com.crolox.pistock.scheduled.StockInfoSender
+com.crolox.pistock.scheduled.StockInfoSender ..o com.crolox.pistock.exception.ApplicationException
+
+' com.crolox.pistock.scheduled.StockReducer
+com.crolox.pistock.scheduled.StockReducer ..o com.crolox.odessa.dto.ReceiptBarcodes
+com.crolox.pistock.scheduled.StockReducer ..o com.crolox.pistock.service.WriteOffService
+com.crolox.pistock.scheduled.StockReducer ..o com.crolox.odessa.dto.ReceiptAgbCodeReceiptBarcode
+com.crolox.pistock.scheduled.StockReducer ..o com.crolox.pistock.config.AppContextEventListener
+com.crolox.pistock.scheduled.StockReducer ..o com.crolox.pistock.queue.ReceiptBarcodeQueueHandler
+com.crolox.pistock.scheduled.StockReducer ..o com.crolox.pistock.exception.ApplicationException
+
+' com.crolox.pistock.scheduled.BvgOrderSender
+com.crolox.pistock.scheduled.BvgOrderSender ..o com.crolox.pistock.service.SendOrders
+com.crolox.pistock.scheduled.BvgOrderSender ..o com.crolox.pistock.queue.BVGOrderProcessingQueue
+com.crolox.pistock.scheduled.BvgOrderSender ..o com.crolox.pistock.dto.BvgOrder
+com.crolox.pistock.scheduled.BvgOrderSender ..o com.crolox.pistock.dto.BvgOrderDto
+com.crolox.pistock.scheduled.BvgOrderSender ..o com.crolox.pistock.config.AppContextEventListener
+com.crolox.pistock.scheduled.BvgOrderSender ..o com.crolox.pistock.queue.CentralBVGOrderProcessingQueue
+com.crolox.pistock.scheduled.BvgOrderSender ..o com.crolox.pistock.util.CommonUtils
+com.crolox.pistock.scheduled.BvgOrderSender ..o  com.crolox.pistock.common.ApplicationConstants.CENTRAL
+
+' com.crolox.pistock.scheduled.Housekeeping
+com.crolox.pistock.scheduled.Housekeeping ..o  com.crolox.pistock.common.ApplicationConstants.TWO
+com.crolox.pistock.scheduled.Housekeeping ..o com.crolox.pistock.service.ReservationService
+com.crolox.pistock.scheduled.Housekeeping ..o  com.crolox.pistock.common.ApplicationConstants.THREE
+com.crolox.pistock.scheduled.Housekeeping ..o com.crolox.pistock.service.BackorderService
+com.crolox.pistock.scheduled.Housekeeping ..o com.crolox.pistock.repository.StockSnapshotRepository
+
+' com.crolox.pistock.scheduled.AddStock
+com.crolox.pistock.scheduled.AddStock ..o com.crolox.pistock.service.OrderNewStockService
+
+' com.crolox.pistock.scheduled.EnrichingBackordersWithProductInfo
+com.crolox.pistock.scheduled.EnrichingBackordersWithProductInfo ..o com.crolox.pistock.service.ProductService
+com.crolox.pistock.scheduled.EnrichingBackordersWithProductInfo ..o com.crolox.pistock.service.PharmacyLocationService
+com.crolox.pistock.scheduled.EnrichingBackordersWithProductInfo ..o com.crolox.pistock.service.ProductSearchService
+com.crolox.pistock.scheduled.EnrichingBackordersWithProductInfo ..o com.crolox.pistock.model.Product
+com.crolox.pistock.scheduled.EnrichingBackordersWithProductInfo ..o com.crolox.pistock.dto.ProductDto
+com.crolox.pistock.scheduled.EnrichingBackordersWithProductInfo ..o com.crolox.pistock.model.PharmacyLocation
+com.crolox.pistock.scheduled.EnrichingBackordersWithProductInfo ..o com.crolox.pistock.model.Backorder
+com.crolox.pistock.scheduled.EnrichingBackordersWithProductInfo ..o com.crolox.pistock.service.BackorderService
+
+' com.crolox.pistock.scheduled.UpdateProductsAIP
+com.crolox.pistock.scheduled.UpdateProductsAIP ..o com.crolox.pistock.service.ProductService
+
+' com.crolox.pistock.scheduled.MailOrderSender
+com.crolox.pistock.scheduled.MailOrderSender ..o com.crolox.pistock.service.SendOrders
+com.crolox.pistock.scheduled.MailOrderSender ..o com.crolox.pistock.queue.MailOrderProcessingQueue
+com.crolox.pistock.scheduled.MailOrderSender ..o com.crolox.pistock.config.AppContextEventListener
+com.crolox.pistock.scheduled.MailOrderSender ..o com.crolox.pistock.dto.MailOrder
+com.crolox.pistock.scheduled.MailOrderSender ..o com.crolox.pistock.util.CommonUtils
+
+' com.crolox.pistock.scheduled.EnrichingBackordersWithProductInfo
+
+' com.crolox.pistock.scheduled.StockInfoSender
+
+' com.crolox.pistock.scheduled.StockReducer
+
+' com.crolox.pistock.scheduled.AddStock
+
+' com.crolox.pistock.scheduled.UpdateProductsAIP
+
+' com.crolox.pistock.scheduled.MailOrderSender
+
+' com.crolox.pistock.scheduled.StackProcessing
+
+' com.crolox.pistock.scheduled.ReportsDataCollector
+
+' com.crolox.pistock.scheduled.Housekeeping
+
+' com.crolox.pistock.scheduled.BvgOrderSender
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISTOCK_SERVICE
+' com.crolox.pistock.service.OrderNewStockProposalService
+
+' com.crolox.pistock.service.OpenReservationsService
+
+' com.crolox.pistock.service.ReservationVsStockService
+
+' com.crolox.pistock.service.DigipharmaService
+com.crolox.pistock.service.DigipharmaService ..o io.swagger.client.api.OdessaApi
+com.crolox.pistock.service.DigipharmaService ..o com.crolox.odessa.dto.StockZindexQuantity
+com.crolox.pistock.service.DigipharmaService ..o com.crolox.pistock.model.StockIndicator
+com.crolox.pistock.service.DigipharmaService ..o com.crolox.pistock.util.CommonUtils
+
+' com.crolox.pistock.service.OrderAndReserveService
+
+' com.crolox.pistock.service.ReplenishListService
+
+' com.crolox.pistock.service.ReservationsProductLocationsDtoService
+
+' com.crolox.pistock.service.SendOrdersThroughRabbitMQ
+com.crolox.pistock.service.SendOrdersThroughRabbitMQ ..o com.crolox.pistock.pojo.StockInfoFile
+com.crolox.pistock.service.SendOrdersThroughRabbitMQ ..o com.crolox.pistock.dto.BvgOrder
+com.crolox.pistock.service.SendOrdersThroughRabbitMQ ..o com.crolox.pistock.dto.MailOrder
+com.crolox.pistock.service.SendOrdersThroughRabbitMQ ..o com.crolox.pistock.dto.BvgOrderDto
+com.crolox.pistock.service.SendOrdersThroughRabbitMQ ..o com.crolox.pistock.util.CommonUtils
+com.crolox.pistock.service.SendOrdersThroughRabbitMQ ..o com.crolox.odessa.dto.ZindexQuantityOverview
+com.crolox.pistock.service.SendOrdersThroughRabbitMQ ..o  com.crolox.pistock.common.ApplicationConstants.CENTRAL
+
+' com.crolox.pistock.service.PakbonInfo
+
+' com.crolox.pistock.service.BackorderService
+
+' com.crolox.pistock.service.PakbonService
+
+' com.crolox.pistock.service.WriteOffService
+
+' com.crolox.pistock.service.SlackService
+com.crolox.pistock.service.SlackService ..o com.slack.api.Slack
+com.crolox.pistock.service.SlackService ..o com.slack.api.webhook.WebhookResponse
+
+' com.crolox.pistock.service.StockSubLocationService
+
+' com.crolox.pistock.service.StockIndicatorService
+
+' com.crolox.pistock.service.OrderAndReserveService$QuantityInStockAndLocations
+
+' com.crolox.pistock.service.ProductLocationService
+
+' com.crolox.pistock.service.PakbonFileService
+
+' com.crolox.pistock.service.PakbonReceiver
+
+' com.crolox.pistock.service.SendOrders
+
+' com.crolox.pistock.service.StockDtoService
+
+' com.crolox.pistock.service.ReservationsPerPharmacyPerMonthService
+
+' com.crolox.pistock.service.DeltaService
+
+' com.crolox.pistock.service.ImportService
+
+' com.crolox.pistock.service.ProductService$1
+
+' com.crolox.pistock.service.ProductSearchService$1
+
+' com.crolox.pistock.service.WholesaleService
+
+' com.crolox.pistock.service.ProductSearchService$3
+
+' com.crolox.pistock.service.ProductSearchService$2
+
+' com.crolox.pistock.service.ProductSearchService
+
+' com.crolox.pistock.service.PharmacyService
+
+' com.crolox.pistock.service.StockSnapshotService
+
+' com.crolox.pistock.service.ProductService
+
+' com.crolox.pistock.service.OrderNewStockService
+
+' com.crolox.pistock.service.ReservationService
+
+' com.crolox.pistock.service.PharmacyLocationService
+
+' com.crolox.pistock.service.ProductCreationService
+
+' com.crolox.pistock.service.StockLocationService
+
+' com.crolox.pistock.service.IdfSequenceService
+com.crolox.pistock.service.IdfSequenceService ..o com.crolox.pistock.model.IdfSequence
+com.crolox.pistock.service.IdfSequenceService ..o com.crolox.pistock.exception.ApplicationException
+com.crolox.pistock.service.IdfSequenceService ..o com.crolox.pistock.repository.IdfSequenceRepository
+
+' com.crolox.pistock.service.StockPerLocationService
+
+' com.crolox.pistock.service.StockInfoSenderService
+
+' com.crolox.pistock.service.ReceivedProductService
+
+' com.crolox.pistock.service.DeltaService
+
+' com.crolox.pistock.service.PakbonReceiver
+
+' com.crolox.pistock.service.OpenReservationsService
+
+' com.crolox.pistock.service.ReservationService
+
+' com.crolox.pistock.service.ReplenishListService
+
+' com.crolox.pistock.service.PharmacyService
+
+' com.crolox.pistock.service.StockSubLocationService
+
+' com.crolox.pistock.service.PakbonInfo
+
+' com.crolox.pistock.service.PakbonFileService
+
+' com.crolox.pistock.service.ReservationVsStockService
+
+' com.crolox.pistock.service.OrderNewStockService
+
+' com.crolox.pistock.service.StockInfoSenderService
+
+' com.crolox.pistock.service.ReservationsProductLocationsDtoService
+
+' com.crolox.pistock.service.ProductSearchService
+
+' com.crolox.pistock.service.StockLocationService
+
+' com.crolox.pistock.service.ProductService
+
+' com.crolox.pistock.service.ProductLocationService
+
+' com.crolox.pistock.service.ImportService
+
+' com.crolox.pistock.service.ProductCreationService
+
+' com.crolox.pistock.service.OrderAndReserveService$QuantityInStockAndLocations
+
+' com.crolox.pistock.service.ProductSearchService$3
+
+' com.crolox.pistock.service.ProductSearchService$2
+
+' com.crolox.pistock.service.ProductSearchService$1
+
+' com.crolox.pistock.service.StockPerLocationService
+
+' com.crolox.pistock.service.ReservationsPerPharmacyPerMonthService
+
+' com.crolox.pistock.service.PakbonService
+
+' com.crolox.pistock.service.WholesaleService
+
+' com.crolox.pistock.service.StockIndicatorService
+
+' com.crolox.pistock.service.ProductService$1
+
+' com.crolox.pistock.service.PharmacyLocationService
+
+' com.crolox.pistock.service.DigipharmaService
+
+' com.crolox.pistock.service.StockDtoService
+
+' com.crolox.pistock.service.StockSnapshotService
+
+' com.crolox.pistock.service.OrderAndReserveService
+
+' com.crolox.pistock.service.SendOrdersThroughRabbitMQ
+
+' com.crolox.pistock.service.SendOrders
+
+' com.crolox.pistock.service.SlackService
+
+' com.crolox.pistock.service.IdfSequenceService
+
+' com.crolox.pistock.service.ReceivedProductService
+
+' com.crolox.pistock.service.BackorderService
+
+' com.crolox.pistock.service.WriteOffService
+
+' com.crolox.pistock.service.OrderNewStockProposalService
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISTOCK_UTIL
+' com.crolox.pistock.util.PakbonUtils
+
+' com.crolox.pistock.util.CommonUtils
+
+' com.crolox.pistock.util.PakbonUtils
+
+' com.crolox.pistock.util.CommonUtils
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISTOCK_VIEW
+' com.crolox.pistock.view.StockPerLocation
+
+' com.crolox.pistock.view.ReplenishList
+
+' com.crolox.pistock.view.OpenReservations
+
+' com.crolox.pistock.view.ReplenishList
+
+' com.crolox.pistock.view.OpenReservations
+
+' com.crolox.pistock.view.StockPerLocation
+
+
+!endsub
+
+
+@enduml

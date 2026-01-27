@@ -1,0 +1,830 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+' GENERATE CLASS DIAGRAM ===========
+' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
+' Path            : [/Users/paolobrunasti/IdeaProjects/OCTA/pickorderio/target/classes]
+' Java Files Path : [/Users/paolobrunasti/IdeaProjects/OCTA/pickorderio/src/main/java/]
+' Configuration   : [/Users/paolobrunasti/IdeaProjects/mine/java-diagrammer/docs/octa/config.json]
+' Generated at    : Tue Jan 27 11:50:43 CET 2026
+'
+'   Stat infos    :
+'       Files : [112]
+'       Lines : [12976]
+'     Classes : [112]
+'     Methods : [1226]
+'      Fields : [478]
+
+' Include         : [./docs/includedFile.txt] ---------
+title Example with legend and title
+
+hide empty members
+
+
+legend
+Connections legend
+----
+--|> : Extends
+..|> : Implements
+----
+--> : Fields and Attributes
+..> : Uses
+end legend
+' Include end     : --------------------------
+
+
+
+'!includesub OCTA-pickorderio-class-diagram.puml!COM_CROLOX_ODESSA_PICKORDERIO_COMMON
+'!includesub OCTA-pickorderio-class-diagram.puml!INHERITANCES_COM_CROLOX_ODESSA_PICKORDERIO_COMMON
+'!includesub OCTA-pickorderio-class-diagram.puml!IMPLEMENTS_COM_CROLOX_ODESSA_PICKORDERIO_COMMON
+'!includesub OCTA-pickorderio-class-diagram.puml!FIELDS_COM_CROLOX_ODESSA_PICKORDERIO_COMMON
+'!includesub OCTA-pickorderio-class-diagram.puml!USES_COM_CROLOX_ODESSA_PICKORDERIO_COMMON
+'!includesub OCTA-pickorderio-class-diagram.puml!IMPORTS_COM_CROLOX_ODESSA_PICKORDERIO_COMMON
+
+'!includesub OCTA-pickorderio-class-diagram.puml!COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE
+'!includesub OCTA-pickorderio-class-diagram.puml!INHERITANCES_COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE
+'!includesub OCTA-pickorderio-class-diagram.puml!IMPLEMENTS_COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE
+'!includesub OCTA-pickorderio-class-diagram.puml!FIELDS_COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE
+'!includesub OCTA-pickorderio-class-diagram.puml!USES_COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE
+'!includesub OCTA-pickorderio-class-diagram.puml!IMPORTS_COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE
+
+'!includesub OCTA-pickorderio-class-diagram.puml!COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE_BARCODE
+'!includesub OCTA-pickorderio-class-diagram.puml!INHERITANCES_COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE_BARCODE
+'!includesub OCTA-pickorderio-class-diagram.puml!IMPLEMENTS_COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE_BARCODE
+'!includesub OCTA-pickorderio-class-diagram.puml!FIELDS_COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE_BARCODE
+'!includesub OCTA-pickorderio-class-diagram.puml!USES_COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE_BARCODE
+'!includesub OCTA-pickorderio-class-diagram.puml!IMPORTS_COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE_BARCODE
+
+'!includesub OCTA-pickorderio-class-diagram.puml!COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE_POJO
+'!includesub OCTA-pickorderio-class-diagram.puml!INHERITANCES_COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE_POJO
+'!includesub OCTA-pickorderio-class-diagram.puml!IMPLEMENTS_COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE_POJO
+'!includesub OCTA-pickorderio-class-diagram.puml!FIELDS_COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE_POJO
+'!includesub OCTA-pickorderio-class-diagram.puml!USES_COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE_POJO
+'!includesub OCTA-pickorderio-class-diagram.puml!IMPORTS_COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE_POJO
+
+'!includesub OCTA-pickorderio-class-diagram.puml!COM_CROLOX_ODESSA_PICKORDERIO_ENTITY
+'!includesub OCTA-pickorderio-class-diagram.puml!INHERITANCES_COM_CROLOX_ODESSA_PICKORDERIO_ENTITY
+'!includesub OCTA-pickorderio-class-diagram.puml!IMPLEMENTS_COM_CROLOX_ODESSA_PICKORDERIO_ENTITY
+'!includesub OCTA-pickorderio-class-diagram.puml!FIELDS_COM_CROLOX_ODESSA_PICKORDERIO_ENTITY
+'!includesub OCTA-pickorderio-class-diagram.puml!USES_COM_CROLOX_ODESSA_PICKORDERIO_ENTITY
+'!includesub OCTA-pickorderio-class-diagram.puml!IMPORTS_COM_CROLOX_ODESSA_PICKORDERIO_ENTITY
+
+'!includesub OCTA-pickorderio-class-diagram.puml!COM_CROLOX_ODESSA_PICKORDERIO_POJO
+'!includesub OCTA-pickorderio-class-diagram.puml!INHERITANCES_COM_CROLOX_ODESSA_PICKORDERIO_POJO
+'!includesub OCTA-pickorderio-class-diagram.puml!IMPLEMENTS_COM_CROLOX_ODESSA_PICKORDERIO_POJO
+'!includesub OCTA-pickorderio-class-diagram.puml!FIELDS_COM_CROLOX_ODESSA_PICKORDERIO_POJO
+'!includesub OCTA-pickorderio-class-diagram.puml!USES_COM_CROLOX_ODESSA_PICKORDERIO_POJO
+'!includesub OCTA-pickorderio-class-diagram.puml!IMPORTS_COM_CROLOX_ODESSA_PICKORDERIO_POJO
+
+'!includesub OCTA-pickorderio-class-diagram.puml!COM_CROLOX_ODESSA_PICKORDERIO_SERVICE
+'!includesub OCTA-pickorderio-class-diagram.puml!INHERITANCES_COM_CROLOX_ODESSA_PICKORDERIO_SERVICE
+'!includesub OCTA-pickorderio-class-diagram.puml!IMPLEMENTS_COM_CROLOX_ODESSA_PICKORDERIO_SERVICE
+'!includesub OCTA-pickorderio-class-diagram.puml!FIELDS_COM_CROLOX_ODESSA_PICKORDERIO_SERVICE
+'!includesub OCTA-pickorderio-class-diagram.puml!USES_COM_CROLOX_ODESSA_PICKORDERIO_SERVICE
+'!includesub OCTA-pickorderio-class-diagram.puml!IMPORTS_COM_CROLOX_ODESSA_PICKORDERIO_SERVICE
+
+'!includesub OCTA-pickorderio-class-diagram.puml!COM_CROLOX_ODESSA_PICKORDERIO_UTIL
+'!includesub OCTA-pickorderio-class-diagram.puml!INHERITANCES_COM_CROLOX_ODESSA_PICKORDERIO_UTIL
+'!includesub OCTA-pickorderio-class-diagram.puml!IMPLEMENTS_COM_CROLOX_ODESSA_PICKORDERIO_UTIL
+'!includesub OCTA-pickorderio-class-diagram.puml!FIELDS_COM_CROLOX_ODESSA_PICKORDERIO_UTIL
+'!includesub OCTA-pickorderio-class-diagram.puml!USES_COM_CROLOX_ODESSA_PICKORDERIO_UTIL
+'!includesub OCTA-pickorderio-class-diagram.puml!IMPORTS_COM_CROLOX_ODESSA_PICKORDERIO_UTIL
+
+
+
+' CLASSES =======
+!startsub COM_CROLOX_ODESSA_PICKORDERIO_COMMON
+enum com.crolox.odessa.pickorderio.common.ZindexType{
+  ZZ
+}
+enum com.crolox.odessa.pickorderio.common.AdditionalInfoContentType{
+  HERHAAL
+}
+enum com.crolox.odessa.pickorderio.common.OrderType{
+  BVG
+  CF
+}
+enum com.crolox.odessa.pickorderio.common.ReceiptFridgeInfo{
+  NO_FRIDGE
+  FRIDGE_ONLY
+  BOTH
+  PLUS_GKK
+  PLUS_KK
+}
+enum com.crolox.odessa.pickorderio.common.StockStatusType{
+  ALL_IN_STOCK
+  PARTIALLY_IN_STOCK
+}
+class com.crolox.odessa.pickorderio.common.Constants
+
+!endsub
+
+!startsub COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE
+enum com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.NMVS_BARCODE_TYPE{
+  UNKNOWN
+  GTIN
+  PPN
+}
+enum com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.NmvsBlueprintCore$PPN_FIELD{
+  CODE_HEADER
+  CODE_06_FORMAT_HEADER
+  CODE_9N_PRODUCT_NUMBER
+  CODE_1T_CHARGE_NUMBER
+  CODE_D_EXPIRY_DATE
+  CODE_S_SERIAL_NUMBER
+}
+class com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.ProductBarcodeInfoExtractor$1
+enum com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.NmvsBlueprintCore$GTIN_FIELD{
+  CODE_HEADER_PRODUCT_NUMBER
+  CODE_17_EXPIRATION_DATE
+  CODE_21_SERIAL_NUMBER
+  CODE_10_BATCH_NUMBER
+  CODE_11_PRODUCTION_DATE
+  CODE_15_BEST_BEFORE_DATE
+}
+class com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.ProductBarcodeInfoExtractor
+class com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.NmvsBlueprintCore
+class com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.NmvsBlueprintCore$1
+
+!endsub
+
+!startsub COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE_BARCODE
+class com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.barcode.NmvsGTINBarcode
+class com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.barcode.NmvsPPNBarcode
+
+!endsub
+
+!startsub COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE_POJO
+class com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.pojo.FmdScanInfo
+
+!endsub
+
+!startsub COM_CROLOX_ODESSA_PICKORDERIO_ENTITY
+class com.crolox.odessa.pickorderio.entity.ReceiptBarcodeInfoType
+class com.crolox.odessa.pickorderio.entity.ProductsType
+class com.crolox.odessa.pickorderio.entity.AddressType
+class com.crolox.odessa.pickorderio.entity.DeliveryType
+class com.crolox.odessa.pickorderio.entity.ProductLocationInfosType
+class com.crolox.odessa.pickorderio.entity.HeaderType
+class com.crolox.odessa.pickorderio.entity.ReceiptType
+class com.crolox.odessa.pickorderio.entity.IdentificationType
+class com.crolox.odessa.pickorderio.entity.ObjectFactory
+class com.crolox.odessa.pickorderio.entity.DeliveriesType
+class com.crolox.odessa.pickorderio.entity.PickOrderLinesType
+class com.crolox.odessa.pickorderio.entity.PickOrderType
+class com.crolox.odessa.pickorderio.entity.WholesaleType
+interface com.crolox.odessa.pickorderio.entity.package-info
+class com.crolox.odessa.pickorderio.entity.ProductBarcodeType
+class com.crolox.odessa.pickorderio.entity.PatientsType
+class com.crolox.odessa.pickorderio.entity.ProductType
+class com.crolox.odessa.pickorderio.entity.DeliveryInfoType
+class com.crolox.odessa.pickorderio.entity.ProductWarningLabelsType
+class com.crolox.odessa.pickorderio.entity.PickOrderLineType
+class com.crolox.odessa.pickorderio.entity.PatientType
+class com.crolox.odessa.pickorderio.entity.ProductBarcodesType
+class com.crolox.odessa.pickorderio.entity.PackageContentType
+class com.crolox.odessa.pickorderio.entity.LabelType
+class com.crolox.odessa.pickorderio.entity.ShippingInfoType
+class com.crolox.odessa.pickorderio.entity.LineType
+class com.crolox.odessa.pickorderio.entity.ProductLocationInfoType
+class com.crolox.odessa.pickorderio.entity.SmartInfoType
+class com.crolox.odessa.pickorderio.entity.ProductWarningLabelType
+
+!endsub
+
+!startsub COM_CROLOX_ODESSA_PICKORDERIO_POJO
+class com.crolox.odessa.pickorderio.pojo.SplittedPickOrderTypes
+class com.crolox.odessa.pickorderio.pojo.DividedPickOrderTypes
+
+!endsub
+
+!startsub COM_CROLOX_ODESSA_PICKORDERIO_SERVICE
+class com.crolox.odessa.pickorderio.service.PickorderIO
+
+!endsub
+
+!startsub COM_CROLOX_ODESSA_PICKORDERIO_UTIL
+class com.crolox.odessa.pickorderio.util.PickOrderUtil
+class com.crolox.odessa.pickorderio.util.DeepClone
+class com.crolox.odessa.pickorderio.util.Sorter
+class com.crolox.odessa.pickorderio.util.Splitter
+class com.crolox.odessa.pickorderio.util.CommonUtil
+class com.crolox.odessa.pickorderio.util.Merger
+class com.crolox.odessa.pickorderio.util.Filter
+class com.crolox.odessa.pickorderio.util.Extracter
+
+!endsub
+
+' INHERITANCES =======
+
+!startsub INHERITANCES_COM_CROLOX_ODESSA_PICKORDERIO_COMMON
+java.lang.Enum <|-- com.crolox.odessa.pickorderio.common.ZindexType
+java.lang.Enum <|-- com.crolox.odessa.pickorderio.common.AdditionalInfoContentType
+java.lang.Enum <|-- com.crolox.odessa.pickorderio.common.OrderType
+java.lang.Enum <|-- com.crolox.odessa.pickorderio.common.ReceiptFridgeInfo
+java.lang.Enum <|-- com.crolox.odessa.pickorderio.common.StockStatusType
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE
+java.lang.Enum <|-- com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.NMVS_BARCODE_TYPE
+java.lang.Enum <|-- com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.NmvsBlueprintCore$PPN_FIELD
+java.lang.Enum <|-- com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.NmvsBlueprintCore$GTIN_FIELD
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE_BARCODE
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE_POJO
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_ODESSA_PICKORDERIO_ENTITY
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_ODESSA_PICKORDERIO_POJO
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_ODESSA_PICKORDERIO_SERVICE
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_ODESSA_PICKORDERIO_UTIL
+
+!endsub
+
+' IMPLEMENT INTERFACE =======
+
+!startsub IMPLEMENTS_COM_CROLOX_ODESSA_PICKORDERIO_COMMON
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE_BARCODE
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE_POJO
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_ODESSA_PICKORDERIO_ENTITY
+java.io.Serializable <|.. com.crolox.odessa.pickorderio.entity.ReceiptBarcodeInfoType
+java.io.Serializable <|.. com.crolox.odessa.pickorderio.entity.ProductsType
+java.io.Serializable <|.. com.crolox.odessa.pickorderio.entity.AddressType
+java.io.Serializable <|.. com.crolox.odessa.pickorderio.entity.DeliveryType
+java.io.Serializable <|.. com.crolox.odessa.pickorderio.entity.ProductLocationInfosType
+java.io.Serializable <|.. com.crolox.odessa.pickorderio.entity.HeaderType
+java.io.Serializable <|.. com.crolox.odessa.pickorderio.entity.ReceiptType
+java.io.Serializable <|.. com.crolox.odessa.pickorderio.entity.IdentificationType
+java.io.Serializable <|.. com.crolox.odessa.pickorderio.entity.DeliveriesType
+java.io.Serializable <|.. com.crolox.odessa.pickorderio.entity.PickOrderLinesType
+java.io.Serializable <|.. com.crolox.odessa.pickorderio.entity.PickOrderType
+java.io.Serializable <|.. com.crolox.odessa.pickorderio.entity.WholesaleType
+java.io.Serializable <|.. com.crolox.odessa.pickorderio.entity.ProductBarcodeType
+java.io.Serializable <|.. com.crolox.odessa.pickorderio.entity.PatientsType
+java.io.Serializable <|.. com.crolox.odessa.pickorderio.entity.ProductType
+java.lang.Comparable <|.. com.crolox.odessa.pickorderio.entity.ProductType
+java.io.Serializable <|.. com.crolox.odessa.pickorderio.entity.DeliveryInfoType
+java.io.Serializable <|.. com.crolox.odessa.pickorderio.entity.ProductWarningLabelsType
+java.io.Serializable <|.. com.crolox.odessa.pickorderio.entity.PickOrderLineType
+java.io.Serializable <|.. com.crolox.odessa.pickorderio.entity.PatientType
+java.io.Serializable <|.. com.crolox.odessa.pickorderio.entity.ProductBarcodesType
+java.io.Serializable <|.. com.crolox.odessa.pickorderio.entity.PackageContentType
+java.io.Serializable <|.. com.crolox.odessa.pickorderio.entity.LabelType
+java.io.Serializable <|.. com.crolox.odessa.pickorderio.entity.ShippingInfoType
+java.io.Serializable <|.. com.crolox.odessa.pickorderio.entity.LineType
+java.io.Serializable <|.. com.crolox.odessa.pickorderio.entity.ProductLocationInfoType
+java.lang.Comparable <|.. com.crolox.odessa.pickorderio.entity.ProductLocationInfoType
+java.io.Serializable <|.. com.crolox.odessa.pickorderio.entity.SmartInfoType
+java.io.Serializable <|.. com.crolox.odessa.pickorderio.entity.ProductWarningLabelType
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_ODESSA_PICKORDERIO_POJO
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_ODESSA_PICKORDERIO_SERVICE
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_ODESSA_PICKORDERIO_UTIL
+
+!endsub
+
+' FIELDS =======
+
+!startsub FIELDS_COM_CROLOX_ODESSA_PICKORDERIO_COMMON
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE_BARCODE
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE_POJO
+com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.pojo.FmdScanInfo --> com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.NMVS_BARCODE_TYPE
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_ODESSA_PICKORDERIO_ENTITY
+com.crolox.odessa.pickorderio.entity.DeliveryType --> com.crolox.odessa.pickorderio.entity.ShippingInfoType
+com.crolox.odessa.pickorderio.entity.DeliveryType --> com.crolox.odessa.pickorderio.entity.PickOrderLinesType
+com.crolox.odessa.pickorderio.entity.HeaderType --> com.crolox.odessa.pickorderio.entity.SmartInfoType
+com.crolox.odessa.pickorderio.entity.HeaderType --> com.crolox.odessa.pickorderio.entity.WholesaleType
+com.crolox.odessa.pickorderio.entity.ReceiptType --> com.crolox.odessa.pickorderio.entity.ReceiptBarcodeInfoType
+com.crolox.odessa.pickorderio.entity.ReceiptType --> com.crolox.odessa.pickorderio.common.ReceiptFridgeInfo
+com.crolox.odessa.pickorderio.entity.DeliveriesType --> com.crolox.odessa.pickorderio.entity.DeliveryType
+com.crolox.odessa.pickorderio.entity.PickOrderType --> com.crolox.odessa.pickorderio.entity.IdentificationType
+com.crolox.odessa.pickorderio.entity.PickOrderType --> com.crolox.odessa.pickorderio.entity.HeaderType
+com.crolox.odessa.pickorderio.entity.PickOrderType --> com.crolox.odessa.pickorderio.common.StockStatusType
+com.crolox.odessa.pickorderio.entity.PickOrderType --> com.crolox.odessa.pickorderio.entity.ProductsType
+com.crolox.odessa.pickorderio.entity.PickOrderType --> com.crolox.odessa.pickorderio.entity.PatientsType
+com.crolox.odessa.pickorderio.entity.PickOrderType --> com.crolox.odessa.pickorderio.entity.DeliveriesType
+com.crolox.odessa.pickorderio.entity.ProductType --> com.crolox.odessa.pickorderio.entity.PackageContentType
+com.crolox.odessa.pickorderio.entity.ProductType --> com.crolox.odessa.pickorderio.entity.ProductBarcodesType
+com.crolox.odessa.pickorderio.entity.ProductType --> com.crolox.odessa.pickorderio.entity.ProductWarningLabelsType
+com.crolox.odessa.pickorderio.entity.ProductType --> com.crolox.odessa.pickorderio.common.ZindexType
+com.crolox.odessa.pickorderio.entity.DeliveryInfoType --> com.crolox.odessa.pickorderio.entity.AddressType
+com.crolox.odessa.pickorderio.entity.PickOrderLineType --> com.crolox.odessa.pickorderio.entity.ReceiptBarcodeInfoType
+com.crolox.odessa.pickorderio.entity.PickOrderLineType --> com.crolox.odessa.pickorderio.entity.LabelType
+com.crolox.odessa.pickorderio.entity.PatientType --> com.crolox.odessa.pickorderio.entity.AddressType
+com.crolox.odessa.pickorderio.entity.PatientType --> com.crolox.odessa.pickorderio.entity.DeliveryInfoType
+com.crolox.odessa.pickorderio.entity.ShippingInfoType --> com.crolox.odessa.pickorderio.entity.AddressType
+com.crolox.odessa.pickorderio.entity.ProductLocationInfoType --> com.crolox.odessa.pickorderio.entity.PackageContentType
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_ODESSA_PICKORDERIO_POJO
+com.crolox.odessa.pickorderio.pojo.SplittedPickOrderTypes --> com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.odessa.pickorderio.pojo.DividedPickOrderTypes --> com.crolox.odessa.pickorderio.entity.PickOrderType
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_ODESSA_PICKORDERIO_SERVICE
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_ODESSA_PICKORDERIO_UTIL
+
+!endsub
+
+' USES =======
+
+!startsub USES_COM_CROLOX_ODESSA_PICKORDERIO_COMMON
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE
+com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.ProductBarcodeInfoExtractor ..> com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.pojo.FmdScanInfo
+com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.NmvsBlueprintCore ..> com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.NMVS_BARCODE_TYPE
+com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.NmvsBlueprintCore ..> com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.barcode.NmvsGTINBarcode
+com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.NmvsBlueprintCore ..> com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.NmvsBlueprintCore$GTIN_FIELD
+com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.NmvsBlueprintCore ..> com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.barcode.NmvsPPNBarcode
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE_BARCODE
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE_POJO
+com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.pojo.FmdScanInfo ..> com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.barcode.NmvsGTINBarcode
+com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.pojo.FmdScanInfo ..> com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.barcode.NmvsPPNBarcode
+com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.pojo.FmdScanInfo ..> com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.NMVS_BARCODE_TYPE
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_ODESSA_PICKORDERIO_ENTITY
+com.crolox.odessa.pickorderio.entity.DeliveryType ..> com.crolox.odessa.pickorderio.entity.ShippingInfoType
+com.crolox.odessa.pickorderio.entity.DeliveryType ..> com.crolox.odessa.pickorderio.entity.PickOrderLinesType
+com.crolox.odessa.pickorderio.entity.HeaderType ..> com.crolox.odessa.pickorderio.entity.SmartInfoType
+com.crolox.odessa.pickorderio.entity.HeaderType ..> com.crolox.odessa.pickorderio.entity.WholesaleType
+com.crolox.odessa.pickorderio.entity.ReceiptType ..> com.crolox.odessa.pickorderio.entity.ReceiptBarcodeInfoType
+com.crolox.odessa.pickorderio.entity.ReceiptType ..> com.crolox.odessa.pickorderio.common.ReceiptFridgeInfo
+com.crolox.odessa.pickorderio.entity.ObjectFactory ..> com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.odessa.pickorderio.entity.ObjectFactory ..> com.crolox.odessa.pickorderio.entity.IdentificationType
+com.crolox.odessa.pickorderio.entity.ObjectFactory ..> com.crolox.odessa.pickorderio.entity.HeaderType
+com.crolox.odessa.pickorderio.entity.ObjectFactory ..> com.crolox.odessa.pickorderio.entity.PackageContentType
+com.crolox.odessa.pickorderio.entity.ObjectFactory ..> com.crolox.odessa.pickorderio.entity.ProductType
+com.crolox.odessa.pickorderio.entity.ObjectFactory ..> com.crolox.odessa.pickorderio.entity.ProductsType
+com.crolox.odessa.pickorderio.entity.ObjectFactory ..> com.crolox.odessa.pickorderio.entity.AddressType
+com.crolox.odessa.pickorderio.entity.ObjectFactory ..> com.crolox.odessa.pickorderio.entity.ReceiptBarcodeInfoType
+com.crolox.odessa.pickorderio.entity.ObjectFactory ..> com.crolox.odessa.pickorderio.entity.ReceiptType
+com.crolox.odessa.pickorderio.entity.ObjectFactory ..> com.crolox.odessa.pickorderio.entity.PatientType
+com.crolox.odessa.pickorderio.entity.ObjectFactory ..> com.crolox.odessa.pickorderio.entity.PatientsType
+com.crolox.odessa.pickorderio.entity.ObjectFactory ..> com.crolox.odessa.pickorderio.entity.ShippingInfoType
+com.crolox.odessa.pickorderio.entity.ObjectFactory ..> com.crolox.odessa.pickorderio.entity.LineType
+com.crolox.odessa.pickorderio.entity.ObjectFactory ..> com.crolox.odessa.pickorderio.entity.LabelType
+com.crolox.odessa.pickorderio.entity.ObjectFactory ..> com.crolox.odessa.pickorderio.entity.PickOrderLineType
+com.crolox.odessa.pickorderio.entity.ObjectFactory ..> com.crolox.odessa.pickorderio.entity.PickOrderLinesType
+com.crolox.odessa.pickorderio.entity.ObjectFactory ..> com.crolox.odessa.pickorderio.entity.DeliveryType
+com.crolox.odessa.pickorderio.entity.ObjectFactory ..> com.crolox.odessa.pickorderio.entity.DeliveriesType
+com.crolox.odessa.pickorderio.entity.DeliveriesType ..> com.crolox.odessa.pickorderio.entity.DeliveryType
+com.crolox.odessa.pickorderio.entity.PickOrderType ..> com.crolox.odessa.pickorderio.entity.IdentificationType
+com.crolox.odessa.pickorderio.entity.PickOrderType ..> com.crolox.odessa.pickorderio.entity.HeaderType
+com.crolox.odessa.pickorderio.entity.PickOrderType ..> com.crolox.odessa.pickorderio.common.StockStatusType
+com.crolox.odessa.pickorderio.entity.PickOrderType ..> com.crolox.odessa.pickorderio.entity.ProductsType
+com.crolox.odessa.pickorderio.entity.PickOrderType ..> com.crolox.odessa.pickorderio.entity.PatientsType
+com.crolox.odessa.pickorderio.entity.PickOrderType ..> com.crolox.odessa.pickorderio.entity.DeliveriesType
+com.crolox.odessa.pickorderio.entity.PickOrderType ..> com.crolox.odessa.pickorderio.entity.PatientType
+com.crolox.odessa.pickorderio.entity.PickOrderType ..> com.crolox.odessa.pickorderio.entity.ReceiptType
+com.crolox.odessa.pickorderio.entity.PickOrderType ..> com.crolox.odessa.pickorderio.entity.ProductType
+com.crolox.odessa.pickorderio.entity.PickOrderType ..> com.crolox.odessa.pickorderio.entity.PickOrderLineType
+com.crolox.odessa.pickorderio.entity.PickOrderType ..> com.crolox.odessa.pickorderio.entity.LineType
+com.crolox.odessa.pickorderio.entity.PickOrderType ..> com.crolox.odessa.pickorderio.entity.ProductBarcodeType
+com.crolox.odessa.pickorderio.entity.PatientsType ..> com.crolox.odessa.pickorderio.entity.PatientType
+com.crolox.odessa.pickorderio.entity.ProductType ..> com.crolox.odessa.pickorderio.entity.PackageContentType
+com.crolox.odessa.pickorderio.entity.ProductType ..> com.crolox.odessa.pickorderio.entity.ProductBarcodesType
+com.crolox.odessa.pickorderio.entity.ProductType ..> com.crolox.odessa.pickorderio.entity.ProductWarningLabelsType
+com.crolox.odessa.pickorderio.entity.ProductType ..> com.crolox.odessa.pickorderio.common.ZindexType
+com.crolox.odessa.pickorderio.entity.DeliveryInfoType ..> com.crolox.odessa.pickorderio.entity.AddressType
+com.crolox.odessa.pickorderio.entity.PickOrderLineType ..> com.crolox.odessa.pickorderio.entity.ReceiptBarcodeInfoType
+com.crolox.odessa.pickorderio.entity.PickOrderLineType ..> com.crolox.odessa.pickorderio.entity.LabelType
+com.crolox.odessa.pickorderio.entity.PatientType ..> com.crolox.odessa.pickorderio.entity.AddressType
+com.crolox.odessa.pickorderio.entity.PatientType ..> com.crolox.odessa.pickorderio.entity.DeliveryInfoType
+com.crolox.odessa.pickorderio.entity.ShippingInfoType ..> com.crolox.odessa.pickorderio.entity.AddressType
+com.crolox.odessa.pickorderio.entity.ProductLocationInfoType ..> com.crolox.odessa.pickorderio.entity.PackageContentType
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_ODESSA_PICKORDERIO_POJO
+com.crolox.odessa.pickorderio.pojo.SplittedPickOrderTypes ..> com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.odessa.pickorderio.pojo.DividedPickOrderTypes ..> com.crolox.odessa.pickorderio.entity.PickOrderType
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_ODESSA_PICKORDERIO_SERVICE
+com.crolox.odessa.pickorderio.service.PickorderIO ..> com.crolox.odessa.pickorderio.entity.PickOrderType
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_ODESSA_PICKORDERIO_UTIL
+com.crolox.odessa.pickorderio.util.PickOrderUtil ..> com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.odessa.pickorderio.util.PickOrderUtil ..> com.crolox.odessa.pickorderio.entity.ProductLocationInfosType
+com.crolox.odessa.pickorderio.util.PickOrderUtil ..> com.crolox.odessa.pickorderio.entity.ProductType
+com.crolox.odessa.pickorderio.util.PickOrderUtil ..> com.crolox.odessa.pickorderio.entity.ReceiptType
+com.crolox.odessa.pickorderio.util.PickOrderUtil ..> com.crolox.odessa.pickorderio.entity.PickOrderLineType
+com.crolox.odessa.pickorderio.util.PickOrderUtil ..> com.crolox.odessa.pickorderio.entity.ProductLocationInfoType
+com.crolox.odessa.pickorderio.util.DeepClone ..> com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.odessa.pickorderio.util.Sorter ..> com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.odessa.pickorderio.util.Sorter ..> com.crolox.odessa.pickorderio.entity.PickOrderLinesType
+com.crolox.odessa.pickorderio.util.Sorter ..> com.crolox.odessa.pickorderio.entity.PickOrderLineType
+com.crolox.odessa.pickorderio.util.Sorter ..> com.crolox.odessa.pickorderio.entity.PatientsType
+com.crolox.odessa.pickorderio.util.Sorter ..> com.crolox.odessa.pickorderio.entity.PatientType
+com.crolox.odessa.pickorderio.util.Sorter ..> com.crolox.odessa.pickorderio.entity.ReceiptType
+com.crolox.odessa.pickorderio.util.Splitter ..> com.crolox.odessa.pickorderio.pojo.SplittedPickOrderTypes
+com.crolox.odessa.pickorderio.util.Splitter ..> com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.odessa.pickorderio.util.Splitter ..> com.crolox.odessa.pickorderio.pojo.DividedPickOrderTypes
+com.crolox.odessa.pickorderio.util.Splitter ..> com.crolox.odessa.pickorderio.entity.ProductType
+com.crolox.odessa.pickorderio.util.Splitter ..> com.crolox.odessa.pickorderio.entity.PickOrderLineType
+com.crolox.odessa.pickorderio.util.Splitter ..> com.crolox.odessa.pickorderio.entity.PatientType
+com.crolox.odessa.pickorderio.util.Splitter ..> com.crolox.odessa.pickorderio.entity.ReceiptType
+com.crolox.odessa.pickorderio.util.Merger ..> com.crolox.odessa.pickorderio.entity.PatientType
+com.crolox.odessa.pickorderio.util.Merger ..> com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.odessa.pickorderio.util.Merger ..> com.crolox.odessa.pickorderio.entity.PickOrderLineType
+com.crolox.odessa.pickorderio.util.Merger ..> com.crolox.odessa.pickorderio.entity.ProductType
+com.crolox.odessa.pickorderio.util.Filter ..> com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.odessa.pickorderio.util.Filter ..> com.crolox.odessa.pickorderio.entity.PickOrderLineType
+com.crolox.odessa.pickorderio.util.Filter ..> com.crolox.odessa.pickorderio.entity.ReceiptType
+com.crolox.odessa.pickorderio.util.Filter ..> com.crolox.odessa.pickorderio.entity.PatientType
+com.crolox.odessa.pickorderio.util.Filter ..> com.crolox.odessa.pickorderio.entity.ProductType
+
+!endsub
+
+' IMPORTS =======
+' Java Files Path : /Users/paolobrunasti/IdeaProjects/OCTA/pickorderio/src/main/java/
+
+!startsub IMPORTS_COM_CROLOX_ODESSA_PICKORDERIO_COMMON
+' com.crolox.odessa.pickorderio.common.ZindexType
+
+' com.crolox.odessa.pickorderio.common.AdditionalInfoContentType
+
+' com.crolox.odessa.pickorderio.common.OrderType
+
+' com.crolox.odessa.pickorderio.common.ReceiptFridgeInfo
+
+' com.crolox.odessa.pickorderio.common.StockStatusType
+
+' com.crolox.odessa.pickorderio.common.Constants
+
+' com.crolox.odessa.pickorderio.common.AdditionalInfoContentType
+
+' com.crolox.odessa.pickorderio.common.ZindexType
+
+' com.crolox.odessa.pickorderio.common.Constants
+
+' com.crolox.odessa.pickorderio.common.OrderType
+
+' com.crolox.odessa.pickorderio.common.ReceiptFridgeInfo
+
+' com.crolox.odessa.pickorderio.common.StockStatusType
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE
+' com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.NMVS_BARCODE_TYPE
+
+' com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.NmvsBlueprintCore$PPN_FIELD
+
+' com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.ProductBarcodeInfoExtractor$1
+
+' com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.NmvsBlueprintCore$GTIN_FIELD
+
+' com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.ProductBarcodeInfoExtractor
+com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.ProductBarcodeInfoExtractor ..o com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.barcode.NmvsPPNBarcode
+com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.ProductBarcodeInfoExtractor ..o com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.pojo.FmdScanInfo
+com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.ProductBarcodeInfoExtractor ..o com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.barcode.NmvsGTINBarcode
+
+' com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.NmvsBlueprintCore
+
+' com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.NmvsBlueprintCore$1
+
+' com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.NMVS_BARCODE_TYPE
+
+' com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.NmvsBlueprintCore
+
+' com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.ProductBarcodeInfoExtractor
+
+' com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.NmvsBlueprintCore$GTIN_FIELD
+
+' com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.NmvsBlueprintCore$PPN_FIELD
+
+' com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.ProductBarcodeInfoExtractor$1
+
+' com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.NmvsBlueprintCore$1
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE_BARCODE
+' com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.barcode.NmvsGTINBarcode
+
+' com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.barcode.NmvsPPNBarcode
+
+' com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.barcode.NmvsGTINBarcode
+
+' com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.barcode.NmvsPPNBarcode
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_ODESSA_PICKORDERIO_COMPONENT_ARVATOSYSTEMSHEALTHCARE_NMVSBLUEPRINTCORE_POJO
+' com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.pojo.FmdScanInfo
+
+' com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.pojo.FmdScanInfo
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_ODESSA_PICKORDERIO_ENTITY
+' com.crolox.odessa.pickorderio.entity.ReceiptBarcodeInfoType
+
+' com.crolox.odessa.pickorderio.entity.ProductsType
+
+' com.crolox.odessa.pickorderio.entity.AddressType
+
+' com.crolox.odessa.pickorderio.entity.DeliveryType
+
+' com.crolox.odessa.pickorderio.entity.ProductLocationInfosType
+
+' com.crolox.odessa.pickorderio.entity.HeaderType
+
+' com.crolox.odessa.pickorderio.entity.ReceiptType
+com.crolox.odessa.pickorderio.entity.ReceiptType ..o com.crolox.odessa.pickorderio.common.ReceiptFridgeInfo
+
+' com.crolox.odessa.pickorderio.entity.IdentificationType
+
+' com.crolox.odessa.pickorderio.entity.ObjectFactory
+
+' com.crolox.odessa.pickorderio.entity.DeliveriesType
+
+' com.crolox.odessa.pickorderio.entity.PickOrderLinesType
+
+' com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.odessa.pickorderio.entity.PickOrderType ..o com.crolox.odessa.pickorderio.util.CommonUtil
+com.crolox.odessa.pickorderio.entity.PickOrderType ..o  com.crolox.odessa.pickorderio.common.Constants.DELAY_DESCRIPTION
+com.crolox.odessa.pickorderio.entity.PickOrderType ..o com.crolox.odessa.pickorderio.common.ZindexType
+com.crolox.odessa.pickorderio.entity.PickOrderType ..o com.crolox.odessa.pickorderio.common.Constants
+com.crolox.odessa.pickorderio.entity.PickOrderType ..o com.crolox.odessa.pickorderio.common.StockStatusType
+com.crolox.odessa.pickorderio.entity.PickOrderType ..o com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.ProductBarcodeInfoExtractor
+
+' com.crolox.odessa.pickorderio.entity.WholesaleType
+
+' com.crolox.odessa.pickorderio.entity.package-info
+
+' com.crolox.odessa.pickorderio.entity.ProductBarcodeType
+
+' com.crolox.odessa.pickorderio.entity.PatientsType
+
+' com.crolox.odessa.pickorderio.entity.ProductType
+com.crolox.odessa.pickorderio.entity.ProductType ..o com.crolox.odessa.pickorderio.common.ZindexType
+
+' com.crolox.odessa.pickorderio.entity.DeliveryInfoType
+
+' com.crolox.odessa.pickorderio.entity.ProductWarningLabelsType
+
+' com.crolox.odessa.pickorderio.entity.PickOrderLineType
+com.crolox.odessa.pickorderio.entity.PickOrderLineType ..o com.crolox.odessa.pickorderio.util.CommonUtil
+
+' com.crolox.odessa.pickorderio.entity.PatientType
+
+' com.crolox.odessa.pickorderio.entity.ProductBarcodesType
+
+' com.crolox.odessa.pickorderio.entity.PackageContentType
+com.crolox.odessa.pickorderio.entity.PackageContentType ..o com.crolox.odessa.pickorderio.util.CommonUtil
+
+' com.crolox.odessa.pickorderio.entity.LabelType
+
+' com.crolox.odessa.pickorderio.entity.ShippingInfoType
+
+' com.crolox.odessa.pickorderio.entity.LineType
+
+' com.crolox.odessa.pickorderio.entity.ProductLocationInfoType
+
+' com.crolox.odessa.pickorderio.entity.SmartInfoType
+
+' com.crolox.odessa.pickorderio.entity.ProductWarningLabelType
+
+' com.crolox.odessa.pickorderio.entity.LineType
+
+' com.crolox.odessa.pickorderio.entity.ShippingInfoType
+
+' com.crolox.odessa.pickorderio.entity.AddressType
+
+' com.crolox.odessa.pickorderio.entity.ReceiptType
+
+' com.crolox.odessa.pickorderio.entity.PackageContentType
+
+' com.crolox.odessa.pickorderio.entity.DeliveryType
+
+' com.crolox.odessa.pickorderio.entity.PickOrderType
+
+' com.crolox.odessa.pickorderio.entity.ObjectFactory
+
+' com.crolox.odessa.pickorderio.entity.DeliveriesType
+
+' com.crolox.odessa.pickorderio.entity.ProductBarcodesType
+
+' com.crolox.odessa.pickorderio.entity.ReceiptBarcodeInfoType
+
+' com.crolox.odessa.pickorderio.entity.HeaderType
+
+' com.crolox.odessa.pickorderio.entity.PatientsType
+
+' com.crolox.odessa.pickorderio.entity.ProductWarningLabelType
+
+' com.crolox.odessa.pickorderio.entity.PickOrderLineType
+
+' com.crolox.odessa.pickorderio.entity.ProductLocationInfoType
+
+' com.crolox.odessa.pickorderio.entity.DeliveryInfoType
+
+' com.crolox.odessa.pickorderio.entity.package-info
+
+' com.crolox.odessa.pickorderio.entity.ProductsType
+
+' com.crolox.odessa.pickorderio.entity.SmartInfoType
+
+' com.crolox.odessa.pickorderio.entity.IdentificationType
+
+' com.crolox.odessa.pickorderio.entity.ProductType
+
+' com.crolox.odessa.pickorderio.entity.LabelType
+
+' com.crolox.odessa.pickorderio.entity.ProductLocationInfosType
+
+' com.crolox.odessa.pickorderio.entity.PatientType
+
+' com.crolox.odessa.pickorderio.entity.ProductBarcodeType
+
+' com.crolox.odessa.pickorderio.entity.ProductWarningLabelsType
+
+' com.crolox.odessa.pickorderio.entity.WholesaleType
+
+' com.crolox.odessa.pickorderio.entity.PickOrderLinesType
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_ODESSA_PICKORDERIO_POJO
+' com.crolox.odessa.pickorderio.pojo.SplittedPickOrderTypes
+com.crolox.odessa.pickorderio.pojo.SplittedPickOrderTypes ..o com.crolox.odessa.pickorderio.entity.PickOrderType
+
+' com.crolox.odessa.pickorderio.pojo.DividedPickOrderTypes
+com.crolox.odessa.pickorderio.pojo.DividedPickOrderTypes ..o com.crolox.odessa.pickorderio.entity.PickOrderType
+
+' com.crolox.odessa.pickorderio.pojo.DividedPickOrderTypes
+
+' com.crolox.odessa.pickorderio.pojo.SplittedPickOrderTypes
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_ODESSA_PICKORDERIO_SERVICE
+' com.crolox.odessa.pickorderio.service.PickorderIO
+com.crolox.odessa.pickorderio.service.PickorderIO ..o com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.odessa.pickorderio.service.PickorderIO ..o com.crolox.odessa.pickorderio.util.PickOrderUtil
+
+' com.crolox.odessa.pickorderio.service.PickorderIO
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_ODESSA_PICKORDERIO_UTIL
+' com.crolox.odessa.pickorderio.util.PickOrderUtil
+
+' com.crolox.odessa.pickorderio.util.DeepClone
+com.crolox.odessa.pickorderio.util.DeepClone ..o com.crolox.odessa.pickorderio.entity.PickOrderType
+
+' com.crolox.odessa.pickorderio.util.Sorter
+com.crolox.odessa.pickorderio.util.Sorter ..o  java.util.Map.Entry.comparingByKey
+com.crolox.odessa.pickorderio.util.Sorter ..o  java.util.stream.Collectors.toMap
+
+' com.crolox.odessa.pickorderio.util.Splitter
+com.crolox.odessa.pickorderio.util.Splitter ..o com.crolox.odessa.pickorderio.pojo.SplittedPickOrderTypes
+com.crolox.odessa.pickorderio.util.Splitter ..o com.crolox.odessa.pickorderio.pojo.DividedPickOrderTypes
+com.crolox.odessa.pickorderio.util.Splitter ..o  com.crolox.odessa.pickorderio.util.Filter.clean
+com.crolox.odessa.pickorderio.util.Splitter ..o com.crolox.odessa.pickorderio.common.AdditionalInfoContentType
+
+' com.crolox.odessa.pickorderio.util.CommonUtil
+
+' com.crolox.odessa.pickorderio.util.Merger
+com.crolox.odessa.pickorderio.util.Merger ..o com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.odessa.pickorderio.util.Merger ..o com.crolox.odessa.pickorderio.entity.PatientType
+
+' com.crolox.odessa.pickorderio.util.Filter
+
+' com.crolox.odessa.pickorderio.util.Extracter
+com.crolox.odessa.pickorderio.util.Extracter ..o com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.odessa.pickorderio.util.Extracter ..o com.crolox.odessa.pickorderio.entity.PickOrderLineType
+
+' com.crolox.odessa.pickorderio.util.PickOrderUtil
+
+' com.crolox.odessa.pickorderio.util.Merger
+
+' com.crolox.odessa.pickorderio.util.Splitter
+
+' com.crolox.odessa.pickorderio.util.Filter
+
+' com.crolox.odessa.pickorderio.util.DeepClone
+
+' com.crolox.odessa.pickorderio.util.Sorter
+
+' com.crolox.odessa.pickorderio.util.Extracter
+
+' com.crolox.odessa.pickorderio.util.CommonUtil
+
+
+!endsub
+
+
+@enduml

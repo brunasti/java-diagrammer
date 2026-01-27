@@ -1,0 +1,648 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+' GENERATE CLASS DIAGRAM ===========
+' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
+' Path            : [/Users/paolobrunasti/IdeaProjects/OCTA/zindexproductsservice/build/classes/java/main]
+' Java Files Path : [/Users/paolobrunasti/IdeaProjects/OCTA/zindexproductsservice/src/main/java/]
+' Configuration   : [/Users/paolobrunasti/IdeaProjects/mine/java-diagrammer/docs/octa/config.json]
+' Generated at    : Tue Jan 27 11:50:43 CET 2026
+'
+'   Stat infos    :
+'       Files : [60]
+'       Lines : [6738]
+'     Classes : [60]
+'     Methods : [658]
+'      Fields : [320]
+
+' Include         : [./docs/includedFile.txt] ---------
+title Example with legend and title
+
+hide empty members
+
+
+legend
+Connections legend
+----
+--|> : Extends
+..|> : Implements
+----
+--> : Fields and Attributes
+..> : Uses
+end legend
+' Include end     : --------------------------
+
+
+
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!COM_CROLOX_ZINDEX_PRODUCTS_SERVICE
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!INHERITANCES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!IMPLEMENTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!FIELDS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!USES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!IMPORTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE
+
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_ASPECT
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!INHERITANCES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_ASPECT
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!IMPLEMENTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_ASPECT
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!FIELDS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_ASPECT
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!USES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_ASPECT
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!IMPORTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_ASPECT
+
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_COMMON
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!INHERITANCES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_COMMON
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!IMPLEMENTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_COMMON
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!FIELDS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_COMMON
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!USES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_COMMON
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!IMPORTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_COMMON
+
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_CONFIG
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!INHERITANCES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_CONFIG
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!IMPLEMENTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_CONFIG
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!FIELDS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_CONFIG
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!USES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_CONFIG
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!IMPORTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_CONFIG
+
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_CONTROLLER
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!INHERITANCES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_CONTROLLER
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!IMPLEMENTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_CONTROLLER
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!FIELDS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_CONTROLLER
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!USES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_CONTROLLER
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!IMPORTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_CONTROLLER
+
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_DOMAIN
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!INHERITANCES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_DOMAIN
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!IMPLEMENTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_DOMAIN
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!FIELDS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_DOMAIN
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!USES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_DOMAIN
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!IMPORTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_DOMAIN
+
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_DTO
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!INHERITANCES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_DTO
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!IMPLEMENTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_DTO
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!FIELDS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_DTO
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!USES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_DTO
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!IMPORTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_DTO
+
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_EXCEPTION
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!INHERITANCES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_EXCEPTION
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!IMPLEMENTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_EXCEPTION
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!FIELDS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_EXCEPTION
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!USES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_EXCEPTION
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!IMPORTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_EXCEPTION
+
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_REPOSITORY
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!INHERITANCES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_REPOSITORY
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!IMPLEMENTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_REPOSITORY
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!FIELDS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_REPOSITORY
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!USES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_REPOSITORY
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!IMPORTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_REPOSITORY
+
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_SERVICE
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!INHERITANCES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_SERVICE
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!IMPLEMENTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_SERVICE
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!FIELDS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_SERVICE
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!USES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_SERVICE
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!IMPORTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_SERVICE
+
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_UTIL
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!INHERITANCES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_UTIL
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!IMPLEMENTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_UTIL
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!FIELDS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_UTIL
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!USES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_UTIL
+'!includesub OCTA-zindexproductsservice-class-diagram.puml!IMPORTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_UTIL
+
+
+
+' CLASSES =======
+!startsub COM_CROLOX_ZINDEX_PRODUCTS_SERVICE
+class com.crolox.zindex.products.service.ZindexProductsService$1
+class com.crolox.zindex.products.service.ZindexProductsService
+
+!endsub
+
+!startsub COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_ASPECT
+interface com.crolox.zindex.products.service.aspect.Loggable
+class com.crolox.zindex.products.service.aspect.LoggingAspect
+
+!endsub
+
+!startsub COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_COMMON
+enum com.crolox.zindex.products.service.common.WarningLabel{
+  NIET_GEVONDEN
+  NIET_ORAAL
+  INHALATIE_VIA_DE_NEUS
+  INHALATIE_VIA_DE_MOND
+  OOR_DRUPPELS
+  OOG_DRUPPELS
+  VOOR_RECTALE_TOEDIENING
+  VOOR_VAGINALE_TOEDIENING
+  VOOR_ONDER_DE_TONG
+  IN_DE_MOND_NIET_DOORSLIKKEN
+  VOOR_INJECTIE
+}
+class com.crolox.zindex.products.service.common.FileData
+class com.crolox.zindex.products.service.common.Info
+class com.crolox.zindex.products.service.common.RunStatistics
+enum com.crolox.zindex.products.service.common.DateLayout{
+  YEAR_LEFT
+  YEAR_RIGHT
+}
+
+!endsub
+
+!startsub COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_CONFIG
+class com.crolox.zindex.products.service.config.AppContextEventListener
+class com.crolox.zindex.products.service.config.FileCheckerThreadConfig
+class com.crolox.zindex.products.service.config.SimpleCORSFilter
+
+!endsub
+
+!startsub COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_CONTROLLER
+class com.crolox.zindex.products.service.controller.ProductController
+class com.crolox.zindex.products.service.controller.InfoController
+
+!endsub
+
+!startsub COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_DOMAIN
+class com.crolox.zindex.products.service.domain.ProductPrice
+class com.crolox.zindex.products.service.domain.Product
+
+!endsub
+
+!startsub COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_DTO
+class com.crolox.zindex.products.service.dto.Leverancier
+class com.crolox.zindex.products.service.dto.Artikel
+class com.crolox.zindex.products.service.dto.HIBC
+class com.crolox.zindex.products.service.dto.Naam
+class com.crolox.zindex.products.service.dto.LogistiekeVerpakingsInformatie
+class com.crolox.zindex.products.service.dto.HulpmiddelenFilterDto
+class com.crolox.zindex.products.service.dto.HandelsProduct
+class com.crolox.zindex.products.service.dto.GpktwgAtcode
+
+!endsub
+
+!startsub COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_EXCEPTION
+class com.crolox.zindex.products.service.exception.ApplicationException
+
+!endsub
+
+!startsub COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_REPOSITORY
+interface com.crolox.zindex.products.service.repository.ProductRepository
+
+!endsub
+
+!startsub COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_SERVICE
+class com.crolox.zindex.products.service.service.ProductService
+class com.crolox.zindex.products.service.service.FileDataService
+class com.crolox.zindex.products.service.service.ProductRefreshService
+
+!endsub
+
+!startsub COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_UTIL
+class com.crolox.zindex.products.service.util.Utils
+
+!endsub
+
+' INHERITANCES =======
+
+!startsub INHERITANCES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_ASPECT
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_COMMON
+java.lang.Enum <|-- com.crolox.zindex.products.service.common.WarningLabel
+java.lang.Enum <|-- com.crolox.zindex.products.service.common.DateLayout
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_CONFIG
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_CONTROLLER
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_DOMAIN
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_DTO
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_EXCEPTION
+java.lang.Exception <|-- com.crolox.zindex.products.service.exception.ApplicationException
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_REPOSITORY
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_SERVICE
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_UTIL
+
+!endsub
+
+' IMPLEMENT INTERFACE =======
+
+!startsub IMPLEMENTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_ASPECT
+java.lang.annotation.Annotation <|.. com.crolox.zindex.products.service.aspect.Loggable
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_COMMON
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_CONFIG
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_CONTROLLER
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_DOMAIN
+java.io.Serializable <|.. com.crolox.zindex.products.service.domain.ProductPrice
+java.lang.Comparable <|.. com.crolox.zindex.products.service.domain.ProductPrice
+java.io.Serializable <|.. com.crolox.zindex.products.service.domain.Product
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_DTO
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_EXCEPTION
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_REPOSITORY
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_SERVICE
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_UTIL
+
+!endsub
+
+' FIELDS =======
+
+!startsub FIELDS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE
+com.crolox.zindex.products.service.ZindexProductsService$1 --> com.crolox.zindex.products.service.ZindexProductsService
+com.crolox.zindex.products.service.ZindexProductsService --> com.crolox.zindex.products.service.service.ProductRefreshService
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_ASPECT
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_COMMON
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_CONFIG
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_CONTROLLER
+com.crolox.zindex.products.service.controller.ProductController --> com.crolox.zindex.products.service.service.ProductService
+com.crolox.zindex.products.service.controller.InfoController --> com.crolox.zindex.products.service.service.ProductService
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_DOMAIN
+com.crolox.zindex.products.service.domain.ProductPrice --> com.crolox.zindex.products.service.domain.Product
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_DTO
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_EXCEPTION
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_REPOSITORY
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_SERVICE
+com.crolox.zindex.products.service.service.ProductService --> com.crolox.zindex.products.service.repository.ProductRepository
+com.crolox.zindex.products.service.service.ProductService --> com.crolox.zindex.products.service.service.FileDataService
+com.crolox.zindex.products.service.service.ProductRefreshService --> com.crolox.zindex.products.service.service.FileDataService
+com.crolox.zindex.products.service.service.ProductRefreshService --> com.crolox.zindex.products.service.service.ProductService
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_UTIL
+
+!endsub
+
+' USES =======
+
+!startsub USES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE
+com.crolox.zindex.products.service.ZindexProductsService$1 ..> com.crolox.zindex.products.service.ZindexProductsService
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_ASPECT
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_COMMON
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_CONFIG
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_CONTROLLER
+com.crolox.zindex.products.service.controller.ProductController ..> com.crolox.zindex.products.service.dto.HulpmiddelenFilterDto
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_DOMAIN
+com.crolox.zindex.products.service.domain.ProductPrice ..> com.crolox.zindex.products.service.domain.Product
+com.crolox.zindex.products.service.domain.Product ..> com.crolox.zindex.products.service.domain.ProductPrice
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_DTO
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_EXCEPTION
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_REPOSITORY
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_SERVICE
+com.crolox.zindex.products.service.service.ProductService ..> com.crolox.zindex.products.service.domain.Product
+com.crolox.zindex.products.service.service.ProductService ..> com.crolox.zindex.products.service.dto.HulpmiddelenFilterDto
+com.crolox.zindex.products.service.service.ProductRefreshService ..> com.crolox.zindex.products.service.common.WarningLabel
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_UTIL
+com.crolox.zindex.products.service.util.Utils ..> com.crolox.zindex.products.service.common.DateLayout
+
+!endsub
+
+' IMPORTS =======
+' Java Files Path : /Users/paolobrunasti/IdeaProjects/OCTA/zindexproductsservice/src/main/java/
+
+!startsub IMPORTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE
+' com.crolox.zindex.products.service.ZindexProductsService$1
+
+' com.crolox.zindex.products.service.ZindexProductsService
+com.crolox.zindex.products.service.ZindexProductsService ..o com.crolox.zindex.products.service.service.ProductRefreshService
+com.crolox.zindex.products.service.ZindexProductsService ..o  com.crolox.zindex.products.service.common.Info.APPLICATION_LOG_PREFIX
+
+' com.crolox.zindex.products.service.ZindexProductsService$1
+
+' com.crolox.zindex.products.service.ZindexProductsService
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_ASPECT
+' com.crolox.zindex.products.service.aspect.Loggable
+
+' com.crolox.zindex.products.service.aspect.LoggingAspect
+
+' com.crolox.zindex.products.service.aspect.Loggable
+
+' com.crolox.zindex.products.service.aspect.LoggingAspect
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_COMMON
+' com.crolox.zindex.products.service.common.WarningLabel
+
+' com.crolox.zindex.products.service.common.FileData
+
+' com.crolox.zindex.products.service.common.Info
+
+' com.crolox.zindex.products.service.common.RunStatistics
+
+' com.crolox.zindex.products.service.common.DateLayout
+
+' com.crolox.zindex.products.service.common.WarningLabel
+
+' com.crolox.zindex.products.service.common.Info
+
+' com.crolox.zindex.products.service.common.FileData
+
+' com.crolox.zindex.products.service.common.RunStatistics
+
+' com.crolox.zindex.products.service.common.DateLayout
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_CONFIG
+' com.crolox.zindex.products.service.config.AppContextEventListener
+com.crolox.zindex.products.service.config.AppContextEventListener ..o  com.crolox.zindex.products.service.common.Info.APPLICATION_LOG_PREFIX
+
+' com.crolox.zindex.products.service.config.FileCheckerThreadConfig
+
+' com.crolox.zindex.products.service.config.SimpleCORSFilter
+com.crolox.zindex.products.service.config.SimpleCORSFilter ..o  com.crolox.zindex.products.service.common.Info.APPLICATION_LOG_PREFIX
+
+' com.crolox.zindex.products.service.config.AppContextEventListener
+
+' com.crolox.zindex.products.service.config.FileCheckerThreadConfig
+
+' com.crolox.zindex.products.service.config.SimpleCORSFilter
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_CONTROLLER
+' com.crolox.zindex.products.service.controller.ProductController
+com.crolox.zindex.products.service.controller.ProductController ..o com.crolox.zindex.products.service.dto.HulpmiddelenFilterDto
+com.crolox.zindex.products.service.controller.ProductController ..o com.crolox.zindex.products.service.domain.Product
+com.crolox.zindex.products.service.controller.ProductController ..o com.crolox.zindex.products.service.service.ProductService
+com.crolox.zindex.products.service.controller.ProductController ..o com.crolox.zindex.products.service.aspect.Loggable
+
+' com.crolox.zindex.products.service.controller.InfoController
+com.crolox.zindex.products.service.controller.InfoController ..o com.crolox.zindex.products.service.service.ProductService
+com.crolox.zindex.products.service.controller.InfoController ..o com.crolox.zindex.products.service.aspect.Loggable
+com.crolox.zindex.products.service.controller.InfoController ..o  com.crolox.zindex.products.service.common.Info.productsUpdateDateTime
+
+' com.crolox.zindex.products.service.controller.ProductController
+
+' com.crolox.zindex.products.service.controller.InfoController
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_DOMAIN
+' com.crolox.zindex.products.service.domain.ProductPrice
+
+' com.crolox.zindex.products.service.domain.Product
+
+' com.crolox.zindex.products.service.domain.Product
+
+' com.crolox.zindex.products.service.domain.ProductPrice
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_DTO
+' com.crolox.zindex.products.service.dto.Leverancier
+
+' com.crolox.zindex.products.service.dto.Artikel
+
+' com.crolox.zindex.products.service.dto.HIBC
+
+' com.crolox.zindex.products.service.dto.Naam
+
+' com.crolox.zindex.products.service.dto.LogistiekeVerpakingsInformatie
+
+' com.crolox.zindex.products.service.dto.HulpmiddelenFilterDto
+
+' com.crolox.zindex.products.service.dto.HandelsProduct
+
+' com.crolox.zindex.products.service.dto.GpktwgAtcode
+
+' com.crolox.zindex.products.service.dto.HandelsProduct
+
+' com.crolox.zindex.products.service.dto.GpktwgAtcode
+
+' com.crolox.zindex.products.service.dto.Artikel
+
+' com.crolox.zindex.products.service.dto.Naam
+
+' com.crolox.zindex.products.service.dto.HIBC
+
+' com.crolox.zindex.products.service.dto.HulpmiddelenFilterDto
+
+' com.crolox.zindex.products.service.dto.LogistiekeVerpakingsInformatie
+
+' com.crolox.zindex.products.service.dto.Leverancier
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_EXCEPTION
+' com.crolox.zindex.products.service.exception.ApplicationException
+
+' com.crolox.zindex.products.service.exception.ApplicationException
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_REPOSITORY
+' com.crolox.zindex.products.service.repository.ProductRepository
+
+' com.crolox.zindex.products.service.repository.ProductRepository
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_SERVICE
+' com.crolox.zindex.products.service.service.ProductService
+
+' com.crolox.zindex.products.service.service.FileDataService
+com.crolox.zindex.products.service.service.FileDataService ..o com.crolox.zindex.products.service.util.Utils
+com.crolox.zindex.products.service.service.FileDataService ..o com.crolox.odessa.util.OdessaUtils
+com.crolox.zindex.products.service.service.FileDataService ..o com.crolox.zindex.products.service.common.FileData
+com.crolox.zindex.products.service.service.FileDataService ..o  com.crolox.zindex.products.service.common.Info.APPLICATION_LOG_PREFIX
+com.crolox.zindex.products.service.service.FileDataService ..o com.crolox.zindex.products.service.common.DateLayout
+
+' com.crolox.zindex.products.service.service.ProductRefreshService
+
+' com.crolox.zindex.products.service.service.ProductService
+
+' com.crolox.zindex.products.service.service.ProductRefreshService
+
+' com.crolox.zindex.products.service.service.FileDataService
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_UTIL
+' com.crolox.zindex.products.service.util.Utils
+
+' com.crolox.zindex.products.service.util.Utils
+
+
+!endsub
+
+
+@enduml

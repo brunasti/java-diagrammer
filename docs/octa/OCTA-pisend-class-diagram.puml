@@ -1,0 +1,779 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+' GENERATE CLASS DIAGRAM ===========
+' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
+' Path            : [/Users/paolobrunasti/IdeaProjects/OCTA/pisend/target/classes]
+' Java Files Path : [/Users/paolobrunasti/IdeaProjects/OCTA/pisend/src/main/java/]
+' Configuration   : [/Users/paolobrunasti/IdeaProjects/mine/java-diagrammer/docs/octa/config.json]
+' Generated at    : Tue Jan 27 11:50:43 CET 2026
+'
+'   Stat infos    :
+'       Files : [63]
+'       Lines : [3228]
+'     Classes : [62]
+'     Methods : [346]
+'      Fields : [200]
+
+' Include         : [./docs/includedFile.txt] ---------
+title Example with legend and title
+
+hide empty members
+
+
+legend
+Connections legend
+----
+--|> : Extends
+..|> : Implements
+----
+--> : Fields and Attributes
+..> : Uses
+end legend
+' Include end     : --------------------------
+
+
+
+'!includesub OCTA-pisend-class-diagram.puml!COM_CROLOX_PISEND
+'!includesub OCTA-pisend-class-diagram.puml!INHERITANCES_COM_CROLOX_PISEND
+'!includesub OCTA-pisend-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISEND
+'!includesub OCTA-pisend-class-diagram.puml!FIELDS_COM_CROLOX_PISEND
+'!includesub OCTA-pisend-class-diagram.puml!USES_COM_CROLOX_PISEND
+'!includesub OCTA-pisend-class-diagram.puml!IMPORTS_COM_CROLOX_PISEND
+
+'!includesub OCTA-pisend-class-diagram.puml!COM_CROLOX_PISEND_API
+'!includesub OCTA-pisend-class-diagram.puml!INHERITANCES_COM_CROLOX_PISEND_API
+'!includesub OCTA-pisend-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISEND_API
+'!includesub OCTA-pisend-class-diagram.puml!FIELDS_COM_CROLOX_PISEND_API
+'!includesub OCTA-pisend-class-diagram.puml!USES_COM_CROLOX_PISEND_API
+'!includesub OCTA-pisend-class-diagram.puml!IMPORTS_COM_CROLOX_PISEND_API
+
+'!includesub OCTA-pisend-class-diagram.puml!COM_CROLOX_PISEND_COMPONENT
+'!includesub OCTA-pisend-class-diagram.puml!INHERITANCES_COM_CROLOX_PISEND_COMPONENT
+'!includesub OCTA-pisend-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISEND_COMPONENT
+'!includesub OCTA-pisend-class-diagram.puml!FIELDS_COM_CROLOX_PISEND_COMPONENT
+'!includesub OCTA-pisend-class-diagram.puml!USES_COM_CROLOX_PISEND_COMPONENT
+'!includesub OCTA-pisend-class-diagram.puml!IMPORTS_COM_CROLOX_PISEND_COMPONENT
+
+'!includesub OCTA-pisend-class-diagram.puml!COM_CROLOX_PISEND_CONFIG
+'!includesub OCTA-pisend-class-diagram.puml!INHERITANCES_COM_CROLOX_PISEND_CONFIG
+'!includesub OCTA-pisend-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISEND_CONFIG
+'!includesub OCTA-pisend-class-diagram.puml!FIELDS_COM_CROLOX_PISEND_CONFIG
+'!includesub OCTA-pisend-class-diagram.puml!USES_COM_CROLOX_PISEND_CONFIG
+'!includesub OCTA-pisend-class-diagram.puml!IMPORTS_COM_CROLOX_PISEND_CONFIG
+
+'!includesub OCTA-pisend-class-diagram.puml!COM_CROLOX_PISEND_CONSTANTS
+'!includesub OCTA-pisend-class-diagram.puml!INHERITANCES_COM_CROLOX_PISEND_CONSTANTS
+'!includesub OCTA-pisend-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISEND_CONSTANTS
+'!includesub OCTA-pisend-class-diagram.puml!FIELDS_COM_CROLOX_PISEND_CONSTANTS
+'!includesub OCTA-pisend-class-diagram.puml!USES_COM_CROLOX_PISEND_CONSTANTS
+'!includesub OCTA-pisend-class-diagram.puml!IMPORTS_COM_CROLOX_PISEND_CONSTANTS
+
+'!includesub OCTA-pisend-class-diagram.puml!COM_CROLOX_PISEND_DOMAIN
+'!includesub OCTA-pisend-class-diagram.puml!INHERITANCES_COM_CROLOX_PISEND_DOMAIN
+'!includesub OCTA-pisend-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISEND_DOMAIN
+'!includesub OCTA-pisend-class-diagram.puml!FIELDS_COM_CROLOX_PISEND_DOMAIN
+'!includesub OCTA-pisend-class-diagram.puml!USES_COM_CROLOX_PISEND_DOMAIN
+'!includesub OCTA-pisend-class-diagram.puml!IMPORTS_COM_CROLOX_PISEND_DOMAIN
+
+'!includesub OCTA-pisend-class-diagram.puml!COM_CROLOX_PISEND_DTO
+'!includesub OCTA-pisend-class-diagram.puml!INHERITANCES_COM_CROLOX_PISEND_DTO
+'!includesub OCTA-pisend-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISEND_DTO
+'!includesub OCTA-pisend-class-diagram.puml!FIELDS_COM_CROLOX_PISEND_DTO
+'!includesub OCTA-pisend-class-diagram.puml!USES_COM_CROLOX_PISEND_DTO
+'!includesub OCTA-pisend-class-diagram.puml!IMPORTS_COM_CROLOX_PISEND_DTO
+
+'!includesub OCTA-pisend-class-diagram.puml!COM_CROLOX_PISEND_EXCEPTION
+'!includesub OCTA-pisend-class-diagram.puml!INHERITANCES_COM_CROLOX_PISEND_EXCEPTION
+'!includesub OCTA-pisend-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISEND_EXCEPTION
+'!includesub OCTA-pisend-class-diagram.puml!FIELDS_COM_CROLOX_PISEND_EXCEPTION
+'!includesub OCTA-pisend-class-diagram.puml!USES_COM_CROLOX_PISEND_EXCEPTION
+'!includesub OCTA-pisend-class-diagram.puml!IMPORTS_COM_CROLOX_PISEND_EXCEPTION
+
+'!includesub OCTA-pisend-class-diagram.puml!COM_CROLOX_PISEND_HELPER
+'!includesub OCTA-pisend-class-diagram.puml!INHERITANCES_COM_CROLOX_PISEND_HELPER
+'!includesub OCTA-pisend-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISEND_HELPER
+'!includesub OCTA-pisend-class-diagram.puml!FIELDS_COM_CROLOX_PISEND_HELPER
+'!includesub OCTA-pisend-class-diagram.puml!USES_COM_CROLOX_PISEND_HELPER
+'!includesub OCTA-pisend-class-diagram.puml!IMPORTS_COM_CROLOX_PISEND_HELPER
+
+'!includesub OCTA-pisend-class-diagram.puml!COM_CROLOX_PISEND_POJO
+'!includesub OCTA-pisend-class-diagram.puml!INHERITANCES_COM_CROLOX_PISEND_POJO
+'!includesub OCTA-pisend-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISEND_POJO
+'!includesub OCTA-pisend-class-diagram.puml!FIELDS_COM_CROLOX_PISEND_POJO
+'!includesub OCTA-pisend-class-diagram.puml!USES_COM_CROLOX_PISEND_POJO
+'!includesub OCTA-pisend-class-diagram.puml!IMPORTS_COM_CROLOX_PISEND_POJO
+
+'!includesub OCTA-pisend-class-diagram.puml!COM_CROLOX_PISEND_REPOSITORY
+'!includesub OCTA-pisend-class-diagram.puml!INHERITANCES_COM_CROLOX_PISEND_REPOSITORY
+'!includesub OCTA-pisend-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISEND_REPOSITORY
+'!includesub OCTA-pisend-class-diagram.puml!FIELDS_COM_CROLOX_PISEND_REPOSITORY
+'!includesub OCTA-pisend-class-diagram.puml!USES_COM_CROLOX_PISEND_REPOSITORY
+'!includesub OCTA-pisend-class-diagram.puml!IMPORTS_COM_CROLOX_PISEND_REPOSITORY
+
+'!includesub OCTA-pisend-class-diagram.puml!COM_CROLOX_PISEND_SCHEDULED
+'!includesub OCTA-pisend-class-diagram.puml!INHERITANCES_COM_CROLOX_PISEND_SCHEDULED
+'!includesub OCTA-pisend-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISEND_SCHEDULED
+'!includesub OCTA-pisend-class-diagram.puml!FIELDS_COM_CROLOX_PISEND_SCHEDULED
+'!includesub OCTA-pisend-class-diagram.puml!USES_COM_CROLOX_PISEND_SCHEDULED
+'!includesub OCTA-pisend-class-diagram.puml!IMPORTS_COM_CROLOX_PISEND_SCHEDULED
+
+'!includesub OCTA-pisend-class-diagram.puml!COM_CROLOX_PISEND_SERVICE
+'!includesub OCTA-pisend-class-diagram.puml!INHERITANCES_COM_CROLOX_PISEND_SERVICE
+'!includesub OCTA-pisend-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISEND_SERVICE
+'!includesub OCTA-pisend-class-diagram.puml!FIELDS_COM_CROLOX_PISEND_SERVICE
+'!includesub OCTA-pisend-class-diagram.puml!USES_COM_CROLOX_PISEND_SERVICE
+'!includesub OCTA-pisend-class-diagram.puml!IMPORTS_COM_CROLOX_PISEND_SERVICE
+
+'!includesub OCTA-pisend-class-diagram.puml!COM_CROLOX_PISEND_UTIL
+'!includesub OCTA-pisend-class-diagram.puml!INHERITANCES_COM_CROLOX_PISEND_UTIL
+'!includesub OCTA-pisend-class-diagram.puml!IMPLEMENTS_COM_CROLOX_PISEND_UTIL
+'!includesub OCTA-pisend-class-diagram.puml!FIELDS_COM_CROLOX_PISEND_UTIL
+'!includesub OCTA-pisend-class-diagram.puml!USES_COM_CROLOX_PISEND_UTIL
+'!includesub OCTA-pisend-class-diagram.puml!IMPORTS_COM_CROLOX_PISEND_UTIL
+
+
+
+' CLASSES =======
+!startsub COM_CROLOX_PISEND
+class com.crolox.pisend.PisendApplication
+
+!endsub
+
+!startsub COM_CROLOX_PISEND_API
+class com.crolox.pisend.api.BvGOrderAPI
+
+!endsub
+
+!startsub COM_CROLOX_PISEND_COMPONENT
+class com.crolox.pisend.component.ManualBvgOrderReceiver
+
+!endsub
+
+!startsub COM_CROLOX_PISEND_CONFIG
+class com.crolox.pisend.config.MvcConfig
+class com.crolox.pisend.config.AppContextEventListener
+
+!endsub
+
+!startsub COM_CROLOX_PISEND_CONSTANTS
+enum com.crolox.pisend.constants.ObjectType{
+  BVG_ORDER
+  STOCK_ZINDEX_QUANTITY
+  CF_FILE
+  MAIL_BODY
+  UNKNOWN
+}
+enum com.crolox.pisend.constants.StockInfoForwardingMethod{
+  BY_MAIL
+  BY_SFTP
+}
+class com.crolox.pisend.constants.LocalConstants
+
+!endsub
+
+!startsub COM_CROLOX_PISEND_DOMAIN
+class com.crolox.pisend.domain.BvgOrderLog
+class com.crolox.pisend.domain.ClientParameters
+
+!endsub
+
+!startsub COM_CROLOX_PISEND_DTO
+class com.crolox.pisend.dto.BvgOrder
+class com.crolox.pisend.dto.MailOrder
+
+!endsub
+
+!startsub COM_CROLOX_PISEND_EXCEPTION
+class com.crolox.pisend.exception.ApplicationException
+
+!endsub
+
+!startsub COM_CROLOX_PISEND_HELPER
+class com.crolox.pisend.helper.MailOrderHelper
+class com.crolox.pisend.helper.StockZindexQuantityHelper
+class com.crolox.pisend.helper.BvgOrderHelper
+
+!endsub
+
+!startsub COM_CROLOX_PISEND_POJO
+class com.crolox.pisend.pojo.MailProperties
+class com.crolox.pisend.pojo.MailPropertiesReference
+
+!endsub
+
+!startsub COM_CROLOX_PISEND_REPOSITORY
+interface com.crolox.pisend.repository.BvgOrderLogRepository
+interface com.crolox.pisend.repository.ClientParametersRepository
+
+!endsub
+
+!startsub COM_CROLOX_PISEND_SCHEDULED
+class com.crolox.pisend.scheduled.Housekeeping
+
+!endsub
+
+!startsub COM_CROLOX_PISEND_SERVICE
+class com.crolox.pisend.service.RabbitMQService
+class com.crolox.pisend.service.SFTPService
+class com.crolox.pisend.service.ClientParamatersService
+class com.crolox.pisend.service.EmailService$1
+class com.crolox.pisend.service.RabbitMQService$4
+class com.crolox.pisend.service.RabbitMQService$3
+class com.crolox.pisend.service.RabbitMQService$2
+class com.crolox.pisend.service.RabbitMQService$1
+class com.crolox.pisend.service.EmailService
+
+!endsub
+
+!startsub COM_CROLOX_PISEND_UTIL
+class com.crolox.pisend.util.CommonUtil
+
+!endsub
+
+' INHERITANCES =======
+
+!startsub INHERITANCES_COM_CROLOX_PISEND
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISEND_API
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISEND_COMPONENT
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISEND_CONFIG
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISEND_CONSTANTS
+java.lang.Enum <|-- com.crolox.pisend.constants.ObjectType
+java.lang.Enum <|-- com.crolox.pisend.constants.StockInfoForwardingMethod
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISEND_DOMAIN
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISEND_DTO
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISEND_EXCEPTION
+java.lang.Exception <|-- com.crolox.pisend.exception.ApplicationException
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISEND_HELPER
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISEND_POJO
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISEND_REPOSITORY
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISEND_SCHEDULED
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISEND_SERVICE
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_PISEND_UTIL
+
+!endsub
+
+' IMPLEMENT INTERFACE =======
+
+!startsub IMPLEMENTS_COM_CROLOX_PISEND
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISEND_API
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISEND_COMPONENT
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISEND_CONFIG
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISEND_CONSTANTS
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISEND_DOMAIN
+java.io.Serializable <|.. com.crolox.pisend.domain.BvgOrderLog
+java.lang.Comparable <|.. com.crolox.pisend.domain.BvgOrderLog
+java.io.Serializable <|.. com.crolox.pisend.domain.ClientParameters
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISEND_DTO
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISEND_EXCEPTION
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISEND_HELPER
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISEND_POJO
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISEND_REPOSITORY
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISEND_SCHEDULED
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISEND_SERVICE
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_PISEND_UTIL
+
+!endsub
+
+' FIELDS =======
+
+!startsub FIELDS_COM_CROLOX_PISEND
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISEND_API
+com.crolox.pisend.api.BvGOrderAPI --> com.crolox.pisend.repository.BvgOrderLogRepository
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISEND_COMPONENT
+com.crolox.pisend.component.ManualBvgOrderReceiver --> com.crolox.pisend.service.RabbitMQService
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISEND_CONFIG
+com.crolox.pisend.config.AppContextEventListener --> com.crolox.pisend.component.ManualBvgOrderReceiver
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISEND_CONSTANTS
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISEND_DOMAIN
+com.crolox.pisend.domain.ClientParameters --> com.crolox.pisend.constants.StockInfoForwardingMethod
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISEND_DTO
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISEND_EXCEPTION
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISEND_HELPER
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISEND_POJO
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISEND_REPOSITORY
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISEND_SCHEDULED
+com.crolox.pisend.scheduled.Housekeeping --> com.crolox.pisend.repository.BvgOrderLogRepository
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISEND_SERVICE
+com.crolox.pisend.service.RabbitMQService --> com.crolox.pisend.helper.BvgOrderHelper
+com.crolox.pisend.service.RabbitMQService --> com.crolox.pisend.helper.MailOrderHelper
+com.crolox.pisend.service.RabbitMQService --> com.crolox.pisend.helper.StockZindexQuantityHelper
+com.crolox.pisend.service.RabbitMQService --> com.crolox.pisend.pojo.MailPropertiesReference
+com.crolox.pisend.service.RabbitMQService --> com.crolox.pisend.service.EmailService
+com.crolox.pisend.service.RabbitMQService --> com.crolox.pisend.service.ClientParamatersService
+com.crolox.pisend.service.RabbitMQService --> com.crolox.pisend.service.SFTPService
+com.crolox.pisend.service.RabbitMQService --> com.crolox.pisend.repository.BvgOrderLogRepository
+com.crolox.pisend.service.ClientParamatersService --> com.crolox.pisend.repository.ClientParametersRepository
+com.crolox.pisend.service.EmailService$1 --> com.crolox.pisend.pojo.MailProperties
+com.crolox.pisend.service.EmailService$1 --> com.crolox.pisend.service.EmailService
+com.crolox.pisend.service.RabbitMQService$3 --> com.crolox.pisend.service.RabbitMQService
+com.crolox.pisend.service.RabbitMQService$2 --> com.crolox.pisend.service.RabbitMQService
+com.crolox.pisend.service.RabbitMQService$1 --> com.crolox.pisend.service.RabbitMQService
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_PISEND_UTIL
+
+!endsub
+
+' USES =======
+
+!startsub USES_COM_CROLOX_PISEND
+com.crolox.pisend.PisendApplication ..> com.crolox.pisend.service.RabbitMQService
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISEND_API
+com.crolox.pisend.api.BvGOrderAPI ..> com.crolox.pisend.domain.BvgOrderLog
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISEND_COMPONENT
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISEND_CONFIG
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISEND_CONSTANTS
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISEND_DOMAIN
+com.crolox.pisend.domain.ClientParameters ..> com.crolox.pisend.constants.StockInfoForwardingMethod
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISEND_DTO
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISEND_EXCEPTION
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISEND_HELPER
+com.crolox.pisend.helper.MailOrderHelper ..> com.crolox.pisend.dto.MailOrder
+com.crolox.pisend.helper.StockZindexQuantityHelper ..> com.crolox.odessa.dto.ZindexQuantityOverview
+com.crolox.pisend.helper.BvgOrderHelper ..> com.crolox.pisend.dto.BvgOrder
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISEND_POJO
+com.crolox.pisend.pojo.MailPropertiesReference ..> com.crolox.pisend.pojo.MailProperties
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISEND_REPOSITORY
+com.crolox.pisend.repository.BvgOrderLogRepository ..> com.crolox.pisend.domain.BvgOrderLog
+com.crolox.pisend.repository.ClientParametersRepository ..> com.crolox.pisend.domain.ClientParameters
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISEND_SCHEDULED
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISEND_SERVICE
+com.crolox.pisend.service.RabbitMQService ..> B
+com.crolox.pisend.service.RabbitMQService ..> com.crolox.pisend.constants.ObjectType
+com.crolox.pisend.service.SFTPService ..> B
+com.crolox.pisend.service.SFTPService ..> com.crolox.pisend.domain.ClientParameters
+com.crolox.pisend.service.SFTPService ..> net.schmizz.sshj.sftp.SFTPClient
+com.crolox.pisend.service.SFTPService ..> net.schmizz.sshj.SSHClient
+com.crolox.pisend.service.ClientParamatersService ..> com.crolox.pisend.domain.ClientParameters
+com.crolox.pisend.service.EmailService$1 ..> com.crolox.pisend.service.EmailService
+com.crolox.pisend.service.EmailService$1 ..> com.crolox.pisend.pojo.MailProperties
+com.crolox.pisend.service.RabbitMQService$3 ..> com.crolox.pisend.service.RabbitMQService
+com.crolox.pisend.service.RabbitMQService$2 ..> com.crolox.pisend.service.RabbitMQService
+com.crolox.pisend.service.RabbitMQService$1 ..> com.crolox.pisend.service.RabbitMQService
+com.crolox.pisend.service.EmailService ..> B
+com.crolox.pisend.service.EmailService ..> com.crolox.pisend.pojo.MailProperties
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_PISEND_UTIL
+com.crolox.pisend.util.CommonUtil ..> com.crolox.odessa.pickorderio.entity.WholesaleType
+
+!endsub
+
+' IMPORTS =======
+' Java Files Path : /Users/paolobrunasti/IdeaProjects/OCTA/pisend/src/main/java/
+
+!startsub IMPORTS_COM_CROLOX_PISEND
+' com.crolox.pisend.PisendApplication
+com.crolox.pisend.PisendApplication ..o com.crolox.pisend.service.RabbitMQService
+
+' com.crolox.pisend.PisendApplication
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISEND_API
+' com.crolox.pisend.api.BvGOrderAPI
+com.crolox.pisend.api.BvGOrderAPI ..o com.crolox.pisend.domain.BvgOrderLog
+com.crolox.pisend.api.BvGOrderAPI ..o com.crolox.pisend.repository.BvgOrderLogRepository
+
+' com.crolox.pisend.api.BvGOrderAPI
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISEND_COMPONENT
+' com.crolox.pisend.component.ManualBvgOrderReceiver
+com.crolox.pisend.component.ManualBvgOrderReceiver ..o com.crolox.pisend.service.RabbitMQService
+
+' com.crolox.pisend.component.ManualBvgOrderReceiver
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISEND_CONFIG
+' com.crolox.pisend.config.MvcConfig
+
+' com.crolox.pisend.config.AppContextEventListener
+com.crolox.pisend.config.AppContextEventListener ..o com.crolox.pisend.component.ManualBvgOrderReceiver
+
+' com.crolox.pisend.config.MvcConfig
+
+' com.crolox.pisend.config.AppContextEventListener
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISEND_CONSTANTS
+' com.crolox.pisend.constants.ObjectType
+
+' com.crolox.pisend.constants.StockInfoForwardingMethod
+
+' com.crolox.pisend.constants.LocalConstants
+
+' com.crolox.pisend.constants.StockInfoForwardingMethod
+
+' com.crolox.pisend.constants.LocalConstants
+
+' com.crolox.pisend.constants.ObjectType
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISEND_DOMAIN
+' com.crolox.pisend.domain.BvgOrderLog
+
+' com.crolox.pisend.domain.ClientParameters
+
+' com.crolox.pisend.domain.ClientParameters
+
+' com.crolox.pisend.domain.BvgOrderLog
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISEND_DTO
+' com.crolox.pisend.dto.BvgOrder
+
+' com.crolox.pisend.dto.MailOrder
+
+' com.crolox.pisend.dto.MailOrder
+
+' com.crolox.pisend.dto.BvgOrder
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISEND_EXCEPTION
+' com.crolox.pisend.exception.ApplicationException
+
+' com.crolox.pisend.exception.ApplicationException
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISEND_HELPER
+' com.crolox.pisend.helper.MailOrderHelper
+
+' com.crolox.pisend.helper.StockZindexQuantityHelper
+
+' com.crolox.pisend.helper.BvgOrderHelper
+
+' com.crolox.pisend.helper.BvgOrderHelper
+
+' com.crolox.pisend.helper.StockZindexQuantityHelper
+
+' com.crolox.pisend.helper.MailOrderHelper
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISEND_POJO
+' com.crolox.pisend.pojo.MailProperties
+
+' com.crolox.pisend.pojo.MailPropertiesReference
+
+' com.crolox.pisend.pojo.MailPropertiesReference
+
+' com.crolox.pisend.pojo.MailProperties
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISEND_REPOSITORY
+' com.crolox.pisend.repository.BvgOrderLogRepository
+
+' com.crolox.pisend.repository.ClientParametersRepository
+com.crolox.pisend.repository.ClientParametersRepository ..o com.crolox.pisend.domain.ClientParameters
+
+' com.crolox.pisend.repository.ClientParametersRepository
+
+' com.crolox.pisend.repository.BvgOrderLogRepository
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISEND_SCHEDULED
+' com.crolox.pisend.scheduled.Housekeeping
+com.crolox.pisend.scheduled.Housekeeping ..o com.crolox.pisend.repository.BvgOrderLogRepository
+
+' com.crolox.pisend.scheduled.Housekeeping
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISEND_SERVICE
+' com.crolox.pisend.service.RabbitMQService
+
+' com.crolox.pisend.service.SFTPService
+com.crolox.pisend.service.SFTPService ..o com.crolox.pisend.domain.ClientParameters
+com.crolox.pisend.service.SFTPService ..o net.schmizz.sshj.transport.verification.PromiscuousVerifier
+com.crolox.pisend.service.SFTPService ..o net.schmizz.sshj.SSHClient
+com.crolox.pisend.service.SFTPService ..o net.schmizz.sshj.sftp.SFTPClient
+
+' com.crolox.pisend.service.ClientParamatersService
+com.crolox.pisend.service.ClientParamatersService ..o com.crolox.pisend.domain.ClientParameters
+com.crolox.pisend.service.ClientParamatersService ..o com.crolox.pisend.repository.ClientParametersRepository
+
+' com.crolox.pisend.service.EmailService$1
+
+' com.crolox.pisend.service.RabbitMQService$4
+
+' com.crolox.pisend.service.RabbitMQService$3
+
+' com.crolox.pisend.service.RabbitMQService$2
+
+' com.crolox.pisend.service.RabbitMQService$1
+
+' com.crolox.pisend.service.EmailService
+com.crolox.pisend.service.EmailService ..o com.crolox.pisend.exception.ApplicationException
+com.crolox.pisend.service.EmailService ..o com.crolox.pisend.pojo.MailProperties
+
+' com.crolox.pisend.service.EmailService$1
+
+' com.crolox.pisend.service.EmailService
+
+' com.crolox.pisend.service.SFTPService
+
+' com.crolox.pisend.service.RabbitMQService
+
+' com.crolox.pisend.service.RabbitMQService$3
+
+' com.crolox.pisend.service.RabbitMQService$4
+
+' com.crolox.pisend.service.RabbitMQService$1
+
+' com.crolox.pisend.service.RabbitMQService$2
+
+' com.crolox.pisend.service.ClientParamatersService
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_PISEND_UTIL
+' com.crolox.pisend.util.CommonUtil
+
+' com.crolox.pisend.util.CommonUtil
+
+
+!endsub
+
+
+@enduml

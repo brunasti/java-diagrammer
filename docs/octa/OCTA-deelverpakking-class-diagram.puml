@@ -1,0 +1,492 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+' GENERATE CLASS DIAGRAM ===========
+' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
+' Path            : [/Users/paolobrunasti/IdeaProjects/OCTA/deelverpakking/build/classes/java/main]
+' Java Files Path : [/Users/paolobrunasti/IdeaProjects/OCTA/deelverpakking/src/main/java/]
+' Configuration   : [/Users/paolobrunasti/IdeaProjects/mine/java-diagrammer/docs/octa/config.json]
+' Generated at    : Tue Jan 27 11:50:43 CET 2026
+'
+'   Stat infos    :
+'       Files : [54]
+'       Lines : [3302]
+'     Classes : [54]
+'     Methods : [498]
+'      Fields : [212]
+
+' Include         : [./docs/includedFile.txt] ---------
+title Example with legend and title
+
+hide empty members
+
+
+legend
+Connections legend
+----
+--|> : Extends
+..|> : Implements
+----
+--> : Fields and Attributes
+..> : Uses
+end legend
+' Include end     : --------------------------
+
+
+
+'!includesub OCTA-deelverpakking-class-diagram.puml!COM_CROLOX_DEELVERPAKKING
+'!includesub OCTA-deelverpakking-class-diagram.puml!INHERITANCES_COM_CROLOX_DEELVERPAKKING
+'!includesub OCTA-deelverpakking-class-diagram.puml!IMPLEMENTS_COM_CROLOX_DEELVERPAKKING
+'!includesub OCTA-deelverpakking-class-diagram.puml!FIELDS_COM_CROLOX_DEELVERPAKKING
+'!includesub OCTA-deelverpakking-class-diagram.puml!USES_COM_CROLOX_DEELVERPAKKING
+'!includesub OCTA-deelverpakking-class-diagram.puml!IMPORTS_COM_CROLOX_DEELVERPAKKING
+
+'!includesub OCTA-deelverpakking-class-diagram.puml!COM_CROLOX_DEELVERPAKKING_DATA
+'!includesub OCTA-deelverpakking-class-diagram.puml!INHERITANCES_COM_CROLOX_DEELVERPAKKING_DATA
+'!includesub OCTA-deelverpakking-class-diagram.puml!IMPLEMENTS_COM_CROLOX_DEELVERPAKKING_DATA
+'!includesub OCTA-deelverpakking-class-diagram.puml!FIELDS_COM_CROLOX_DEELVERPAKKING_DATA
+'!includesub OCTA-deelverpakking-class-diagram.puml!USES_COM_CROLOX_DEELVERPAKKING_DATA
+'!includesub OCTA-deelverpakking-class-diagram.puml!IMPORTS_COM_CROLOX_DEELVERPAKKING_DATA
+
+'!includesub OCTA-deelverpakking-class-diagram.puml!COM_CROLOX_DEELVERPAKKING_HELPER
+'!includesub OCTA-deelverpakking-class-diagram.puml!INHERITANCES_COM_CROLOX_DEELVERPAKKING_HELPER
+'!includesub OCTA-deelverpakking-class-diagram.puml!IMPLEMENTS_COM_CROLOX_DEELVERPAKKING_HELPER
+'!includesub OCTA-deelverpakking-class-diagram.puml!FIELDS_COM_CROLOX_DEELVERPAKKING_HELPER
+'!includesub OCTA-deelverpakking-class-diagram.puml!USES_COM_CROLOX_DEELVERPAKKING_HELPER
+'!includesub OCTA-deelverpakking-class-diagram.puml!IMPORTS_COM_CROLOX_DEELVERPAKKING_HELPER
+
+'!includesub OCTA-deelverpakking-class-diagram.puml!COM_CROLOX_DEELVERPAKKING_INTERCEPTOR
+'!includesub OCTA-deelverpakking-class-diagram.puml!INHERITANCES_COM_CROLOX_DEELVERPAKKING_INTERCEPTOR
+'!includesub OCTA-deelverpakking-class-diagram.puml!IMPLEMENTS_COM_CROLOX_DEELVERPAKKING_INTERCEPTOR
+'!includesub OCTA-deelverpakking-class-diagram.puml!FIELDS_COM_CROLOX_DEELVERPAKKING_INTERCEPTOR
+'!includesub OCTA-deelverpakking-class-diagram.puml!USES_COM_CROLOX_DEELVERPAKKING_INTERCEPTOR
+'!includesub OCTA-deelverpakking-class-diagram.puml!IMPORTS_COM_CROLOX_DEELVERPAKKING_INTERCEPTOR
+
+'!includesub OCTA-deelverpakking-class-diagram.puml!COM_CROLOX_DEELVERPAKKING_REPOSITORY
+'!includesub OCTA-deelverpakking-class-diagram.puml!INHERITANCES_COM_CROLOX_DEELVERPAKKING_REPOSITORY
+'!includesub OCTA-deelverpakking-class-diagram.puml!IMPLEMENTS_COM_CROLOX_DEELVERPAKKING_REPOSITORY
+'!includesub OCTA-deelverpakking-class-diagram.puml!FIELDS_COM_CROLOX_DEELVERPAKKING_REPOSITORY
+'!includesub OCTA-deelverpakking-class-diagram.puml!USES_COM_CROLOX_DEELVERPAKKING_REPOSITORY
+'!includesub OCTA-deelverpakking-class-diagram.puml!IMPORTS_COM_CROLOX_DEELVERPAKKING_REPOSITORY
+
+'!includesub OCTA-deelverpakking-class-diagram.puml!COM_CROLOX_DEELVERPAKKING_SERVICE
+'!includesub OCTA-deelverpakking-class-diagram.puml!INHERITANCES_COM_CROLOX_DEELVERPAKKING_SERVICE
+'!includesub OCTA-deelverpakking-class-diagram.puml!IMPLEMENTS_COM_CROLOX_DEELVERPAKKING_SERVICE
+'!includesub OCTA-deelverpakking-class-diagram.puml!FIELDS_COM_CROLOX_DEELVERPAKKING_SERVICE
+'!includesub OCTA-deelverpakking-class-diagram.puml!USES_COM_CROLOX_DEELVERPAKKING_SERVICE
+'!includesub OCTA-deelverpakking-class-diagram.puml!IMPORTS_COM_CROLOX_DEELVERPAKKING_SERVICE
+
+'!includesub OCTA-deelverpakking-class-diagram.puml!COM_CROLOX_DEELVERPAKKING_WEB
+'!includesub OCTA-deelverpakking-class-diagram.puml!INHERITANCES_COM_CROLOX_DEELVERPAKKING_WEB
+'!includesub OCTA-deelverpakking-class-diagram.puml!IMPLEMENTS_COM_CROLOX_DEELVERPAKKING_WEB
+'!includesub OCTA-deelverpakking-class-diagram.puml!FIELDS_COM_CROLOX_DEELVERPAKKING_WEB
+'!includesub OCTA-deelverpakking-class-diagram.puml!USES_COM_CROLOX_DEELVERPAKKING_WEB
+'!includesub OCTA-deelverpakking-class-diagram.puml!IMPORTS_COM_CROLOX_DEELVERPAKKING_WEB
+
+
+
+' CLASSES =======
+!startsub COM_CROLOX_DEELVERPAKKING
+class com.crolox.deelverpakking.DeelverpakkingApplication
+
+!endsub
+
+!startsub COM_CROLOX_DEELVERPAKKING_DATA
+class com.crolox.deelverpakking.data.StockLocation
+class com.crolox.deelverpakking.data.Stock
+class com.crolox.deelverpakking.data.ConfigurationPrinter
+class com.crolox.deelverpakking.data.StockHistory
+class com.crolox.deelverpakking.data.PartialPackagingLine
+class com.crolox.deelverpakking.data.PartialPackaging
+enum com.crolox.deelverpakking.data.PartialPackaging$PARTIALPACKAGINGSTATUS{
+  OPEN
+  DONE
+  SEND
+}
+class com.crolox.deelverpakking.data.PartialPackagingBarcode
+
+!endsub
+
+!startsub COM_CROLOX_DEELVERPAKKING_HELPER
+class com.crolox.deelverpakking.helper.ZindexVoorraadHelper
+class com.crolox.deelverpakking.helper.PartialPackagingHelper
+class com.crolox.deelverpakking.helper.PartialPackageRequestsHelper
+class com.crolox.deelverpakking.helper.BarcodeHelper
+class com.crolox.deelverpakking.helper.VoorraadHelper
+class com.crolox.deelverpakking.helper.QueueHelper
+class com.crolox.deelverpakking.helper.LocatieHelper
+class com.crolox.deelverpakking.helper.PartialPackagingLineHelper
+
+!endsub
+
+!startsub COM_CROLOX_DEELVERPAKKING_INTERCEPTOR
+class com.crolox.deelverpakking.interceptor.DaoInterceptor
+
+!endsub
+
+!startsub COM_CROLOX_DEELVERPAKKING_REPOSITORY
+interface com.crolox.deelverpakking.repository.StockHistoryRepository
+interface com.crolox.deelverpakking.repository.PartialPackagingBarcodeRepository
+interface com.crolox.deelverpakking.repository.StockLocationRepository
+interface com.crolox.deelverpakking.repository.ConfigurationPrinterRepository
+interface com.crolox.deelverpakking.repository.StockRepository
+interface com.crolox.deelverpakking.repository.PartialPackagingRepository
+interface com.crolox.deelverpakking.repository.PartialPackagingLineRepository
+
+!endsub
+
+!startsub COM_CROLOX_DEELVERPAKKING_SERVICE
+class com.crolox.deelverpakking.service.DeelverpakkingServiceV1
+
+!endsub
+
+!startsub COM_CROLOX_DEELVERPAKKING_WEB
+class com.crolox.deelverpakking.web.HomeController
+
+!endsub
+
+' INHERITANCES =======
+
+!startsub INHERITANCES_COM_CROLOX_DEELVERPAKKING
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_DEELVERPAKKING_DATA
+java.lang.Enum <|-- com.crolox.deelverpakking.data.PartialPackaging$PARTIALPACKAGINGSTATUS
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_DEELVERPAKKING_HELPER
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_DEELVERPAKKING_INTERCEPTOR
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_DEELVERPAKKING_REPOSITORY
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_DEELVERPAKKING_SERVICE
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_DEELVERPAKKING_WEB
+
+!endsub
+
+' IMPLEMENT INTERFACE =======
+
+!startsub IMPLEMENTS_COM_CROLOX_DEELVERPAKKING
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_DEELVERPAKKING_DATA
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_DEELVERPAKKING_HELPER
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_DEELVERPAKKING_INTERCEPTOR
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_DEELVERPAKKING_REPOSITORY
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_DEELVERPAKKING_SERVICE
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_DEELVERPAKKING_WEB
+
+!endsub
+
+' FIELDS =======
+
+!startsub FIELDS_COM_CROLOX_DEELVERPAKKING
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_DEELVERPAKKING_DATA
+com.crolox.deelverpakking.data.StockHistory --> com.crolox.deelverpakking.data.Stock
+com.crolox.deelverpakking.data.PartialPackagingLine --> com.crolox.deelverpakking.data.PartialPackaging
+com.crolox.deelverpakking.data.PartialPackaging --> com.crolox.deelverpakking.data.PartialPackaging$PARTIALPACKAGINGSTATUS
+com.crolox.deelverpakking.data.PartialPackagingBarcode --> com.crolox.deelverpakking.data.PartialPackagingLine
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_DEELVERPAKKING_HELPER
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_DEELVERPAKKING_INTERCEPTOR
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_DEELVERPAKKING_REPOSITORY
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_DEELVERPAKKING_SERVICE
+com.crolox.deelverpakking.service.DeelverpakkingServiceV1 --> com.crolox.deelverpakking.repository.PartialPackagingRepository
+com.crolox.deelverpakking.service.DeelverpakkingServiceV1 --> com.crolox.deelverpakking.repository.PartialPackagingLineRepository
+com.crolox.deelverpakking.service.DeelverpakkingServiceV1 --> com.crolox.deelverpakking.repository.StockRepository
+com.crolox.deelverpakking.service.DeelverpakkingServiceV1 --> com.crolox.deelverpakking.repository.StockHistoryRepository
+com.crolox.deelverpakking.service.DeelverpakkingServiceV1 --> com.crolox.deelverpakking.repository.ConfigurationPrinterRepository
+com.crolox.deelverpakking.service.DeelverpakkingServiceV1 --> com.crolox.deelverpakking.repository.PartialPackagingBarcodeRepository
+com.crolox.deelverpakking.service.DeelverpakkingServiceV1 --> com.crolox.deelverpakking.repository.StockLocationRepository
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_DEELVERPAKKING_WEB
+com.crolox.deelverpakking.web.HomeController --> com.crolox.deelverpakking.repository.PartialPackagingRepository
+com.crolox.deelverpakking.web.HomeController --> com.crolox.deelverpakking.repository.PartialPackagingLineRepository
+com.crolox.deelverpakking.web.HomeController --> com.crolox.deelverpakking.repository.StockRepository
+com.crolox.deelverpakking.web.HomeController --> com.crolox.deelverpakking.repository.ConfigurationPrinterRepository
+com.crolox.deelverpakking.web.HomeController --> com.crolox.deelverpakking.repository.PartialPackagingBarcodeRepository
+com.crolox.deelverpakking.web.HomeController --> com.crolox.deelverpakking.repository.StockLocationRepository
+com.crolox.deelverpakking.web.HomeController --> com.crolox.deelverpakking.repository.StockHistoryRepository
+
+!endsub
+
+' USES =======
+
+!startsub USES_COM_CROLOX_DEELVERPAKKING
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_DEELVERPAKKING_DATA
+com.crolox.deelverpakking.data.StockHistory ..> com.crolox.deelverpakking.data.Stock
+com.crolox.deelverpakking.data.PartialPackagingLine ..> com.crolox.deelverpakking.data.PartialPackaging
+com.crolox.deelverpakking.data.PartialPackaging ..> com.crolox.deelverpakking.data.PartialPackaging$PARTIALPACKAGINGSTATUS
+com.crolox.deelverpakking.data.PartialPackagingBarcode ..> com.crolox.deelverpakking.data.PartialPackagingLine
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_DEELVERPAKKING_HELPER
+com.crolox.deelverpakking.helper.VoorraadHelper ..> com.crolox.deelverpakking.repository.StockRepository
+com.crolox.deelverpakking.helper.VoorraadHelper ..> com.crolox.deelverpakking.data.PartialPackaging
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_DEELVERPAKKING_INTERCEPTOR
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_DEELVERPAKKING_REPOSITORY
+com.crolox.deelverpakking.repository.StockHistoryRepository ..> com.crolox.deelverpakking.data.Stock
+com.crolox.deelverpakking.repository.ConfigurationPrinterRepository ..> com.crolox.deelverpakking.data.ConfigurationPrinter
+com.crolox.deelverpakking.repository.StockRepository ..> com.crolox.deelverpakking.data.Stock
+com.crolox.deelverpakking.repository.PartialPackagingRepository ..> com.crolox.deelverpakking.data.PartialPackaging$PARTIALPACKAGINGSTATUS
+com.crolox.deelverpakking.repository.PartialPackagingLineRepository ..> com.crolox.deelverpakking.data.PartialPackaging
+com.crolox.deelverpakking.repository.PartialPackagingLineRepository ..> com.crolox.deelverpakking.data.PartialPackaging$PARTIALPACKAGINGSTATUS
+com.crolox.deelverpakking.repository.PartialPackagingLineRepository ..> com.crolox.deelverpakking.data.PartialPackagingLine
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_DEELVERPAKKING_SERVICE
+com.crolox.deelverpakking.service.DeelverpakkingServiceV1 ..> com.crolox.deelverpakking.helper.PartialPackageRequestsHelper
+com.crolox.deelverpakking.service.DeelverpakkingServiceV1 ..> com.crolox.deelverpakking.helper.BarcodeHelper
+com.crolox.deelverpakking.service.DeelverpakkingServiceV1 ..> com.crolox.deelverpakking.helper.LocatieHelper
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_DEELVERPAKKING_WEB
+
+!endsub
+
+' IMPORTS =======
+' Java Files Path : /Users/paolobrunasti/IdeaProjects/OCTA/deelverpakking/src/main/java/
+
+!startsub IMPORTS_COM_CROLOX_DEELVERPAKKING
+' com.crolox.deelverpakking.DeelverpakkingApplication
+
+' com.crolox.deelverpakking.DeelverpakkingApplication
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_DEELVERPAKKING_DATA
+' com.crolox.deelverpakking.data.StockLocation
+
+' com.crolox.deelverpakking.data.Stock
+
+' com.crolox.deelverpakking.data.ConfigurationPrinter
+
+' com.crolox.deelverpakking.data.StockHistory
+
+' com.crolox.deelverpakking.data.PartialPackagingLine
+
+' com.crolox.deelverpakking.data.PartialPackaging
+
+' com.crolox.deelverpakking.data.PartialPackaging$PARTIALPACKAGINGSTATUS
+
+' com.crolox.deelverpakking.data.PartialPackagingBarcode
+
+' com.crolox.deelverpakking.data.PartialPackaging
+
+' com.crolox.deelverpakking.data.PartialPackaging$PARTIALPACKAGINGSTATUS
+
+' com.crolox.deelverpakking.data.Stock
+
+' com.crolox.deelverpakking.data.PartialPackagingBarcode
+
+' com.crolox.deelverpakking.data.StockHistory
+
+' com.crolox.deelverpakking.data.PartialPackagingLine
+
+' com.crolox.deelverpakking.data.ConfigurationPrinter
+
+' com.crolox.deelverpakking.data.StockLocation
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_DEELVERPAKKING_HELPER
+' com.crolox.deelverpakking.helper.ZindexVoorraadHelper
+
+' com.crolox.deelverpakking.helper.PartialPackagingHelper
+com.crolox.deelverpakking.helper.PartialPackagingHelper ..o com.crolox.deelverpakking.data.PartialPackagingLine
+
+' com.crolox.deelverpakking.helper.PartialPackageRequestsHelper
+
+' com.crolox.deelverpakking.helper.BarcodeHelper
+
+' com.crolox.deelverpakking.helper.VoorraadHelper
+com.crolox.deelverpakking.helper.VoorraadHelper ..o com.crolox.deelverpakking.data.Stock
+com.crolox.deelverpakking.helper.VoorraadHelper ..o com.crolox.deelverpakking.data.PartialPackaging
+com.crolox.deelverpakking.helper.VoorraadHelper ..o com.crolox.deelverpakking.repository.StockRepository
+com.crolox.deelverpakking.helper.VoorraadHelper ..o com.ctc.wstx.util.StringUtil
+com.crolox.deelverpakking.helper.VoorraadHelper ..o com.crolox.deelverpakking.data.PartialPackagingLine
+
+' com.crolox.deelverpakking.helper.QueueHelper
+
+' com.crolox.deelverpakking.helper.LocatieHelper
+
+' com.crolox.deelverpakking.helper.PartialPackagingLineHelper
+
+' com.crolox.deelverpakking.helper.VoorraadHelper
+
+' com.crolox.deelverpakking.helper.PartialPackageRequestsHelper
+
+' com.crolox.deelverpakking.helper.PartialPackagingHelper
+
+' com.crolox.deelverpakking.helper.LocatieHelper
+
+' com.crolox.deelverpakking.helper.ZindexVoorraadHelper
+
+' com.crolox.deelverpakking.helper.QueueHelper
+
+' com.crolox.deelverpakking.helper.PartialPackagingLineHelper
+
+' com.crolox.deelverpakking.helper.BarcodeHelper
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_DEELVERPAKKING_INTERCEPTOR
+' com.crolox.deelverpakking.interceptor.DaoInterceptor
+
+' com.crolox.deelverpakking.interceptor.DaoInterceptor
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_DEELVERPAKKING_REPOSITORY
+' com.crolox.deelverpakking.repository.StockHistoryRepository
+com.crolox.deelverpakking.repository.StockHistoryRepository ..o com.crolox.deelverpakking.data.Stock
+com.crolox.deelverpakking.repository.StockHistoryRepository ..o com.crolox.deelverpakking.data.StockHistory
+
+' com.crolox.deelverpakking.repository.PartialPackagingBarcodeRepository
+com.crolox.deelverpakking.repository.PartialPackagingBarcodeRepository ..o com.crolox.deelverpakking.data.Stock
+com.crolox.deelverpakking.repository.PartialPackagingBarcodeRepository ..o com.crolox.deelverpakking.data.PartialPackagingBarcode
+
+' com.crolox.deelverpakking.repository.StockLocationRepository
+com.crolox.deelverpakking.repository.StockLocationRepository ..o com.crolox.deelverpakking.data.StockLocation
+com.crolox.deelverpakking.repository.StockLocationRepository ..o com.crolox.deelverpakking.data.Stock
+com.crolox.deelverpakking.repository.StockLocationRepository ..o com.crolox.deelverpakking.data.StockHistory
+
+' com.crolox.deelverpakking.repository.ConfigurationPrinterRepository
+com.crolox.deelverpakking.repository.ConfigurationPrinterRepository ..o com.crolox.deelverpakking.data.ConfigurationPrinter
+
+' com.crolox.deelverpakking.repository.StockRepository
+
+' com.crolox.deelverpakking.repository.PartialPackagingRepository
+com.crolox.deelverpakking.repository.PartialPackagingRepository ..o com.crolox.deelverpakking.data.PartialPackaging
+
+' com.crolox.deelverpakking.repository.PartialPackagingLineRepository
+com.crolox.deelverpakking.repository.PartialPackagingLineRepository ..o com.crolox.deelverpakking.data.PartialPackaging
+com.crolox.deelverpakking.repository.PartialPackagingLineRepository ..o com.crolox.deelverpakking.data.PartialPackagingLine
+
+' com.crolox.deelverpakking.repository.PartialPackagingLineRepository
+
+' com.crolox.deelverpakking.repository.StockRepository
+
+' com.crolox.deelverpakking.repository.PartialPackagingBarcodeRepository
+
+' com.crolox.deelverpakking.repository.StockHistoryRepository
+
+' com.crolox.deelverpakking.repository.StockLocationRepository
+
+' com.crolox.deelverpakking.repository.PartialPackagingRepository
+
+' com.crolox.deelverpakking.repository.ConfigurationPrinterRepository
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_DEELVERPAKKING_SERVICE
+' com.crolox.deelverpakking.service.DeelverpakkingServiceV1
+com.crolox.deelverpakking.service.DeelverpakkingServiceV1 ..o com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.ProductBarcodeInfoExtractor
+com.crolox.deelverpakking.service.DeelverpakkingServiceV1 ..o com.crolox.odessa.pickorderio.component.arvatosystemshealthcare.nmvsblueprintcore.pojo.FmdScanInfo
+
+' com.crolox.deelverpakking.service.DeelverpakkingServiceV1
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_DEELVERPAKKING_WEB
+' com.crolox.deelverpakking.web.HomeController
+
+' com.crolox.deelverpakking.web.HomeController
+
+
+!endsub
+
+
+@enduml

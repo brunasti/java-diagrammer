@@ -1,0 +1,626 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+' GENERATE CLASS DIAGRAM ===========
+' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
+' Path            : [/Users/paolobrunasti/IdeaProjects/OCTA/picommon/target/classes]
+' Java Files Path : [/Users/paolobrunasti/IdeaProjects/OCTA/picommon/src/main/java/]
+' Configuration   : [/Users/paolobrunasti/IdeaProjects/mine/java-diagrammer/docs/octa/config.json]
+' Generated at    : Tue Jan 27 11:50:43 CET 2026
+'
+'   Stat infos    :
+'       Files : [87]
+'       Lines : [6772]
+'     Classes : [86]
+'     Methods : [1062]
+'      Fields : [472]
+
+' Include         : [./docs/includedFile.txt] ---------
+title Example with legend and title
+
+hide empty members
+
+
+legend
+Connections legend
+----
+--|> : Extends
+..|> : Implements
+----
+--> : Fields and Attributes
+..> : Uses
+end legend
+' Include end     : --------------------------
+
+
+
+'!includesub OCTA-picommon-class-diagram.puml!COM_CROLOX_ODESSA_CONSTANTS
+'!includesub OCTA-picommon-class-diagram.puml!INHERITANCES_COM_CROLOX_ODESSA_CONSTANTS
+'!includesub OCTA-picommon-class-diagram.puml!IMPLEMENTS_COM_CROLOX_ODESSA_CONSTANTS
+'!includesub OCTA-picommon-class-diagram.puml!FIELDS_COM_CROLOX_ODESSA_CONSTANTS
+'!includesub OCTA-picommon-class-diagram.puml!USES_COM_CROLOX_ODESSA_CONSTANTS
+'!includesub OCTA-picommon-class-diagram.puml!IMPORTS_COM_CROLOX_ODESSA_CONSTANTS
+
+'!includesub OCTA-picommon-class-diagram.puml!COM_CROLOX_ODESSA_DTO
+'!includesub OCTA-picommon-class-diagram.puml!INHERITANCES_COM_CROLOX_ODESSA_DTO
+'!includesub OCTA-picommon-class-diagram.puml!IMPLEMENTS_COM_CROLOX_ODESSA_DTO
+'!includesub OCTA-picommon-class-diagram.puml!FIELDS_COM_CROLOX_ODESSA_DTO
+'!includesub OCTA-picommon-class-diagram.puml!USES_COM_CROLOX_ODESSA_DTO
+'!includesub OCTA-picommon-class-diagram.puml!IMPORTS_COM_CROLOX_ODESSA_DTO
+
+'!includesub OCTA-picommon-class-diagram.puml!COM_CROLOX_ODESSA_DTO_BMC
+'!includesub OCTA-picommon-class-diagram.puml!INHERITANCES_COM_CROLOX_ODESSA_DTO_BMC
+'!includesub OCTA-picommon-class-diagram.puml!IMPLEMENTS_COM_CROLOX_ODESSA_DTO_BMC
+'!includesub OCTA-picommon-class-diagram.puml!FIELDS_COM_CROLOX_ODESSA_DTO_BMC
+'!includesub OCTA-picommon-class-diagram.puml!USES_COM_CROLOX_ODESSA_DTO_BMC
+'!includesub OCTA-picommon-class-diagram.puml!IMPORTS_COM_CROLOX_ODESSA_DTO_BMC
+
+'!includesub OCTA-picommon-class-diagram.puml!COM_CROLOX_ODESSA_ENUMERATION
+'!includesub OCTA-picommon-class-diagram.puml!INHERITANCES_COM_CROLOX_ODESSA_ENUMERATION
+'!includesub OCTA-picommon-class-diagram.puml!IMPLEMENTS_COM_CROLOX_ODESSA_ENUMERATION
+'!includesub OCTA-picommon-class-diagram.puml!FIELDS_COM_CROLOX_ODESSA_ENUMERATION
+'!includesub OCTA-picommon-class-diagram.puml!USES_COM_CROLOX_ODESSA_ENUMERATION
+'!includesub OCTA-picommon-class-diagram.puml!IMPORTS_COM_CROLOX_ODESSA_ENUMERATION
+
+'!includesub OCTA-picommon-class-diagram.puml!COM_CROLOX_ODESSA_RABBIT_DTO
+'!includesub OCTA-picommon-class-diagram.puml!INHERITANCES_COM_CROLOX_ODESSA_RABBIT_DTO
+'!includesub OCTA-picommon-class-diagram.puml!IMPLEMENTS_COM_CROLOX_ODESSA_RABBIT_DTO
+'!includesub OCTA-picommon-class-diagram.puml!FIELDS_COM_CROLOX_ODESSA_RABBIT_DTO
+'!includesub OCTA-picommon-class-diagram.puml!USES_COM_CROLOX_ODESSA_RABBIT_DTO
+'!includesub OCTA-picommon-class-diagram.puml!IMPORTS_COM_CROLOX_ODESSA_RABBIT_DTO
+
+'!includesub OCTA-picommon-class-diagram.puml!COM_CROLOX_ODESSA_UTIL
+'!includesub OCTA-picommon-class-diagram.puml!INHERITANCES_COM_CROLOX_ODESSA_UTIL
+'!includesub OCTA-picommon-class-diagram.puml!IMPLEMENTS_COM_CROLOX_ODESSA_UTIL
+'!includesub OCTA-picommon-class-diagram.puml!FIELDS_COM_CROLOX_ODESSA_UTIL
+'!includesub OCTA-picommon-class-diagram.puml!USES_COM_CROLOX_ODESSA_UTIL
+'!includesub OCTA-picommon-class-diagram.puml!IMPORTS_COM_CROLOX_ODESSA_UTIL
+
+
+
+' CLASSES =======
+!startsub COM_CROLOX_ODESSA_CONSTANTS
+enum com.crolox.odessa.constants.LogType{
+  USER
+  INFO
+  WARN
+  ERROR
+}
+class com.crolox.odessa.constants.Paths
+enum com.crolox.odessa.constants.Application{
+  PISORT
+  PISTOCK
+  PIRECEIVE
+  RECEIPT_HANDLER
+  PISEND
+  CF_MANAGER
+}
+enum com.crolox.odessa.constants.LogPrefix{
+  ERROR
+  INFO
+  RECEIPT_TRACING
+}
+enum com.crolox.odessa.constants.DestinationType{
+  EMAIL
+  RABBIT_MQ
+  DEFAULT
+}
+class com.crolox.odessa.constants.General
+
+!endsub
+
+!startsub COM_CROLOX_ODESSA_DTO
+class com.crolox.odessa.dto.LabelTextDto
+class com.crolox.odessa.dto.ReceiptDto
+class com.crolox.odessa.dto.PickorderLineKey
+class com.crolox.odessa.dto.ExternalUserDto
+class com.crolox.odessa.dto.OrderAndReserveResponse
+class com.crolox.odessa.dto.OrderAndReserveRequestsWrapper
+class com.crolox.odessa.dto.ReceiptLineDto
+class com.crolox.odessa.dto.OrderAndReserveRequest
+class com.crolox.odessa.dto.NawDto
+class com.crolox.odessa.dto.ReceiptLineStockInfo
+class com.crolox.odessa.dto.StockZindexQuantity
+class com.crolox.odessa.dto.ReceiptBarcodes
+class com.crolox.odessa.dto.ReceiptAgbCodeReceiptBarcode
+class com.crolox.odessa.dto.StockWriteOffRequest
+class com.crolox.odessa.dto.PickorderLineKeys
+class com.crolox.odessa.dto.ReceiptHandlerUser
+class com.crolox.odessa.dto.PickorderLineKeysPerAgbCode
+class com.crolox.odessa.dto.ZindexQuantityOverview
+
+!endsub
+
+!startsub COM_CROLOX_ODESSA_DTO_BMC
+enum com.crolox.odessa.dto.bmc.BlinkingMode{
+  NONE
+  BLINK
+  PRE_BLINK
+}
+class com.crolox.odessa.dto.bmc.BinmasterPresenceOverview
+class com.crolox.odessa.dto.bmc.BinmasterRequest
+enum com.crolox.odessa.dto.bmc.Colour{
+  BLUE
+  GREEN
+  YELLOW
+  PURPLE
+  RED
+  NONE
+  ORANGE
+}
+class com.crolox.odessa.dto.bmc.HandDetection
+enum com.crolox.odessa.dto.bmc.DetectionMode{
+  ACTIVATE
+  DE_ACTIVATE
+  KEEP
+}
+class com.crolox.odessa.dto.bmc.CabinetProperties
+class com.crolox.odessa.dto.bmc.CompartmentProperties
+class com.crolox.odessa.dto.bmc.BinmasterPresence
+
+!endsub
+
+!startsub COM_CROLOX_ODESSA_ENUMERATION
+enum com.crolox.odessa.enumeration.ReceiptStatus{
+  NEW
+  WAITING_FOR_BACKORDERING
+  IN_STOCK
+  IN_BASKET
+  IN_BACK_ORDER
+  SORTING
+  DELIVERED
+  IN_ERROR
+}
+enum com.crolox.odessa.enumeration.Gender{
+  M
+  V
+  O
+}
+enum com.crolox.odessa.enumeration.ReceiptLineAction{
+  SORTED
+  MOVED
+  PACKED
+  SKIPPED
+}
+
+!endsub
+
+!startsub COM_CROLOX_ODESSA_RABBIT_DTO
+class com.crolox.odessa.rabbit.dto.LogDto
+
+!endsub
+
+!startsub COM_CROLOX_ODESSA_UTIL
+class com.crolox.odessa.util.CommonUtils
+class com.crolox.odessa.util.JsonUtils
+class com.crolox.odessa.util.OdessaUtils
+class com.crolox.odessa.util.DateTimeUtils
+class com.crolox.odessa.util.PickorderSplitter
+class com.crolox.odessa.util.PickorderCreator
+
+!endsub
+
+' INHERITANCES =======
+
+!startsub INHERITANCES_COM_CROLOX_ODESSA_CONSTANTS
+java.lang.Enum <|-- com.crolox.odessa.constants.LogType
+java.lang.Enum <|-- com.crolox.odessa.constants.Application
+java.lang.Enum <|-- com.crolox.odessa.constants.LogPrefix
+java.lang.Enum <|-- com.crolox.odessa.constants.DestinationType
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_ODESSA_DTO
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_ODESSA_DTO_BMC
+java.lang.Enum <|-- com.crolox.odessa.dto.bmc.BlinkingMode
+java.lang.Enum <|-- com.crolox.odessa.dto.bmc.Colour
+java.lang.Enum <|-- com.crolox.odessa.dto.bmc.DetectionMode
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_ODESSA_ENUMERATION
+java.lang.Enum <|-- com.crolox.odessa.enumeration.ReceiptStatus
+java.lang.Enum <|-- com.crolox.odessa.enumeration.Gender
+java.lang.Enum <|-- com.crolox.odessa.enumeration.ReceiptLineAction
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_ODESSA_RABBIT_DTO
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_ODESSA_UTIL
+
+!endsub
+
+' IMPLEMENT INTERFACE =======
+
+!startsub IMPLEMENTS_COM_CROLOX_ODESSA_CONSTANTS
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_ODESSA_DTO
+java.lang.Comparable <|.. com.crolox.odessa.dto.LabelTextDto
+java.lang.Comparable <|.. com.crolox.odessa.dto.ReceiptHandlerUser
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_ODESSA_DTO_BMC
+java.lang.Comparable <|.. com.crolox.odessa.dto.bmc.CompartmentProperties
+java.lang.Comparable <|.. com.crolox.odessa.dto.bmc.BinmasterPresence
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_ODESSA_ENUMERATION
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_ODESSA_RABBIT_DTO
+java.io.Serializable <|.. com.crolox.odessa.rabbit.dto.LogDto
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_ODESSA_UTIL
+
+!endsub
+
+' FIELDS =======
+
+!startsub FIELDS_COM_CROLOX_ODESSA_CONSTANTS
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_ODESSA_DTO
+com.crolox.odessa.dto.ReceiptDto --> com.crolox.odessa.dto.NawDto
+com.crolox.odessa.dto.ReceiptDto --> com.crolox.odessa.enumeration.ReceiptStatus
+com.crolox.odessa.dto.ReceiptDto --> com.crolox.odessa.enumeration.Gender
+com.crolox.odessa.dto.ReceiptDto --> com.crolox.odessa.pickorderio.common.ReceiptFridgeInfo
+com.crolox.odessa.dto.OrderAndReserveResponse --> com.crolox.odessa.pickorderio.entity.WholesaleType
+com.crolox.odessa.dto.OrderAndReserveRequestsWrapper --> com.crolox.odessa.pickorderio.entity.HeaderType
+com.crolox.odessa.dto.OrderAndReserveRequestsWrapper --> com.crolox.odessa.pickorderio.entity.ShippingInfoType
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_ODESSA_DTO_BMC
+com.crolox.odessa.dto.bmc.BinmasterRequest --> com.crolox.odessa.dto.bmc.Colour
+com.crolox.odessa.dto.bmc.BinmasterRequest --> com.crolox.odessa.dto.bmc.BlinkingMode
+com.crolox.odessa.dto.bmc.BinmasterRequest --> com.crolox.odessa.dto.bmc.DetectionMode
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_ODESSA_ENUMERATION
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_ODESSA_RABBIT_DTO
+com.crolox.odessa.rabbit.dto.LogDto --> com.crolox.odessa.constants.Application
+com.crolox.odessa.rabbit.dto.LogDto --> com.crolox.odessa.constants.LogType
+com.crolox.odessa.rabbit.dto.LogDto --> com.crolox.odessa.enumeration.ReceiptLineAction
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_ODESSA_UTIL
+
+!endsub
+
+' USES =======
+
+!startsub USES_COM_CROLOX_ODESSA_CONSTANTS
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_ODESSA_DTO
+com.crolox.odessa.dto.ReceiptDto ..> com.crolox.odessa.dto.NawDto
+com.crolox.odessa.dto.ReceiptDto ..> com.crolox.odessa.enumeration.ReceiptStatus
+com.crolox.odessa.dto.ReceiptDto ..> com.crolox.odessa.enumeration.Gender
+com.crolox.odessa.dto.ReceiptDto ..> com.crolox.odessa.pickorderio.common.ReceiptFridgeInfo
+com.crolox.odessa.dto.OrderAndReserveResponse ..> com.crolox.odessa.pickorderio.entity.WholesaleType
+com.crolox.odessa.dto.OrderAndReserveRequestsWrapper ..> com.crolox.odessa.pickorderio.entity.HeaderType
+com.crolox.odessa.dto.OrderAndReserveRequestsWrapper ..> com.crolox.odessa.pickorderio.entity.ShippingInfoType
+com.crolox.odessa.dto.PickorderLineKeys ..> com.crolox.odessa.dto.PickorderLineKeysPerAgbCode
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_ODESSA_DTO_BMC
+com.crolox.odessa.dto.bmc.BinmasterRequest ..> com.crolox.odessa.dto.bmc.Colour
+com.crolox.odessa.dto.bmc.BinmasterRequest ..> com.crolox.odessa.dto.bmc.BlinkingMode
+com.crolox.odessa.dto.bmc.BinmasterRequest ..> com.crolox.odessa.dto.bmc.DetectionMode
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_ODESSA_ENUMERATION
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_ODESSA_RABBIT_DTO
+com.crolox.odessa.rabbit.dto.LogDto ..> com.crolox.odessa.constants.Application
+com.crolox.odessa.rabbit.dto.LogDto ..> com.crolox.odessa.constants.LogType
+com.crolox.odessa.rabbit.dto.LogDto ..> com.crolox.odessa.enumeration.ReceiptLineAction
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_ODESSA_UTIL
+com.crolox.odessa.util.JsonUtils ..> com.crolox.odessa.pickorderio.entity.ProductBarcodesType
+com.crolox.odessa.util.JsonUtils ..> com.crolox.odessa.pickorderio.entity.ProductWarningLabelsType
+com.crolox.odessa.util.JsonUtils ..> com.crolox.odessa.pickorderio.entity.AddressType
+com.crolox.odessa.util.JsonUtils ..> com.crolox.odessa.pickorderio.entity.LabelType
+com.crolox.odessa.util.PickorderSplitter ..> com.crolox.odessa.pickorderio.pojo.SplittedPickOrderTypes
+com.crolox.odessa.util.PickorderSplitter ..> com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.odessa.util.PickorderSplitter ..> com.crolox.odessa.pickorderio.entity.ReceiptType
+com.crolox.odessa.util.PickorderSplitter ..> com.crolox.odessa.pickorderio.entity.PatientType
+com.crolox.odessa.util.PickorderSplitter ..> com.crolox.odessa.pickorderio.entity.ProductType
+com.crolox.odessa.util.PickorderSplitter ..> com.crolox.odessa.pickorderio.entity.PickOrderLineType
+com.crolox.odessa.util.PickorderSplitter ..> com.crolox.odessa.dto.ReceiptLineStockInfo
+com.crolox.odessa.util.PickorderCreator ..> com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.odessa.util.PickorderCreator ..> com.crolox.odessa.pickorderio.entity.SmartInfoType
+com.crolox.odessa.util.PickorderCreator ..> com.crolox.odessa.pickorderio.entity.IdentificationType
+com.crolox.odessa.util.PickorderCreator ..> com.crolox.odessa.pickorderio.entity.HeaderType
+com.crolox.odessa.util.PickorderCreator ..> com.crolox.odessa.pickorderio.entity.ProductsType
+com.crolox.odessa.util.PickorderCreator ..> com.crolox.odessa.pickorderio.entity.LabelType
+com.crolox.odessa.util.PickorderCreator ..> com.crolox.odessa.pickorderio.entity.ProductWarningLabelsType
+com.crolox.odessa.util.PickorderCreator ..> com.crolox.odessa.pickorderio.entity.ProductBarcodesType
+com.crolox.odessa.util.PickorderCreator ..> com.crolox.odessa.pickorderio.entity.PatientsType
+com.crolox.odessa.util.PickorderCreator ..> com.crolox.odessa.pickorderio.entity.DeliveryInfoType
+com.crolox.odessa.util.PickorderCreator ..> com.crolox.odessa.dto.NawDto
+com.crolox.odessa.util.PickorderCreator ..> com.crolox.odessa.pickorderio.entity.AddressType
+com.crolox.odessa.util.PickorderCreator ..> com.crolox.odessa.pickorderio.entity.DeliveriesType
+com.crolox.odessa.util.PickorderCreator ..> com.crolox.odessa.pickorderio.entity.PickOrderLinesType
+com.crolox.odessa.util.PickorderCreator ..> com.crolox.odessa.pickorderio.entity.ShippingInfoType
+
+!endsub
+
+' IMPORTS =======
+' Java Files Path : /Users/paolobrunasti/IdeaProjects/OCTA/picommon/src/main/java/
+
+!startsub IMPORTS_COM_CROLOX_ODESSA_CONSTANTS
+' com.crolox.odessa.constants.LogType
+
+' com.crolox.odessa.constants.Paths
+
+' com.crolox.odessa.constants.Application
+
+' com.crolox.odessa.constants.LogPrefix
+
+' com.crolox.odessa.constants.DestinationType
+
+' com.crolox.odessa.constants.General
+
+' com.crolox.odessa.constants.Paths
+
+' com.crolox.odessa.constants.LogType
+
+' com.crolox.odessa.constants.LogPrefix
+
+' com.crolox.odessa.constants.Application
+
+' com.crolox.odessa.constants.General
+
+' com.crolox.odessa.constants.DestinationType
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_ODESSA_DTO
+' com.crolox.odessa.dto.LabelTextDto
+
+' com.crolox.odessa.dto.ReceiptDto
+com.crolox.odessa.dto.ReceiptDto ..o com.crolox.odessa.enumeration.ReceiptStatus
+com.crolox.odessa.dto.ReceiptDto ..o com.google.gson.Gson
+com.crolox.odessa.dto.ReceiptDto ..o com.crolox.odessa.pickorderio.common.ReceiptFridgeInfo
+com.crolox.odessa.dto.ReceiptDto ..o com.crolox.odessa.enumeration.Gender
+
+' com.crolox.odessa.dto.PickorderLineKey
+
+' com.crolox.odessa.dto.ExternalUserDto
+
+' com.crolox.odessa.dto.OrderAndReserveResponse
+com.crolox.odessa.dto.OrderAndReserveResponse ..o com.crolox.odessa.pickorderio.entity.WholesaleType
+
+' com.crolox.odessa.dto.OrderAndReserveRequestsWrapper
+com.crolox.odessa.dto.OrderAndReserveRequestsWrapper ..o com.crolox.odessa.pickorderio.entity.ShippingInfoType
+com.crolox.odessa.dto.OrderAndReserveRequestsWrapper ..o com.crolox.odessa.pickorderio.entity.HeaderType
+
+' com.crolox.odessa.dto.ReceiptLineDto
+com.crolox.odessa.dto.ReceiptLineDto ..o com.crolox.odessa.util.CommonUtils
+
+' com.crolox.odessa.dto.OrderAndReserveRequest
+
+' com.crolox.odessa.dto.NawDto
+
+' com.crolox.odessa.dto.ReceiptLineStockInfo
+
+' com.crolox.odessa.dto.StockZindexQuantity
+
+' com.crolox.odessa.dto.ReceiptBarcodes
+
+' com.crolox.odessa.dto.ReceiptAgbCodeReceiptBarcode
+
+' com.crolox.odessa.dto.StockWriteOffRequest
+
+' com.crolox.odessa.dto.PickorderLineKeys
+
+' com.crolox.odessa.dto.ReceiptHandlerUser
+
+' com.crolox.odessa.dto.PickorderLineKeysPerAgbCode
+
+' com.crolox.odessa.dto.ZindexQuantityOverview
+
+' com.crolox.odessa.dto.LabelTextDto
+
+' com.crolox.odessa.dto.ExternalUserDto
+
+' com.crolox.odessa.dto.StockZindexQuantity
+
+' com.crolox.odessa.dto.PickorderLineKey
+
+' com.crolox.odessa.dto.StockWriteOffRequest
+
+' com.crolox.odessa.dto.ZindexQuantityOverview
+
+' com.crolox.odessa.dto.NawDto
+
+' com.crolox.odessa.dto.OrderAndReserveRequestsWrapper
+
+' com.crolox.odessa.dto.OrderAndReserveRequest
+
+' com.crolox.odessa.dto.ReceiptBarcodes
+
+' com.crolox.odessa.dto.PickorderLineKeys
+
+' com.crolox.odessa.dto.ReceiptHandlerUser
+
+' com.crolox.odessa.dto.PickorderLineKeysPerAgbCode
+
+' com.crolox.odessa.dto.ReceiptAgbCodeReceiptBarcode
+
+' com.crolox.odessa.dto.OrderAndReserveResponse
+
+' com.crolox.odessa.dto.ReceiptDto
+
+' com.crolox.odessa.dto.ReceiptLineDto
+
+' com.crolox.odessa.dto.ReceiptLineStockInfo
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_ODESSA_DTO_BMC
+' com.crolox.odessa.dto.bmc.BlinkingMode
+
+' com.crolox.odessa.dto.bmc.BinmasterPresenceOverview
+
+' com.crolox.odessa.dto.bmc.BinmasterRequest
+
+' com.crolox.odessa.dto.bmc.Colour
+
+' com.crolox.odessa.dto.bmc.HandDetection
+
+' com.crolox.odessa.dto.bmc.DetectionMode
+
+' com.crolox.odessa.dto.bmc.CabinetProperties
+
+' com.crolox.odessa.dto.bmc.CompartmentProperties
+
+' com.crolox.odessa.dto.bmc.BinmasterPresence
+
+' com.crolox.odessa.dto.bmc.BinmasterRequest
+
+' com.crolox.odessa.dto.bmc.DetectionMode
+
+' com.crolox.odessa.dto.bmc.BinmasterPresence
+
+' com.crolox.odessa.dto.bmc.CabinetProperties
+
+' com.crolox.odessa.dto.bmc.HandDetection
+
+' com.crolox.odessa.dto.bmc.BinmasterPresenceOverview
+
+' com.crolox.odessa.dto.bmc.Colour
+
+' com.crolox.odessa.dto.bmc.BlinkingMode
+
+' com.crolox.odessa.dto.bmc.CompartmentProperties
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_ODESSA_ENUMERATION
+' com.crolox.odessa.enumeration.ReceiptStatus
+
+' com.crolox.odessa.enumeration.Gender
+
+' com.crolox.odessa.enumeration.ReceiptLineAction
+
+' com.crolox.odessa.enumeration.ReceiptLineAction
+
+' com.crolox.odessa.enumeration.Gender
+
+' com.crolox.odessa.enumeration.ReceiptStatus
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_ODESSA_RABBIT_DTO
+' com.crolox.odessa.rabbit.dto.LogDto
+
+' com.crolox.odessa.rabbit.dto.LogDto
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_ODESSA_UTIL
+' com.crolox.odessa.util.CommonUtils
+
+' com.crolox.odessa.util.JsonUtils
+com.crolox.odessa.util.JsonUtils ..o com.crolox.odessa.pickorderio.entity.ProductWarningLabelsType
+com.crolox.odessa.util.JsonUtils ..o com.crolox.odessa.pickorderio.entity.LabelType
+com.crolox.odessa.util.JsonUtils ..o com.google.gson.Gson
+com.crolox.odessa.util.JsonUtils ..o com.crolox.odessa.pickorderio.entity.ProductBarcodesType
+com.crolox.odessa.util.JsonUtils ..o com.crolox.odessa.pickorderio.entity.AddressType
+
+' com.crolox.odessa.util.OdessaUtils
+com.crolox.odessa.util.OdessaUtils ..o  com.crolox.odessa.constants.General.OPIUM_WET_CODES
+
+' com.crolox.odessa.util.DateTimeUtils
+
+' com.crolox.odessa.util.PickorderSplitter
+com.crolox.odessa.util.PickorderSplitter ..o com.crolox.odessa.pickorderio.pojo.SplittedPickOrderTypes
+com.crolox.odessa.util.PickorderSplitter ..o com.crolox.odessa.pickorderio.util.CommonUtil
+com.crolox.odessa.util.PickorderSplitter ..o com.crolox.odessa.dto.ReceiptLineStockInfo
+com.crolox.odessa.util.PickorderSplitter ..o  com.crolox.odessa.constants.General.GERESERVEERD
+com.crolox.odessa.util.PickorderSplitter ..o com.crolox.odessa.pickorderio.util.DeepClone
+com.crolox.odessa.util.PickorderSplitter ..o  com.crolox.odessa.constants.General.BESTELD
+
+' com.crolox.odessa.util.PickorderCreator
+com.crolox.odessa.util.PickorderCreator ..o com.crolox.odessa.dto.NawDto
+com.crolox.odessa.util.PickorderCreator ..o com.crolox.odessa.dto.LabelTextDto
+com.crolox.odessa.util.PickorderCreator ..o  com.crolox.odessa.constants.General.PICKORDER_VERSION
+com.crolox.odessa.util.PickorderCreator ..o com.crolox.odessa.dto.ReceiptDto
+com.crolox.odessa.util.PickorderCreator ..o com.crolox.odessa.dto.ReceiptLineDto
+com.crolox.odessa.util.PickorderCreator ..o  com.crolox.odessa.constants.General.PICKORDER_PUB_TYPE
+
+' com.crolox.odessa.util.CommonUtils
+
+' com.crolox.odessa.util.OdessaUtils
+
+' com.crolox.odessa.util.PickorderCreator
+
+' com.crolox.odessa.util.JsonUtils
+
+' com.crolox.odessa.util.DateTimeUtils
+
+' com.crolox.odessa.util.PickorderSplitter
+
+
+!endsub
+
+
+@enduml
