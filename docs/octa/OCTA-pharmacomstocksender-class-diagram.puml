@@ -6,7 +6,7 @@
 ' Path            : [/Users/paolobrunasti/IdeaProjects/OCTA/pharmacomstocksender/build/classes/java/main]
 ' Java Files Path : [/Users/paolobrunasti/IdeaProjects/OCTA/pharmacomstocksender/src/main/java/]
 ' Configuration   : [/Users/paolobrunasti/IdeaProjects/mine/java-diagrammer/docs/octa/config.json]
-' Generated at    : Tue Jan 27 11:50:43 CET 2026
+' Generated at    : Tue Jan 27 12:12:52 CET 2026
 '
 '   Stat infos    :
 '       Files : [66]
@@ -333,12 +333,10 @@ nl.pharmapartners.services.filedeliverservice.v2.Result --> nl.pharmapartners.se
 ' USES =======
 
 !startsub USES_NL_CROLOX_PHARMACOMSTOCKSENDER
-nl.crolox.pharmacomstocksender.SSLTrustManager$1 ..> Ljava.security.cert.X509Certificate
 nl.crolox.pharmacomstocksender.FileDeliveryService ..> nl.crolox.pharmacomstocksender.model.Apotheek
 nl.crolox.pharmacomstocksender.FileDeliveryService ..> nl.crolox.pharmacomstocksender.helper.Product
 nl.crolox.pharmacomstocksender.WebServiceConfig$1 ..> nl.crolox.pharmacomstocksender.WebServiceConfig
 nl.crolox.pharmacomstocksender.WebServiceConfig$2 ..> nl.crolox.pharmacomstocksender.WebServiceConfig
-nl.crolox.pharmacomstocksender.WebServiceConfig$2 ..> Ljava.security.cert.X509Certificate
 nl.crolox.pharmacomstocksender.WebServiceConfig$3 ..> nl.crolox.pharmacomstocksender.WebServiceConfig
 
 !endsub
@@ -394,7 +392,6 @@ nl.pharmapartners.services.filedeliverservice.v2.ObjectFactory ..> nl.pharmapart
 nl.pharmapartners.services.filedeliverservice.v2.ObjectFactory ..> nl.pharmapartners.services.filedeliverservice.v2.File
 nl.pharmapartners.services.filedeliverservice.v2.ObjectFactory ..> nl.pharmapartners.services.filedeliverservice.v2.LinesProcessed
 nl.pharmapartners.services.filedeliverservice.v2.Result ..> nl.pharmapartners.services.filedeliverservice.v2.ResultcodeType
-nl.pharmapartners.services.filedeliverservice.v2.File ..> B
 
 !endsub
 
@@ -429,7 +426,6 @@ nl.crolox.pharmacomstocksender.FileDeliveryService ..o nl.crolox.pharmacomstocks
 ' nl.crolox.pharmacomstocksender.PharmacomStockSenderApplication
 
 ' nl.crolox.pharmacomstocksender.WebServiceConfig
-nl.crolox.pharmacomstocksender.WebServiceConfig ..o com.sun.xml.bind.marshaller.NamespacePrefixMapper
 
 ' nl.crolox.pharmacomstocksender.AppConfig
 

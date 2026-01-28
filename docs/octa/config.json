@@ -1,8 +1,21 @@
 {
+  "xxxxx": {
+    "classes": [
+      {
+        "class": "org.slf4j.Logger"
+      },
+      {
+        "class": "java.lang.String"
+      }
+    ]
+  },
   "exclude": {
     "classes": [
       {
         "class": "org.slf4j.Logger"
+      },
+      {
+        "class": "B"
       },
       {
         "class": "java.lang.String"
@@ -13,10 +26,13 @@
         "package": "Lnl."
       },
       {
-        "package": "Ljava.lang."
+        "package": "Ljava."
       },
       {
         "package": "java."
+      },
+      {
+        "package": "com.sun."
       },
       {
         "package": "javax."

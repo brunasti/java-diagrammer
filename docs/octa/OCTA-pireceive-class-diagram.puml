@@ -6,7 +6,7 @@
 ' Path            : [/Users/paolobrunasti/IdeaProjects/OCTA/pireceive/target/classes]
 ' Java Files Path : [/Users/paolobrunasti/IdeaProjects/OCTA/pireceive/src/main/java/]
 ' Configuration   : [/Users/paolobrunasti/IdeaProjects/mine/java-diagrammer/docs/octa/config.json]
-' Generated at    : Tue Jan 27 11:50:43 CET 2026
+' Generated at    : Tue Jan 27 12:12:53 CET 2026
 '
 '   Stat infos    :
 '       Files : [682]
@@ -824,7 +824,6 @@ com.crolox.pireceive.service.PickorderClobService ..> com.crolox.pireceive.domai
 com.crolox.pireceive.service.PickorderClobService ..> com.crolox.pireceive.domain.persistence.Pharmacy
 com.crolox.pireceive.service.FileService ..> com.crolox.pireceive.common.FileDestination
 com.crolox.pireceive.service.FileService ..> com.crolox.odessa.pickorderio.entity.PickOrderType
-com.crolox.pireceive.service.MQService ..> B
 com.crolox.pireceive.service.MQService ..> com.crolox.pireceive.dto.BvgOrder
 com.crolox.pireceive.service.SplitByReceiptPrefixService ..> com.crolox.odessa.pickorderio.entity.PickOrderType
 com.crolox.pireceive.service.SplitByReceiptPrefixService ..> com.crolox.odessa.pickorderio.entity.ReceiptType

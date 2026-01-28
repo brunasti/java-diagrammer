@@ -6,7 +6,7 @@
 ' Path            : [/Users/paolobrunasti/IdeaProjects/OCTA/pisend/target/classes]
 ' Java Files Path : [/Users/paolobrunasti/IdeaProjects/OCTA/pisend/src/main/java/]
 ' Configuration   : [/Users/paolobrunasti/IdeaProjects/mine/java-diagrammer/docs/octa/config.json]
-' Generated at    : Tue Jan 27 11:50:43 CET 2026
+' Generated at    : Tue Jan 27 12:12:53 CET 2026
 '
 '   Stat infos    :
 '       Files : [63]
@@ -541,9 +541,7 @@ com.crolox.pisend.repository.ClientParametersRepository ..> com.crolox.pisend.do
 
 
 !startsub USES_COM_CROLOX_PISEND_SERVICE
-com.crolox.pisend.service.RabbitMQService ..> B
 com.crolox.pisend.service.RabbitMQService ..> com.crolox.pisend.constants.ObjectType
-com.crolox.pisend.service.SFTPService ..> B
 com.crolox.pisend.service.SFTPService ..> com.crolox.pisend.domain.ClientParameters
 com.crolox.pisend.service.SFTPService ..> net.schmizz.sshj.sftp.SFTPClient
 com.crolox.pisend.service.SFTPService ..> net.schmizz.sshj.SSHClient
@@ -553,7 +551,6 @@ com.crolox.pisend.service.EmailService$1 ..> com.crolox.pisend.pojo.MailProperti
 com.crolox.pisend.service.RabbitMQService$3 ..> com.crolox.pisend.service.RabbitMQService
 com.crolox.pisend.service.RabbitMQService$2 ..> com.crolox.pisend.service.RabbitMQService
 com.crolox.pisend.service.RabbitMQService$1 ..> com.crolox.pisend.service.RabbitMQService
-com.crolox.pisend.service.EmailService ..> B
 com.crolox.pisend.service.EmailService ..> com.crolox.pisend.pojo.MailProperties
 
 !endsub

@@ -6,7 +6,7 @@
 ' Path            : [/Users/paolobrunasti/IdeaProjects/OCTA/stock/target/classes]
 ' Java Files Path : [/Users/paolobrunasti/IdeaProjects/OCTA/stock/src/main/java/]
 ' Configuration   : [/Users/paolobrunasti/IdeaProjects/mine/java-diagrammer/docs/octa/config.json]
-' Generated at    : Tue Jan 27 11:50:43 CET 2026
+' Generated at    : Tue Jan 27 12:12:53 CET 2026
 '
 '   Stat infos    :
 '       Files : [1029]
@@ -1585,7 +1585,6 @@ com.crolox.pistock.service.ReceivedProductService ..> com.crolox.pistock.dto.Int
 
 
 !startsub USES_COM_CROLOX_PISTOCK_UTIL
-com.crolox.pistock.util.CommonUtils ..> Ljava.util.function.Function
 com.crolox.pistock.util.CommonUtils ..> com.crolox.pistock.dto.BvgOrder
 com.crolox.pistock.util.CommonUtils ..> com.crolox.pistock.dto.BvgOrderDto
 com.crolox.pistock.util.CommonUtils ..> com.crolox.pistock.dto.MailOrder
