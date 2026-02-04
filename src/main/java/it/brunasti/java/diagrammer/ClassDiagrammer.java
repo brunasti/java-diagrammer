@@ -2,7 +2,7 @@
  * Java-Diagrammer core component.
  * Generate a PrintUML class diagram from the compiled Java classes.
  *
- * Copyright (c) 2024.
+ * Copyright (c) 2024-2026.
  * Paolo Brunasti
  */
 

@@ -1,0 +1,1654 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+' GENERATE CLASS DIAGRAM ===========
+' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
+' Path            : [/Users/paolobrunasti/IdeaProjects/OCTA/receipt-handler/backend/target/classes]
+' Java Files Path : [/Users/paolobrunasti/IdeaProjects/OCTA/receipt-handler/backend/src/main/java/]
+' Configuration   : [/Users/paolobrunasti/IdeaProjects/mine/java-diagrammer/docs/octa/config.json]
+' Generated at    : Wed Feb 04 13:21:33 CET 2026
+'
+'   Stat infos    :
+'       Files : [213]
+'       Lines : [16916]
+'     Classes : [210]
+'     Methods : [2118]
+'      Fields : [954]
+
+' Include         : [./docs/includedFile.txt] ---------
+title Example with legend and title
+
+hide empty members
+
+
+legend
+Connections legend
+----
+--|> : Extends
+..|> : Implements
+----
+--> : Fields and Attributes
+..> : Uses
+end legend
+' Include end     : --------------------------
+
+
+
+'!includesub OCTA-receipt-handler-class-diagram.puml!COM_CROLOX_RECEIPTHANDLER
+'!includesub OCTA-receipt-handler-class-diagram.puml!INHERITANCES_COM_CROLOX_RECEIPTHANDLER
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER
+'!includesub OCTA-receipt-handler-class-diagram.puml!FIELDS_COM_CROLOX_RECEIPTHANDLER
+'!includesub OCTA-receipt-handler-class-diagram.puml!USES_COM_CROLOX_RECEIPTHANDLER
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPORTS_COM_CROLOX_RECEIPTHANDLER
+
+'!includesub OCTA-receipt-handler-class-diagram.puml!COM_CROLOX_RECEIPTHANDLER_API
+'!includesub OCTA-receipt-handler-class-diagram.puml!INHERITANCES_COM_CROLOX_RECEIPTHANDLER_API
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_API
+'!includesub OCTA-receipt-handler-class-diagram.puml!FIELDS_COM_CROLOX_RECEIPTHANDLER_API
+'!includesub OCTA-receipt-handler-class-diagram.puml!USES_COM_CROLOX_RECEIPTHANDLER_API
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPORTS_COM_CROLOX_RECEIPTHANDLER_API
+
+'!includesub OCTA-receipt-handler-class-diagram.puml!COM_CROLOX_RECEIPTHANDLER_COMMON
+'!includesub OCTA-receipt-handler-class-diagram.puml!INHERITANCES_COM_CROLOX_RECEIPTHANDLER_COMMON
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_COMMON
+'!includesub OCTA-receipt-handler-class-diagram.puml!FIELDS_COM_CROLOX_RECEIPTHANDLER_COMMON
+'!includesub OCTA-receipt-handler-class-diagram.puml!USES_COM_CROLOX_RECEIPTHANDLER_COMMON
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPORTS_COM_CROLOX_RECEIPTHANDLER_COMMON
+
+'!includesub OCTA-receipt-handler-class-diagram.puml!COM_CROLOX_RECEIPTHANDLER_COMPONENT
+'!includesub OCTA-receipt-handler-class-diagram.puml!INHERITANCES_COM_CROLOX_RECEIPTHANDLER_COMPONENT
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_COMPONENT
+'!includesub OCTA-receipt-handler-class-diagram.puml!FIELDS_COM_CROLOX_RECEIPTHANDLER_COMPONENT
+'!includesub OCTA-receipt-handler-class-diagram.puml!USES_COM_CROLOX_RECEIPTHANDLER_COMPONENT
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPORTS_COM_CROLOX_RECEIPTHANDLER_COMPONENT
+
+'!includesub OCTA-receipt-handler-class-diagram.puml!COM_CROLOX_RECEIPTHANDLER_CONFIG
+'!includesub OCTA-receipt-handler-class-diagram.puml!INHERITANCES_COM_CROLOX_RECEIPTHANDLER_CONFIG
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_CONFIG
+'!includesub OCTA-receipt-handler-class-diagram.puml!FIELDS_COM_CROLOX_RECEIPTHANDLER_CONFIG
+'!includesub OCTA-receipt-handler-class-diagram.puml!USES_COM_CROLOX_RECEIPTHANDLER_CONFIG
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPORTS_COM_CROLOX_RECEIPTHANDLER_CONFIG
+
+'!includesub OCTA-receipt-handler-class-diagram.puml!COM_CROLOX_RECEIPTHANDLER_DTO
+'!includesub OCTA-receipt-handler-class-diagram.puml!INHERITANCES_COM_CROLOX_RECEIPTHANDLER_DTO
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_DTO
+'!includesub OCTA-receipt-handler-class-diagram.puml!FIELDS_COM_CROLOX_RECEIPTHANDLER_DTO
+'!includesub OCTA-receipt-handler-class-diagram.puml!USES_COM_CROLOX_RECEIPTHANDLER_DTO
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPORTS_COM_CROLOX_RECEIPTHANDLER_DTO
+
+'!includesub OCTA-receipt-handler-class-diagram.puml!COM_CROLOX_RECEIPTHANDLER_ENUMERATION
+'!includesub OCTA-receipt-handler-class-diagram.puml!INHERITANCES_COM_CROLOX_RECEIPTHANDLER_ENUMERATION
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_ENUMERATION
+'!includesub OCTA-receipt-handler-class-diagram.puml!FIELDS_COM_CROLOX_RECEIPTHANDLER_ENUMERATION
+'!includesub OCTA-receipt-handler-class-diagram.puml!USES_COM_CROLOX_RECEIPTHANDLER_ENUMERATION
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPORTS_COM_CROLOX_RECEIPTHANDLER_ENUMERATION
+
+'!includesub OCTA-receipt-handler-class-diagram.puml!COM_CROLOX_RECEIPTHANDLER_EXCEPTION
+'!includesub OCTA-receipt-handler-class-diagram.puml!INHERITANCES_COM_CROLOX_RECEIPTHANDLER_EXCEPTION
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_EXCEPTION
+'!includesub OCTA-receipt-handler-class-diagram.puml!FIELDS_COM_CROLOX_RECEIPTHANDLER_EXCEPTION
+'!includesub OCTA-receipt-handler-class-diagram.puml!USES_COM_CROLOX_RECEIPTHANDLER_EXCEPTION
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPORTS_COM_CROLOX_RECEIPTHANDLER_EXCEPTION
+
+'!includesub OCTA-receipt-handler-class-diagram.puml!COM_CROLOX_RECEIPTHANDLER_EXTERN_API
+'!includesub OCTA-receipt-handler-class-diagram.puml!INHERITANCES_COM_CROLOX_RECEIPTHANDLER_EXTERN_API
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_EXTERN_API
+'!includesub OCTA-receipt-handler-class-diagram.puml!FIELDS_COM_CROLOX_RECEIPTHANDLER_EXTERN_API
+'!includesub OCTA-receipt-handler-class-diagram.puml!USES_COM_CROLOX_RECEIPTHANDLER_EXTERN_API
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPORTS_COM_CROLOX_RECEIPTHANDLER_EXTERN_API
+
+'!includesub OCTA-receipt-handler-class-diagram.puml!COM_CROLOX_RECEIPTHANDLER_JMS
+'!includesub OCTA-receipt-handler-class-diagram.puml!INHERITANCES_COM_CROLOX_RECEIPTHANDLER_JMS
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_JMS
+'!includesub OCTA-receipt-handler-class-diagram.puml!FIELDS_COM_CROLOX_RECEIPTHANDLER_JMS
+'!includesub OCTA-receipt-handler-class-diagram.puml!USES_COM_CROLOX_RECEIPTHANDLER_JMS
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPORTS_COM_CROLOX_RECEIPTHANDLER_JMS
+
+'!includesub OCTA-receipt-handler-class-diagram.puml!COM_CROLOX_RECEIPTHANDLER_LOXIS_HANDLER
+'!includesub OCTA-receipt-handler-class-diagram.puml!INHERITANCES_COM_CROLOX_RECEIPTHANDLER_LOXIS_HANDLER
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_LOXIS_HANDLER
+'!includesub OCTA-receipt-handler-class-diagram.puml!FIELDS_COM_CROLOX_RECEIPTHANDLER_LOXIS_HANDLER
+'!includesub OCTA-receipt-handler-class-diagram.puml!USES_COM_CROLOX_RECEIPTHANDLER_LOXIS_HANDLER
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPORTS_COM_CROLOX_RECEIPTHANDLER_LOXIS_HANDLER
+
+'!includesub OCTA-receipt-handler-class-diagram.puml!COM_CROLOX_RECEIPTHANDLER_LOXIS_POJO
+'!includesub OCTA-receipt-handler-class-diagram.puml!INHERITANCES_COM_CROLOX_RECEIPTHANDLER_LOXIS_POJO
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_LOXIS_POJO
+'!includesub OCTA-receipt-handler-class-diagram.puml!FIELDS_COM_CROLOX_RECEIPTHANDLER_LOXIS_POJO
+'!includesub OCTA-receipt-handler-class-diagram.puml!USES_COM_CROLOX_RECEIPTHANDLER_LOXIS_POJO
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPORTS_COM_CROLOX_RECEIPTHANDLER_LOXIS_POJO
+
+'!includesub OCTA-receipt-handler-class-diagram.puml!COM_CROLOX_RECEIPTHANDLER_LOXIS_SCHEDULED
+'!includesub OCTA-receipt-handler-class-diagram.puml!INHERITANCES_COM_CROLOX_RECEIPTHANDLER_LOXIS_SCHEDULED
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_LOXIS_SCHEDULED
+'!includesub OCTA-receipt-handler-class-diagram.puml!FIELDS_COM_CROLOX_RECEIPTHANDLER_LOXIS_SCHEDULED
+'!includesub OCTA-receipt-handler-class-diagram.puml!USES_COM_CROLOX_RECEIPTHANDLER_LOXIS_SCHEDULED
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPORTS_COM_CROLOX_RECEIPTHANDLER_LOXIS_SCHEDULED
+
+'!includesub OCTA-receipt-handler-class-diagram.puml!COM_CROLOX_RECEIPTHANDLER_LOXIS_SERVICE
+'!includesub OCTA-receipt-handler-class-diagram.puml!INHERITANCES_COM_CROLOX_RECEIPTHANDLER_LOXIS_SERVICE
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_LOXIS_SERVICE
+'!includesub OCTA-receipt-handler-class-diagram.puml!FIELDS_COM_CROLOX_RECEIPTHANDLER_LOXIS_SERVICE
+'!includesub OCTA-receipt-handler-class-diagram.puml!USES_COM_CROLOX_RECEIPTHANDLER_LOXIS_SERVICE
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPORTS_COM_CROLOX_RECEIPTHANDLER_LOXIS_SERVICE
+
+'!includesub OCTA-receipt-handler-class-diagram.puml!COM_CROLOX_RECEIPTHANDLER_MODEL
+'!includesub OCTA-receipt-handler-class-diagram.puml!INHERITANCES_COM_CROLOX_RECEIPTHANDLER_MODEL
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_MODEL
+'!includesub OCTA-receipt-handler-class-diagram.puml!FIELDS_COM_CROLOX_RECEIPTHANDLER_MODEL
+'!includesub OCTA-receipt-handler-class-diagram.puml!USES_COM_CROLOX_RECEIPTHANDLER_MODEL
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPORTS_COM_CROLOX_RECEIPTHANDLER_MODEL
+
+'!includesub OCTA-receipt-handler-class-diagram.puml!COM_CROLOX_RECEIPTHANDLER_POJO
+'!includesub OCTA-receipt-handler-class-diagram.puml!INHERITANCES_COM_CROLOX_RECEIPTHANDLER_POJO
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_POJO
+'!includesub OCTA-receipt-handler-class-diagram.puml!FIELDS_COM_CROLOX_RECEIPTHANDLER_POJO
+'!includesub OCTA-receipt-handler-class-diagram.puml!USES_COM_CROLOX_RECEIPTHANDLER_POJO
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPORTS_COM_CROLOX_RECEIPTHANDLER_POJO
+
+'!includesub OCTA-receipt-handler-class-diagram.puml!COM_CROLOX_RECEIPTHANDLER_REPO
+'!includesub OCTA-receipt-handler-class-diagram.puml!INHERITANCES_COM_CROLOX_RECEIPTHANDLER_REPO
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_REPO
+'!includesub OCTA-receipt-handler-class-diagram.puml!FIELDS_COM_CROLOX_RECEIPTHANDLER_REPO
+'!includesub OCTA-receipt-handler-class-diagram.puml!USES_COM_CROLOX_RECEIPTHANDLER_REPO
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPORTS_COM_CROLOX_RECEIPTHANDLER_REPO
+
+'!includesub OCTA-receipt-handler-class-diagram.puml!COM_CROLOX_RECEIPTHANDLER_SCHEDULED
+'!includesub OCTA-receipt-handler-class-diagram.puml!INHERITANCES_COM_CROLOX_RECEIPTHANDLER_SCHEDULED
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_SCHEDULED
+'!includesub OCTA-receipt-handler-class-diagram.puml!FIELDS_COM_CROLOX_RECEIPTHANDLER_SCHEDULED
+'!includesub OCTA-receipt-handler-class-diagram.puml!USES_COM_CROLOX_RECEIPTHANDLER_SCHEDULED
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPORTS_COM_CROLOX_RECEIPTHANDLER_SCHEDULED
+
+'!includesub OCTA-receipt-handler-class-diagram.puml!COM_CROLOX_RECEIPTHANDLER_SERVICE
+'!includesub OCTA-receipt-handler-class-diagram.puml!INHERITANCES_COM_CROLOX_RECEIPTHANDLER_SERVICE
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_SERVICE
+'!includesub OCTA-receipt-handler-class-diagram.puml!FIELDS_COM_CROLOX_RECEIPTHANDLER_SERVICE
+'!includesub OCTA-receipt-handler-class-diagram.puml!USES_COM_CROLOX_RECEIPTHANDLER_SERVICE
+'!includesub OCTA-receipt-handler-class-diagram.puml!IMPORTS_COM_CROLOX_RECEIPTHANDLER_SERVICE
+
+
+
+' CLASSES =======
+!startsub COM_CROLOX_RECEIPTHANDLER
+class com.crolox.receipthandler.ReceiptHandlerApplication
+
+!endsub
+
+!startsub COM_CROLOX_RECEIPTHANDLER_API
+class com.crolox.receipthandler.api.QueueTypeApi
+class com.crolox.receipthandler.api.GlobalConfigApi
+class com.crolox.receipthandler.api.ReceiptLineApi
+class com.crolox.receipthandler.api.LoginApi
+class com.crolox.receipthandler.api.OrderMomentPriorityApi
+class com.crolox.receipthandler.api.QueueApi
+class com.crolox.receipthandler.api.AppInfoApi
+class com.crolox.receipthandler.api.IdfInfoApi
+class com.crolox.receipthandler.api.ZindexTypeApi
+class com.crolox.receipthandler.api.PicklistApi
+class com.crolox.receipthandler.api.ReceiptApi
+class com.crolox.receipthandler.api.PharmacyApi
+class com.crolox.receipthandler.api.QueueOverviewDtoApi
+class com.crolox.receipthandler.api.SpecialZindexApi
+
+!endsub
+
+!startsub COM_CROLOX_RECEIPTHANDLER_COMMON
+class com.crolox.receipthandler.common.SingletonArea
+enum com.crolox.receipthandler.common.Month{
+  JANUARY
+  FEBRUARI
+  MARCH
+  APRIL
+  MAY
+  JUNE
+  JULY
+  AUGUST
+  SEPTEMBER
+  OCTOBER
+  NOVEMBER
+  DECEMBER
+  INVALID
+}
+class com.crolox.receipthandler.common.Utils
+enum com.crolox.receipthandler.common.BlockType{
+  STOCK
+  ORDERED
+  TO_ORDER
+}
+enum com.crolox.receipthandler.common.ProductCategory{
+  FRIDGE
+  HULPMIDDEL
+}
+class com.crolox.receipthandler.common.ProcesLocker
+enum com.crolox.receipthandler.common.ApplicationBase{
+  FLUENC
+  ODESSA
+}
+enum com.crolox.receipthandler.common.QueueType{
+  DEFAULT
+  FRIDGE
+  HULPMIDDEL
+  LOCATION_CODE
+}
+enum com.crolox.receipthandler.common.Day{
+  MONDAY
+  TUESDAY
+  WEDNESSDAY
+  THURSDAY
+  FRIDAY
+  SATURDAY
+  SUNDAY
+  INVALID
+}
+class com.crolox.receipthandler.common.Constants
+
+!endsub
+
+!startsub COM_CROLOX_RECEIPTHANDLER_COMPONENT
+class com.crolox.receipthandler.component.SortCommunicator
+class com.crolox.receipthandler.component.QueueAssigner
+class com.crolox.receipthandler.component.ProductServiceCommunicator
+class com.crolox.receipthandler.component.ProductServiceCommunicator$2
+class com.crolox.receipthandler.component.ProductServiceCommunicator$3
+class com.crolox.receipthandler.component.ProductServiceCommunicator$1
+class com.crolox.receipthandler.component.ManualReceiptReceiver
+class com.crolox.receipthandler.component.FileHandler
+class com.crolox.receipthandler.component.PickListCreator
+class com.crolox.receipthandler.component.ReceiptHandler
+class com.crolox.receipthandler.component.StockCommunicator
+class com.crolox.receipthandler.component.ReceiptReceiver
+
+!endsub
+
+!startsub COM_CROLOX_RECEIPTHANDLER_CONFIG
+class com.crolox.receipthandler.config.RestTemplateConfig$1
+class com.crolox.receipthandler.config.RabbitMQConfiguration
+class com.crolox.receipthandler.config.AppContextEventListener
+class com.crolox.receipthandler.config.RestTemplateConfig
+class com.crolox.receipthandler.config.ThreadConfiguration
+
+!endsub
+
+!startsub COM_CROLOX_RECEIPTHANDLER_DTO
+class com.crolox.receipthandler.dto.IdfBlockInfoDto
+class com.crolox.receipthandler.dto.ZindexProductDto
+class com.crolox.receipthandler.dto.PackageContentDto
+class com.crolox.receipthandler.dto.DeliveryDatesDto
+class com.crolox.receipthandler.dto.QueueOverviewDto
+class com.crolox.receipthandler.dto.LabelLinesDto
+class com.crolox.receipthandler.dto.Line
+class com.crolox.receipthandler.dto.HulpmiddelenFilterDto
+class com.crolox.receipthandler.dto.ReceiptBarcodesPerAgbCode
+
+!endsub
+
+!startsub COM_CROLOX_RECEIPTHANDLER_ENUMERATION
+enum com.crolox.receipthandler.enumeration.PartialPackageUnit{
+  ST
+  DO
+  G
+  ML
+}
+enum com.crolox.receipthandler.enumeration.ProductQueryType{
+  BY_ZINDEX
+  BY_ATC_CODE
+  BY_PRK_CODE
+  BY_GPK_CODE
+  BY_PRODUCT_BARCODE
+  BY_ZINDEX_NUMBERS
+}
+enum com.crolox.receipthandler.enumeration.OrderMomentPriority{
+  TIME
+  PATIENT_COUNT
+  OR
+  AND
+}
+enum com.crolox.receipthandler.enumeration.PartialPackageStatus{
+  NEW
+  WAIT
+  READY
+}
+
+!endsub
+
+!startsub COM_CROLOX_RECEIPTHANDLER_EXCEPTION
+class com.crolox.receipthandler.exception.NoJmsConnectionException
+class com.crolox.receipthandler.exception.ApplicationException
+
+!endsub
+
+!startsub COM_CROLOX_RECEIPTHANDLER_EXTERN_API
+class com.crolox.receipthandler.extern.api.PartialPackagePrescriptionLinesAPI
+
+!endsub
+
+!startsub COM_CROLOX_RECEIPTHANDLER_JMS
+class com.crolox.receipthandler.jms.LoxisJMSConnectionHandler
+
+!endsub
+
+!startsub COM_CROLOX_RECEIPTHANDLER_LOXIS_HANDLER
+class com.crolox.receipthandler.loxis.handler.LoxisPrescriptionInfoHandler
+
+!endsub
+
+!startsub COM_CROLOX_RECEIPTHANDLER_LOXIS_POJO
+class com.crolox.receipthandler.loxis.pojo.LoxisPrescriptionsResponse
+class com.crolox.receipthandler.loxis.pojo.LoxisPrescription
+class com.crolox.receipthandler.loxis.pojo.LoxisPrescriptionsRequest
+
+!endsub
+
+!startsub COM_CROLOX_RECEIPTHANDLER_LOXIS_SCHEDULED
+class com.crolox.receipthandler.loxis.scheduled.LoxisInfoRequestor
+
+!endsub
+
+!startsub COM_CROLOX_RECEIPTHANDLER_LOXIS_SERVICE
+class com.crolox.receipthandler.loxis.service.LoxisPrescriptionService
+
+!endsub
+
+!startsub COM_CROLOX_RECEIPTHANDLER_MODEL
+class com.crolox.receipthandler.model.IdfInfo
+class com.crolox.receipthandler.model.Pharmacy
+class com.crolox.receipthandler.model.Receipt
+abstract com.crolox.receipthandler.model.TimestampInfo
+class com.crolox.receipthandler.model.Queue
+class com.crolox.receipthandler.model.GlobalConfig
+class com.crolox.receipthandler.model.ReceiptLine
+class com.crolox.receipthandler.model.SpecialZindex
+
+!endsub
+
+!startsub COM_CROLOX_RECEIPTHANDLER_POJO
+class com.crolox.receipthandler.pojo.PartialPackagePrescriptionLine
+class com.crolox.receipthandler.pojo.PartialPackageRequest
+class com.crolox.receipthandler.pojo.PartialPackageRequests
+class com.crolox.receipthandler.pojo.OrderedReceipts
+
+!endsub
+
+!startsub COM_CROLOX_RECEIPTHANDLER_REPO
+interface com.crolox.receipthandler.repo.GlobalConfigRepository
+interface com.crolox.receipthandler.repo.PharmacyRepository
+interface com.crolox.receipthandler.repo.QueueRepository
+interface com.crolox.receipthandler.repo.ReceiptLineRepository
+interface com.crolox.receipthandler.repo.SpecialZindexRepository
+interface com.crolox.receipthandler.repo.IdfInfoRepository
+interface com.crolox.receipthandler.repo.QueueOverviewDtoRepository
+interface com.crolox.receipthandler.repo.ReceiptRepository
+
+!endsub
+
+!startsub COM_CROLOX_RECEIPTHANDLER_SCHEDULED
+class com.crolox.receipthandler.scheduled.StockHandler
+class com.crolox.receipthandler.scheduled.ScheduledQueueAssigner
+class com.crolox.receipthandler.scheduled.Forwarder
+class com.crolox.receipthandler.scheduled.PartialPackageHandler
+class com.crolox.receipthandler.scheduled.FileHousekeeping
+class com.crolox.receipthandler.scheduled.DatabaseHousekeeping
+
+!endsub
+
+!startsub COM_CROLOX_RECEIPTHANDLER_SERVICE
+class com.crolox.receipthandler.service.MQService
+class com.crolox.receipthandler.service.PartialPackageService$1
+class com.crolox.receipthandler.service.PartialPackageService
+class com.crolox.receipthandler.service.QueueService
+class com.crolox.receipthandler.service.IdfInfoService
+class com.crolox.receipthandler.service.ReceiptService
+class com.crolox.receipthandler.service.ReceiptLineService
+class com.crolox.receipthandler.service.QueueOverviewDtoService
+class com.crolox.receipthandler.service.SortingService
+class com.crolox.receipthandler.service.OrderService
+class com.crolox.receipthandler.service.PharmacyService
+class com.crolox.receipthandler.service.SpecialZindexService
+class com.crolox.receipthandler.service.SplitService
+class com.crolox.receipthandler.service.GlobalConfigService
+
+!endsub
+
+' INHERITANCES =======
+
+!startsub INHERITANCES_COM_CROLOX_RECEIPTHANDLER
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_RECEIPTHANDLER_API
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_RECEIPTHANDLER_COMMON
+java.lang.Enum <|-- com.crolox.receipthandler.common.Month
+java.lang.Enum <|-- com.crolox.receipthandler.common.BlockType
+java.lang.Enum <|-- com.crolox.receipthandler.common.ProductCategory
+java.lang.Enum <|-- com.crolox.receipthandler.common.ApplicationBase
+java.lang.Enum <|-- com.crolox.receipthandler.common.QueueType
+java.lang.Enum <|-- com.crolox.receipthandler.common.Day
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_RECEIPTHANDLER_COMPONENT
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_RECEIPTHANDLER_CONFIG
+java.net.ProxySelector <|-- com.crolox.receipthandler.config.RestTemplateConfig$1
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_RECEIPTHANDLER_DTO
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_RECEIPTHANDLER_ENUMERATION
+java.lang.Enum <|-- com.crolox.receipthandler.enumeration.PartialPackageUnit
+java.lang.Enum <|-- com.crolox.receipthandler.enumeration.ProductQueryType
+java.lang.Enum <|-- com.crolox.receipthandler.enumeration.OrderMomentPriority
+java.lang.Enum <|-- com.crolox.receipthandler.enumeration.PartialPackageStatus
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_RECEIPTHANDLER_EXCEPTION
+java.lang.Exception <|-- com.crolox.receipthandler.exception.NoJmsConnectionException
+java.lang.Exception <|-- com.crolox.receipthandler.exception.ApplicationException
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_RECEIPTHANDLER_EXTERN_API
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_RECEIPTHANDLER_JMS
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_RECEIPTHANDLER_LOXIS_HANDLER
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_RECEIPTHANDLER_LOXIS_POJO
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_RECEIPTHANDLER_LOXIS_SCHEDULED
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_RECEIPTHANDLER_LOXIS_SERVICE
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_RECEIPTHANDLER_MODEL
+com.crolox.receipthandler.model.TimestampInfo <|-- com.crolox.receipthandler.model.IdfInfo
+com.crolox.receipthandler.model.TimestampInfo <|-- com.crolox.receipthandler.model.Receipt
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_RECEIPTHANDLER_POJO
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_RECEIPTHANDLER_REPO
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_RECEIPTHANDLER_SCHEDULED
+
+!endsub
+
+
+!startsub INHERITANCES_COM_CROLOX_RECEIPTHANDLER_SERVICE
+
+!endsub
+
+' IMPLEMENT INTERFACE =======
+
+!startsub IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_API
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_COMMON
+java.io.Serializable <|.. com.crolox.receipthandler.common.SingletonArea
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_COMPONENT
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_CONFIG
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_DTO
+java.io.Serializable <|.. com.crolox.receipthandler.dto.IdfBlockInfoDto
+java.io.Serializable <|.. com.crolox.receipthandler.dto.QueueOverviewDto
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_ENUMERATION
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_EXCEPTION
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_EXTERN_API
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_JMS
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_LOXIS_HANDLER
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_LOXIS_POJO
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_LOXIS_SCHEDULED
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_LOXIS_SERVICE
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_MODEL
+java.io.Serializable <|.. com.crolox.receipthandler.model.IdfInfo
+java.io.Serializable <|.. com.crolox.receipthandler.model.Pharmacy
+java.lang.Comparable <|.. com.crolox.receipthandler.model.Pharmacy
+java.io.Serializable <|.. com.crolox.receipthandler.model.Receipt
+java.lang.Comparable <|.. com.crolox.receipthandler.model.Receipt
+java.io.Serializable <|.. com.crolox.receipthandler.model.Queue
+java.lang.Comparable <|.. com.crolox.receipthandler.model.Queue
+java.io.Serializable <|.. com.crolox.receipthandler.model.GlobalConfig
+java.io.Serializable <|.. com.crolox.receipthandler.model.ReceiptLine
+java.lang.Comparable <|.. com.crolox.receipthandler.model.ReceiptLine
+java.io.Serializable <|.. com.crolox.receipthandler.model.SpecialZindex
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_POJO
+java.lang.Comparable <|.. com.crolox.receipthandler.pojo.OrderedReceipts
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_REPO
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_SCHEDULED
+
+!endsub
+
+
+!startsub IMPLEMENTS_COM_CROLOX_RECEIPTHANDLER_SERVICE
+
+!endsub
+
+' FIELDS =======
+
+!startsub FIELDS_COM_CROLOX_RECEIPTHANDLER
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_RECEIPTHANDLER_API
+com.crolox.receipthandler.api.GlobalConfigApi --> com.crolox.receipthandler.service.GlobalConfigService
+com.crolox.receipthandler.api.ReceiptLineApi --> com.crolox.receipthandler.service.ReceiptLineService
+com.crolox.receipthandler.api.LoginApi --> com.crolox.receipthandler.component.SortCommunicator
+com.crolox.receipthandler.api.QueueApi --> com.crolox.receipthandler.service.QueueService
+com.crolox.receipthandler.api.IdfInfoApi --> com.crolox.receipthandler.service.IdfInfoService
+com.crolox.receipthandler.api.PicklistApi --> com.crolox.receipthandler.component.PickListCreator
+com.crolox.receipthandler.api.ReceiptApi --> com.crolox.receipthandler.service.ReceiptService
+com.crolox.receipthandler.api.ReceiptApi --> com.crolox.receipthandler.service.QueueService
+com.crolox.receipthandler.api.ReceiptApi --> com.crolox.receipthandler.service.OrderService
+com.crolox.receipthandler.api.ReceiptApi --> com.crolox.receipthandler.component.SortCommunicator
+com.crolox.receipthandler.api.PharmacyApi --> com.crolox.receipthandler.service.PharmacyService
+com.crolox.receipthandler.api.QueueOverviewDtoApi --> com.crolox.receipthandler.service.QueueOverviewDtoService
+com.crolox.receipthandler.api.SpecialZindexApi --> com.crolox.receipthandler.service.SpecialZindexService
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_RECEIPTHANDLER_COMMON
+com.crolox.receipthandler.common.Utils --> com.google.gson.Gson
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_RECEIPTHANDLER_COMPONENT
+com.crolox.receipthandler.component.SortCommunicator --> com.crolox.receipthandler.service.ReceiptService
+com.crolox.receipthandler.component.SortCommunicator --> com.crolox.receipthandler.service.SortingService
+com.crolox.receipthandler.component.QueueAssigner --> com.crolox.receipthandler.service.QueueService
+com.crolox.receipthandler.component.QueueAssigner --> com.crolox.receipthandler.service.ReceiptService
+com.crolox.receipthandler.component.ProductServiceCommunicator$2 --> com.crolox.receipthandler.component.ProductServiceCommunicator
+com.crolox.receipthandler.component.ProductServiceCommunicator$1 --> com.crolox.receipthandler.component.ProductServiceCommunicator
+com.crolox.receipthandler.component.ManualReceiptReceiver --> com.crolox.receipthandler.component.ReceiptReceiver
+com.crolox.receipthandler.component.PickListCreator --> com.crolox.receipthandler.component.StockCommunicator
+com.crolox.receipthandler.component.PickListCreator --> com.crolox.receipthandler.service.ReceiptService
+com.crolox.receipthandler.component.PickListCreator --> com.crolox.receipthandler.service.IdfInfoService
+com.crolox.receipthandler.component.PickListCreator --> com.crolox.receipthandler.service.QueueService
+com.crolox.receipthandler.component.ReceiptHandler --> com.crolox.receipthandler.component.StockCommunicator
+com.crolox.receipthandler.component.ReceiptHandler --> com.crolox.receipthandler.service.ReceiptService
+com.crolox.receipthandler.component.ReceiptHandler --> com.crolox.receipthandler.service.GlobalConfigService
+com.crolox.receipthandler.component.ReceiptHandler --> com.crolox.receipthandler.service.PharmacyService
+com.crolox.receipthandler.component.ReceiptHandler --> com.crolox.receipthandler.component.ProductServiceCommunicator
+com.crolox.receipthandler.component.ReceiptReceiver --> com.crolox.receipthandler.component.ReceiptHandler
+com.crolox.receipthandler.component.ReceiptReceiver --> com.crolox.receipthandler.component.FileHandler
+com.crolox.receipthandler.component.ReceiptReceiver --> com.crolox.receipthandler.service.GlobalConfigService
+com.crolox.receipthandler.component.ReceiptReceiver --> com.crolox.receipthandler.service.QueueService
+com.crolox.receipthandler.component.ReceiptReceiver --> com.crolox.receipthandler.service.SplitService
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_RECEIPTHANDLER_CONFIG
+com.crolox.receipthandler.config.RestTemplateConfig$1 --> com.crolox.receipthandler.config.RestTemplateConfig
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_RECEIPTHANDLER_DTO
+com.crolox.receipthandler.dto.DeliveryDatesDto --> com.crolox.receipthandler.common.BlockType
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_RECEIPTHANDLER_ENUMERATION
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_RECEIPTHANDLER_EXCEPTION
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_RECEIPTHANDLER_EXTERN_API
+com.crolox.receipthandler.extern.api.PartialPackagePrescriptionLinesAPI --> com.crolox.receipthandler.service.PartialPackageService
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_RECEIPTHANDLER_JMS
+com.crolox.receipthandler.jms.LoxisJMSConnectionHandler --> com.crolox.receipthandler.loxis.service.LoxisPrescriptionService
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_RECEIPTHANDLER_LOXIS_HANDLER
+com.crolox.receipthandler.loxis.handler.LoxisPrescriptionInfoHandler --> com.crolox.receipthandler.jms.LoxisJMSConnectionHandler
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_RECEIPTHANDLER_LOXIS_POJO
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_RECEIPTHANDLER_LOXIS_SCHEDULED
+com.crolox.receipthandler.loxis.scheduled.LoxisInfoRequestor --> com.crolox.receipthandler.service.PharmacyService
+com.crolox.receipthandler.loxis.scheduled.LoxisInfoRequestor --> com.crolox.receipthandler.service.ReceiptService
+com.crolox.receipthandler.loxis.scheduled.LoxisInfoRequestor --> com.crolox.receipthandler.component.SortCommunicator
+com.crolox.receipthandler.loxis.scheduled.LoxisInfoRequestor --> com.crolox.receipthandler.loxis.handler.LoxisPrescriptionInfoHandler
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_RECEIPTHANDLER_LOXIS_SERVICE
+com.crolox.receipthandler.loxis.service.LoxisPrescriptionService --> com.crolox.receipthandler.service.ReceiptService
+com.crolox.receipthandler.loxis.service.LoxisPrescriptionService --> com.crolox.receipthandler.component.QueueAssigner
+com.crolox.receipthandler.loxis.service.LoxisPrescriptionService --> com.crolox.receipthandler.service.QueueService
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_RECEIPTHANDLER_MODEL
+com.crolox.receipthandler.model.IdfInfo --> com.crolox.receipthandler.enumeration.OrderMomentPriority
+com.crolox.receipthandler.model.Receipt --> com.crolox.odessa.enumeration.ReceiptStatus
+com.crolox.receipthandler.model.Receipt --> com.crolox.odessa.pickorderio.common.ReceiptFridgeInfo
+com.crolox.receipthandler.model.Receipt --> com.crolox.odessa.enumeration.Gender
+com.crolox.receipthandler.model.Receipt --> com.crolox.receipthandler.model.Queue
+com.crolox.receipthandler.model.Receipt --> com.crolox.receipthandler.enumeration.PartialPackageStatus
+com.crolox.receipthandler.model.Queue --> com.crolox.receipthandler.model.IdfInfo
+com.crolox.receipthandler.model.Queue --> com.crolox.receipthandler.model.Pharmacy
+com.crolox.receipthandler.model.Queue --> com.crolox.receipthandler.common.QueueType
+com.crolox.receipthandler.model.ReceiptLine --> com.crolox.receipthandler.model.Receipt
+com.crolox.receipthandler.model.SpecialZindex --> com.crolox.odessa.pickorderio.common.ZindexType
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_RECEIPTHANDLER_POJO
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_RECEIPTHANDLER_REPO
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_RECEIPTHANDLER_SCHEDULED
+com.crolox.receipthandler.scheduled.StockHandler --> com.crolox.receipthandler.service.QueueService
+com.crolox.receipthandler.scheduled.StockHandler --> com.crolox.receipthandler.service.OrderService
+com.crolox.receipthandler.scheduled.StockHandler --> com.crolox.receipthandler.service.GlobalConfigService
+com.crolox.receipthandler.scheduled.ScheduledQueueAssigner --> com.crolox.receipthandler.component.QueueAssigner
+com.crolox.receipthandler.scheduled.ScheduledQueueAssigner --> com.crolox.receipthandler.service.ReceiptService
+com.crolox.receipthandler.scheduled.Forwarder --> com.crolox.receipthandler.service.GlobalConfigService
+com.crolox.receipthandler.scheduled.Forwarder --> com.crolox.receipthandler.component.SortCommunicator
+com.crolox.receipthandler.scheduled.Forwarder --> com.crolox.receipthandler.service.QueueService
+com.crolox.receipthandler.scheduled.PartialPackageHandler --> com.crolox.receipthandler.service.PartialPackageService
+com.crolox.receipthandler.scheduled.DatabaseHousekeeping --> com.crolox.receipthandler.repo.ReceiptRepository
+
+!endsub
+
+
+!startsub FIELDS_COM_CROLOX_RECEIPTHANDLER_SERVICE
+com.crolox.receipthandler.service.PartialPackageService$1 --> com.crolox.receipthandler.service.PartialPackageService
+com.crolox.receipthandler.service.PartialPackageService --> com.crolox.receipthandler.service.ReceiptService
+com.crolox.receipthandler.service.QueueService --> com.crolox.receipthandler.repo.QueueRepository
+com.crolox.receipthandler.service.IdfInfoService --> com.crolox.receipthandler.repo.IdfInfoRepository
+com.crolox.receipthandler.service.ReceiptService --> com.crolox.receipthandler.repo.ReceiptRepository
+com.crolox.receipthandler.service.ReceiptService --> com.crolox.receipthandler.service.GlobalConfigService
+com.crolox.receipthandler.service.ReceiptLineService --> com.crolox.receipthandler.repo.ReceiptLineRepository
+com.crolox.receipthandler.service.QueueOverviewDtoService --> com.crolox.receipthandler.repo.QueueOverviewDtoRepository
+com.crolox.receipthandler.service.QueueOverviewDtoService --> com.crolox.receipthandler.repo.QueueRepository
+com.crolox.receipthandler.service.SortingService --> com.crolox.receipthandler.service.ReceiptService
+com.crolox.receipthandler.service.SortingService --> com.crolox.receipthandler.service.GlobalConfigService
+com.crolox.receipthandler.service.SortingService --> com.crolox.receipthandler.service.MQService
+com.crolox.receipthandler.service.SortingService --> com.crolox.receipthandler.service.PharmacyService
+com.crolox.receipthandler.service.OrderService --> com.crolox.receipthandler.service.GlobalConfigService
+com.crolox.receipthandler.service.OrderService --> com.crolox.receipthandler.service.IdfInfoService
+com.crolox.receipthandler.service.OrderService --> com.crolox.receipthandler.component.ReceiptHandler
+com.crolox.receipthandler.service.OrderService --> com.crolox.receipthandler.service.SortingService
+com.crolox.receipthandler.service.PharmacyService --> com.crolox.receipthandler.repo.PharmacyRepository
+com.crolox.receipthandler.service.SpecialZindexService --> com.crolox.receipthandler.repo.SpecialZindexRepository
+com.crolox.receipthandler.service.SplitService --> com.crolox.receipthandler.component.ProductServiceCommunicator
+com.crolox.receipthandler.service.GlobalConfigService --> com.crolox.receipthandler.repo.GlobalConfigRepository
+
+!endsub
+
+' USES =======
+
+!startsub USES_COM_CROLOX_RECEIPTHANDLER
+com.crolox.receipthandler.ReceiptHandlerApplication ..> com.crolox.receipthandler.component.ReceiptReceiver
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_RECEIPTHANDLER_API
+com.crolox.receipthandler.api.GlobalConfigApi ..> com.crolox.receipthandler.model.GlobalConfig
+com.crolox.receipthandler.api.LoginApi ..> com.crolox.odessa.dto.ReceiptHandlerUser
+com.crolox.receipthandler.api.QueueApi ..> com.crolox.receipthandler.model.Queue
+com.crolox.receipthandler.api.IdfInfoApi ..> com.crolox.receipthandler.model.IdfInfo
+com.crolox.receipthandler.api.ReceiptApi ..> com.crolox.receipthandler.model.Receipt
+com.crolox.receipthandler.api.PharmacyApi ..> com.crolox.receipthandler.model.Pharmacy
+com.crolox.receipthandler.api.QueueOverviewDtoApi ..> com.crolox.receipthandler.dto.QueueOverviewDto
+com.crolox.receipthandler.api.SpecialZindexApi ..> com.crolox.receipthandler.model.SpecialZindex
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_RECEIPTHANDLER_COMMON
+com.crolox.receipthandler.common.Utils ..> com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.receipthandler.common.Utils ..> com.crolox.odessa.dto.NawDto
+com.crolox.receipthandler.common.Utils ..> com.crolox.odessa.pickorderio.entity.LabelType
+com.crolox.receipthandler.common.Utils ..> com.google.gson.Gson
+com.crolox.receipthandler.common.Utils ..> com.crolox.receipthandler.loxis.pojo.LoxisPrescriptionsResponse
+com.crolox.receipthandler.common.Utils ..> com.crolox.odessa.pickorderio.entity.ProductLocationInfosType
+com.crolox.receipthandler.common.Utils ..> com.crolox.odessa.pickorderio.entity.ProductLocationInfoType
+com.crolox.receipthandler.common.Utils ..> com.crolox.odessa.pickorderio.pojo.SplittedPickOrderTypes
+com.crolox.receipthandler.common.Utils ..> com.crolox.odessa.pickorderio.entity.ProductType
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_RECEIPTHANDLER_COMPONENT
+com.crolox.receipthandler.component.SortCommunicator ..> com.crolox.odessa.dto.ReceiptHandlerUser
+com.crolox.receipthandler.component.SortCommunicator ..> com.crolox.receipthandler.model.Receipt
+com.crolox.receipthandler.component.QueueAssigner ..> com.crolox.receipthandler.model.Queue
+com.crolox.receipthandler.component.QueueAssigner ..> com.crolox.receipthandler.model.Receipt
+com.crolox.receipthandler.component.QueueAssigner ..> com.crolox.receipthandler.loxis.pojo.LoxisPrescription
+com.crolox.receipthandler.component.ProductServiceCommunicator ..> com.crolox.receipthandler.dto.HulpmiddelenFilterDto
+com.crolox.receipthandler.component.ProductServiceCommunicator ..> com.crolox.receipthandler.common.ProductCategory
+com.crolox.receipthandler.component.ProductServiceCommunicator$2 ..> com.crolox.receipthandler.component.ProductServiceCommunicator
+com.crolox.receipthandler.component.ProductServiceCommunicator$1 ..> com.crolox.receipthandler.component.ProductServiceCommunicator
+com.crolox.receipthandler.component.PickListCreator ..> com.itextpdf.layout.element.Table
+com.crolox.receipthandler.component.PickListCreator ..> com.itextpdf.layout.Style
+com.crolox.receipthandler.component.ReceiptHandler ..> com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.receipthandler.component.ReceiptHandler ..> com.crolox.odessa.enumeration.ReceiptStatus
+com.crolox.receipthandler.component.ReceiptHandler ..> com.crolox.receipthandler.model.Queue
+com.crolox.receipthandler.component.ReceiptHandler ..> com.crolox.receipthandler.model.Receipt
+com.crolox.receipthandler.component.ReceiptHandler ..> com.crolox.odessa.pickorderio.entity.HeaderType
+com.crolox.receipthandler.component.ReceiptHandler ..> com.crolox.odessa.pickorderio.entity.ShippingInfoType
+com.crolox.receipthandler.component.ReceiptHandler ..> com.crolox.odessa.pickorderio.entity.PickOrderLineType
+com.crolox.receipthandler.component.ReceiptHandler ..> com.crolox.odessa.pickorderio.entity.ProductType
+com.crolox.receipthandler.component.ReceiptHandler ..> com.crolox.receipthandler.dto.PackageContentDto
+com.crolox.receipthandler.component.ReceiptHandler ..> com.crolox.receipthandler.dto.ZindexProductDto
+com.crolox.receipthandler.component.ReceiptHandler ..> com.crolox.odessa.dto.ReceiptLineStockInfo
+com.crolox.receipthandler.component.ReceiptHandler ..> com.crolox.receipthandler.model.ReceiptLine
+com.crolox.receipthandler.component.StockCommunicator ..> com.crolox.odessa.dto.OrderAndReserveResponse
+com.crolox.receipthandler.component.StockCommunicator ..> com.crolox.odessa.pickorderio.entity.HeaderType
+com.crolox.receipthandler.component.StockCommunicator ..> com.crolox.odessa.pickorderio.entity.ShippingInfoType
+com.crolox.receipthandler.component.StockCommunicator ..> com.crolox.odessa.dto.OrderAndReserveRequestsWrapper
+com.crolox.receipthandler.component.StockCommunicator ..> com.crolox.odessa.pickorderio.entity.ProductLocationInfosType
+com.crolox.receipthandler.component.StockCommunicator ..> com.crolox.odessa.dto.PickorderLineKeys
+com.crolox.receipthandler.component.ReceiptReceiver ..> com.crolox.odessa.pickorderio.entity.HeaderType
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_RECEIPTHANDLER_CONFIG
+com.crolox.receipthandler.config.RestTemplateConfig$1 ..> com.crolox.receipthandler.config.RestTemplateConfig
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_RECEIPTHANDLER_DTO
+com.crolox.receipthandler.dto.DeliveryDatesDto ..> com.crolox.receipthandler.common.BlockType
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_RECEIPTHANDLER_ENUMERATION
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_RECEIPTHANDLER_EXCEPTION
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_RECEIPTHANDLER_EXTERN_API
+com.crolox.receipthandler.extern.api.PartialPackagePrescriptionLinesAPI ..> com.crolox.receipthandler.pojo.PartialPackageRequests
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_RECEIPTHANDLER_JMS
+com.crolox.receipthandler.jms.LoxisJMSConnectionHandler ..> com.crolox.receipthandler.loxis.pojo.LoxisPrescriptionsRequest
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_RECEIPTHANDLER_LOXIS_HANDLER
+com.crolox.receipthandler.loxis.handler.LoxisPrescriptionInfoHandler ..> com.crolox.receipthandler.loxis.pojo.LoxisPrescriptionsRequest
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_RECEIPTHANDLER_LOXIS_POJO
+com.crolox.receipthandler.loxis.pojo.LoxisPrescriptionsRequest ..> com.crolox.receipthandler.loxis.pojo.LoxisPrescription
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_RECEIPTHANDLER_LOXIS_SCHEDULED
+com.crolox.receipthandler.loxis.scheduled.LoxisInfoRequestor ..> com.crolox.receipthandler.model.Receipt
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_RECEIPTHANDLER_LOXIS_SERVICE
+com.crolox.receipthandler.loxis.service.LoxisPrescriptionService ..> com.crolox.receipthandler.loxis.pojo.LoxisPrescriptionsResponse
+com.crolox.receipthandler.loxis.service.LoxisPrescriptionService ..> com.crolox.receipthandler.loxis.pojo.LoxisPrescription
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_RECEIPTHANDLER_MODEL
+com.crolox.receipthandler.model.IdfInfo ..> com.crolox.receipthandler.enumeration.OrderMomentPriority
+com.crolox.receipthandler.model.Receipt ..> com.crolox.odessa.enumeration.ReceiptStatus
+com.crolox.receipthandler.model.Receipt ..> com.crolox.odessa.enumeration.Gender
+com.crolox.receipthandler.model.Receipt ..> com.crolox.receipthandler.model.ReceiptLine
+com.crolox.receipthandler.model.Receipt ..> com.crolox.receipthandler.model.Queue
+com.crolox.receipthandler.model.Receipt ..> com.crolox.receipthandler.enumeration.PartialPackageStatus
+com.crolox.receipthandler.model.Receipt ..> com.crolox.odessa.pickorderio.common.ReceiptFridgeInfo
+com.crolox.receipthandler.model.Receipt ..> com.crolox.odessa.dto.ReceiptDto
+com.crolox.receipthandler.model.Queue ..> com.crolox.receipthandler.model.Receipt
+com.crolox.receipthandler.model.Queue ..> com.crolox.receipthandler.model.IdfInfo
+com.crolox.receipthandler.model.Queue ..> com.crolox.receipthandler.model.Pharmacy
+com.crolox.receipthandler.model.Queue ..> com.crolox.receipthandler.common.QueueType
+com.crolox.receipthandler.model.ReceiptLine ..> com.crolox.receipthandler.model.Receipt
+com.crolox.receipthandler.model.ReceiptLine ..> com.crolox.odessa.dto.ReceiptLineDto
+com.crolox.receipthandler.model.SpecialZindex ..> com.crolox.odessa.pickorderio.common.ZindexType
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_RECEIPTHANDLER_POJO
+com.crolox.receipthandler.pojo.OrderedReceipts ..> com.crolox.receipthandler.model.Receipt
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_RECEIPTHANDLER_REPO
+com.crolox.receipthandler.repo.QueueRepository ..> com.crolox.receipthandler.model.IdfInfo
+com.crolox.receipthandler.repo.QueueRepository ..> com.crolox.receipthandler.common.QueueType
+com.crolox.receipthandler.repo.QueueRepository ..> com.crolox.receipthandler.model.Pharmacy
+com.crolox.receipthandler.repo.ReceiptRepository ..> com.crolox.odessa.pickorderio.common.ReceiptFridgeInfo
+com.crolox.receipthandler.repo.ReceiptRepository ..> com.crolox.receipthandler.model.Queue
+com.crolox.receipthandler.repo.ReceiptRepository ..> com.crolox.odessa.enumeration.ReceiptStatus
+com.crolox.receipthandler.repo.ReceiptRepository ..> com.crolox.receipthandler.enumeration.PartialPackageStatus
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_RECEIPTHANDLER_SCHEDULED
+com.crolox.receipthandler.scheduled.StockHandler ..> com.crolox.receipthandler.model.Queue
+com.crolox.receipthandler.scheduled.StockHandler ..> com.crolox.receipthandler.model.IdfInfo
+com.crolox.receipthandler.scheduled.StockHandler ..> com.crolox.receipthandler.model.Receipt
+com.crolox.receipthandler.scheduled.Forwarder ..> com.crolox.receipthandler.model.Receipt
+
+!endsub
+
+
+!startsub USES_COM_CROLOX_RECEIPTHANDLER_SERVICE
+com.crolox.receipthandler.service.PartialPackageService$1 ..> com.crolox.receipthandler.service.PartialPackageService
+com.crolox.receipthandler.service.PartialPackageService ..> com.crolox.receipthandler.pojo.PartialPackageRequests
+com.crolox.receipthandler.service.PartialPackageService ..> com.crolox.receipthandler.enumeration.PartialPackageStatus
+com.crolox.receipthandler.service.PartialPackageService ..> com.crolox.receipthandler.model.Receipt
+com.crolox.receipthandler.service.PartialPackageService ..> com.crolox.receipthandler.pojo.PartialPackagePrescriptionLine
+com.crolox.receipthandler.service.PartialPackageService ..> com.crolox.receipthandler.model.ReceiptLine
+com.crolox.receipthandler.service.QueueService ..> com.crolox.receipthandler.model.Queue
+com.crolox.receipthandler.service.QueueService ..> com.crolox.receipthandler.common.QueueType
+com.crolox.receipthandler.service.IdfInfoService ..> com.crolox.receipthandler.model.IdfInfo
+com.crolox.receipthandler.service.ReceiptService ..> com.crolox.receipthandler.model.Receipt
+com.crolox.receipthandler.service.ReceiptService ..> com.crolox.odessa.enumeration.ReceiptStatus
+com.crolox.receipthandler.service.ReceiptService ..> com.crolox.receipthandler.model.Queue
+com.crolox.receipthandler.service.ReceiptService ..> com.crolox.receipthandler.enumeration.PartialPackageStatus
+com.crolox.receipthandler.service.ReceiptService ..> com.crolox.odessa.dto.PickorderLineKeys
+com.crolox.receipthandler.service.ReceiptService ..> com.crolox.receipthandler.dto.IdfBlockInfoDto
+com.crolox.receipthandler.service.ReceiptLineService ..> com.crolox.receipthandler.model.ReceiptLine
+com.crolox.receipthandler.service.SortingService ..> com.crolox.odessa.pickorderio.common.StockStatusType
+com.crolox.receipthandler.service.SortingService ..> com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.receipthandler.service.SortingService ..> com.crolox.receipthandler.model.Receipt
+com.crolox.receipthandler.service.OrderService ..> com.crolox.receipthandler.model.Queue
+com.crolox.receipthandler.service.OrderService ..> com.crolox.odessa.pickorderio.entity.HeaderType
+com.crolox.receipthandler.service.PharmacyService ..> com.crolox.receipthandler.model.Pharmacy
+com.crolox.receipthandler.service.PharmacyService ..> com.crolox.odessa.pickorderio.common.ZindexType
+com.crolox.receipthandler.service.PharmacyService ..> com.crolox.receipthandler.model.SpecialZindex
+com.crolox.receipthandler.service.SpecialZindexService ..> com.crolox.receipthandler.model.SpecialZindex
+com.crolox.receipthandler.service.SplitService ..> com.crolox.odessa.pickorderio.pojo.SplittedPickOrderTypes
+com.crolox.receipthandler.service.SplitService ..> com.crolox.odessa.pickorderio.entity.PickOrderType
+com.crolox.receipthandler.service.SplitService ..> com.crolox.receipthandler.model.Queue
+com.crolox.receipthandler.service.GlobalConfigService ..> com.crolox.receipthandler.model.GlobalConfig
+
+!endsub
+
+' IMPORTS =======
+' Java Files Path : /Users/paolobrunasti/IdeaProjects/OCTA/receipt-handler/backend/src/main/java/
+
+!startsub IMPORTS_COM_CROLOX_RECEIPTHANDLER
+' com.crolox.receipthandler.ReceiptHandlerApplication
+com.crolox.receipthandler.ReceiptHandlerApplication ..o com.crolox.receipthandler.component.ReceiptReceiver
+
+' com.crolox.receipthandler.ReceiptHandlerApplication
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_RECEIPTHANDLER_API
+' com.crolox.receipthandler.api.QueueTypeApi
+com.crolox.receipthandler.api.QueueTypeApi ..o com.crolox.receipthandler.common.QueueType
+
+' com.crolox.receipthandler.api.GlobalConfigApi
+com.crolox.receipthandler.api.GlobalConfigApi ..o com.crolox.receipthandler.model.GlobalConfig
+com.crolox.receipthandler.api.GlobalConfigApi ..o com.crolox.receipthandler.common.Utils
+com.crolox.receipthandler.api.GlobalConfigApi ..o com.crolox.receipthandler.service.GlobalConfigService
+
+' com.crolox.receipthandler.api.ReceiptLineApi
+com.crolox.receipthandler.api.ReceiptLineApi ..o com.crolox.receipthandler.common.Utils
+
+' com.crolox.receipthandler.api.LoginApi
+com.crolox.receipthandler.api.LoginApi ..o com.crolox.odessa.dto.ReceiptHandlerUser
+com.crolox.receipthandler.api.LoginApi ..o com.crolox.receipthandler.common.Utils
+com.crolox.receipthandler.api.LoginApi ..o com.crolox.receipthandler.exception.ApplicationException
+com.crolox.receipthandler.api.LoginApi ..o com.crolox.receipthandler.component.SortCommunicator
+
+' com.crolox.receipthandler.api.OrderMomentPriorityApi
+com.crolox.receipthandler.api.OrderMomentPriorityApi ..o com.crolox.receipthandler.enumeration.OrderMomentPriority
+
+' com.crolox.receipthandler.api.QueueApi
+com.crolox.receipthandler.api.QueueApi ..o com.crolox.receipthandler.model.Queue
+com.crolox.receipthandler.api.QueueApi ..o com.crolox.receipthandler.service.QueueService
+com.crolox.receipthandler.api.QueueApi ..o com.crolox.receipthandler.common.SingletonArea
+com.crolox.receipthandler.api.QueueApi ..o com.crolox.receipthandler.common.Utils
+
+' com.crolox.receipthandler.api.AppInfoApi
+
+' com.crolox.receipthandler.api.IdfInfoApi
+com.crolox.receipthandler.api.IdfInfoApi ..o com.crolox.receipthandler.service.IdfInfoService
+com.crolox.receipthandler.api.IdfInfoApi ..o com.crolox.receipthandler.model.IdfInfo
+com.crolox.receipthandler.api.IdfInfoApi ..o com.crolox.receipthandler.common.Utils
+
+' com.crolox.receipthandler.api.ZindexTypeApi
+com.crolox.receipthandler.api.ZindexTypeApi ..o com.crolox.odessa.pickorderio.common.ZindexType
+
+' com.crolox.receipthandler.api.PicklistApi
+com.crolox.receipthandler.api.PicklistApi ..o com.crolox.receipthandler.common.Utils
+com.crolox.receipthandler.api.PicklistApi ..o com.crolox.receipthandler.component.PickListCreator
+com.crolox.receipthandler.api.PicklistApi ..o com.crolox.receipthandler.exception.ApplicationException
+
+' com.crolox.receipthandler.api.ReceiptApi
+com.crolox.receipthandler.api.ReceiptApi ..o com.crolox.odessa.enumeration.ReceiptStatus
+com.crolox.receipthandler.api.ReceiptApi ..o com.crolox.receipthandler.dto.DeliveryDatesDto
+com.crolox.receipthandler.api.ReceiptApi ..o com.crolox.receipthandler.service.OrderService
+com.crolox.receipthandler.api.ReceiptApi ..o com.crolox.receipthandler.service.QueueService
+com.crolox.receipthandler.api.ReceiptApi ..o com.crolox.receipthandler.common.Utils
+com.crolox.receipthandler.api.ReceiptApi ..o com.crolox.receipthandler.component.SortCommunicator
+com.crolox.receipthandler.api.ReceiptApi ..o com.crolox.receipthandler.service.ReceiptService
+com.crolox.receipthandler.api.ReceiptApi ..o com.crolox.receipthandler.model.Queue
+com.crolox.receipthandler.api.ReceiptApi ..o com.crolox.receipthandler.model.Receipt
+com.crolox.receipthandler.api.ReceiptApi ..o  com.crolox.receipthandler.common.ProcesLocker
+
+' com.crolox.receipthandler.api.PharmacyApi
+com.crolox.receipthandler.api.PharmacyApi ..o com.crolox.receipthandler.model.Pharmacy
+com.crolox.receipthandler.api.PharmacyApi ..o com.crolox.receipthandler.common.Utils
+com.crolox.receipthandler.api.PharmacyApi ..o com.crolox.receipthandler.service.PharmacyService
+
+' com.crolox.receipthandler.api.QueueOverviewDtoApi
+com.crolox.receipthandler.api.QueueOverviewDtoApi ..o com.crolox.receipthandler.dto.QueueOverviewDto
+com.crolox.receipthandler.api.QueueOverviewDtoApi ..o com.crolox.receipthandler.common.Utils
+com.crolox.receipthandler.api.QueueOverviewDtoApi ..o com.crolox.receipthandler.service.QueueOverviewDtoService
+
+' com.crolox.receipthandler.api.SpecialZindexApi
+com.crolox.receipthandler.api.SpecialZindexApi ..o com.crolox.receipthandler.service.SpecialZindexService
+com.crolox.receipthandler.api.SpecialZindexApi ..o com.crolox.receipthandler.model.SpecialZindex
+com.crolox.receipthandler.api.SpecialZindexApi ..o com.crolox.receipthandler.common.Utils
+
+' com.crolox.receipthandler.api.QueueTypeApi
+
+' com.crolox.receipthandler.api.OrderMomentPriorityApi
+
+' com.crolox.receipthandler.api.ZindexTypeApi
+
+' com.crolox.receipthandler.api.QueueApi
+
+' com.crolox.receipthandler.api.GlobalConfigApi
+
+' com.crolox.receipthandler.api.ReceiptLineApi
+
+' com.crolox.receipthandler.api.AppInfoApi
+
+' com.crolox.receipthandler.api.LoginApi
+
+' com.crolox.receipthandler.api.SpecialZindexApi
+
+' com.crolox.receipthandler.api.PharmacyApi
+
+' com.crolox.receipthandler.api.IdfInfoApi
+
+' com.crolox.receipthandler.api.PicklistApi
+
+' com.crolox.receipthandler.api.QueueOverviewDtoApi
+
+' com.crolox.receipthandler.api.ReceiptApi
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_RECEIPTHANDLER_COMMON
+' com.crolox.receipthandler.common.SingletonArea
+
+' com.crolox.receipthandler.common.Month
+
+' com.crolox.receipthandler.common.Utils
+
+' com.crolox.receipthandler.common.BlockType
+
+' com.crolox.receipthandler.common.ProductCategory
+
+' com.crolox.receipthandler.common.ProcesLocker
+
+' com.crolox.receipthandler.common.ApplicationBase
+
+' com.crolox.receipthandler.common.QueueType
+
+' com.crolox.receipthandler.common.Day
+
+' com.crolox.receipthandler.common.Constants
+
+' com.crolox.receipthandler.common.SingletonArea
+
+' com.crolox.receipthandler.common.Utils
+
+' com.crolox.receipthandler.common.QueueType
+
+' com.crolox.receipthandler.common.Day
+
+' com.crolox.receipthandler.common.Constants
+
+' com.crolox.receipthandler.common.ApplicationBase
+
+' com.crolox.receipthandler.common.BlockType
+
+' com.crolox.receipthandler.common.ProductCategory
+
+' com.crolox.receipthandler.common.Month
+
+' com.crolox.receipthandler.common.ProcesLocker
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_RECEIPTHANDLER_COMPONENT
+' com.crolox.receipthandler.component.SortCommunicator
+
+' com.crolox.receipthandler.component.QueueAssigner
+com.crolox.receipthandler.component.QueueAssigner ..o com.crolox.receipthandler.service.QueueService
+com.crolox.receipthandler.component.QueueAssigner ..o com.crolox.receipthandler.common.QueueType
+com.crolox.receipthandler.component.QueueAssigner ..o com.crolox.receipthandler.service.ReceiptService
+com.crolox.receipthandler.component.QueueAssigner ..o com.crolox.receipthandler.model.Queue
+com.crolox.receipthandler.component.QueueAssigner ..o com.crolox.receipthandler.model.Receipt
+com.crolox.receipthandler.component.QueueAssigner ..o com.crolox.receipthandler.loxis.pojo.LoxisPrescription
+
+' com.crolox.receipthandler.component.ProductServiceCommunicator
+
+' com.crolox.receipthandler.component.ProductServiceCommunicator$2
+
+' com.crolox.receipthandler.component.ProductServiceCommunicator$3
+
+' com.crolox.receipthandler.component.ProductServiceCommunicator$1
+
+' com.crolox.receipthandler.component.ManualReceiptReceiver
+com.crolox.receipthandler.component.ManualReceiptReceiver ..o com.crolox.receipthandler.common.Utils
+
+' com.crolox.receipthandler.component.FileHandler
+com.crolox.receipthandler.component.FileHandler ..o com.crolox.receipthandler.common.Utils
+
+' com.crolox.receipthandler.component.PickListCreator
+
+' com.crolox.receipthandler.component.ReceiptHandler
+
+' com.crolox.receipthandler.component.StockCommunicator
+com.crolox.receipthandler.component.StockCommunicator ..o  com.crolox.odessa.util.JsonUtils.getAsJsonString
+com.crolox.receipthandler.component.StockCommunicator ..o com.crolox.receipthandler.exception.ApplicationException
+com.crolox.receipthandler.component.StockCommunicator ..o  com.crolox.odessa.constants.Paths.STOCK_PRODUCT_LOCATION_INFOS
+com.crolox.receipthandler.component.StockCommunicator ..o com.crolox.odessa.dto.OrderAndReserveResponse
+com.crolox.receipthandler.component.StockCommunicator ..o com.crolox.odessa.dto.OrderAndReserveRequestsWrapper
+com.crolox.receipthandler.component.StockCommunicator ..o com.crolox.odessa.dto.OrderAndReserveRequest
+com.crolox.receipthandler.component.StockCommunicator ..o  com.crolox.odessa.constants.Paths.STOCK_ORDER_AND_RESERVE
+com.crolox.receipthandler.component.StockCommunicator ..o com.crolox.receipthandler.model.ReceiptLine
+com.crolox.receipthandler.component.StockCommunicator ..o com.crolox.receipthandler.model.Receipt
+com.crolox.receipthandler.component.StockCommunicator ..o com.crolox.odessa.dto.PickorderLineKeys
+com.crolox.receipthandler.component.StockCommunicator ..o com.crolox.receipthandler.common.Constants
+
+' com.crolox.receipthandler.component.ReceiptReceiver
+
+' com.crolox.receipthandler.component.StockCommunicator
+
+' com.crolox.receipthandler.component.ProductServiceCommunicator$1
+
+' com.crolox.receipthandler.component.FileHandler
+
+' com.crolox.receipthandler.component.ProductServiceCommunicator$3
+
+' com.crolox.receipthandler.component.ProductServiceCommunicator$2
+
+' com.crolox.receipthandler.component.QueueAssigner
+
+' com.crolox.receipthandler.component.ReceiptHandler
+
+' com.crolox.receipthandler.component.ManualReceiptReceiver
+
+' com.crolox.receipthandler.component.SortCommunicator
+
+' com.crolox.receipthandler.component.ReceiptReceiver
+
+' com.crolox.receipthandler.component.PickListCreator
+
+' com.crolox.receipthandler.component.ProductServiceCommunicator
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_RECEIPTHANDLER_CONFIG
+' com.crolox.receipthandler.config.RestTemplateConfig$1
+
+' com.crolox.receipthandler.config.RabbitMQConfiguration
+
+' com.crolox.receipthandler.config.AppContextEventListener
+
+' com.crolox.receipthandler.config.RestTemplateConfig
+
+' com.crolox.receipthandler.config.ThreadConfiguration
+
+' com.crolox.receipthandler.config.ThreadConfiguration
+
+' com.crolox.receipthandler.config.RabbitMQConfiguration
+
+' com.crolox.receipthandler.config.RestTemplateConfig
+
+' com.crolox.receipthandler.config.AppContextEventListener
+
+' com.crolox.receipthandler.config.RestTemplateConfig$1
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_RECEIPTHANDLER_DTO
+' com.crolox.receipthandler.dto.IdfBlockInfoDto
+
+' com.crolox.receipthandler.dto.ZindexProductDto
+
+' com.crolox.receipthandler.dto.PackageContentDto
+
+' com.crolox.receipthandler.dto.DeliveryDatesDto
+
+' com.crolox.receipthandler.dto.QueueOverviewDto
+
+' com.crolox.receipthandler.dto.LabelLinesDto
+
+' com.crolox.receipthandler.dto.Line
+
+' com.crolox.receipthandler.dto.HulpmiddelenFilterDto
+
+' com.crolox.receipthandler.dto.ReceiptBarcodesPerAgbCode
+
+' com.crolox.receipthandler.dto.QueueOverviewDto
+
+' com.crolox.receipthandler.dto.Line
+
+' com.crolox.receipthandler.dto.ZindexProductDto
+
+' com.crolox.receipthandler.dto.LabelLinesDto
+
+' com.crolox.receipthandler.dto.IdfBlockInfoDto
+
+' com.crolox.receipthandler.dto.PackageContentDto
+
+' com.crolox.receipthandler.dto.DeliveryDatesDto
+
+' com.crolox.receipthandler.dto.HulpmiddelenFilterDto
+
+' com.crolox.receipthandler.dto.ReceiptBarcodesPerAgbCode
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_RECEIPTHANDLER_ENUMERATION
+' com.crolox.receipthandler.enumeration.PartialPackageUnit
+
+' com.crolox.receipthandler.enumeration.ProductQueryType
+
+' com.crolox.receipthandler.enumeration.OrderMomentPriority
+
+' com.crolox.receipthandler.enumeration.PartialPackageStatus
+
+' com.crolox.receipthandler.enumeration.OrderMomentPriority
+
+' com.crolox.receipthandler.enumeration.PartialPackageStatus
+
+' com.crolox.receipthandler.enumeration.ProductQueryType
+
+' com.crolox.receipthandler.enumeration.PartialPackageUnit
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_RECEIPTHANDLER_EXCEPTION
+' com.crolox.receipthandler.exception.NoJmsConnectionException
+
+' com.crolox.receipthandler.exception.ApplicationException
+
+' com.crolox.receipthandler.exception.ApplicationException
+
+' com.crolox.receipthandler.exception.NoJmsConnectionException
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_RECEIPTHANDLER_EXTERN_API
+' com.crolox.receipthandler.extern.api.PartialPackagePrescriptionLinesAPI
+com.crolox.receipthandler.extern.api.PartialPackagePrescriptionLinesAPI ..o com.crolox.receipthandler.pojo.PartialPackageRequests
+com.crolox.receipthandler.extern.api.PartialPackagePrescriptionLinesAPI ..o com.crolox.receipthandler.common.Utils
+com.crolox.receipthandler.extern.api.PartialPackagePrescriptionLinesAPI ..o com.crolox.receipthandler.service.PartialPackageService
+com.crolox.receipthandler.extern.api.PartialPackagePrescriptionLinesAPI ..o com.crolox.receipthandler.enumeration.PartialPackageStatus
+
+' com.crolox.receipthandler.extern.api.PartialPackagePrescriptionLinesAPI
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_RECEIPTHANDLER_JMS
+' com.crolox.receipthandler.jms.LoxisJMSConnectionHandler
+com.crolox.receipthandler.jms.LoxisJMSConnectionHandler ..o com.crolox.receipthandler.loxis.service.LoxisPrescriptionService
+com.crolox.receipthandler.jms.LoxisJMSConnectionHandler ..o com.crolox.receipthandler.loxis.pojo.LoxisPrescriptionsResponse
+com.crolox.receipthandler.jms.LoxisJMSConnectionHandler ..o com.crolox.receipthandler.common.Utils
+com.crolox.receipthandler.jms.LoxisJMSConnectionHandler ..o com.crolox.receipthandler.loxis.pojo.LoxisPrescriptionsRequest
+com.crolox.receipthandler.jms.LoxisJMSConnectionHandler ..o com.crolox.receipthandler.exception.NoJmsConnectionException
+
+' com.crolox.receipthandler.jms.LoxisJMSConnectionHandler
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_RECEIPTHANDLER_LOXIS_HANDLER
+' com.crolox.receipthandler.loxis.handler.LoxisPrescriptionInfoHandler
+com.crolox.receipthandler.loxis.handler.LoxisPrescriptionInfoHandler ..o com.crolox.receipthandler.jms.LoxisJMSConnectionHandler
+com.crolox.receipthandler.loxis.handler.LoxisPrescriptionInfoHandler ..o com.crolox.receipthandler.exception.ApplicationException
+com.crolox.receipthandler.loxis.handler.LoxisPrescriptionInfoHandler ..o com.crolox.receipthandler.loxis.pojo.LoxisPrescriptionsRequest
+
+' com.crolox.receipthandler.loxis.handler.LoxisPrescriptionInfoHandler
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_RECEIPTHANDLER_LOXIS_POJO
+' com.crolox.receipthandler.loxis.pojo.LoxisPrescriptionsResponse
+
+' com.crolox.receipthandler.loxis.pojo.LoxisPrescription
+
+' com.crolox.receipthandler.loxis.pojo.LoxisPrescriptionsRequest
+
+' com.crolox.receipthandler.loxis.pojo.LoxisPrescriptionsRequest
+
+' com.crolox.receipthandler.loxis.pojo.LoxisPrescription
+
+' com.crolox.receipthandler.loxis.pojo.LoxisPrescriptionsResponse
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_RECEIPTHANDLER_LOXIS_SCHEDULED
+' com.crolox.receipthandler.loxis.scheduled.LoxisInfoRequestor
+com.crolox.receipthandler.loxis.scheduled.LoxisInfoRequestor ..o  com.crolox.receipthandler.common.Constants.LOXIS_TRY_HOURS
+com.crolox.receipthandler.loxis.scheduled.LoxisInfoRequestor ..o com.crolox.receipthandler.common.Utils
+com.crolox.receipthandler.loxis.scheduled.LoxisInfoRequestor ..o com.crolox.receipthandler.loxis.pojo.LoxisPrescriptionsRequest
+com.crolox.receipthandler.loxis.scheduled.LoxisInfoRequestor ..o com.crolox.receipthandler.component.SortCommunicator
+com.crolox.receipthandler.loxis.scheduled.LoxisInfoRequestor ..o com.crolox.receipthandler.service.ReceiptService
+com.crolox.receipthandler.loxis.scheduled.LoxisInfoRequestor ..o com.crolox.receipthandler.service.PharmacyService
+com.crolox.receipthandler.loxis.scheduled.LoxisInfoRequestor ..o com.crolox.receipthandler.model.Receipt
+com.crolox.receipthandler.loxis.scheduled.LoxisInfoRequestor ..o com.crolox.receipthandler.model.Pharmacy
+com.crolox.receipthandler.loxis.scheduled.LoxisInfoRequestor ..o com.crolox.receipthandler.loxis.pojo.LoxisPrescription
+com.crolox.receipthandler.loxis.scheduled.LoxisInfoRequestor ..o com.crolox.receipthandler.loxis.handler.LoxisPrescriptionInfoHandler
+
+' com.crolox.receipthandler.loxis.scheduled.LoxisInfoRequestor
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_RECEIPTHANDLER_LOXIS_SERVICE
+' com.crolox.receipthandler.loxis.service.LoxisPrescriptionService
+
+' com.crolox.receipthandler.loxis.service.LoxisPrescriptionService
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_RECEIPTHANDLER_MODEL
+' com.crolox.receipthandler.model.IdfInfo
+
+' com.crolox.receipthandler.model.Pharmacy
+
+' com.crolox.receipthandler.model.Receipt
+
+' com.crolox.receipthandler.model.TimestampInfo
+
+' com.crolox.receipthandler.model.Queue
+
+' com.crolox.receipthandler.model.GlobalConfig
+
+' com.crolox.receipthandler.model.ReceiptLine
+
+' com.crolox.receipthandler.model.SpecialZindex
+
+' com.crolox.receipthandler.model.Receipt
+
+' com.crolox.receipthandler.model.Pharmacy
+
+' com.crolox.receipthandler.model.Queue
+
+' com.crolox.receipthandler.model.ReceiptLine
+
+' com.crolox.receipthandler.model.IdfInfo
+
+' com.crolox.receipthandler.model.SpecialZindex
+
+' com.crolox.receipthandler.model.GlobalConfig
+
+' com.crolox.receipthandler.model.TimestampInfo
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_RECEIPTHANDLER_POJO
+' com.crolox.receipthandler.pojo.PartialPackagePrescriptionLine
+
+' com.crolox.receipthandler.pojo.PartialPackageRequest
+
+' com.crolox.receipthandler.pojo.PartialPackageRequests
+
+' com.crolox.receipthandler.pojo.OrderedReceipts
+com.crolox.receipthandler.pojo.OrderedReceipts ..o com.crolox.receipthandler.model.Receipt
+
+' com.crolox.receipthandler.pojo.PartialPackageRequests
+
+' com.crolox.receipthandler.pojo.PartialPackageRequest
+
+' com.crolox.receipthandler.pojo.OrderedReceipts
+
+' com.crolox.receipthandler.pojo.PartialPackagePrescriptionLine
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_RECEIPTHANDLER_REPO
+' com.crolox.receipthandler.repo.GlobalConfigRepository
+
+' com.crolox.receipthandler.repo.PharmacyRepository
+
+' com.crolox.receipthandler.repo.QueueRepository
+
+' com.crolox.receipthandler.repo.ReceiptLineRepository
+com.crolox.receipthandler.repo.ReceiptLineRepository ..o com.crolox.receipthandler.model.ReceiptLine
+
+' com.crolox.receipthandler.repo.SpecialZindexRepository
+
+' com.crolox.receipthandler.repo.IdfInfoRepository
+
+' com.crolox.receipthandler.repo.QueueOverviewDtoRepository
+
+' com.crolox.receipthandler.repo.ReceiptRepository
+
+' com.crolox.receipthandler.repo.SpecialZindexRepository
+
+' com.crolox.receipthandler.repo.IdfInfoRepository
+
+' com.crolox.receipthandler.repo.GlobalConfigRepository
+
+' com.crolox.receipthandler.repo.PharmacyRepository
+
+' com.crolox.receipthandler.repo.ReceiptLineRepository
+
+' com.crolox.receipthandler.repo.QueueRepository
+
+' com.crolox.receipthandler.repo.ReceiptRepository
+
+' com.crolox.receipthandler.repo.QueueOverviewDtoRepository
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_RECEIPTHANDLER_SCHEDULED
+' com.crolox.receipthandler.scheduled.StockHandler
+com.crolox.receipthandler.scheduled.StockHandler ..o com.crolox.odessa.enumeration.ReceiptStatus
+com.crolox.receipthandler.scheduled.StockHandler ..o com.crolox.receipthandler.common.SingletonArea
+com.crolox.receipthandler.scheduled.StockHandler ..o com.crolox.receipthandler.common.Utils
+com.crolox.receipthandler.scheduled.StockHandler ..o com.crolox.receipthandler.model.Queue
+com.crolox.receipthandler.scheduled.StockHandler ..o com.crolox.receipthandler.enumeration.OrderMomentPriority
+
+' com.crolox.receipthandler.scheduled.ScheduledQueueAssigner
+com.crolox.receipthandler.scheduled.ScheduledQueueAssigner ..o com.crolox.receipthandler.component.QueueAssigner
+com.crolox.receipthandler.scheduled.ScheduledQueueAssigner ..o com.crolox.receipthandler.model.Receipt
+com.crolox.receipthandler.scheduled.ScheduledQueueAssigner ..o com.crolox.receipthandler.service.ReceiptService
+
+' com.crolox.receipthandler.scheduled.Forwarder
+com.crolox.receipthandler.scheduled.Forwarder ..o com.crolox.odessa.enumeration.ReceiptStatus
+com.crolox.receipthandler.scheduled.Forwarder ..o com.crolox.receipthandler.service.QueueService
+com.crolox.receipthandler.scheduled.Forwarder ..o com.crolox.receipthandler.exception.ApplicationException
+com.crolox.receipthandler.scheduled.Forwarder ..o com.crolox.receipthandler.component.SortCommunicator
+com.crolox.receipthandler.scheduled.Forwarder ..o com.crolox.receipthandler.model.Queue
+com.crolox.receipthandler.scheduled.Forwarder ..o com.crolox.receipthandler.model.Receipt
+com.crolox.receipthandler.scheduled.Forwarder ..o com.crolox.receipthandler.service.GlobalConfigService
+
+' com.crolox.receipthandler.scheduled.PartialPackageHandler
+com.crolox.receipthandler.scheduled.PartialPackageHandler ..o com.crolox.receipthandler.pojo.PartialPackageRequests
+com.crolox.receipthandler.scheduled.PartialPackageHandler ..o com.crolox.receipthandler.service.PartialPackageService
+com.crolox.receipthandler.scheduled.PartialPackageHandler ..o com.crolox.receipthandler.enumeration.PartialPackageStatus
+
+' com.crolox.receipthandler.scheduled.FileHousekeeping
+
+' com.crolox.receipthandler.scheduled.DatabaseHousekeeping
+com.crolox.receipthandler.scheduled.DatabaseHousekeeping ..o com.crolox.odessa.enumeration.ReceiptStatus
+com.crolox.receipthandler.scheduled.DatabaseHousekeeping ..o com.crolox.receipthandler.repo.ReceiptRepository
+
+' com.crolox.receipthandler.scheduled.ScheduledQueueAssigner
+
+' com.crolox.receipthandler.scheduled.Forwarder
+
+' com.crolox.receipthandler.scheduled.PartialPackageHandler
+
+' com.crolox.receipthandler.scheduled.DatabaseHousekeeping
+
+' com.crolox.receipthandler.scheduled.FileHousekeeping
+
+' com.crolox.receipthandler.scheduled.StockHandler
+
+
+!endsub
+
+
+!startsub IMPORTS_COM_CROLOX_RECEIPTHANDLER_SERVICE
+' com.crolox.receipthandler.service.MQService
+com.crolox.receipthandler.service.MQService ..o com.crolox.receipthandler.common.ApplicationBase
+
+' com.crolox.receipthandler.service.PartialPackageService$1
+
+' com.crolox.receipthandler.service.PartialPackageService
+
+' com.crolox.receipthandler.service.QueueService
+
+' com.crolox.receipthandler.service.IdfInfoService
+
+' com.crolox.receipthandler.service.ReceiptService
+
+' com.crolox.receipthandler.service.ReceiptLineService
+com.crolox.receipthandler.service.ReceiptLineService ..o com.crolox.receipthandler.model.ReceiptLine
+com.crolox.receipthandler.service.ReceiptLineService ..o com.crolox.receipthandler.repo.ReceiptLineRepository
+
+' com.crolox.receipthandler.service.QueueOverviewDtoService
+
+' com.crolox.receipthandler.service.SortingService
+
+' com.crolox.receipthandler.service.OrderService
+
+' com.crolox.receipthandler.service.PharmacyService
+
+' com.crolox.receipthandler.service.SpecialZindexService
+
+' com.crolox.receipthandler.service.SplitService
+
+' com.crolox.receipthandler.service.GlobalConfigService
+
+' com.crolox.receipthandler.service.PartialPackageService$1
+
+' com.crolox.receipthandler.service.OrderService
+
+' com.crolox.receipthandler.service.QueueOverviewDtoService
+
+' com.crolox.receipthandler.service.SortingService
+
+' com.crolox.receipthandler.service.PartialPackageService
+
+' com.crolox.receipthandler.service.MQService
+
+' com.crolox.receipthandler.service.IdfInfoService
+
+' com.crolox.receipthandler.service.GlobalConfigService
+
+' com.crolox.receipthandler.service.SplitService
+
+' com.crolox.receipthandler.service.ReceiptLineService
+
+' com.crolox.receipthandler.service.QueueService
+
+' com.crolox.receipthandler.service.SpecialZindexService
+
+' com.crolox.receipthandler.service.ReceiptService
+
+' com.crolox.receipthandler.service.PharmacyService
+
+
+!endsub
+
+
+@enduml

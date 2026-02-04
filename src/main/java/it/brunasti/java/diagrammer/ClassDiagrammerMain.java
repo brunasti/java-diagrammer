@@ -40,10 +40,7 @@ public class ClassDiagrammerMain {
     options = null;
   }
 
-
-
   private static boolean processCommandLine(String[] args) {
-
     // Reset all the flags, to avoid multiple sequence runs interfering
     reset();
 
@@ -78,8 +75,6 @@ public class ClassDiagrammerMain {
 
       if (commandLine.hasOption(optionDebug.getOpt())) {
         String debugLevelString = commandLine.getOptionValue(optionDebug.getOpt());
-//        System.err.println(optionDebug.getDescription()
-//                + " set to [" + debugLevelString + "]");
         if (debugLevelString != null) {
           try {
             int dl = Integer.parseInt(debugLevelString);
