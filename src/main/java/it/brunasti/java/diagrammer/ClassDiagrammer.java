@@ -357,8 +357,10 @@ public class ClassDiagrammer {
         }
       }
     };
-    output.println();
-    output.println("!endsub");
+    if (flagClosePackage) {
+      output.println();
+      output.println("!endsub");
+    }
     output.println();
   }
 
@@ -396,8 +398,10 @@ public class ClassDiagrammer {
         }
       }
     };
-    output.println();
-    output.println("!endsub");
+    if (flagClosePackage) {
+      output.println();
+      output.println("!endsub");
+    }
     output.println();
   }
 
@@ -453,8 +457,10 @@ public class ClassDiagrammer {
       Debugger.debug(3,
               "generateImports() --- Not generated because javaFilesPath not provided");
     }
-    output.println();
-    output.println("!endsub");
+    if (flagClosePackage) {
+      output.println();
+      output.println("!endsub");
+    }
     output.println();
   }
 
@@ -491,8 +497,10 @@ public class ClassDiagrammer {
         Debugger.debug(2, "Error generating `Implements` relations : " + ex.getMessage());
       }
     };
-    output.println();
-    output.println("!endsub");
+    if (flagClosePackage) {
+      output.println();
+      output.println("!endsub");
+    }
     output.println();
   }
 
@@ -531,8 +539,10 @@ public class ClassDiagrammer {
         Debugger.debug(2, "Error generating `Inheritance` relations : " + ex.getMessage());
       }
     };
-    output.println();
-    output.println("!endsub");
+    if (flagClosePackage) {
+      output.println();
+      output.println("!endsub");
+    }
     output.println();
   }
 
@@ -618,8 +628,10 @@ public class ClassDiagrammer {
         done.add(javaClass.getClassName());
       }
     };
-    output.println();
-    output.println("!endsub");
+    if (flagClosePackage) {
+      output.println();
+      output.println("!endsub");
+    }
     output.println();
   }
 
@@ -728,7 +740,6 @@ public class ClassDiagrammer {
     Debugger.debug(2, "classLoader [" + classLoader + "]");
     if (null == classLoader) {
       Debugger.debug(1,"Class loader not created");
-      return;
     }
 
     ClassLoaderRepository rep = new ClassLoaderRepository(classLoader);

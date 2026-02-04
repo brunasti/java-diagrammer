@@ -31,7 +31,7 @@ public class OctaDiagramGenerationTest implements TestConstants {
     fullArgs[6] = "-i";
     fullArgs[7] = "/Users/paolobrunasti/IdeaProjects/OCTA/"+baseDir +repository+ extraDir+"/src/main/java";
     fullArgs[8] = "-d";
-    fullArgs[9] = "1";
+    fullArgs[9] = "3";
     fullArgs[10] = "-b";
     fullArgs[11] = "OCTA-"+diagram+"-class-diagram";
 
@@ -79,8 +79,8 @@ public class OctaDiagramGenerationTest implements TestConstants {
     generateDiagramToolsGradle("pharmacomstocksender",null);
     generateDiagramToolsGradle("zindexproductsservice",null);
 
-    // /Users/paolobrunasti/IdeaProjects/OCTA/Octa_Internal_Trace/trace-service
-    generateDiagramToolsGradle("trace-service",null, "Octa_Internal_Trace/", "");
+    generateDiagramToolsGradle("trace-service",null, "Octa_Internal_Trace", "");
+//    generateDiagramToolsGradle("frontend",null, "Octa_Internal_Trace", "");
 
     generateDiagramToolsMaven("pickorderio",null);
     generateDiagramToolsMaven("picommon",null);
@@ -90,6 +90,14 @@ public class OctaDiagramGenerationTest implements TestConstants {
 
     generateDiagramToolsMavenExtraDir("receipt-handler",null, "/backend");
 
+    assertNotNull(this);
+  }
+
+  // Generate diagrams for Octa repos ---------------------------
+  @Test
+  @DisplayName("Generate diagrams for Octa frontend")
+  void testOctaRepoClassDiagrams_frontend() {
+    generateDiagramToolsGradle("frontend",null, "Octa_Internal_Trace/", "");
     assertNotNull(this);
   }
 

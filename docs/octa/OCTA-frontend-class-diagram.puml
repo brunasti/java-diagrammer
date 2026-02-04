@@ -1,0 +1,53 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+' GENERATE CLASS DIAGRAM ===========
+' Generator       : it.brunasti.java.diagrammer.ClassDiagrammer
+' Path            : [/Users/paolobrunasti/IdeaProjects/OCTA/Octa_Internal_Trace/frontend/build/classes/java/main]
+' Java Files Path : [/Users/paolobrunasti/IdeaProjects/OCTA/Octa_Internal_Trace/frontend/src/main/java/]
+' Configuration   : [/Users/paolobrunasti/IdeaProjects/mine/java-diagrammer/docs/octa/config.json]
+' Generated at    : Wed Feb 04 14:00:18 CET 2026
+'
+'   Stat infos    :
+'       Files : [0]
+'       Lines : [0]
+'     Classes : [0]
+'     Methods : [0]
+'      Fields : [0]
+
+' Include         : [./docs/includedFile.txt] ---------
+title Example with legend and title
+
+hide empty members
+
+
+legend
+Connections legend
+----
+--|> : Extends
+..|> : Implements
+----
+--> : Fields and Attributes
+..> : Uses
+end legend
+' Include end     : --------------------------
+
+
+
+
+
+' CLASSES =======
+
+' INHERITANCES =======
+
+' IMPLEMENT INTERFACE =======
+
+' FIELDS =======
+
+' USES =======
+
+' IMPORTS =======
+' Java Files Path : /Users/paolobrunasti/IdeaProjects/OCTA/Octa_Internal_Trace/frontend/src/main/java/
+
+
+@enduml
