@@ -1,0 +1,39 @@
+Prompts - 2026-06-18
+====================
+
+1. Hello Claude, would you please help me creating a new tool?
+
+2. I would like to create a CLI tool, similar to the
+   src/main/java/it/brunasti/java/diagrammer/spring/web/WebFlowAnalyserMain.java one,
+   which I would like to put in an api subdirectory of the
+   it.brunasti.java.diagrammer.spring one, which sould get be called
+   ApiDefinitionAnalyserMain, and which would receive as input a path, and then the
+   -h, -?, -d, -o, and -c options as defined in the existing
+   src/main/java/it/brunasti/java/diagrammer/spring/web/WebFlowAnalyserMain.java tool.
+
+3. Yes, let's create the ApiDefinitionAnalyser class, which should explore all the
+   java source classes in the directory defined in javaPackagePath, and select all the
+   API definitions as they are define in the Spring framework, which means finding all
+   the classes with the annotation "RestController", and then extract the
+   "RequestMapping" and the detailed "<Method>Mapping", building as output a list of
+   all the API URLs, with the class (and package) in which they are defined.
+
+4. Can you create a simple shell script to execute the ApiDefinitionAnalyserMain with
+   the right env setup (java class path, and others...) and pass the parameters
+   (package to analise, output file...)?
+
+5. Could you add one more optional parameter which says the ApiDefinitionAnalyser
+   program to recursevly analyse the sub directories from the starting one provided?
+
+6. You created the analysis by exploring the Java compiled code, but I wanted to
+   explore the Java source code, so not using the JavaClass but the "text file".
+
+7. In the building of the URL of an API, you should use both the "<METHOD>Mapping"
+   of the method, and the "RequestMapping" of the class. And it would be nice to have
+   a separate list with all the RestController classes with their specific
+   RequestMapping, as a first list before the
+   "METHOD      URL                                                           CLASS :: METHOD"
+   list.
+
+8. could you save into a text file all the prompts I have given you up to now, in a
+   file called prompts-<today date in yyymmdd format>.txt ?

@@ -28,13 +28,13 @@ public class ApiDefinitionAnalyser {
     private final String javaFilesPath;
     private boolean recursive = false;
 
-    ArrayList<ApiEndpoint> endpoints = new ArrayList<>();
+    ArrayList<RestControllerInfo> controllers = new ArrayList<>();
+    ArrayList<ApiEndpoint>        endpoints   = new ArrayList<>();
 
     private static final String REST_CONTROLLER   = "@RestController";
     private static final String MAP_ID            = "Mapping";
     private static final int    MAP_BLOCK_LENGTH  = 500;
     private static final int    PRE_MAP_LENGTH    = 20;
-    private static final int    PRE_IMPORT_LENGTH = 120;
 
     // Only these prefixes form valid Spring mapping annotations
     private static final Set<String> VALID_MAPPING_PREFIXES =
@@ -55,7 +55,8 @@ public class ApiDefinitionAnalyser {
     }
 
     private void cleanLocalVars() {
-        endpoints = new ArrayList<>();
+        controllers = new ArrayList<>();
+        endpoints   = new ArrayList<>();
     }
 
     private void setDefaultConfiguration() {
@@ -143,16 +144,39 @@ public class ApiDefinitionAnalyser {
     }
 
     /**
+     * Find the closing ')' of an annotation's parameter list, correctly skipping
+     * any ')' characters that appear inside string literals.
+     */
+    private int findAnnotationCloseParen(String text) {
+        boolean inQuote = false;
+        for (int i = 0; i < text.length(); i++) {
+            char ch = text.charAt(i);
+            if (ch == '"' && (i == 0 || text.charAt(i - 1) != '\\')) {
+                inQuote = !inQuote;
+            } else if (ch == ')' && !inQuote) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    /**
      * Extract the URL string from the text immediately following the annotation name,
      * e.g. from {@code ("/api/users")} or {@code (value = "/api/users")}.
-     * Returns the first quoted string found inside the parentheses, or "" if absent.
+     * Only searches inside the annotation's own parentheses; returns "" if the
+     * annotation has no parameters or contains no quoted string.
      */
     private String extractUrlFromAnnotationText(String textAfterAnnotationName) {
-        int firstQuote = textAfterAnnotationName.indexOf('"');
+        // Annotation must open with '(' to have a URL parameter
+        if (!textAfterAnnotationName.stripLeading().startsWith("(")) return "";
+        int closeParen = findAnnotationCloseParen(textAfterAnnotationName);
+        if (closeParen < 0) return "";
+        String params = textAfterAnnotationName.substring(0, closeParen);
+        int firstQuote = params.indexOf('"');
         if (firstQuote < 0) return "";
-        int secondQuote = textAfterAnnotationName.indexOf('"', firstQuote + 1);
+        int secondQuote = params.indexOf('"', firstQuote + 1);
         if (secondQuote < 0) return "";
-        return textAfterAnnotationName.substring(firstQuote + 1, secondQuote);
+        return params.substring(firstQuote + 1, secondQuote);
     }
 
     /**
@@ -166,7 +190,7 @@ public class ApiDefinitionAnalyser {
         // Skip annotation parameters if present
         String rest;
         if (afterAnnotationName.stripLeading().startsWith("(")) {
-            int annotationClose = afterAnnotationName.indexOf(')');
+            int annotationClose = findAnnotationCloseParen(afterAnnotationName);
             if (annotationClose < 0) return "";
             rest = afterAnnotationName.substring(annotationClose + 1);
         } else {
@@ -236,18 +260,10 @@ public class ApiDefinitionAnalyser {
             int location = content.indexOf(MAP_ID, index);
             if (location < 0) break;
 
-            // Skip import statements: check the current line for "import"
+            // Skip "Mapping" that appears on an import line
             int lineStart = content.lastIndexOf('\n', location);
             String linePrefix = content.substring(Math.max(0, lineStart), location);
             if (linePrefix.contains("import ")) {
-                index = location + MAP_ID.length();
-                continue;
-            }
-
-            // Broader import check via context block
-            int ctxStart = Math.max(0, location - PRE_IMPORT_LENGTH);
-            String ctxBlock = content.substring(ctxStart, location);
-            if (ctxBlock.contains("import org.springframework")) {
                 index = location + MAP_ID.length();
                 continue;
             }
@@ -298,6 +314,14 @@ public class ApiDefinitionAnalyser {
 
             index = location + MAP_ID.length();
         }
+
+        // Register this @RestController with the base URL resolved above
+        RestControllerInfo info = new RestControllerInfo();
+        info.packageName = packageName;
+        info.className   = className;
+        info.baseUrl     = classUrl;
+        controllers.add(info);
+        Debugger.debug(2, "  Registered controller: " + info);
     }
 
     // ---- Source file discovery and loading ----
@@ -353,15 +377,37 @@ public class ApiDefinitionAnalyser {
         Debugger.debug(2, "generateOutput() ------------------");
 
         output.println("=== API Definition Report ===");
-        output.println("' Generator   : " + this.getClass().getName());
-        output.println("' Source Path : [" + javaFilesPath + "]");
-        output.println("' Config      : [" + configurationFile + "]");
-        output.println("' Generated   : " + new Date());
-        output.println("' Endpoints   : " + endpoints.size());
+        output.println("' Generator    : " + this.getClass().getName());
+        output.println("' Source Path  : [" + javaFilesPath + "]");
+        output.println("' Config       : [" + configurationFile + "]");
+        output.println("' Generated    : " + new Date());
+        output.println("' Controllers  : " + controllers.size());
+        output.println("' Endpoints    : " + endpoints.size());
+        output.println();
+
+        // --- Section 1: RestController classes ---
+        output.println("--- RestController Classes ---");
+        output.println();
+
+        if (controllers.isEmpty()) {
+            output.println("No @RestController classes found.");
+        } else {
+            controllers.sort(Comparator.comparing((RestControllerInfo c) -> c.packageName)
+                                       .thenComparing(c -> c.className));
+
+            output.printf("%-40s  %s%n", "BASE PATH", "CLASS");
+            output.println("-".repeat(80));
+            controllers.forEach(c -> output.println(c));
+        }
+
+        output.println();
+
+        // --- Section 2: API endpoints ---
+        output.println("--- API Endpoints ---");
         output.println();
 
         if (endpoints.isEmpty()) {
-            output.println("No @RestController API endpoints found.");
+            output.println("No API endpoints found.");
             return;
         }
 
