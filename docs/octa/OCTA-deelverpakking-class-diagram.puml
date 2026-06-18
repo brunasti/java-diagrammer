@@ -6,13 +6,13 @@
 ' Path            : [/Users/paolobrunasti/IdeaProjects/OCTA/deelverpakking/build/classes/java/main]
 ' Java Files Path : [/Users/paolobrunasti/IdeaProjects/OCTA/deelverpakking/src/main/java/]
 ' Configuration   : [/Users/paolobrunasti/IdeaProjects/mine/java-diagrammer/docs/octa/config.json]
-' Generated at    : Wed Feb 04 13:30:40 CET 2026
+' Generated at    : Mon May 18 09:47:06 CEST 2026
 '
 '   Stat infos    :
-'       Files : [54]
-'       Lines : [3302]
-'     Classes : [54]
-'     Methods : [498]
+'       Files : [56]
+'       Lines : [3352]
+'     Classes : [56]
+'     Methods : [500]
 '      Fields : [212]
 
 ' Include         : [./docs/includedFile.txt] ---------
@@ -88,6 +88,7 @@ end legend
 ' CLASSES =======
 !startsub COM_CROLOX_DEELVERPAKKING
 class com.crolox.deelverpakking.DeelverpakkingApplication
+class com.crolox.deelverpakking.OpenApiConfiguration
 
 !endsub
 
@@ -329,6 +330,14 @@ com.crolox.deelverpakking.service.DeelverpakkingServiceV1 ..> com.crolox.deelver
 
 !startsub IMPORTS_COM_CROLOX_DEELVERPAKKING
 ' com.crolox.deelverpakking.DeelverpakkingApplication
+
+' com.crolox.deelverpakking.OpenApiConfiguration
+com.crolox.deelverpakking.OpenApiConfiguration ..o io.swagger.v3.oas.annotations.info.Info
+com.crolox.deelverpakking.OpenApiConfiguration ..o io.swagger.v3.oas.annotations.OpenAPIDefinition
+com.crolox.deelverpakking.OpenApiConfiguration ..o io.swagger.v3.oas.annotations.info.Contact
+com.crolox.deelverpakking.OpenApiConfiguration ..o io.swagger.v3.oas.annotations.info.License
+
+' com.crolox.deelverpakking.OpenApiConfiguration
 
 ' com.crolox.deelverpakking.DeelverpakkingApplication
 

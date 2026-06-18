@@ -6,14 +6,14 @@
 ' Path            : [/Users/paolobrunasti/IdeaProjects/OCTA/labelscout/build/classes/java/main]
 ' Java Files Path : [/Users/paolobrunasti/IdeaProjects/OCTA/labelscout/src/main/java/]
 ' Configuration   : [/Users/paolobrunasti/IdeaProjects/mine/java-diagrammer/docs/octa/config.json]
-' Generated at    : Wed Feb 04 13:30:40 CET 2026
+' Generated at    : Mon May 18 09:47:06 CEST 2026
 '
 '   Stat infos    :
-'       Files : [104]
-'       Lines : [4846]
-'     Classes : [104]
-'     Methods : [1024]
-'      Fields : [370]
+'       Files : [160]
+'       Lines : [8922]
+'     Classes : [160]
+'     Methods : [1838]
+'      Fields : [696]
 
 ' Include         : [./docs/includedFile.txt] ---------
 title Example with legend and title
@@ -95,8 +95,11 @@ end legend
 ' CLASSES =======
 !startsub NL_CROLOX_LABELSCOUT
 class nl.crolox.labelscout.KeycloakLogoutHandler
+class nl.crolox.labelscout.GlobalUtils
 class nl.crolox.labelscout.LabelscoutApplication
 class nl.crolox.labelscout.SecurityConfig
+class nl.crolox.labelscout.OpenApiConfig
+interface nl.crolox.labelscout.Constants
 
 !endsub
 
@@ -109,6 +112,12 @@ class nl.crolox.labelscout.aspect.LoggingAspect
 !startsub NL_CROLOX_LABELSCOUT_DOMAIN
 class nl.crolox.labelscout.domain.Apotheek
 class nl.crolox.labelscout.domain.Logger
+enum nl.crolox.labelscout.domain.AdviceSource{
+  CGM
+  PHARMACOM
+  ZOEKENZOEK
+}
+class nl.crolox.labelscout.domain.RequestResponseAudit
 class nl.crolox.labelscout.domain.Label
 class nl.crolox.labelscout.domain.Gebruiker
 class nl.crolox.labelscout.domain.Groep
@@ -128,9 +137,14 @@ class nl.crolox.labelscout.domain.Product
 
 !startsub NL_CROLOX_LABELSCOUT_HELPER
 class nl.crolox.labelscout.helper.AdviceHelperRespone
+class nl.crolox.labelscout.helper.AuditHelperResponseCandidateLine
 class nl.crolox.labelscout.helper.PreferentieClusterResponse$EmbeddedData
+class nl.crolox.labelscout.helper.AdviceHelperCGMRequest
 class nl.crolox.labelscout.helper.Product
+class nl.crolox.labelscout.helper.ApotheekCache
+class nl.crolox.labelscout.helper.GroothandelVoorraadStatus
 class nl.crolox.labelscout.helper.AdviceHelperRequest
+class nl.crolox.labelscout.helper.AdviceHelperCGMRespone
 class nl.crolox.labelscout.helper.ProductResponse
 class nl.crolox.labelscout.helper.ProductKeuze
 class nl.crolox.labelscout.helper.Product$ProductPrice
@@ -138,11 +152,23 @@ class nl.crolox.labelscout.helper.OrderUpdateRequest
 class nl.crolox.labelscout.helper.PreferentieClusterResponse$PreferentieClusterData
 class nl.crolox.labelscout.helper.VoorraadResponse
 class nl.crolox.labelscout.helper.LabelHelper
+class nl.crolox.labelscout.helper.ZoekRequestHelper
+class nl.crolox.labelscout.helper.AuditHelperResponse
+class nl.crolox.labelscout.helper.BulkVoorraadCheckResponse
+class nl.crolox.labelscout.helper.GenericAdviceHelperRespone
 class nl.crolox.labelscout.helper.AdviceHelperResponeLine
 class nl.crolox.labelscout.helper.ProductResponse$EmbeddedProducts
 class nl.crolox.labelscout.helper.ApotheekHelper
 class nl.crolox.labelscout.helper.GroepHelper
+class nl.crolox.labelscout.helper.BulkVoorraadCheckRequest
+class nl.crolox.labelscout.helper.GenericAdviceHelperRequest
+class nl.crolox.labelscout.helper.ApothekenHelperResponse
 class nl.crolox.labelscout.helper.PreferentieClusterResponse
+class nl.crolox.labelscout.helper.VoorraadCheckResponse
+class nl.crolox.labelscout.helper.ZoekResponseHelper
+class nl.crolox.labelscout.helper.AuditHelperRequest
+class nl.crolox.labelscout.helper.AuditHelperResponseLine
+class nl.crolox.labelscout.helper.VoorraadCheckRequest
 
 !endsub
 
@@ -154,11 +180,14 @@ class nl.crolox.labelscout.interceptor.DaoInterceptor
 !startsub NL_CROLOX_LABELSCOUT_REPOSITORY
 interface nl.crolox.labelscout.repository.GroothandelRepository
 interface nl.crolox.labelscout.repository.LabelRepository
+interface nl.crolox.labelscout.repository.RequestResponseAuditRepository
 interface nl.crolox.labelscout.repository.ApotheekGroepRepository
 interface nl.crolox.labelscout.repository.GroepRepository
 interface nl.crolox.labelscout.repository.GroothandelVoorraadRepository
 interface nl.crolox.labelscout.repository.ProductRepository
 interface nl.crolox.labelscout.repository.GebruikerRepository
+interface nl.crolox.labelscout.repository.LoggerRepository
+interface nl.crolox.labelscout.repository.AuditLogRepository
 interface nl.crolox.labelscout.repository.VoorraadClusterRepository
 interface nl.crolox.labelscout.repository.ApotheekRepository
 
@@ -166,14 +195,17 @@ interface nl.crolox.labelscout.repository.ApotheekRepository
 
 !startsub NL_CROLOX_LABELSCOUT_SERVICE
 class nl.crolox.labelscout.service.LabelscoutServiceV1
+class nl.crolox.labelscout.service.DataWareHouseAPIServiceV1
 class nl.crolox.labelscout.service.ProductAdviesService
 class nl.crolox.labelscout.service.ProductAdviesService$PreferentieClusterResponse$Embedded
+class nl.crolox.labelscout.service.VoorraadVerwerkingService
 class nl.crolox.labelscout.service.ProductAdviesService$PreferentieClusterResponse
 class nl.crolox.labelscout.service.ProductAdviesService$PreferentieClusterResponse$PreferentieCluster
 
 !endsub
 
 !startsub NL_CROLOX_LABELSCOUT_WEB
+class nl.crolox.labelscout.web.ApotheekVoorraadRestController
 class nl.crolox.labelscout.web.HomeController
 class nl.crolox.labelscout.web.Utils
 class nl.crolox.labelscout.web.ZoekController
@@ -194,6 +226,7 @@ class nl.crolox.labelscout.web.AdminPagesController
 
 
 !startsub INHERITANCES_NL_CROLOX_LABELSCOUT_DOMAIN
+java.lang.Enum <|-- nl.crolox.labelscout.domain.AdviceSource
 java.lang.Enum <|-- nl.crolox.labelscout.domain.Gebruiker$USERROLE
 
 !endsub
@@ -257,17 +290,20 @@ java.lang.annotation.Annotation <|.. nl.crolox.labelscout.aspect.Loggable
 
 
 !startsub IMPLEMENTS_NL_CROLOX_LABELSCOUT_SERVICE
+nl.crolox.labelscout.Constants <|.. nl.crolox.labelscout.service.LabelscoutServiceV1
 
 !endsub
 
 
 !startsub IMPLEMENTS_NL_CROLOX_LABELSCOUT_WEB
+nl.crolox.labelscout.Constants <|.. nl.crolox.labelscout.web.ZoekController
 
 !endsub
 
 ' FIELDS =======
 
 !startsub FIELDS_NL_CROLOX_LABELSCOUT
+nl.crolox.labelscout.GlobalUtils --> nl.crolox.labelscout.web.Utils
 nl.crolox.labelscout.SecurityConfig --> nl.crolox.labelscout.KeycloakLogoutHandler
 
 !endsub
@@ -299,10 +335,16 @@ nl.crolox.labelscout.domain.Product --> nl.crolox.labelscout.domain.Label
 !startsub FIELDS_NL_CROLOX_LABELSCOUT_HELPER
 nl.crolox.labelscout.helper.PreferentieClusterResponse$EmbeddedData --> nl.crolox.labelscout.helper.PreferentieClusterResponse$PreferentieClusterData
 nl.crolox.labelscout.helper.Product --> nl.crolox.labelscout.helper.Product$ProductPrice
+nl.crolox.labelscout.helper.ApotheekCache --> nl.crolox.labelscout.repository.ApotheekRepository
 nl.crolox.labelscout.helper.ProductResponse --> nl.crolox.labelscout.helper.ProductResponse$EmbeddedProducts
 nl.crolox.labelscout.helper.ProductKeuze --> nl.crolox.labelscout.helper.Product
+nl.crolox.labelscout.helper.AuditHelperResponse --> nl.crolox.labelscout.domain.AdviceSource
 nl.crolox.labelscout.helper.ProductResponse$EmbeddedProducts --> nl.crolox.labelscout.helper.Product
+nl.crolox.labelscout.helper.GenericAdviceHelperRequest --> nl.crolox.labelscout.GlobalUtils
 nl.crolox.labelscout.helper.PreferentieClusterResponse --> nl.crolox.labelscout.helper.PreferentieClusterResponse$EmbeddedData
+nl.crolox.labelscout.helper.ZoekResponseHelper --> nl.crolox.labelscout.helper.Product
+nl.crolox.labelscout.helper.AuditHelperRequest --> nl.crolox.labelscout.domain.AdviceSource
+nl.crolox.labelscout.helper.AuditHelperResponseLine --> nl.crolox.labelscout.helper.AuditHelperResponseCandidateLine
 
 !endsub
 
@@ -320,24 +362,36 @@ nl.crolox.labelscout.helper.PreferentieClusterResponse --> nl.crolox.labelscout.
 !startsub FIELDS_NL_CROLOX_LABELSCOUT_SERVICE
 nl.crolox.labelscout.service.LabelscoutServiceV1 --> nl.crolox.labelscout.repository.ApotheekRepository
 nl.crolox.labelscout.service.LabelscoutServiceV1 --> nl.crolox.labelscout.service.ProductAdviesService
+nl.crolox.labelscout.service.LabelscoutServiceV1 --> nl.crolox.labelscout.repository.AuditLogRepository
+nl.crolox.labelscout.service.LabelscoutServiceV1 --> nl.crolox.labelscout.repository.RequestResponseAuditRepository
+nl.crolox.labelscout.service.LabelscoutServiceV1 --> nl.crolox.labelscout.web.Utils
+nl.crolox.labelscout.service.LabelscoutServiceV1 --> nl.crolox.labelscout.GlobalUtils
+nl.crolox.labelscout.service.DataWareHouseAPIServiceV1 --> nl.crolox.labelscout.repository.RequestResponseAuditRepository
+nl.crolox.labelscout.service.DataWareHouseAPIServiceV1 --> nl.crolox.labelscout.repository.ApotheekRepository
+nl.crolox.labelscout.service.DataWareHouseAPIServiceV1 --> nl.crolox.labelscout.helper.ApotheekCache
 nl.crolox.labelscout.service.ProductAdviesService --> nl.crolox.labelscout.repository.GroothandelVoorraadRepository
 nl.crolox.labelscout.service.ProductAdviesService --> nl.crolox.labelscout.repository.LabelRepository
 nl.crolox.labelscout.service.ProductAdviesService --> nl.crolox.labelscout.repository.ProductRepository
+nl.crolox.labelscout.service.VoorraadVerwerkingService --> nl.crolox.labelscout.repository.GroothandelRepository
+nl.crolox.labelscout.service.VoorraadVerwerkingService --> nl.crolox.labelscout.repository.GroothandelVoorraadRepository
+nl.crolox.labelscout.service.VoorraadVerwerkingService --> nl.crolox.labelscout.GlobalUtils
 nl.crolox.labelscout.service.ProductAdviesService$PreferentieClusterResponse --> nl.crolox.labelscout.service.ProductAdviesService$PreferentieClusterResponse$Embedded
 
 !endsub
 
 
 !startsub FIELDS_NL_CROLOX_LABELSCOUT_WEB
+nl.crolox.labelscout.web.ApotheekVoorraadRestController --> nl.crolox.labelscout.repository.ApotheekRepository
+nl.crolox.labelscout.web.ApotheekVoorraadRestController --> nl.crolox.labelscout.repository.GroothandelVoorraadRepository
 nl.crolox.labelscout.web.HomeController --> nl.crolox.labelscout.repository.GebruikerRepository
-nl.crolox.labelscout.web.HomeController --> nl.crolox.labelscout.repository.ApotheekGroepRepository
-nl.crolox.labelscout.web.HomeController --> nl.crolox.labelscout.repository.ApotheekRepository
-nl.crolox.labelscout.web.HomeController --> nl.crolox.labelscout.repository.GroothandelRepository
-nl.crolox.labelscout.web.HomeController --> nl.crolox.labelscout.repository.GroepRepository
 nl.crolox.labelscout.web.HomeController --> nl.crolox.labelscout.web.Utils
 nl.crolox.labelscout.web.Utils --> nl.crolox.labelscout.repository.GebruikerRepository
 nl.crolox.labelscout.web.ZoekController --> nl.crolox.labelscout.service.ProductAdviesService
 nl.crolox.labelscout.web.ZoekController --> nl.crolox.labelscout.repository.ApotheekRepository
+nl.crolox.labelscout.web.ZoekController --> nl.crolox.labelscout.repository.AuditLogRepository
+nl.crolox.labelscout.web.ZoekController --> nl.crolox.labelscout.repository.RequestResponseAuditRepository
+nl.crolox.labelscout.web.ZoekController --> nl.crolox.labelscout.web.Utils
+nl.crolox.labelscout.web.ZoekController --> nl.crolox.labelscout.GlobalUtils
 nl.crolox.labelscout.web.AdminPagesController --> nl.crolox.labelscout.repository.GebruikerRepository
 nl.crolox.labelscout.web.AdminPagesController --> nl.crolox.labelscout.repository.ApotheekGroepRepository
 nl.crolox.labelscout.web.AdminPagesController --> nl.crolox.labelscout.repository.ApotheekRepository
@@ -353,7 +407,12 @@ nl.crolox.labelscout.web.AdminPagesController --> nl.crolox.labelscout.web.Utils
 ' USES =======
 
 !startsub USES_NL_CROLOX_LABELSCOUT
+nl.crolox.labelscout.GlobalUtils ..> nl.crolox.labelscout.domain.AdviceSource
+nl.crolox.labelscout.GlobalUtils ..> nl.crolox.labelscout.domain.RequestResponseAudit
+nl.crolox.labelscout.GlobalUtils ..> nl.crolox.labelscout.helper.GenericAdviceHelperRequest
+nl.crolox.labelscout.GlobalUtils ..> nl.crolox.labelscout.helper.GenericAdviceHelperRespone
 nl.crolox.labelscout.SecurityConfig ..> nl.crolox.labelscout.KeycloakLogoutHandler
+nl.crolox.labelscout.OpenApiConfig ..> io.swagger.v3.oas.models.OpenAPI
 
 !endsub
 
@@ -384,10 +443,25 @@ nl.crolox.labelscout.domain.Product ..> nl.crolox.labelscout.domain.Label
 !startsub USES_NL_CROLOX_LABELSCOUT_HELPER
 nl.crolox.labelscout.helper.PreferentieClusterResponse$EmbeddedData ..> nl.crolox.labelscout.helper.PreferentieClusterResponse$PreferentieClusterData
 nl.crolox.labelscout.helper.Product ..> nl.crolox.labelscout.helper.Product$ProductPrice
+nl.crolox.labelscout.helper.ApotheekCache ..> nl.crolox.labelscout.domain.Apotheek
+nl.crolox.labelscout.helper.ApotheekCache ..> nl.crolox.labelscout.repository.ApotheekRepository
 nl.crolox.labelscout.helper.ProductResponse ..> nl.crolox.labelscout.helper.ProductResponse$EmbeddedProducts
 nl.crolox.labelscout.helper.ProductKeuze ..> nl.crolox.labelscout.helper.Product
+nl.crolox.labelscout.helper.AuditHelperResponse ..> nl.crolox.labelscout.domain.AdviceSource
+nl.crolox.labelscout.helper.GenericAdviceHelperRespone ..> nl.crolox.labelscout.helper.AdviceHelperRespone
+nl.crolox.labelscout.helper.GenericAdviceHelperRespone ..> nl.crolox.labelscout.helper.AdviceHelperCGMRespone
 nl.crolox.labelscout.helper.ProductResponse$EmbeddedProducts ..> nl.crolox.labelscout.helper.Product
+nl.crolox.labelscout.helper.ApotheekHelper ..> nl.crolox.labelscout.domain.Apotheek
+nl.crolox.labelscout.helper.GenericAdviceHelperRequest ..> nl.crolox.labelscout.helper.AdviceHelperCGMRequest
+nl.crolox.labelscout.helper.GenericAdviceHelperRequest ..> nl.crolox.labelscout.helper.AdviceHelperRequest
+nl.crolox.labelscout.helper.GenericAdviceHelperRequest ..> nl.crolox.labelscout.helper.ZoekRequestHelper
+nl.crolox.labelscout.helper.GenericAdviceHelperRequest ..> nl.crolox.labelscout.GlobalUtils
 nl.crolox.labelscout.helper.PreferentieClusterResponse ..> nl.crolox.labelscout.helper.PreferentieClusterResponse$EmbeddedData
+nl.crolox.labelscout.helper.ZoekResponseHelper ..> nl.crolox.labelscout.helper.Product
+nl.crolox.labelscout.helper.AuditHelperRequest ..> nl.crolox.labelscout.domain.AdviceSource
+nl.crolox.labelscout.helper.AuditHelperResponseLine ..> nl.crolox.labelscout.domain.RequestResponseAudit
+nl.crolox.labelscout.helper.AuditHelperResponseLine ..> nl.crolox.labelscout.domain.Apotheek
+nl.crolox.labelscout.helper.AuditHelperResponseLine ..> nl.crolox.labelscout.helper.AuditHelperResponseCandidateLine
 
 !endsub
 
@@ -410,35 +484,57 @@ nl.crolox.labelscout.repository.ApotheekRepository ..> nl.crolox.labelscout.doma
 
 !startsub USES_NL_CROLOX_LABELSCOUT_SERVICE
 nl.crolox.labelscout.service.LabelscoutServiceV1 ..> nl.crolox.labelscout.helper.AdviceHelperRequest
+nl.crolox.labelscout.service.LabelscoutServiceV1 ..> nl.crolox.labelscout.helper.AdviceHelperCGMRequest
+nl.crolox.labelscout.service.LabelscoutServiceV1 ..> nl.crolox.labelscout.helper.GenericAdviceHelperRespone
+nl.crolox.labelscout.service.LabelscoutServiceV1 ..> nl.crolox.labelscout.helper.GenericAdviceHelperRequest
+nl.crolox.labelscout.service.LabelscoutServiceV1 ..> nl.crolox.labelscout.domain.AdviceSource
 nl.crolox.labelscout.service.LabelscoutServiceV1 ..> nl.crolox.labelscout.domain.Apotheek
 nl.crolox.labelscout.service.LabelscoutServiceV1 ..> nl.crolox.labelscout.helper.Product
 nl.crolox.labelscout.service.LabelscoutServiceV1 ..> nl.crolox.labelscout.repository.ApotheekRepository
 nl.crolox.labelscout.service.LabelscoutServiceV1 ..> nl.crolox.labelscout.service.ProductAdviesService
+nl.crolox.labelscout.service.LabelscoutServiceV1 ..> nl.crolox.labelscout.repository.AuditLogRepository
+nl.crolox.labelscout.service.LabelscoutServiceV1 ..> nl.crolox.labelscout.repository.RequestResponseAuditRepository
 nl.crolox.labelscout.service.LabelscoutServiceV1 ..> nl.crolox.labelscout.helper.AdviceHelperResponeLine
 nl.crolox.labelscout.service.LabelscoutServiceV1 ..> nl.crolox.labelscout.helper.ProductKeuze
+nl.crolox.labelscout.service.DataWareHouseAPIServiceV1 ..> nl.crolox.labelscout.helper.AuditHelperResponse
+nl.crolox.labelscout.service.DataWareHouseAPIServiceV1 ..> nl.crolox.labelscout.repository.RequestResponseAuditRepository
+nl.crolox.labelscout.service.DataWareHouseAPIServiceV1 ..> nl.crolox.labelscout.repository.ApotheekRepository
+nl.crolox.labelscout.service.DataWareHouseAPIServiceV1 ..> nl.crolox.labelscout.helper.ApotheekCache
+nl.crolox.labelscout.service.DataWareHouseAPIServiceV1 ..> nl.crolox.labelscout.helper.ApothekenHelperResponse
+nl.crolox.labelscout.service.DataWareHouseAPIServiceV1 ..> nl.crolox.labelscout.domain.Apotheek
 nl.crolox.labelscout.service.ProductAdviesService ..> nl.crolox.labelscout.helper.Product
 nl.crolox.labelscout.service.ProductAdviesService ..> nl.crolox.labelscout.domain.Groothandel
 nl.crolox.labelscout.service.ProductAdviesService ..> nl.crolox.labelscout.domain.Groep
 nl.crolox.labelscout.service.ProductAdviesService ..> nl.crolox.labelscout.helper.ProductKeuze
 nl.crolox.labelscout.service.ProductAdviesService ..> nl.crolox.labelscout.domain.Label
 nl.crolox.labelscout.service.ProductAdviesService ..> nl.crolox.labelscout.helper.Product$ProductPrice
+nl.crolox.labelscout.service.VoorraadVerwerkingService ..> nl.crolox.labelscout.repository.GroothandelRepository
+nl.crolox.labelscout.service.VoorraadVerwerkingService ..> nl.crolox.labelscout.repository.GroothandelVoorraadRepository
+nl.crolox.labelscout.service.VoorraadVerwerkingService ..> nl.crolox.labelscout.domain.Groothandel
 nl.crolox.labelscout.service.ProductAdviesService$PreferentieClusterResponse ..> nl.crolox.labelscout.service.ProductAdviesService$PreferentieClusterResponse$Embedded
 
 !endsub
 
 
 !startsub USES_NL_CROLOX_LABELSCOUT_WEB
-nl.crolox.labelscout.web.HomeController ..> nl.crolox.labelscout.domain.Gebruiker$USERROLE
+nl.crolox.labelscout.web.ApotheekVoorraadRestController ..> nl.crolox.labelscout.helper.VoorraadCheckRequest
+nl.crolox.labelscout.web.ApotheekVoorraadRestController ..> nl.crolox.labelscout.helper.BulkVoorraadCheckRequest
+nl.crolox.labelscout.web.ApotheekVoorraadRestController ..> nl.crolox.labelscout.repository.ApotheekRepository
+nl.crolox.labelscout.web.ApotheekVoorraadRestController ..> nl.crolox.labelscout.repository.GroothandelVoorraadRepository
+nl.crolox.labelscout.web.ApotheekVoorraadRestController ..> nl.crolox.labelscout.domain.Groothandel
+nl.crolox.labelscout.web.ApotheekVoorraadRestController ..> nl.crolox.labelscout.domain.Apotheek
 nl.crolox.labelscout.web.Utils ..> nl.crolox.labelscout.domain.Gebruiker$USERROLE
+nl.crolox.labelscout.web.Utils ..> nl.crolox.labelscout.domain.Gebruiker
 nl.crolox.labelscout.web.ZoekController ..> nl.crolox.labelscout.service.ProductAdviesService
 nl.crolox.labelscout.web.ZoekController ..> nl.crolox.labelscout.repository.ApotheekRepository
+nl.crolox.labelscout.web.ZoekController ..> nl.crolox.labelscout.repository.AuditLogRepository
+nl.crolox.labelscout.web.ZoekController ..> nl.crolox.labelscout.repository.RequestResponseAuditRepository
 nl.crolox.labelscout.web.ZoekController ..> nl.crolox.labelscout.helper.AdviceHelperResponeLine
 nl.crolox.labelscout.web.ZoekController ..> nl.crolox.labelscout.helper.ProductKeuze
 nl.crolox.labelscout.web.AdminPagesController ..> nl.crolox.labelscout.helper.ApotheekHelper
 nl.crolox.labelscout.web.AdminPagesController ..> nl.crolox.labelscout.domain.ApotheekGroep
 nl.crolox.labelscout.web.AdminPagesController ..> nl.crolox.labelscout.helper.LabelHelper
 nl.crolox.labelscout.web.AdminPagesController ..> nl.crolox.labelscout.helper.GroepHelper
-nl.crolox.labelscout.web.AdminPagesController ..> nl.crolox.labelscout.domain.Gebruiker$USERROLE
 nl.crolox.labelscout.web.AdminPagesController ..> nl.crolox.labelscout.helper.OrderUpdateRequest
 
 !endsub
@@ -450,15 +546,37 @@ nl.crolox.labelscout.web.AdminPagesController ..> nl.crolox.labelscout.helper.Or
 ' nl.crolox.labelscout.KeycloakLogoutHandler
 nl.crolox.labelscout.KeycloakLogoutHandler ..o nl.crolox.labelscout.aspect.Loggable
 
+' nl.crolox.labelscout.GlobalUtils
+nl.crolox.labelscout.GlobalUtils ..o nl.crolox.labelscout.domain.AdviceSource
+nl.crolox.labelscout.GlobalUtils ..o nl.crolox.labelscout.domain.RequestResponseAudit
+nl.crolox.labelscout.GlobalUtils ..o nl.crolox.labelscout.helper.Product
+nl.crolox.labelscout.GlobalUtils ..o nl.crolox.labelscout.web.Utils
+nl.crolox.labelscout.GlobalUtils ..o nl.crolox.labelscout.helper.GenericAdviceHelperRespone
+nl.crolox.labelscout.GlobalUtils ..o nl.crolox.labelscout.helper.GenericAdviceHelperRequest
+nl.crolox.labelscout.GlobalUtils ..o nl.crolox.labelscout.helper.AdviceHelperResponeLine
+
 ' nl.crolox.labelscout.LabelscoutApplication
 
 ' nl.crolox.labelscout.SecurityConfig
+
+' nl.crolox.labelscout.OpenApiConfig
+nl.crolox.labelscout.OpenApiConfig ..o io.swagger.v3.oas.models.info.Contact
+nl.crolox.labelscout.OpenApiConfig ..o io.swagger.v3.oas.models.OpenAPI
+nl.crolox.labelscout.OpenApiConfig ..o io.swagger.v3.oas.models.info.Info
+
+' nl.crolox.labelscout.Constants
+
+' nl.crolox.labelscout.OpenApiConfig
+
+' nl.crolox.labelscout.GlobalUtils
 
 ' nl.crolox.labelscout.SecurityConfig
 
 ' nl.crolox.labelscout.KeycloakLogoutHandler
 
 ' nl.crolox.labelscout.LabelscoutApplication
+
+' nl.crolox.labelscout.Constants
 
 
 !endsub
@@ -482,6 +600,10 @@ nl.crolox.labelscout.KeycloakLogoutHandler ..o nl.crolox.labelscout.aspect.Logga
 
 ' nl.crolox.labelscout.domain.Logger
 
+' nl.crolox.labelscout.domain.AdviceSource
+
+' nl.crolox.labelscout.domain.RequestResponseAudit
+
 ' nl.crolox.labelscout.domain.Label
 
 ' nl.crolox.labelscout.domain.Gebruiker
@@ -516,11 +638,15 @@ nl.crolox.labelscout.KeycloakLogoutHandler ..o nl.crolox.labelscout.aspect.Logga
 
 ' nl.crolox.labelscout.domain.GroothandelVoorraad
 
+' nl.crolox.labelscout.domain.RequestResponseAudit
+
 ' nl.crolox.labelscout.domain.Groothandel
 
 ' nl.crolox.labelscout.domain.Gebruiker$USERROLE
 
 ' nl.crolox.labelscout.domain.VoorraadCluster
+
+' nl.crolox.labelscout.domain.AdviceSource
 
 ' nl.crolox.labelscout.domain.Groep
 
@@ -533,11 +659,24 @@ nl.crolox.labelscout.KeycloakLogoutHandler ..o nl.crolox.labelscout.aspect.Logga
 !startsub IMPORTS_NL_CROLOX_LABELSCOUT_HELPER
 ' nl.crolox.labelscout.helper.AdviceHelperRespone
 
+' nl.crolox.labelscout.helper.AuditHelperResponseCandidateLine
+nl.crolox.labelscout.helper.AuditHelperResponseCandidateLine ..o nl.crolox.labelscout.domain.RequestResponseAudit
+
 ' nl.crolox.labelscout.helper.PreferentieClusterResponse$EmbeddedData
+
+' nl.crolox.labelscout.helper.AdviceHelperCGMRequest
 
 ' nl.crolox.labelscout.helper.Product
 
+' nl.crolox.labelscout.helper.ApotheekCache
+nl.crolox.labelscout.helper.ApotheekCache ..o nl.crolox.labelscout.repository.ApotheekRepository
+nl.crolox.labelscout.helper.ApotheekCache ..o nl.crolox.labelscout.domain.Apotheek
+
+' nl.crolox.labelscout.helper.GroothandelVoorraadStatus
+
 ' nl.crolox.labelscout.helper.AdviceHelperRequest
+
+' nl.crolox.labelscout.helper.AdviceHelperCGMRespone
 
 ' nl.crolox.labelscout.helper.ProductResponse
 
@@ -557,15 +696,44 @@ nl.crolox.labelscout.helper.ProductKeuze ..o nl.crolox.labelscout.domain.Label
 
 ' nl.crolox.labelscout.helper.LabelHelper
 
+' nl.crolox.labelscout.helper.ZoekRequestHelper
+
+' nl.crolox.labelscout.helper.AuditHelperResponse
+nl.crolox.labelscout.helper.AuditHelperResponse ..o nl.crolox.labelscout.domain.AdviceSource
+
+' nl.crolox.labelscout.helper.BulkVoorraadCheckResponse
+
+' nl.crolox.labelscout.helper.GenericAdviceHelperRespone
+
 ' nl.crolox.labelscout.helper.AdviceHelperResponeLine
 
 ' nl.crolox.labelscout.helper.ProductResponse$EmbeddedProducts
 
 ' nl.crolox.labelscout.helper.ApotheekHelper
+nl.crolox.labelscout.helper.ApotheekHelper ..o nl.crolox.labelscout.domain.Apotheek
 
 ' nl.crolox.labelscout.helper.GroepHelper
 
+' nl.crolox.labelscout.helper.BulkVoorraadCheckRequest
+
+' nl.crolox.labelscout.helper.GenericAdviceHelperRequest
+
+' nl.crolox.labelscout.helper.ApothekenHelperResponse
+
 ' nl.crolox.labelscout.helper.PreferentieClusterResponse
+
+' nl.crolox.labelscout.helper.VoorraadCheckResponse
+
+' nl.crolox.labelscout.helper.ZoekResponseHelper
+
+' nl.crolox.labelscout.helper.AuditHelperRequest
+nl.crolox.labelscout.helper.AuditHelperRequest ..o nl.crolox.labelscout.domain.AdviceSource
+
+' nl.crolox.labelscout.helper.AuditHelperResponseLine
+nl.crolox.labelscout.helper.AuditHelperResponseLine ..o nl.crolox.labelscout.domain.Apotheek
+nl.crolox.labelscout.helper.AuditHelperResponseLine ..o nl.crolox.labelscout.domain.RequestResponseAudit
+
+' nl.crolox.labelscout.helper.VoorraadCheckRequest
 
 ' nl.crolox.labelscout.helper.GroepHelper
 
@@ -573,23 +741,57 @@ nl.crolox.labelscout.helper.ProductKeuze ..o nl.crolox.labelscout.domain.Label
 
 ' nl.crolox.labelscout.helper.ProductKeuze
 
+' nl.crolox.labelscout.helper.ZoekResponseHelper
+
+' nl.crolox.labelscout.helper.GenericAdviceHelperRespone
+
 ' nl.crolox.labelscout.helper.AdviceHelperRequest
+
+' nl.crolox.labelscout.helper.VoorraadCheckRequest
 
 ' nl.crolox.labelscout.helper.LabelHelper
 
 ' nl.crolox.labelscout.helper.PreferentieClusterResponse
 
+' nl.crolox.labelscout.helper.AdviceHelperCGMRequest
+
 ' nl.crolox.labelscout.helper.PreferentieClusterResponse$EmbeddedData
+
+' nl.crolox.labelscout.helper.AuditHelperResponseCandidateLine
+
+' nl.crolox.labelscout.helper.GenericAdviceHelperRequest
+
+' nl.crolox.labelscout.helper.BulkVoorraadCheckResponse
 
 ' nl.crolox.labelscout.helper.AdviceHelperResponeLine
 
+' nl.crolox.labelscout.helper.ZoekRequestHelper
+
+' nl.crolox.labelscout.helper.AuditHelperResponse
+
+' nl.crolox.labelscout.helper.VoorraadCheckResponse
+
 ' nl.crolox.labelscout.helper.PreferentieClusterResponse$PreferentieClusterData
+
+' nl.crolox.labelscout.helper.AdviceHelperCGMRespone
+
+' nl.crolox.labelscout.helper.BulkVoorraadCheckRequest
+
+' nl.crolox.labelscout.helper.AuditHelperRequest
 
 ' nl.crolox.labelscout.helper.ProductResponse$EmbeddedProducts
 
+' nl.crolox.labelscout.helper.ApothekenHelperResponse
+
 ' nl.crolox.labelscout.helper.VoorraadResponse
 
+' nl.crolox.labelscout.helper.GroothandelVoorraadStatus
+
+' nl.crolox.labelscout.helper.ApotheekCache
+
 ' nl.crolox.labelscout.helper.OrderUpdateRequest
+
+' nl.crolox.labelscout.helper.AuditHelperResponseLine
 
 ' nl.crolox.labelscout.helper.Product
 
@@ -619,6 +821,9 @@ nl.crolox.labelscout.repository.GroothandelRepository ..o nl.crolox.labelscout.d
 
 ' nl.crolox.labelscout.repository.LabelRepository
 
+' nl.crolox.labelscout.repository.RequestResponseAuditRepository
+nl.crolox.labelscout.repository.RequestResponseAuditRepository ..o nl.crolox.labelscout.domain.RequestResponseAudit
+
 ' nl.crolox.labelscout.repository.ApotheekGroepRepository
 nl.crolox.labelscout.repository.ApotheekGroepRepository ..o nl.crolox.labelscout.domain.ApotheekGroep
 nl.crolox.labelscout.repository.ApotheekGroepRepository ..o nl.crolox.labelscout.domain.VoorraadCluster
@@ -635,21 +840,30 @@ nl.crolox.labelscout.repository.GroothandelVoorraadRepository ..o nl.crolox.labe
 ' nl.crolox.labelscout.repository.ProductRepository
 
 ' nl.crolox.labelscout.repository.GebruikerRepository
-nl.crolox.labelscout.repository.GebruikerRepository ..o nl.crolox.labelscout.domain.Gebruiker
-nl.crolox.labelscout.repository.GebruikerRepository ..o nl.crolox.labelscout.domain.VoorraadCluster
+
+' nl.crolox.labelscout.repository.LoggerRepository
+nl.crolox.labelscout.repository.LoggerRepository ..o nl.crolox.labelscout.domain.Logger
+
+' nl.crolox.labelscout.repository.AuditLogRepository
+nl.crolox.labelscout.repository.AuditLogRepository ..o nl.crolox.labelscout.domain.Apotheek
+nl.crolox.labelscout.repository.AuditLogRepository ..o nl.crolox.labelscout.domain.AuditLog
 
 ' nl.crolox.labelscout.repository.VoorraadClusterRepository
 nl.crolox.labelscout.repository.VoorraadClusterRepository ..o nl.crolox.labelscout.domain.VoorraadCluster
 
 ' nl.crolox.labelscout.repository.ApotheekRepository
-nl.crolox.labelscout.repository.ApotheekRepository ..o nl.crolox.labelscout.domain.VoorraadCluster
-nl.crolox.labelscout.repository.ApotheekRepository ..o nl.crolox.labelscout.domain.Apotheek
+
+' nl.crolox.labelscout.repository.AuditLogRepository
 
 ' nl.crolox.labelscout.repository.ApotheekRepository
 
 ' nl.crolox.labelscout.repository.ProductRepository
 
 ' nl.crolox.labelscout.repository.GroepRepository
+
+' nl.crolox.labelscout.repository.RequestResponseAuditRepository
+
+' nl.crolox.labelscout.repository.LoggerRepository
 
 ' nl.crolox.labelscout.repository.LabelRepository
 
@@ -669,10 +883,23 @@ nl.crolox.labelscout.repository.ApotheekRepository ..o nl.crolox.labelscout.doma
 
 !startsub IMPORTS_NL_CROLOX_LABELSCOUT_SERVICE
 ' nl.crolox.labelscout.service.LabelscoutServiceV1
+nl.crolox.labelscout.service.LabelscoutServiceV1 ..o nl.crolox.labelscout.repository.RequestResponseAuditRepository
+nl.crolox.labelscout.service.LabelscoutServiceV1 ..o nl.crolox.labelscout.repository.AuditLogRepository
+nl.crolox.labelscout.service.LabelscoutServiceV1 ..o nl.crolox.labelscout.helper.Product
 nl.crolox.labelscout.service.LabelscoutServiceV1 ..o nl.crolox.labelscout.repository.ApotheekRepository
-nl.crolox.labelscout.service.LabelscoutServiceV1 ..o nl.crolox.labelscout.domain.ApotheekGroep
-nl.crolox.labelscout.service.LabelscoutServiceV1 ..o nl.crolox.labelscout.domain.Apotheek
+nl.crolox.labelscout.service.LabelscoutServiceV1 ..o nl.crolox.labelscout.web.Utils
+nl.crolox.labelscout.service.LabelscoutServiceV1 ..o nl.crolox.labelscout.GlobalUtils
+nl.crolox.labelscout.service.LabelscoutServiceV1 ..o nl.crolox.labelscout.Constants
 nl.crolox.labelscout.service.LabelscoutServiceV1 ..o nl.crolox.labelscout.aspect.Loggable
+
+' nl.crolox.labelscout.service.DataWareHouseAPIServiceV1
+nl.crolox.labelscout.service.DataWareHouseAPIServiceV1 ..o nl.crolox.labelscout.repository.RequestResponseAuditRepository
+nl.crolox.labelscout.service.DataWareHouseAPIServiceV1 ..o nl.crolox.labelscout.repository.ApotheekRepository
+nl.crolox.labelscout.service.DataWareHouseAPIServiceV1 ..o io.swagger.v3.oas.annotations.Operation
+nl.crolox.labelscout.service.DataWareHouseAPIServiceV1 ..o io.swagger.v3.oas.annotations.tags.Tag
+nl.crolox.labelscout.service.DataWareHouseAPIServiceV1 ..o nl.crolox.labelscout.GlobalUtils
+nl.crolox.labelscout.service.DataWareHouseAPIServiceV1 ..o nl.crolox.labelscout.Constants
+nl.crolox.labelscout.service.DataWareHouseAPIServiceV1 ..o nl.crolox.labelscout.aspect.Loggable
 
 ' nl.crolox.labelscout.service.ProductAdviesService
 nl.crolox.labelscout.service.ProductAdviesService ..o nl.crolox.labelscout.domain.Groep
@@ -684,6 +911,13 @@ nl.crolox.labelscout.service.ProductAdviesService ..o nl.crolox.labelscout.repos
 nl.crolox.labelscout.service.ProductAdviesService ..o nl.crolox.labelscout.aspect.Loggable
 
 ' nl.crolox.labelscout.service.ProductAdviesService$PreferentieClusterResponse$Embedded
+
+' nl.crolox.labelscout.service.VoorraadVerwerkingService
+nl.crolox.labelscout.service.VoorraadVerwerkingService ..o nl.crolox.labelscout.GlobalUtils
+nl.crolox.labelscout.service.VoorraadVerwerkingService ..o nl.crolox.labelscout.domain.GroothandelVoorraad
+nl.crolox.labelscout.service.VoorraadVerwerkingService ..o nl.crolox.labelscout.domain.Groothandel
+nl.crolox.labelscout.service.VoorraadVerwerkingService ..o nl.crolox.labelscout.repository.GroothandelRepository
+nl.crolox.labelscout.service.VoorraadVerwerkingService ..o nl.crolox.labelscout.repository.GroothandelVoorraadRepository
 
 ' nl.crolox.labelscout.service.ProductAdviesService$PreferentieClusterResponse
 
@@ -697,26 +931,37 @@ nl.crolox.labelscout.service.ProductAdviesService ..o nl.crolox.labelscout.aspec
 
 ' nl.crolox.labelscout.service.ProductAdviesService$PreferentieClusterResponse
 
+' nl.crolox.labelscout.service.VoorraadVerwerkingService
+
 ' nl.crolox.labelscout.service.ProductAdviesService
+
+' nl.crolox.labelscout.service.DataWareHouseAPIServiceV1
 
 
 !endsub
 
 
 !startsub IMPORTS_NL_CROLOX_LABELSCOUT_WEB
+' nl.crolox.labelscout.web.ApotheekVoorraadRestController
+nl.crolox.labelscout.web.ApotheekVoorraadRestController ..o nl.crolox.labelscout.domain.Apotheek
+nl.crolox.labelscout.web.ApotheekVoorraadRestController ..o nl.crolox.labelscout.domain.Groothandel
+nl.crolox.labelscout.web.ApotheekVoorraadRestController ..o nl.crolox.labelscout.repository.GroothandelVoorraadRepository
+nl.crolox.labelscout.web.ApotheekVoorraadRestController ..o nl.crolox.labelscout.repository.ApotheekRepository
+nl.crolox.labelscout.web.ApotheekVoorraadRestController ..o nl.crolox.labelscout.aspect.Loggable
+
 ' nl.crolox.labelscout.web.HomeController
-nl.crolox.labelscout.web.HomeController ..o nl.crolox.labelscout.helper.GroepHelper
-nl.crolox.labelscout.web.HomeController ..o nl.crolox.labelscout.helper.ApotheekHelper
 nl.crolox.labelscout.web.HomeController ..o nl.crolox.labelscout.aspect.Loggable
 
 ' nl.crolox.labelscout.web.Utils
-nl.crolox.labelscout.web.Utils ..o nl.crolox.labelscout.domain.Gebruiker
-nl.crolox.labelscout.web.Utils ..o nl.crolox.labelscout.repository.GebruikerRepository
 
 ' nl.crolox.labelscout.web.ZoekController
+nl.crolox.labelscout.web.ZoekController ..o nl.crolox.labelscout.repository.RequestResponseAuditRepository
+nl.crolox.labelscout.web.ZoekController ..o nl.crolox.labelscout.repository.AuditLogRepository
 nl.crolox.labelscout.web.ZoekController ..o nl.crolox.labelscout.helper.Product
 nl.crolox.labelscout.web.ZoekController ..o nl.crolox.labelscout.repository.ApotheekRepository
+nl.crolox.labelscout.web.ZoekController ..o nl.crolox.labelscout.GlobalUtils
 nl.crolox.labelscout.web.ZoekController ..o nl.crolox.labelscout.service.ProductAdviesService
+nl.crolox.labelscout.web.ZoekController ..o nl.crolox.labelscout.Constants
 nl.crolox.labelscout.web.ZoekController ..o nl.crolox.labelscout.aspect.Loggable
 
 ' nl.crolox.labelscout.web.AdminPagesController
@@ -729,6 +974,8 @@ nl.crolox.labelscout.web.AdminPagesController ..o nl.crolox.labelscout.aspect.Lo
 ' nl.crolox.labelscout.web.ZoekController
 
 ' nl.crolox.labelscout.web.AdminPagesController
+
+' nl.crolox.labelscout.web.ApotheekVoorraadRestController
 
 ' nl.crolox.labelscout.web.HomeController
 

@@ -6,14 +6,14 @@
 ' Path            : [/Users/paolobrunasti/IdeaProjects/OCTA/zindexproductsservice/build/classes/java/main]
 ' Java Files Path : [/Users/paolobrunasti/IdeaProjects/OCTA/zindexproductsservice/src/main/java/]
 ' Configuration   : [/Users/paolobrunasti/IdeaProjects/mine/java-diagrammer/docs/octa/config.json]
-' Generated at    : Wed Feb 04 13:30:40 CET 2026
+' Generated at    : Mon May 18 09:47:06 CEST 2026
 '
 '   Stat infos    :
-'       Files : [60]
-'       Lines : [6738]
-'     Classes : [60]
-'     Methods : [658]
-'      Fields : [320]
+'       Files : [62]
+'       Lines : [6672]
+'     Classes : [62]
+'     Methods : [694]
+'      Fields : [330]
 
 ' Include         : [./docs/includedFile.txt] ---------
 title Example with legend and title
@@ -40,13 +40,6 @@ end legend
 '!includesub OCTA-zindexproductsservice-class-diagram.puml!FIELDS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE
 '!includesub OCTA-zindexproductsservice-class-diagram.puml!USES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE
 '!includesub OCTA-zindexproductsservice-class-diagram.puml!IMPORTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE
-
-'!includesub OCTA-zindexproductsservice-class-diagram.puml!COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_ASPECT
-'!includesub OCTA-zindexproductsservice-class-diagram.puml!INHERITANCES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_ASPECT
-'!includesub OCTA-zindexproductsservice-class-diagram.puml!IMPLEMENTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_ASPECT
-'!includesub OCTA-zindexproductsservice-class-diagram.puml!FIELDS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_ASPECT
-'!includesub OCTA-zindexproductsservice-class-diagram.puml!USES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_ASPECT
-'!includesub OCTA-zindexproductsservice-class-diagram.puml!IMPORTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_ASPECT
 
 '!includesub OCTA-zindexproductsservice-class-diagram.puml!COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_COMMON
 '!includesub OCTA-zindexproductsservice-class-diagram.puml!INHERITANCES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_COMMON
@@ -115,14 +108,9 @@ end legend
 
 ' CLASSES =======
 !startsub COM_CROLOX_ZINDEX_PRODUCTS_SERVICE
+class com.crolox.zindex.products.service.OpenApiConfiguration
 class com.crolox.zindex.products.service.ZindexProductsService$1
 class com.crolox.zindex.products.service.ZindexProductsService
-
-!endsub
-
-!startsub COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_ASPECT
-interface com.crolox.zindex.products.service.aspect.Loggable
-class com.crolox.zindex.products.service.aspect.LoggingAspect
 
 !endsub
 
@@ -166,6 +154,7 @@ class com.crolox.zindex.products.service.controller.InfoController
 !startsub COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_DOMAIN
 class com.crolox.zindex.products.service.domain.ProductPrice
 class com.crolox.zindex.products.service.domain.Product
+class com.crolox.zindex.products.service.domain.PreferentieCluster
 
 !endsub
 
@@ -188,6 +177,7 @@ class com.crolox.zindex.products.service.exception.ApplicationException
 
 !startsub COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_REPOSITORY
 interface com.crolox.zindex.products.service.repository.ProductRepository
+interface com.crolox.zindex.products.service.repository.PreferentieClusterRepository
 
 !endsub
 
@@ -206,11 +196,6 @@ class com.crolox.zindex.products.service.util.Utils
 ' INHERITANCES =======
 
 !startsub INHERITANCES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE
-
-!endsub
-
-
-!startsub INHERITANCES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_ASPECT
 
 !endsub
 
@@ -265,12 +250,6 @@ java.lang.Exception <|-- com.crolox.zindex.products.service.exception.Applicatio
 ' IMPLEMENT INTERFACE =======
 
 !startsub IMPLEMENTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE
-
-!endsub
-
-
-!startsub IMPLEMENTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_ASPECT
-java.lang.annotation.Annotation <|.. com.crolox.zindex.products.service.aspect.Loggable
 
 !endsub
 
@@ -331,11 +310,6 @@ com.crolox.zindex.products.service.ZindexProductsService --> com.crolox.zindex.p
 !endsub
 
 
-!startsub FIELDS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_ASPECT
-
-!endsub
-
-
 !startsub FIELDS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_COMMON
 
 !endsub
@@ -377,6 +351,7 @@ com.crolox.zindex.products.service.domain.ProductPrice --> com.crolox.zindex.pro
 !startsub FIELDS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_SERVICE
 com.crolox.zindex.products.service.service.ProductService --> com.crolox.zindex.products.service.repository.ProductRepository
 com.crolox.zindex.products.service.service.ProductService --> com.crolox.zindex.products.service.service.FileDataService
+com.crolox.zindex.products.service.service.FileDataService --> com.crolox.zindex.products.service.repository.PreferentieClusterRepository
 com.crolox.zindex.products.service.service.ProductRefreshService --> com.crolox.zindex.products.service.service.FileDataService
 com.crolox.zindex.products.service.service.ProductRefreshService --> com.crolox.zindex.products.service.service.ProductService
 
@@ -391,11 +366,6 @@ com.crolox.zindex.products.service.service.ProductRefreshService --> com.crolox.
 
 !startsub USES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE
 com.crolox.zindex.products.service.ZindexProductsService$1 ..> com.crolox.zindex.products.service.ZindexProductsService
-
-!endsub
-
-
-!startsub USES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_ASPECT
 
 !endsub
 
@@ -441,6 +411,7 @@ com.crolox.zindex.products.service.domain.Product ..> com.crolox.zindex.products
 !startsub USES_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_SERVICE
 com.crolox.zindex.products.service.service.ProductService ..> com.crolox.zindex.products.service.domain.Product
 com.crolox.zindex.products.service.service.ProductService ..> com.crolox.zindex.products.service.dto.HulpmiddelenFilterDto
+com.crolox.zindex.products.service.service.FileDataService ..> com.crolox.zindex.products.service.domain.PreferentieCluster
 com.crolox.zindex.products.service.service.ProductRefreshService ..> com.crolox.zindex.products.service.common.WarningLabel
 
 !endsub
@@ -455,6 +426,12 @@ com.crolox.zindex.products.service.util.Utils ..> com.crolox.zindex.products.ser
 ' Java Files Path : /Users/paolobrunasti/IdeaProjects/OCTA/zindexproductsservice/src/main/java/
 
 !startsub IMPORTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE
+' com.crolox.zindex.products.service.OpenApiConfiguration
+com.crolox.zindex.products.service.OpenApiConfiguration ..o io.swagger.v3.oas.annotations.info.Info
+com.crolox.zindex.products.service.OpenApiConfiguration ..o io.swagger.v3.oas.annotations.OpenAPIDefinition
+com.crolox.zindex.products.service.OpenApiConfiguration ..o io.swagger.v3.oas.annotations.info.Contact
+com.crolox.zindex.products.service.OpenApiConfiguration ..o io.swagger.v3.oas.annotations.info.License
+
 ' com.crolox.zindex.products.service.ZindexProductsService$1
 
 ' com.crolox.zindex.products.service.ZindexProductsService
@@ -463,20 +440,9 @@ com.crolox.zindex.products.service.ZindexProductsService ..o  com.crolox.zindex.
 
 ' com.crolox.zindex.products.service.ZindexProductsService$1
 
+' com.crolox.zindex.products.service.OpenApiConfiguration
+
 ' com.crolox.zindex.products.service.ZindexProductsService
-
-
-!endsub
-
-
-!startsub IMPORTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_ASPECT
-' com.crolox.zindex.products.service.aspect.Loggable
-
-' com.crolox.zindex.products.service.aspect.LoggingAspect
-
-' com.crolox.zindex.products.service.aspect.Loggable
-
-' com.crolox.zindex.products.service.aspect.LoggingAspect
 
 
 !endsub
@@ -531,11 +497,9 @@ com.crolox.zindex.products.service.config.SimpleCORSFilter ..o  com.crolox.zinde
 com.crolox.zindex.products.service.controller.ProductController ..o com.crolox.zindex.products.service.dto.HulpmiddelenFilterDto
 com.crolox.zindex.products.service.controller.ProductController ..o com.crolox.zindex.products.service.domain.Product
 com.crolox.zindex.products.service.controller.ProductController ..o com.crolox.zindex.products.service.service.ProductService
-com.crolox.zindex.products.service.controller.ProductController ..o com.crolox.zindex.products.service.aspect.Loggable
 
 ' com.crolox.zindex.products.service.controller.InfoController
 com.crolox.zindex.products.service.controller.InfoController ..o com.crolox.zindex.products.service.service.ProductService
-com.crolox.zindex.products.service.controller.InfoController ..o com.crolox.zindex.products.service.aspect.Loggable
 com.crolox.zindex.products.service.controller.InfoController ..o  com.crolox.zindex.products.service.common.Info.productsUpdateDateTime
 
 ' com.crolox.zindex.products.service.controller.ProductController
@@ -551,7 +515,11 @@ com.crolox.zindex.products.service.controller.InfoController ..o  com.crolox.zin
 
 ' com.crolox.zindex.products.service.domain.Product
 
+' com.crolox.zindex.products.service.domain.PreferentieCluster
+
 ' com.crolox.zindex.products.service.domain.Product
+
+' com.crolox.zindex.products.service.domain.PreferentieCluster
 
 ' com.crolox.zindex.products.service.domain.ProductPrice
 
@@ -608,7 +576,13 @@ com.crolox.zindex.products.service.controller.InfoController ..o  com.crolox.zin
 !startsub IMPORTS_COM_CROLOX_ZINDEX_PRODUCTS_SERVICE_REPOSITORY
 ' com.crolox.zindex.products.service.repository.ProductRepository
 
+' com.crolox.zindex.products.service.repository.PreferentieClusterRepository
+com.crolox.zindex.products.service.repository.PreferentieClusterRepository ..o com.crolox.zindex.products.service.domain.Product
+com.crolox.zindex.products.service.repository.PreferentieClusterRepository ..o com.crolox.zindex.products.service.domain.PreferentieCluster
+
 ' com.crolox.zindex.products.service.repository.ProductRepository
+
+' com.crolox.zindex.products.service.repository.PreferentieClusterRepository
 
 
 !endsub
@@ -621,8 +595,10 @@ com.crolox.zindex.products.service.controller.InfoController ..o  com.crolox.zin
 com.crolox.zindex.products.service.service.FileDataService ..o com.crolox.zindex.products.service.util.Utils
 com.crolox.zindex.products.service.service.FileDataService ..o com.crolox.odessa.util.OdessaUtils
 com.crolox.zindex.products.service.service.FileDataService ..o com.crolox.zindex.products.service.common.FileData
+com.crolox.zindex.products.service.service.FileDataService ..o com.crolox.zindex.products.service.domain.PreferentieCluster
 com.crolox.zindex.products.service.service.FileDataService ..o  com.crolox.zindex.products.service.common.Info.APPLICATION_LOG_PREFIX
 com.crolox.zindex.products.service.service.FileDataService ..o com.crolox.zindex.products.service.common.DateLayout
+com.crolox.zindex.products.service.service.FileDataService ..o com.crolox.zindex.products.service.repository.PreferentieClusterRepository
 
 ' com.crolox.zindex.products.service.service.ProductRefreshService
 

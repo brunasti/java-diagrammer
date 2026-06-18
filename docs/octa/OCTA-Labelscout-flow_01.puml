@@ -5,9 +5,21 @@
 ' Generator       : it.brunasti.java.diagrammer.spring.web.WebFlowAnalyser
 ' Java Files Path : [/Users/paolobrunasti/IdeaProjects/OCTA/labelscout/src/main/java/]
 ' Configuration   : [./docs/config.json]
-' Generated at    : Thu Jan 15 11:56:46 CET 2026
+' Generated at    : Mon May 18 09:47:06 CEST 2026
 '
 '   Pages infos    :
+class "GET /v1/datawarehouse/apotheken" as DataWareHouseAPIServiceV1_datawarehouseGetApotheken {
+    Get
+    nl.crolox.labelscout.service.DataWareHouseAPIServiceV1
+    DataWareHouseAPIServiceV1_datawarehouseGetApotheken
+}
+
+class "GET /v1/datawarehouse/advice/audit" as DataWareHouseAPIServiceV1_datawarehouseGetAudit {
+    Get
+    nl.crolox.labelscout.service.DataWareHouseAPIServiceV1
+    DataWareHouseAPIServiceV1_datawarehouseGetAudit
+}
+
 class "POST /v1/public/advice" as LabelscoutServiceV1_advice {
     Post
     nl.crolox.labelscout.service.LabelscoutServiceV1
@@ -144,6 +156,18 @@ class "POST /login/admin/label/update-order" as AdminPagesController_updateOrder
     Post
     nl.crolox.labelscout.web.AdminPagesController
     AdminPagesController_updateOrder
+}
+
+class "POST /v1/public/voorraad/check" as ApotheekVoorraadRestController_checkVoorraad {
+    Post
+    nl.crolox.labelscout.web.ApotheekVoorraadRestController
+    ApotheekVoorraadRestController_checkVoorraad
+}
+
+class "POST /v1/public/voorraad/bulk-check" as ApotheekVoorraadRestController_bulkCheckVoorraad {
+    Post
+    nl.crolox.labelscout.web.ApotheekVoorraadRestController
+    ApotheekVoorraadRestController_bulkCheckVoorraad
 }
 
 class "GET /" as HomeController_homePage {

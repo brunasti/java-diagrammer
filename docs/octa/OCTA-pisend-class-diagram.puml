@@ -6,13 +6,13 @@
 ' Path            : [/Users/paolobrunasti/IdeaProjects/OCTA/pisend/target/classes]
 ' Java Files Path : [/Users/paolobrunasti/IdeaProjects/OCTA/pisend/src/main/java/]
 ' Configuration   : [/Users/paolobrunasti/IdeaProjects/mine/java-diagrammer/docs/octa/config.json]
-' Generated at    : Wed Feb 04 13:30:40 CET 2026
+' Generated at    : Mon May 18 09:47:06 CEST 2026
 '
 '   Stat infos    :
-'       Files : [63]
-'       Lines : [3228]
-'     Classes : [62]
-'     Methods : [346]
+'       Files : [65]
+'       Lines : [3268]
+'     Classes : [64]
+'     Methods : [354]
 '      Fields : [200]
 
 ' Include         : [./docs/includedFile.txt] ---------
@@ -153,6 +153,7 @@ class com.crolox.pisend.component.ManualBvgOrderReceiver
 !startsub COM_CROLOX_PISEND_CONFIG
 class com.crolox.pisend.config.MvcConfig
 class com.crolox.pisend.config.AppContextEventListener
+class com.crolox.pisend.config.OpenApiConfig
 
 !endsub
 
@@ -489,6 +490,7 @@ com.crolox.pisend.api.BvGOrderAPI ..> com.crolox.pisend.domain.BvgOrderLog
 
 
 !startsub USES_COM_CROLOX_PISEND_CONFIG
+com.crolox.pisend.config.OpenApiConfig ..> io.swagger.v3.oas.models.OpenAPI
 
 !endsub
 
@@ -577,6 +579,7 @@ com.crolox.pisend.PisendApplication ..o com.crolox.pisend.service.RabbitMQServic
 !startsub IMPORTS_COM_CROLOX_PISEND_API
 ' com.crolox.pisend.api.BvGOrderAPI
 com.crolox.pisend.api.BvGOrderAPI ..o com.crolox.pisend.domain.BvgOrderLog
+com.crolox.pisend.api.BvGOrderAPI ..o io.swagger.v3.oas.annotations.tags.Tag
 com.crolox.pisend.api.BvGOrderAPI ..o com.crolox.pisend.repository.BvgOrderLogRepository
 
 ' com.crolox.pisend.api.BvGOrderAPI
@@ -601,9 +604,16 @@ com.crolox.pisend.component.ManualBvgOrderReceiver ..o com.crolox.pisend.service
 ' com.crolox.pisend.config.AppContextEventListener
 com.crolox.pisend.config.AppContextEventListener ..o com.crolox.pisend.component.ManualBvgOrderReceiver
 
+' com.crolox.pisend.config.OpenApiConfig
+com.crolox.pisend.config.OpenApiConfig ..o io.swagger.v3.oas.models.info.Contact
+com.crolox.pisend.config.OpenApiConfig ..o io.swagger.v3.oas.models.OpenAPI
+com.crolox.pisend.config.OpenApiConfig ..o io.swagger.v3.oas.models.info.Info
+
 ' com.crolox.pisend.config.MvcConfig
 
 ' com.crolox.pisend.config.AppContextEventListener
+
+' com.crolox.pisend.config.OpenApiConfig
 
 
 !endsub

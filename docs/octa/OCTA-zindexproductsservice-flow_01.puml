@@ -5,7 +5,7 @@
 ' Generator       : it.brunasti.java.diagrammer.spring.web.WebFlowAnalyser
 ' Java Files Path : [/Users/paolobrunasti/IdeaProjects/OCTA/zindexproductsservice/src/main/java/]
 ' Configuration   : [./docs/config.json]
-' Generated at    : Thu Jan 15 11:56:46 CET 2026
+' Generated at    : Mon May 18 09:47:06 CEST 2026
 '
 '   Pages infos    :
 class "GET /products/lastupdate" as InfoController_getProductsUpdateDateTime {

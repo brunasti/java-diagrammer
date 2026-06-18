@@ -6,14 +6,14 @@
 ' Path            : [/Users/paolobrunasti/IdeaProjects/OCTA/pharmacomstocksender/build/classes/java/main]
 ' Java Files Path : [/Users/paolobrunasti/IdeaProjects/OCTA/pharmacomstocksender/src/main/java/]
 ' Configuration   : [/Users/paolobrunasti/IdeaProjects/mine/java-diagrammer/docs/octa/config.json]
-' Generated at    : Wed Feb 04 13:30:40 CET 2026
+' Generated at    : Mon May 18 09:47:06 CEST 2026
 '
 '   Stat infos    :
-'       Files : [66]
-'       Lines : [1266]
-'     Classes : [66]
-'     Methods : [396]
-'      Fields : [188]
+'       Files : [80]
+'       Lines : [1650]
+'     Classes : [80]
+'     Methods : [464]
+'      Fields : [204]
 
 ' Include         : [./docs/includedFile.txt] ---------
 title Example with legend and title
@@ -40,6 +40,20 @@ end legend
 '!includesub OCTA-pharmacomstocksender-class-diagram.puml!FIELDS_NL_CROLOX_PHARMACOMSTOCKSENDER
 '!includesub OCTA-pharmacomstocksender-class-diagram.puml!USES_NL_CROLOX_PHARMACOMSTOCKSENDER
 '!includesub OCTA-pharmacomstocksender-class-diagram.puml!IMPORTS_NL_CROLOX_PHARMACOMSTOCKSENDER
+
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!NL_CROLOX_PHARMACOMSTOCKSENDER_CONFIG
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!INHERITANCES_NL_CROLOX_PHARMACOMSTOCKSENDER_CONFIG
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!IMPLEMENTS_NL_CROLOX_PHARMACOMSTOCKSENDER_CONFIG
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!FIELDS_NL_CROLOX_PHARMACOMSTOCKSENDER_CONFIG
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!USES_NL_CROLOX_PHARMACOMSTOCKSENDER_CONFIG
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!IMPORTS_NL_CROLOX_PHARMACOMSTOCKSENDER_CONFIG
+
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!NL_CROLOX_PHARMACOMSTOCKSENDER_CONTROLLER
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!INHERITANCES_NL_CROLOX_PHARMACOMSTOCKSENDER_CONTROLLER
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!IMPLEMENTS_NL_CROLOX_PHARMACOMSTOCKSENDER_CONTROLLER
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!FIELDS_NL_CROLOX_PHARMACOMSTOCKSENDER_CONTROLLER
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!USES_NL_CROLOX_PHARMACOMSTOCKSENDER_CONTROLLER
+'!includesub OCTA-pharmacomstocksender-class-diagram.puml!IMPORTS_NL_CROLOX_PHARMACOMSTOCKSENDER_CONTROLLER
 
 '!includesub OCTA-pharmacomstocksender-class-diagram.puml!NL_CROLOX_PHARMACOMSTOCKSENDER_GENERATED
 '!includesub OCTA-pharmacomstocksender-class-diagram.puml!INHERITANCES_NL_CROLOX_PHARMACOMSTOCKSENDER_GENERATED
@@ -109,6 +123,19 @@ class nl.crolox.pharmacomstocksender.NamespaceFixCallback
 
 !endsub
 
+!startsub NL_CROLOX_PHARMACOMSTOCKSENDER_CONFIG
+class nl.crolox.pharmacomstocksender.config.WebMvcRedirectConfig
+class nl.crolox.pharmacomstocksender.config.OpenApiConfiguration
+class nl.crolox.pharmacomstocksender.config.SecurityConfig
+
+!endsub
+
+!startsub NL_CROLOX_PHARMACOMSTOCKSENDER_CONTROLLER
+class nl.crolox.pharmacomstocksender.controller.ApotheekController
+class nl.crolox.pharmacomstocksender.controller.HomeController
+
+!endsub
+
 !startsub NL_CROLOX_PHARMACOMSTOCKSENDER_GENERATED
 class nl.crolox.pharmacomstocksender.generated.ObjectFactory
 
@@ -126,12 +153,14 @@ class nl.crolox.pharmacomstocksender.interceptor.DaoInterceptor
 !endsub
 
 !startsub NL_CROLOX_PHARMACOMSTOCKSENDER_MODEL
+class nl.crolox.pharmacomstocksender.model.Voorraad
 class nl.crolox.pharmacomstocksender.model.Apotheek
 
 !endsub
 
 !startsub NL_CROLOX_PHARMACOMSTOCKSENDER_REPOSITORY
 interface nl.crolox.pharmacomstocksender.repository.ApotheekRepository
+interface nl.crolox.pharmacomstocksender.repository.VoorraadRepository
 
 !endsub
 
@@ -193,6 +222,16 @@ class nl.pharmapartners.services.filedeliverservice.v2.File
 !endsub
 
 
+!startsub INHERITANCES_NL_CROLOX_PHARMACOMSTOCKSENDER_CONFIG
+
+!endsub
+
+
+!startsub INHERITANCES_NL_CROLOX_PHARMACOMSTOCKSENDER_CONTROLLER
+
+!endsub
+
+
 !startsub INHERITANCES_NL_CROLOX_PHARMACOMSTOCKSENDER_GENERATED
 
 !endsub
@@ -240,6 +279,16 @@ javax.net.ssl.X509TrustManager <|.. nl.crolox.pharmacomstocksender.WebServiceCon
 !endsub
 
 
+!startsub IMPLEMENTS_NL_CROLOX_PHARMACOMSTOCKSENDER_CONFIG
+
+!endsub
+
+
+!startsub IMPLEMENTS_NL_CROLOX_PHARMACOMSTOCKSENDER_CONTROLLER
+
+!endsub
+
+
 !startsub IMPLEMENTS_NL_CROLOX_PHARMACOMSTOCKSENDER_GENERATED
 
 !endsub
@@ -278,9 +327,22 @@ javax.net.ssl.X509TrustManager <|.. nl.crolox.pharmacomstocksender.WebServiceCon
 
 !startsub FIELDS_NL_CROLOX_PHARMACOMSTOCKSENDER
 nl.crolox.pharmacomstocksender.FileDeliveryService --> nl.crolox.pharmacomstocksender.repository.ApotheekRepository
+nl.crolox.pharmacomstocksender.FileDeliveryService --> nl.crolox.pharmacomstocksender.repository.VoorraadRepository
 nl.crolox.pharmacomstocksender.WebServiceConfig$1 --> nl.crolox.pharmacomstocksender.WebServiceConfig
 nl.crolox.pharmacomstocksender.WebServiceConfig$2 --> nl.crolox.pharmacomstocksender.WebServiceConfig
 nl.crolox.pharmacomstocksender.WebServiceConfig$3 --> nl.crolox.pharmacomstocksender.WebServiceConfig
+
+!endsub
+
+
+!startsub FIELDS_NL_CROLOX_PHARMACOMSTOCKSENDER_CONFIG
+
+!endsub
+
+
+!startsub FIELDS_NL_CROLOX_PHARMACOMSTOCKSENDER_CONTROLLER
+nl.crolox.pharmacomstocksender.controller.ApotheekController --> nl.crolox.pharmacomstocksender.repository.ApotheekRepository
+nl.crolox.pharmacomstocksender.controller.ApotheekController --> nl.crolox.pharmacomstocksender.repository.VoorraadRepository
 
 !endsub
 
@@ -301,6 +363,7 @@ nl.crolox.pharmacomstocksender.WebServiceConfig$3 --> nl.crolox.pharmacomstockse
 
 
 !startsub FIELDS_NL_CROLOX_PHARMACOMSTOCKSENDER_MODEL
+nl.crolox.pharmacomstocksender.model.Apotheek --> nl.crolox.pharmacomstocksender.model.Voorraad
 
 !endsub
 
@@ -342,6 +405,19 @@ nl.crolox.pharmacomstocksender.WebServiceConfig$3 ..> nl.crolox.pharmacomstockse
 !endsub
 
 
+!startsub USES_NL_CROLOX_PHARMACOMSTOCKSENDER_CONFIG
+
+!endsub
+
+
+!startsub USES_NL_CROLOX_PHARMACOMSTOCKSENDER_CONTROLLER
+nl.crolox.pharmacomstocksender.controller.ApotheekController ..> nl.crolox.pharmacomstocksender.model.Apotheek
+nl.crolox.pharmacomstocksender.controller.ApotheekController ..> nl.crolox.pharmacomstocksender.repository.ApotheekRepository
+nl.crolox.pharmacomstocksender.controller.ApotheekController ..> nl.crolox.pharmacomstocksender.repository.VoorraadRepository
+
+!endsub
+
+
 !startsub USES_NL_CROLOX_PHARMACOMSTOCKSENDER_GENERATED
 
 !endsub
@@ -358,6 +434,7 @@ nl.crolox.pharmacomstocksender.WebServiceConfig$3 ..> nl.crolox.pharmacomstockse
 
 
 !startsub USES_NL_CROLOX_PHARMACOMSTOCKSENDER_MODEL
+nl.crolox.pharmacomstocksender.model.Apotheek ..> nl.crolox.pharmacomstocksender.model.Voorraad
 
 !endsub
 
@@ -405,8 +482,10 @@ nl.pharmapartners.services.filedeliverservice.v2.Result ..> nl.pharmapartners.se
 
 ' nl.crolox.pharmacomstocksender.FileDeliveryService
 nl.crolox.pharmacomstocksender.FileDeliveryService ..o nl.crolox.pharmacomstocksender.helper.StockItem
+nl.crolox.pharmacomstocksender.FileDeliveryService ..o nl.crolox.pharmacomstocksender.model.Voorraad
 nl.crolox.pharmacomstocksender.FileDeliveryService ..o nl.crolox.pharmacomstocksender.helper.Product
 nl.crolox.pharmacomstocksender.FileDeliveryService ..o nl.crolox.pharmacomstocksender.model.Apotheek
+nl.crolox.pharmacomstocksender.FileDeliveryService ..o nl.crolox.pharmacomstocksender.repository.VoorraadRepository
 nl.crolox.pharmacomstocksender.FileDeliveryService ..o nl.pharmapartners.services.filedeliverservice.v2.DeliverFileResponse
 nl.crolox.pharmacomstocksender.FileDeliveryService ..o nl.pharmapartners.services.filedeliverservice.v2.DeliverFileRequest
 nl.crolox.pharmacomstocksender.FileDeliveryService ..o nl.pharmapartners.services.filedeliverservice.v2.File
@@ -459,6 +538,44 @@ nl.crolox.pharmacomstocksender.FileDeliveryService ..o nl.crolox.pharmacomstocks
 !endsub
 
 
+!startsub IMPORTS_NL_CROLOX_PHARMACOMSTOCKSENDER_CONFIG
+' nl.crolox.pharmacomstocksender.config.WebMvcRedirectConfig
+
+' nl.crolox.pharmacomstocksender.config.OpenApiConfiguration
+nl.crolox.pharmacomstocksender.config.OpenApiConfiguration ..o io.swagger.v3.oas.annotations.info.Info
+nl.crolox.pharmacomstocksender.config.OpenApiConfiguration ..o io.swagger.v3.oas.annotations.OpenAPIDefinition
+nl.crolox.pharmacomstocksender.config.OpenApiConfiguration ..o io.swagger.v3.oas.annotations.info.Contact
+nl.crolox.pharmacomstocksender.config.OpenApiConfiguration ..o io.swagger.v3.oas.annotations.info.License
+
+' nl.crolox.pharmacomstocksender.config.SecurityConfig
+
+' nl.crolox.pharmacomstocksender.config.OpenApiConfiguration
+
+' nl.crolox.pharmacomstocksender.config.SecurityConfig
+
+' nl.crolox.pharmacomstocksender.config.WebMvcRedirectConfig
+
+
+!endsub
+
+
+!startsub IMPORTS_NL_CROLOX_PHARMACOMSTOCKSENDER_CONTROLLER
+' nl.crolox.pharmacomstocksender.controller.ApotheekController
+nl.crolox.pharmacomstocksender.controller.ApotheekController ..o nl.crolox.pharmacomstocksender.model.Voorraad
+nl.crolox.pharmacomstocksender.controller.ApotheekController ..o nl.crolox.pharmacomstocksender.repository.ApotheekRepository
+nl.crolox.pharmacomstocksender.controller.ApotheekController ..o nl.crolox.pharmacomstocksender.model.Apotheek
+nl.crolox.pharmacomstocksender.controller.ApotheekController ..o nl.crolox.pharmacomstocksender.repository.VoorraadRepository
+
+' nl.crolox.pharmacomstocksender.controller.HomeController
+
+' nl.crolox.pharmacomstocksender.controller.ApotheekController
+
+' nl.crolox.pharmacomstocksender.controller.HomeController
+
+
+!endsub
+
+
 !startsub IMPORTS_NL_CROLOX_PHARMACOMSTOCKSENDER_GENERATED
 ' nl.crolox.pharmacomstocksender.generated.ObjectFactory
 
@@ -491,7 +608,11 @@ nl.crolox.pharmacomstocksender.FileDeliveryService ..o nl.crolox.pharmacomstocks
 
 
 !startsub IMPORTS_NL_CROLOX_PHARMACOMSTOCKSENDER_MODEL
+' nl.crolox.pharmacomstocksender.model.Voorraad
+
 ' nl.crolox.pharmacomstocksender.model.Apotheek
+
+' nl.crolox.pharmacomstocksender.model.Voorraad
 
 ' nl.crolox.pharmacomstocksender.model.Apotheek
 
@@ -501,6 +622,10 @@ nl.crolox.pharmacomstocksender.FileDeliveryService ..o nl.crolox.pharmacomstocks
 
 !startsub IMPORTS_NL_CROLOX_PHARMACOMSTOCKSENDER_REPOSITORY
 ' nl.crolox.pharmacomstocksender.repository.ApotheekRepository
+
+' nl.crolox.pharmacomstocksender.repository.VoorraadRepository
+
+' nl.crolox.pharmacomstocksender.repository.VoorraadRepository
 
 ' nl.crolox.pharmacomstocksender.repository.ApotheekRepository
 

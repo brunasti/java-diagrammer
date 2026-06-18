@@ -6,47 +6,103 @@
 ' Path            : [./target/classes]
 ' Java Files Path : [./src/main/java/]
 ' Configuration   : [./docs/config.json]
-' Generated at    : Thu Nov 13 13:48:55 CET 2025
+' Generated at    : Mon May 18 09:47:05 CEST 2026
 '
 '   Stat infos    :
-'       Files : [14]
-'       Lines : [2428]
-'     Classes : [13]
-'     Methods : [142]
-'      Fields : [36]
+'       Files : [24]
+'       Lines : [3914]
+'     Classes : [23]
+'     Methods : [188]
+'      Fields : [78]
+
+
+
+'!includesub .puml!IT_BRUNASTI_JAVA_DIAGRAMMER
+'!includesub .puml!INHERITANCES_IT_BRUNASTI_JAVA_DIAGRAMMER
+'!includesub .puml!IMPLEMENTS_IT_BRUNASTI_JAVA_DIAGRAMMER
+'!includesub .puml!FIELDS_IT_BRUNASTI_JAVA_DIAGRAMMER
+'!includesub .puml!USES_IT_BRUNASTI_JAVA_DIAGRAMMER
+'!includesub .puml!IMPORTS_IT_BRUNASTI_JAVA_DIAGRAMMER
+
+'!includesub .puml!IT_BRUNASTI_JAVA_DIAGRAMMER_SPRING_WEB
+'!includesub .puml!INHERITANCES_IT_BRUNASTI_JAVA_DIAGRAMMER_SPRING_WEB
+'!includesub .puml!IMPLEMENTS_IT_BRUNASTI_JAVA_DIAGRAMMER_SPRING_WEB
+'!includesub .puml!FIELDS_IT_BRUNASTI_JAVA_DIAGRAMMER_SPRING_WEB
+'!includesub .puml!USES_IT_BRUNASTI_JAVA_DIAGRAMMER_SPRING_WEB
+'!includesub .puml!IMPORTS_IT_BRUNASTI_JAVA_DIAGRAMMER_SPRING_WEB
 
 
 
 ' CLASSES =======
-class it.brunasti.java.diagrammer.ClassDiagrammerMain
-class it.brunasti.java.diagrammer.ImportsIdentifier
-class it.brunasti.java.diagrammer.Debugger
-class it.brunasti.java.diagrammer.Utils
+!startsub 
 class module-info
-class it.brunasti.java.diagrammer.ClassDiagrammer
-class it.brunasti.java.diagrammer.DiagramPlotter
-class it.brunasti.java.diagrammer.ClassDiagrammer
-class it.brunasti.java.diagrammer.Utils
-class it.brunasti.java.diagrammer.Debugger
+
+!endsub
+
+!startsub IT_BRUNASTI_JAVA_DIAGRAMMER
 class it.brunasti.java.diagrammer.ClassDiagrammerMain
 class it.brunasti.java.diagrammer.ImportsIdentifier
+class it.brunasti.java.diagrammer.Debugger
+class it.brunasti.java.diagrammer.Utils
+interface it.brunasti.java.diagrammer.package-info
+class it.brunasti.java.diagrammer.ClassDiagrammer
 class it.brunasti.java.diagrammer.DiagramPlotter
+
+!endsub
+
+!startsub IT_BRUNASTI_JAVA_DIAGRAMMER_SPRING_WEB
+interface it.brunasti.java.diagrammer.spring.web.package-info
+class it.brunasti.java.diagrammer.spring.web.WebFlowAnalyser
+class it.brunasti.java.diagrammer.spring.web.WebPageMaping
+class it.brunasti.java.diagrammer.spring.web.WebFlowAnalyserMain
+
+!endsub
 
 ' INHERITANCES =======
 
+!startsub INHERITANCES_IT_BRUNASTI_JAVA_DIAGRAMMER
+
+!endsub
+
+
+!startsub INHERITANCES_IT_BRUNASTI_JAVA_DIAGRAMMER_SPRING_WEB
+
+!endsub
+
 ' IMPLEMENT INTERFACE =======
 
+!startsub IMPLEMENTS_IT_BRUNASTI_JAVA_DIAGRAMMER
+
+!endsub
+
+
+!startsub IMPLEMENTS_IT_BRUNASTI_JAVA_DIAGRAMMER_SPRING_WEB
+
+!endsub
+
 ' FIELDS =======
+
+!startsub FIELDS_IT_BRUNASTI_JAVA_DIAGRAMMER
 it.brunasti.java.diagrammer.ClassDiagrammerMain --> org.apache.commons.cli.CommandLine
 it.brunasti.java.diagrammer.ClassDiagrammerMain --> it.brunasti.java.diagrammer.ClassDiagrammer
 it.brunasti.java.diagrammer.ClassDiagrammerMain --> org.apache.commons.cli.Options
 it.brunasti.java.diagrammer.ClassDiagrammer --> java.io.PrintStream
-it.brunasti.java.diagrammer.ClassDiagrammer --> java.io.PrintStream
-it.brunasti.java.diagrammer.ClassDiagrammerMain --> org.apache.commons.cli.CommandLine
-it.brunasti.java.diagrammer.ClassDiagrammerMain --> it.brunasti.java.diagrammer.ClassDiagrammer
-it.brunasti.java.diagrammer.ClassDiagrammerMain --> org.apache.commons.cli.Options
+
+!endsub
+
+
+!startsub FIELDS_IT_BRUNASTI_JAVA_DIAGRAMMER_SPRING_WEB
+it.brunasti.java.diagrammer.spring.web.WebFlowAnalyser --> java.io.PrintStream
+it.brunasti.java.diagrammer.spring.web.WebPageMaping --> java.io.File
+it.brunasti.java.diagrammer.spring.web.WebFlowAnalyserMain --> org.apache.commons.cli.CommandLine
+it.brunasti.java.diagrammer.spring.web.WebFlowAnalyserMain --> it.brunasti.java.diagrammer.spring.web.WebFlowAnalyser
+it.brunasti.java.diagrammer.spring.web.WebFlowAnalyserMain --> org.apache.commons.cli.Options
+
+!endsub
 
 ' USES =======
+
+!startsub USES_IT_BRUNASTI_JAVA_DIAGRAMMER
 it.brunasti.java.diagrammer.ClassDiagrammerMain ..> org.apache.commons.cli.Options
 it.brunasti.java.diagrammer.Utils ..> java.io.PrintStream
 it.brunasti.java.diagrammer.Utils ..> org.json.simple.JSONObject
@@ -55,11 +111,24 @@ it.brunasti.java.diagrammer.ClassDiagrammer ..> org.json.simple.JSONObject
 it.brunasti.java.diagrammer.ClassDiagrammer ..> org.apache.bcel.classfile.JavaClass
 it.brunasti.java.diagrammer.ClassDiagrammer ..> org.apache.bcel.classfile.Field
 it.brunasti.java.diagrammer.ClassDiagrammer ..> org.apache.bcel.util.ClassLoaderRepository
-it.brunasti.java.diagrammer.ClassDiagrammer ..> it.brunasti.java.diagrammer.ImportsIdentifier
 it.brunasti.java.diagrammer.DiagramPlotter ..> java.nio.file.Path
+
+!endsub
+
+
+!startsub USES_IT_BRUNASTI_JAVA_DIAGRAMMER_SPRING_WEB
+it.brunasti.java.diagrammer.spring.web.WebFlowAnalyser ..> java.io.PrintStream
+it.brunasti.java.diagrammer.spring.web.WebFlowAnalyser ..> org.json.simple.JSONObject
+it.brunasti.java.diagrammer.spring.web.WebFlowAnalyserMain ..> org.apache.commons.cli.Options
+
+!endsub
 
 ' IMPORTS =======
 ' Java Files Path : ./src/main/java/
+' module-info
+
+
+!startsub IMPORTS_IT_BRUNASTI_JAVA_DIAGRAMMER
 ' it.brunasti.java.diagrammer.ClassDiagrammerMain
 it.brunasti.java.diagrammer.ClassDiagrammerMain ..o org.apache.commons.cli.CommandLineParser
 it.brunasti.java.diagrammer.ClassDiagrammerMain ..o org.apache.commons.cli.ParseException
@@ -81,7 +150,7 @@ it.brunasti.java.diagrammer.ImportsIdentifier ..o java.io.FileNotFoundException
 ' it.brunasti.java.diagrammer.Utils
 it.brunasti.java.diagrammer.Utils ..o org.json.simple.JSONObject
 
-' module-info
+' it.brunasti.java.diagrammer.package-info
 
 ' it.brunasti.java.diagrammer.ClassDiagrammer
 it.brunasti.java.diagrammer.ClassDiagrammer ..o java.io.PrintStream
@@ -115,6 +184,8 @@ it.brunasti.java.diagrammer.DiagramPlotter ..o net.sourceforge.plantuml.SourceSt
 
 ' it.brunasti.java.diagrammer.Utils
 
+' it.brunasti.java.diagrammer.package-info
+
 ' it.brunasti.java.diagrammer.Debugger
 
 ' it.brunasti.java.diagrammer.ClassDiagrammerMain
@@ -123,6 +194,41 @@ it.brunasti.java.diagrammer.DiagramPlotter ..o net.sourceforge.plantuml.SourceSt
 
 ' it.brunasti.java.diagrammer.DiagramPlotter
 
+
+!endsub
+
+
+!startsub IMPORTS_IT_BRUNASTI_JAVA_DIAGRAMMER_SPRING_WEB
+' it.brunasti.java.diagrammer.spring.web.package-info
+
+' it.brunasti.java.diagrammer.spring.web.WebFlowAnalyser
+it.brunasti.java.diagrammer.spring.web.WebFlowAnalyser ..o java.io.PrintStream
+it.brunasti.java.diagrammer.spring.web.WebFlowAnalyser ..o it.brunasti.java.diagrammer.Utils
+it.brunasti.java.diagrammer.spring.web.WebFlowAnalyser ..o org.json.simple.JSONObject
+it.brunasti.java.diagrammer.spring.web.WebFlowAnalyser ..o it.brunasti.java.diagrammer.Debugger
+it.brunasti.java.diagrammer.spring.web.WebFlowAnalyser ..o java.io.IOException
+
+' it.brunasti.java.diagrammer.spring.web.WebPageMaping
+it.brunasti.java.diagrammer.spring.web.WebPageMaping ..o java.io.File
+
+' it.brunasti.java.diagrammer.spring.web.WebFlowAnalyserMain
+it.brunasti.java.diagrammer.spring.web.WebFlowAnalyserMain ..o java.io.PrintStream
+it.brunasti.java.diagrammer.spring.web.WebFlowAnalyserMain ..o java.io.PrintWriter
+it.brunasti.java.diagrammer.spring.web.WebFlowAnalyserMain ..o it.brunasti.java.diagrammer.Utils
+it.brunasti.java.diagrammer.spring.web.WebFlowAnalyserMain ..o it.brunasti.java.diagrammer.Debugger
+it.brunasti.java.diagrammer.spring.web.WebFlowAnalyserMain ..o java.io.FileOutputStream
+it.brunasti.java.diagrammer.spring.web.WebFlowAnalyserMain ..o java.io.IOException
+
+' it.brunasti.java.diagrammer.spring.web.WebFlowAnalyser
+
+' it.brunasti.java.diagrammer.spring.web.WebFlowAnalyserMain
+
+' it.brunasti.java.diagrammer.spring.web.package-info
+
+' it.brunasti.java.diagrammer.spring.web.WebPageMaping
+
+
+!endsub
 
 
 @enduml

@@ -6,13 +6,13 @@
 ' Path            : [/Users/paolobrunasti/IdeaProjects/OCTA/stock/target/classes]
 ' Java Files Path : [/Users/paolobrunasti/IdeaProjects/OCTA/stock/src/main/java/]
 ' Configuration   : [/Users/paolobrunasti/IdeaProjects/mine/java-diagrammer/docs/octa/config.json]
-' Generated at    : Wed Feb 04 13:30:40 CET 2026
+' Generated at    : Mon May 18 09:47:06 CEST 2026
 '
 '   Stat infos    :
-'       Files : [1031]
-'       Lines : [41336]
-'     Classes : [438]
-'     Methods : [4480]
+'       Files : [1032]
+'       Lines : [41660]
+'     Classes : [440]
+'     Methods : [4484]
 '      Fields : [1990]
 
 ' Include         : [./docs/includedFile.txt] ---------
@@ -328,6 +328,7 @@ enum com.crolox.pistock.common.ImportType{
 
 !startsub COM_CROLOX_PISTOCK_CONFIG
 class com.crolox.pistock.config.MvcConfig
+class com.crolox.pistock.config.OpenApiConfig
 class com.crolox.pistock.config.AppContextEventListener
 
 !endsub
@@ -1318,6 +1319,7 @@ com.crolox.pistock.api.gui.dto.ProductGuiDto ..> com.crolox.pistock.common.Produ
 
 
 !startsub USES_COM_CROLOX_PISTOCK_CONFIG
+com.crolox.pistock.config.OpenApiConfig ..> io.swagger.v3.oas.models.OpenAPI
 
 !endsub
 
@@ -1620,11 +1622,13 @@ com.crolox.pistock.api.extern.PharmacyLocationDto ..o com.crolox.pistock.model.P
 ' com.crolox.pistock.api.extern.BackorderDtoAPI
 com.crolox.pistock.api.extern.BackorderDtoAPI ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
 com.crolox.pistock.api.extern.BackorderDtoAPI ..o com.crolox.pistock.service.BackorderService
+com.crolox.pistock.api.extern.BackorderDtoAPI ..o com.crolox.pistock.aspect.Loggable
 
 ' com.crolox.pistock.api.extern.ExternApiProductDtoAPI
 com.crolox.pistock.api.extern.ExternApiProductDtoAPI ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
 com.crolox.pistock.api.extern.ExternApiProductDtoAPI ..o com.crolox.pistock.service.ProductCreationService
 com.crolox.pistock.api.extern.ExternApiProductDtoAPI ..o com.crolox.pistock.service.ProductService
+com.crolox.pistock.api.extern.ExternApiProductDtoAPI ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.api.extern.ExternApiProductDtoAPI ..o com.crolox.pistock.service.PharmacyLocationService
 com.crolox.pistock.api.extern.ExternApiProductDtoAPI ..o com.crolox.pistock.model.Product
 com.crolox.pistock.api.extern.ExternApiProductDtoAPI ..o com.crolox.pistock.model.PharmacyLocation
@@ -1632,6 +1636,7 @@ com.crolox.pistock.api.extern.ExternApiProductDtoAPI ..o com.crolox.pistock.util
 
 ' com.crolox.pistock.api.extern.PharmacyLocationDtoAPI
 com.crolox.pistock.api.extern.PharmacyLocationDtoAPI ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
+com.crolox.pistock.api.extern.PharmacyLocationDtoAPI ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.api.extern.PharmacyLocationDtoAPI ..o com.crolox.pistock.service.PharmacyLocationService
 com.crolox.pistock.api.extern.PharmacyLocationDtoAPI ..o com.crolox.pistock.model.PharmacyLocation
 com.crolox.pistock.api.extern.PharmacyLocationDtoAPI ..o com.crolox.pistock.util.CommonUtils
@@ -1639,6 +1644,7 @@ com.crolox.pistock.api.extern.PharmacyLocationDtoAPI ..o com.crolox.pistock.exce
 
 ' com.crolox.pistock.api.extern.StockLocationDtoAPI
 com.crolox.pistock.api.extern.StockLocationDtoAPI ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
+com.crolox.pistock.api.extern.StockLocationDtoAPI ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.api.extern.StockLocationDtoAPI ..o com.crolox.pistock.service.PharmacyLocationService
 com.crolox.pistock.api.extern.StockLocationDtoAPI ..o com.crolox.pistock.service.StockLocationService
 com.crolox.pistock.api.extern.StockLocationDtoAPI ..o com.crolox.pistock.util.CommonUtils
@@ -1648,6 +1654,7 @@ com.crolox.pistock.api.extern.StockLocationDtoAPI ..o com.crolox.pistock.excepti
 com.crolox.pistock.api.extern.ReservationDtoAPI ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
 com.crolox.pistock.api.extern.ReservationDtoAPI ..o com.crolox.odessa.pickorderio.entity.ShippingInfoType
 com.crolox.pistock.api.extern.ReservationDtoAPI ..o com.crolox.pistock.service.ProductService
+com.crolox.pistock.api.extern.ReservationDtoAPI ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.api.extern.ReservationDtoAPI ..o com.crolox.pistock.model.Reservation
 com.crolox.pistock.api.extern.ReservationDtoAPI ..o com.crolox.pistock.service.PharmacyLocationService
 com.crolox.pistock.api.extern.ReservationDtoAPI ..o com.crolox.pistock.model.Product
@@ -1663,6 +1670,7 @@ com.crolox.pistock.api.extern.ProductLocationDto ..o com.crolox.pistock.model.Pr
 
 ' com.crolox.pistock.api.extern.ProductRequestDtoAPI
 com.crolox.pistock.api.extern.ProductRequestDtoAPI ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
+com.crolox.pistock.api.extern.ProductRequestDtoAPI ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.api.extern.ProductRequestDtoAPI ..o com.crolox.odessa.dto.ReceiptBarcodes
 com.crolox.pistock.api.extern.ProductRequestDtoAPI ..o com.crolox.pistock.queue.ReceiptBarcodeQueueHandler
 com.crolox.pistock.api.extern.ProductRequestDtoAPI ..o com.crolox.pistock.util.CommonUtils
@@ -1671,6 +1679,7 @@ com.crolox.pistock.api.extern.ProductRequestDtoAPI ..o com.crolox.pistock.except
 ' com.crolox.pistock.api.extern.StockSubLocationDto
 
 ' com.crolox.pistock.api.extern.ProductInfoDtoAPI
+com.crolox.pistock.api.extern.ProductInfoDtoAPI ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.api.extern.ProductInfoDtoAPI ..o com.crolox.pistock.service.ProductSearchService
 com.crolox.pistock.api.extern.ProductInfoDtoAPI ..o com.crolox.pistock.exception.BadRequestException
 com.crolox.pistock.api.extern.ProductInfoDtoAPI ..o com.crolox.pistock.service.StockLocationService
@@ -1688,17 +1697,20 @@ com.crolox.pistock.api.extern.ProductInfoDtoAPI ..o com.crolox.pistock.exception
 ' com.crolox.pistock.api.extern.OpenReservationsAPI
 com.crolox.pistock.api.extern.OpenReservationsAPI ..o com.crolox.pistock.service.OpenReservationsService
 com.crolox.pistock.api.extern.OpenReservationsAPI ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
+com.crolox.pistock.api.extern.OpenReservationsAPI ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.api.extern.OpenReservationsAPI ..o com.crolox.pistock.view.OpenReservations
 com.crolox.pistock.api.extern.OpenReservationsAPI ..o com.crolox.pistock.util.CommonUtils
 com.crolox.pistock.api.extern.OpenReservationsAPI ..o com.crolox.pistock.exception.ApplicationException
 
 ' com.crolox.pistock.api.extern.TempGpkEnricher
 com.crolox.pistock.api.extern.TempGpkEnricher ..o com.crolox.pistock.service.ProductService
+com.crolox.pistock.api.extern.TempGpkEnricher ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.api.extern.TempGpkEnricher ..o com.crolox.pistock.util.CommonUtils
 com.crolox.pistock.api.extern.TempGpkEnricher ..o com.crolox.pistock.exception.ApplicationException
 
 ' com.crolox.pistock.api.extern.StockSubLocationDtoAPI
 com.crolox.pistock.api.extern.StockSubLocationDtoAPI ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
+com.crolox.pistock.api.extern.StockSubLocationDtoAPI ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.api.extern.StockSubLocationDtoAPI ..o com.crolox.pistock.dto.ProductDto
 com.crolox.pistock.api.extern.StockSubLocationDtoAPI ..o com.crolox.pistock.common.ChangedBy
 com.crolox.pistock.api.extern.StockSubLocationDtoAPI ..o com.crolox.pistock.util.CommonUtils
@@ -1707,6 +1719,7 @@ com.crolox.pistock.api.extern.StockSubLocationDtoAPI ..o com.crolox.pistock.exce
 ' com.crolox.pistock.api.extern.ReplenishListAPI
 com.crolox.pistock.api.extern.ReplenishListAPI ..o com.crolox.pistock.view.ReplenishList
 com.crolox.pistock.api.extern.ReplenishListAPI ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
+com.crolox.pistock.api.extern.ReplenishListAPI ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.api.extern.ReplenishListAPI ..o com.crolox.pistock.service.ReplenishListService
 com.crolox.pistock.api.extern.ReplenishListAPI ..o com.crolox.pistock.util.CommonUtils
 com.crolox.pistock.api.extern.ReplenishListAPI ..o com.crolox.pistock.exception.ApplicationException
@@ -1714,6 +1727,7 @@ com.crolox.pistock.api.extern.ReplenishListAPI ..o com.crolox.pistock.exception.
 ' com.crolox.pistock.api.extern.StockPerLocationAPI
 com.crolox.pistock.api.extern.StockPerLocationAPI ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
 com.crolox.pistock.api.extern.StockPerLocationAPI ..o com.crolox.pistock.service.StockPerLocationService
+com.crolox.pistock.api.extern.StockPerLocationAPI ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.api.extern.StockPerLocationAPI ..o com.crolox.pistock.view.StockPerLocation
 com.crolox.pistock.api.extern.StockPerLocationAPI ..o com.crolox.pistock.util.CommonUtils
 com.crolox.pistock.api.extern.StockPerLocationAPI ..o com.crolox.pistock.exception.ApplicationException
@@ -1725,6 +1739,7 @@ com.crolox.pistock.api.extern.StockLocationDto ..o com.crolox.pistock.model.Stoc
 
 ' com.crolox.pistock.api.extern.ReservationVsStockDtoAPI
 com.crolox.pistock.api.extern.ReservationVsStockDtoAPI ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
+com.crolox.pistock.api.extern.ReservationVsStockDtoAPI ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.api.extern.ReservationVsStockDtoAPI ..o com.crolox.pistock.service.ReservationVsStockService
 com.crolox.pistock.api.extern.ReservationVsStockDtoAPI ..o com.crolox.pistock.util.CommonUtils
 com.crolox.pistock.api.extern.ReservationVsStockDtoAPI ..o com.crolox.pistock.exception.ApplicationException
@@ -1803,6 +1818,7 @@ com.crolox.pistock.api.extern.ProductLocationDtoAPI ..o com.crolox.pistock.excep
 !startsub IMPORTS_COM_CROLOX_PISTOCK_API_EXTERN_FLUENC
 ' com.crolox.pistock.api.extern.fluenc.StockOnLocationAPI
 com.crolox.pistock.api.extern.fluenc.StockOnLocationAPI ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
+com.crolox.pistock.api.extern.fluenc.StockOnLocationAPI ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.api.extern.fluenc.StockOnLocationAPI ..o com.crolox.pistock.service.PharmacyLocationService
 com.crolox.pistock.api.extern.fluenc.StockOnLocationAPI ..o com.crolox.pistock.api.extern.fluenc.dto.Stock
 com.crolox.pistock.api.extern.fluenc.StockOnLocationAPI ..o com.crolox.pistock.api.extern.fluenc.dto.StockOnPharmacyLocation
@@ -1845,6 +1861,7 @@ com.crolox.pistock.api.extern.fluenc.StockOnLocationAPI ..o com.crolox.pistock.e
 !startsub IMPORTS_COM_CROLOX_PISTOCK_API_GUI
 ' com.crolox.pistock.api.gui.StockIndicatorAPI
 com.crolox.pistock.api.gui.StockIndicatorAPI ..o com.crolox.pistock.service.StockInfoSenderService
+com.crolox.pistock.api.gui.StockIndicatorAPI ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.api.gui.StockIndicatorAPI ..o com.crolox.pistock.model.StockIndicator
 com.crolox.pistock.api.gui.StockIndicatorAPI ..o com.crolox.pistock.util.CommonUtils
 com.crolox.pistock.api.gui.StockIndicatorAPI ..o com.crolox.pistock.service.StockIndicatorService
@@ -1852,30 +1869,36 @@ com.crolox.pistock.api.gui.StockIndicatorAPI ..o com.crolox.pistock.exception.Ap
 
 ' com.crolox.pistock.api.gui.ReservationsPerPharmacyPerMonthAPI
 com.crolox.pistock.api.gui.ReservationsPerPharmacyPerMonthAPI ..o com.crolox.pistock.service.ReservationsPerPharmacyPerMonthService
+com.crolox.pistock.api.gui.ReservationsPerPharmacyPerMonthAPI ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.api.gui.ReservationsPerPharmacyPerMonthAPI ..o com.crolox.pistock.dto.ReservationsPerPharmacyPerMonthDto
 
 ' com.crolox.pistock.api.gui.StockImportAPI
 com.crolox.pistock.api.gui.StockImportAPI ..o com.crolox.pistock.service.ImportService
+com.crolox.pistock.api.gui.StockImportAPI ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.api.gui.StockImportAPI ..o com.crolox.pistock.util.CommonUtils
 com.crolox.pistock.api.gui.StockImportAPI ..o com.crolox.pistock.exception.ApplicationException
 
 ' com.crolox.pistock.api.gui.ProductStatusAPI
 com.crolox.pistock.api.gui.ProductStatusAPI ..o com.crolox.pistock.common.ProductStatus
+com.crolox.pistock.api.gui.ProductStatusAPI ..o com.crolox.pistock.aspect.Loggable
 
 ' com.crolox.pistock.api.gui.PakbonDtoAPI
 com.crolox.pistock.api.gui.PakbonDtoAPI ..o com.crolox.pistock.dto.PakbonDto
+com.crolox.pistock.api.gui.PakbonDtoAPI ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.api.gui.PakbonDtoAPI ..o com.crolox.pistock.service.PakbonService
 com.crolox.pistock.api.gui.PakbonDtoAPI ..o com.crolox.pistock.util.CommonUtils
 com.crolox.pistock.api.gui.PakbonDtoAPI ..o com.crolox.pistock.exception.ApplicationException
 
 ' com.crolox.pistock.api.gui.PharmacyLocationAPI
 com.crolox.pistock.api.gui.PharmacyLocationAPI ..o com.crolox.pistock.model.PharmacyLocation
+com.crolox.pistock.api.gui.PharmacyLocationAPI ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.api.gui.PharmacyLocationAPI ..o com.crolox.pistock.service.PharmacyLocationService
 com.crolox.pistock.api.gui.PharmacyLocationAPI ..o com.crolox.pistock.util.CommonUtils
 com.crolox.pistock.api.gui.PharmacyLocationAPI ..o com.crolox.pistock.exception.ApplicationException
 
 ' com.crolox.pistock.api.gui.ReservationProductLocationsDtoAPI
 com.crolox.pistock.api.gui.ReservationProductLocationsDtoAPI ..o com.crolox.pistock.service.ReservationsProductLocationsDtoService
+com.crolox.pistock.api.gui.ReservationProductLocationsDtoAPI ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.api.gui.ReservationProductLocationsDtoAPI ..o com.crolox.pistock.model.Reservation
 com.crolox.pistock.api.gui.ReservationProductLocationsDtoAPI ..o com.crolox.pistock.service.ReservationService
 com.crolox.pistock.api.gui.ReservationProductLocationsDtoAPI ..o com.crolox.pistock.util.CommonUtils
@@ -1883,8 +1906,9 @@ com.crolox.pistock.api.gui.ReservationProductLocationsDtoAPI ..o com.crolox.pist
 com.crolox.pistock.api.gui.ReservationProductLocationsDtoAPI ..o com.crolox.pistock.exception.ApplicationException
 
 ' com.crolox.pistock.api.gui.PharmacyAPI
-com.crolox.pistock.api.gui.PharmacyAPI ..o com.crolox.pistock.service.PharmacyService
+com.crolox.pistock.api.gui.PharmacyAPI ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.api.gui.PharmacyAPI ..o com.crolox.pistock.dto.PharmacyDto
+com.crolox.pistock.api.gui.PharmacyAPI ..o com.crolox.pistock.service.PharmacyService
 com.crolox.pistock.api.gui.PharmacyAPI ..o com.crolox.pistock.util.CommonUtils
 com.crolox.pistock.api.gui.PharmacyAPI ..o com.crolox.pistock.model.Pharmacy
 com.crolox.pistock.api.gui.PharmacyAPI ..o com.crolox.pistock.exception.ApplicationException
@@ -1892,9 +1916,11 @@ com.crolox.pistock.api.gui.PharmacyAPI ..o com.crolox.pistock.exception.Applicat
 ' com.crolox.pistock.api.gui.StockSnapshotAPI
 com.crolox.pistock.api.gui.StockSnapshotAPI ..o com.crolox.pistock.service.StockSnapshotService
 com.crolox.pistock.api.gui.StockSnapshotAPI ..o com.crolox.pistock.dto.StockSnapshotDto
+com.crolox.pistock.api.gui.StockSnapshotAPI ..o com.crolox.pistock.aspect.Loggable
 
 ' com.crolox.pistock.api.gui.ProductAPI
 com.crolox.pistock.api.gui.ProductAPI ..o com.crolox.pistock.service.ProductService
+com.crolox.pistock.api.gui.ProductAPI ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.api.gui.ProductAPI ..o com.crolox.pistock.service.PharmacyLocationService
 com.crolox.pistock.api.gui.ProductAPI ..o com.crolox.pistock.api.gui.dto.ProductGuiDto
 com.crolox.pistock.api.gui.ProductAPI ..o com.crolox.pistock.model.Product
@@ -1904,16 +1930,20 @@ com.crolox.pistock.api.gui.ProductAPI ..o com.crolox.pistock.exception.Applicati
 
 ' com.crolox.pistock.api.gui.OrderTypesAPI
 com.crolox.pistock.api.gui.OrderTypesAPI ..o com.crolox.pistock.common.OrderType
+com.crolox.pistock.api.gui.OrderTypesAPI ..o com.crolox.pistock.aspect.Loggable
 
 ' com.crolox.pistock.api.gui.WholesaleAPI
 com.crolox.pistock.api.gui.WholesaleAPI ..o com.crolox.pistock.model.Wholesale
+com.crolox.pistock.api.gui.WholesaleAPI ..o io.swagger.v3.oas.annotations.tags.Tag
 com.crolox.pistock.api.gui.WholesaleAPI ..o com.crolox.pistock.service.WholesaleService
+com.crolox.pistock.api.gui.WholesaleAPI ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.api.gui.WholesaleAPI ..o com.crolox.pistock.util.CommonUtils
 com.crolox.pistock.api.gui.WholesaleAPI ..o com.crolox.pistock.exception.ApplicationException
 
 ' com.crolox.pistock.api.gui.OrderProposalAPI
 com.crolox.pistock.api.gui.OrderProposalAPI ..o com.crolox.pistock.service.OrderNewStockProposalService
 com.crolox.pistock.api.gui.OrderProposalAPI ..o com.crolox.pistock.pojo.OrderProposals
+com.crolox.pistock.api.gui.OrderProposalAPI ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.api.gui.OrderProposalAPI ..o com.crolox.pistock.dto.PharmacyDto
 com.crolox.pistock.api.gui.OrderProposalAPI ..o com.crolox.pistock.service.PharmacyLocationService
 com.crolox.pistock.api.gui.OrderProposalAPI ..o com.crolox.pistock.model.PharmacyLocation
@@ -1926,10 +1956,12 @@ com.crolox.pistock.api.gui.OrderProposalAPI ..o com.crolox.pistock.util.CommonUt
 ' com.crolox.pistock.api.gui.BackorderAPI
 com.crolox.pistock.api.gui.BackorderAPI ..o com.crolox.pistock.model.Backorder
 com.crolox.pistock.api.gui.BackorderAPI ..o com.crolox.pistock.service.BackorderService
+com.crolox.pistock.api.gui.BackorderAPI ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.api.gui.BackorderAPI ..o com.crolox.pistock.util.CommonUtils
 com.crolox.pistock.api.gui.BackorderAPI ..o com.crolox.pistock.exception.ApplicationException
 
 ' com.crolox.pistock.api.gui.StockLocationAPI
+com.crolox.pistock.api.gui.StockLocationAPI ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.api.gui.StockLocationAPI ..o com.crolox.pistock.model.StockLocation
 com.crolox.pistock.api.gui.StockLocationAPI ..o com.crolox.pistock.service.StockLocationService
 com.crolox.pistock.api.gui.StockLocationAPI ..o com.crolox.pistock.util.CommonUtils
@@ -1937,6 +1969,7 @@ com.crolox.pistock.api.gui.StockLocationAPI ..o com.crolox.pistock.service.Stock
 com.crolox.pistock.api.gui.StockLocationAPI ..o com.crolox.pistock.exception.ApplicationException
 
 ' com.crolox.pistock.api.gui.ReservationAPI
+com.crolox.pistock.api.gui.ReservationAPI ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.api.gui.ReservationAPI ..o com.crolox.pistock.model.Reservation
 com.crolox.pistock.api.gui.ReservationAPI ..o com.crolox.pistock.service.ReservationService
 com.crolox.pistock.api.gui.ReservationAPI ..o com.crolox.pistock.service.ReservationsPerPharmacyPerMonthService
@@ -1946,6 +1979,7 @@ com.crolox.pistock.api.gui.ReservationAPI ..o com.crolox.pistock.exception.Appli
 ' com.crolox.pistock.api.gui.ProductSearchAPI
 com.crolox.pistock.api.gui.ProductSearchAPI ..o com.crolox.pistock.dto.EmbeddedProductList
 com.crolox.pistock.api.gui.ProductSearchAPI ..o com.crolox.pistock.service.ProductService
+com.crolox.pistock.api.gui.ProductSearchAPI ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.api.gui.ProductSearchAPI ..o com.crolox.pistock.service.ProductSearchService
 com.crolox.pistock.api.gui.ProductSearchAPI ..o  com.crolox.pistock.util.CommonUtils.forceParceToLong
 com.crolox.pistock.api.gui.ProductSearchAPI ..o com.crolox.pistock.model.Product
@@ -1956,6 +1990,7 @@ com.crolox.pistock.api.gui.ProductSearchAPI ..o com.crolox.pistock.exception.App
 
 ' com.crolox.pistock.api.gui.DeltaAPI
 com.crolox.pistock.api.gui.DeltaAPI ..o com.crolox.pistock.dto.DeltaOverviewParameters
+com.crolox.pistock.api.gui.DeltaAPI ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.api.gui.DeltaAPI ..o com.crolox.pistock.service.PharmacyLocationService
 com.crolox.pistock.api.gui.DeltaAPI ..o com.crolox.pistock.pojo.Delta
 com.crolox.pistock.api.gui.DeltaAPI ..o com.crolox.pistock.service.ReservationService
@@ -1965,6 +2000,7 @@ com.crolox.pistock.api.gui.DeltaAPI ..o com.crolox.pistock.service.DeltaService
 
 ' com.crolox.pistock.api.gui.ReceivedProductDtosAPI
 com.crolox.pistock.api.gui.ReceivedProductDtosAPI ..o com.crolox.pistock.service.ReceivedProductService
+com.crolox.pistock.api.gui.ReceivedProductDtosAPI ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.api.gui.ReceivedProductDtosAPI ..o com.crolox.pistock.model.ReceivedProduct
 com.crolox.pistock.api.gui.ReceivedProductDtosAPI ..o com.crolox.pistock.dto.ReceivedProductDto
 com.crolox.pistock.api.gui.ReceivedProductDtosAPI ..o com.crolox.pistock.util.CommonUtils
@@ -1972,18 +2008,21 @@ com.crolox.pistock.api.gui.ReceivedProductDtosAPI ..o com.crolox.pistock.excepti
 
 ' com.crolox.pistock.api.gui.StockSubLocationAPI
 com.crolox.pistock.api.gui.StockSubLocationAPI ..o com.crolox.pistock.model.StockSubLocation
+com.crolox.pistock.api.gui.StockSubLocationAPI ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.api.gui.StockSubLocationAPI ..o com.crolox.pistock.util.CommonUtils
 com.crolox.pistock.api.gui.StockSubLocationAPI ..o com.crolox.pistock.service.StockSubLocationService
 com.crolox.pistock.api.gui.StockSubLocationAPI ..o com.crolox.pistock.exception.ApplicationException
 
 ' com.crolox.pistock.api.gui.PakbonAPI
 com.crolox.pistock.api.gui.PakbonAPI ..o com.crolox.pistock.model.Pakbon
+com.crolox.pistock.api.gui.PakbonAPI ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.api.gui.PakbonAPI ..o com.crolox.pistock.service.PakbonService
 com.crolox.pistock.api.gui.PakbonAPI ..o com.crolox.pistock.util.CommonUtils
 com.crolox.pistock.api.gui.PakbonAPI ..o com.crolox.pistock.exception.ApplicationException
 
 ' com.crolox.pistock.api.gui.ProductLocationAPI
 com.crolox.pistock.api.gui.ProductLocationAPI ..o com.crolox.pistock.model.StockSubLocation
+com.crolox.pistock.api.gui.ProductLocationAPI ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.api.gui.ProductLocationAPI ..o com.crolox.pistock.model.ProductLocation
 com.crolox.pistock.api.gui.ProductLocationAPI ..o com.crolox.pistock.model.StockLocation
 com.crolox.pistock.api.gui.ProductLocationAPI ..o com.crolox.pistock.service.StockLocationService
@@ -1997,6 +2036,7 @@ com.crolox.pistock.api.gui.ProductLocationAPI ..o com.crolox.pistock.exception.A
 com.crolox.pistock.api.gui.StockDtoAPI ..o com.crolox.pistock.dto.StockDto
 com.crolox.pistock.api.gui.StockDtoAPI ..o  com.crolox.pistock.common.ApplicationConstants.API_CALL
 com.crolox.pistock.api.gui.StockDtoAPI ..o com.crolox.pistock.service.StockDtoService
+com.crolox.pistock.api.gui.StockDtoAPI ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.api.gui.StockDtoAPI ..o com.crolox.pistock.util.CommonUtils
 com.crolox.pistock.api.gui.StockDtoAPI ..o com.crolox.pistock.exception.ApplicationException
 
@@ -2108,7 +2148,14 @@ com.crolox.pistock.api.gui.StockDtoAPI ..o com.crolox.pistock.exception.Applicat
 !startsub IMPORTS_COM_CROLOX_PISTOCK_CONFIG
 ' com.crolox.pistock.config.MvcConfig
 
+' com.crolox.pistock.config.OpenApiConfig
+com.crolox.pistock.config.OpenApiConfig ..o io.swagger.v3.oas.models.info.Contact
+com.crolox.pistock.config.OpenApiConfig ..o io.swagger.v3.oas.models.OpenAPI
+com.crolox.pistock.config.OpenApiConfig ..o io.swagger.v3.oas.models.info.Info
+
 ' com.crolox.pistock.config.AppContextEventListener
+
+' com.crolox.pistock.config.OpenApiConfig
 
 ' com.crolox.pistock.config.MvcConfig
 
@@ -2210,7 +2257,6 @@ com.crolox.pistock.controller.gui.PharmacyLocationController ..o com.crolox.pist
 
 ' com.crolox.pistock.controller.gui.MainController
 com.crolox.pistock.controller.gui.MainController ..o com.crolox.pistock.service.ProductService
-com.crolox.pistock.controller.gui.MainController ..o com.crolox.pistock.aspect.Loggable
 
 ' com.crolox.pistock.controller.gui.PharmacyController
 com.crolox.pistock.controller.gui.PharmacyController ..o com.crolox.pistock.aspect.Loggable
@@ -2642,9 +2688,11 @@ com.crolox.pistock.scheduled.StackProcessing ..o com.crolox.pistock.queue.Produc
 com.crolox.pistock.scheduled.StackProcessing ..o com.crolox.pistock.queue.BackorderEatingStack
 com.crolox.pistock.scheduled.StackProcessing ..o com.crolox.pistock.service.ProductCreationService
 com.crolox.pistock.scheduled.StackProcessing ..o com.crolox.pistock.service.BackorderService
+com.crolox.pistock.scheduled.StackProcessing ..o com.crolox.pistock.aspect.Loggable
 
 ' com.crolox.pistock.scheduled.ReportsDataCollector
 com.crolox.pistock.scheduled.ReportsDataCollector ..o com.crolox.pistock.service.ProductService
+com.crolox.pistock.scheduled.ReportsDataCollector ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.scheduled.ReportsDataCollector ..o com.crolox.pistock.repository.PharmacyLocationRepository
 com.crolox.pistock.scheduled.ReportsDataCollector ..o com.crolox.pistock.model.PharmacyLocation
 com.crolox.pistock.scheduled.ReportsDataCollector ..o com.crolox.pistock.dto.StockSnapshotDto
@@ -2652,9 +2700,11 @@ com.crolox.pistock.scheduled.ReportsDataCollector ..o com.crolox.pistock.model.S
 com.crolox.pistock.scheduled.ReportsDataCollector ..o com.crolox.pistock.repository.StockSnapshotRepository
 
 ' com.crolox.pistock.scheduled.StockInfoSender
+com.crolox.pistock.scheduled.StockInfoSender ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.scheduled.StockInfoSender ..o com.crolox.pistock.exception.ApplicationException
 
 ' com.crolox.pistock.scheduled.StockReducer
+com.crolox.pistock.scheduled.StockReducer ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.scheduled.StockReducer ..o com.crolox.odessa.dto.ReceiptBarcodes
 com.crolox.pistock.scheduled.StockReducer ..o com.crolox.pistock.service.WriteOffService
 com.crolox.pistock.scheduled.StockReducer ..o com.crolox.odessa.dto.ReceiptAgbCodeReceiptBarcode
@@ -2666,6 +2716,7 @@ com.crolox.pistock.scheduled.StockReducer ..o com.crolox.pistock.exception.Appli
 com.crolox.pistock.scheduled.BvgOrderSender ..o com.crolox.pistock.service.SendOrders
 com.crolox.pistock.scheduled.BvgOrderSender ..o com.crolox.pistock.queue.BVGOrderProcessingQueue
 com.crolox.pistock.scheduled.BvgOrderSender ..o com.crolox.pistock.dto.BvgOrder
+com.crolox.pistock.scheduled.BvgOrderSender ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.scheduled.BvgOrderSender ..o com.crolox.pistock.dto.BvgOrderDto
 com.crolox.pistock.scheduled.BvgOrderSender ..o com.crolox.pistock.config.AppContextEventListener
 com.crolox.pistock.scheduled.BvgOrderSender ..o com.crolox.pistock.queue.CentralBVGOrderProcessingQueue
@@ -2677,13 +2728,16 @@ com.crolox.pistock.scheduled.Housekeeping ..o  com.crolox.pistock.common.Applica
 com.crolox.pistock.scheduled.Housekeeping ..o com.crolox.pistock.service.ReservationService
 com.crolox.pistock.scheduled.Housekeeping ..o  com.crolox.pistock.common.ApplicationConstants.THREE
 com.crolox.pistock.scheduled.Housekeeping ..o com.crolox.pistock.service.BackorderService
+com.crolox.pistock.scheduled.Housekeeping ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.scheduled.Housekeeping ..o com.crolox.pistock.repository.StockSnapshotRepository
 
 ' com.crolox.pistock.scheduled.AddStock
 com.crolox.pistock.scheduled.AddStock ..o com.crolox.pistock.service.OrderNewStockService
+com.crolox.pistock.scheduled.AddStock ..o com.crolox.pistock.aspect.Loggable
 
 ' com.crolox.pistock.scheduled.EnrichingBackordersWithProductInfo
 com.crolox.pistock.scheduled.EnrichingBackordersWithProductInfo ..o com.crolox.pistock.service.ProductService
+com.crolox.pistock.scheduled.EnrichingBackordersWithProductInfo ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.scheduled.EnrichingBackordersWithProductInfo ..o com.crolox.pistock.service.PharmacyLocationService
 com.crolox.pistock.scheduled.EnrichingBackordersWithProductInfo ..o com.crolox.pistock.service.ProductSearchService
 com.crolox.pistock.scheduled.EnrichingBackordersWithProductInfo ..o com.crolox.pistock.model.Product
@@ -2694,12 +2748,14 @@ com.crolox.pistock.scheduled.EnrichingBackordersWithProductInfo ..o com.crolox.p
 
 ' com.crolox.pistock.scheduled.UpdateProductsAIP
 com.crolox.pistock.scheduled.UpdateProductsAIP ..o com.crolox.pistock.service.ProductService
+com.crolox.pistock.scheduled.UpdateProductsAIP ..o com.crolox.pistock.aspect.Loggable
 
 ' com.crolox.pistock.scheduled.MailOrderSender
 com.crolox.pistock.scheduled.MailOrderSender ..o com.crolox.pistock.service.SendOrders
 com.crolox.pistock.scheduled.MailOrderSender ..o com.crolox.pistock.queue.MailOrderProcessingQueue
-com.crolox.pistock.scheduled.MailOrderSender ..o com.crolox.pistock.config.AppContextEventListener
+com.crolox.pistock.scheduled.MailOrderSender ..o com.crolox.pistock.aspect.Loggable
 com.crolox.pistock.scheduled.MailOrderSender ..o com.crolox.pistock.dto.MailOrder
+com.crolox.pistock.scheduled.MailOrderSender ..o com.crolox.pistock.config.AppContextEventListener
 com.crolox.pistock.scheduled.MailOrderSender ..o com.crolox.pistock.util.CommonUtils
 
 ' com.crolox.pistock.scheduled.EnrichingBackordersWithProductInfo
