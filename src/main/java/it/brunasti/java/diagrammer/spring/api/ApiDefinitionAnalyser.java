@@ -1,18 +1,9 @@
 package it.brunasti.java.diagrammer.spring.api;
 
-import com.thoughtworks.qdox.JavaProjectBuilder;
-import com.thoughtworks.qdox.model.JavaAnnotatedElement;
-import com.thoughtworks.qdox.model.JavaAnnotation;
-import com.thoughtworks.qdox.model.JavaClass;
-import com.thoughtworks.qdox.model.JavaMethod;
-import com.thoughtworks.qdox.model.JavaSource;
-import com.thoughtworks.qdox.parser.ParseException;
 import it.brunasti.java.diagrammer.Debugger;
 import it.brunasti.java.diagrammer.Utils;
 import org.json.simple.JSONObject;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.file.Files;
@@ -22,10 +13,11 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Stream;
 
 /**
- * Analyses Java source files to discover Spring REST API endpoints.
+ * Analyses Java source files (plain text) to discover Spring REST API endpoints.
  * Finds all classes annotated with @RestController, extracts @RequestMapping
  * (class-level base path) and all method-level HTTP mappings, and produces
  * a list of fully-qualified API URLs with their class and method context.
@@ -38,18 +30,15 @@ public class ApiDefinitionAnalyser {
 
     ArrayList<ApiEndpoint> endpoints = new ArrayList<>();
 
-    private static final String REST_CONTROLLER = "RestController";
+    private static final String REST_CONTROLLER   = "@RestController";
+    private static final String MAP_ID            = "Mapping";
+    private static final int    MAP_BLOCK_LENGTH  = 500;
+    private static final int    PRE_MAP_LENGTH    = 20;
+    private static final int    PRE_IMPORT_LENGTH = 120;
 
-    // Pairs of [annotation simple name, HTTP method string].
-    // null HTTP method means extract from @RequestMapping's "method" attribute.
-    private static final String[][] MAPPING_ANNOTATIONS = {
-        {"GetMapping",    "GET"},
-        {"PostMapping",   "POST"},
-        {"PutMapping",    "PUT"},
-        {"DeleteMapping", "DELETE"},
-        {"PatchMapping",  "PATCH"},
-        {"RequestMapping", null}
-    };
+    // Only these prefixes form valid Spring mapping annotations
+    private static final Set<String> VALID_MAPPING_PREFIXES =
+            Set.of("Get", "Post", "Put", "Delete", "Patch", "Request");
 
     public ApiDefinitionAnalyser(String javaFilesPath) {
         this.output = System.out;
@@ -96,100 +85,218 @@ public class ApiDefinitionAnalyser {
         }
     }
 
-    // ---- QDox annotation helpers ----
+    // ---- Text-parsing helpers ----
 
-    private JavaAnnotation findAnnotation(JavaAnnotatedElement element, String simpleName) {
-        for (JavaAnnotation annotation : element.getAnnotations()) {
-            if (annotation.getType().getSimpleName().equals(simpleName)) {
-                return annotation;
+    private String extractPackageName(String content) {
+        int start = content.indexOf("package ");
+        if (start < 0) return "";
+        start += "package ".length();
+        int end = content.indexOf(";", start);
+        return end > start ? content.substring(start, end).trim() : "";
+    }
+
+    private String extractClassName(String content) {
+        int idx = content.indexOf(" class ");
+        if (idx < 0) return "";
+        int nameStart = idx + " class ".length();
+        int nameEnd = nameStart;
+        while (nameEnd < content.length() && Character.isJavaIdentifierPart(content.charAt(nameEnd))) {
+            nameEnd++;
+        }
+        return content.substring(nameStart, nameEnd);
+    }
+
+    private int findClassBodyStart(String content, String className) {
+        if (className.isEmpty()) return 0;
+        int classIdx = content.indexOf("class " + className);
+        if (classIdx < 0) return 0;
+        int braceIdx = content.indexOf("{", classIdx);
+        return braceIdx >= 0 ? braceIdx : 0;
+    }
+
+    private boolean isRestController(String content) {
+        int idx = 0;
+        while (idx < content.length()) {
+            int pos = content.indexOf(REST_CONTROLLER, idx);
+            if (pos < 0) return false;
+
+            // Annotation form: @RestController must be the first non-whitespace token on its
+            // line (optionally preceded by other annotations starting with '@').
+            // This filters out occurrences inside string literals ("@RestController") and
+            // Javadoc/comment lines (* ... @RestController).
+            int lineStart = content.lastIndexOf('\n', pos) + 1;
+            String linePrefix = content.substring(lineStart, pos).trim();
+            boolean atLineStart = linePrefix.isEmpty() || linePrefix.startsWith("@");
+            if (!atLineStart) {
+                idx = pos + 1;
+                continue;
             }
+
+            // Guard against @RestControllerAdvice and similar
+            int after = pos + REST_CONTROLLER.length();
+            if (after >= content.length() || !Character.isJavaIdentifierPart(content.charAt(after))) {
+                return true;
+            }
+            idx = after;
         }
-        return null;
+        return false;
     }
 
-    private String extractUrlFromAnnotation(JavaAnnotation annotation) {
-        if (annotation == null) return "";
-        Object value = annotation.getNamedParameter("value");
-        if (value == null) {
-            value = annotation.getNamedParameter("path");
-        }
-        if (value == null) return "";
-        return resolveAnnotationStringValue(value);
+    /**
+     * Extract the URL string from the text immediately following the annotation name,
+     * e.g. from {@code ("/api/users")} or {@code (value = "/api/users")}.
+     * Returns the first quoted string found inside the parentheses, or "" if absent.
+     */
+    private String extractUrlFromAnnotationText(String textAfterAnnotationName) {
+        int firstQuote = textAfterAnnotationName.indexOf('"');
+        if (firstQuote < 0) return "";
+        int secondQuote = textAfterAnnotationName.indexOf('"', firstQuote + 1);
+        if (secondQuote < 0) return "";
+        return textAfterAnnotationName.substring(firstQuote + 1, secondQuote);
     }
 
-    @SuppressWarnings("unchecked")
-    private String resolveAnnotationStringValue(Object value) {
-        if (value instanceof List) {
-            List<Object> list = (List<Object>) value;
-            if (list.isEmpty()) return "";
-            return resolveAnnotationStringValue(list.get(0));
+    /**
+     * Extract the method function name from the block of text starting at "Mapping...".
+     * Skips past the annotation's closing ')' then finds the word immediately
+     * before the method's parameter-list '('.
+     */
+    private String extractFunctionName(String blockFromAnnotation) {
+        String afterAnnotationName = blockFromAnnotation.substring(MAP_ID.length());
+
+        // Skip annotation parameters if present
+        String rest;
+        if (afterAnnotationName.stripLeading().startsWith("(")) {
+            int annotationClose = afterAnnotationName.indexOf(')');
+            if (annotationClose < 0) return "";
+            rest = afterAnnotationName.substring(annotationClose + 1);
+        } else {
+            rest = afterAnnotationName;
         }
-        String str = value.toString().trim();
-        // QDox returns string literals with their surrounding double-quote characters
-        if (str.startsWith("\"") && str.endsWith("\"") && str.length() >= 2) {
-            str = str.substring(1, str.length() - 1);
-        }
-        return str;
+
+        // The method body opens with '{'; everything before it is the signature
+        int bodyStart = rest.indexOf('{');
+        if (bodyStart < 0) return "";
+        String signature = rest.substring(0, bodyStart);
+
+        // Method name is the word immediately before the parameter-list '('
+        int methodParen = signature.lastIndexOf('(');
+        if (methodParen < 0) return "";
+        String beforeParen = signature.substring(0, methodParen).trim();
+        int lastBreak = Math.max(beforeParen.lastIndexOf(' '), beforeParen.lastIndexOf('\n'));
+        return lastBreak >= 0 ? beforeParen.substring(lastBreak + 1).trim() : beforeParen;
     }
 
-    private String extractHttpMethodFromRequestMapping(JavaAnnotation annotation) {
-        Object methodValue = annotation.getNamedParameter("method");
-        if (methodValue == null) return "REQUEST";
-        String methodStr = resolveAnnotationStringValue(methodValue);
-        // Strip "RequestMethod." prefix, e.g. "RequestMethod.GET" -> "GET"
-        int dotIdx = methodStr.lastIndexOf('.');
-        if (dotIdx >= 0) {
-            methodStr = methodStr.substring(dotIdx + 1);
-        }
-        return methodStr.isBlank() ? "REQUEST" : methodStr;
-    }
-
-    // ---- Class and method analysis ----
-
-    public void analyseClass(JavaClass javaClass) {
-        if (findAnnotation(javaClass, REST_CONTROLLER) == null) return;
-
-        String packageName = javaClass.getPackageName();
-        String className = javaClass.getSimpleName();
-        Debugger.debug(2, "analyseClass - @RestController: " + packageName + "." + className);
-
-        // Class-level @RequestMapping defines the base path for all methods
-        String baseUrl = extractUrlFromAnnotation(findAnnotation(javaClass, "RequestMapping"));
-        Debugger.debug(3, "  Base URL: [" + baseUrl + "]");
-
-        for (JavaMethod method : javaClass.getMethods()) {
-            processMethod(method, packageName, className, baseUrl);
-        }
-
-        // Recurse into nested @RestController classes if any
-        for (JavaClass nested : javaClass.getNestedClasses()) {
-            analyseClass(nested);
+    /**
+     * Map annotation type prefix to an HTTP method string.
+     * For @RequestMapping, tries to read the {@code method = RequestMethod.XXX} attribute.
+     */
+    private String resolveHttpMethod(String annotationType, String blockFromAnnotation) {
+        switch (annotationType) {
+            case "Get":    return "GET";
+            case "Post":   return "POST";
+            case "Put":    return "PUT";
+            case "Delete": return "DELETE";
+            case "Patch":  return "PATCH";
+            case "Request": {
+                int rmIdx = blockFromAnnotation.indexOf("RequestMethod.");
+                if (rmIdx >= 0) {
+                    rmIdx += "RequestMethod.".length();
+                    int end = rmIdx;
+                    while (end < blockFromAnnotation.length()
+                            && Character.isUpperCase(blockFromAnnotation.charAt(end))) {
+                        end++;
+                    }
+                    if (end > rmIdx) return blockFromAnnotation.substring(rmIdx, end);
+                }
+                return "REQUEST";
+            }
+            default: return annotationType.toUpperCase();
         }
     }
 
-    private void processMethod(JavaMethod method,
-                               String packageName, String className, String baseUrl) {
-        for (String[] mapping : MAPPING_ANNOTATIONS) {
-            String annotationName = mapping[0];
-            String fixedHttpMethod = mapping[1];
+    // ---- File analysis ----
 
-            JavaAnnotation annotation = findAnnotation(method, annotationName);
-            if (annotation == null) continue;
+    public void analyseFile(String javaFilePath) {
+        Debugger.debug(3, "analyseFile : " + javaFilePath);
 
-            String url = extractUrlFromAnnotation(annotation);
-            String httpMethod = (fixedHttpMethod != null)
-                    ? fixedHttpMethod
-                    : extractHttpMethodFromRequestMapping(annotation);
+        String content = Utils.readFileToString(javaFilePath);
+        if (content.isEmpty()) return;
+        if (!isRestController(content)) return;
+
+        String packageName    = extractPackageName(content);
+        String className      = extractClassName(content);
+        int    classBodyStart = findClassBodyStart(content, className);
+
+        Debugger.debug(2, "analyseFile - @RestController: " + packageName + "." + className);
+
+        String classUrl = "";
+        int index = 0;
+
+        while (index < content.length()) {
+            int location = content.indexOf(MAP_ID, index);
+            if (location < 0) break;
+
+            // Skip import statements: check the current line for "import"
+            int lineStart = content.lastIndexOf('\n', location);
+            String linePrefix = content.substring(Math.max(0, lineStart), location);
+            if (linePrefix.contains("import ")) {
+                index = location + MAP_ID.length();
+                continue;
+            }
+
+            // Broader import check via context block
+            int ctxStart = Math.max(0, location - PRE_IMPORT_LENGTH);
+            String ctxBlock = content.substring(ctxStart, location);
+            if (ctxBlock.contains("import org.springframework")) {
+                index = location + MAP_ID.length();
+                continue;
+            }
+
+            // Extract annotation type from the '@' immediately preceding "Mapping"
+            String beforeMapping = content.substring(Math.max(0, location - PRE_MAP_LENGTH), location);
+            int atIdx = beforeMapping.lastIndexOf('@');
+            if (atIdx < 0) {
+                index = location + MAP_ID.length();
+                continue;
+            }
+            String annotationType = beforeMapping.substring(atIdx + 1).trim();
+            if (!VALID_MAPPING_PREFIXES.contains(annotationType)) {
+                index = location + MAP_ID.length();
+                continue;
+            }
+
+            // Grab a working block starting at "Mapping..."
+            String block = content.length() > (location + MAP_BLOCK_LENGTH)
+                    ? content.substring(location, location + MAP_BLOCK_LENGTH)
+                    : content.substring(location);
+
+            String url = extractUrlFromAnnotationText(block.substring(MAP_ID.length()));
+
+            Debugger.debug(3, " - annotation: @" + annotationType + "Mapping  url: [" + url + "]");
+
+            // Class-level @RequestMapping — record as base URL and move on
+            if (annotationType.equals("Request") && location < classBodyStart) {
+                classUrl = url;
+                Debugger.debug(3, "  Class base URL: [" + classUrl + "]");
+                index = location + MAP_ID.length();
+                continue;
+            }
+
+            String functionName = extractFunctionName(block);
+            String httpMethod   = resolveHttpMethod(annotationType, block);
+            String fullUrl      = classUrl + url;
 
             ApiEndpoint endpoint = new ApiEndpoint();
-            endpoint.packageName = packageName;
-            endpoint.className = className;
-            endpoint.functionName = method.getName();
-            endpoint.httpMethod = httpMethod;
-            endpoint.url = baseUrl + url;
+            endpoint.packageName  = packageName;
+            endpoint.className    = className;
+            endpoint.functionName = functionName;
+            endpoint.httpMethod   = httpMethod;
+            endpoint.url          = fullUrl;
 
             Debugger.debug(2, "  Found endpoint: " + endpoint);
             endpoints.add(endpoint);
+
+            index = location + MAP_ID.length();
         }
     }
 
@@ -209,41 +316,34 @@ public class ApiDefinitionAnalyser {
                 ? javaFilesPath.substring(0, javaFilesPath.length() - 1)
                 : javaFilesPath;
 
-        JavaProjectBuilder builder = new JavaProjectBuilder();
+        Debugger.debug(1, "Scanning " + (recursive ? "recursively" : "non-recursively")
+                + " in [" + rootPath + "]");
 
-        Debugger.debug(1, "Scanning " + (recursive ? "recursively" : "non-recursively") + " in [" + rootPath + "]");
+        try (Stream<Path> stream = recursive
+                ? Files.walk(Paths.get(rootPath))
+                : Files.list(Paths.get(rootPath))) {
 
-        try (Stream<Path> stream = recursive ? Files.walk(Paths.get(rootPath)) : Files.list(Paths.get(rootPath))) {
             List<Path> javaFiles = stream
                     .filter(Files::isRegularFile)
                     .filter(p -> p.toString().endsWith(".java"))
                     .sorted()
                     .toList();
 
-            Debugger.debug(2, "Found " + javaFiles.size() + " Java source files in [" + rootPath + "]");
+            Debugger.debug(2, "Found " + javaFiles.size()
+                    + " Java source files in [" + rootPath + "]");
 
-            for (Path filePath : javaFiles) {
-                Debugger.debug(3, "Parsing: " + filePath);
+            javaFiles.forEach(filePath -> {
                 try {
-                    builder.addSource(new FileReader(filePath.toFile()));
-                } catch (FileNotFoundException | ParseException ex) {
-                    Debugger.debug(1, "Skipping unparseable file: " + filePath + " - " + ex.getMessage());
-                }
-            }
-        } catch (IOException ex) {
-            System.err.println("Error scanning source directory [" + javaFilesPath + "] : " + ex.getMessage());
-            return;
-        }
-
-        for (JavaSource source : builder.getSources()) {
-            for (JavaClass javaClass : source.getClasses()) {
-                try {
-                    analyseClass(javaClass);
+                    analyseFile(filePath.toString());
                 } catch (Exception ex) {
-                    Debugger.debug(2, "Error analysing class "
-                            + javaClass.getFullyQualifiedName() + " : " + ex.getMessage());
+                    Debugger.debug(2, "Error analysing file: " + filePath
+                            + " - " + ex.getMessage());
                 }
-            }
+            });
+
+        } catch (IOException ex) {
+            System.err.println("Error scanning source directory ["
+                    + javaFilesPath + "] : " + ex.getMessage());
         }
     }
 
