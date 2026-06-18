@@ -37,3 +37,9 @@ Prompts - 2026-06-18
 
 8. could you save into a text file all the prompts I have given you up to now, in a
    file called prompts-<today date in yyymmdd format>.txt ?
+
+9. Please create a new markdown document /docs/ApiDefinitionAnalyser-readme.md where
+   the structure and the usage of this tool is described.
+
+10. could you save into a text file all the prompts I have given you up to now, in a
+    file called prompts-<today date in yyymmdd format>.txt ?
